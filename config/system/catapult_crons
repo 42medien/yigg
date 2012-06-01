@@ -1,0 +1,24 @@
+# Crontab for YiGG v8 (voyager)
+# Please add. Symlink this file into /etc/cron.d/
+
+MAILTO="" # (no one)
+
+#m        h     dom mon dow user command
+*/10  1,2,4-23   *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony app:updateUserStats
+ 6        4      *   *   *  yigg bash  /srv/www/vhosts/www.yigg.de/scripts/maintainance.sh
+ 3        3      *   *   *  yigg bash /srv/www/vhosts/www.yigg.de/scripts/sql_backup.sh
+*/12       *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony worldspy:importWorldspyStories frontend
+*/20       *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony worldspy:updateNewsroom frontend
+*/1       *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony worldspy:linkLatestTweets frontend
+*/5       *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony app:updateDomainStats
+*/1       *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony app:updateSearch
+1         *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/scripts/importFeverFeeds.php
+*/30      *      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony app:announceBestStories
+43        3      *   *   *  yigg bash /srv/www/vhosts/www.yigg.de/scripts/static_backup.sh
+4         5      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony generate:sitemap
+
+
+
+# Rotate Logs
+1        3      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony log:rotate frontend dev
+1        3      *   *   *  yigg php5 /srv/www/vhosts/www.yigg.de/symfony log:rotate frontend prod

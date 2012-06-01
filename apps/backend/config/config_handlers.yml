@@ -1,0 +1,29 @@
+config/videoads.yml:
+  class:    sfDefineEnvironmentConfigHandler
+  param:
+    prefix: video_
+
+config/bots.yml:
+  class:    sfDefineEnvironmentConfigHandler
+  param:
+    prefix: bots_
+
+config/smilies.yml:
+  class:    sfDefineEnvironmentConfigHandler
+  param:
+    prefix: smilies_
+
+config/html_filter.yml:
+  class:    sfDefineEnvironmentConfigHandler
+  param:
+    prefix: purify_
+
+config/invalid_email_domains.yml:
+  class:    sfDefineEnvironmentConfigHandler
+  param:
+    prefix: email_
+
+config/livedome.yml:
+  class:    sfDefineEnvironmentConfigHandler
+  param:
+    prefix: livedome_

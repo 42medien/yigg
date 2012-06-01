@@ -1,0 +1,30 @@
+generator:
+  class:              sfDoctrineGenerator
+  param:
+    model_class:           Deal
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          deal
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    max_per_page:          50
+    config:
+      fields:
+        user_id:        { type: input_tag }
+        sponsoring_description:     { name: Beschreibung }
+
+      list:
+        display:        [id, User, _sponsoring_description, credit, debit, payed, SponsorDeal, updated_at, created_at]
+        title:          'Transaktionen (deals)'
+        actions:        []
+        object_actions:
+          _edit:        ~
+
+      edit:
+        display:        [ user_id, Sponsoring, credit, debit, payed, SponsorDeal, buyer_first_name, buyer_last_name, buyer_street1, buyer_street2, buyer_city, buyer_state, buyer_zip, buyer_country, buyer_email, updated_at, created_at]
+        actions:
+          _list:        ~
+          _save:        ~

@@ -1,0 +1,29 @@
+StoryRedirect:
+  columns:
+    id: { primary: true, autoincrement: true, notnull: true, type: integer(11) }
+    redirect_id: { type: integer(20), notnull: true }
+    story_id: { type: integer(20), notnull: true }
+  relations:
+    Redirect: { local: redirect_id, foreign: id, type: one }
+    Story:    { local: story_id, foreign: id, type: one }
+
+Redirect:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { primary: true, autoincrement: true, notnull: true, type: integer(20) }
+    url: { type: string(512), notnull: true }
+    redirect_key: { type: string(64), notnull: true }
+    title: { type: string(128), notnull: false }
+    description: { type: string(255), notnull: false }
+
+RedirectLog:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { primary: true, autoincrement: true, notnull: true, type: integer(4) }
+    redirect_id: { type: integer(20), notnull: true }
+    language: { type: string(12) }
+    user_agent: { type: string(128) }
+    referer: { type: string(255) }
+    ip_crc32: { type: integer() }
+  relations:
+    Redirect: { local: redirect_id, foreign: id, type: one }

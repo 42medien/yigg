@@ -1,0 +1,1 @@
+<script type="text/javascript" src="http://yigg.de.intellitxt.com/intellitxt/front.asp?ipid=11601"></script>

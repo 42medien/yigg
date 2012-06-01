@@ -1,0 +1,1 @@
+<p class="error">Löschen fehlgeschlagen.</p>

@@ -1,0 +1,56 @@
+all:
+  userlandImages:
+    host: yigg.de
+
+  user:
+    minYiggs: 100
+    minFriends: 3
+
+  mail:
+    webmaster:    gow@yigg.de
+    contact:      gow@yigg.de
+    admin:        staff@yigg.de
+    billing:      staff@yigg.de
+    tech:         hacker@yigg.de
+
+  twitter:
+    username:     yigg_marvin
+    password:     1t37YQIraV2M
+    via:          '<a href="http://yigg.de">YiGG.de</a>'
+    consumerKey:  KEAYFKXo76Lk3g6mXh4kkA
+    consumerSecret: sKjkiBuEWi1OrJOl7deUcrqCCPmvOGu6NbPAgOK0o
+    status_url:   'http://twitter.com/home/?status='
+
+  facebook:
+    status_url:   'http://www.facebook.com/sharer.php'
+
+
+  highloadMeasures:
+    highLoad:     16
+
+  paypal:
+    username:     staff_api1.yigg.de
+    password:     BJ5NQAKTN3L68LFZ
+    signature:    AnMrNANDKDpi3tAjRkAwN7ydC2g-AL1QxLt1tkumYK0ubix972dhN7gf
+    testmode:     false
+    #username:     staff_1225096135_biz_api1.yigg.de                        # test account
+    #password:     EXE6ATVFBFC3B76A                                         # test account
+    #signature:    AYmGLbwrfjaNX9Q3kEKCXZzOTIQzAlOWbEznsyvcXF4NVgxvG6l3-BEF # test account
+
+  storyDetail:
+    ratings: 8  # Number of ratings that are displayed in the ratings-widget
+    related:
+      number: 5 # Number of related stories that are displayed in the related-stories widget
+    minYiggs: 3
+    minUserYiggs: 2
+    minComments: 1
+
+  sponsoring:
+    terms:
+      1:             '1 Woche'
+      4:             '4 Wochen'
+      8:             '8 Wochen'
+    discount:                                         # the sponsoring discount for each extra month. ie price * term * term_discount
+      1:              1.0
+      4:              0.85
+      8:              0.80

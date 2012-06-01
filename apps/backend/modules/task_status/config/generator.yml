@@ -1,0 +1,49 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TaskStatus
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          task_status
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~
+
+
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TaskStatus
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Task
+    plural:                Tasks
+    route_prefix:          task_status
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:             Task Admin
+        display:           [description, task_name, is_locked, last_run]
+        sort:              [task_name, is_locked, last_run]
+        max_per_page:      20
+      filter:
+        display:           [description, task_name, is_locked, last_run]
+      form:    ~
+      edit:    ~
+      new:     ~

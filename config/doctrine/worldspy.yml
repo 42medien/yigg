@@ -1,0 +1,114 @@
+Feed:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer
+    url:
+      type: string(512)
+      notnull: true
+    load_time:
+      type: float
+    change_frequency:
+      type: integer
+    last_updated:
+      type: timestamp(25)
+    error:
+      type: string(255)
+    autoimport:
+      type: boolean
+      default: false
+    last_imported:
+      type: integer
+    user_id:
+      type: integer
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      type: one
+    Entry:
+      class: FeedEntry
+      local: id
+      foreign: feed_id
+      type: many
+      cascade: [delete]
+
+FeedEntry:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer
+    title:
+      type: string(512)
+    feed_id:
+      type: integer
+    link:
+      type: string(512)
+    long_link:
+      type: string(512)
+    added_at:
+      type: timestamp(25)
+    description:
+      type: string(5000)
+    epoch_time:
+      type: float()
+    created:
+      type: timestamp(25)
+    in_newsroom:
+      type: boolean
+  relations:
+    Feed:
+      local: feed_id
+      foreign: id
+      type: one
+      
+WspyTweet:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    twitter_id:
+      notnull: true
+      type: integer(20)
+    text:
+      notnull: true
+      type: string(255)
+    source:
+      notnull: false
+      type: string(512)
+    username:
+      type: string(64)
+      notnull: true
+    link:
+      type: string(512)
+      notnull: false
+    profile_image:
+      type: string(512)
+      notnull: false
+    created_at:
+      type: timestamp(25)
+    language:
+      type: string(5)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+TwitterSearch:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    term:
+      notnull: true
+      type: string(128)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

@@ -1,0 +1,19 @@
+all:
+  bots:
+    bot: 
+      - bot
+      - spider
+      - Slurp
+      - curl
+      - pyder
+      - Yandex
+      - crawl
+      - robo
+      - libwww
+      - urllib
+      - yacy
+      - FeedBurner
+      - agentname
+      - altaVista intranet
+      - PostRank
+      - unknown

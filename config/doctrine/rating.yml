@@ -1,0 +1,80 @@
+---
+Rating:
+  actAs:
+    yiggEpoch:
+    Timestampable:
+      updated:
+        disabled: true
+      created:
+        name: created_at
+        type: timestamp
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    ip_address:
+      type: string(15)
+    user_agent:
+      type: string(255)
+      notnull: true
+    created_at:
+      notnull: true
+      type: timestamp(25)
+    epoch_time:
+      notnull: true
+      type: float
+  relations:
+    StoryRating:
+      class: StoryRating
+      local: id
+      foreign: rating_id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    rating_created_at:
+      fields: created_at
+    rating_epoch_time:
+      fields: epoch_time
+      sorting: DESC
+    rating_ipaddress:
+      fields: ip_address
+
+StoryRating:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    story_id:
+      type: integer(11)
+    rating_id:
+      type: integer(11)
+    user_id:
+      type: integer(11)
+  relations:
+    Rating:
+      class: Rating
+      local: rating_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+    User:
+      class: User
+      local: user_id
+      foreign: id
+      type: one
+    Story:
+      local: story_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    story_rating_story:
+      fields: story_id

@@ -1,0 +1,36 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Sponsoring
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sponsoring
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      list:
+        display:        [id, _image, status, SponsoringPlace, clicks, impressions, expires, updated_at, created_at]
+        title:          'Sponsorings'
+        actions:        []
+        object_actions:
+          _edit:        ~
+          _delete:      ~
+        table_method:   retrieveBackendSponsoringList
+        max_per_page:   50
+        sort:              [id, desc]
+      filter:
+        display:        [id, place_id, payed,status, expires ]
+      form:    ~
+      edit:
+        display:        [id, place_id, image_title, sponsor_url, payed, expires, created_at, updated_at]
+        actions:
+          _list:        ~
+          _save:        ~
+          _delete:      ~
+      new:     ~
+      show:    ~

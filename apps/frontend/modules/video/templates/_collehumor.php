@@ -1,0 +1,4 @@
+<object type="application/x-shockwave-flash" data="http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=<?php echo $video->getVideoId();?>&fullscreen=1" width="<?php echo $width;?>" height="<?php echo $height;?>" >
+    <param name="allowfullscreen" value="true"/><param name="wmode" value="transparent"/>
+    <param name="allowScriptAccess" value="always"/><param name="movie" quality="best" value="http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=<?php echo $video->getVideoId();?>&fullscreen=1"/>
+    <embed src="http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=<?php echo $video->getVideoId();?>&fullscreen=1" type="application/x-shockwave-flash" wmode="transparent"  width="<?php echo $width;?>" height="<?php echo $height;?>"  allowScriptAccess="always"></embed></object>

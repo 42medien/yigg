@@ -1,0 +1,1 @@
+<p class="success">Kommentar wurde gelöscht.</p>

@@ -1,0 +1,24 @@
+/**
+ * Main page layout
+ */
+.backend #main-links{
+  width:100% !important;
+}
+.backend #Container{
+  width:100% !important;
+}
+.backend #Container-bg, .backend #Pagination{
+  background: #FF971D;
+}
+.backend #Content{
+  background: #FFF;
+  width: auto;
+}
+
+form textarea{
+	width:500px !important;
+	height:150px;
+	padding:2px;
+}
+#sf_admin_container form #video_ad_title{ width: 500px; padding:2px;}
+.sf_admin_filter select{ width:auto !important}

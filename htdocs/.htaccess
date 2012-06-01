@@ -1,0 +1,86 @@
+Options +FollowSymLinks +ExecCGI -Indexes
+
+#ModPagespeedEnableFilters rewrite_css
+#ModPagespeedEnableFilters rewrite_javascript
+#ModPagespeedEnableFilters collapse_whitespace
+#ModPagespeedEnableFilters inline_javascript
+#ModPagespeedEnableFilters make_google_analytics_async
+
+#ModPagespeedDisableFilters trim_urls
+
+ExpiresActive On
+
+### expires after a month in the client's cache
+ExpiresByType image/gif "access plus 12 months"
+ExpiresByType image/png "access plus 12 months"
+ExpiresByType image/jpeg "access plus 12 months"
+ExpiresByType image/x-icon "access plus 12 months"
+ExpiresByType application/pdf A2592000
+ExpiresByType application/x-javascript "access plus 12 months"
+ExpiresByType application/javascript "access plus 12 months"
+ExpiresByType text/plain "access plus 12 months"
+ExpiresByType text/css "access plus 12 months"
+
+<Files backend.php>
+  AuthType Basic
+  AuthName "Backend"
+  AuthUserFile /etc/apache2/.httpasswd
+  Require user shostakovich kmr
+</Files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteBase /
+
+ RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Java [OR]
+RewriteCond %{HTTP_USER_AGENT} ^AppEngine [OR]
+RewriteCond %{HTTP_USER_AGENT} Spinn3r [OR]
+RewriteCond %{HTTP_USER_AGENT} Speedy\sSpider
+
+RewriteRule ^.* - [F,L]
+
+ RewriteCond %{REQUEST_URI} ^rss.php(.*)$
+ RewriteRule ^.* - [F,L]
+
+ RewriteCond %{REQUEST_URI} ^/rss/beste-nachrichten$
+ RewriteRule ^(.*)$ http://yigg.de/atom/beste-nachrichten [R=301,L]
+
+ # we skip all files with .something
+ RewriteCond %{REQUEST_URI} ^\..+$
+ RewriteCond %{REQUEST_URI} !\.html
+ RewriteRule .* - [L]
+
+  # we check if the .html version is here (caching)
+  RewriteRule ^$ index.html [QSA]
+  RewriteRule ^([^.]+)$ $1.html [QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  RewriteCond %{HTTP_HOST} ^(yigg.it|mug.im)$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ mugim.php [QSA,L]
+
+  RewriteCond %{HTTP_HOST} ^(backend.yigg.de)$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ backend.php [QSA,L]
+
+  RewriteCond %{HTTP_HOST} ^(webtools.yigg.de)$
+  RewriteRule robots.txt$ robots_up.txt [QSA,L]
+
+  RewriteCond %{HTTP_HOST} ^(upcoming.yigg.de)$
+  RewriteRule robots.txt$ robots_up.txt [QSA,L]
+
+  RewriteCond %{HTTP_HOST} ^(upcoming.yigg.de)$
+  RewriteRule robots.txt$ robots_up.txt [QSA,L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # no, so we redirect to our front web controller
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# big crash from our front web controller
+ErrorDocument 500 "<h2>Application error</h2>symfony applicationfailed to start properly"

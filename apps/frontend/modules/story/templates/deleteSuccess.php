@@ -1,0 +1,1 @@
+<h2>Story erfolgreich entfernt</h2>

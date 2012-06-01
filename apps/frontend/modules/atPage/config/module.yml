@@ -1,0 +1,7 @@
+soap:
+  index: { enable: false }
+  postboxShow: { enable: false }
+  notificationShow: { enable: false }
+  notificationTask: { enable: false }
+  postboxTask: { enable: false }
+  deletePostbox: { enable: false }

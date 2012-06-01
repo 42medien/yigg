@@ -1,0 +1,128 @@
+ * You first need to download the PHP Paypal's API: SOAP Interface [http://www.paypal.com/sdk here]
+
+ * The sfPaypalDirect constructor takes the path where you install Paypal's API.  I don't recommend putting it on lib since you don't want it to be automatically loaded on every page view. 
+
+ * To use the Direct Payment method you can do something like the following:
+{{{
+
+
+  $this->error = $this->charge_cc('Membership fee', '19.95');
+  if (  $this->error == '' )
+  {
+      // Save information and redirect to another action
+  }
+
+  // Else display $error on template
+
+
+
+  private function charge_cc($desc, $total)
+  {
+  	$error = '';
+  	$cc = new sfPaypalDirect(sfConfig::get('sf_data_dir').DIRECTORY_SEPARATOR.'PayPal');
+
+        // Setup API's credentials
+  	$cc->setUserName(sfConfig::get('mod_registration_paypal_username'));
+  	$cc->setPassword(sfConfig::get('mod_registration_paypal_password'));
+  	$cc->setSignature(sfConfig::get('mod_registration_paypal_signature'));
+  	$cc->setTestMode(sfConfig::get('mod_registration_paypal_test'));
+
+  	$cc->setTransactionTotal($total);
+  	$cc->setTransactionDescription($desc);
+
+  	$cc->setBillingFirstName($this->getRequestParameter('firstname'));
+  	$cc->setBillingLastName($this->getRequestParameter('lastname'));
+	$cc->setBillingStreet1($this->getRequestParameter('address'));
+	$cc->setBillingStreet2($this->getRequestParameter('address2'));
+  	$cc->setBillingCity($this->getRequestParameter('city'));
+  	$cc->setBillingState($this->getRequestParameter('state'));
+  	$cc->setBillingZip($this->getRequestParameter('zip'));
+
+  	$cc->setCardType($this->getRequestParameter('cctype'));
+  	$cc->setCardNumber($this->getRequestParameter('cc'));
+  	$cc->setCardVerificationNumber($this->getRequestParameter('ccv'));
+  	$cc->setCardExpirationMonth($this->getRequestParameter('expmonth'));
+  	$cc->setCardExpirationYear($this->getRequestParameter('expyear'));
+  	$cc->setBuyerIP($_SERVER['REMOTE_ADDR']);
+
+  	if ( !$cc->chargeDirect() )
+  	{
+  		$error = $cc->getErrorString();
+  	}
+	return $error;
+  }
+
+}}}
+
+* To implement Express Checkout, it can be a little trickier.  First you need to take the user to Paypal's webpage so they can do their payments there.  Then Paypal will send the user to a specified URL if the payment was successful or to a different URL if the user cancelled the payment.  The following illustrates how to use this plugin on a module called '''registration''':
+
+{{{
+        $cc = new sfPaypalDirect(sfConfig::get('sf_data_dir').DIRECTORY_SEPARATOR.'PayPal');
+
+        // Setup API's credentials
+        $cc->setUserName(sfConfig::get('mod_registration_paypal_username'));
+        $cc->setPassword(sfConfig::get('mod_registration_paypal_password'));
+        $cc->setSignature(sfConfig::get('mod_registration_paypal_signature'));
+        $cc->setTestMode(sfConfig::get('mod_registration_paypal_test'));
+
+        sfLoader::loadHelpers(array('Url'));
+        // URL to go to if the cancel payment
+        $cc->setCancelURL(url_for('registration/cancelpaypal', true));
+ 
+        // URL to verify or charge transaction
+        $cc->setReturnURL(url_for('registration/chargepaypal', true));
+
+        $cc->setTransactionTotal('39.95');
+        $cc->setTransactionDescription('Registration');
+
+        // Get a Paypal URL to go to
+        $goto = $cc->GetExpressUrl();
+        if ( $goto )
+        {
+                $this->redirect($goto);
+        }
+        else
+        {
+                return $this->renderText('Error: ' . $cc->getErrorString());
+        }
+
+}}}
+
+
+ * These are sample actions for a cancel URL and return URL
+{{{
+
+  // Cancel action
+  public function executeCancelpaypal()
+  {
+        return $this->renderText('Oh no!');
+  }
+
+  // Payment was successful, try to charge
+  public function executeChargepaypal()
+  {
+        $cc = new sfPaypalDirect(sfConfig::get('sf_data_dir').DIRECTORY_SEPARATOR.'PayPal');
+
+        // Setup API's credentials
+        $cc->setUserName(sfConfig::get('mod_registration_paypal_username'));
+        $cc->setPassword(sfConfig::get('mod_registration_paypal_password'));
+        $cc->setSignature(sfConfig::get('mod_registration_paypal_signature'));
+        $cc->setTestMode(sfConfig::get('mod_registration_paypal_test'));
+
+        $cc->setTransactionTotal('39.95');
+        $cc->setTransactionDescription('Registration');
+
+        if ( $cc->chargeExpressCheckout($this->getRequestParameter('token')) )
+        {
+                return $this->renderText('Charged successfully');
+        }
+        else
+        {
+                return $this->renderText('Error: ' . $cc->getErrorString());
+        }
+  }
+
+
+
+}}}
+

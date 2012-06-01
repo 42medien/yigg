@@ -1,0 +1,8 @@
+soap:
+  login: { enable: false }
+  add: { enable: false }
+  addSimple: { enable: false }
+  edit: { enable: false }
+  rate: { enable: false }
+  delete: { enable: false }
+  tweet: { enable: false }

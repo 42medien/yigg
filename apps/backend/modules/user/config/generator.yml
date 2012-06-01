@@ -1,0 +1,26 @@
+generator:
+  class:              sfDoctrineGenerator
+  param:
+    model_class:           User
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    max_per_page:          50
+    config:
+      actions: ~
+      list:
+        title:             Users
+        display:           [id, =username, email, status, created_at]
+        sort:              [id, desc]
+      filter:
+        display:           [=username, email, status]
+      form:    ~
+      edit:
+        display:           [=username, email]
+      new:     ~
+      show:    ~

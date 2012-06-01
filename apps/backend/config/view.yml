@@ -1,0 +1,10 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    robots:       noindex, nofollow
+    title:        Ybackend
+
+  has_layout:     true
+  layout:         layout

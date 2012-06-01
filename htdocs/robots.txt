@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /weltspion/
+Disallow: /sponsoring/
+Disallow: /bookmarks/
+Disallow: /sponsoring/
+Disallow: /kommentare
+Disallow: /neu
+Disallow: /nachrichten/button
+Disallow: /tweeple/
+Disallow: /newpost.php

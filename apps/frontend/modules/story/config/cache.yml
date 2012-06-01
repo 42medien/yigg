@@ -1,0 +1,27 @@
+default:
+  enabled:     false
+  with_layout: false
+  lifetime:    86400
+
+showCategoryList:
+  enabled:    true
+  lifetime:   3600
+
+_storyRelated:
+  enabled:    true
+
+_storyTweets:
+  enabled:     true
+  lifetime:    600
+
+_viral:
+  enabled: 	   true
+  lifetime:    240
+
+_trendingStories:
+  enabled:     true
+  lifetime:    600
+
+_lastStories:
+  enabled:     true
+  lifetime:    120

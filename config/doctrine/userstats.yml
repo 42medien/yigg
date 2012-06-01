@@ -1,0 +1,41 @@
+UserStats:
+  columns:
+    user_id:
+      primary: true
+      notnull: true
+      type: integer(11)
+    rank:
+      type: integer(11)
+    yipps:
+      type: integer(11)
+    comment_award:
+      type: integer(11)
+    reading_award:
+      type: integer(11)
+    storys_total:
+      type: integer(11)
+    comments_total:
+      type: integer(11)
+    external_comments_total:
+      type: integer(11)
+    friends_total:
+      type: integer(11)
+    external_friends_total:
+      type: integer(11)
+    external_yiggs_total:
+      type: integer(11)
+    yiggs_total:
+      type: integer(11)
+    story_renders_total:
+      type: integer(11)
+    last_calculated:
+      type: timestamp(25)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  relations:
+    User:
+      class: User
+      local: user_id
+      foreign: id
+      type: one 

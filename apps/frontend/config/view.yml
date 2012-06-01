@@ -1,0 +1,13 @@
+all:
+  http_metas:
+    content-type: text/html; charset=utf-8
+
+  metas:
+    title:        Nachrichten zum Mitmachen - YiGG.de
+    robots:       index, follow
+    description:  YiGG.de - Auf YiGG kannst Du Nachrichten lesen, bewerten, kommentieren und eigene Artikel verfassen. Bei YiGG entscheiden die Benutzer selbst, was interessant ist.
+    keywords:     YiGG, social news, Nachrichten, Diskussionen, Neuigkeiten, Unterhaltung, Technik, Hamster, Web 2.0, Marvin
+    language:     de
+
+  has_layout:     true
+  layout:         layout

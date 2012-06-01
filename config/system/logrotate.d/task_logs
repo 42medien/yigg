@@ -1,0 +1,7 @@
+/srv/www/vhosts/yigg.de/log/tasks/*.log {
+  rotate 2
+  daily
+  compress
+  missingok
+  notifempty
+}

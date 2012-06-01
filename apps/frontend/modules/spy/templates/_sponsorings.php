@@ -1,0 +1,1 @@
+<?php include_component('sponsoring', 'sponsoring', array('place_id' => 24)); ?>

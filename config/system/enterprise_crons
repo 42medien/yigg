@@ -1,0 +1,7 @@
+# Crontab for YiGG v8 (enterprise)
+# Please add. Symlink this file into /etc/cron.d/
+#m    h  dom mon dow user command
+MAILTO=""
+
+*/1 4-23 *   *   *  root php /srv/www/vhosts/www.yigg.de/symfony app:createScreenshots &
+ 6    3          *   *   *  root  sh  /srv/www/vhosts/www.yigg.de/data/Scripts/sql_backup.sh

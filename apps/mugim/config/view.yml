@@ -1,0 +1,17 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Mug.im - the sympatic URL-shortener with the mugs :)
+    description:  Mug.im is a very basic URL-Shortening service. It lets you create short URL that you can use in your favorite like Twitter, Facebook or Friendfeed.
+    keywords:     URL, Short, Twitter, Mug, Mug.im, Service, API, Shrink, Shortener, Tweet
+    language:     en
+    robots:       index, follow
+
+  stylesheets:    [http://static.yigg.de/v6/css/mugim/main.css?v=5]
+
+  javascripts:    []
+
+  has_layout:     true
+  layout:         layout

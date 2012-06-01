@@ -1,0 +1,11 @@
+rendering: ~
+
+securityFilter:
+  class: securityFilter
+
+rememberFilter:
+  class: rememberFilter
+
+security: ~
+cache:     ~
+execution: ~

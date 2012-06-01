@@ -1,0 +1,6 @@
+soap:
+  worldSpy: { enable: false }
+  latestNodes: { enable: false }
+  showNode: { enable: false }
+  createStoryFromNode: { enable: false }
+  topStories: { enable: false }

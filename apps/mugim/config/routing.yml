@@ -1,0 +1,7 @@
+homepage:
+  url: /
+  param: { module: pages, action: index }
+
+redirector:
+  url:   /:key
+  param: { module: redirector, action: redirector }

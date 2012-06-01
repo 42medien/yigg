@@ -1,0 +1,27 @@
+edit:
+  is_secure: true
+
+create:
+  is_secure: true
+
+delete:
+  is_secure: true
+
+instantCreate:
+  is_secure: true
+
+checkTitle:
+  is_secure: false
+
+checkTags:
+  is_secure: false
+
+checkExternal_url:
+  is_secure: false
+
+checkDescription:
+  is_secure: false
+
+filteredStories:
+  is_secure: true
+  credentials: [ADMIN,MODERATOR]

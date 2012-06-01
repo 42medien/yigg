@@ -1,0 +1,8 @@
+default:
+  is_secure: true
+
+showSponsoringPlace:
+  is_secure: false
+
+handleCall:
+  is_secure: false

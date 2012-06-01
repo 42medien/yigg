@@ -1,0 +1,101 @@
+---
+Comment:
+  actAs: [yiggDescription, yiggSoftDelete, Timestampable, yiggEpoch]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    description:
+      notnull: true
+      type: string(4000)
+    user_id:
+      type: integer(11)
+      notnull: true
+    comment_type:
+      type: integer(11)
+    email:
+      type: string(128)
+    name:
+      type: string(128)
+    is_online:
+      type: boolean
+      default: 1
+  relations:
+    Author:
+      class: User
+      local: user_id
+      foreign: id
+      type: one
+    Stories:
+      class: Story
+      refClass: StoryComment
+      foreignAlias: Comments
+    Link:
+      class: CommentLink
+      local: id
+      foreign: comment_id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    comment_created_at:
+      fields: created_at
+    comment_epochtime:
+      fields: epoch_time
+      sorting: DESC
+
+CommentLink:
+  actAs:
+    yiggSoftDelete:
+    Timestampable:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    comment_id:
+      type: integer(11)
+    url:
+      type: varchar(255)
+  indexes:
+    unique_comment_url:
+      fields: [comment_id, url]
+      type: unique
+  relations:
+    Comment:
+      local: comment_id
+      foreign: id
+      type: one
+
+StoryComment:
+  actAs: [Timestampable, yiggNotifcation]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    story_id:
+      notnull: true
+      type: integer(11)
+    comment_id:
+      notnull: true
+      type: integer(11)
+  relations:
+    Story:
+      class: Story
+      local: story_id
+      foreign: id
+      type: one
+    Comment:
+      class: Comment
+      local: comment_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

@@ -1,0 +1,59 @@
+---
+Tag:
+  actAs: [yiggMultipleReference]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    name:
+      notnull: true
+      type: string(128)
+      unique: true
+  relations:
+    Users:
+      class: User
+      refClass: UserTag
+      foreignAlias: Tag
+    Stories:
+      class: Story
+      refClass: StoryTag
+      foreignAlias: Tag
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+UserTag:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      notnull: true
+      type: integer(11)
+    tag_id:
+      notnull: true
+      type: integer(11)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+StoryTag:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    story_id:
+      notnull: true
+      type: integer(11)
+    tag_id:
+      notnull: true
+      type: integer(11)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           domain
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          domain
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:             Domain Admin
+        display:           [hostname, yiggs, stories, distinct_users, domain_status]
+        sort:              ~
+        max_per_page:      50
+      filter:
+        display: [hostname, domain_status]
+      form:    ~
+      edit:
+        display: [domain_status]
+      new:     ~

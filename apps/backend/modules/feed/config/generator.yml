@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Feed
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Feed
+    plural:                Feeds
+    route_prefix:          wspy
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:             WorldSpy Feed Admin
+        display:           [url]
+        sort:              [url, desc]
+        max_per_page:      50
+      filter:
+        display:           [url]
+      form:    ~
+      edit:    ~
+      new:     ~

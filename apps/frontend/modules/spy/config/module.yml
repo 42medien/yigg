@@ -1,0 +1,3 @@
+soap:
+  spy: { enable: false }
+  latestNodes: { enable: false }

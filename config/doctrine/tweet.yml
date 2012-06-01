@@ -1,0 +1,66 @@
+Tweet:
+  actAs: [yiggSoftDelete, Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    twitter_id:
+      notnull: true
+      type: integer(11)
+    text:
+      notnull: true
+      type: string(150)
+    source:
+      notnull: false
+      type: string(150)
+    username:
+      type: string(150)
+      notnull: true
+    website_url:
+      type: string(150)
+      notnull: false
+    profile_image_url:
+      type: string(255)
+      notnull: false
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    comment_created_at:
+      fields: created_at
+    twitter_id:
+      fields: twitter_id
+
+StoryTweet:
+  actAs: [yiggEpoch]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    story_id:
+      notnull: true
+      type: integer(11)
+    tweet_id:
+      notnull: true
+      type: integer(11)
+  relations:
+    Story:
+      class: Story
+      local: story_id
+      foreign: id
+      type: one
+    Tweet:
+      class: Tweet
+      local: tweet_id
+      foreign: id
+      type: one
+  indexes:
+    epoch_time:
+      fields: epoch_time
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

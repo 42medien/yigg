@@ -1,0 +1,12 @@
+soap:
+  categorySupport: { enable: false }
+  sponsoring: { enable: false }
+  invitationChoice: { enable: false }
+  invitations: { enable: false }
+  order: { enable: false }
+  orderPreview: { enable: false }
+  orderComplete: { enable: false }
+  handleCall: { enable: false }
+  payPalCancel: { enable: false }
+  payPalSuccess: { enable: false }
+  showSponsoringPlace: { enable: false }

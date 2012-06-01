@@ -1,0 +1,19 @@
+postboxCreateSuccess:
+  metas:
+    title:        Versenden einer privaten Nachricht - YiGG.de
+    robots:       noindex, nofollow
+
+postboxShowSuccess:
+  metas:
+    title:        Deine privaten Nachrichten - YiGG.de
+    robots:       noindex, nofollow
+
+notificationShowSuccess:
+  metas:
+    title:        Aktuelle Benachrichtigungen - YiGG.de
+    robots:       noindex, nofollow
+    
+indexSuccess:
+  metas:
+    title:        Übersicht Deiner Benachrichtigungen und PM - YiGG.de
+    robots:       noindex, nofollow

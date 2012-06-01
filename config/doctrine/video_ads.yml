@@ -1,0 +1,35 @@
+---
+VideoAd:
+  actAs:
+    Timestampable:
+    yiggSoftDelete:
+    yiggDescription:
+    Sluggable:
+      unique: true
+      fields: [title]
+      length: 128
+      name: internal_url
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    title:
+      type: string(128)
+    code:
+      notnull: true
+      type: string(1000000)
+    internal_url:
+      notnull: true
+      type: string(128)
+      unique: true
+    is_javascript:
+      type: boolean
+      default: false
+    push:
+      type: integer(1)
+      default: 1
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

@@ -1,0 +1,218 @@
+---
+User:
+  actAs: [yiggConfigurable, Timestampable, yiggSoftDelete, yiggTaggable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    username:
+      notnull: true
+      type: string(32)
+      unique: true
+    salt:
+      notnull: true
+      type: string(128)
+    password:
+      notnull: true
+      type: string(128)
+    status:
+      type: boolean
+      default: false
+    last_login:
+      type: timestamp(25)
+    email:
+      type: string(255)
+      email: true
+    privacy:
+      type: boolean
+      default: false
+    last_ip:
+      type: string(15)
+    failed_logins:
+      type: integer(4)
+    avatar_id:
+      type: integer(20)
+    award_comment:
+      type: enum
+      values: ['bronze', 'silver', 'gold']
+    award_story:
+      type: enum
+      values: ['bronze', 'silver', 'gold']
+    mclient_salt:
+      type: string(64)
+      notnull: true
+    settings as configuration:
+      type: string(100000)
+      default: null
+  relations:
+    Avatar:
+      class: File
+      local: avatar_id
+      foreign: id
+      type: one
+    Following:
+      class: User
+      refClass: UserFollowing
+      local: user_id
+      foreign: following_id
+    Followers:
+      class: User
+      refClass: UserFollowing
+      local: following_id
+      foreign: user_id
+    Tags:
+      class: Tag
+      refClass: UserTag
+      foreignAlias: User
+      type: many
+    Permissions:
+      class: UserPermission
+      local: id
+      foreign: user_id
+      type: many
+    Domains:
+      class: Domain
+      refClass: UserDomainSubscription
+      foreignAlias: User
+      type: many
+    Stories:
+      class: Story
+      local: id
+      foreign: user_id
+      type: many
+    Messages:
+      class: PostboxMessage
+      local: id
+      foreign: recipient_id
+      type: many
+    UserStats:
+      local: id
+      foreign: user_id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    email:
+      fields: email
+    mclient_salt:
+      fields: mclient_salt
+
+UserSettings:
+  columns:
+    id:
+      primary: true
+      notnull: true
+      type: integer(11)
+    comment_notify:
+      type: boolean
+      default: true
+    comment_email:
+      type: boolean
+      default: true
+    pm_email:
+      type: boolean
+      default: true
+    show_awards:
+      type: boolean
+      default: true
+    display_help:
+      type: boolean
+      default: true
+    twitterized:
+      type: boolean
+      default: false
+    twitter_hash:
+      type: string(128)
+    tweet_stories:
+      type: boolean
+      default: true
+    city:
+      type: string(128)
+    country:
+      type: string(128)
+    occupation:
+      type: string(128)
+    sex:
+      type: enum
+      values: ['male', 'female', 'none']
+    birthday:
+      type: timestamp(25)
+    website:
+      type: string(128)
+    blog:
+      type: string(128)
+    last_sms:
+      type: timestamp(25)
+    mailbox_name:
+      type: string(64)
+    use_toolbar:
+      type: boolean
+      default: true
+    twitter_name:
+      type: string(256)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+UserPermission:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      type: integer(11)
+    permission_level:
+      type: integer(4)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    permissions:
+      fields: permission_level
+    permission_user:
+      fields: user_id
+
+UserFollowing:
+  actAs: [Timestampable,yiggNotifcation]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer
+    user_id:
+      type: integer
+      notnull: true
+    following_id:
+      type: integer
+      notnull: true
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    unique_idx:
+      fields: [user_id, following_id]
+      type: unique
+
+UserOnlineLog:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer
+    user_id:
+      notnull: true
+      type: integer
+  relations:
+    User:
+      class: User
+      local: user_id
+      foreign: id
+      type: one

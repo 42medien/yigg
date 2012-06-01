@@ -1,0 +1,4 @@
+error404Success:
+  layout: sidebarLayout  
+  metas:
+    title: Error 404 - We did not find the required stuff.

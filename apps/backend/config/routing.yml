@@ -1,0 +1,112 @@
+domain:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                domain
+    module:               domain
+    prefix_path:          /domain
+    column:               id
+    with_wildcard_routes: true
+
+task_status:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TaskStatus
+    module:               task_status
+    prefix_path:          /task_status
+    column:               id
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                User
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
+deal:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Deal
+    module:               deal
+    prefix_path:          /deal
+    column:               id
+    with_wildcard_routes: true
+
+video_collection:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VideoAd
+    module:               video
+    prefix_path:          /video
+    column:               id
+    with_wildcard_routes: true
+
+video:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VideoAd
+    module:               video
+    prefix_path:          /video
+    column:               id
+    with_wildcard_routes: true
+
+wspy_collection:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Feed
+    module:               feed
+    prefix_path:          /wspy
+    column:               id
+    with_wildcard_routes: true
+
+wspy:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Feed
+    module:               feed
+    prefix_path:          /wspy
+    column:               id
+    with_wildcard_routes: true
+
+sponsoring:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Sponsoring
+    module:               sponsoring
+    prefix_path:          /sponsoring
+    column:               id
+    with_wildcard_routes: true
+
+sponsoring_place:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SponsoringPlace
+    module:               sponsoring_place
+    prefix_path:          /sponsoring_place
+    column:               id
+    with_wildcard_routes: true
+
+user_logout:
+  url:   /logout
+  param: { module: security, action: logout }
+
+user_login:
+  url:   /login
+  param: { module: security, action: index }
+
+homepage:
+  url:   /
+  param: { module: sponsoring, action: index }
+
+default_symfony:
+  url:   /symfony/:action/*
+  param: { module: default }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

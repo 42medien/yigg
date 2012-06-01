@@ -1,0 +1,232 @@
+---
+ResetPasswordKey:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      type: integer(11)
+    reset_key:
+      type: string(32)
+    expires:
+      type: timestamp(25)
+    created_at:
+      type: timestamp(25)
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    resetpassword_key:
+      fields: reset_key
+
+RememberKey:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    remember_key:
+      type: string(32)
+    ip_address:
+      type: string(15)
+    created_at:
+      type: timestamp(25)
+    user_id:
+      type: integer(11)
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    rememberme_key:
+      fields: remember_key
+
+EmailLookup:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      type: integer(11)
+    ip_address:
+      type: string(15)
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  indexes:
+    email_lookup_ip_address:
+      fields: ip_address
+
+File:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    file_directory:
+      type: string(255)
+    file_name:
+      type: string(255)
+    file_type:
+      type: string(10)
+  relations:
+    User:
+      class: User
+      local: id
+      foreign: avatar_id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+AuthUserKey:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      type: integer(11)
+    user_key:
+      type: string(32)
+      notnull: true
+      unique: true
+    created_at:
+      type: timestamp(25)
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Stopwords:
+  columns:
+    id: { primary: true, autoincrement: true, notnull: true, type: integer(11) }
+    word: { notnull: true, type: string(100) }
+    created_at: { type: timestamp, notnull: true }
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+TaskStatus:
+  actAs: [yiggConfigurable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    description:
+      type: string(128)
+    task_name:
+      type: string(128)
+    is_locked:
+      type: boolean
+      default: false
+    last_run:
+      type: timestamp(25)
+    status as configuration:
+      type: string(100000)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Domain:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer()
+    hostname:
+      type: string(128)
+      notnull: true
+      unique: true
+    yiggs:
+      type: integer
+    stories:
+      type: integer
+    distinct_users:
+      type: integer
+    rss_feed:
+      type: string(255)
+    seitwert:
+      type: integer(11)
+    domain_status:
+      type: enum
+      values: [blacklisted, whitelist, normal]
+      notnull: false
+
+UserDomainSubscription:
+  actAs: [Timestampable]
+  columns:
+    user_id:
+      type: integer
+    domain_id:
+      type: integer
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      type: one
+    Domain:
+      local: domain_id
+      foreign: id
+      type: one
+
+SystemStats:
+  columns:
+    id:
+      primary: true
+      notnull: true
+      autoincrement: true
+      type: integer(11)
+    total_user:
+      type: integer(4)
+    total_story:
+      type: integer(4)
+    total_comments:
+      type: integer(4)
+    total_friends:
+      type: integer(4)
+    total_real_friends:
+      type: integer(4)
+    total_groups:
+      type: integer(4)
+    total_group_storys:
+      type: integer(4)
+    total_votes:
+      type: integer(4)
+    total_tags:
+      type: integer(4)
+    calculated:
+      type: timestamp(25)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

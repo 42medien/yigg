@@ -1,0 +1,202 @@
+SponsoringPlace:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    description:
+      type: string(4000)
+      notnull: true
+    intern_url:
+      type: string(255)
+      notnull: true
+    width:
+      type: integer(4)
+      notnull: true
+    height:
+      type: integer(4)
+      notnull: true
+    price:
+      type: float
+      notnull: true
+    capacity:
+      type: integer(4)
+      notnull: true
+      default: 1
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Invitation:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      type: integer(11)
+      notnull: true
+    place_id:
+      type: integer(11)
+      notnull: true
+    name:
+      type: string(255)
+      notnull: true
+    email:
+      type: string(255)
+      email: true
+      notnull: true
+    subject:
+      type: string(255)
+      notnull: true
+    message:
+      type: string(4000)
+    token:
+      type: string(255)
+      notnull: true
+  relations:
+    User:
+      class: User
+      local: user_id
+      foreign: id
+      type: one
+    SponsoringPlace:
+      class: SponsoringPlace
+      local: place_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Sponsoring:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    deal_id:
+      type: integer(11)
+      notnull: true
+    place_id:
+      type: integer(11)
+      notnull: true
+    invitation_user_id:
+      type: integer(11)
+      notnull: false
+    image_id:
+      type: integer(11)
+      notnull: true
+    image_title:
+      type: string(255)
+    sponsor_url:
+      type: string(255)
+      notnull: true
+    payed:
+      type: boolean
+      default: false
+    clicks:
+      type: integer(11)
+      default: 0
+    impressions:
+      type: integer(11)
+      default: 0
+    status:
+      type: boolean
+      default: 0
+    expires:
+      type: timestamp(25)
+      notnull: true
+  relations:
+    Deal:
+      class: Deal
+      local: deal_id
+      foreign: id
+      type: one
+    SponsoringPlace:
+      class: SponsoringPlace
+      local: place_id
+      foreign: id
+      type: one
+    InvitationUser:
+      class: User
+      local: invitation_user_id
+      foreign: id
+      type: one
+    Image:
+      class: File
+      local: image_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Deal:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer(11)
+    user_id:
+      type: integer(11)
+      notnull: true
+    sponsoring_id:
+      type: integer(11)
+      notnull: false
+    credit:
+      type: float
+      default: 0.0
+    debit:
+      type: float
+      default: 0.0
+    payed:
+      type: boolean
+      default: false
+    sponsor_deal_id:
+      type: integer(11)
+      notnull: false
+    buyer_first_name:
+      type: string(255)
+    buyer_last_name:
+      type: string(255)
+    buyer_street1:
+      type: string(255)
+    buyer_street2:
+      type: string(255)
+    buyer_city:
+      type: string(255)
+    buyer_state:
+      type: string(255)
+    buyer_zip:
+      type: string(11)
+    buyer_country:
+      type: string(255)
+    buyer_email:
+      type: string(255)
+  relations:
+    User:
+      class: User
+      local: user_id
+      foreign: id
+      type: one
+    Sponsoring:
+      class: Sponsoring
+      local: sponsoring_id
+      foreign: id
+      type: one
+    SponsorDeal:
+      class: Deal
+      local: sponsor_deal_id
+      foreign: id
+      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8

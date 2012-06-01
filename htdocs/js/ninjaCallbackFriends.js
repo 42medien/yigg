@@ -1,0 +1,1 @@
+Friends=Class.create({target:'listContent',initialize:function(){this.coms=new NinjaComs()},postUpdate:function(el){content='';method='GET';this.coms.updater(el.element.id,window.location.toString(),$(this.target),content,method,function(){NinjaCommander.initialize();el.element.reset()}.bind(el))}});document.fire("Friends:loaded",{'updater':new Friends()});

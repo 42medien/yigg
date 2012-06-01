@@ -1,0 +1,8 @@
+all:
+  yigg:
+    class: sfDoctrineDatabase
+    param:
+      dsn: mysql://root:root@localhost/yigg_devel
+      attributes:
+        use_dql_callbacks: true
+        validate: true

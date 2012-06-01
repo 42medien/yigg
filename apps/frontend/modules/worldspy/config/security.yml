@@ -1,0 +1,5 @@
+changeFeedForm:
+  is_secure: true
+
+deleteEntry:
+  is_secure: true

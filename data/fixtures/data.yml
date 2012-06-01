@@ -1,0 +1,582 @@
+AuthUserKey:
+  AuthUserKey_1:
+    User: User_1
+    user_key: e2c2be37b19c2b5b6ad88709b3420490
+    created_at: '2011-02-11 11:22:32'
+  AuthUserKey_2:
+    User: User_2
+    user_key: 5e14775546f9455c39dc53dca600de5f
+    created_at: '2011-02-11 11:22:33'
+  AuthUserKey_3:
+    User: User_3
+    user_key: 8bd089bb49f0a8c757640d9c8a42f7f8
+    created_at: '2011-02-11 11:22:33'
+  AuthUserKey_4:
+    User: User_4
+    user_key: 68761d87a2f2212703eeec70c06d3b04
+    created_at: '2011-02-11 11:34:45'
+EmailLookup:
+  EmailLookup_1:
+    User: User_1
+    ip_address: 127.0.0.1
+RememberKey:
+  RememberKey_1:
+    remember_key: 59b69932e7847c505599b5b6af5c0b8e
+    ip_address: 127.0.0.1
+    created_at: '2011-02-11 11:39:27'
+    User: User_4
+Domain:
+  Domain_1:
+    hostname: test.com
+    domain_status: whitelist
+Tag:
+  Tag_1:
+    name: apple
+  Tag_3:
+    name: archive
+  Tag_2:
+    name: blog
+  Tag_9:
+    name: command
+  Tag_5:
+    name: framework
+  Tag_10:
+    name: line
+  Tag_11:
+    name: support
+  Tag_6:
+    name: tool
+  Tag_7:
+    name: usage
+  Tag_8:
+    name: with
+  Tag_4:
+    name: zend
+User:
+  User_1:
+    username: marvin
+    salt: 02e11ae5c8c36f976c9fde7d909357b76d100cd2
+    password: ffd8a899da2e38077bd7e3d184d765f51aad3e6b
+    status: false
+    adsense_id: null
+    last_login: null
+    email: robert@rocu.de
+    privacy: false
+    gender: null
+    last_ip: null
+    failed_logins: null
+    yipps: '1000'
+    award_comment: null
+    award_story: null
+    points: null
+    mclient_salt: ac0c948b9931c36072aca8da27c4630fce43fdaa
+    apikey: null
+    fb_user_id: null
+    added_from_fb: false
+    first_name: null
+    last_name: null
+    street: null
+    zip: null
+    city: null
+    country: null
+    configuration: 'a:2:{i:0;N;i:1;N;}'
+    twitter_name: null
+    created_at: '2011-01-21 09:51:40'
+    updated_at: '2011-01-21 09:51:40'
+    deleted_at: null
+  User_2:
+    username: rocu
+    salt: ab96c20bc238535692e1ad706cac8f4abbdebf6c
+    password: 2216b2e5444701feace96a087d333f6241ab1acd
+    status: true
+    adsense_id: null
+    last_login: '2011-01-21 13:01:22'
+    email: test@test.de
+    privacy: false
+    gender: null
+    last_ip: 127.0.0.2
+    failed_logins: '2'
+    yipps: '1000'
+    award_comment: null
+    award_story: null
+    points: null
+    mclient_salt: f9b3c12c44ef2c417eeeb80a672723999595188a
+    apikey: null
+    fb_user_id: null
+    added_from_fb: false
+    first_name: null
+    last_name: null
+    street: null
+    zip: null
+    city: null
+    country: null
+    configuration: 'a:2:{i:0;N;i:1;N;}'
+    twitter_name: null
+    created_at: '2011-01-21 09:51:40'
+    updated_at: '2011-02-11 11:32:44'
+    deleted_at: null
+  User_3:
+    username: nachrichten-muenchen.de
+    salt: 02e11ae5c8c36f976c9fde7d909357b76d100cd2
+    password: ffd8a899da2e38077bd7e3d184d765f51aad3e6b
+    status: false
+    adsense_id: null
+    last_login: '2011-01-21 09:55:05'
+    email: robert@rocu.de
+    privacy: false
+    gender: null
+    last_ip: 127.0.0.2
+    failed_logins: '0'
+    yipps: '1000'
+    award_comment: null
+    award_story: null
+    points: null
+    mclient_salt: a7e67d4a67106dce945312b0d32264f22769c495
+    apikey: null
+    fb_user_id: null
+    added_from_fb: false
+    first_name: null
+    last_name: null
+    street: null
+    zip: null
+    city: null
+    country: null
+    configuration: 'a:2:{i:0;N;i:1;N;}'
+    twitter_name: null
+    created_at: '2011-01-21 09:51:40'
+    updated_at: '2011-01-21 09:55:05'
+    deleted_at: null
+  User_4:
+    username: rocurth
+    salt: d8459d0df9849a53228c468700d92cb64d3154d0
+    password: 574995aca0939475e4c8df9226efcc88b42279a4
+    status: true
+    adsense_id: null
+    last_login: '2011-02-11 11:39:27'
+    email: robert+2@rocu.de
+    privacy: false
+    gender: null
+    last_ip: 127.0.0.1
+    failed_logins: '0'
+    yipps: '1000'
+    award_comment: null
+    award_story: null
+    points: null
+    mclient_salt: c1a118b7c48845984ad92d64bd593520a3f0be64
+    apikey: null
+    fb_user_id: null
+    added_from_fb: false
+    first_name: null
+    last_name: null
+    street: null
+    zip: null
+    city: null
+    country: null
+    configuration: 'a:2:{i:0;N;i:1;N;}'
+    twitter_name: null
+    created_at: '2011-02-11 11:34:45'
+    updated_at: '2011-02-11 11:39:27'
+    deleted_at: null
+UserOnlineLog:
+  UserOnlineLog_1:
+    User: User_4
+    created_at: '2011-02-11 11:39:27'
+    updated_at: '2011-02-11 11:39:27'
+  UserOnlineLog_2:
+    User: User_4
+    created_at: '2011-02-11 11:39:28'
+    updated_at: '2011-02-11 11:39:28'
+  UserOnlineLog_3:
+    User: User_4
+    created_at: '2011-02-11 11:39:28'
+    updated_at: '2011-02-11 11:39:28'
+  UserOnlineLog_4:
+    User: User_4
+    created_at: '2011-02-11 11:39:29'
+    updated_at: '2011-02-11 11:39:29'
+  UserOnlineLog_5:
+    User: User_4
+    created_at: '2011-02-11 11:39:29'
+    updated_at: '2011-02-11 11:39:29'
+  UserOnlineLog_6:
+    User: User_4
+    created_at: '2011-02-11 11:39:53'
+    updated_at: '2011-02-11 11:39:53'
+  UserOnlineLog_7:
+    User: User_4
+    created_at: '2011-02-11 11:39:54'
+    updated_at: '2011-02-11 11:39:54'
+  UserOnlineLog_8:
+    User: User_4
+    created_at: '2011-02-11 11:39:55'
+    updated_at: '2011-02-11 11:39:55'
+  UserOnlineLog_9:
+    User: User_4
+    created_at: '2011-02-11 11:40:00'
+    updated_at: '2011-02-11 11:40:00'
+  UserOnlineLog_10:
+    User: User_4
+    created_at: '2011-02-11 11:40:01'
+    updated_at: '2011-02-11 11:40:01'
+  UserOnlineLog_11:
+    User: User_4
+    created_at: '2011-02-11 11:40:01'
+    updated_at: '2011-02-11 11:40:01'
+  UserOnlineLog_12:
+    User: User_4
+    created_at: '2011-02-11 11:40:20'
+    updated_at: '2011-02-11 11:40:20'
+  UserOnlineLog_13:
+    User: User_4
+    created_at: '2011-02-11 11:40:23'
+    updated_at: '2011-02-11 11:40:23'
+  UserOnlineLog_14:
+    User: User_4
+    created_at: '2011-02-11 11:40:23'
+    updated_at: '2011-02-11 11:40:23'
+  UserOnlineLog_15:
+    User: User_4
+    created_at: '2011-02-11 11:40:23'
+    updated_at: '2011-02-11 11:40:23'
+  UserOnlineLog_16:
+    User: User_4
+    created_at: '2011-02-11 11:40:23'
+    updated_at: '2011-02-11 11:40:23'
+  UserOnlineLog_17:
+    User: User_4
+    created_at: '2011-02-11 11:46:02'
+    updated_at: '2011-02-11 11:46:02'
+  UserOnlineLog_18:
+    User: User_4
+    created_at: '2011-02-11 11:46:08'
+    updated_at: '2011-02-11 11:46:08'
+  UserOnlineLog_19:
+    User: User_4
+    created_at: '2011-02-11 11:47:54'
+    updated_at: '2011-02-11 11:47:54'
+  UserOnlineLog_20:
+    User: User_4
+    created_at: '2011-02-11 11:47:56'
+    updated_at: '2011-02-11 11:47:56'
+  UserOnlineLog_21:
+    User: User_4
+    created_at: '2011-02-11 11:48:04'
+    updated_at: '2011-02-11 11:48:04'
+  UserOnlineLog_22:
+    User: User_4
+    created_at: '2011-02-11 11:48:06'
+    updated_at: '2011-02-11 11:48:06'
+  UserOnlineLog_23:
+    User: User_4
+    created_at: '2011-02-11 11:48:12'
+    updated_at: '2011-02-11 11:48:12'
+  UserOnlineLog_24:
+    User: User_4
+    created_at: '2011-02-11 11:48:14'
+    updated_at: '2011-02-11 11:48:14'
+  UserOnlineLog_25:
+    User: User_4
+    created_at: '2011-02-11 11:48:15'
+    updated_at: '2011-02-11 11:48:15'
+  UserOnlineLog_26:
+    User: User_4
+    created_at: '2011-02-11 11:48:16'
+    updated_at: '2011-02-11 11:48:16'
+  UserOnlineLog_27:
+    User: User_4
+    created_at: '2011-02-11 11:48:18'
+    updated_at: '2011-02-11 11:48:18'
+  UserOnlineLog_28:
+    User: User_4
+    created_at: '2011-02-11 12:09:07'
+    updated_at: '2011-02-11 12:09:07'
+  UserOnlineLog_29:
+    User: User_4
+    created_at: '2011-02-11 12:09:21'
+    updated_at: '2011-02-11 12:09:21'
+  UserOnlineLog_30:
+    User: User_4
+    created_at: '2011-02-11 12:09:24'
+    updated_at: '2011-02-11 12:09:24'
+  UserOnlineLog_31:
+    User: User_4
+    created_at: '2011-02-11 12:09:24'
+    updated_at: '2011-02-11 12:09:24'
+  UserOnlineLog_32:
+    User: User_4
+    created_at: '2011-02-11 12:09:39'
+    updated_at: '2011-02-11 12:09:39'
+  UserOnlineLog_33:
+    User: User_4
+    created_at: '2011-02-11 12:09:42'
+    updated_at: '2011-02-11 12:09:42'
+  UserOnlineLog_34:
+    User: User_4
+    created_at: '2011-02-11 12:09:42'
+    updated_at: '2011-02-11 12:09:42'
+  UserOnlineLog_35:
+    User: User_4
+    created_at: '2011-02-11 12:09:43'
+    updated_at: '2011-02-11 12:09:43'
+  UserOnlineLog_36:
+    User: User_4
+    created_at: '2011-02-11 12:09:44'
+    updated_at: '2011-02-11 12:09:44'
+  UserOnlineLog_37:
+    User: User_4
+    created_at: '2011-02-11 12:09:45'
+    updated_at: '2011-02-11 12:09:45'
+  UserOnlineLog_38:
+    User: User_4
+    created_at: '2011-02-11 12:09:45'
+    updated_at: '2011-02-11 12:09:45'
+  UserOnlineLog_39:
+    User: User_4
+    created_at: '2011-02-11 12:10:13'
+    updated_at: '2011-02-11 12:10:13'
+  UserOnlineLog_40:
+    User: User_4
+    created_at: '2011-02-11 12:10:18'
+    updated_at: '2011-02-11 12:10:18'
+  UserOnlineLog_41:
+    User: User_4
+    created_at: '2011-02-11 12:10:34'
+    updated_at: '2011-02-11 12:10:34'
+  UserOnlineLog_42:
+    User: User_4
+    created_at: '2011-02-11 12:10:36'
+    updated_at: '2011-02-11 12:10:36'
+  UserOnlineLog_43:
+    User: User_4
+    created_at: '2011-02-11 12:10:49'
+    updated_at: '2011-02-11 12:10:49'
+  UserOnlineLog_44:
+    User: User_4
+    created_at: '2011-02-11 12:10:51'
+    updated_at: '2011-02-11 12:10:51'
+  UserOnlineLog_45:
+    User: User_4
+    created_at: '2011-02-11 12:10:51'
+    updated_at: '2011-02-11 12:10:51'
+  UserOnlineLog_46:
+    User: User_4
+    created_at: '2011-02-11 12:18:30'
+    updated_at: '2011-02-11 12:18:30'
+  UserOnlineLog_47:
+    User: User_4
+    created_at: '2011-02-11 12:18:31'
+    updated_at: '2011-02-11 12:18:31'
+  UserOnlineLog_48:
+    User: User_4
+    created_at: '2011-02-11 12:18:32'
+    updated_at: '2011-02-11 12:18:32'
+  UserOnlineLog_49:
+    User: User_4
+    created_at: '2011-02-11 12:18:32'
+    updated_at: '2011-02-11 12:18:32'
+  UserOnlineLog_50:
+    User: User_4
+    created_at: '2011-02-11 12:18:32'
+    updated_at: '2011-02-11 12:18:32'
+  UserOnlineLog_51:
+    User: User_4
+    created_at: '2011-02-11 12:18:43'
+    updated_at: '2011-02-11 12:18:43'
+  UserOnlineLog_52:
+    User: User_4
+    created_at: '2011-02-11 12:18:44'
+    updated_at: '2011-02-11 12:18:44'
+  UserOnlineLog_53:
+    User: User_4
+    created_at: '2011-02-11 12:18:44'
+    updated_at: '2011-02-11 12:18:44'
+  UserOnlineLog_54:
+    User: User_4
+    created_at: '2011-02-11 12:18:45'
+    updated_at: '2011-02-11 12:18:45'
+  UserOnlineLog_55:
+    User: User_4
+    created_at: '2011-02-11 12:18:47'
+    updated_at: '2011-02-11 12:18:47'
+  UserOnlineLog_56:
+    User: User_4
+    created_at: '2011-02-11 12:18:48'
+    updated_at: '2011-02-11 12:18:48'
+  UserOnlineLog_57:
+    User: User_4
+    created_at: '2011-02-11 12:18:48'
+    updated_at: '2011-02-11 12:18:48'
+  UserOnlineLog_58:
+    User: User_4
+    created_at: '2011-02-11 12:18:48'
+    updated_at: '2011-02-11 12:18:48'
+  UserOnlineLog_59:
+    User: User_4
+    created_at: '2011-02-11 12:18:50'
+    updated_at: '2011-02-11 12:18:50'
+  UserOnlineLog_60:
+    User: User_4
+    created_at: '2011-02-11 12:18:50'
+    updated_at: '2011-02-11 12:18:50'
+  UserOnlineLog_61:
+    User: User_4
+    created_at: '2011-02-11 12:21:20'
+    updated_at: '2011-02-11 12:21:20'
+  UserOnlineLog_62:
+    User: User_4
+    created_at: '2011-02-11 12:21:21'
+    updated_at: '2011-02-11 12:21:21'
+  UserOnlineLog_63:
+    User: User_4
+    created_at: '2011-02-11 12:21:22'
+    updated_at: '2011-02-11 12:21:22'
+  UserOnlineLog_64:
+    User: User_4
+    created_at: '2011-02-11 12:21:22'
+    updated_at: '2011-02-11 12:21:22'
+  UserOnlineLog_65:
+    User: User_4
+    created_at: '2011-02-11 12:37:44'
+    updated_at: '2011-02-11 12:37:44'
+  UserOnlineLog_66:
+    User: User_4
+    created_at: '2011-02-11 12:37:45'
+    updated_at: '2011-02-11 12:37:45'
+  UserOnlineLog_67:
+    User: User_4
+    created_at: '2011-02-11 12:37:45'
+    updated_at: '2011-02-11 12:37:45'
+  UserOnlineLog_68:
+    User: User_4
+    created_at: '2011-02-11 12:55:28'
+    updated_at: '2011-02-11 12:55:28'
+  UserOnlineLog_69:
+    User: User_4
+    created_at: '2011-02-11 12:55:40'
+    updated_at: '2011-02-11 12:55:40'
+  UserOnlineLog_70:
+    User: User_4
+    created_at: '2011-02-11 12:55:40'
+    updated_at: '2011-02-11 12:55:40'
+  UserOnlineLog_71:
+    User: User_4
+    created_at: '2011-02-11 12:55:40'
+    updated_at: '2011-02-11 12:55:40'
+  UserOnlineLog_72:
+    User: User_4
+    created_at: '2011-02-11 12:55:41'
+    updated_at: '2011-02-11 12:55:41'
+  UserOnlineLog_73:
+    User: User_4
+    created_at: '2011-02-11 12:55:41'
+    updated_at: '2011-02-11 12:55:41'
+  UserOnlineLog_74:
+    User: User_4
+    created_at: '2011-02-11 12:55:41'
+    updated_at: '2011-02-11 12:55:41'
+UserStats:
+  UserStats_1:
+    User: User_1
+    rank: null
+    yipps: null
+    comment_award: null
+    reading_award: null
+    storys_total: null
+    comments_total: null
+    external_comments_total: null
+    friends_total: null
+    external_friends_total: null
+    created_groups_total: null
+    joined_groups_total: null
+    external_yiggs_total: null
+    yiggs_total: null
+    story_renders_total: null
+    last_calculated: null
+  UserStats_2:
+    User: User_2
+    rank: null
+    yipps: null
+    comment_award: null
+    reading_award: null
+    storys_total: null
+    comments_total: null
+    external_comments_total: null
+    friends_total: null
+    external_friends_total: null
+    created_groups_total: null
+    joined_groups_total: null
+    external_yiggs_total: null
+    yiggs_total: null
+    story_renders_total: null
+    last_calculated: null
+  UserStats_3:
+    User: User_3
+    rank: null
+    yipps: null
+    comment_award: null
+    reading_award: null
+    storys_total: null
+    comments_total: null
+    external_comments_total: null
+    friends_total: null
+    external_friends_total: null
+    created_groups_total: null
+    joined_groups_total: null
+    external_yiggs_total: null
+    yiggs_total: null
+    story_renders_total: null
+    last_calculated: null
+  UserStats_4:
+    User: User_4
+    rank: null
+    yipps: null
+    comment_award: null
+    reading_award: null
+    storys_total: null
+    comments_total: null
+    external_comments_total: null
+    friends_total: null
+    external_friends_total: null
+    created_groups_total: null
+    joined_groups_total: null
+    external_yiggs_total: null
+    yiggs_total: null
+    story_renders_total: null
+    last_calculated: null
+YippHistory:
+  YippHistory_1:
+    User: User_1
+    consensus_id: null
+    amount: '1000'
+    type: '6'
+    balance: '1000'
+    deleted_at: null
+    created_at: '2011-02-11 11:22:32'
+    updated_at: '2011-02-11 11:22:32'
+  YippHistory_2:
+    User: User_2
+    consensus_id: null
+    amount: '1000'
+    type: '6'
+    balance: '1000'
+    deleted_at: null
+    created_at: '2011-02-11 11:22:33'
+    updated_at: '2011-02-11 11:22:33'
+  YippHistory_3:
+    User: User_3
+    consensus_id: null
+    amount: '1000'
+    type: '6'
+    balance: '1000'
+    deleted_at: null
+    created_at: '2011-02-11 11:22:33'
+    updated_at: '2011-02-11 11:22:33'
+  YippHistory_4:
+    User: User_4
+    consensus_id: null
+    amount: '1000'
+    type: '6'
+    balance: '1000'
+    deleted_at: null
+    created_at: '2011-02-11 11:34:45'
+    updated_at: '2011-02-11 11:34:45'

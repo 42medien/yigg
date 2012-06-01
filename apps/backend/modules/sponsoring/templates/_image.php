@@ -1,0 +1,1 @@
+<?php  echo avatar_tag($sponsoring->Image, "sponsoring-bg.png", 300, 50); ?>

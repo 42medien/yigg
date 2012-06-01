@@ -1,0 +1,11 @@
+default:
+  enabled:     false
+  with_layout: false
+  lifetime:    86400
+
+serveStatic:
+  enabled: true
+
+_sharedAdsenseAd:
+  enabled:     true
+  lifetime:    600

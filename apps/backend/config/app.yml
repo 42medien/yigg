@@ -1,0 +1,62 @@
+all:
+  mail:
+    webmaster:    gow@yigg.de
+    contact:      gow@yigg.de
+    admin:        staff@yigg.de
+    billing:      staff@yigg.de
+    tech:         hacker@yigg.de
+
+  twitter:
+    username:     yigg_marvin
+    password:     1t37YQIraV2M
+    via:          '<a href="http://yigg.de">YiGG.de</a>'
+    consumerKey:  KEAYFKXo76Lk3g6mXh4kkA
+    consumerSecret: sKjkiBuEWi1OrJOl7deUcrqCCPmvOGu6NbPAgOK0o
+    status_url:   'http://twitter.com/home/?status='
+
+  api:
+   call_limit:    100
+   time_limit:    3600  #fix me namespacing
+
+  highloadMeasures:
+    highLoad:     8
+    minStoryAge:  <?php echo 60*60*24*30*6; ?>
+
+  facebook:
+    id:           89180077820
+    apikey:       f880c4c26112962368bcd051d767bc9d
+    secret:       d35eeb0d88f5502f85079e53a384b366
+    status_url:   'http://www.facebook.com/share.php'
+    merge_timeout: <?php echo 60 * 60 * 24 * 7 ?> # time in seconds to show the merge icon in the navgiation. (7 days)
+    check_timeout: <?php echo 60 * 60 *6 ?>
+
+  paypal:
+    username:     staff_api1.yigg.de
+    password:     BJ5NQAKTN3L68LFZ
+    signature:    AnMrNANDKDpi3tAjRkAwN7ydC2g-AL1QxLt1tkumYK0ubix972dhN7gf
+    testmode:     false
+    #username:     staff_1225096135_biz_api1.yigg.de                        # test account
+    #password:     EXE6ATVFBFC3B76A                                         # test account
+    #signature:    AYmGLbwrfjaNX9Q3kEKCXZzOTIQzAlOWbEznsyvcXF4NVgxvG6l3-BEF # test account
+
+  front_page:
+    twitter:         false
+    banners:         false
+
+  storyDetail:
+    ratings: 8  # Number of ratings that are displayed in the ratings-widget
+    related:
+      number: 5 # Number of related stories that are displayed in the related-stories widget
+
+  videochat:
+    enabled: false
+
+  sponsoring:
+    terms:
+      1:             '1 Monat'
+      3:             '3 Monate'
+      6:             '6 Monate'
+    discount:                                         # the sponsoring discount for each extra month. ie price * term * term_discount
+      1:              1.0
+      3:              0.85
+      6:              0.80

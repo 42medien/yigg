@@ -1,0 +1,30 @@
+all:
+  cleaner:
+    default:
+      Attr.DefaultImageAlt: ''
+      AutoFormat.DisplayLinkURI: false
+      AutoFormat.RemoveEmpty: true
+      AutoFormat.RemoveEmpty.RemoveNbsp: true
+      AutoFormat.AutoParagraph: true
+      AutoFormat.Linkify: true
+      Cache.SerializerPath: "/srv/memory_cache/"
+      CSS.AllowedProperties: ''
+      Core.EscapeNonASCIICharacters: true
+      Core.Language: de
+      HTML.Allowed: 'p,em,strong,ul,ol,li,del,blockquote[cite],a[href],br'
+      HTML.TidyLevel: heavy
+      HTML.Doctype: 'XHTML 1.1'
+
+    summarys:
+      Attr.DefaultImageAlt: ''
+      AutoFormat.DisplayLinkURI: false
+      AutoFormat.RemoveEmpty: true
+      AutoFormat.RemoveEmpty.RemoveNbsp: true
+      AutoFormat.AutoParagraph: false
+      Cache.SerializerPath: "/srv/memory_cache/"
+      CSS.AllowedProperties: ''
+      Core.EscapeNonASCIICharacters: true
+      Core.Language: de
+      HTML.Allowed: 'p,em,blockquote[cite]'
+      HTML.TidyLevel: heavy
+      HTML.Doctype: 'XHTML 1.1'

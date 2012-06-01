@@ -1,0 +1,42 @@
+default:
+  is_secure: true
+
+twitterUserProfile:
+  is_secure: false
+
+publicProfile:
+  is_secure: false
+
+login:
+  is_secure: false
+
+logout:
+  is_secure: false
+
+register:
+  is_secure: false
+
+resetPassword:
+  is_secure: false
+
+changePasswordWithKey:
+  is_secure: false
+
+checkBenutzername:
+  is_secure: false
+
+checkEmail:
+  is_secure: false
+
+verifyChangedEmail:
+  is_secure: false
+
+checkPasswort:
+  is_secure: false
+
+authenticateUser:
+  is_secure: false
+
+delete:
+  is_secure: true
+  credentials: [MODERATOR, ADMIN]

@@ -1,0 +1,16 @@
+bestStoriesSuccess:
+  metas:
+    description:  Auf YiGG kannst Du Nachrichten lesen, bewerten, kommentieren und eigene Artikel verfassen. Bei YiGG entscheiden die Benutzer selbst, was interessant ist.
+    keywords:     YiGG, social news, Nachrichten, Bookmarks, Diskussionen, Neuigkeiten, Unterhaltung, Technik, Hamster, Web 2.0, Marvin
+
+newStoriesSuccess:
+  metas:
+    title:        Alle neu eingestellten Beiträge der letzten 24 Stunden
+    description:  Unter Neueste Nachrichten findest du die topaktuellen Nachrichten der letzten 24 Stunden auf YiGG.
+
+archiveSuccess:
+  metas:
+    title:        Nachrichtenarchiv - Die besten Nachrichten der vergangenen Jahre - YiGG.de
+    description:  In unserem Archiv findest Du die besten Nachrichten aus den vergangenen Jahren.
+    keywords:     YiGG, social news, nachrichten, bookmarks
+

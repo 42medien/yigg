@@ -1,0 +1,24 @@
+---
+# used in the yiggValidatorEmail class, for checking if a domain is valid.
+all:
+  email:
+    invalidDomains:
+      - mailinator.com
+      - trash2009.com
+      - mailexpire.com
+      - maileater.com
+      - jetable.com
+      - spambox.us
+      - guerrillamailblock.com
+      - tyldd.com
+      - tempomail.fr
+      - tempemail.net
+      - spamfree24.org
+      - kasmail.com
+      - spammotel.com
+      - spamspot.com
+      - spam.la
+      - yopmail.com
+      - unique-papers.com
+      - mail333.com
+      - wegwerfemail.de

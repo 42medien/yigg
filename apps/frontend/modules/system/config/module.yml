@@ -1,0 +1,13 @@
+soap:
+  xdReceiver: { enable: false }
+  domainStats: { enable: false }
+  twitterCallback: { enable: false }
+  redirect: { enable: false }
+  serveStatic: { enable: false }
+  error404: { enable: false }
+  secure: { enable: false }
+  login: { enable: false }
+  disabled: { enable: false }
+  bugReport: { enable: false }
+  pingdom: { enable: false }
+  stats: { enable: false }

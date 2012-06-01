@@ -1,0 +1,399 @@
+tag_show:
+  url:    /tags
+  param:  { module: tag, action: show }
+
+tag_subscribe:
+  url:    /tags/subscription/:tag_id
+  param:  { module: tag, action: changeSubscription }
+
+comment_actions:
+  url:    /kommentare/:action/:object/:id/:ref_id
+  param:  { module: comment, ref_id: 0}
+  requirements:
+    id: \d+
+    action: \w+
+    ref_id: \d+
+    object: \w+
+
+# Search
+search:
+  url:    /search
+  param: { module: search, action: search}
+
+instant_create:
+  url:   /nachrichten/instant-create
+  param: {module: story, action: instantCreate}
+
+# Sponsoring
+sponsoring_place:
+  url:   /sponsoring/place/:id
+  param: { module: sponsoring, action: showSponsoringPlace }
+  requirements: { id: \d+ }
+
+sponsoring_paypal_cancel:
+  url:   /sponsoring/:id/paypal/cancel
+  param: { module: sponsoring, action: payPalCancel }
+
+sponsoring_paypal_success:
+  url:   /sponsoring/:id/paypal/success
+  param: { module: sponsoring, action: payPalSuccess }
+  requirements: { id: \d+ }
+
+sponsoring_call:
+  url:   /sponsoring/:id
+  param: { module: sponsoring, action: handleCall }
+  requirements: { id: \d+ }
+
+sponsoring_order_complete:
+  url:   /sponsoring/order/success/:id
+  param: { module: sponsoring, action: orderComplete }
+  requirements: { id: \d+ }
+
+sponsoring_order:
+  url:   /sponsoring/order/:id
+  param: { module: sponsoring, action: order, id: 1 }
+  requirements: { id: \d+ }
+
+sponsoring_order_preview:
+  url:   /sponsoring/order/preview/:id
+  param: { module: sponsoring, action: orderPreview }
+  requirements: { id: \d+ }
+
+sponsoring:
+  url:   /sponsoring
+  param: { module: sponsoring, action: list }
+
+sponsoring_edit:
+  url:  /sponsoring/:id/edit
+  param: { module: sponsoring, action: edit }
+
+
+# Domain
+domain_show:
+  url:   /domain/:id
+  param: { module: domain, action: show }
+
+domain_subscribe:
+  url:   /domain/:id/changeSubscription
+  param: { module: domain, action: changeSubscription }
+
+# Spy
+spy:
+  url:    /spion
+  param:  { module: spy, action: spy}
+
+spy_latestNodes:
+  url:    /spion/latestNodes
+  param:  { module: spy, action: latestNodes}
+
+# worldspy
+worldspy:
+  url:    /weltspion
+  param:  { module: worldspy, action: worldSpy}
+  
+worldspy_top:
+  url:    /weltspion/top-stories
+  param:  { module: worldspy, action: topStories}
+
+worldspy_search:
+  url:    /weltspion/search/:query
+  param:  { module: worldspy, action: worldSpy, query: false}
+  requirements:
+    query: "[\w_\-\.\+]+"
+
+worldspy_latestNodes:
+  url:    /weltspion/latestNodes
+  param:  { module: worldspy, action: latestNodes }
+
+worldspy_create_story:
+  url:    /weltspion/erstellen/:node_id
+  param:  { module: worldspy, action: createStoryFromNode}
+  requirements: { node_id: \d+ }
+
+worldspy_node:
+  url:    /weltspion/:node_id
+  param:  { module: worldspy, action: showNode}
+  requirements: { node_id: \d+ }
+
+worldspy_delete_entry:
+  url:    /weltspion/:id/delete
+  param:  { module: worldspy, action: deleteEntry}
+  requirements: { node_id: \d+ }
+
+# Story Presentation
+best_stories:
+  url:    /
+  param:  { module: story, action: bestStories, filter: heute, rss: true}
+
+best_stories_rss:
+  url:    /:sf_format/beste-nachrichten
+  param:  { module: story, action: bestStories}
+  requirements:
+    sf_format: atom
+
+new_stories:
+  url:    /neueste-nachrichten
+  param:  { module: story, action: newStories, rss: true}
+
+new_stories_rss:
+  url:    /:sf_format/neueste-nachrichten
+  param:  { module: story, action: newStories}
+  requirements:
+    sf_format: atom
+
+stories_button:
+  url:    /nachrichten/button
+  param:  { module: story, action: externalRate }
+
+stories_button_id:
+  url:    /nachrichten/button/:id
+  param:  { module: story, action: externalRate }
+
+stories_flat_button:
+  url:    /nachrichten/flatbutton
+  param:  { module: story, action: externalRate, flat: true}
+
+# User
+user_welcome_ajax:
+  url:    /profil/mein-yigg/ajax/:widget
+  param:  { module: user, action: myYigg}
+
+user_welcome:
+  url:    /profil/mein-yigg/:filter
+  param:  { module: user, action: myYigg, filter: meine-freunde}
+
+
+user_settings:
+  url: /profil/einstellungen/:view
+  param: { module: user, action: settings, view: none}
+
+user_my_profile:
+  url: /profil/mein-profil/:view/:id
+  param: { module: user, action: myProfile, view: none, id: 0 }
+
+user_friends_modify:
+  url:    /profil/favoriten-und-freunde/friends/:list/:username
+  param:   { module: user, action: modifyFriends, username: 'marvin'}
+  requirements:
+    username: (\w|\.|\-|\_)*
+
+user_register:
+  url:    /profil/register
+  param:  { module: user, action: register }
+
+user_register_key:
+  url:    /profil/register/authenticate/:key
+  param:  { module: user, action: authenticateUser }
+
+user_delete:
+  url:    /profil/:username/delete
+  param:  { module: user, action: delete}
+  requirements:
+    username: "[\w_\-\.]+"
+
+user_verify_changed_email:
+  url:  /profil/verify_changed_mail/:hash/:secret
+  param:  { module: user, action: verifyChangedEmail}
+
+
+user_atom:
+  url:    /:sf_format/profil/:username/:filter
+  param:  { module: user, action: publicProfile, filter: neueste}
+  requirements:
+    username: "[\w_\-\.]+"
+    sf_format: atom
+
+user_public_profile:
+  url:    /profil/:username/:filter
+  param:  { module: user, action: publicProfile, filter: neueste}
+  requirements:
+    username: "[\w_\-\.]+"
+    
+twitter_user_profile:
+  url:    /tweeple/:username
+  param: { module: user, action: twitterUserProfile}
+  requirements:
+    username: "[\w_\-\.]+"
+
+# At-Page
+notification_index:
+  url: /notifications/:id
+  param: { module: atPage, action: index, id: false}
+  requirements: { id: \d+ }
+notification_tasks:
+  url: /notifications/task/:task/:id
+  param: { module: atPage, action: notificationTask}
+  requirements: { id: \d+ }
+
+notification_views:
+  url: /notifications/:view
+  param: { module: atPage, action: notificationShow}
+
+postbox_delete:
+  url: /postbox/delete/:postbox
+  param: { module: atPage, action: notificationShow}
+
+postbox_tasks:
+  url: /postbox/task/:task/:id
+  param: { module: atPage, action: notificationShow}
+
+postbox_views:
+  url: /postbox/:view
+  param: { module: atPage, view: inbox, action: notificationShow}
+
+# User Actions
+user_login:
+  url:    /login
+  param:  { module: user, action: login}
+
+user_logout:
+  url:    /logout
+  param:  { module: user, action: logout}
+
+user_reset_password:
+  url:    /user/resetPassword
+  param:  { module: user, action: resetPassword}
+
+user_change_password_with_key:
+  url:    /user/changepassword/key/:ResetKey
+  param:  { module: user, action: changePasswordWithKey }
+
+pingdom:
+  url:    /pingdom
+  param:  { module: system, action: pingdom }
+
+
+internal_stats:
+  url:      /team/stats
+  param:    { module: system, action: stats}
+
+#Static
+
+legal_pages:
+  url:    /nutzungsbedingungen/:template
+  param:  { module: system, action: serveStatic}
+
+
+bug_report:
+  url: /ueber-uns/bugreport
+  param: { module: system, action: bugReport}
+
+about_pages:
+  url:    /ueber-uns/:template
+  param:  {  module: system, action: serveStatic}
+
+# Story Show
+story_archive:
+  url: /nachrichten/:year/:month/:day
+  param:  { module: story, action: archive, year: 2011, month: false, day: false}
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+
+story_create:
+  url:    /nachrichten/erstellen
+  param:  { module: story, action: create, view: Normal}
+
+story_create_ext:
+  url:    /neu
+  param:  { module: story, action: create, view: Normal}
+
+story_create_ext_validation:
+  url:    /neu/:action
+  param:  { module: story}
+
+story_create_article:
+  url:    /nachrichten/erstellen/artikel
+  param:  { module: story, action: create, view: Article}
+
+story_create_validatation:
+  url:    /nachrichten/erstellen/artikel/:action
+  param:  { module: story, view: Article }
+
+story_create_validation:
+  url:    /nachrichten/erstellen/:action
+  param:  { module: story, view: Normal }
+  requirements:
+    sf_method: post
+    action: check.*
+
+story_edit_validation:
+  url:    /nachrichten/:year/:month/:day/:slug/edit/:action
+  param:  { module: story}
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+
+
+story_rate:
+  url:  /nachrichten/:year/:month/:day/:slug/rate
+  param:  { module: story, action: rate }
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+
+
+story_feed:
+  url:  /:sf_format/nachrichten/:year/:month/:day/:slug/:view
+  param:  { module: story, action: show, view: show }
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+    sf_format: atom
+
+story_edit:
+  url:  /nachrichten/:year/:month/:day/:slug/edit
+  param:  { module: story, action: edit}
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+
+story_delete:
+  url:  /nachrichten/:year/:month/:day/:slug/delete
+  param:  { module: story, action: delete }
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+
+
+story_show:
+  url:  /nachrichten/:year/:month/:day/:slug/:view
+  param:  { module: story, action: show, view: show, rss: 1}
+  requirements:
+    day: \d{1,2}
+    month: \d{1,2}
+    year: \d{4,4}
+
+story_redirect_old:
+  url: /:category/:slug
+  param: { module: story, action: redirectOld }
+
+worldspy_validation:
+  url:    /weltspion/alles/:action
+  param:  { module: story }
+
+worldspy_validation:
+  url:    /weltspion/:node_id/:action
+  param:  { module: story }
+
+newpost:
+  url:   /newpost.php
+  param: { module: system, action: redirect, to: '@story_create' }
+
+spy_redirect:
+  url:    /spy
+  param:  { module: system, action: redirect, to: '@spy' }
+
+feed:
+  url:   /feed
+  param: { module: system, action: redirect, to: 'http://yigg.de/atom/beste-nachrichten' }
+
+weltspion_redirect:
+  url:   /weltspion
+  param: { module: system, action: redirect, to: '@worldspy' }

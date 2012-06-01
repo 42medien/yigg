@@ -1,0 +1,11 @@
+default:
+  is_secure: true
+
+tweet:
+  is_secure: false
+
+login:
+  is_secure: false
+
+create:
+  is_secure: true

@@ -1,0 +1,21 @@
+soap:
+  bestStories: { enable: false }
+  newStories: { enable: false }
+  archive: { enable: false }
+  show: { enable: false }
+  showStoriesWithTags: { enable: false }
+  create: { enable: false }
+  addClick: { enable: false }
+  edit: { enable: false }
+  delete: { enable: false }
+  rate: { enable: false }
+  checkExternal_url: { enable: false }
+  checkTitle: { enable: false }
+  checkEmail: { enable: false }
+  checkTags: { enable: false }
+  checkDescription: { enable: false }
+  oldStorySupport: { enable: false }
+  externalRate: { enable: false }
+  latestNodes: { enable: false }
+  tweet: { enable: false }
+  facebook: { enable: false }
