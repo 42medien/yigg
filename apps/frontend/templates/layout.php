@@ -65,8 +65,7 @@
                     e.setAttribute('language', 'javascript');
                     e.setAttribute('type', 'text/javascript');
                     e.setAttribute('src',
-                    (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/"
-                        [^] : "http://static.chartbeat.com/" [^]) + "js/chartbeat.js");
+                    (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
                     document.body.appendChild(e);
                 }
                 var oldonload = window.onload;
