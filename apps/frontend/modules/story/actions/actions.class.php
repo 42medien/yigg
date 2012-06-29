@@ -177,10 +177,9 @@ class storyActions extends yiggActions
    */
   public function executeCreate( $request )
   {
-      die;
     if(false === $this->getUser()->getUser()->hasPostingStoryPermissions())
     {
-      return sfView::ERROR;
+      //return sfView::ERROR;
     }
 
     $this->getResponse()->addMeta('robots',  'noindex, follow' );
