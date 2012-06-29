@@ -32,8 +32,9 @@ class User extends BaseUser
       return true;
     }
 
-    return $stats->yiggs_total >= sfConfig::get("app_user_minYiggs", 100)
-           && $stats->friends_total >= sfConfig::get("app_user_minFriends", 3);
+    return true;
+    //return $stats->yiggs_total >= sfConfig::get("app_user_minYiggs", 100)
+           //&& $stats->friends_total >= sfConfig::get("app_user_minFriends", 3);
   }
 
   public function hasAvatar()
