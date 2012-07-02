@@ -9,7 +9,7 @@
     </div>
   <?php endif; ?>
    <h3 class="entry-title">
-     <?php if($story["type"] == Story::TYPE_NORMAL):?>
+     <?php if(false):?>  //$story["type"] == Story::TYPE_NORMAL
        <?php echo link_to($story->title, $story["external_url"], array("title" => $story->title, "rel" => "external"));?>
      <?php else:?>
        <?php echo link_to_story($story->title, $story, array("title" => $story->title));?>
