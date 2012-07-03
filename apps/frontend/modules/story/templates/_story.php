@@ -34,6 +34,10 @@
        <?php else:?>
           <?php echo $story->getPresentationDescription(ESC_RAW);?>
        <?php endif;?>
+       <?php
+         $external_url_title = parse_url($story["external_url"])
+         ?>
+       <?php echo link_to('mehr bei '.$external_url_title['host'], $story["external_url"], array("title" => $story->title, "rel" => "external"));?>
      </p>
 
         <?php if(isset($total) && $total > 9 &&
