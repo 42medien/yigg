@@ -1,14 +1,14 @@
 <h2>Impressum </h2>
-<strong>Adressen:</strong>yigg GmbH<br />
+<strong>Adresse:</strong> yigg GmbH<br />
 <address>Schulstrasse 8 <br />
 69469 Weinheim<br /></address>
-<strong>eMail:</strong>info@ekaabo.com<br />
-<strong>Telefon:</strong>06201 . 845 200<br />
- <strong>Fax:</strong>06201 . 845 20 29<br />
-<strong>Geschäftsführer:</strong>Marco Ripanti<br />
-<strong>Handelsregister:</strong>beantragt<br />
-<strong>USt-IdNr.:</strong>beantragt<br />
-<strong>Gerichtsstand:</strong>Mannheim<br />
+<strong>eMail:</strong> info@ekaabo.com<br />
+<strong>Telefon:</strong> 06201 . 845 200<br />
+ <strong>Fax:</strong> 06201 . 845 20 29<br />
+<strong>Geschäftsführer:</strong> Marco Ripanti<br />
+<strong>Handelsregister:</strong> beantragt<br />
+<strong>USt-IdNr.:</strong> beantragt<br />
+<strong>Gerichtsstand:</strong> Mannheim<br />
 <p>
   <h3>Inhaltlich verantwortlicher Ansprechpartner:</h3>
   <p>
