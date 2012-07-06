@@ -1,5 +1,5 @@
 <h2>Impressum </h2>
-<strong>Adresse:</strong>yigg GmbH<br />
+<strong>Adressen:</strong>yigg GmbH<br />
 <address>Schulstrasse 8 <br />
 69469 Weinheim<br /></address>
 <strong>eMail:</strong>info@ekaabo.com<br />
