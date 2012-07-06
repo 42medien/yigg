@@ -84,7 +84,7 @@
                 );
            ?>
        </h3>
-       <?php var_dump($story); ?>
+       <?php //var_dump($story); ?>
     </div>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
