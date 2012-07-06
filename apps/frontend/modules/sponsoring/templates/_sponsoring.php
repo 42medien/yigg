@@ -30,7 +30,7 @@
     <?php for($i=0; $i < $place->placesLeft(); $i++): ?>
         <!--  Sponsorship placeholders -->
         <div class="sponsorship preview">
-            <?php if($place->intern_url == "@best_stories"):?>
+            <?php if($place->intern_url == "@best_stories" AND $place->width < 200):?>
             <p><strong>Ihre Anzeige hier? Buchen Sie jetzt?</strong>
             <?php else:?>
             <p><strong>Diese Anzeige kostet <?php echo "{$place->price} Euro/Woche";?></strong>
