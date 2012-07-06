@@ -1,4 +1,4 @@
-<?php var_dump($story); ?>
+<?php //var_dump($story); ?>
 <?php echo tag( isset($total) && $total > 1 ? "li" : "div", array("class"=>"hentry post ", "id"=>"story_{$story['id']}"), true);?>
   <?php use_helper("Date"); ?>
   <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
