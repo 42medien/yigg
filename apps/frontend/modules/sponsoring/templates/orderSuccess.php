@@ -3,29 +3,30 @@
 
 <form id="FormSponsoring" action="<?php echo url_for( $place->getOrderLink()) ;?>" method="post" class="ninjaForm" enctype="multipart/form-data">
 
-  <fieldset>
-    <?php if( $sf_user->hasFlash('Sponsoring:error') ):?>
-      <span id="error" class="error_message"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
-    <?php endif; ?>
+    <fieldset>
+        <?php if( $sf_user->hasFlash('Sponsoring:error') ):?>
+        <span id="error" class="error_message"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
+        <?php endif; ?>
 
-    <?php if( $sf_user->hasFlash('Sponsoring:notice') ):?>
-      <span id="notice"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
-    <?php endif; ?>
+        <?php if( $sf_user->hasFlash('Sponsoring:notice') ):?>
+        <span id="notice"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
+        <?php endif; ?>
 
-    <?php if( isset($invitation) ):?>
-    <span id="notice">Willkommen, <?php echo $invitation->name;?> Deine Einladung von <?php echo $invitation->User->username; ?>  wurde geladen.</span>
-    <?php endif; ?>
+        <?php if( isset($invitation) ):?>
+        <span id="notice">Willkommen, <?php echo $invitation->name;?> Deine Einladung von <?php echo $invitation->User->username; ?>  wurde geladen.</span>
+        <?php endif; ?>
 
-    <span id="notice">Bildformate werden automatisch angepasst</span>
+        <span id="notice">Bildformate werden automatisch angepasst</span>
 
-    <?php if( isset($image) && $image !== false): ?>
-      <div class="field sponsoring image">
-        <?php echo avatar_tag($image, "sponsoring-bg.png", $place->width, $place->height);?>
-      </div>
-    <?php endif; ?>
+        <?php if( isset($image) && $image !== false): ?>
+        <div class="field sponsoring image">
+            <?php echo avatar_tag($image, "sponsoring-bg.png", $place->width, $place->height);?>
+        </div>
+        <?php endif; ?>
 
-    <?php echo $form->render(); ?>
+        <?php echo $form->render(); ?>
 
+        <?php /*?>
     <div id="sponsoring_place_price" class="field" >
       <label>Preis:</label>
       <div id="sponsoring_place_price_id">
@@ -37,20 +38,22 @@
         <span id="total"></span>
         (<span id="weeks"></span> Wochen x € <span id="total2"></span> inklusive <span id="discount"></span> % Rabatt)
       </div>
-
+    </div>
       <?php
+ */
         $max_id = SponsoringPlace::getLastId();
 
         $multipliers = '';
         foreach( sfConfig::get("app_sponsoring_discount") as $k => $v )
         {
-          $multipliers .= "multipliers[$k] = $v; \n";
+            $multipliers .= "multipliers[$k] = $v; \n";
         }
 
         echo javascript_tag(
-          '
+            '
             function updatePrice()
             {
+            /*
               var multipliers = new Array();
               ' . $multipliers .'
 
@@ -72,6 +75,7 @@
               document.getElementById("discount").innerHTML = 100 - (multipliers[ weeks ] * 100 );
 
               document.getElementById("total").innerHTML = price;
+              */
             }
 
             function showSponsoringPlace()
@@ -81,16 +85,15 @@
               window.open(url);
             }
 
-            updatePrice();
+            //updatePrice();
           '
         );
-      ?>
-  </div>
+        ?>
 
-  <div class="actions" style="margin-left:150px;">
-     <input type="submit" name="preview" value="Vorschau " id="submit" class="button" onclick="doPreview()" />
-     <input type="submit" name="order" value="Mit PayPal bezahlen" id="submit" class="button" />
-  </div>
+        <div class="actions" style="margin-left:150px;">
+            <input type="submit" name="preview" value="Vorschau " id="submit" class="button" onclick="doPreview()" />
+            <input type="submit" name="order" value="Mit PayPal bezahlen" id="submit" class="button" />
+        </div>
 
-  </fieldset>
+    </fieldset>
 </form>
