@@ -2,24 +2,24 @@
 <h2>Kontakt</h2>
 <h3>Adresse:</h3>
 <p>
-  YiGG GmbH<br /></p>
-  <address>Steinkirchner Strasse 31<br />
-  81475 München
+  yigg GmbH<br /></p>
+  <address>Schulstrasse 8<br />
+  69469 Weinheim
   </address>
- <p>eMail: info@yigg.de<br />
-  Phone: 0049 (89) 72483658<br />
-   Fax: 0049 (89) 72483659
+ <p>eMail: info@ekaabo.com<br />
+  Phone: 06201 . 845 200<br />
+   Fax: 06201 . 845 20 29
 </p>
 
 <h2>Online-Werbung</h2>
 <address>
-  Michael Reuter<br />
-  Steinkirchner Strasse 31<br />
-  81475 München<br />
+  Marco Ripanti<br />
+  Schulstrasse 8<br />
+  69469 Weinheim<br />
 </address>
 <p>
-eMail: info@yigg.de<br />
-Phone: 0049 (89) 72483658<br />
+eMail: info@ekaabo.com<br />
+Phone: 06201 . 845 200<br />
 </p>
 
 <?php slot("sidebar")?>
