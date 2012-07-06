@@ -1,14 +1,14 @@
 <h2>Impressum </h2>
-<strong>Adresse:</strong>YiGG GmbH<br />
-<address>Steinkirchner Strasse 31<br />
-81475 München<br /></address>
-<strong>eMail:</strong>info@yigg.de<br />
-<strong>Telefon:</strong>+49 (0) 89 72483658<br />
- <strong>Fax:</strong>+49 (0) 89 72483659<br />
-<strong>Geschäftsführer:</strong>Michael Reuter<br />
-<strong>Handelsregister:</strong>HRB 166846, Amtsgericht München<br />
-<strong>USt-IdNr.:</strong> DE254496480<br />
-<strong>Gerichtsstand:</strong>München<br />
+<strong>Adresse:</strong>yigg GmbH<br />
+<address>Schulstrasse 8 <br />
+69469 Weinheim<br /></address>
+<strong>eMail:</strong>info@ekaabo.com<br />
+<strong>Telefon:</strong>06201 . 845 200<br />
+ <strong>Fax:</strong>06201 . 845 20 29<br />
+<strong>Geschäftsführer:</strong>Marco Ripanti<br />
+<strong>Handelsregister:</strong>beantragt<br />
+<strong>USt-IdNr.:</strong>beantragt<br />
+<strong>Gerichtsstand:</strong>Mannheim<br />
 <p>
   <h3>Inhaltlich verantwortlicher Ansprechpartner:</h3>
   <p>
