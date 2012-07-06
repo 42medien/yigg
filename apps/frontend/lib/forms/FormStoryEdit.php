@@ -126,11 +126,11 @@ class FormStoryEdit extends yiggForm
               ),
               'description' => new yiggValidatorPlainText(
                   array(
-                    'min_length' => 60,
+                    'min_length' => 10,
                   ),
                   array(
                     'required'  => 'Die Story braucht eine Beschreibung',
-                    'min_length'=> 'Diese Beschreibung ist zu kurz. Bitte schreibe mindestens 60 Zeichen.',
+                    'min_length'=> 'Diese Beschreibung ist zu kurz. Bitte schreibe mindestens 10 Zeichen.',
                   )
               ),
               'Tags'  => new yiggValidatorTag(
