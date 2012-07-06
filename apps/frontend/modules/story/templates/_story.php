@@ -74,7 +74,7 @@
 		    <div class="clr"><!--  --></div>
 
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>"><?php echo link_to_story(
-       "Kommmentare: (".$story->currentCommentCount().") ",
+       "Kommentare: (".$story->currentCommentCount().") ",
        $story,
        array(
          "title" => "Die Kommentare zu dieser Nachricht lesen &quot;{$story['title']}&quot;"
