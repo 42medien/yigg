@@ -2,7 +2,9 @@ all:
   yigg:
     class: sfDoctrineDatabase
     param:
-      dsn: mysql://root:root@localhost/yigg_devel
+      dsn: 'mysql:host=localhost;dbname=yigg_devel'
+      username: yigg_devel
+      password: k3ZrU=(GyedFmS[s%/3)yI8iYHq>*6
       attributes:
         use_dql_callbacks: true
         validate: true
