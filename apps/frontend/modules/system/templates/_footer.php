@@ -17,7 +17,7 @@
       </ul>
     </div>
     -->
-    <div class="three">
+    <div class="two">
       <h4>Nutzungsbestimmungen</h4>
       <ul class="end">
           <li><?php echo link_to('Verhaltensrichtlinien', '@legal_pages?template=verhaltensrichtlinien', array('title' => 'Verhaltensrichtlinien')); ?></li>
