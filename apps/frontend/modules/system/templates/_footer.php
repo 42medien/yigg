@@ -9,13 +9,14 @@
         <li><?php echo link_to("YiGG-Blog","http://yiggblog.wordpress.com/",array("title" => "Neuigkeiten über YiGG")); ?></li>
       </ul>
     </div>
+   <!--<li><?php echo link_to('YiGGSponsorings-FAQ', '@about_pages?template=yigg-sponsoring', array('title' => 'YiggSponsorings')) ?></li>
     <div class="two">
       <h4>Hilfe</h4>
       <ul>
         <li><?php echo link_to('YiGG Hilfecenter', 'http://hilfe.yigg.de', array('rel' => 'help', 'title' => 'Oft gestellte Fragen')); ?></li>
-        <!--<li><?php echo link_to('YiGGSponsorings-FAQ', '@about_pages?template=yigg-sponsoring', array('title' => 'YiggSponsorings')) ?></li>-->
       </ul>
     </div>
+    -->
     <div class="three">
       <h4>Nutzungsbestimmungen</h4>
       <ul class="end">
