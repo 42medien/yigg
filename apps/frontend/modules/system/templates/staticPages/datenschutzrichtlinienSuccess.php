@@ -4,9 +4,9 @@
       &bdquo;<a href="http://yigg.de/">http://yigg.de</a>&rdquo; ist eine Online-Plattform (nachfolgend
       &bdquo;Website&rdquo;) von:
     </p>
- <address>YiGG GmbH<br />
- Johann-Clanze-Strasse 28c<br />
- 81369 München</address>
+ <address>YiGG GmbH<br /> 
+ Schulstrasse 8<br />
+ 69469 Weinheim</address>
 <p>
   (nachfolgend auch &bdquo;YiGG&rdquo;)
 </p>
