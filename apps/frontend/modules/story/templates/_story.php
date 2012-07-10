@@ -74,17 +74,20 @@
 		    <div class="clr"><!--  --></div>
 
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
-           <?php echo link_to_story(
-                "Kommentare: (".$story->currentCommentCount().") ",
-                $story,
-                array(
-                        "title" => "Die Kommentare zu dieser Nachricht lesen &quot;{$story['title']}&quot;"
-                    )
-                );
-           ?>
-           <?php //echo link_to('Registrieren',"@user_register",array("title"=>"Benutzeraccount erstellen")); ?>
+           <?php if(true === $sf_user->hasUser()):?>
+               <?php echo link_to_story(
+                        "Kommentare: (".$story->currentCommentCount().") ",
+                        $story,
+                        array("title" => "Die Kommentare zu dieser Nachricht lesen &quot;{$story['title']}&quot;")
+                     );
+               ?>
+           <?php else:?>
+               <?php echo link_to(
+                       "Kommentare: (".$story->currentCommentCount().") ",
+                       "@user_register",
+                       array("title"=>"Benutzeraccount erstellen")); ?>
+           <?php endif;?>                      
        </h3>
-       <?php //var_dump($story); ?>
     </div>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
