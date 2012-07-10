@@ -8,6 +8,14 @@
 <?php else: ?>
   <form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
     <fieldset>
+
+        <div id="fb-root"></div>
+
+        <fb:registration width="600">
+
+        </fb:registration>
+        <script src="http://connect.facebook.net/en_US/all.js#appId=120459758096110&xfbml=1"></script>
+
       <?php echo $form->render();?>
       <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>
       <div class="field" style="margin-left:160px;">
