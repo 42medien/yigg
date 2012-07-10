@@ -11,9 +11,9 @@
 
         <div id="fb-root"></div>
 
-        <fb:registration width="600">
-
-        </fb:registration>
+        <fb:login-button>
+            Login with Facebook
+        </fb:login-button>
         <script src="http://connect.facebook.net/en_US/all.js#appId=120459758096110&xfbml=1"></script>
 
       <?php echo $form->render();?>
