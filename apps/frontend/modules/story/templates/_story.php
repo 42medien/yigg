@@ -81,8 +81,8 @@
                         "title" => "Die Kommentare zu dieser Nachricht lesen &quot;{$story['title']}&quot;"
                     )
                 );
-           ?><br>
-           <?php echo link_to('Registrieren',"@user_register",array("title"=>"Benutzeraccount erstellen")); ?>
+           ?>
+           <?php //echo link_to('Registrieren',"@user_register",array("title"=>"Benutzeraccount erstellen")); ?>
        </h3>
        <?php //var_dump($story); ?>
     </div>
