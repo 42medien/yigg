@@ -45,7 +45,7 @@
           <?php include_partial("user/userinfo"); ?>
           <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
           <?php if(true === has_slot("sidebar_sponsoring")): ?>
-            <?php include_slot("sidebar_sponsoring"); ?>
+            <?php include_slot("sidebar_sponsoringBig"); ?>
           <?php endif; ?>  
           <?php if(true === has_slot("sidebar")): ?>
             <?php include_slot("sidebar"); ?>
