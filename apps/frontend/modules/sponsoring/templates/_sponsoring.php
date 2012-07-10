@@ -27,7 +27,7 @@
     <?php endif; ?>
 
     <?php if( is_object($place) && true === $place->isAvailable() && $place->placesLeft() >= 1  && (!isset($preview_image) && !isset($preview_url)) ): ?>
-    <?php for($i=0; $i < 10; $i++): ?>
+    <?php for($i=0; $i < $place->placesLeft(); $i++): ?>
         <!--  Sponsorship placeholders -->
         <div class="sponsorship preview">
             <?php if(true): //$place->intern_url == "@best_stories" AND $place->width < 200?>
