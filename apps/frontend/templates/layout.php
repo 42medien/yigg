@@ -32,6 +32,9 @@
         <?php if(true === has_slot("sponsoring")): ?>
           <?php include_slot("sponsoring"); ?>
         <?php endif; ?>
+        <?php if(true === has_slot("sponsoringBig")): ?>
+          <?php include_slot("sponsoringBig"); ?>
+        <?php endif; ?>
         <?php include_partial("system/navigation");?>
       </div>
       <div id="content">
@@ -44,8 +47,8 @@
         <div class="twoThree-right">
           <?php include_partial("user/userinfo"); ?>
           <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
-          <?php if(true === has_slot("sidebar_sponsoring")): ?>
-            <?php include_slot("sidebar_sponsoring"); ?>
+          <?php if(true === has_slot("sidebar_sponsoringBig")): ?>
+            <?php include_slot("sidebar_sponsoringBig"); ?>
           <?php endif; ?>  
           <?php if(true === has_slot("sidebar")): ?>
             <?php include_slot("sidebar"); ?>
