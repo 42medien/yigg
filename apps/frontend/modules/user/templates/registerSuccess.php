@@ -17,7 +17,8 @@
                     appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>, // stored in app.yml for convenience
                     status       : false, // check login status (we don't make use of this)
                     cookie       : true, // enable cookies to allow the server to access the session
-                    xfbml        : true  // parse XFBML
+                    xfbml        : true,  // parse XFBML
+                    oauth        : true
                 });
             };
 
