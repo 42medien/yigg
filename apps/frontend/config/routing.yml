@@ -242,6 +242,10 @@ postbox_views:
   param: { module: atPage, view: inbox, action: notificationShow}
 
 # User Actions
+user_fb_login:
+  url:    /fb_login
+  param:  { module: user, action: fbLogin}
+
 user_login:
   url:    /login
   param:  { module: user, action: login}
