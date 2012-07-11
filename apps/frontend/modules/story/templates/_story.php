@@ -68,9 +68,9 @@
         <?php if(isset($total) && $total > 9 &&
               ($count == 1 || ($count == $total-1) || ($total > 12 && $count == round($total/2)-1))): ?>
           <?php use_helper("JavascriptBase");  ?>
-            <div class="story-inline-advert">
-              <?php echo adsense_ad_tag(6546807557, 468, 60);?>
-            </div>
+            <!-- <div class="story-inline-advert"> -->
+              <?php //echo adsense_ad_tag(6546807557, 468, 60);?>
+            <!-- </div> -->
         <?php endif;?>
 
         <?php if($story->type == Story::TYPE_VIDEO): ?>
@@ -90,9 +90,9 @@
                )
              );
            ?>
-           <div class="story-inline-advert">
-             <?php echo adsense_ad_tag(7012733842, 468, 60);?>
-            </div>
+           <!--<div class="story-inline-advert"> -->
+             <?php //echo adsense_ad_tag(7012733842, 468, 60);?>
+            <!-- </div> -->
           <?php endif; ?>
 
 		    <div class="clr"><!--  --></div>
