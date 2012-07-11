@@ -36,6 +36,19 @@
                   "@user_public_profile?username={$story['Author']['username']}",
                    array('title' => "Profil von {$story['Author']['username']} besuchen"));?>
          -
+           <?php if($sf_user->hasUser() && $sf_user->getUserId() !== $story->Author->id && false === $sf_user->getUser()->follows($story->Author)):?>
+           <span class="ico ico-follow">
+               <?php echo link_to(
+               "Follow {$story['Author']['username']}",
+               "@user_friends_modify?list=add&username={$story['Author']['username']}",
+               array(
+                   "rel" => "external",
+                   "title" => 'Abonniere die Nachrichten von '  . $story['Author']['username'],
+                   "class" => "follow"
+               )
+           );
+               ?> </span>
+           <?php endif;?>
          <abbr><?php echo format_date(strtotime($story['created_at']),"g","de",'UTF-8');?></abbr>
        </span>
        <?php if($sf_request->getModuleAction() !== "story/show"):?>

@@ -49,29 +49,7 @@
       );
       ?></li>
     <?php endif; ?>
-    <li>
-    <?php echo link_to_story(
-       "An {$story['title']} Twitter senden",
-       $story,
-        array(
-          "view" => "tweet",
-          "rel" => "external",
-          "title"=>"{$story["title"]} auf Twitter empfehlen",
-          "class" => "tweet"
-        )
-      );
-    ?></li>
-    <li><?php echo link_to_story(
-      "Mit {$story['title']} Facebook empfehlen",
-      $story,
-      array(
-          "view" => "facebook",
-          "rel" => "external",
-          "title"=>"Diese Nachricht auf Facebook empfehlen",
-          "class" => "facebook"
-        )
-      );
-     ?></li>
+
     <?php if($sf_user->hasUser() && $sf_user->getUserId() !== $story->Author->id && false === $sf_user->getUser()->follows($story->Author)):?>
       <li><?php echo link_to(
        "Follow {$story['Author']['username']}",
