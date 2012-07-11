@@ -356,6 +356,7 @@ class userActions extends yiggActions
         //has an active session with facebook and that our app is approved...so it should work
         $facebook_user = $facebook->getUser();
         print_r($facebook_user);
+        die;
     }
 
     public function executeLogin($request)
