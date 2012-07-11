@@ -50,18 +50,6 @@
       ?></li>
     <?php endif; ?>
 
-    <?php if($sf_user->hasUser() && $sf_user->getUserId() !== $story->Author->id && false === $sf_user->getUser()->follows($story->Author)):?>
-      <li><?php echo link_to(
-       "Follow {$story['Author']['username']}",
-       "@user_friends_modify?list=add&username={$story['Author']['username']}",
-       array(
-          "rel" => "external",
-         "title" => 'Abonniere die Nachrichten von '  . $story['Author']['username'],
-         "class" => "follow"
-       )
-      );
-     ?></li>
-    <?php endif;?>
     <?php if(true === $sf_user->hasUser() && true === $sf_user->isModerator()): ?>
      <li><?php echo content_tag("a",
        "Administrate {$story['title']}",
