@@ -1,7 +1,7 @@
 <?php if(false !== $video):?>
   <?php echo $sf_data->get('video', ESC_RAW)->getSizedCode($width,$height); ?>
 <?php else:?>
-  <div class="sidead" style="width: auto !important; text-align: center !important;">      
+  <div class="sidead" style="width: auto !important; padding-left: 10px; ">      
     <!-- Yigg-Button-1L -->
     <div id='div-gpt-ad-1342004948184-0' style='width:170px; height:125px; float:left;'>
     <script type='text/javascript'>
