@@ -412,3 +412,4 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .twoThree-left #searchForm label {display: none;}
 .twoThree-left #searchForm input {height: 25px; font-size: 15px; width: 68%; float: left;}
 .twoThree-left #searchForm input.button {height: 30px; font-size: 15px; width: 30%; background: #EEE; border: 1px solid #CCC; float: right;}
+.spreadly-button{clear: right; float: right; height: 100px; margin: 5px 20px 0 10px; position: relative; width: 130px;}

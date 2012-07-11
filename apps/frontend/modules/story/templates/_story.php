@@ -8,6 +8,17 @@
       <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  120, "height" => 88));?>
     </div>
   <?php endif; ?>
+
+    <div class="spreadly-button">
+        <iframe src="http://button.spread.ly/?url=<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>&social=1&title=<?php echo $story->title;?>"
+                style="overflow:hidden; width: 420px; height: 30px; padding: 0px 0;"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                allowTransparency="true">
+        </iframe>
+    </div>
+
    <h3 class="entry-title">
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
        <?php echo link_to($story->title, $story["external_url"], array("title" => $story->title, "rel" => "external"));?>
