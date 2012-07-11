@@ -355,6 +355,21 @@ class userActions extends yiggActions
         //Get user object from Facebook - this method is only executed after we've confirmed that the user
         //has an active session with facebook and that our app is approved...so it should work
         $facebook_user = $facebook->getUser();
+
+        if ($facebook_user)
+        {
+            try
+            {
+                $user_profile = $facebook->api('/me','GET');
+
+                print_r($user_profile);
+
+            }catch (FacebookApiException $e)
+            {
+                error_log($e);
+                $facebook_user = null;
+            }
+        }
         print_r($facebook_user);
         die;
     }
