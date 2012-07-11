@@ -38,7 +38,7 @@
 
          $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
          ?>
-       <?php echo link_to('mehr bei '.$external_url_title['host'], $story["external_url"], array("title" => $story->title, "rel" => "nofollow"));?>
+       <?php echo link_to('mehr bei '.$external_url_title['host'], $story["external_url"], array("title" => $story->title, "rel" => "nofollow","target"=> "_blank"));?>
      </p>
 
         <?php if(isset($total) && $total > 9 &&
