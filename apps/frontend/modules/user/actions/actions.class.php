@@ -342,14 +342,24 @@ class userActions extends yiggActions
     return $this->redirect("@user_welcome");
   }
 
-  public function executeLoginfb( $request )
-  {
-     print_r('login');
-      die;
-  }
+    public function executeLoginFb($request)
+    {
+        //Creating a new Facebook object from the Facebook PHP SDK
+        require_once sfConfig::get('sf_lib_dir') . '/vendor/facebook-php-sdk/src/facebook.php';
 
-  public function executeLogin( $request )
-  {
+        $facebook = new Facebook(array(
+            'appId' => sfConfig::get('app_facebook_app_id'),
+            'secret' => sfConfig::get('app_facebook_secret'),
+        ));
+
+        //Get user object from Facebook - this method is only executed after we've confirmed that the user
+        //has an active session with facebook and that our app is approved...so it should work
+        $facebook_user = $facebook->getUser();
+        print_r($facebook_user);
+    }
+
+    public function executeLogin($request)
+    {
     $this->getResponse()->setStatusCode(401, 'Forbidden');
 
     $this->form = new FormUserLogin();

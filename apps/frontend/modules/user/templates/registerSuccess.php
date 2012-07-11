@@ -39,7 +39,7 @@
                     //If the user is succesfully authenticated, we execute some code to handle the freshly
                     //logged in user, if not, we do nothing
                     if (response.authResponse) {
-                        window.location = "/connect.php"
+                        window.location = "/fb_login"
                     }
                 }, {scope:'email'});  //we just ask for the email permission
             }
