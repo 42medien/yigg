@@ -130,7 +130,7 @@ h3.entry-title {font-size: 1.4em}
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
 .story-list, spec-list {margin-left: 0}
-.story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
+.story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; /*padding-bottom: 30px;*/}
 .spec-list .hentry {min-height: 180px}
 .hentry {position: relative; margin-bottom: 10px; text-align: justify; width: 100%}
 .hentry.compacted {width: auto}
