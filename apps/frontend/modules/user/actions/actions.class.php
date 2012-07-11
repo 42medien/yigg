@@ -360,9 +360,8 @@ class userActions extends yiggActions
         {
             try
             {
-                $user_profile = $facebook->api('/me','GET');
-
-                print_r($user_profile);
+                $facebook_user_profile = $facebook->api('/me');
+                print_r($facebook_user_profile);
 
             }catch (FacebookApiException $e)
             {
