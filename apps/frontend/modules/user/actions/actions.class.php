@@ -345,6 +345,7 @@ class userActions extends yiggActions
   public function executeFbLogin( $request )
   {
      print_r('login');
+      die;
   }
 
   public function executeLogin( $request )
