@@ -130,9 +130,9 @@ h3.entry-title {font-size: 1.4em}
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
 .story-list, spec-list {margin-left: 0}
-.story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; /*padding-bottom: 30px;*/}
+.story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
 .spec-list .hentry {min-height: 180px}
-.hentry {position: relative; /*margin-bottom: 10px;*/ text-align: justify; width: 100%}
+.hentry {position: relative; margin-bottom: 10px; text-align: justify; width: 100%}
 .hentry.compacted {width: auto}
 .hentry .story-inline-advert {width: 465px; clear: both; position: relative}
 .spec-list .entry-title {margin: 0; width: auto}
@@ -412,6 +412,6 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .twoThree-left #searchForm label {display: none;}
 .twoThree-left #searchForm input {height: 25px; font-size: 15px; width: 68%; float: left;}
 .twoThree-left #searchForm input.button {height: 30px; font-size: 15px; width: 30%; background: #EEE; border: 1px solid #CCC; float: right;}
-.spreadly-button{clear: right; float: right; height: 100px; margin: 5px 20px 0 10px; position: relative; width: 130px;}
+.spreadly-button{clear: right; float: right; height: 70px; margin: 5px 20px 0 10px; position: relative; width: 130px;}
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
