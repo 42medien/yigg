@@ -66,11 +66,11 @@
     </div>&nbsp;
 
     <!-- Yigg-Button-5R -->
-    <div id='div-gpt-ad-1342004948184-9' style='width:170px; height:125px;'>
+    <div id='div-gpt-ad-1342004948184-9' style='width:170px; height:125px; float:left;'>
     <script type='text/javascript'>
     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1342004948184-9'); });
     </script>
     </div>
 
-</div>
+</div><br>
 <?php endif;?>
