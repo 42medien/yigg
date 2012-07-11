@@ -342,7 +342,7 @@ class userActions extends yiggActions
     return $this->redirect("@user_welcome");
   }
 
-  public function executeFbLogin( $request )
+  public function executeLoginfb( $request )
   {
      print_r('login');
       die;
