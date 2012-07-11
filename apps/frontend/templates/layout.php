@@ -2,6 +2,40 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
   <head profile='http://www.w3.org/2006/03/hcard'>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+    
+    <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + 
+        '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+
+    <script type='text/javascript'>
+        googletag.cmd.push(function() {
+        googletag.defineSlot('/1043423/Yigg-Button-1L', [170, 125], 'div-gpt-ad-1342004948184-0').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-1R', [170, 125], 'div-gpt-ad-1342004948184-1').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-2L', [170, 125], 'div-gpt-ad-1342004948184-2').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-2R', [170, 125], 'div-gpt-ad-1342004948184-3').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-3L', [170, 125], 'div-gpt-ad-1342004948184-4').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-3R', [170, 125], 'div-gpt-ad-1342004948184-5').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-4L', [170, 125], 'div-gpt-ad-1342004948184-6').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-4R', [170, 125], 'div-gpt-ad-1342004948184-7').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-5L', [170, 125], 'div-gpt-ad-1342004948184-8').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/Yigg-Button-5R', [170, 125], 'div-gpt-ad-1342004948184-9').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+        });
+    </script>
+    
+    
     <link rel="shortcut icon" href="/favicon.ico" />
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
 
