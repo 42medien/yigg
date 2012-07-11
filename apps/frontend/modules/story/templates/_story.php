@@ -4,9 +4,9 @@
   <?php include_partial('story/storyActions', array('story' => $story));?>
 
   <?php if($story->type == Story::TYPE_NORMAL):?>
-    <div class="screenshot">
+    <!--<div class="screenshot">
       <?php echo link_to(img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  120, "height" => 88)), $story->external_url, array("title" => $story->title, "rel" => "external"));?>
-    </div>
+    </div>-->
   <?php endif; ?>
    <h3 class="entry-title">
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
