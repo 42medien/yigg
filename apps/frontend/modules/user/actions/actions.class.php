@@ -342,6 +342,11 @@ class userActions extends yiggActions
     return $this->redirect("@user_welcome");
   }
 
+  public function executeFbLogin( $request )
+  {
+     print_r('login');
+  }
+
   public function executeLogin( $request )
   {
     $this->getResponse()->setStatusCode(401, 'Forbidden');

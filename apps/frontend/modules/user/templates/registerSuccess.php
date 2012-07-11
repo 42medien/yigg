@@ -30,7 +30,19 @@
                 ref.parentNode.insertBefore(js, ref);
             }(document));
 
+            function onClickloginfb() {
+                //Use the FB object's login method from the Facebook Javascript SDK to authenticate the user
+                //If the user has already approved your app, she is simply logged in
+                //If not, the app authentication dialog box is shown
+                FB.login(function(response) {
 
+                    //If the user is succesfully authenticated, we execute some code to handle the freshly
+                    //logged in user, if not, we do nothing
+                    if (response.authResponse) {
+                        window.location = "/connect.php"
+                    }
+                }, {scope:'email'});  //we just ask for the email permission
+            }
         </script>
         <!-- END FACEBOOK JAVASCRIPT SDK -->
 
