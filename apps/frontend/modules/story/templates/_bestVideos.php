@@ -13,5 +13,11 @@ google_ad_height = 280;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+<!-- Yigg-Button-1L -->
+<div id='div-gpt-ad-1342004948184-0' style='width:170px; height:125px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1342004948184-0'); });
+</script>
+</div>
   </div>
 <?php endif;?>
