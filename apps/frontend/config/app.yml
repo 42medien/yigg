@@ -23,7 +23,8 @@ all:
 
   facebook:
     status_url:   'http://www.facebook.com/sharer.php'
-
+    app_id:       120459758096110
+    secret:       7a14224f51d4adc896ef8ef5642b0779
 
   highloadMeasures:
     highLoad:     16
