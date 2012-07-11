@@ -46,6 +46,8 @@
         </script>
         <!-- END FACEBOOK JAVASCRIPT SDK -->
 
+        <button onclick="onClickloginfb()">Login</button>
+
       <?php echo $form->render();?>
       <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>
       <div class="field" style="margin-left:160px;">
