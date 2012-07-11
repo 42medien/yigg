@@ -10,7 +10,7 @@
   <?php endif; ?>
 
     <div class="spreadly-button">
-        <iframe src="http://button.spread.ly/?url=<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>&social=1&title=<?php echo $story->title;?>"
+        <iframe src="http://button.spread.ly/?url=<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>&social=1&color=ff9500&title=<?php echo $story->title;?>"
                 style="overflow:hidden; width: 420px; height: 30px; padding: 0px 0;"
                 frameborder="0"
                 scrolling="no"
