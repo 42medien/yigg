@@ -9,12 +9,28 @@
   <form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
     <fieldset>
 
+        <!-- START FACEBOOK JAVASCRIPT SDK -->
         <div id="fb-root"></div>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>, // stored in app.yml for convenience
+                    status       : false, // check login status (we don't make use of this)
+                    cookie       : true, // enable cookies to allow the server to access the session
+                    xfbml        : true  // parse XFBML
+                });
+            };
 
-        <fb:login-button>
-            Login with Facebook
-        </fb:login-button>
-        <script src="http://connect.facebook.net/en_US/all.js#appId=120459758096110&xfbml=1"></script>
+            // Load the SDK Asynchronously
+            (function(d){
+                var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                ref.parentNode.insertBefore(js, ref);
+            }(document));
+        </script>
+        <!-- END FACEBOOK JAVASCRIPT SDK -->
 
       <?php echo $form->render();?>
       <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>
