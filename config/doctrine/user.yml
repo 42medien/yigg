@@ -20,6 +20,8 @@ User:
     status:
       type: boolean
       default: false
+    facebook_id:
+      type: string(30)
     last_login:
       type: timestamp(25)
     email:
