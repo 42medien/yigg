@@ -416,4 +416,4 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
 .anzeige_titel {background:#F9F9F9; border: 1px solid #EFEFEF; height:26px; padding: 5px 5px 0 10px;}
-.anzeige_titel p {font-family: "Arial"; font-size: 12px; font-weight: bold; color: #993300;}
+.anzeige_titel p {font-family: "Arial"; font-size: 12px; font-weight: bold; color: #993300; text-align: center;}
