@@ -94,7 +94,10 @@
       
       <ul class="avatarList">
      <?php foreach($ratings as $k => $rating):?>
-         <li><?php echo
+         <li>
+             
+             
+             <?php /*echo
          link_to(
            avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48,
              array(
@@ -105,40 +108,14 @@
            array(
             "title" => "Profil von {$rating["User"]->username} besuchen"
            )
-         );?>
+         ); */ ?>
+             
+             <?php 
+                echo 'Uname: <b>' . $rating["User"]->username . '</b>';
+             ?>
+             
          </li>
-       <?php endforeach;?>
-
-      <?php $query = Doctrine_Query::create()
-                      ->from("StoryTweet st")
-                      ->leftJoin("st.Tweet t")
-                      ->where("story_id = ?", $story->id);?>
-                      <?php if(count($usernames) > 0):?>
-                         <?php $query->whereNotIn("t.username", $usernames);?>
-                      <?php endif; ?>
-                      <?php $tweets = $query->limit(20)->execute();?>
-
-      <?php if(false !== count($tweets) > 0):?>
-        <?php foreach($tweets as $tweet):?>
-           <li><?php echo
-           link_to(
-             img_tag(
-               $tweet["Tweet"]->profile_image_url,
-               array(
-                 "width" => 48,
-                 "height" => 48,
-                 "class" => "avatar",
-                 "alt"=> "Profil von {$tweet["Tweet"]->username} besuchen")
-             ),
-             $tweet["Tweet"]->getYiggTwitterProfileLink(),
-             array(
-              "title" => "Profil von {$tweet["Tweet"]->username} besuchen",
-              "rel" => "nofollow"
-             )
-           );?></li>
-         <?php endforeach;?>
-       <?php endif;?>
-
+       <?php endforeach;?>     
      </ul>
       
       
