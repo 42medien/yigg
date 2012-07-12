@@ -109,8 +109,8 @@
          ); */ ?>
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-                $username = 'PhpRiot';
-                //$username = $rating["User"]->username;
+                //$username = 'PhpRiot';
+                $username = $rating["User"]->username;
                 
                 $endpoint = sprintf(
                                     //'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
@@ -136,11 +136,6 @@
                     //die('Invalid response');
                     echo '';
                 }
-                
-                echo '<pre>';
-                print_r($tweets);
-                echo '</pre>';
-                
              ?>
                                        
              <?php foreach($tweets as $tweet) { ?>
