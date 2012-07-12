@@ -136,6 +136,11 @@
                     //die('Invalid response');
                     echo '';
                 }
+                
+                echo '<pre>';
+                print_r($tweets);
+                echo '</pre>';
+                
              ?>
                                        
              <?php foreach($tweets as $tweet) { ?>
