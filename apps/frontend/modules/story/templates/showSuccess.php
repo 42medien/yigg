@@ -112,10 +112,11 @@
              <h1>PhpRiot: Twitter API - User Timeline</h1>
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-                $username = 'PhpRiot';
+                //$username = 'PhpRiot';
+                $username = $rating["User"]->username;
                 
                 $endpoint = sprintf(
-                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
+                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=5',
                                     $username
                                     );
                 $ch = curl_init($endpoint);
