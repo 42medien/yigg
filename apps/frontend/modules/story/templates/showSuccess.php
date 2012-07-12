@@ -93,59 +93,54 @@
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <ul class="avatarList">
-     <?php foreach($ratings as $k => $rating):?>
+     
          <li>
-             <?php /*echo
-         link_to(
-           avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48,
-             array(
-               "class" => "avatar",
-               "alt"=> "Profil von {$rating["User"]->username} besuchen")
-            ),
-           '@user_public_profile?username='.$rating["User"]->username,
-           array(
-            "title" => "Profil von {$rating["User"]->username} besuchen"
-           )
-         ); */ ?>
+             
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
                 //$username = 'PhpRiot';
-                $username = $rating["User"]->username;
+                //$username = $rating["User"]->username;
                 
-                $endpoint = sprintf(
-                                    //'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
+                /*$endpoint = sprintf(                                    
                                     'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=1',
                                     $username
-                                    );
-                $ch = curl_init($endpoint);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                
-                $data = curl_exec($ch);
-                $info = curl_getinfo($ch);
-                
-                curl_close($ch);
-                
-                if ($info['http_code'] == 200) {
-                    $tweets = json_decode($data, true);
-                }
-                else if ($info['http_code'] == 401) {
-                    //die('Invalid credentials');
-                    echo 'Invalid Credentials';
-                }
-                else {
-                    //die('Invalid response');
-                    echo '';
-                }
+                                    );*/
+                $host_name = $story->Domain->hostname;
+                if($host_name != '')
+                {
+                    $endpoint = sprintf(
+                                        'http://search.twitter.com/search.json?q=%s',
+                                        $host_name
+                                        );
+                    $ch = curl_init($endpoint);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                    $data = curl_exec($ch);
+                    $info = curl_getinfo($ch);
+
+                    curl_close($ch);
+
+                    if ($info['http_code'] == 200) {
+                        $tweets = json_decode($data, true);
+                    }
+                    else if ($info['http_code'] == 401) {
+                        echo 'Invalid Credentials';
+                    }
+                    else {
+                        //die('Invalid response');
+                        echo '';
+                    }
              ?>
-                                       
-             <?php foreach($tweets as $tweet) { ?>
-                <img src="<?php echo htmlSpecialChars($tweet['user']['profile_image_url']) ?>" />
-                <?php echo htmlSpecialChars($tweet['user']['screen_name']) ?>
-                <?php echo ' - '.$username; ?>
-             <?php } ?>
+
+                <?php foreach($tweets as $tweet) { ?>
+                    <img src="<?php echo htmlSpecialChars($tweet['user']['profile_image_url']) ?>" />
+                    <?php //echo htmlSpecialChars($tweet['user']['screen_name']) ?>
+                <?php } ?>
+             <?php } ?>             
          </li>
-       <?php endforeach;?>     
+       
      </ul>
+  
     <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
   <?php endif;?>
 
