@@ -138,8 +138,14 @@
                 }
 
 
+                echo '<pre>';
+                print_r($tweets);
+                echo '</pre>';
                 
              ?>
+             
+             
+             
              <?php foreach($tweets as $tweet) { ?>
                 <div class="tweet_side">
                     <img src="<?php echo htmlSpecialChars($tweet['user']['profile_image_url']) ?>" />             
