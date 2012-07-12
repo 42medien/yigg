@@ -90,6 +90,25 @@
   <?php if(count($story->Tags) > 0):?>
     <h3>
       Mehr lesen zu diesen Themen:
+      
+      
+      <ul class="avatarList">
+     <?php foreach($ratings as $k => $rating):?>
+         <li><?php echo
+         link_to(
+           avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48,
+             array(
+               "class" => "avatar",
+               "alt"=> "Profil von {$rating["User"]->username} besuchen")
+            ),
+           '@user_public_profile?username='.$rating["User"]->username,
+           array(
+            "title" => "Profil von {$rating["User"]->username} besuchen"
+           )
+         );?>
+         </li>
+       <?php endforeach;?>
+
       <?php $query = Doctrine_Query::create()
                       ->from("StoryTweet st")
                       ->leftJoin("st.Tweet t")
@@ -119,6 +138,11 @@
            );?></li>
          <?php endforeach;?>
        <?php endif;?>
+
+     </ul>
+      
+      
+      
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
