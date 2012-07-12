@@ -375,7 +375,7 @@ class userActions extends yiggActions
                 $facebook_user = null;
             }
         }
-        print_r($facebook_user);
+        //print_r($facebook_user);
         die;
     }
 
