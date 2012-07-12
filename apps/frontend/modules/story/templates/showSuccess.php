@@ -93,31 +93,21 @@
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <ul class="avatarList">
-     
-         <li>
-             
+         <li>             
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-                //$username = 'PhpRiot';
-                //$username = $rating["User"]->username;
-                
-                /*$endpoint = sprintf(                                    
-                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=1',
-                                    $username
-                                    );*/
                 $host_name = $story->Domain->hostname;
                 if($host_name != '')
                 {
                     $endpoint = sprintf(
                                         'http://search.twitter.com/search.json?q=%s',
                                         $host_name
-                                        );                    
+                                        );
                     $ch = curl_init($endpoint);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
                     $data = curl_exec($ch);
                     $info = curl_getinfo($ch);
-
                     curl_close($ch);
 
                     if ($info['http_code'] == 200) {
@@ -127,22 +117,14 @@
                         echo 'Invalid Credentials';
                     }
                     else {
-                        //die('Invalid response');
-                        echo '';
+                        echo ''; // Invalid Response
                     }
-                    
-                    //echo '<pre>';
-                    //print_r($tweets);
-                    //echo '</pre>';
-             ?>
-
-                <?php //foreach($tweets as $tweet) { ?>
-                    <?php foreach($tweets['results'] as $tweet_res) { ?>
-                        <img src="<?php echo htmlSpecialChars($tweet_res['profile_image_url']) ?>" />
-                        <?php //echo htmlSpecialChars($tweet_res['screen_name']) ?>
-                    <?php } ?>
-                <?php //} ?>
-             <?php } ?>             
+             ?>                
+                <?php foreach($tweets['results'] as $tweet_res) { ?>
+                    <img src="<?php echo htmlSpecialChars($tweet_res['profile_image_url']) ?>" />
+                    <?php //echo htmlSpecialChars($tweet_res['screen_name']) ?>
+                <?php } ?>
+          <?php } ?>             
          </li>
        
      </ul>
