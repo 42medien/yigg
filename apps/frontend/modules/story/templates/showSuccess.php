@@ -132,10 +132,7 @@
                     }
              ?>
 
-                <?php foreach($tweets as $tweet) { ?>
-                    <img src="<?php echo htmlSpecialChars($tweet['results']['profile_image_url']) ?>" />
-                    <?php //echo htmlSpecialChars($tweet['user']['screen_name']) ?>
-                <?php } ?>
+                
              <?php } ?>             
          </li>
        
