@@ -21,7 +21,7 @@
       <?php echo link_to("Profil", "@user_public_profile?username={$sf_user->getUser()->username}");?>
     </li>
   <?php endif;?>
-  <li><?php echo link_to("Hilfe", 'http://hilfe.yigg.de/', array('title' => 'Hilfe', "rel" => "external")); ?></li>
+  <!--<li><?php echo link_to("Hilfe", 'http://hilfe.yigg.de/', array('title' => 'Hilfe', "rel" => "external")); ?></li>-->
   <?php if($sf_user->hasUser() && $sf_user->getUser()->isSponsor()):?>
     <li <?php if($sf_request->getModule() == "sponsoring"): ?>class="selected"<?php endif; ?>><?php echo link_to("Sponsorings", '@sponsoring', array('title' => 'Informationen zu Deinen YiGG-Sponsorings')); ?></li>
   <?php endif; ?>
