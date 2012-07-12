@@ -140,9 +140,7 @@
                             "title" => "Profil von {$twitter_username} besuchen",
                             "rel" => "nofollow"
                             )
-                        );?>    
-                                              
-                    <?php //echo htmlSpecialChars($tweet_res['from_user']) ?>
+                        );?>
                 <?php } ?>
           <?php } ?>             
          </li>
