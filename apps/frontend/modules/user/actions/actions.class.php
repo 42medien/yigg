@@ -364,17 +364,13 @@ class userActions extends yiggActions
 
                 if(!is_null($facebook_user_profile['email']))
                 {
-                    //$user_exists = Doctrine::getTable("User")->emailExists($facebook_user_profile['email']);
-                    $user = new User();
-                    print_r(get_class(Doctrine::getTable("User")));
-                    die;
-
-
-                    if($user_exists){
-                        print_r("face:".Doctrine::getTable("User")->getFacebookId());
-
+                    $user_table = Doctrine::getTable("User");
+                    $user_id = $user_table->emailExists($facebook_user_profile['email']);
+                    if($user_id){
+                        $user = $user_table->retrieveById($user_id);
+                        print_r($user);
                     }
-
+                    die;
                 }
 
 
