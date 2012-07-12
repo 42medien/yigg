@@ -11,7 +11,7 @@
 
     <div class="spreadly-button">
         <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
-                style="overflow:hidden; width: 420px; height: 30px; padding: 0px 0;"
+                style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
                 frameborder="0"
                 scrolling="no"
                 marginheight="0"
