@@ -121,8 +121,28 @@
                     }
              ?>                
                 <?php foreach($tweets['results'] as $tweet_res) { ?>
-                    <img src="<?php echo htmlSpecialChars($tweet_res['profile_image_url']) ?>" />
-                    <?php //echo htmlSpecialChars($tweet_res['screen_name']) ?>
+                    
+                    <?php 
+                    $twitter_username = htmlSpecialChars($tweet_res['from_user']);
+                    $twitter_user_url = 'https://twitter.com/' . $twitter_username;
+                    echo
+                        link_to(
+                            img_tag(
+                            htmlSpecialChars($tweet_res['profile_image_url']),
+                            array(
+                                "width" => 48,
+                                "height" => 48,
+                                "class" => "avatar",
+                                "alt"=> "Profil von {$twitter_username} besuchen")
+                            ),
+                            $twitter_user_url,
+                            array(
+                            "title" => "Profil von {$twitter_username} besuchen",
+                            "rel" => "nofollow"
+                            )
+                        );?>    
+                                              
+                    <?php //echo htmlSpecialChars($tweet_res['from_user']) ?>
                 <?php } ?>
           <?php } ?>             
          </li>
