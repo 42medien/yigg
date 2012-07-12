@@ -88,6 +88,6 @@
   <div class="clr"></div>
 </div>
 <div class="anzeige_titel">
-    <p> Ihre Anzeige bei Yigg </p>
+    <p> Anzeige </p>
 </div>    
     
