@@ -89,14 +89,12 @@
 
   <?php if(count($story->Tags) > 0):?>
     <h3>
-      Mehr lesen zu diesen Themen:
-      
-      
-      <ul class="avatarList">
+      Mehr lesen zu diesen Themen:                                    
+      <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
+    </h3>
+    <ul class="avatarList">
      <?php foreach($ratings as $k => $rating):?>
          <li>
-             
-             
              <?php /*echo
          link_to(
            avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48,
@@ -109,14 +107,14 @@
             "title" => "Profil von {$rating["User"]->username} besuchen"
            )
          ); */ ?>
-             <h1>PhpRiot: Twitter API - User Timeline</h1>
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
                 //$username = 'PhpRiot';
                 $username = 'PhpRiot';
                 
                 $endpoint = sprintf(
-                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
+                                    //'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
+                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json',
                                     $username
                                     );
                 $ch = curl_init($endpoint);
@@ -131,10 +129,12 @@
                     $tweets = json_decode($data, true);
                 }
                 else if ($info['http_code'] == 401) {
-                    die('Invalid credentials');
+                    //die('Invalid credentials');
+                    echo 'Invalid Credentials';
                 }
                 else {
-                    die('Invalid response');
+                    //die('Invalid response');
+                    echo '';
                 }
 
 
@@ -150,11 +150,6 @@
          </li>
        <?php endforeach;?>     
      </ul>
-      
-      
-      
-      <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-    </h3>
     <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
   <?php endif;?>
 
