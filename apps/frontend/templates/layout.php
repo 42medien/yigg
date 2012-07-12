@@ -69,7 +69,7 @@
       <div class="twoThree clr">
         <div class="twoThree-left">
           <!--  google_ad_section_start -->
-          <?php //echo $sf_data->getRaw('sf_content'); ?>
+          <?php echo $sf_data->getRaw('sf_content'); ?>
           <!--  google_ad_section_end -->          
         </div>
         <div class="twoThree-right">
