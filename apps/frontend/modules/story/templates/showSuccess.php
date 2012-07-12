@@ -90,6 +90,35 @@
   <?php if(count($story->Tags) > 0):?>
     <h3>
       Mehr lesen zu diesen Themen:
+      <?php $query = Doctrine_Query::create()
+                      ->from("StoryTweet st")
+                      ->leftJoin("st.Tweet t")
+                      ->where("story_id = ?", $story->id);?>
+                      <?php if(count($usernames) > 0):?>
+                         <?php $query->whereNotIn("t.username", $usernames);?>
+                      <?php endif; ?>
+                      <?php $tweets = $query->limit(20)->execute();?>
+
+      <?php if(false !== count($tweets) > 0):?>
+        <?php foreach($tweets as $tweet):?>
+           <li><?php echo
+           link_to(
+             img_tag(
+               $tweet["Tweet"]->profile_image_url,
+               array(
+                 "width" => 48,
+                 "height" => 48,
+                 "class" => "avatar",
+                 "alt"=> "Profil von {$tweet["Tweet"]->username} besuchen")
+             ),
+             $tweet["Tweet"]->getYiggTwitterProfileLink(),
+             array(
+              "title" => "Profil von {$tweet["Tweet"]->username} besuchen",
+              "rel" => "nofollow"
+             )
+           );?></li>
+         <?php endforeach;?>
+       <?php endif;?>
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
