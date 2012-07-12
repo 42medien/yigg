@@ -98,7 +98,7 @@
              
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-                $username = 'PhpRiot';
+                //$username = 'PhpRiot';
                 //$username = $rating["User"]->username;
                 
                 /*$endpoint = sprintf(                                    
@@ -130,6 +130,10 @@
                         //die('Invalid response');
                         echo '';
                     }
+                    
+                    echo '<pre>';
+                    print_r($tweets);
+                    echo '</pre>';
              ?>
 
                 
