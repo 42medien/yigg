@@ -11,9 +11,9 @@
     )
   );
 ?>
-<?php //if(false === $sf_request->isAjaxRequest()): ?>
-   <?php //echo adsense_ad_tag(7012733842, 468, 60);?>
-<?php //endif; ?>
+<?php if(false === $sf_request->isAjaxRequest()): ?>
+   <?php echo adsense_ad_tag(7012733842, 468, 60);?>
+<?php endif; ?>
 
 
 <?php slot('sidebar') ?>
