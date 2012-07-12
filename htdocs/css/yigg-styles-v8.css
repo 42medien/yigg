@@ -415,4 +415,5 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .spreadly-button{clear: right; float: right; height: 27px; margin: 5px 20px 0 10px; position: relative; width: 130px;}
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
-.anzeige_titel {font-family: "Arial"; font-size: 13px; color: #993300; background:#F9F9F9; border: 1px solid #EFEFEF; height:52px;}
+.anzeige_titel {background:#F9F9F9; border: 1px solid #EFEFEF; height:26px;}
+.anzeige_titel p {font-family: "Arial"; font-size: 13px; color: #993300; }
