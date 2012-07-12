@@ -136,9 +136,7 @@
                 else {
                     die('Invalid response');
                 }
-
-
-                
+               
              ?>
              <?php foreach($tweets as $tweet) { ?>
                 <div class="tweet_side">
