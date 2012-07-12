@@ -108,14 +108,10 @@
                 $host_name = $story->Domain->hostname;
                 if($host_name != '')
                 {
-                    /*$endpoint = sprintf(
+                    $endpoint = sprintf(
                                         'http://search.twitter.com/search.json?q=%s',
                                         $host_name
-                                        );*/
-                    $endpoint = sprintf(                                    
-                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=1',
-                                    $username
-                                    );
+                                        );                    
                     $ch = curl_init($endpoint);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -137,7 +133,7 @@
              ?>
 
                 <?php foreach($tweets as $tweet) { ?>
-                    <img src="<?php echo htmlSpecialChars($tweet['user']['profile_image_url']) ?>" />
+                    <img src="<?php echo htmlSpecialChars($tweet['results']['profile_image_url']) ?>" />
                     <?php //echo htmlSpecialChars($tweet['user']['screen_name']) ?>
                 <?php } ?>
              <?php } ?>             
