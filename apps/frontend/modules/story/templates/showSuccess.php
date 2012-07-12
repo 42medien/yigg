@@ -113,10 +113,10 @@
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
                 //$username = 'PhpRiot';
-                $username = $rating["User"]->username;
+                $username = 'PhpRiot';
                 
                 $endpoint = sprintf(
-                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=5',
+                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
                                     $username
                                     );
                 $ch = curl_init($endpoint);
@@ -136,7 +136,9 @@
                 else {
                     die('Invalid response');
                 }
-               
+
+
+                
              ?>
              <?php foreach($tweets as $tweet) { ?>
                 <div class="tweet_side">
