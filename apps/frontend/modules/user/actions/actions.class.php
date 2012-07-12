@@ -366,7 +366,7 @@ class userActions extends yiggActions
                 {
                     //$user_exists = Doctrine::getTable("User")->emailExists($facebook_user_profile['email']);
                     $user = new User();
-                    print_r(get_class($user));
+                    print_r(get_class(Doctrine::getTable("User")));
                     die;
 
 
