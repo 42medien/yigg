@@ -98,7 +98,7 @@
              
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-                //$username = 'PhpRiot';
+                $username = 'PhpRiot';
                 //$username = $rating["User"]->username;
                 
                 /*$endpoint = sprintf(                                    
@@ -108,10 +108,14 @@
                 $host_name = $story->Domain->hostname;
                 if($host_name != '')
                 {
-                    $endpoint = sprintf(
+                    /*$endpoint = sprintf(
                                         'http://search.twitter.com/search.json?q=%s',
                                         $host_name
-                                        );
+                                        );*/
+                    $endpoint = sprintf(                                    
+                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=1',
+                                    $username
+                                    );
                     $ch = curl_init($endpoint);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
