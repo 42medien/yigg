@@ -138,7 +138,7 @@
                 }
                 
                 echo '<pre>';
-                print_r($tweets);
+                var_dump($tweets);
                 echo '</pre>';
                 
              ?>
