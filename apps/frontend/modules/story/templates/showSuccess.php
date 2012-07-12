@@ -109,10 +109,42 @@
             "title" => "Profil von {$rating["User"]->username} besuchen"
            )
          ); */ ?>
-             
+             <h1>PhpRiot: Twitter API - User Timeline</h1>
              <?php 
-                echo 'Uname: <b>' . $rating["User"]->username . '</b>';
+                //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
+                $username = 'PhpRiot';
+                
+                $endpoint = sprintf(
+                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
+                                    $username
+                                    );
+                $ch = curl_init($endpoint);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                
+                $data = curl_exec($ch);
+                $info = curl_getinfo($ch);
+                
+                curl_close($ch);
+                
+                if ($info['http_code'] == 200) {
+                    $tweets = json_decode($data, true);
+                }
+                else if ($info['http_code'] == 401) {
+                    die('Invalid credentials');
+                }
+                else {
+                    die('Invalid response');
+                }
+
+
+                
              ?>
+             <?php foreach($tweets as $tweet) { ?>
+                <div class="tweet_side">
+                    <img src="<?php echo htmlSpecialChars($tweet['user']['profile_image_url']) ?>" />             
+                </div>
+             <?php } ?>
+
              
          </li>
        <?php endforeach;?>     
