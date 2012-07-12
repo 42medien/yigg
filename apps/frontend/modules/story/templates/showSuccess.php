@@ -114,7 +114,7 @@
                 
                 $endpoint = sprintf(
                                     //'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=10',
-                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json',
+                                    'http://api.twitter.com/1/statuses/user_timeline/%s.json?count=1',
                                     $username
                                     );
                 $ch = curl_init($endpoint);
