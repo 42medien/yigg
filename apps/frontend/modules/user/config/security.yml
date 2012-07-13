@@ -10,7 +10,10 @@ publicProfile:
 login:
   is_secure: false
 
-loginFb:
+fbLogin:
+  is_secure: false
+
+fbRegister:
   is_secure: false
 
 logout:
