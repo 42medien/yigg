@@ -4,7 +4,7 @@
   <script type='text/javascript'>
     $(document).ready(function(){
         //alert('test jquery');       
-        var body_html = $('#div-gpt-ad-1342004948184-0 body').html();
+        var body_html = $('#div-gpt-ad-1342004948184-0').val();
         alert(body_html);
     });
     </script>
