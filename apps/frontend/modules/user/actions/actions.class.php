@@ -373,7 +373,8 @@ class userActions extends yiggActions
                             $user->setFacebookId($facebook_user['id']);
                             $user->save();
                         }
-                        print_r($facebook_user);
+                        echo "face user: ".$facebook_user."<br>";
+                        print_r($facebook_user_profile);
                         print_r($user->getFacebookId());
                     }
                     die;
