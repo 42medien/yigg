@@ -14,6 +14,13 @@ class FormUserFbRegister extends yiggForm
         // form inputs
         $this->setWidgets(
             array(
+                'facebook_id'  => new sfWidgetFormInputHidden(
+                    array(),
+                    array(
+                        'id'    => 'facebook_id',
+                        'value' => $this->getOption('facebook_id')
+                    )
+                ),
                 'username'   => new sfWidgetFormInput(
                     array(),
                     array(
