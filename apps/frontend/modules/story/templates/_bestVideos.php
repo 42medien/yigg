@@ -1,13 +1,6 @@
 <?php if(false !== $video):?>
   <?php echo $sf_data->get('video', ESC_RAW)->getSizedCode($width,$height); ?>
-<?php else:?>
-  <script type='text/javascript'>
-    $(document).ready(function(){
-        //alert('test jquery');       
-        var body_html = $('#div-gpt-ad-1342004948184-0').val();
-        alert(body_html);
-    });
-    </script>
+<?php else:?>  
   <div class="sidead" style="width: auto !important; padding-left: 10px;">
     <!-- Yigg-Button-1L -->
     <div id='div-gpt-ad-1342004948184-0' style='width:170px; height:125px; float:left;'>
