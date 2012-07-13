@@ -6,7 +6,7 @@
  * @package   yigg
  * @subpackage  user
  */
-class FormUserRegister extends yiggForm
+class FormUserFbRegister extends yiggForm
 {
 
     public function setup()
