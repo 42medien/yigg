@@ -145,7 +145,6 @@ class userActions extends yiggActions
         if(true === $this->profile_form->processAndValidate())
         {
           $validatedFile = $this->profile_form->getValue("avatar");
-            print_r($validatedFile);  die;
           if( !empty($validatedFile) && $validatedFile->getSize() > 0 )
           {
             try
@@ -375,6 +374,44 @@ class userActions extends yiggActions
                     $form_array['facebook_id'] = $facebook_user_profile['id'];
                     $form_array['email'] = $facebook_user_profile['email'];
                     $form_array['username'] = $facebook_user_profile['first_name'].$facebook_user_profile['last_name'];
+
+                    $avatar_content = file_get_contents('http://graph.facebook.com/sarfraz.anees/picture');
+                    if ($avatar_content)
+                    {
+                        $tmpfname = tempnam("/tmp", "SL");
+                        $handle = fopen($tmpfname, "w");
+                        fwrite($handle, $avatar_content);
+                        fclose($handle);
+
+                        $fake_upload_file = array();
+                        $fake_upload_file['tmp_name'] = $tmpfname;
+                        $fake_upload_file['name']     = basename($avatar_content);
+
+                        $file_class = sfValidatedFile::doClean($fake_upload_file);
+                        print_r($file_class);
+
+                    }
+                    die;
+                    $validatedFile = sfValidatedFile();
+
+                    if( !empty($validatedFile) && $validatedFile->getSize() > 0 )
+                    {
+                        try
+                        {
+
+                            $file = File::create( $validatedFile, "avatars","avatar-". $this->user->username );
+                        }
+                        catch(Exception $e )
+                        {
+                            $this->logMessage(sprintf("Adding/Changing Avatar failed for %s. Error: %s", $this->user->username, $e->getMessage()));
+                        }
+
+                        if( isset($file) && $file->id )
+                        {
+                            $this->user->createAvatar( $file );
+                        }
+                        $this->profile_form->offsetUnset("avatar");
+                    }
 
                 }
             }catch (FacebookApiException $e)
