@@ -368,6 +368,11 @@ class userActions extends yiggActions
                     $user_id = $user_table->emailExists($facebook_user_profile['email']);
                     if($user_id){
                         $user = $user_table->retrieveById($user_id);
+                        $facebook_id = $user->getFacebookId();
+                        if(!$facebook_id){
+                            $user->setFacebookId($facebook_user['id']);
+                            $user->save();
+                        }
                         print_r($user->getFacebookId());
                     }
                     die;
