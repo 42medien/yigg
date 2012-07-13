@@ -9,9 +9,6 @@
 
 <form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
     <fieldset>
-
-
-
         <?php echo $form->render();?>
         <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>
         <div class="field" style="margin-left:160px;">

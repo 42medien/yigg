@@ -352,7 +352,35 @@ class userActions extends yiggActions
             return $this->redirect("@user_welcome");
         }
 
-        $this->form = new FormUserFbRegister();
+        require_once sfConfig::get('sf_lib_dir') . '/vendor/facebook-php-sdk/src/facebook.php';
+
+        $facebook = new Facebook(array(
+            'appId' => sfConfig::get('app_facebook_app_id'),
+            'secret' => sfConfig::get('app_facebook_secret'),
+        ));
+
+        $form_array = array();
+
+        $facebook_user = $facebook->getUser();
+        if ($facebook_user)
+        {
+            try
+            {
+                $facebook_user_profile = $facebook->api('/me');
+
+                if(!is_null($facebook_user_profile['email']))
+                {
+                    $form_array['email'] = $facebook_user_profile['email'];
+                }
+            }catch (FacebookApiException $e)
+            {
+                error_log($e);
+                $facebook_user = null;
+            }
+        }
+
+        $this->form = new FormUserFbRegister(null, $form_array);
+
         if( true === $this->form->processAndValidate() )
         {
             $ip_address = $request->getRemoteAddress();
@@ -395,8 +423,6 @@ class userActions extends yiggActions
             'secret' => sfConfig::get('app_facebook_secret'),
         ));
 
-        //Get user object from Facebook - this method is only executed after we've confirmed that the user
-        //has an active session with facebook and that our app is approved...so it should work
         $facebook_user = $facebook->getUser();
 
         if ($facebook_user)
