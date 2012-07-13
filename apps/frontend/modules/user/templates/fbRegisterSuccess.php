@@ -7,7 +7,7 @@
     Dein Konto kann nur nach Anmeldung mit einer bestätigten email-Adresse freigeschaltet werden</p>
 <?php else: ?>
 
-<form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
+<form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_fb_register"); ?>" method="post">
     <fieldset>
         <?php echo $form->render();?>
         <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>

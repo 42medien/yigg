@@ -111,6 +111,7 @@ class FormUserFbRegister extends yiggForm
         // set labels
         $this->widgetSchema->setLabels(
             array(
+                'facebook_id'       => 'facebook_id:',
                 'username'          => 'Benutzername:',
                 'password'          => 'Passwort:',
                 'email'             => 'Email:',
