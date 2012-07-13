@@ -387,8 +387,8 @@ class userActions extends yiggActions
                         $fake_upload_file = array();
                         $fake_upload_file['tmp_name'] = $tmpfname;
                         $fake_upload_file['name']     = basename($avatar_content);
-                        $file_class = new sfValidatedFile($fake_upload_file['name']);
-                        print_r($file_class);
+                        //$file_class = new sfValidatedFile($fake_upload_file['name']);
+                        print_r($fake_upload_file);
 
                     }
                     die;
