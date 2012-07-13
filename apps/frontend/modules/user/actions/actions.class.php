@@ -351,7 +351,7 @@ class userActions extends yiggActions
 
         if( true === $this->session->hasUser() )
         {
-            //return $this->redirect("@user_welcome");
+            return $this->redirect("@user_welcome");
         }
 
         require_once sfConfig::get('sf_lib_dir') . '/vendor/facebook-php-sdk/src/facebook.php';
@@ -394,6 +394,8 @@ class userActions extends yiggActions
             {
                 $this->user = new User();
                 $this->user->fromArray($this->form->getValues());
+
+                //create avatar
                 $avatar_content = file_get_contents('http://graph.facebook.com/'.$facebook_user.'/picture');
                 if ($avatar_content)
                 {
@@ -408,7 +410,6 @@ class userActions extends yiggActions
                     {
                         try
                         {
-
                             $file = File::createFromValidatedFile( $validatedFile, "avatars","avatar-". $this->user->username );
                         }
                         catch(Exception $e )
@@ -474,6 +475,7 @@ class userActions extends yiggActions
                         if(!$facebook_id){
 
                             $user->setFacebookId($facebook_user_profile['id']);
+                            //
                             $user->save();
                         }
 

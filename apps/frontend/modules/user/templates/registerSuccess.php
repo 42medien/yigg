@@ -39,6 +39,8 @@
 <!-- END FACEBOOK JAVASCRIPT SDK -->
 
 <button onclick="onClickloginfb();">Login</button>
+
+
   <form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
     <fieldset>
 
