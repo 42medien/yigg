@@ -17,7 +17,8 @@ class FormUserFbRegister extends yiggForm
                 'username'   => new sfWidgetFormInput(
                     array(),
                     array(
-                        'id'    => 'Benutzername'
+                        'id'    => 'Benutzername',
+                        'value' => $this->getOption('username')
                     )
                 ),
                 'password'    => new sfWidgetFormInputPassword(
@@ -30,7 +31,8 @@ class FormUserFbRegister extends yiggForm
                     array(),
                     array(
                         'id'  => 'Email',
-                        'value' => $this->getOption('email')
+                        'value' => $this->getOption('email'),
+                        'disabled' => 'disabled'
                     )
                 ),
                 'acceptedTerms' => new sfWidgetFormInputCheckbox(
