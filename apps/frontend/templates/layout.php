@@ -2,12 +2,7 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
   <head profile='http://www.w3.org/2006/03/hcard'>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-    <script type='text/javascript'>
-        
-        $(document).ready(function(){
-            alert('test jquery');       
-        });
-        
+    <script type='text/javascript'>                        
         var googletag = googletag || {};
         googletag.cmd = googletag.cmd || [];
         (function() {
@@ -47,6 +42,12 @@
     <?php include_title() ?>
     <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
+    
+    <script type='text/javascript'>
+    $(document).ready(function(){
+            alert('test jquery');       
+        });
+    </script>
 
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
