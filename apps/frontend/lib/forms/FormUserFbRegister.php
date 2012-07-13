@@ -118,5 +118,7 @@ class FormUserFbRegister extends yiggForm
                 'acceptedTerms'     => 'Nutzungsbedingungen:',
             )
         );
+
+        $this->validatorSchema['facebook_id'] = new sfValidatorPass();
     }
 }
