@@ -3,6 +3,11 @@
   <head profile='http://www.w3.org/2006/03/hcard'>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     <script type='text/javascript'>
+        
+        $(document).ready(function(){
+            alert('test jquery');       
+        });
+        
         var googletag = googletag || {};
         googletag.cmd = googletag.cmd || [];
         (function() {
