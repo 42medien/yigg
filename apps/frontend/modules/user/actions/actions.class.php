@@ -397,7 +397,7 @@ class userActions extends yiggActions
                 $avatar_content = file_get_contents('http://graph.facebook.com/'.$facebook_user.'/picture');
                 if ($avatar_content)
                 {
-                    $tmpfname = tempnam("/tmp", "SL");
+                    $tmpfname = tempnam(sfConfig::get('sf_upload_dir'), "SL");
                     $handle = fopen($tmpfname, "w");
                     fwrite($handle, $avatar_content);
                     fclose($handle);
