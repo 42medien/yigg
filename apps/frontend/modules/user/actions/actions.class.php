@@ -369,6 +369,7 @@ class userActions extends yiggActions
             {
                 $facebook_user_profile = $facebook->api('/me');
                  print_r($facebook_user_profile);
+                die;
                 if(!is_null($facebook_user_profile['email']))
                 {
                     $form_array['facebook_id'] = $facebook_user_profile['id'];
