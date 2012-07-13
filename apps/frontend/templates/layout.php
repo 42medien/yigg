@@ -83,6 +83,13 @@
         <div class="twoThree-right">
           <?php include_partial("user/userinfo"); ?>
           <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
+            <script type='text/javascript'>
+            $(document).ready(function(){
+                //alert('test jquery');       
+                var body_html = $('#div-gpt-ad-1342004948184-0').val();
+                alert(body_html);
+            });
+            </script>
             <?php //if(true === has_slot("sidebar_sponsoring")): ?>
             <?php //include_slot("sidebar_sponsoring"); ?>
           <?php //endif; ?>
