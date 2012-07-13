@@ -150,6 +150,7 @@ class userActions extends yiggActions
             try
             {
               $file = File::createFromValidatedFile( $validatedFile, "avatars","avatar-". $this->user->username );
+                print_r($file);  die;
             }
             catch(Exception $e )
             {
