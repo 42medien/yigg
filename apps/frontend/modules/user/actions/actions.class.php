@@ -348,6 +348,7 @@ class userActions extends yiggActions
      */
     public function executeFbRegister($request)
     {
+        die;
         if( true === $this->session->hasUser() )
         {
             //return $this->redirect("@user_welcome");
