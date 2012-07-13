@@ -145,12 +145,13 @@ class userActions extends yiggActions
         if(true === $this->profile_form->processAndValidate())
         {
           $validatedFile = $this->profile_form->getValue("avatar");
+            print_r($validatedFile);  die;
           if( !empty($validatedFile) && $validatedFile->getSize() > 0 )
           {
             try
             {
               $file = File::createFromValidatedFile( $validatedFile, "avatars","avatar-". $this->user->username );
-                print_r($file);  die;
+
             }
             catch(Exception $e )
             {
