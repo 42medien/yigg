@@ -422,8 +422,9 @@ class userActions extends yiggActions
                         }
                     }
                 }
+                print_r( $this->user);
 
-                $this->user->save();
+                //$this->user->save();
             }
             catch( Exception $e)
             {
