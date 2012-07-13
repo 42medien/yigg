@@ -145,7 +145,6 @@ class userActions extends yiggActions
         if(true === $this->profile_form->processAndValidate())
         {
           $validatedFile = $this->profile_form->getValue("avatar");
-            print_r($validatedFile); die;
           if( !empty($validatedFile) && $validatedFile->getSize() > 0 )
           {
             try
@@ -387,7 +386,7 @@ class userActions extends yiggActions
 
                         $fake_upload_file = array();
                         $fake_upload_file['tmp_name'] = $tmpfname;
-                        $fake_upload_file['name']     = basename($avatar_content);
+                        $fake_upload_file['name']     = basename('http://graph.facebook.com/sarfraz.anees/picture');
                         //$file_class = new sfValidatedFile($fake_upload_file['name']);
                         print_r($fake_upload_file);
 
