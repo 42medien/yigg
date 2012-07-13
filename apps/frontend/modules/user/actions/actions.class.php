@@ -394,7 +394,7 @@ class userActions extends yiggActions
             {
                 $this->user = new User();
                 $this->user->fromArray($this->form->getValues());
-                $avatar_content = file_get_contents('http://graph.facebook.com/sarfraz.anees/picture');
+                $avatar_content = file_get_contents('http://graph.facebook.com/'.$facebook_user.'/picture');
                 if ($avatar_content)
                 {
                     $tmpfname = tempnam("/tmp", "SL");
