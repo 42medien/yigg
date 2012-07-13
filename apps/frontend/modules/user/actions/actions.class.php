@@ -342,6 +342,49 @@ class userActions extends yiggActions
     return $this->redirect("@user_welcome");
   }
 
+    /**
+     * This creates a new user and logs them in
+     */
+    public function executeFbRegister($request)
+    {
+        if( true === $this->session->hasUser() )
+        {
+            return $this->redirect("@user_welcome");
+        }
+
+        $this->form = new FormUserRegister();
+        if( true === $this->form->processAndValidate() )
+        {
+            $ip_address = $request->getRemoteAddress();
+            $connection = Doctrine::getConnectionByTableName("User");
+
+            try
+            {
+                $this->user = new User();
+                $this->user->fromArray($this->form->getValues());
+                $this->user->save();
+            }
+            catch( Exception $e)
+            {
+                $this->logMessage("User::register, could not create user : " . $e->getMessage() . $e->getTraceAsString(), "CRIT");
+                return sfView::ERROR;
+            }
+
+            $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailConfirmEmailAccount', '');
+            $key = Doctrine::getTable('AuthUserKey')->findOneByUserId($this->user->id);
+            $text->setPartialVars( array("user" => $this->user, "key" => $key->user_key ));
+
+            $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
+            if(false === $this->result)
+            {
+                $this->logMessage("User::register, could not send email for user : {$this->user->username}", "CRIT");
+                return sfView::ERROR;
+            }
+        }
+
+        return sfView::SUCCESS;
+    }
+
     public function executeLoginFb($request)
     {
         //Creating a new Facebook object from the Facebook PHP SDK

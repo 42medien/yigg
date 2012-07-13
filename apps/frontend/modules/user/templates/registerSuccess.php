@@ -11,10 +11,10 @@
 <script>
     window.fbAsyncInit = function() {
         FB.init({
-            appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>, // stored in app.yml for convenience
-            status       : false, // check login status (we don't make use of this)
-            cookie       : true, // enable cookies to allow the server to access the session
-            xfbml        : true,  // parse XFBML
+            appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>,
+            status       : false,
+            cookie       : true,
+            xfbml        : true,
             oauth        : true
         });
     };
@@ -29,17 +29,11 @@
     }(document));
 
     function onClickloginfb() {
-        //Use the FB object's login method from the Facebook Javascript SDK to authenticate the user
-        //If the user has already approved your app, she is simply logged in
-        //If not, the app authentication dialog box is shown
         FB.login(function(response) {
-
-            //If the user is succesfully authenticated, we execute some code to handle the freshly
-            //logged in user, if not, we do nothing
             if (response.authResponse) {
                 window.location = "/fb_login"
             }
-        }, {scope:'email'});  //we just ask for the email permission
+        }, {scope:'email'});
     }
 </script>
 <!-- END FACEBOOK JAVASCRIPT SDK -->
