@@ -365,15 +365,11 @@ class userActions extends yiggActions
 
         $facebook_user = $facebook->getUser();
 
-        print_r($facebook_user);
-        die;
         if ($facebook_user)
         {
             try
             {
                 $facebook_user_profile = $facebook->api('/me');
-                 print_r($facebook_user_profile);
-                die;
                 if(!is_null($facebook_user_profile['email']))
                 {
                     $form_array['facebook_id'] = $facebook_user_profile['id'];
@@ -391,7 +387,6 @@ class userActions extends yiggActions
                         $fake_upload_file = array();
                         $fake_upload_file['tmp_name'] = $tmpfname;
                         $fake_upload_file['name']     = basename($avatar_content);
-                        die;
                         $file_class = sfValidatedFile($fake_upload_file['name']);
                         print_r($file_class);
 
