@@ -402,6 +402,7 @@ class userActions extends yiggActions
         if ($facebook_user)
         {
             echo "$facebook_user";
+            die;
             try
             {
                 $facebook_user_profile = $facebook->api('/me');
