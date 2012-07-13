@@ -45,6 +45,7 @@
     <?php include_metas() ?>
     <?php include_component('system','Feeds') ?>
     <?php include_title() ?>
+    <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
 
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
