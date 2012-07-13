@@ -370,16 +370,21 @@ class userActions extends yiggActions
                         $user = $user_table->retrieveById($user_id);
                         $facebook_id = $user->getFacebookId();
                         if(!$facebook_id){
+
                             $user->setFacebookId($facebook_user_profile['id']);
                             $user->save();
                         }
-                        echo "face user: ".$facebook_user."<br>";
-                        print_r($facebook_user_profile);
-                        print_r($user->getFacebookId());
-                    }
-                    die;
-                }
 
+                        if($user->status == 0)
+                        {
+                            $this->getUser()->setFlash("error_msg", "Dein Account wurde noch nicht freigeschaltet.");
+                            return sfView::SUCCESS;
+                        }
+
+                        $this->getUser()->login($user);
+                        return $this->redirect("@best_stories");
+                    }
+                }
 
             }catch (FacebookApiException $e)
             {
@@ -387,8 +392,6 @@ class userActions extends yiggActions
                 $facebook_user = null;
             }
         }
-        //print_r($facebook_user);
-        die;
     }
 
     public function executeLogin($request)
