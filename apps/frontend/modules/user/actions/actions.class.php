@@ -370,7 +370,7 @@ class userActions extends yiggActions
                         $user = $user_table->retrieveById($user_id);
                         $facebook_id = $user->getFacebookId();
                         if(!$facebook_id){
-                            $user->setFacebookId($facebook_user['id']);
+                            $user->setFacebookId($facebook_user_profile['id']);
                             $user->save();
                         }
                         echo "face user: ".$facebook_user."<br>";
