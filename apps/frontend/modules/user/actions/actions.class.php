@@ -352,7 +352,7 @@ class userActions extends yiggActions
             return $this->redirect("@user_welcome");
         }
 
-        $this->form = new FormUserRegister();
+        $this->form = new FormUserFbRegister();
         if( true === $this->form->processAndValidate() )
         {
             $ip_address = $request->getRemoteAddress();
@@ -385,7 +385,7 @@ class userActions extends yiggActions
         return sfView::SUCCESS;
     }
 
-    public function executeLoginFb($request)
+    public function executeFbLogin($request)
     {
         //Creating a new Facebook object from the Facebook PHP SDK
         require_once sfConfig::get('sf_lib_dir') . '/vendor/facebook-php-sdk/src/facebook.php';
@@ -426,6 +426,8 @@ class userActions extends yiggActions
 
                         $this->getUser()->login($user);
                         return $this->redirect("@best_stories");
+                    }else{
+                        return $this->redirect("@user_fb_register");
                     }
                 }
 

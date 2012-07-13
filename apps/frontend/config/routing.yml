@@ -244,7 +244,11 @@ postbox_views:
 # User Actions
 user_fb_login:
   url:    /fb_login
-  param:  { module: user, action: loginFb}
+  param:  { module: user, action: fbLogin}
+
+user_fb_register:
+  url:    /fb_register
+  param:  { module: user, action: fbRegister}
 
 user_login:
   url:    /login
