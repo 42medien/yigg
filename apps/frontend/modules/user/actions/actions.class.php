@@ -350,7 +350,7 @@ class userActions extends yiggActions
     {
         if( true === $this->session->hasUser() )
         {
-            return $this->redirect("@user_welcome");
+            //return $this->redirect("@user_welcome");
         }
 
         require_once sfConfig::get('sf_lib_dir') . '/vendor/facebook-php-sdk/src/facebook.php';
