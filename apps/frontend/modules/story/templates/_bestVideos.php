@@ -2,10 +2,10 @@
   <?php echo $sf_data->get('video', ESC_RAW)->getSizedCode($width,$height); ?>
 <?php else:?>
 <script type='text/javascript'>
-    $(document).ready(function(){
+    
         var html_body = $('#div-gpt-ad-1342004948184-0').html();
         alert(html_body);
-    });
+    
 </script>
 
   <div class="sidead" style="width: auto !important; padding-left: 10px; ">      
