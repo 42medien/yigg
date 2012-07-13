@@ -371,6 +371,8 @@ class userActions extends yiggActions
                 if(!is_null($facebook_user_profile['email']))
                 {
                     $form_array['email'] = $facebook_user_profile['email'];
+                    print_r($facebook_user_profile);
+
                 }
             }catch (FacebookApiException $e)
             {
