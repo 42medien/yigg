@@ -2,11 +2,7 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
   <head profile='http://www.w3.org/2006/03/hcard'>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-    <script type='text/javascript'>                
-        $(document).ready(function(){
-            var html_body = $('#div-gpt-ad-1342004948184-0').html();
-            alert(html_body);
-        });
+    <script type='text/javascript'>
         var googletag = googletag || {};
         googletag.cmd = googletag.cmd || [];
         (function() {
