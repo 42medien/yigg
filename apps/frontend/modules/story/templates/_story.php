@@ -115,7 +115,7 @@
     </div>
 
 <?php
-    var_dump($story);
+    //var_dump($story);
 ?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
