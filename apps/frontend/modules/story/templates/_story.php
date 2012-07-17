@@ -150,7 +150,8 @@
                       ->orderBy("RAND()")
                       ->limit(5)
                       ->execute();
-   echo $story_tags->getSqlQuery();
+   
+    var_dump($story_tags);
    
    /*
     SELECT st.tag_id,
