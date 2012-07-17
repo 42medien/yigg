@@ -136,7 +136,7 @@
                       ->execute();
    $tweet_tag_ids = array();
    
-  echo $story_tags->getSqlQuery();
+  //echo $story_tags->getSqlQuery();
    
    /*
     SELECT st.tag_id,
