@@ -143,7 +143,7 @@
                       ->execute();
    $tweet_tag_ids = array();*/
    
-    $story_tags = Doctrine_Query::create()
+    /*$story_tags = Doctrine_Query::create()
                       ->select('st2.story_id,
                                 st2.story_title')
                       ->from("story s")
@@ -187,9 +187,9 @@
    
     
 ?>
-<?php foreach($story_tags as $story_tag):?>    
-    <?php echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title));?>
-<?php endforeach;?>
+<?php //foreach($story_tags as $story_tag):?>    
+    <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title));?>
+<?php //endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
