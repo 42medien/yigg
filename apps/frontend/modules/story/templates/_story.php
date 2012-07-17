@@ -143,12 +143,19 @@
                       ->execute();
    $tweet_tag_ids = array();*/
    
-    $story_tags = Doctrine_Query::create()
-                      ->select('st.story_id,
-                                s.title')
+    /*$story_tags = Doctrine_Query::create()
+                      ->select('st2.story_id,
+                                st2.story_title')
                       ->from("story s")
                       ->leftJoin('story_tag AS st ON s.id = st.story_id')
-                     
+                      ->innerJoin("(SELECT st.tag_id,
+                                        st.story_id,
+                                        s.title AS story_title
+                                    FROM story_tag AS st
+                                    LEFT JOIN story AS s ON s.id = st.story_id
+                                    GROUP BY
+                                    st.story_id
+                                ) AS st2 ON st2.tag_id = st.tag_id")
                       ->where("s.id = ?", $story['id'])
                       ->orderBy("RAND()")
                       ->limit(5)
@@ -180,9 +187,9 @@
    
     
 ?>
-<?php foreach($story_tags as $story_tag):?>    
-    <?php echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title));?>
-<?php endforeach;?>
+<?php //foreach($story_tags as $story_tag):?>    
+    <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title));?>
+<?php //endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
