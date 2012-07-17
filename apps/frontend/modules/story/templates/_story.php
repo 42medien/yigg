@@ -117,6 +117,48 @@
 <?php
     //var_dump($story);
     echo $story['id'];
+    
+    $story_tags = Doctrine_Query::create()
+                      ->select('st.tag_id,
+                                st2.story_id,
+                                s.title')
+                      ->from("story_tag st")
+                      ->innerJoin("(SELECT tag_id,
+                                        story_id
+                                    FROM story_tag
+                                    GROUP BY
+                                    story_id
+                                ) AS st2 ON st2.tag_id = st.tag_id")
+                      ->leftJoin('story AS s ON s.id = st2.story_id')
+                      ->where("st.story_id = ?", $story['id'])
+                      ->orderBy("RAND()")
+                      ->limit(5)
+                      ->execute();
+   $tweet_tag_ids = array();
+   
+  echo $story_tags->getSqlQuery();
+   
+   /*
+    SELECT st.tag_id,
+        st2.story_id,
+        s.title
+    FROM `story_tag` AS st
+
+    INNER JOIN 
+    (SELECT tag_id,
+            story_id
+        FROM story_tag
+        GROUP BY
+        story_id
+    ) AS st2 ON st2.tag_id = st.tag_id
+
+    LEFT JOIN story AS s ON s.id = st2.story_id 
+    
+    WHERE st.story_id = 2639321
+    ORDER BY RAND() LIMIT 0,5
+    */
+   
+    
 ?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
