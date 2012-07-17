@@ -143,7 +143,14 @@
                       ->execute();
    $tweet_tag_ids = array();*/
    
-   //echo $story_tags->getSqlQuery();
+    $story_tags = Doctrine_Query::create()
+                      ->select('s.id, s.title')
+                      ->from("story s")                      
+                      ->where("s.id = ?", $story['id'])
+                      ->orderBy("RAND()")
+                      ->limit(5)
+                      ->execute();
+   echo $story_tags->getSqlQuery();
    
    /*
     SELECT st.tag_id,
