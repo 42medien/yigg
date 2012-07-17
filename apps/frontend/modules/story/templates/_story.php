@@ -134,9 +134,16 @@
                       ->orderBy("RAND()")
                       ->limit(5)
                       ->execute();*/
+    $story_tags = Doctrine_Query::create()
+                      ->select('st.tag_id')
+                      ->from("story_tag st")                      
+                      ->where("st.story_id = ?", $story['id'])
+                      ->orderBy("RAND()")
+                      ->limit(5)
+                      ->execute();
    $tweet_tag_ids = array();
    
-  //echo $story_tags->getSqlQuery();
+ echo $story_tags->getSqlQuery();
    
    /*
     SELECT st.tag_id,
