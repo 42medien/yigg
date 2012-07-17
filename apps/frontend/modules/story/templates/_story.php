@@ -151,7 +151,7 @@
                       ->limit(5)
                       ->execute();
    
-    var_dump($story_tags);
+    echo $story_tags;
    
    /*
     SELECT st.tag_id,
