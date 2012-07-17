@@ -144,8 +144,18 @@
    $tweet_tag_ids = array();*/
    
     $story_tags = Doctrine_Query::create()
-                      ->select('s.id, s.title')
-                      ->from("story s")                      
+                      ->select('st2.story_id,
+                                st2.story_title')
+                      ->from("story s")
+                      ->leftJoin('story_tag AS st ON s.id = st.story_id')
+                      ->innerJoin("(SELECT st.tag_id,
+                                        st.story_id,
+                                        s.title AS story_title
+                                    FROM story_tag AS st
+                                    LEFT JOIN story AS s ON s.id = st.story_id
+                                    GROUP BY
+                                    st.story_id
+                                ) AS st2 ON st2.tag_id = st.tag_id")
                       ->where("s.id = ?", $story['id'])
                       ->orderBy("RAND()")
                       ->limit(5)
@@ -154,22 +164,24 @@
  //print_r($story_tags);
    
    /*
-    SELECT st.tag_id,
+    SELECT 
         st2.story_id,
-        s.title
-    FROM `story_tag` AS st
+        st2.story_title
+    FROM `story` AS s
+
+    LEFT JOIN story_tag AS st ON s.id = st.story_id
 
     INNER JOIN 
-    (SELECT tag_id,
-            story_id
-        FROM story_tag
+    (SELECT st.tag_id,
+            st.story_id,
+            s.title AS story_title
+        FROM story_tag AS st
+        LEFT JOIN story AS s ON s.id = st.story_id
         GROUP BY
-        story_id
+        st.story_id
     ) AS st2 ON st2.tag_id = st.tag_id
 
-    LEFT JOIN story AS s ON s.id = st2.story_id 
-    
-    WHERE st.story_id = 2639321
+    WHERE s.id = 2639321
     ORDER BY RAND() LIMIT 0,5
     */
    
