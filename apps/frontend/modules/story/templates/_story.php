@@ -114,6 +114,10 @@
        </h3>
     </div>
 
+<?php
+    var_dump($story);
+?>
+
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
     <?php endif; ?>
