@@ -140,7 +140,7 @@
                       ->limit(5)
                       ->execute();*/
     
-    $story_tags = Doctrine_Query::create()
+   /* $story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s2.title')
                       ->from("Story s")
