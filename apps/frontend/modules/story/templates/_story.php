@@ -143,7 +143,7 @@
     $story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s.title')
-                      ->from("StoryTag st")
+                      ->from("StoryTagSeg st")
                       ->leftJoin('st.StoryTag st2')
                       ->leftJoin('st.Story s')
                       
