@@ -145,7 +145,7 @@
                                 s.title')
                       ->from("Story s")
                       ->leftJoin('s.StoryTag st')
-                      ->leftJoin('s.StoryTag2 st2')
+                      ->leftJoin('s.StoryTagSet st2')
                       ->leftJoin('s.Story s2')
                       
                       ->where("st.story_id = ?", $story['id'])
