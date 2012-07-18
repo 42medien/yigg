@@ -103,7 +103,7 @@ Story:
     story_is_deleted:
       fields: deleted_at
       
-StoryTag:  
+StoryTagSeg:  
   columns:
     id:
       primary: true
