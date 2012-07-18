@@ -48,13 +48,7 @@ Story:
       class: StoryTag      
       local: id
       foreign: story_id     
-      type: many
-    StorySet:
-      class: StoryTag
-      refClass: Story      
-      local: id
-      foreign: story_id     
-      type: many  
+      type: many    
     Author:
       class: User
       local: user_id
