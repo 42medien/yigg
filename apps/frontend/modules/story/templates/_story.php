@@ -140,11 +140,12 @@
                       ->limit(5)
                       ->execute();*/
     
-    /*$story_tags = Doctrine_Query::create()
+    $story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s.title')
                       ->from("StoryTag st")
-                      ->leftJoin('st.StoryTag s')
+                      ->leftJoin('st.StoryTag st2')
+                      ->leftJoin('st.Story s')
                       
                       ->where("st.story_id = ?", $story['id'])
                       ->orderBy("RAND()")
