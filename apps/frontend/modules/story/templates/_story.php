@@ -132,8 +132,8 @@
     $story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s.title')
-                      ->from("StoryTag st")
-                      ->leftJoin('st.Story s')
+                      ->from("Story s")
+                      ->leftJoin('s.StoryTag st')
                       
                       ->where("st.story_id = ?", $story['id'])
                       ->orderBy("RAND()")
