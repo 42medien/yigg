@@ -130,18 +130,11 @@
                       ->execute();*/
 
     $story_tags = Doctrine_Query::create()
-                      ->select('st2.story_id,
-                                st2.story_title')
+                      ->select('st.story_id,
+                                s.title')
                       ->from("StoryTag st")
                       ->leftJoin('st.Story s')
-                      ->innerJoin("(SELECT st.tag_id,
-                                        st.story_id,
-                                        s.title AS story_title
-                                    FROM story_tag AS st
-                                    LEFT JOIN story AS s ON s.id = st.story_id
-                                    GROUP BY
-                                    st.story_id
-                                ) AS st2 ON st2.tag_id = st.tag_id")
+                      
                       ->where("st.story_id = ?", $story['id'])
                       ->orderBy("RAND()")
                       ->limit(5)
