@@ -70,7 +70,10 @@ Story:
     Tags:
       class: Tag
       refClass: StoryTag
+      local: id
+      foreign: story_id
       foreignAlias: Story
+      type: many
     Tweets:
       class: Tweet
       refClass: StoryTweet
