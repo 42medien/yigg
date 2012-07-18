@@ -49,7 +49,7 @@ Story:
       local: id
       foreign: story_id     
       type: many
-    StoryTag2:
+    StoryTagSet:
       class: StoryTag      
       refClass: StoryTag
       local: tag_id
