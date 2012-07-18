@@ -96,6 +96,7 @@
          <li>             
              <?php 
                 //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
+                echo $story["external_url"]; 
                 $host_name = $story->Domain->hostname;
                 if($host_name != '')
                 {
