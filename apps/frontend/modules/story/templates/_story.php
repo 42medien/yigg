@@ -131,10 +131,10 @@
 
     $story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
-                                s.title')
+                                st2.title')
                       ->from("Story s")
                       ->leftJoin('s.StoryTag st')
-                      
+                      ->innerJoin('s.StorySet st2')
                       ->where("st.story_id = ?", $story['id'])
                       ->orderBy("RAND()")
                       ->limit(5)
