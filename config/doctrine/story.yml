@@ -51,8 +51,7 @@ Story:
       type: many
     StorySet:
       class: StoryTag
-      refClass: Story
-      foreignAlias: st2
+      refClass: Story      
       local: id
       foreign: story_id     
       type: many  
