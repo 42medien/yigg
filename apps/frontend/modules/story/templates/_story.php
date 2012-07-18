@@ -143,7 +143,7 @@
                       ->execute();
    $tweet_tag_ids = array();*/
    
-    /*$story_tags = Doctrine_Query::create()
+    $story_tags = Doctrine_Query::create()
                       ->select('st2.story_id,
                                 st2.story_title')
                       ->from("story s")
@@ -161,7 +161,7 @@
                       ->limit(5)
                       ->execute();
    
- //print_r($story_tags);
+ print_r($story_tags);
    
    /*
     SELECT 
