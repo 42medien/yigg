@@ -101,16 +101,17 @@
             else {
                 echo ''; // Invalid Response
             }
-            echo '<pre>';
-            print_r(htmlSpecialChars(urldecode($tweets['query'])));
-            echo '</pre>';
+            //echo '<pre>';
+            //print_r(htmlSpecialChars(urldecode($tweets['query'])));
+            //echo '</pre>';
+            $tweer_url = htmlSpecialChars(urldecode($tweets['query']));
         ?>                
         <?php foreach($tweets['results'] as $tweet_res) { ?>
 
             <?php 
                                    
             $twitter_username = htmlSpecialChars($tweet_res['from_user']);
-            $twitter_user_url = 'https://twitter.com/' . $twitter_username;
+            //$twitter_user_url = 'https://twitter.com/' . $twitter_username;
             echo
                 link_to(
                     img_tag(
@@ -121,7 +122,7 @@
                         "class" => "avatar",
                         "alt"=> "Profil von {$twitter_username} besuchen")
                     ),
-                    $twitter_user_url,
+                    $tweer_url,
                     array(
                     "title" => "Profil von {$twitter_username} besuchen",
                     "rel" => "nofollow"
