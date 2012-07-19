@@ -101,9 +101,9 @@
             else {
                 echo ''; // Invalid Response
             }
-            //echo '<pre>';
-            //print_r($tweets);
-            //echo '</pre>';
+            echo '<pre>';
+            print_r($tweets['query']);
+            echo '</pre>';
         ?>                
         <?php foreach($tweets['results'] as $tweet_res) { ?>
 
