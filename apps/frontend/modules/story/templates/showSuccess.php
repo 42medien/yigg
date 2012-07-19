@@ -106,7 +106,7 @@
 
             <?php 
             $twitter_username = htmlSpecialChars($tweet_res['from_user']);
-            $twitter_user_url = 'https://twitter.com/' . $twitter_username;
+            //$twitter_user_url = 'https://twitter.com/' . $twitter_username;
             echo
                 link_to(
                     img_tag(
@@ -117,7 +117,7 @@
                         "class" => "avatar",
                         "alt"=> "Profil von {$twitter_username} besuchen")
                     ),
-                    $twitter_user_url,
+                    $tweet["Tweet"]->getYiggTwitterProfileLink(),
                     array(
                     "title" => "Profil von {$twitter_username} besuchen",
                     "rel" => "nofollow"
