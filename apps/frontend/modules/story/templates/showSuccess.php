@@ -102,7 +102,7 @@
                 echo ''; // Invalid Response
             }
             echo '<pre>';
-            print_r(htmlSpecialChars($tweets['query']));
+            print_r(htmlSpecialChars(urldecode($tweets['query'])));
             echo '</pre>';
         ?>                
         <?php foreach($tweets['results'] as $tweet_res) { ?>
