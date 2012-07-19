@@ -101,10 +101,14 @@
             else {
                 echo ''; // Invalid Response
             }
+            echo '<pre>';
+            print_r($tweets);
+            echo '</pre>';
         ?>                
         <?php foreach($tweets['results'] as $tweet_res) { ?>
 
             <?php 
+                                   
             $twitter_username = htmlSpecialChars($tweet_res['from_user']);
             $twitter_user_url = 'https://twitter.com/' . $twitter_username;
             echo
