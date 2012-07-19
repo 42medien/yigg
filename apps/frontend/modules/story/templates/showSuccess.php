@@ -117,7 +117,7 @@
                         "class" => "avatar",
                         "alt"=> "Profil von {$twitter_username} besuchen")
                     ),
-                    $tweet["Tweet"]->getYiggTwitterProfileLink(),
+                    $tweets["Tweet"]->getYiggTwitterProfileLink(),
                     array(
                     "title" => "Profil von {$twitter_username} besuchen",
                     "rel" => "nofollow"
