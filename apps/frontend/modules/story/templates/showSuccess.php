@@ -71,6 +71,64 @@
      </ul>
    <?php cache_save(); ?>
  <?php endif; ?>
+ 
+ <h3 class="heading-right">Passende Tweets</h3>
+ <ul class="avatarList">
+    <li>             
+        <?php 
+        //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
+        //echo $story["external_url"]; 
+        $host_name = $story["external_url"];
+        if($host_name != '')
+        {
+            $endpoint = sprintf(
+                                'http://search.twitter.com/search.json?q=%s',
+                                $host_name
+                                );
+            $ch = curl_init($endpoint);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $data = curl_exec($ch);
+            $info = curl_getinfo($ch);
+            curl_close($ch);
+
+            if ($info['http_code'] == 200) {
+                $tweets = json_decode($data, true);
+            }
+            else if ($info['http_code'] == 401) {
+                echo 'Invalid Credentials';
+            }
+            else {
+                echo ''; // Invalid Response
+            }
+        ?>                
+        <?php foreach($tweets['results'] as $tweet_res) { ?>
+
+            <?php 
+            $twitter_username = htmlSpecialChars($tweet_res['from_user']);
+            $twitter_user_url = 'https://twitter.com/' . $twitter_username;
+            echo
+                link_to(
+                    img_tag(
+                    htmlSpecialChars($tweet_res['profile_image_url']),
+                    array(
+                        "width" => 48,
+                        "height" => 48,
+                        "class" => "avatar",
+                        "alt"=> "Profil von {$twitter_username} besuchen")
+                    ),
+                    $twitter_user_url,
+                    array(
+                    "title" => "Profil von {$twitter_username} besuchen",
+                    "rel" => "nofollow"
+                    )
+                );?>
+        <?php } ?>
+    <?php } ?>             
+    </li>
+
+</ul>
+    
 
   <h3>Jetzt und später mehr von dieser Quelle:
     <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
@@ -92,62 +150,7 @@
       Mehr lesen zu diesen Themen:                                    
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
-    <ul class="avatarList">
-         <li>             
-             <?php 
-                //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-                //echo $story["external_url"]; 
-                $host_name = $story["external_url"];
-                if($host_name != '')
-                {
-                    $endpoint = sprintf(
-                                        'http://search.twitter.com/search.json?q=%s',
-                                        $host_name
-                                        );
-                    $ch = curl_init($endpoint);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-                    $data = curl_exec($ch);
-                    $info = curl_getinfo($ch);
-                    curl_close($ch);
-
-                    if ($info['http_code'] == 200) {
-                        $tweets = json_decode($data, true);
-                    }
-                    else if ($info['http_code'] == 401) {
-                        echo 'Invalid Credentials';
-                    }
-                    else {
-                        echo ''; // Invalid Response
-                    }
-             ?>                
-                <?php foreach($tweets['results'] as $tweet_res) { ?>
-                    
-                    <?php 
-                    $twitter_username = htmlSpecialChars($tweet_res['from_user']);
-                    $twitter_user_url = 'https://twitter.com/' . $twitter_username;
-                    echo
-                        link_to(
-                            img_tag(
-                            htmlSpecialChars($tweet_res['profile_image_url']),
-                            array(
-                                "width" => 48,
-                                "height" => 48,
-                                "class" => "avatar",
-                                "alt"=> "Profil von {$twitter_username} besuchen")
-                            ),
-                            $twitter_user_url,
-                            array(
-                            "title" => "Profil von {$twitter_username} besuchen",
-                            "rel" => "nofollow"
-                            )
-                        );?>
-                <?php } ?>
-          <?php } ?>             
-         </li>
-       
-     </ul>
-  
+      
     <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
   <?php endif;?>
 
