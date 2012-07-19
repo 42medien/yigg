@@ -124,7 +124,7 @@
                     ),
                     $tweer_url,
                     array(
-                    "title" => "Profil von {$twitter_username} besuchen",
+                    "title" => "Tweet von {$twitter_username} besuchen",
                     "rel" => "nofollow"
                     )
                 );?>
