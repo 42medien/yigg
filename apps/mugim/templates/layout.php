@@ -9,7 +9,7 @@
      <style type="text/css">
         #sitemenu-container { background-image: url(http://static.yigg.de/v6/css/mugim/mug.im.<?php echo rand(1,27);?>.jpg) !important; }
      </style>
-<script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>
+
   </head>
   <body class="sandvox no-sidebar has-custom-banner IR" id="www_miniuri_at" >
 		<div id="page-container" class="html-page">
