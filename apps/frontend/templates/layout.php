@@ -74,6 +74,9 @@
         <?php endif; ?>       
         <?php include_partial("system/navigation");?>
       </div>
+      <div id="ligatus_add">
+          
+      </div>
       <div id="content">
       <div class="twoThree clr">
         <div class="twoThree-left">
