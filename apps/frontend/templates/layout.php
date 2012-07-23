@@ -50,7 +50,7 @@
         
     });
     </script>
-    <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>
+    
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
