@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
   <head profile='http://www.w3.org/2006/03/hcard'>
+    <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>  
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     <script type='text/javascript'>                        
         var googletag = googletag || {};
