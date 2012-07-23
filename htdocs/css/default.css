@@ -229,17 +229,6 @@
   font-weight: normal !important;
 }
 
-#sf_admin_container_statistics label
-{
-    display: block;
-    padding: 0 1em 3px 0;
-    float: left;
-    text-align: left;
-    width: 8em;
-    color: #666;
-    font-weight: normal !important;
-}
-
 #sf_admin_container ul label, #sf_admin_container td label
 {
   display: inline;
