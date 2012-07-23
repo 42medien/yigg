@@ -1,5 +1,5 @@
 <?php use_helper("Date"); ?>
-<div id="sf_admin_container_statistics">
+<div id="sf_admin_container">
     <h1>User Statistics</h1>
 
     <div id="sf_admin_content">
