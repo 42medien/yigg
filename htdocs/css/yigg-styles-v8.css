@@ -425,4 +425,3 @@ background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,225,186,0
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6ffe1ba',GradientType=1 ); /* IE6-9 */
 }
 .anzeige_titel p {font-family: "Arial"; font-size: 10px; font-weight: bold; color: #993300; text-align: right; text-transform: uppercase;}
-#ligatus_add {margin-left: 15px;}
