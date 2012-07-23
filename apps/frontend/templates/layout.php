@@ -75,7 +75,7 @@
         <?php include_partial("system/navigation");?>
       </div>
       <div id="ligatus_add">
-          
+        test  
       </div>
       <div id="content">
       <div class="twoThree clr">
