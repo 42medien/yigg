@@ -57,7 +57,7 @@
                 <div>
                     <label>Last Published News </label>
                     <div class="content">
-                        <?php echo gmstrftime('%d. %B %Y %H:%M', strtotime($last_story_date)) ?>
+                        <?php echo $last_story_date?gmstrftime('%d. %B %Y %H:%M', strtotime($last_story_date)):"-"; ?>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div>
                     <label>Last Comment</label>
                     <div class="content">
-                        <?php echo gmstrftime('%d. %B %Y %H:%M', strtotime($last_comment_date)) ?>
+                        <?php echo $last_comment_date?gmstrftime('%d. %B %Y %H:%M', strtotime($last_comment_date)):"-"; ?>
                     </div>
                 </div>
             </div>

@@ -36,8 +36,6 @@ class Story extends BaseStory
 
         if($story){
             return $story->getCreatedAt();
-        }else{
-            return "-";
         }
     }
 

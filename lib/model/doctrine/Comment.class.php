@@ -37,8 +37,6 @@ class Comment extends BaseComment
 
         if($comment){
             return $comment->getCreatedAt();
-        }else{
-            return "-";
         }
     }
 
