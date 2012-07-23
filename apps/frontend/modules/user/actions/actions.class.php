@@ -417,6 +417,7 @@ class userActions extends yiggActions
                             $this->logMessage(sprintf("Adding/Changing Avatar failed for %s. Error: %s", $this->user->username, $e->getMessage()));
                         }
 
+
                         if( isset($file) && $file->id )
                         {
                             $this->user->createAvatar( $file );

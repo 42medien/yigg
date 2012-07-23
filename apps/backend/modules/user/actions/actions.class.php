@@ -13,4 +13,15 @@ require_once dirname(__FILE__).'/../lib/userGeneratorHelper.class.php';
  */
 class userActions extends autoUserActions
 {
+    public function executeListStatistics(sfWebRequest $request){
+        $this->user = Doctrine::getTable("User")->findOneById($request->getParameter('id'));
+        $this->last_story_date = Story::getUserLastStoryDate($this->user);
+        $this->last_comment_date = Comment::getUserLastCommentDate($this->user);
+        $this->stats = $this->user->getUserStats();
+        $this->stats->updateStats();
+        $this->yigged_news = $this->stats->yiggs_total;
+        $this->follower = $this->stats->friends_total;
+        $this->followees = $this->stats->external_friends_total;
+        $this->published_news = $this->stats->storys_total;
+    }
 }

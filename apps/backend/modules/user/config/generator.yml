@@ -17,6 +17,10 @@ generator:
         title:             Users
         display:           [id, =username, email, status, created_at]
         sort:              [id, desc]
+        object_actions:
+              statistics: ~
+              _edit:      ~
+              _delete:    ~
       filter:
         display:           [=username, email, status]
       form:    ~
