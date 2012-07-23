@@ -50,7 +50,7 @@
         
     });
     </script>
-    <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>
+    
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -75,7 +75,7 @@
         <?php include_partial("system/navigation");?>
       </div>
       <div id="ligatus_add">
-        
+      <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>  
       </div>
       <div id="content">
       <div class="twoThree clr">
