@@ -117,6 +117,18 @@
 <?php
     //var_dump($story); 
     //echo $story['id'];
+$story_tags = Doctrine_Query::create()
+                      ->select('st.story_id,
+                                s2.title')
+                      ->from("Story s")
+                      ->leftJoin('s.StoryTag st')
+                      
+                      ->leftJoin('s.Story s2')
+                      
+                      ->where("st.story_id = ?", $story['id'])
+                      ->orderBy("RAND()")
+                      ->limit(5)
+                      ->execute();
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
