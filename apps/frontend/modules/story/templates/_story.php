@@ -118,7 +118,7 @@
     //var_dump($story); 
     //echo $story['id'];
 
-    /*$story_tags = Doctrine_Query::create()
+    $story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s.title')
                       ->from("Story s")
@@ -127,7 +127,7 @@
                       ->where("s.id = ?", $story['id'])
                       ->orderBy("RAND()")
                       ->limit(5)
-                      ->execute();*/
+                      ->execute();
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
@@ -214,9 +214,9 @@
    
     
 ?>
-<?php //foreach($story_tags as $story_tag):?>    
-    <?php ///echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
-<?php //endforeach;?>
+<?php foreach($story_tags as $story_tag):?>    
+    <?php echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
+<?php endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
