@@ -44,7 +44,7 @@ Story:
     domain_id:
       type: integer(20)
   relations:
-    StoryTag:
+    StoryTag: 
       class: StoryTag      
       local: id
       foreign: story_id     
