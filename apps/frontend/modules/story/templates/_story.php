@@ -115,23 +115,6 @@
     </div>
 
 <?php
-
-$story_tags = Doctrine_Query::create()
-                      ->select('st.tag_id,
-                                st2.story_id,
-                                s.title')
-                      ->from("story_tag st")
-                      ->innerJoin("(SELECT tag_id,
-                                        story_id
-                                    FROM story_tag
-                                    GROUP BY
-                                    story_id
-                                ) AS st2 ON st2.tag_id = st.tag_id")
-                      ->leftJoin('story AS s ON s.id = st2.story_id')
-                      ->where("st.story_id = ?", $story['id'])
-                      ->orderBy("RAND()")
-                      ->limit(5)
-                      ->execute();
     //var_dump($story); 
     //echo $story['id'];
 
