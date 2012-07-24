@@ -116,7 +116,7 @@
 
 <?php
     //var_dump($story); 
-    //echo $story['id'];
+    echo $story['id'];
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
