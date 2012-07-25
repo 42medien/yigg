@@ -145,7 +145,7 @@ $story_tags = $story_tags_sql->fetchAll();
 //$rows = $this->fetchAll($query);
        //echo $query;die;
        //return $rows->toArray();
-$story_tags = $story_tags->toArray();  
+//$story_tags = $story_tags->toArray();  
 
  
 
