@@ -143,21 +143,8 @@ $story_tags = $story_tags_sql->fetchAll();
 //print_r($story_tags);
       
 ?>
-<?php foreach($story_tags as $story_tag):?>    
-
-        <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
-        <?php 
-        //foreach ($story_tag as $key => $value)
-        //{
-           // echo htmlSpecialChars($value[$key]).'<br>';
-        //}
-        
-        
-echo '<pre>';
-              print_r($story_tag['st_title']);
-             echo '</pre>';
-        ?>
-
+<?php foreach($story_tags as $story_tag):?>
+    <?php echo link_to_story($story_tag['st_title'], $story, array("title" => $story_tag['st_title'])).'<br />';?>
 <?php endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
