@@ -117,7 +117,7 @@
 <?php
 
     //var_dump($story); 
-    //echo $story['id'];
+    echo $story['id'];
 
 $q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
