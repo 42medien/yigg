@@ -118,8 +118,8 @@
 
     //var_dump($story); 
     //echo $story['id'];
-$stmt = $this->getEntityManager()
-                   ->getConnection()
+$stmt = Doctrine_Manager::getEntityManager()
+                   ->getCurrentConnection()
                    ->prepare('SELECT 
                             st2.story_id,
                             st2.story_title
