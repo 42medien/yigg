@@ -119,6 +119,27 @@
     //var_dump($story); 
     //echo $story['id'];
 
+$q = Doctrine_Manager::getInstance()->getCurrentConnection();
+$story_tags = $q->execute("
+                        SELECT 
+                            st2.story_id,
+                            st2.story_title
+                        FROM `story` AS s
+                        LEFT JOIN story_tag AS st ON s.id = st.story_id
+                        INNER JOIN 
+                        (SELECT st.tag_id,
+                                st.story_id,
+                                s.title AS story_title
+                            FROM story_tag AS st
+                            LEFT JOIN story AS s ON s.id = st.story_id
+                            GROUP BY
+                            st.story_id
+                        ) AS st2 ON st2.tag_id = st.tag_id
+
+                        WHERE s.id = 2639321
+                        ORDER BY RAND() LIMIT 0,5
+                      ");
+
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s.title')
@@ -215,9 +236,9 @@
    
     
 ?>
-<?php //foreach($story_tags as $story_tag):?>    
-    <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
-<?php //endforeach;?>
+<?php foreach($story_tags as $story_tag):?>    
+    <?php echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
+<?php endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
