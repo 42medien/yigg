@@ -2,7 +2,6 @@
     <div id="bar_content">
         <div class="v_separator"></div>
         <div id="bar_logo">
-            
             <?php
             echo link_to(img_tag('YiGG-Logo.png', array(
                     'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
@@ -17,20 +16,19 @@
                 ));
             ?>
         </div>
-        
+        <div class="v_separator"></div>
         <div id="bar_comments">
-            
             <div id="bar_comments_label"><?php echo $sf_request->isAjaxRequest();?></div>
             <div id="bar_comments_content">
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
             </div>
         </div>
-        
+        <div class="v_separator"></div>
         <div id="bar_rate_story_wraper">
             <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
         </div>
         
-        
+        <div class="v_separator"></div>
         <div id="spreadly_bar">
            <div class="spreadly-button">
             <iframe src="http://button.spread.ly/?url=<?php echo $story->external_url;?>&social=1&title=<?php echo $story->title;?>"
@@ -42,6 +40,7 @@
             </iframe>
             </div>
         </div>
+        <div class="v_separator"></div>
         <div class="close" onclick="redirect()"></div>
         <script type="text/javascript">
             <!--
