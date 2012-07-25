@@ -26,7 +26,7 @@
         </div>
         <div class="spreadly-button">
             <iframe src="http://button.spread.ly/?url=<?php echo $story->external_url;?>&social=1&title=<?php echo $story->title;?>"
-                    style="overflow:hidden; width: 420px; height: 30px; padding: 0 45px 0 0;"
+                    style="overflow:hidden; width: 420px; height: 30px; padding: 0px 0;"
                     frameborder="0"
                     scrolling="no"
                     marginheight="0"
