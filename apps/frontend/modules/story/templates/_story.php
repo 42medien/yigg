@@ -140,7 +140,7 @@ $story_tags = $q->execute("
                         ORDER BY RAND() LIMIT 0,5
                       ");
 
-print_r($story_tags);
+//print_r($story_tags);
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
