@@ -142,7 +142,7 @@ $story_tags_sql = $q->execute("
 
 $story_tags = $story_tags_sql->fetchAll();  
 
-//print_r($story_tags);
+print_r($story_tags);
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
@@ -240,9 +240,9 @@ $story_tags = $story_tags_sql->fetchAll();
    
     
 ?>
-<?php foreach($story_tags as $story_tag):?>    
-    <?php echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
-<?php endforeach;?>
+<?php //foreach($story_tags as $story_tag):?>    
+    <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
+<?php //endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
