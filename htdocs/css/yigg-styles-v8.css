@@ -430,7 +430,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_content{margin: 0 auto; width: 1400px;}
 
-#bar_logo{padding: 3px 15px 0 15px; width: 200px; float: left;}
+#bar_logo{padding: 3px 16px 0 16px; width: 200px; float: left;}
 
 #bar_rate_story{float: left; padding-top: 16px;}
 
@@ -444,8 +444,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_comments_label:hover {cursor: pointer;}
 
-#spreadly_bar {float: left; padding: 5px 0 0 10px;}
+#spreadly_bar {float: left; padding: 5px 0 0 12px;}
 
-#bar_rate_story_wraper{float:left; width: 80px; padding: 16px 22px 0 12px;}
+#bar_rate_story_wraper{float:left; width: 80px; padding: 16px 24px 0 14px;}
 
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 50px; float:left;}
