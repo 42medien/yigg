@@ -1,7 +1,7 @@
 <div id="bar_wraper">
     <div id="bar_content">
         <div id="bar_logo">
-            <span class="v_separator">&nbsp;</span>
+            <span></span>
             <?php
             echo link_to(img_tag('YiGG-Logo.png', array(
                     'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
@@ -18,7 +18,7 @@
         </div>
         
         <div id="bar_comments">
-            <span class="v_separator">&nbsp;</span>
+            <span class="v_separator"></span>
             <div id="bar_comments_label"><?php echo $sf_request->isAjaxRequest();?></div>
             <div id="bar_comments_content">
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
