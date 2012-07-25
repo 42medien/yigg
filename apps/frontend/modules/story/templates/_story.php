@@ -113,50 +113,49 @@
            <?php endif;?>                      
        </h3>
     </div>
-<?php if("story/show" === $sf_request->getModuleAction()): ?>
-    <?php       
-    //echo $story['id'];
-    $q = Doctrine_Manager::getInstance()->getCurrentConnection();
-    $story_tags_sql = $q->execute("
-                            SELECT st2.`story_id`, 
-                                s.`title` AS st_title,
-                                s.internal_url,
-                                s.created_at
-                            FROM `story_tag` AS st 
-
-                            INNER JOIN
-                                (
-                                SELECT st.`story_id`, 
-                                        st.`tag_id`
-                                FROM `story_tag` AS st
-                                WHERE st.`story_id` != ".$story['id']."
-                                GROUP BY st.`story_id`
-                                ) AS st2 ON st2.tag_id = st.tag_id
-
-                            LEFT JOIN story AS s ON s.id = st2.story_id
-
-                            WHERE st.`story_id` = ".$story['id']."
-                            ORDER BY RAND() LIMIT 0,5
-                        ");
-
-    $story_tags = $story_tags_sql->fetchAll();  
-    //print_r($story_tags);
-    ?>
-
-    <?php foreach($story_tags as $story_tag):?>
-    <?php
-        $year = substr($story_tag["created_at"], 0, 4);
-        $month = substr($story_tag["created_at"], 5, 2);
-        $day = substr($story_tag["created_at"], 8, 2);
-        $route = "@story_show?slug={$story_tag["internal_url"]}&year=$year&month=$month&day=$day";
-          
-        echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
-    ?>
-    <?php endforeach;?>
-<?php endif; ?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
+
+      <?php       
+        //echo $story['id'];
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+        $story_tags_sql = $q->execute("
+                                SELECT st2.`story_id`, 
+                                    s.`title` AS st_title,
+                                    s.internal_url,
+                                    s.created_at
+                                FROM `story_tag` AS st 
+
+                                INNER JOIN
+                                    (
+                                    SELECT st.`story_id`, 
+                                            st.`tag_id`
+                                    FROM `story_tag` AS st
+                                    WHERE st.`story_id` != ".$story['id']."
+                                    GROUP BY st.`story_id`
+                                    ) AS st2 ON st2.tag_id = st.tag_id
+
+                                LEFT JOIN story AS s ON s.id = st2.story_id
+
+                                WHERE st.`story_id` = ".$story['id']."
+                                ORDER BY RAND() LIMIT 0,5
+                            ");
+
+        $story_tags = $story_tags_sql->fetchAll();  
+        //print_r($story_tags);
+        ?>
+
+        <?php foreach($story_tags as $story_tag):?>
+        <?php
+            $year = substr($story_tag["created_at"], 0, 4);
+            $month = substr($story_tag["created_at"], 5, 2);
+            $day = substr($story_tag["created_at"], 8, 2);
+            $route = "@story_show?slug={$story_tag["internal_url"]}&year=$year&month=$month&day=$day";
+
+            echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
+        ?>
+        <?php endforeach;?>
     <?php endif; ?>
 
    <div class="clr bth"></div>
