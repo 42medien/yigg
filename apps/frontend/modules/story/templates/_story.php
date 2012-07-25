@@ -149,7 +149,7 @@ $story_tags = $story_tags_sql->fetchAll();
         <?php 
         foreach ($story_tag as $key => $value)
         {
-            echo htmlSpecialChars($value['st_title']).'<br>';
+            echo htmlSpecialChars($value[$key]).'<br>';
         }
         
         
