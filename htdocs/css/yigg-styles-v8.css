@@ -426,7 +426,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 .anzeige_titel p {font-family: "Arial"; font-size: 10px; font-weight: bold; color: #993300; text-align: right; text-transform: uppercase;}
 
-#bar_wraper{height: 62px; background-color: #dddddd; display:block;}
+#bar_wraper{height: 65px; background-color: #dddddd; display:block;}
 
 #bar_content{margin: 0 auto; width: 1400px;}
 
