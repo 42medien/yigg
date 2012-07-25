@@ -26,7 +26,7 @@
             background-color: #dddddd;
             display:block;
         }
-
+        
         #bar_content{
             margin: 0 auto;
             width: 1400px;
@@ -37,7 +37,7 @@
             width: 200px;
             float: left;
         }
-
+        .bar_separator {width: 58px; width: 0; border: 1px solid #bababa; }
         #bar_rate_story{
             float: left;
             padding: 16px;
