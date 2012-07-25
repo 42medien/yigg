@@ -432,7 +432,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_logo{padding-left: 35px; width: 200px; float: left;}
 
-#bar_rate_story{float: left; padding: 16px;}
+#bar_rate_story{float: left; padding: 16px; width: 85px;}
 
 #bar_comments{float: left; padding: 16px;}
 
