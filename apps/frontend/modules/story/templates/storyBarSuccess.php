@@ -19,7 +19,7 @@
             <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
         </div>
         <div id="bar_comments">
-            <div id="bar_comments_label">Comments <?php echo $sf_request->isAjaxRequest();?></div>
+            <div id="bar_comments_label"><img src="/htdocs/images/YiGG-Logo.png"/><?php echo $sf_request->isAjaxRequest();?></div>
             <div id="bar_comments_content">
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
             </div>
