@@ -117,7 +117,7 @@
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
 
-      <h3>Das könnte Sie auch interessieren <br /><br />
+      <h3>Das könnte Sie auch interessieren:</h3><br />
       <?php       
         //echo $story['id'];
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
@@ -156,8 +156,7 @@
 
             echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
         ?>
-        <?php endforeach;?>
-        </h3>  
+        <?php endforeach;?>          
     <?php endif; ?>
 
    <div class="clr bth"></div>
