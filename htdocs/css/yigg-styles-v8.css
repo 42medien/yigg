@@ -430,7 +430,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_content{margin: 0 auto; width: 1400px;}
 
-#bar_logo{padding-left: 10px; width: 200px; float: left;}
+#bar_logo{background: url("htdocs/images/Yigg-Logo.png"); padding-left: 10px; width: 200px; float: left;}
 
 #bar_rate_story{float: left; padding: 16px;}
 
@@ -439,4 +439,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #bar_comments_content{border: 2px solid #ccc;}
 
 .close{width: 50px; float: right; padding: 18px; cursor: pointer;}
-.bar_separator {width: 58px; width: 0; border: 1px solid #bababa; }
+.bar_separator {width: 58px; width: 0; border: 1px solid #bababa;}
