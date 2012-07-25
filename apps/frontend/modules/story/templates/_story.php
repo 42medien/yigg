@@ -128,7 +128,8 @@
                                 (
                                 SELECT st.`story_id`, 
                                         st.`tag_id`
-                                FROM `story_tag` AS st      
+                                FROM `story_tag` AS st
+                                WHERE st.`story_id` != ".$story['id']."
                                 GROUP BY st.`story_id`
                                 ) AS st2 ON st2.tag_id = st.tag_id
 
@@ -153,7 +154,7 @@
 
         <?php //echo link_to_story($story_tag['st_title'], $story_tag['st_title'], array("title" => $story_tag['st_title'])).'<br />';?>
         <?php //echo link_to($story_tag['st_title'], $story_tag, array("title" => $story_tag['st_title'], "rel" => "internal"));
-                echo link_to($story_tag['st_title'], $route);
+                echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
         ?>
     <?php endforeach;?>
 <?php endif; ?>
