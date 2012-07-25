@@ -437,7 +437,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #bar_comments{float: left; padding-top: 16px;}
 
 #bar_comments_content{float:left; padding: 10px; position: absolute; border: 1px solid #c5c5c5; margin-top: 10px; margin-left: -370px; 
-                      background-color: #f7f6f6; border-radius: 5px; width: 580px; max-height: 300px; overflow:auto; box-shadow: inset 2px 2px 3px 2px #5d5d5d;}
+                      background-color: #f7f6f6; border-radius: 5px; width: 580px; max-height: 300px; overflow:auto; box-shadow: 2px 2px 3px 2px #5d5d5d;}
 
 #bar_comments_content ul li {margin: 5px;}
 
