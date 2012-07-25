@@ -426,11 +426,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 .anzeige_titel p {font-family: "Arial"; font-size: 10px; font-weight: bold; color: #993300; text-align: right; text-transform: uppercase;}
 
-#bar_wraper{height: 75px; background-color: #dddddd; display:block;}
+#bar_wraper{height: 58px; background-color: #dddddd; display:block;}
 
 #bar_content{margin: 0 auto; width: 1400px;}
 
-#bar_logo{padding-left: 35px; padding-top: 5px; width: 200px; float: left;}
+#bar_logo{padding: 3px 5px 35px 0; width: 200px; float: left;}
 
 #bar_rate_story{float: left; padding-top: 16px;}
 
