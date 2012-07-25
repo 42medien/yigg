@@ -114,11 +114,8 @@
        </h3>
     </div>
 <?php if("story/show" === $sf_request->getModuleAction()): ?>
-    <?php
-
-        //var_dump($story); 
-        echo $story['id'];
-
+    <?php       
+    //echo $story['id'];
     $q = Doctrine_Manager::getInstance()->getCurrentConnection();
     $story_tags_sql = $q->execute("
                             SELECT st2.`story_id`, 
@@ -141,7 +138,6 @@
 
     $story_tags = $story_tags_sql->fetchAll();  
     //print_r($story_tags);
-
     ?>
 
     <?php foreach($story_tags as $story_tag):?>
