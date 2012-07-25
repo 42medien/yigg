@@ -432,7 +432,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_logo{padding: 3px 5px 0 5px; width: 200px; float: left;}
 
-#bar_rate_story{float: left; padding: 16px 5px 0 2px;}
+#bar_rate_story{float: left; padding-top: 16px;}
 
 #bar_comments{float: left; padding-top: 16px;}
 
@@ -446,6 +446,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #spreadly_bar {float: left; padding-top: 5px;}
 
-#bar_rate_story_wraper{float:left; width: 80px; padding-top: 16px;}
+#bar_rate_story_wraper{float:left; width: 80px; padding: 16px 5px 0 3px;}
 
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 50px; float:left;}
