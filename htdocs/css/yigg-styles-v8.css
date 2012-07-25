@@ -446,6 +446,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #spreadly_bar {float: left; padding: 5px 0 0 10px;}
 
-#bar_rate_story_wraper{float:left; width: 80px; padding: 16px 13px 0 3px;}
+#bar_rate_story_wraper{float:left; width: 80px; padding: 16px 16px 0 6px;}
 
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 50px; float:left;}
