@@ -116,8 +116,6 @@
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
-
-      <div style="font-size: 108% !important; font-weight: bold; margin-top: 10px; margin-bottom:3px;">Das könnte Sie auch interessieren:</div>
       <?php       
         //echo $story['id'];
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
@@ -147,6 +145,8 @@
         //print_r($story_tags);
         ?>
 
+      <?php if(count($story_tags) > 0): ?>
+        <div style="font-size: 108% !important; font-weight: bold; margin-top: 10px; margin-bottom:3px;">Das könnte Sie auch interessieren:</div>
         <?php foreach($story_tags as $story_tag):?>
         <?php
             $year = substr($story_tag["created_at"], 0, 4);
@@ -156,7 +156,8 @@
 
             echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
         ?>
-        <?php endforeach;?>          
+        <?php endforeach;?> 
+      <?php endif; ?>
     <?php endif; ?>
 
    <div class="clr bth"></div>
