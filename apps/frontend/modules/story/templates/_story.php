@@ -120,7 +120,7 @@
     //echo $story['id'];
 
 $q = Doctrine_Manager::getInstance()->getCurrentConnection();
-$story_tags = $q->execute("
+$story_tags_sql = $q->execute("
                         SELECT 
                             st2.story_id,
                             st2.story_title
@@ -140,7 +140,9 @@ $story_tags = $q->execute("
                         ORDER BY RAND() LIMIT 0,5
                       ");
 
-//print_r($story_tags);
+$story_tags = $story_tags_sql->fetchAll();  
+
+print_r($story_tags);
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
