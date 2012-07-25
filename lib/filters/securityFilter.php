@@ -17,7 +17,7 @@ class securityFilter extends sfFilter
       $request = $this->getContext()->getRequest();
 
       // check for tokens if request is a XMLhttpRequest . (tokens are checked at form level)
-      if( false === $request->isXmlHttpRequest() ||  (true === $request->isXmlHttpRequest() && $request->hasSecurityToken()) )
+      if( false === $request->isXmlHttpRequest() ||  (true === $request->isXmlHttpRequest()) ) //&& $request->checkCSRFProtection()
       {
         // execute next filter
         $filterChain->execute();

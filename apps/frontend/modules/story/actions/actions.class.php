@@ -11,6 +11,16 @@ class storyActions extends yiggActions
     $this->getResponse()->setSlot('sponsoring', $this->getComponent("sponsoring","sponsoring", array( 'place_id' => 39 ,'limit' => 1)));
   }
 
+    /*
+    * Shows story in iframe with yigg bar
+    */
+    public function executeStoryBar($request)
+    {
+        $this->findOrRedirect($request);
+
+        $this->setLayout('layout.bar');
+    }
+
 
   /**
    * Shows the best stories (normal view)
