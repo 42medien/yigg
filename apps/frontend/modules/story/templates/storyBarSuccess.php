@@ -15,7 +15,7 @@
                 ));
             ?>
         </div>
-        <div class="v_separator">v</div>
+        <div class="v_separator"></div>
         <div id="bar_comments">
             <div id="bar_comments_label"><?php echo $sf_request->isAjaxRequest();?></div>
             <div id="bar_comments_content">
