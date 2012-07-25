@@ -115,7 +115,7 @@
     </div>
 
 <?php
-    //var_dump($story); 
+    var_dump($story); 
     //echo $story['id'];
 
     /*$story_tags = Doctrine_Query::create()
