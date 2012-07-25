@@ -1,7 +1,7 @@
 <div id="bar_wraper">
     <div id="bar_content">
         <div id="bar_logo">
-            <span class="v_separator">g</span>
+            <div class="v_separator"></div>
             <?php
             echo link_to(img_tag('YiGG-Logo.png', array(
                     'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
