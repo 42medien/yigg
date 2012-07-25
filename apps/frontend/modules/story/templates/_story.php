@@ -117,7 +117,7 @@
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
 
-      <h3 style="margin:5px 0xp !important;">Das könnte Sie auch interessieren:</h3>
+      <span style="font-size: 108%; margin:5px 0xp !important;">Das könnte Sie auch interessieren:</span>
       <?php       
         //echo $story['id'];
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
