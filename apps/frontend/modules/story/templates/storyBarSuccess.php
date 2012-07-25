@@ -2,7 +2,7 @@
     <div id="bar_content">
         <div id="bar_logo">
             <?php
-            echo link_to(img_tag('yigg_logo.png', array(
+            echo link_to(img_tag('YiGG_Logo.png', array(
                     'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
                     'width' => 191,
                     'height' => 54
