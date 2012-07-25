@@ -434,9 +434,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_rate_story{float: left; padding-top: 16px;}
 
-#bar_comments{float: left; padding-top: 16px;}
+#bar_comments{float: left; padding-top: 16px; background-color: #f7f6f6;}
 
-#bar_comments_content{border: 2px solid #ccc;}
+#bar_comments_content{border: 1px solid #c5c5c5;}
 
 .close{float: right; padding-top: 18px; cursor: pointer; background:url("../images/close_button.png") 0 0 no-repeat; width: 22px; height: 22px; }
 
