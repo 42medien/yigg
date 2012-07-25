@@ -119,7 +119,7 @@
     //var_dump($story); 
     //echo $story['id'];
 
-/*$q = Doctrine_Manager::getInstance()->getCurrentConnection();
+$q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags = $q->execute("
                         SELECT 
                             st2.story_id,
@@ -139,6 +139,8 @@ $story_tags = $q->execute("
                         WHERE s.id = 2639321
                         ORDER BY RAND() LIMIT 0,5
                       ");
+
+print_r($story_tags);
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
