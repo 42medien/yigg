@@ -120,36 +120,30 @@
     //echo $story['id'];
 
 
-/*$q = Doctrine_Manager::getInstance()->getCurrentConnection();
+$q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
-                        SELECT 
-                            st2.story_id,
-                            st2.story_title
-                        FROM `story` AS s
-                        LEFT JOIN story_tag AS st ON s.id = st.story_id
-                        INNER JOIN 
-                        (SELECT st.tag_id,
-                                st.story_id,
-                                s.title AS story_title
-                            FROM story_tag AS st
-                            LEFT JOIN story AS s ON s.id = st.story_id
-                            GROUP BY
-                            st.story_id
-                        ) AS st2 ON st2.tag_id = st.tag_id
+                        SELECT st2.`story_id`, 
+                            s.`title`
+                        FROM `story_tag` AS st 
 
-                        WHERE s.id = 2639321
+                        INNER JOIN
+                            (
+                            SELECT st.`story_id`, 
+                                    st.`tag_id`
+                            FROM `story_tag` AS st      
+                            GROUP BY st.`story_id`
+                            ) AS st2 ON st2.tag_id = st.tag_id
+
+                        LEFT JOIN story AS s ON s.id = st2.story_id
+
+                        WHERE st.`story_id` = 2639321
                         ORDER BY RAND() LIMIT 0,5
                       ");
 
 $story_tags = $story_tags_sql->fetchAll();  
-//$rows = $this->fetchAll($query);
-       //echo $query;die;
-       //return $rows->toArray();
-//$story_tags = $story_tags->toArray();  
 
- 
 
-print_r($story_tags);*/
+print_r($story_tags);
 
 /*$q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
