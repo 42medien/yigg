@@ -22,9 +22,11 @@
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
             </div>
         </div>
+        <div class="v_separator"></div>
         <div id="bar_rate_story_wraper">
             <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
         </div>
+        <div class="v_separator"></div>
         <div id="spreadly_bar">
            <div class="spreadly-button">
             <iframe src="http://button.spread.ly/?url=<?php echo $story->external_url;?>&social=1&title=<?php echo $story->title;?>"
