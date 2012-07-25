@@ -18,7 +18,7 @@
         </div>
         
         <div id="bar_comments">
-            <span class="v_separator"></span>
+            <div class="v_separator"></div>
             <div id="bar_comments_label"><?php echo $sf_request->isAjaxRequest();?></div>
             <div id="bar_comments_content">
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
