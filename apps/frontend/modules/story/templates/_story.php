@@ -141,8 +141,11 @@ $story_tags_sql = $q->execute("
                         ORDER BY RAND() LIMIT 0,5
                       ");
 
-//$story_tags = $story_tags_sql->fetchAll();  
-$story_tags = $story_tags_sql->toArray();  
+$story_tags = $story_tags_sql->fetchAll();  
+//$rows = $this->fetchAll($query);
+       //echo $query;die;
+       //return $rows->toArray();
+$story_tags = $story_tags->toArray();  
 
  
 
