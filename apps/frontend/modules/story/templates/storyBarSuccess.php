@@ -15,20 +15,21 @@
                     'class' => 'logo'
                 ));
             ?>
-            <span class="v_separator"></span>
         </div>
         
         <div id="bar_comments">
+            <span class="v_separator"></span>
             <div id="bar_comments_label"><?php echo $sf_request->isAjaxRequest();?></div>
             <div id="bar_comments_content">
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
             </div>
         </div>
-        <span class="v_separator"></span>
+        
         <div id="bar_rate_story_wraper">
             <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
         </div>
-        <div class="v_separator"></div>
+        
+        
         <div id="spreadly_bar">
            <div class="spreadly-button">
             <iframe src="http://button.spread.ly/?url=<?php echo $story->external_url;?>&social=1&title=<?php echo $story->title;?>"
