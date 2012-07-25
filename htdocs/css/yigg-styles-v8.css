@@ -432,13 +432,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_logo{padding-left: 35px; width: 200px; float: left;}
 
-#bar_rate_story{float: left; padding: 16px;}
+#bar_rate_story{float: left; padding-top: 16px;}
 
-#bar_comments{float: left; padding: 16px;}
+#bar_comments{float: left; padding-top: 16px;}
 
 #bar_comments_content{border: 2px solid #ccc;}
 
-.close{float: right; padding: 18px; cursor: pointer; background:url("../images/close_button.png") 0 0 no-repeat; width: 22px; height: 22px; }
+.close{float: right; padding-top: 16px; cursor: pointer; background:url("../images/close_button.png") 0 0 no-repeat; width: 22px; height: 22px; }
 
 #bar_comments_label {background: url("../images/yigg-comments.png") 0 0 no-repeat; width: 35px; height: 30px;}
 
@@ -446,6 +446,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #spreadly_bar {float: left;}
 
-#bar_rate_story_wraper{float:left; width: 80px; padding: 16px;}
+#bar_rate_story_wraper{float:left; width: 80px; padding-top: 16px;}
 
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 50px; float:left;}
