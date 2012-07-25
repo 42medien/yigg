@@ -115,7 +115,7 @@
     </div>
 
 <?php
-$story_tags = Doctrine_Query::create()
+/*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
                                 s.title')
                       ->from("Story s")
