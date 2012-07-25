@@ -113,39 +113,41 @@
            <?php endif;?>                      
        </h3>
     </div>
+<?php if("story/show" === $sf_request->getModuleAction()): ?>
+    <?php
 
-<?php
+        //var_dump($story); 
+        echo $story['id'];
 
-    //var_dump($story); 
-    echo $story['id'];
+    $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+    $story_tags_sql = $q->execute("
+                            SELECT st2.`story_id`, 
+                                s.`title` AS st_title
+                            FROM `story_tag` AS st 
 
-$q = Doctrine_Manager::getInstance()->getCurrentConnection();
-$story_tags_sql = $q->execute("
-                        SELECT st2.`story_id`, 
-                            s.`title` AS st_title
-                        FROM `story_tag` AS st 
+                            INNER JOIN
+                                (
+                                SELECT st.`story_id`, 
+                                        st.`tag_id`
+                                FROM `story_tag` AS st      
+                                GROUP BY st.`story_id`
+                                ) AS st2 ON st2.tag_id = st.tag_id
 
-                        INNER JOIN
-                            (
-                            SELECT st.`story_id`, 
-                                    st.`tag_id`
-                            FROM `story_tag` AS st      
-                            GROUP BY st.`story_id`
-                            ) AS st2 ON st2.tag_id = st.tag_id
+                            LEFT JOIN story AS s ON s.id = st2.story_id
 
-                        LEFT JOIN story AS s ON s.id = st2.story_id
+                            WHERE st.`story_id` = ".$story['id']."
+                            ORDER BY RAND() LIMIT 0,5
+                        ");
 
-                        WHERE st.`story_id` = ".$story['id']."
-                        ORDER BY RAND() LIMIT 0,5
-                      ");
+    $story_tags = $story_tags_sql->fetchAll();  
+    //print_r($story_tags);
 
-$story_tags = $story_tags_sql->fetchAll();  
-//print_r($story_tags);
-      
-?>
-<?php foreach($story_tags as $story_tag):?>
-    <?php echo link_to_story($story_tag['st_title'], $story, array("title" => $story_tag['st_title'])).'<br />';?>
-<?php endforeach;?>
+    ?>
+
+    <?php foreach($story_tags as $story_tag):?>
+        <?php echo link_to_story($story_tag['st_title'], $story, array("title" => $story_tag['st_title'])).'<br />';?>
+    <?php endforeach;?>
+<?php endif; ?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
