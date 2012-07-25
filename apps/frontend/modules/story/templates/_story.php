@@ -119,7 +119,6 @@
     //var_dump($story); 
     //echo $story['id'];
 
-
 $q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
                         SELECT st2.`story_id`, 
@@ -141,139 +140,14 @@ $story_tags_sql = $q->execute("
                       ");
 
 $story_tags = $story_tags_sql->fetchAll();  
-
-
-print_r($story_tags);
-
-/*$q = Doctrine_Manager::getInstance()->getCurrentConnection();
-$story_tags_sql = $q->execute("
-                        SELECT 
-                            st2.story_id,
-                            st2.story_title
-                        FROM `story` AS s
-                        LEFT JOIN story_tag AS st ON s.id = st.story_id
-                        INNER JOIN 
-                        (SELECT st.tag_id,
-                                st.story_id,
-                                s.title AS story_title
-                            FROM story_tag AS st
-                            LEFT JOIN story AS s ON s.id = st.story_id
-                            GROUP BY
-                            st.story_id
-                        ) AS st2 ON st2.tag_id = st.tag_id
-
-                        WHERE s.id = 2639321
-                        ORDER BY RAND() LIMIT 0,5
-                      ");
-
-$story_tags = $story_tags_sql->fetchAll();  
-$story_tags = $story_tags_sql->toArray();  
-
- */
-
 //print_r($story_tags);
-
-    /*$story_tags = Doctrine_Query::create()
-                      ->select('st.story_id,
-                                s.title')
-                      ->from("Story s")
-                      ->leftJoin('s.StoryTag st')
-                      
-                      ->where("s.id = ?", $story['id'])
-                      ->orderBy("RAND()")
-                      ->limit(5)
-                      ->execute();
-
-    /*$story_tags = Doctrine_Query::create()
-                      ->select('st.story_id,
-                                s.title')
-                      ->from("Story s")
-                      ->leftJoin('s.StoryTag st')
-                      
-                      ->where("st.story_id = ?", $story['id'])
-                      ->orderBy("RAND()")
-                      ->limit(5)
-                      ->execute();*/
-    
-   /* $story_tags = Doctrine_Query::create()
-                      ->select('st.story_id,
-                                s2.title')
-                      ->from("Story s")
-                      ->leftJoin('s.StoryTag st')
-                      
-                      ->leftJoin('s.Story s2')
-                      
-                      ->where("st.story_id = ?", $story['id'])
-                      ->orderBy("RAND()")
-                      ->limit(5)
-                      ->execute();
-    
-    /*$story_tags = Doctrine_Query::create()
-                      ->select('st.tag_id,
-                                st2.story_id,
-                                s.title')
-                      ->from("story_tag st")
-                      ->innerJoin("(SELECT tag_id,
-                                        story_id
-                                    FROM story_tag
-                                    GROUP BY
-                                    story_id
-                                ) AS st2 ON st2.tag_id = st.tag_id")
-                      ->leftJoin('story AS s ON s.id = st2.story_id')
-                      ->where("st.story_id = ?", $story['id'])
-                      ->orderBy("RAND()")
-                      ->limit(5)
-                      ->execute();*/
-    
-    /*$story_tags = Doctrine_Query::create()
-                      ->select('st2.story_id,
-                                st2.story_title')
-                      ->from("story s")
-                      ->leftJoin('story_tag AS st ON s.id = st.story_id')
-                      ->innerJoin("(SELECT st.tag_id,
-                                        st.story_id,
-                                        s.title AS story_title
-                                    FROM story_tag AS st
-                                    LEFT JOIN story AS s ON s.id = st.story_id
-                                    GROUP BY
-                                    st.story_id
-                                ) AS st2 ON st2.tag_id = st.tag_id")
-                      ->where("s.id = ?", $story['id'])
-                      ->orderBy("RAND()")
-                      ->limit(5)
-                      ->execute();
-   
- print_r($story_tags);
-   
-   /*
-    SELECT 
-        st2.story_id,
-        st2.story_title
-    FROM `story` AS s
-
-    LEFT JOIN story_tag AS st ON s.id = st.story_id
-
-    INNER JOIN 
-    (SELECT st.tag_id,
-            st.story_id,
-            s.title AS story_title
-        FROM story_tag AS st
-        LEFT JOIN story AS s ON s.id = st.story_id
-        GROUP BY
-        st.story_id
-    ) AS st2 ON st2.tag_id = st.tag_id
-
-    WHERE s.id = 2639321
-    ORDER BY RAND() LIMIT 0,5
-    */
-   
-    
+      
 ?>
-<?php //foreach($story_tags as $story_tag):?>    
+<?php foreach($story_tags as $story_tag):?>    
 
-        <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
+        <?php echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
 
-<?php //endforeach;?>
+<?php endforeach;?>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
