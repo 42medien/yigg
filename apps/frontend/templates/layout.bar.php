@@ -23,7 +23,7 @@
 
         #bar_wraper{
             height: 58px;
-            background-color: #FF9600;
+            background-color: #dddddd;
             display:block;
         }
 
