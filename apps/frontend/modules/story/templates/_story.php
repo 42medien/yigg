@@ -147,15 +147,15 @@ $story_tags = $story_tags_sql->fetchAll();
 
         <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
         <?php 
-        foreach ($story_tag as $key => $value)
-        {
-            echo htmlSpecialChars($value[$key]).'<br>';
-        }
+        //foreach ($story_tag as $key => $value)
+        //{
+           // echo htmlSpecialChars($value[$key]).'<br>';
+        //}
         
         
-//echo '<pre>';
-             // print_r($story_tag);
-              //echo '</pre>';
+echo '<pre>';
+              print_r($story_tag['st_title']);
+             echo '</pre>';
         ?>
 
 <?php endforeach;?>
