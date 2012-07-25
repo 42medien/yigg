@@ -448,4 +448,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_rate_story_wraper{float:left;}
 
-.v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 58px;}
+#bar_logo span {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 58px;}
