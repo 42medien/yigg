@@ -430,9 +430,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_content{margin: 0 auto; width: 1400px;}
 
-#bar_logo{padding: 3px 5px 35px 0; width: 200px; float: left;}
+#bar_logo{padding: 3px 5px 0 5px; width: 200px; float: left;}
 
-#bar_rate_story{float: left; padding-top: 16px;}
+#bar_rate_story{float: left; padding: 16px 5px 0 2px;}
 
 #bar_comments{float: left; padding-top: 16px;}
 
