@@ -143,8 +143,18 @@
     ?>
 
     <?php foreach($story_tags as $story_tag):?>
+    <?
+        $year = substr($story_tag["created_at"], 0, 4);
+        $month = substr($story_tag["created_at"], 5, 2);
+        $day = substr($story_tag["created_at"], 8, 2);
+
+        $route = "@story_show?slug={$story_tag["internal_url"]}&year=$year&month=$month&day=$day";
+    ?>
+
         <?php //echo link_to_story($story_tag['st_title'], $story_tag['st_title'], array("title" => $story_tag['st_title'])).'<br />';?>
-        <?php //echo link_to($story_tag['st_title'], $story_tag, array("title" => $story_tag['st_title'], "rel" => "internal"));?>
+        <?php //echo link_to($story_tag['st_title'], $story_tag, array("title" => $story_tag['st_title'], "rel" => "internal"));
+                echo link_to($story_tag['st_title'], $route);
+        ?>
     <?php endforeach;?>
 <?php endif; ?>
 
