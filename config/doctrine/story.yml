@@ -44,7 +44,11 @@ Story:
     domain_id:
       type: integer(20)
   relations:
-    
+    StoryTag:  
+      class: StoryTag      
+      local: id
+      foreign: story_id     
+      type: many
     StoryTagSet:
       class: StoryTag      
       refClass: StoryTag
