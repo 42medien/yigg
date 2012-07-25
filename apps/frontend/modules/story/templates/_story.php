@@ -135,7 +135,7 @@ $story_tags_sql = $q->execute("
 
                         LEFT JOIN story AS s ON s.id = st2.story_id
 
-                        WHERE st.`story_id` = 2639321
+                        WHERE st.`story_id` = ".$story['id']."
                         ORDER BY RAND() LIMIT 0,5
                       ");
 
