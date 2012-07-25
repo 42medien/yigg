@@ -428,7 +428,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_wraper{height: 58px; background-color: #dddddd; display:block;}
 
-#bar_content{margin: 0 auto; width: 1400px;}
+#bar_content{margin: 0 0 35px 0; width: 1400px;}
 
 #bar_logo{padding-left: 30px; width: 200px; float: left;}
 
