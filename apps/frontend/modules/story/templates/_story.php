@@ -136,7 +136,7 @@ $story_tags = Doctrine_Query::create()
                       ->limit(5)
                       ->execute();
    
- print_r($story_tags);
+ //print_r($story_tags);
    
 
     /*$story_tags = Doctrine_Query::create()
