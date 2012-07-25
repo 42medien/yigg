@@ -35,7 +35,7 @@
             </iframe>
             </div>
         </div>
-        <div class="close" onclick="redirect()">Close</div>
+        <div class="close" onclick="redirect()"></div>
         <script type="text/javascript">
             <!--
             $(function() {
