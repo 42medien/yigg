@@ -119,7 +119,7 @@
     //var_dump($story); 
     //echo $story['id'];
 
-$q = Doctrine_Manager::getInstance()->getCurrentConnection();
+/*$q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
                         SELECT 
                             st2.story_id,
@@ -142,7 +142,7 @@ $story_tags_sql = $q->execute("
 
 $story_tags = $story_tags_sql->fetchAll();  
 
-print_r($story_tags);
+//print_r($story_tags);
 
     /*$story_tags = Doctrine_Query::create()
                       ->select('st.story_id,
