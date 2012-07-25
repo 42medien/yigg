@@ -122,7 +122,7 @@
 $q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
                         SELECT st2.`story_id`, 
-                            s.`title`
+                            s.`title` AS st_title
                         FROM `story_tag` AS st 
 
                         INNER JOIN
@@ -147,12 +147,15 @@ $story_tags = $story_tags_sql->fetchAll();
 
         <?php //echo link_to_story($story_tag->title, $story, array("title" => $story_tag->title)).'<br />';?>
         <?php 
-        foreach ($story_tag as $key => $value)
-        {
-            echo $value['title'];
-        }
+        //foreach ($story_tag as $key => $value)
+        //{
+         //   echo $value['st_title'];
+        //}
         
         
+echo '<pre>';
+              print_r($story_tag);
+              echo '</pre>';
         ?>
 
 <?php endforeach;?>
