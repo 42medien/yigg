@@ -118,7 +118,28 @@
 
     //var_dump($story); 
     //echo $story['id'];
-    
+$stmt = $this->getEntityManager()
+                   ->getConnection()
+                   ->prepare('SELECT 
+                            st2.story_id,
+                            st2.story_title
+                        FROM `story` AS s
+                        LEFT JOIN story_tag AS st ON s.id = st.story_id
+                        INNER JOIN 
+                        (SELECT st.tag_id,
+                                st.story_id,
+                                s.title AS story_title
+                            FROM story_tag AS st
+                            LEFT JOIN story AS s ON s.id = st.story_id
+                            GROUP BY
+                            st.story_id
+                        ) AS st2 ON st2.tag_id = st.tag_id
+
+                        WHERE s.id = 2639321
+                        ORDER BY RAND() LIMIT 0,5');
+      
+      $stmt->execute();
+      echo $stmt->fetchAll();    
 /*$q = Doctrine_Manager::getInstance()->getCurrentConnection();
 $story_tags_sql = $q->execute("
                         SELECT 
