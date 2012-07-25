@@ -141,7 +141,7 @@
     ?>
 
     <?php foreach($story_tags as $story_tag):?>
-        <?php echo link_to_story($story_tag['st_title'], $story_tag, array("title" => $story_tag['st_title'])).'<br />';?>
+        <?php echo link_to_story($story_tag['st_title'], $story_tag['st_title'], array("title" => $story_tag['st_title'])).'<br />';?>
     <?php endforeach;?>
 <?php endif; ?>
 
