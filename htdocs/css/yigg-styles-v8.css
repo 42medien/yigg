@@ -457,7 +457,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 /* Relates Stories */
 #bar_related_stories {float: left; margin: 0 0 0 20px;}
 .related_stories {float: left; width: 268px;}
-.related_stories a {float: left; padding: 7px 0 0; margin: 0 10px 0 0;}
-.related_stories a + a {float: left; clear: both; padding: 0; margin: 0; width: 202px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.related_stories a {float: left; padding: 7px 0 0; margin: 0 10px 0 0; height: 43px;}
+.related_stories a + a {float: left; padding: 0; margin: 0; width: 202px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; color: #5d5d5d; line-height: 20px; height: 20px;}
 #show_stories {background: url(../images/toggle.png) 0 0 no-repeat; float: left; width: 40px; height: 50px; cursor: pointer; font-size: 0;}
 /* End Relates Stories */
