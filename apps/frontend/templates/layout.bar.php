@@ -42,7 +42,7 @@
 
         #bar_comments{
             float: left;
-            padding: 16px;
+            padding: 16px 16px 0;
         }
 
         #bar_comments_content{
