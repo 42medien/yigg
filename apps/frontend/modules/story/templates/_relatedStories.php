@@ -2,8 +2,9 @@
     <?php
     $story = $stories->get(0);
     echo link_to(
-        avatar_tag($story->Author->Avatar, "icon.gif", 14,14),
+        avatar_tag($story->Author->Avatar, "icon.gif", 35,35),
         "@user_public_profile?username={$story->Author->username}");
+    echo "Read Related Stories:";
     echo link_to($story['title'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow"));
     ?>
     <div id="show_stories">Toogle</div>
