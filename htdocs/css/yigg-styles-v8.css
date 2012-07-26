@@ -426,7 +426,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 .anzeige_titel p {font-family: "Arial"; font-size: 10px; font-weight: bold; color: #993300; text-align: right; text-transform: uppercase;}
 
-#bar_wraper{height: 58px; background-color: #dddddd; display:block;}
+#bar_wraper{height: 50px; background-color: #dddddd; display:block;}
 
 #bar_content{margin: 0 auto; width: 1400px;}
 
@@ -452,4 +452,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_rate_story_wraper{float:left; width: 80px; padding: 16px 24px 0 14px;}
 
-.v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 50px; float:left; margin-top: 3px;}
+.v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 40px; float:left; margin-top: 3px;}
