@@ -106,6 +106,22 @@ class StoryTable extends Doctrine_Table
     return $query->execute();
     }
 
+    /**
+     * @static
+     * @param $tags Doctrine collection Story tags
+     * @param $limit
+     */
+    public static function retrieveRelatedStories($tags, $limit = 5)
+    {
+
+        $stories = yiggStoryFinder::create()
+            ->confineWithTags($tags)
+            ->setLimit($limit)
+            ->sortByDate()
+            ->executeQuery();
+        return $stories;
+    }
+
 
     /**
      * Returns all stories from a bunch of tag names.
