@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="v_separator"></div>
-        <div class="close" onclick="redirect()"></div>
+        <div class="close" onclick="redirect()">&nbsp</div>
         <script type="text/javascript">
             <!--
             $(function() {
