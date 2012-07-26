@@ -10,7 +10,6 @@
 </div>
 <div id="bar_related_stories_content">
     <ol class="avatar-list-style">
-        <?php print_r(get_class($stories));?>
         <?php foreach ( $stories as $story): ?><li><?php
         echo link_to(
             avatar_tag($story->Author->Avatar, "icon.gif", 14,14),
