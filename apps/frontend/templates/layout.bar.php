@@ -22,7 +22,6 @@
         iframe { display:block; width:100%; border:none; clear: both;}
 
         #bar_wraper{
-            height: 58px;
             background-color: #dddddd;
             display:block;
         }
