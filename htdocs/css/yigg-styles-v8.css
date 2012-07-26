@@ -441,7 +441,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_comments_content ul li {margin: 5px;}
 
-.close{float: right; margin-top: 16px; cursor: pointer; background:url("../images/close_button.png") 0 0 no-repeat; width: 22px; height: 22px; }
+.close{float: right; margin-top: 16px; cursor: pointer; background:url("../images/close_button.png") 0 0 no-repeat;}
 .close:hover {box-shadow: 1px 1px 1px 1px #000;}
 
 #bar_comments_label {background: url("../images/yigg-comments.png") 0 0 no-repeat; width: 35px; height: 30px;}
