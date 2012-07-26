@@ -439,7 +439,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #bar_comments_content{float:left; padding: 10px; position: absolute; border: 1px solid #c5c5c5; margin-top: 6px; margin-left: -405px;
                       background-color: #f7f6f6; border-radius: 5px; width: 580px; max-height: 300px; overflow:auto; box-shadow: 2px 2px 2px 2px #5d5d5d;}
 
-#bar_comments_content ul li {margin: 5px;}
+#bar_comments_content ul li {margin: 5px; border-bottom: 1px solid #c5c5c5;}
 
 .close{float: right; margin-top: 12px; cursor: pointer; background:url("../images/close_button.png") 0 0 no-repeat; width: 22px; height: 22px;}
 .close:hover{float: right; margin-top: 12px; cursor: pointer; background:url("../images/close_button_hover.png") 0 0 no-repeat; width: 22px; height: 22px;}
