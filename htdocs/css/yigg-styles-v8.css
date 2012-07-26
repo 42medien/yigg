@@ -463,6 +463,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #show_stories {background: url(../images/toggle.png) 0 0 no-repeat; float: left; width: 40px; height: 50px; cursor: pointer; font-size: 0;}
 #bar_related_stories_content {position: absolute; top: 49px; right: 0; border: 2px solid #CCCCCC; background-color: #F7F6F6; border-radius: 5px 5px 5px 5px; box-shadow: 2px 2px 2px 2px #5D5D5D;}
 #bar_related_stories_content .avatar-list-style {padding: 12px;}
-#bar_related_stories_content .avatar-list-style li {padding: 0; border-bottom: 1px solid #c5c5c5; height: 51px;}
-#bar_related_stories_content .avatar-list-style li img {width: 36px; height: 36px;}
+#bar_related_stories_content .avatar-list-style li {padding: 0; border-bottom: 1px solid #c5c5c5; height: 51px; line-height: 51px;}
+#bar_related_stories_content .avatar-list-style li img {width: 36px; height: 36px; vertical-align: middle;}
 /* End Relates Stories */
