@@ -453,9 +453,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #bar_rate_story_wraper{float:left; width: 80px; padding: 12px 25px 0 12px;}
 
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 40px; float:left; margin-top: 4px;}
+.bar_wraper .close {margin-left: 20px;}
 
 /* Relates Stories */
-#bar_related_stories {float: left; margin: 0 0 0 20px; position: relative;}
+#bar_related_stories {float: left; margin: 0 20px; position: relative;}
 .related_stories {float: left; width: 268px; font-size: 12px; line-height: 30px; color: #333; text-transform: uppercase;}
 .related_stories a {float: left; padding: 7px 0 0; margin: 0 10px 0 0; height: 43px;}
 .related_stories a + a {float: left; padding: 0; margin: 0; width: 215px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; color: #5d5d5d; line-height: 9px; height: 20px; text-transform: none;}
