@@ -1,4 +1,5 @@
 <div id="bar_related_stories_label">
+    <div class="related_stories">
     <?php
     $story = $stories->get(0);
     echo link_to(
@@ -7,7 +8,9 @@
     echo "Read Related Stories:";
     echo link_to($story['title'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow"));
     ?>
+    </div>
     <div id="show_stories">Toogle</div>
+    <div class="clear"></div>
 </div>
 <div id="bar_related_stories_content">
     <ol class="avatar-list-style">
