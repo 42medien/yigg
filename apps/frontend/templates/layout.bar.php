@@ -49,7 +49,7 @@
             border: 2px solid #ccc;
         }
 
-        .close{
+        .close, .close:hover {
             float: left;
             margin-left: 20px;
             cursor: pointer;
