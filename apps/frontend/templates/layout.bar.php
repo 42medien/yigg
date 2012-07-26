@@ -32,9 +32,7 @@
         }
 
         #bar_logo{
-            padding-left: 10px;
-            width: 200px;
-            float: left;
+           float: left;
         }
         
         #bar_rate_story{
