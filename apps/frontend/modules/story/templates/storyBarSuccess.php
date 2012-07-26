@@ -22,7 +22,7 @@
         </div>
         <div class="v_separator"></div>
         <div id="bar_comments">
-            <div id="bar_comments_label"><?php echo $sf_request->isAjaxRequest();?></div>
+            <div id="bar_comments_label"></div>
             <div id="bar_comments_content">
                 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
             </div>
