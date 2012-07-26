@@ -455,6 +455,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 40px; float:left; margin-top: 4px;}
 
 /* Relates Stories */
-#bar_related_stories {float: left;}
+#bar_related_stories {float: left; margin: 0 0 0 20px;}
+.related_stories {float: left; width: 268px;}
 #show_stories {background: url(../images/toggle.png) 0 0 no-repeat; float: left; width: 40px; height: 50px; cursor: pointer; font-size: 0;}
 /* End Relates Stories */
