@@ -53,9 +53,7 @@
         }
 
         .close{
-            width: 50px;
             float: right;
-            padding: 18px;
             cursor: pointer;
         }
     </style>
