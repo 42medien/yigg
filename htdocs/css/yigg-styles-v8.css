@@ -448,7 +448,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #bar_comments_label:hover {cursor: pointer;}
 
-#spreadly_bar {float: left; padding: 8px 20px 0 20px;}
+#spreadly_bar {float: left; padding: 4px 10px 0 15px;}
 
 #bar_rate_story_wraper{float:left; width: 80px; padding: 12px 25px 0 25px;}
 
