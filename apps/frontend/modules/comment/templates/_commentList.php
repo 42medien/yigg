@@ -2,6 +2,9 @@
 <?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
   <div id="<?php echo strtolower(get_class($sf_data->getRaw("obj"))); ?>-comments-<?php echo $obj['id']; ?>" class="clr">
 <?php endif; ?>
+<?php if($at_beginning === true && false === $inlist && $sf_user->hasUser()):?>
+    <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
+<?php endif;?>
 <?php if(count($comments) > 0): ?>
   <ul class="comments-list <?php if(false === $inlist): ?>expanded<?php endif;?>">
     <?php foreach($comments as $k => $comment):  ?>
@@ -44,7 +47,7 @@
     <?php endforeach; ?>
   </ul>
 <?php endif; ?>
-<?php if(false === $inlist && $sf_user->hasUser()):?>
+<?php if($at_beginning !== true && false === $inlist && $sf_user->hasUser()):?>
   <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
 <?php endif;?>
 <?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>

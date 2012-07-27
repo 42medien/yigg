@@ -18,7 +18,7 @@ class storyActions extends yiggActions
     {
         $this->findOrRedirect($request);
 
-        //$this->relatedStories = StoryTable::retrieveRelatedStories($this->story->getTags());
+        $this->relatedStories = StoryTable::retrieveRelatedStories($this->story->getTags());
 
         $this->setLayout('layout.bar');
     }
