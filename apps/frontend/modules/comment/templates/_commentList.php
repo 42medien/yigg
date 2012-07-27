@@ -1,5 +1,6 @@
 <?php
     use_helper("Date");
+echo "at1:". $at_beginning;
     $at_beginning = isset($at_beginning)?$at_beginning:false;
 echo "at:". $at_beginning;
 ?>
