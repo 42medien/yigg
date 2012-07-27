@@ -25,6 +25,18 @@
      <?php else:?>
        <?php echo link_to_story($story->title, $story, array("title" => $story->title));?>
      <?php endif; ?>
+       <?php
+       echo link_to(img_tag('external_link.png', array(
+               'alt' => $story->title,
+               'width' => 17,
+               'height' => 9
+           )),
+           $story["external_url"],
+           array(
+               'title' => $story->title,
+               'class' => 'logo'
+           ));
+       ?>
    </h3>
 
    <div class="body entry-content<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
