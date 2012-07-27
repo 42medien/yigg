@@ -1,4 +1,7 @@
-<?php use_helper("Date");?>
+<?php
+    use_helper("Date");
+    $at_beginning = isset($at_beginning)?$at_beginning:false;
+?>
 <?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
   <div id="<?php echo strtolower(get_class($sf_data->getRaw("obj"))); ?>-comments-<?php echo $obj['id']; ?>" class="clr">
 <?php endif; ?>
