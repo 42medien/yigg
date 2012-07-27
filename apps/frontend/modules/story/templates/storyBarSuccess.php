@@ -24,7 +24,7 @@
         <div id="bar_comments">
             <div id="bar_comments_label"></div>
             <div id="bar_comments_content">
-                <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
+                <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
             </div>
         </div>
         <div class="v_separator"></div>
@@ -43,7 +43,7 @@
         <div class="bar_plholder"></div>
         <div class="v_separator"></div>
         <div id="bar_related_stories">
-            <?php include_partial('relatedStories',  array('stories' => $relatedStories, 'at_beginning' => true)); ?>
+            <?php include_partial('relatedStories',  array('stories' => $relatedStories)); ?>
         </div>
         <div class="v_separator"></div>
         <div class="close" onclick="redirect()"></div>
