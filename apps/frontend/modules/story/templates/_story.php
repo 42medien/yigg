@@ -130,8 +130,8 @@
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
       <?php
-    print_r($story->getTags());die;
-        $story_tags = StoryTable::retrieveRelatedStories($story->getTags());
+    print_r($story);die;
+        $story_tags = Doctrine_Core::getTable('Story')->retrieveRelatedStories($this->story->getTags());
 
         /*
         //echo $story['id'];
