@@ -131,7 +131,7 @@
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
       <?php
 
-        //$story_tags = StoryTable::retrieveRelatedStories($story->getTags());
+        $story_tags = StoryTable::retrieveRelatedStories($story->getTags());
         /*
         //echo $story['id'];
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
