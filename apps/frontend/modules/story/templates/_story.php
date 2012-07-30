@@ -130,6 +130,8 @@
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
       <?php
+
+        $story_tags = StoryTable::retrieveRelatedStories($story->getTags());
         /*
         //echo $story['id'];
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
@@ -156,7 +158,7 @@
                             ");
 
         $story_tags = $story_tags_sql->fetchAll();  
-        //print_r($story_tags);
+        //print_r($story_tags);         */
         ?>
 
       <?php if(count($story_tags) > 0): ?>
@@ -171,7 +173,7 @@
             echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
         ?>
         <?php endforeach;?> 
-      <?php endif; */?>
+      <?php endif;?>
     <?php endif; ?>
 
    <div class="clr bth"></div>
