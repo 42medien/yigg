@@ -159,7 +159,7 @@
                             ");
 
         $story_tags = $story_tags_sql->fetchAll();  
-        //print_r($story_tags);         */
+        //print_r($story_tags);
         ?>
 
       <?php if(count($story_tags) > 0): ?>
@@ -174,7 +174,7 @@
             //echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
         ?>
         <?php endforeach;?> 
-      <?php endif;?>
+      <?php endif; */?>
     <?php endif; ?>
 
    <div class="clr bth"></div>
