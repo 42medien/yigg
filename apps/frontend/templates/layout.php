@@ -46,7 +46,7 @@
     
     <script type='text/javascript'>
     $(document).ready(function(){
-        //alert('test jquery');       
+        alert('test jquery');       
         
     });
     </script>
