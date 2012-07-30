@@ -165,12 +165,12 @@
         <div style="font-size: 108% !important; font-weight: bold; margin-top: 10px; margin-bottom:3px;">Das könnte Sie auch interessieren:</div>
         <?php foreach($story_tags as $story_tag):?>
         <?php
-            $year = substr($story_tag["created_at"], 0, 4);
-            $month = substr($story_tag["created_at"], 5, 2);
-            $day = substr($story_tag["created_at"], 8, 2);
-            $route = "@story_show?slug={$story_tag["internal_url"]}&year=$year&month=$month&day=$day";
+            //$year = substr($story_tag["created_at"], 0, 4);
+            //$month = substr($story_tag["created_at"], 5, 2);
+            //$day = substr($story_tag["created_at"], 8, 2);
+            //$route = "@story_show?slug={$story_tag["internal_url"]}&year=$year&month=$month&day=$day";
 
-            echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
+            //echo link_to($story_tag['st_title'], $route, array("title" => $story_tag['st_title'])) . '<br />';
         ?>
         <?php endforeach;?> 
       <?php endif;?>
