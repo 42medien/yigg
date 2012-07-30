@@ -132,6 +132,7 @@
       <?php
 
         $story_tags = StoryTable::retrieveRelatedStories($story->getTags());
+    print_r($story_tags);
         /*
         //echo $story['id'];
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
