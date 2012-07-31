@@ -89,7 +89,6 @@
             <?php //if(true === has_slot("sidebar_sponsoring")): ?>
             <?php //include_slot("sidebar_sponsoring"); ?>
           <?php //endif; ?>
-            <br />
           <?php if(true === has_slot("sidebar")): ?>
             <?php include_slot("sidebar"); ?>
           <?php endif; ?>
