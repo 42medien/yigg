@@ -4,6 +4,7 @@
   include_partial('story',
     array(
       'story' => $story,
+      'relatedStories' => $relatedStories,
       'count' => 0,
       'summary' => false,
       'inlist' => false,
