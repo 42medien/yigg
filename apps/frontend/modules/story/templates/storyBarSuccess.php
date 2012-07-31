@@ -47,7 +47,7 @@
         <div class="bar_plholder"></div>
         <div class="v_separator"></div>
         <div id="bar_related_stories">
-            <?php include_partial('relatedStories',  array('stories' => $relatedStories)); ?>
+            <?php include_partial('relatedStories',  array('stories' => $relatedStories, 'bar' => true)); ?>
         </div>
         <div class="v_separator"></div>
         <div class="close" onclick="redirect()"></div>
