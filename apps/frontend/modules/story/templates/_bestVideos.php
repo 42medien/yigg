@@ -73,4 +73,4 @@
     </div>
 
 </div><br>
-<?php endif;?><br />
+<?php endif;?>
