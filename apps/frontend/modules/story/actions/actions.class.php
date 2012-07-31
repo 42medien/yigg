@@ -131,6 +131,8 @@ class storyActions extends yiggActions
   {
     $this->findOrRedirect($request);
 
+      $this->relatedStories = Doctrine_Core::getTable('Story')->retrieveRelatedStories($this->story->getTags());
+
     switch($request->getParameter("view"))
     {
       case "show":
