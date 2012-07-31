@@ -1,3 +1,7 @@
+<?php slot(
+    'canonical',
+    '<link href="'.url_for_story($story).'" rel="canonical">')
+?>
 <div id="bar_wraper">
     <div id="bar_content">
         <div class="v_separator"></div>

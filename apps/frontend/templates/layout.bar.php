@@ -3,6 +3,11 @@
 <head>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     <link rel="shortcut icon" href="/favicon.ico" />
+
+    <?php if(true === has_slot("canonical")): ?>
+        <?php include_slot("canonical"); ?>
+    <?php endif; ?>
+
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
 
     <?php include_http_metas(); ?>

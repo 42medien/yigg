@@ -21,7 +21,7 @@
 
    <h3 class="entry-title">
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
-       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank', 'rel' => 'canonical'));?>
+       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
      <?php else:?>
        <?php echo link_to_story($story->title, $story, array("title" => $story->title));?>
      <?php endif; ?>
@@ -75,7 +75,7 @@
          $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
          ?>
          <?php //echo link_to($story->title, $story["external_url"], array("title" => $story->title, "rel" => "external"));?>
-         <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, 'rel' => 'canonical', 'target' => '_blank'));?>
+         <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
      </p>
 
         <?php if(isset($total) && $total > 9 &&
