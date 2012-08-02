@@ -666,6 +666,7 @@ class userActions extends yiggActions
       $key = Doctrine::getTable('AuthUserKey')->findOneByUserId($this->user->id);
       $text->setPartialVars( array("user" => $this->user, "key" => $key->user_key ));
 
+      print_r(get_class($this->getMailer())); die;
       $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
       if(false === $this->result)
       {
