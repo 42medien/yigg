@@ -44,6 +44,10 @@ class userActions extends autoUserActions
             $text->setPartialVars( array("user" => $this->user ));
 
 
+            echo "to: ".$this->user->email."<br>";
+            echo "subject: ".sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username)."<br>";
+            echo "body: ".$text->render()."<br>";
+
             //$this->result = 1 ===
             $this->result = $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render());
 
