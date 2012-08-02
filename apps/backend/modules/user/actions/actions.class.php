@@ -38,13 +38,19 @@ class userActions extends autoUserActions
             $this->getUser()->setFlash('notice', $this->user->username.', could not delete '  . $e->getMessage() );
         }
 
-        $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
-        $text->setPartialVars( array("user" => $this->getRoute()->getObject() ));
-
-        $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
-        if(false === $this->result)
+        try
         {
-            $this->getUser()->setFlash('notice', $this->user->username.',  could not send email '  . $e->getMessage() );
+            $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
+            $text->setPartialVars( array("user" => $this->getRoute()->getObject() ));
+
+            $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
+            if(false === $this->result)
+            {
+                $this->getUser()->setFlash('notice', $this->user->username.',  could not send email ');
+            }
+        }catch ( Exception $e)
+        {
+            $this->getUser()->setFlash('notice', $this->user->username.', could not delete '  . $e->getMessage() );
         }
 
         $this->redirect('user');
