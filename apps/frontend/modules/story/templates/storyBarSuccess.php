@@ -34,7 +34,7 @@
         <div class="v_separator"></div>
         <div id="spreadly_bar">
            <div class="spreadly-button">
-            <iframe src="http://button.spread.ly/?url=<?php echo url_for_story($story, "bar");?>&social=1&title=<?php echo $story->title;?>"
+            <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, 'bar'));?>&social=1&title=<?php echo $story->title;?>"
                     style="overflow:hidden; width: 420px; height: 30px; padding: 0px 0;"
                     frameborder="0"
                     scrolling="no"
