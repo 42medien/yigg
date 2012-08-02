@@ -34,8 +34,7 @@ class userActions extends autoUserActions
             }
         }catch ( Exception $e)
         {
-            $this->logMessage("User::register, could not delete user : " . $e->getMessage() . $e->getTraceAsString(), "CRIT");
-            return sfView::ERROR;
+            $this->getUser()->setFlash('notice', $this->user->username.', could not delete '  . $e->getMessage() );
         }
 
         $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
@@ -44,8 +43,7 @@ class userActions extends autoUserActions
         $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
         if(false === $this->result)
         {
-            $this->logMessage("User::register, could not send email for user : {$this->user->username}", "CRIT");
-            return sfView::ERROR;
+            $this->getUser()->setFlash('notice', $this->user->username.',  could not send email '  . $e->getMessage() );
         }
 
         $this->redirect('user');
