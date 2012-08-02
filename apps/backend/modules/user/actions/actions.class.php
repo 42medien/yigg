@@ -45,7 +45,7 @@ class userActions extends autoUserActions
 
 
             //$this->result = 1 ===
-            $this->result = $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
+            $this->result = $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render());
 
             print_r($this->result); die;
             //if(false === $this->result)
