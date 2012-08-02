@@ -32,8 +32,6 @@ class userActions extends autoUserActions
             {
                 $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
             }
-
-            $this->redirect('user');
         }catch ( Exception $e)
         {
             $this->logMessage("User::register, could not delete user : " . $e->getMessage() . $e->getTraceAsString(), "CRIT");
@@ -49,5 +47,7 @@ class userActions extends autoUserActions
             $this->logMessage("User::register, could not send email for user : {$this->user->username}", "CRIT");
             return sfView::ERROR;
         }
+
+        $this->redirect('user');
     }
 }
