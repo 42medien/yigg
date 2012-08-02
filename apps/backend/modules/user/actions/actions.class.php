@@ -41,7 +41,7 @@ class userActions extends autoUserActions
         try
         {
             $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
-            $text->setPartialVars( array("user" => $this->getRoute()->getObject() ));
+            $text->setPartialVars( array("user" => $this->user ));
 
             $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
             if(false === $this->result)
