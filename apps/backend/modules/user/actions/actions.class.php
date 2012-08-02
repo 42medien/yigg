@@ -28,6 +28,7 @@ class userActions extends autoUserActions
     public function executeDelete(sfWebRequest $request){
         try
         {
+            $this->user = $this->getRoute()->getObject();
             if ($this->getRoute()->getObject()->delete())
             {
                 $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
