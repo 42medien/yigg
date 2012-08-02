@@ -24,4 +24,30 @@ class userActions extends autoUserActions
         $this->followees = $this->stats->external_friends_total;
         $this->published_news = $this->stats->storys_total;
     }
+
+    public function executeDelete(sfWebRequest $request){
+        try
+        {
+            if ($this->getRoute()->getObject()->delete())
+            {
+                $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+            }
+
+            $this->redirect('user');
+        }catch ( Exception $e)
+        {
+            $this->logMessage("User::register, could not delete user : " . $e->getMessage() . $e->getTraceAsString(), "CRIT");
+            return sfView::ERROR;
+        }
+
+        $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
+        $text->setPartialVars( array("user" => $this->getRoute()->getObject() ));
+
+        $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
+        if(false === $this->result)
+        {
+            $this->logMessage("User::register, could not send email for user : {$this->user->username}", "CRIT");
+            return sfView::ERROR;
+        }
+    }
 }
