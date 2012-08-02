@@ -16,7 +16,7 @@
        )
      );?>
     </dd>
-    <?php if("" !== $sf_data->getRAW("user")->getConfig()->get('city','profile')):?>
+    <?php if("" !== $sf_data->getRAW("user")->getConfig()->get('city','profile')):?> 
       <dt><?php echo 'Stadt:' ?></dt>
      <dd><?php echo $sf_data->getRAW("user")->getConfig()->get('city', null, 'profile'); ?> </dd>
     <?php endif; ?>
