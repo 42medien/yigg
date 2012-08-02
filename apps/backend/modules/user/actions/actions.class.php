@@ -29,7 +29,7 @@ class userActions extends autoUserActions
         try
         {
             $this->user = $this->getRoute()->getObject();
-            if ($this->getRoute()->getObject()->delete())
+            if ( true) //  $this->getRoute()->getObject()->delete())
             {
                 $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
             }
@@ -42,6 +42,8 @@ class userActions extends autoUserActions
         {
             $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
             $text->setPartialVars( array("user" => $this->user ));
+
+            print_r($text->render());
             print_r(get_class($this->getMailer())); die;
             //$this->result = 1 ===
             $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
