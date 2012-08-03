@@ -49,17 +49,13 @@ all:
       generate_shortest_url:            true
 
   mailer:
-    class: yiggMailer
-    param:
-      logging:           %SF_LOGGING_ENABLED%
-      charset:           %SF_CHARSET%
-      delivery_strategy: realtime
-      transport:
-        class: Swift_SmtpTransport
-        param:
-          host:       smtp1.1und1.de
-          username:   marvin@yigg.de
-          password:   yiggftw
+      class: yiggMailer
+      param:
+        logging:           %SF_LOGGING_ENABLED%
+        charset:           %SF_CHARSET%
+        delivery_strategy: realtime
+        transport:
+          class: Swift_MailTransport
 
 cli:
   controller:
