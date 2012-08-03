@@ -1,4 +1,4 @@
-Hallo <?php echo $user->username; ?>
+Hallo <?php echo $user->username; ?>,
 
 Du hast kommerzielle Inhalte auf YiGG eingestellt. Dies verstösst gegen unsere Nutzungsbedingungen - daher haben wir die entsprechenden Beiträge und das Benutzerkonto gesperrt.
 
