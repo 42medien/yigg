@@ -9,7 +9,7 @@ class yiggMailer extends sfMailer
    */
   public function sendEmail($to, $subject, $message, $content_type="text/html")
   {
-    $message = $this->compose('test@yopeso.com',$to,$subject, $message);   //no-reply@yigg.de
+    $message = $this->compose('no-reply@yigg.de',$to,$subject, $message);
     $message->setContentType($content_type);
     return $this->send($message);
   }
