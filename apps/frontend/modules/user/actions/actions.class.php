@@ -302,36 +302,6 @@ class userActions extends yiggActions
       $this->getResponse()->setStatusCode(406);
       return $this->redirect("@user_welcome");
     }
-    
-    // Get the status for the user
-    
-    $user_set = $this->session->getUser();
-    if($user_set->id === $friend->id)
-    {
-        $this->session->setFlash("success_msg","Du Dast ist");
-        $this->getResponse()->setStatusCode(406);
-        return $this->redirect("@user_welcome");
-    }
-    else
-        $this->session->setFlash("error_msg", "Dieser Benutzername ist leider nicht bekannt");
-    
-    $following = new UserFollowing();
-    $following->user_id = $user->id;
-    $following->following_id = $friend->id;
-    try{
-        $following->save();
-    }
-    catch(Exception $e)
-    {
-        $this->session->setFlash("success_msg","Ihr seid immer noch Freude");
-        break;
-    }
-    $this->session->setFlash("success_msg","Ihr seid immer noch Freude");
-    break;
-    
-    
-    // Get the status for the user
-    
 
     switch( $request->getParameter("list") )
     {
