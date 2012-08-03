@@ -454,16 +454,6 @@ class userActions extends yiggActions
                 return sfView::ERROR;
             }
 
-            $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailConfirmEmailAccount', '');
-            $key = Doctrine::getTable('AuthUserKey')->findOneByUserId($this->user->id);
-            $text->setPartialVars( array("user" => $this->user, "key" => $key->user_key ));
-
-            $this->result = 1 === $this->getMailer()->sendEmail($this->user->email,sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username),$text->render(),"text/plain");
-            if(false === $this->result)
-            {
-                $this->logMessage("User::register, could not send email for user : {$this->user->username}", "CRIT");
-                return sfView::ERROR;
-            }
         }
 
         return sfView::SUCCESS;
