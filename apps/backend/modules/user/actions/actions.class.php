@@ -43,23 +43,16 @@ class userActions extends autoUserActions
             $text = new sfPartialView( sfContext::getInstance(), 'user', '_mailDeleteUserAccount', '');
             $text->setPartialVars( array("user" => $this->user ));
 
-
-            echo "to: ".$this->user->email."<br>";
-            echo "subject: ".sprintf('Bestätigung Deiner Anmeldung bei YiGG',$this->user->username)."<br>";
-            echo "body: ".$text->render()."<br>";
-
-            //$this->result = 1 ===
             $this->result = $this->getMailer()->sendEmail(
                                                         $this->user->email,
                                                         sprintf('Bestätigung Deiner Anmeldung bei YiGG', $this->user->username),
                                                         $text->render()
                                                     );
 
-            print_r($this->result); die;
-            //if(false === $this->result)
-            //{
-                //$this->getUser()->setFlash('notice', $this->user->username.',  could not send email ');
-            //}
+            if(false === $this->result)
+            {
+                $this->getUser()->setFlash('notice', $this->user->username.',  could not send email ');
+            }
         }catch ( Exception $e)
         {
             $this->getUser()->setFlash('notice', $this->user->username.', could not delete '  . $e->getMessage() );
