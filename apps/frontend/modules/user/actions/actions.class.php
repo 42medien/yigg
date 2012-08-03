@@ -130,7 +130,7 @@ class userActions extends yiggActions
     return sfView::SUCCESS;
   }
   
-  public function getMyYigg($request)
+  /*public function getMyYigg($request)
   {
       $this->user = $this->sesion->getUser();
       $this->following = UserFollowingTable::getOnlineFollowedUsers($this->user->id);
@@ -149,7 +149,7 @@ class userActions extends yiggActions
       
       return sfView::SUCCESS;
       
-  }
+  }*/
 
 
   /**
