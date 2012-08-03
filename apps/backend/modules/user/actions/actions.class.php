@@ -25,7 +25,7 @@ class userActions extends autoUserActions
         $this->published_news = $this->stats->storys_total;
     }
 
-    public function executeDelete(sfWebRequest $request){
+    public function executeDeletes(sfWebRequest $request){
         try
         {
             $this->user = $this->getRoute()->getObject();
