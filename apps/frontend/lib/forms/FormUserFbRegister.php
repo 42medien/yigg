@@ -108,7 +108,7 @@ class FormUserFbRegister extends yiggForm
         parent::setup();
 
         $this->widgetSchema->setNameFormat('RegisterForm[%s]');
-        $this->widgetSchema['email']->setAttribute('disabled', true);
+        $this->widgetSchema['email']->setAttribute('disabled', 'disabled');
 
         // set labels
         $this->widgetSchema->setLabels(
