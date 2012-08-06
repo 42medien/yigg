@@ -448,7 +448,7 @@ class userActions extends yiggActions
 
                 $this->user->save();
 
-                $this->getUser()->login($user);
+                $this->getUser()->login($this->user);
                 return $this->redirect("@best_stories");
 
             }
