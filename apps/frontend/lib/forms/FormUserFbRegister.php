@@ -39,8 +39,7 @@ class FormUserFbRegister extends yiggForm
                     array(
                         'id'  => 'Email',
                         'value' => $this->getOption('email'),
-                        //'disabled' => 'disabled',
-                        //'readonly'=>'readonly'
+                        'readonly'=>'readonly'
                     )
                 ),
                 'acceptedTerms' => new sfWidgetFormInputCheckbox(
@@ -108,7 +107,6 @@ class FormUserFbRegister extends yiggForm
         parent::setup();
 
         $this->widgetSchema->setNameFormat('RegisterForm[%s]');
-        $this->widgetSchema['email']->setAttribute('disabled', 'disabled');
 
         // set labels
         $this->widgetSchema->setLabels(
