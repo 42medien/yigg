@@ -408,7 +408,6 @@ class userActions extends yiggActions
 
         if( true === $this->form->processAndValidate() )
         {
-            echo "ok"; die;
             $ip_address = $request->getRemoteAddress();
             $connection = Doctrine::getConnectionByTableName("User");
 
@@ -448,6 +447,10 @@ class userActions extends yiggActions
                 }
 
                 $this->user->save();
+
+                $this->getUser()->login($user);
+                return $this->redirect("@best_stories");
+
             }
             catch( Exception $e)
             {
