@@ -408,6 +408,7 @@ class userActions extends yiggActions
 
         if( true === $this->form->processAndValidate() )
         {
+            echo "ok"; die;
             $ip_address = $request->getRemoteAddress();
             $connection = Doctrine::getConnectionByTableName("User");
 
