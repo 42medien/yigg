@@ -40,7 +40,7 @@ class FormUserFbRegister extends yiggForm
                         'id'  => 'Email',
                         'value' => $this->getOption('email'),
                         'disabled' => 'disabled',
-                        'readonly'=>'readonly'
+                        //'readonly'=>'readonly'
                     )
                 ),
                 'acceptedTerms' => new sfWidgetFormInputCheckbox(
