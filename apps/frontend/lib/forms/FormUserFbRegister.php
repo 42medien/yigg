@@ -39,7 +39,7 @@ class FormUserFbRegister extends yiggForm
                     array(
                         'id'  => 'Email',
                         'value' => $this->getOption('email'),
-                        'disabled' => 'disabled',
+                        //'disabled' => 'disabled',
                         //'readonly'=>'readonly'
                     )
                 ),
@@ -108,7 +108,7 @@ class FormUserFbRegister extends yiggForm
         parent::setup();
 
         $this->widgetSchema->setNameFormat('RegisterForm[%s]');
-        //$this->widgetSchema['email']->setAttribute('disabled', 'disabled');
+        $this->widgetSchema['email']->setAttribute('disabled', 'disabled');
 
         // set labels
         $this->widgetSchema->setLabels(
