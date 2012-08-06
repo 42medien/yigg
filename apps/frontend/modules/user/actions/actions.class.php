@@ -494,12 +494,6 @@ class userActions extends yiggActions
                             $user->save();
                         }
 
-                        if($user->status == 0)
-                        {
-                            $this->getUser()->setFlash("error_msg", "Dein Account wurde noch nicht freigeschaltet.");
-                            return sfView::SUCCESS;
-                        }
-
                         $this->getUser()->login($user);
                         return $this->redirect("@best_stories");
                     }else{
