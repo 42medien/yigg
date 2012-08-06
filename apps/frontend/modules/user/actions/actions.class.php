@@ -487,7 +487,6 @@ class userActions extends yiggActions
                         $user = $user_table->retrieveById($user_id);
                         $facebook_id = $user->getFacebookId();
 
-                        print_r($facebook_id);  die;
                         if(!$facebook_id){
 
                             $user->setFacebookId($facebook_user_profile['id']);
