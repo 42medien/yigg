@@ -11,6 +11,9 @@
             xfbml        : true,
             oauth        : true
         });
+
+        FB.ui({ method: 'apprequests',
+            message: 'Here is a new Requests dialog...'});
     };
 
     // Load the SDK Asynchronously
@@ -22,6 +25,5 @@
         ref.parentNode.insertBefore(js, ref);
     }(document));
 
-    FB.ui({ method: 'apprequests',
-        message: 'Here is a new Requests dialog...'});
+
 </script>
