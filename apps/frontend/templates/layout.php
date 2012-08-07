@@ -61,8 +61,8 @@
         <?php
           echo link_to(img_tag('yigg_logo.png', array(
                   'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                  'width' => 191,
-                  'height' => 54
+                  'width' => 166,
+                  'height' => 52
               )),
              '@best_stories',
              array(
