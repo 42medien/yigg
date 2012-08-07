@@ -48,7 +48,7 @@ abbr {font-size: 12px; color: #999; border-bottom: 1px dotted #ccc}
 a {color: #993300; text-decoration: none}
 a:visited {color: #cc9966}
 a:hover {text-decoration: underline}
-.thirds .one, .thirds .two, .thirds .three {float: left; width: 33%}
+.thirds .one, .thirds .two, .thirds .three {float: left; margin: 0 100px 0 0;}
 .twoThree .twoThree-left {float: left; width: 60%; min-height: 700px; display: block; padding-top: 10px;}
 .twoThree .twoThree-right {float: right; width: 38%; display: block; margin-top: 0px !important}
 .halfHalf .left {float: left; width: 50%; min-height: 0}
@@ -86,6 +86,7 @@ background: linear-gradient(to bottom, #434343 0%,#222222 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
 }
 #footer fieldset {display: inline; text-align: left;}
+#footer fieldset h4, #footer fieldset ul {margin: 0;}
 #footer ul li {list-style: none}
 #footer ul li a {color: #9a9c9d; font-size: 14px; font-family: 'Trebuchet MS', sans-serif;}
 #footer h4 {margin-left: 25px; color: #ffffff; font-size: 18px; font-family: 'Trebuchet MS', sans-serif; font-weight: normal;}
