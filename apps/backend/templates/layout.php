@@ -26,8 +26,8 @@
               'yigg_logo.png',
                array(
                 'alt' => 'Yigg Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                'width' => 191,
-                'height' => 54
+                'width' => 166,
+                'height' => 52
                )
              ),
              '@homepage',
