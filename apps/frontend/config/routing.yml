@@ -250,6 +250,10 @@ user_fb_register:
   url:    /fb_register
   param:  { module: user, action: fbRegister}
 
+user_fb_friends:
+  url:    /fb_add_friends
+  param:  { module: user, action: fbAddFriends}
+
 user_login:
   url:    /login
   param:  { module: user, action: login}
