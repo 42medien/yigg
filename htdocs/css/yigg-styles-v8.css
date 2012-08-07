@@ -86,7 +86,7 @@ background: linear-gradient(to bottom, #434343 0%,#222222 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
 }
 #footer ul li {list-style: none}
-#footer h4 {margin-left: 25px; color: #ffffff; font-size: 18px; font-family: 'Trebuchet MS', sans-serif;}
+#footer h4 {margin-left: 25px; color: #ffffff; font-size: 18px; font-family: 'Trebuchet MS', sans-serif; font-weight: normal;}
 .filters {margin: 0 10px 0 0; height: 15px}
 .filters li {float: left; list-style: none; padding-left: 3px}
 .filters a {color: #993300 !important; display: block; padding: 0px 5px; padding-left: 2px; font-weight: bold; text-decoration: none}
