@@ -75,7 +75,7 @@ a:hover {text-decoration: underline}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
 #sub-navi li.selected, #sub-navi li:hover {background: url(../images/splice.png) 0% -157px}
 #sub-navi li.selected a, #sub-navi a:hover {background: url(../images/splice.png) 100% -157px}
-#footer {padding: 20px; border-top: 1px solid #ddd; clear: both;
+#footer {padding: 20px; clear: both;
 background: #434343; /* Old browsers */
 background: -moz-linear-gradient(top, #434343 0%, #222222 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#434343), color-stop(100%,#222222)); /* Chrome,Safari4+ */
