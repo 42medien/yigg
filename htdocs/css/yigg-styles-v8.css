@@ -56,7 +56,7 @@ a:hover {text-decoration: underline}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
 .clr {clear: left}
 .clr.bth {clear: both;}
-#container {width: 980px; margin: 0 auto;}
+#container #content {width: 980px; margin: 0 auto;}
 #content {padding: 0 0 15px 15px; position: relative; color: #333}
 .header {position: relative}
 .header a.logo {padding: 0px 0px 3px; display: block}
