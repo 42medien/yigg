@@ -56,8 +56,9 @@ a:hover {text-decoration: underline}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
 .clr {clear: left}
 .clr.bth {clear: both;}
+#container {position: relative;}
 #container #content {width: 980px; margin: 0 auto;}
-#content {padding: 0 0 15px 15px; position: relative; color: #333}
+#content {padding: 0 0 15px 15px; color: #333}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 7px #c1c1c1;}
 .header a.logo {padding: 0px 0px 3px; display: block}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
@@ -278,7 +279,7 @@ form.comment {padding: 0 5px; clear: right}
 form.comment {background: none; padding: 0 5px; display: block; margin: 0; clear: right}
 form.comment .mceLayout {width: 100% !important}
 .search-form * {display: inline}
-.sponsoring.banner {position: absolute; right: 0; bottom: 34px; text-align: center; height: 50px; width: 300px; margin: 0; padding: 0}
+.sponsoring.banner {position: absolute; right: 0; top: 58px; text-align: center; height: 50px; width: 300px; margin: 0; padding: 0}
 .sponsoring.banner .preview {background: url(../images/sponsoring-bg-banner.png) top left no-repeat; height: 50px; width: 300px}
 .sponsoring.banner .preview p {margin: 0}
 .sponsoring.banner .preview strong {margin: 0}
