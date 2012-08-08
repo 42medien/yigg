@@ -99,7 +99,8 @@
             <!-- </div> -->
           <?php endif; ?>
 
-		    <div class="clr"><!--  --></div>
+		    <div class="clr"><!--  --></div>                  
+    </div>
 
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
            <?php if(true === $sf_user->hasUser()):?>
@@ -116,7 +117,6 @@
                        array("title"=>"Benutzeraccount erstellen")); ?>
            <?php endif;?>                      
        </h3>
-    </div>
 
     <div class="spreadly-button">
         <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
