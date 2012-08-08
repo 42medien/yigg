@@ -67,7 +67,7 @@ a:hover {text-decoration: underline}
 #usernav .profilepic {float: left; width: 35px}
 #navi {margin: 0; margin-left: 10px; padding: 0}
 #navi li, #sub-navi li {list-style: none; margin: 0px 2px 0  0; float: left; padding: 0; /*background: url(../images/splice.png) 0  -57px*/}
-#navi li a {display: block; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
+#navi li a {display: block; font: 14px 'Arial', sans-serif; color: #666666; text-transform: uppercase; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
 /*#navi li.selected, #navi li:hover {background: url(../images/splice.png) 0 -89px}
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
 #navi li.create, #navi li.create a {background: none; color: #993300}
