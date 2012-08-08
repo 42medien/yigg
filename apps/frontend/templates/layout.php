@@ -58,7 +58,7 @@
     <div id="container">
         <div class="header">
             <div class="header_data">
-                <div class="logo">
+                <div class="logo_box">
                     <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
                     <?php
                     echo link_to(img_tag('yigg_logo.png', array(
