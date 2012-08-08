@@ -57,7 +57,7 @@ a:hover {text-decoration: underline}
 .clr {clear: left}
 .clr.bth {clear: both;}
 #container {position: relative;}
-#container #content {width: 1008px; margin: 0 auto;}
+#container #content {width: 1008px; margin: 0 auto; background: #fff; border-width: 0 1px; border-style: solid; border-color: #cdcdcd;}
 #content {padding: 0 0 15px 15px; color: #333}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 7px #c1c1c1;}
 .header_data {width: 980px; margin: 0 auto;}
