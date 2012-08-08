@@ -58,7 +58,7 @@ a:hover {text-decoration: underline}
 .clr.bth {clear: both;}
 #container {position: relative;}
 #container #content {width: 1008px; margin: 0 auto; background: #fff; border-width: 0 1px; border-style: solid; border-color: #cdcdcd; overflow: auto;}
-.content_data {width: 982px; margin: 0 auto;}
+.content_data {width: 982px; margin: 0 auto; padding: 12px 0;}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 7px #c1c1c1;}
 .header_data {width: 980px; margin: 0 auto;}
 .header a.logo {padding: 0px; display: block;}
