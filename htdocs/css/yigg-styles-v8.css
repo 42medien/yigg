@@ -171,7 +171,7 @@ h3.entry-title {font-size: 1.4em}
 #story-list {width: 674px;}
 .story-list, spec-list {margin-left: 0}
 .story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
-.story-list .hentry {width: 310px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf; margin: 0 18px 0 0;}
+.story-list .hentry {width: 310px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf; margin: 0 18px 0 0; padding: 0;}
 .story-list .hentry .entry-title {width: 310px;}
 .story-list .hentry .entry-title a {font: 18px 'Trebuchet MS', sans-serif; color: #191919;}
 .story-list .hentry .entry-title a.logo {display: none;}
