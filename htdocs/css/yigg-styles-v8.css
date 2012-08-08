@@ -26,7 +26,7 @@ em {font-style: italic}
 blockquote,ul,ol,dl {margin: 1em}
 ol,ul,dl {margin-left: 2em}
 ol li {list-style: decimal outside}
-ul li {list-style: disc outside}
+ul li {list-style: none}
 dl dd {margin-left: 1em}
 th,td {border: 1px solid #000; padding: .5em}
 th {font-weight: bold; text-align: center}
@@ -55,12 +55,14 @@ a:hover {text-decoration: none;}
 .halfHalf .right {float: right; width: 50%; position: static}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
 .clr {clear: left}
-.clr.bth {clear: both;}
+.clr.bth, .clear {clear: both;}
 #container {position: relative;}
 #container #content {width: 1008px; margin: 0 auto; background: #fff; border-width: 0 1px; border-style: solid; border-color: #cdcdcd; overflow: auto;}
 .content_data {width: 982px; margin: 0 auto; padding: 12px 0;}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 12px #000000;}
 .header_data {width: 980px; margin: 0 auto;}
+.header_data .logo_box {float: left;}
+.header_data .login_box {float: right;}
 .header a.logo {padding: 0px; display: block;}
 .header a.logo img {display: block;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
