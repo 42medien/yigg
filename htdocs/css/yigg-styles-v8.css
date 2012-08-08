@@ -63,6 +63,7 @@ a:hover {text-decoration: none;}
 .header_data {width: 980px; margin: 0 auto;}
 .header_data .logo_box {float: left;}
 .header_data .login_box {float: right;}
+.header_data .login_box ul, .header_data .login_box ul li {float: left;}
 .header a.logo {padding: 0px; display: block;}
 .header a.logo img {display: block;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
