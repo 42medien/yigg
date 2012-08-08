@@ -65,7 +65,7 @@ a:hover {text-decoration: none;}
 .header a.logo img {display: block;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
 #usernav .profilepic {float: left; width: 35px}
-#navi {margin: 0; padding: 0}
+#navi {margin: 0; padding: 0; float: left;}
 #navi li.selected a, #navi li:hover a {color: #333; background: #e4e4e4;}
 #navi li, #sub-navi li {list-style: none; margin: 0px 2px 0  0; float: left; padding: 0; /*background: url(../images/splice.png) 0  -57px*/}
 #navi li a {display: block; font: 14px/32px 'Helvetica', sans-serif; color: #666666; text-transform: uppercase; padding: 0 12px; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
@@ -73,7 +73,7 @@ a:hover {text-decoration: none;}
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
 /*#navi li.create, #navi li.create a {background: none; color: #993300}*/
 /*#navi li.create a:hover {text-decoration: underline}*/
-#sub-navi {clear: left; float: left; /*background: #ff9600 url(../images/splice.png) 0 -121px repeat-x;*/ margin: 0; padding-left: 10px; height: 33px}
+#sub-navi {clear: left; /*background: #ff9600 url(../images/splice.png) 0 -121px repeat-x;*/ margin: 0; padding-left: 10px; height: 33px}
 #sub-navi li {background: none; margin-right: 6px}
 #sub-navi li a {color: black; display: block; font-weight: bold; background: none; padding: 5px 10px; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
