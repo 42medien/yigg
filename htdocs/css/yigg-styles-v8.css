@@ -60,7 +60,8 @@ a:hover {text-decoration: underline}
 #container #content {width: 980px; margin: 0 auto;}
 #content {padding: 0 0 15px 15px; color: #333}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 7px #c1c1c1;}
-.header a.logo {padding: 0px 0px 3px; display: block}
+.header a.logo {padding: 0px; display: block;}
+.header a.logo img {display: block;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
 #usernav .profilepic {float: left; width: 35px}
 #navi {margin: 0; margin-left: 10px; padding: 0}
