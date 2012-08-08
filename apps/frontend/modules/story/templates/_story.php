@@ -22,7 +22,8 @@
            ));
        ?>
    </h3>
-
+ 
+ <div class="list_cont">
   <?php if($story->type == Story::TYPE_NORMAL):?>
     <div class="screenshot">
       <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  310, "height" => 164));?>
@@ -100,6 +101,7 @@
           <?php endif; ?>
 
 		    <div class="clr"><!--  --></div>                  
+        </div>
     </div>
 
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
