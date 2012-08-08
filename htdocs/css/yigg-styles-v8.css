@@ -211,6 +211,7 @@ form .actions input {background: #eee; border: 1px solid #4d3f3e !important; pad
 form fieldset {border: none}
 form fieldset p, form div.field {margin: 10px 0}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
+form#searchForm .field label {display: none;}
 form .field input {border: 1px solid #b5b5b5 !important; margin-bottom: 5px; width: 260px; padding: 2px}
 form .field select {width: 260px}
 form .field input.chkBox {border: none; width: auto !important}
@@ -432,7 +433,7 @@ ul.ymod_links a {color: #FFF;}
 ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; padding: 5px; cursor: pointer; margin-right: 10px; line-height: 20px; background: #df4b2c; text-align: center; border-radius: 3px; margin-bottom: 5px;}
 .ymod .hentry {padding-top: 5px; padding-bottom: 0;}
 #sub-navi li#search {float: right; margin-right: 0px; overflow: hidden; width: 250px; height: 25px; position: relative;}
-#search form {margin-top: -7px;}
+#search form {margin: 0;}
 #sub-navi li#search label {display: none;}
 #sub-navi li#search .button {width: 50px; display: inline; background: #EEE; border: 1px solid #000; height: 20px; margin-left: 5px;}
 #sub-navi li#search input {float: left; width: 185px; display: inline;}
