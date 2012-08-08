@@ -74,6 +74,7 @@
             </div>
       </div>
       <div id="content">
+          <div class="content_data">
           <?php if(true === has_slot("sponsoring")): ?>
           <?php include_slot("sponsoring"); ?>
         <?php endif; ?>
@@ -99,6 +100,7 @@
       </div>
 
         <br />
+        </div>
       </div>
   <?php include_partial("system/footer");?>
         <script type="text/javascript">
