@@ -9,10 +9,12 @@
   <?php endif;?>
 
   <li class="create"><?php echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen')); ?></li></ul>
+  <ul class="search_box">
+   <li id="search">
+      <?php include_component("search", "form"); ?>
+   </li>
+  </ul>
 <ul id="sub-navi">
- <li id="search">
-    <?php include_component("search", "form");?>
-  </li>
   <li <?php if($sf_request->getModule() == "spy"): ?>class="selected"<?php endif; ?>><?php echo link_to("YiGGspion","@spy",array("title" =>"betrachte den YiGGspion")); ?></li>
   <li <?php if($sf_request->getModule() == "worldspy"): ?>class="selected"<?php endif; ?>><?php echo link_to("Weltspion","@worldspy_top",array("title" =>"Betrachte den WeltSpion")); ?></li>
   <li <?php if($sf_request->getAction() == "archive"): ?>class="selected"<?php endif; ?>><?php echo link_to('Archiv', 'story/archive', array('title' => 'Betrachte die besten Nachrichten der Vergangenheit')); ?></li>
