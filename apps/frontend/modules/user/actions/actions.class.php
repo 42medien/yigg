@@ -549,7 +549,7 @@ class userActions extends yiggActions
                 echo "Error:" . print_r($e, true);
             }
         }
-        die;
+        return sfView::SUCCESS;
     }
 
     public function executeLogin($request)
