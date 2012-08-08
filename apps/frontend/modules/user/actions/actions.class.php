@@ -515,40 +515,7 @@ class userActions extends yiggActions
 
     public function executeFbAddFriends($request)
     {
-        //Creating a new Facebook object from the Facebook PHP SDK
-        require_once sfConfig::get('sf_lib_dir') . '/vendor/facebook-php-sdk/src/facebook.php';
 
-        $facebook = new Facebook(array(
-            'appId' => sfConfig::get('app_facebook_app_id'),
-            'secret' => sfConfig::get('app_facebook_secret'),
-        ));
-
-        $session = $facebook->getUser();
-
-        if (!$session) {
-
-            $url = $facebook->getLoginUrl(array(
-                'canvas' => 1,
-                'fbconnect' => 0
-            ));
-
-            echo "<script type='text/javascript'>top.location.href = '$url';</script>";
-        } else {
-
-            try {
-
-                $uid = $facebook->getUser();
-                $me = $facebook->api('/me');
-
-                $updated = date("l, F j, Y", strtotime($me['updated_time']));
-
-                //echo "Hello " . $me['name'] . "<br />";
-                //echo "You last updated your profile on " . $updated;
-            } catch (FacebookApiException $e) {
-
-                echo "Error:" . print_r($e, true);
-            }
-        }
         return sfView::SUCCESS;
     }
 
