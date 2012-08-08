@@ -1,30 +1,14 @@
 <?php echo tag( isset($total) && $total > 1 ? "li" : "div", array("class"=>"hentry post ", "id"=>"story_{$story['id']}"), true);?>
-
-   <h3 class="entry-title">
-     <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
-       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
-     <?php else:?>
-       <?php echo link_to_story($story->title, $story, array("title" => $story->title));?>
-     <?php endif; ?>
-       <?php
-       echo link_to(img_tag('external_link.png', array(
-               'alt' => $story->title,
-               'width' => 17,
-               'height' => 9
-           )),
-           $story["external_url"],
-           array(
-               'title' => $story->title,
-               'class' => 'logo'
-           ));
-       ?>
-   </h3>
+  <?php use_helper("Date"); ?>
+  <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
+  <?php include_partial('story/storyActions', array('story' => $story));?>
 
   <?php if($story->type == Story::TYPE_NORMAL):?>
     <div class="screenshot">
       <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  310, "height" => 164));?>
     </div>
   <?php endif; ?>
+
 
 
    <div class="body entry-content<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
@@ -97,11 +81,6 @@
           <?php endif; ?>
 
 		    <div class="clr"><!--  --></div>
-       <div class="rate_yigg">
-             <?php use_helper("Date"); ?>
-             <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
-             <?php include_partial('story/storyActions', array('story' => $story));?>
-       </div>
 
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
            <?php if(true === $sf_user->hasUser()):?>
