@@ -169,7 +169,7 @@ h3.entry-title {font-size: 1.4em}
 #story-list {width: 638px;}
 .story-list, spec-list {margin-left: 0}
 .story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
-.story-list .hentry {width: 310px; float: left;}
+.story-list .hentry {width: 310px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf;}
 .story-list .hentry .entry-title {width: 310px;}
 .spec-list .hentry {min-height: 180px}
 .hentry {position: relative; margin-bottom: 10px; text-align: justify; width: 100%}
