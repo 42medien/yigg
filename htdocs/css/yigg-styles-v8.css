@@ -70,7 +70,7 @@ a:hover {text-decoration: underline}
 #navi li a {display: block; font: 14px 'Arial', sans-serif; color: #666666; text-transform: uppercase; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
 /*#navi li.selected, #navi li:hover {background: url(../images/splice.png) 0 -89px}
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
-#navi li.create, #navi li.create a {background: none; color: #993300}
+/*#navi li.create, #navi li.create a {background: none; color: #993300}*/
 #navi li.create a:hover {text-decoration: underline}
 #sub-navi {clear: left; background: #ff9600 url(../images/splice.png) 0 -121px repeat-x; margin: 0; padding-left: 10px; height: 33px}
 #sub-navi li {background: none; margin-right: 6px}
