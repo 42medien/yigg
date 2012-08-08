@@ -209,7 +209,8 @@ form .field {position: relative; clear: left}
 form .Double-Dropdowns {width: 220px; float: left; margin: 0 5px 0 0}
 form .actions input {background: #eee; border: 1px solid #4d3f3e !important; padding: 1px 3px; margin: 5px 3px; width: auto; cursor: pointer; color: #000}
 form fieldset {border: none}
-form fieldset p, form div.field {margin: 10px 0}
+#searchForm .field, #searchForm .button {float: left;}
+#searchForm .field input {width: 271px; border: 1px solid #b1b1b1; background: transparent;}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
 form .field input {border: 1px solid #b5b5b5 !important; margin-bottom: 5px; width: 260px; padding: 2px}
