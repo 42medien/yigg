@@ -47,7 +47,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', end
 abbr {font-size: 12px; color: #999; border-bottom: 1px dotted #ccc}
 a {color: #993300; text-decoration: none}
 a:visited {color: #cc9966}
-a:hover {text-decoration: underline}
+a:hover {text-decoration: none;}
 .thirds .one, .thirds .two, .thirds .three {float: left; margin: 0 100px 0 0;}
 .twoThree .twoThree-left {float: left; width: 60%; min-height: 700px; display: block; padding-top: 10px;}
 .twoThree .twoThree-right {float: right; width: 38%; display: block; margin-top: 0px !important}
