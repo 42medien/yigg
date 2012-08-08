@@ -56,20 +56,22 @@
   </head>
   <body>
     <div id="container">
-      <div class="header">
-        <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
-        <?php
-          echo link_to(img_tag('yigg_logo.png', array(
-                  'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                  'width' => 166,
-                  'height' => 52
-              )),
-             '@best_stories',
-             array(
-              'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-              'rel' => 'home',
-              'class' => 'logo'
-             ));?>
+        <div class="header">
+            <div class="header_data">
+                <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
+                <?php
+                echo link_to(img_tag('yigg_logo.png', array(
+                            'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+                            'width' => 166,
+                            'height' => 52
+                        )),
+                        '@best_stories',
+                        array(
+                            'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+                            'rel' => 'home',
+                            'class' => 'logo'
+                )); ?>
+            </div>
       </div>
       <div id="content">
           <?php if(true === has_slot("sponsoring")): ?>
