@@ -68,7 +68,7 @@ a:hover {text-decoration: none;}
 .header_data .login_box ul.social_link li a {display: block; width: 22px; height: 17px;}
 .header_data .login_box ul.social_link li a.fb {background: url(../images/fb.png) 0 0 no-repeat;}
 .header_data .login_box ul.social_link li a.tw {background: url(../images/tw.png) 0 0 no-repeat;}
-.header_data .login_box ul, .header_data .login_box ul li {float: left;}
+.header_data .login_box ul, .header_data .login_box ul li {float: left; margin-right: 0;}
 .header a.logo {padding: 0px; display: block;}
 .header a.logo img {display: block;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
