@@ -3,12 +3,31 @@
   <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
   <?php include_partial('story/storyActions', array('story' => $story));?>
 
+   <h3 class="entry-title">
+     <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
+       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
+     <?php else:?>
+       <?php echo link_to_story($story->title, $story, array("title" => $story->title));?>
+     <?php endif; ?>
+       <?php
+       echo link_to(img_tag('external_link.png', array(
+               'alt' => $story->title,
+               'width' => 17,
+               'height' => 9
+           )),
+           $story["external_url"],
+           array(
+               'title' => $story->title,
+               'class' => 'logo'
+           ));
+       ?>
+   </h3>
+
   <?php if($story->type == Story::TYPE_NORMAL):?>
     <div class="screenshot">
       <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  310, "height" => 164));?>
     </div>
   <?php endif; ?>
-
 
 
    <div class="body entry-content<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
