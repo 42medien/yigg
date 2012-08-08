@@ -58,6 +58,7 @@
     <div id="container">
         <div class="header">
             <div class="header_data">
+                <div class="logo">
                 <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
                 <?php
                 echo link_to(img_tag('yigg_logo.png', array(
@@ -71,6 +72,26 @@
                             'rel' => 'home',
                             'class' => 'logo'
                 )); ?>
+                </div>
+                <div class="login_box">
+                    <ul class="login_link">
+                        <li>
+                            <a href="#">Login</a>
+                        </li>
+                        <li class="last">
+                            <a href="#">Post News</a>
+                        </li>
+                    </ul>
+                    <ul class="social_link">
+                        <li>
+                            <a href="#" class="fb">&nbsp;</a>
+                        </li>
+                        <li>
+                            <a href="#" class="tw">&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
             </div>
       </div>
       <div id="content">
