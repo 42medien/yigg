@@ -9,16 +9,6 @@
     </div>
   <?php endif; ?>
 
-    <div class="spreadly-button">
-        <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
-                style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                allowTransparency="true">
-        </iframe>
-    </div>
-
    <h3 class="entry-title">
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
        <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
@@ -125,6 +115,16 @@
                        array("title"=>"Benutzeraccount erstellen")); ?>
            <?php endif;?>                      
        </h3>
+    </div>
+
+    <div class="spreadly-button">
+        <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
+                style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                allowTransparency="true">
+        </iframe>
     </div>
 
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
