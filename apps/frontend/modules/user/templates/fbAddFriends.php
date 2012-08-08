@@ -1,29 +1,41 @@
 
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js">
-</script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<p>
+    <input type="button"
+           onclick="sendRequestToRecipients(); return false;"
+           value="Send Request to Users Directly"
+        />
+    <input type="text" value="100001579860431" name="user_ids" />
+</p>
+<p>
+    <input type="button"
+           onclick="sendRequestViaMultiFriendSelector(); return false;"
+           value="Send Request to Many Users with MFS"
+        />
+</p>
+
 <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>,
-            status       : false,
-            cookie       : true,
-            xfbml        : true,
-            oauth        : true
-        });
+    FB.init({
+        appId  : <?php echo sfConfig::get('app_facebook_app_id') ?>,
+        frictionlessRequests: true
+    });
 
-        FB.ui({ method: 'apprequests',
-            message: 'Here is a new Requests dialog...'});
-    };
+    function sendRequestToRecipients() {
+        var user_ids = document.getElementsByName("user_ids")[0].value;
+        FB.ui({method: 'apprequests',
+            message: 'My Great Request',
+            to: user_ids
+        }, requestCallback);
+    }
 
-    // Load the SDK Asynchronously
-    (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-    }(document));
+    function sendRequestViaMultiFriendSelector() {
+        FB.ui({method: 'apprequests',
+            message: 'My Great Request'
+        }, requestCallback);
+    }
 
-
+    function requestCallback(response) {
+        // Handle callback here
+    }
 </script>
