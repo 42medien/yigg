@@ -1,7 +1,4 @@
 <?php echo tag( isset($total) && $total > 1 ? "li" : "div", array("class"=>"hentry post ", "id"=>"story_{$story['id']}"), true);?>
-  <?php use_helper("Date"); ?>
-  <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
-  <?php include_partial('story/storyActions', array('story' => $story));?>
 
    <h3 class="entry-title">
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
@@ -100,6 +97,11 @@
           <?php endif; ?>
 
 		    <div class="clr"><!--  --></div>
+       <div class="rate_yigg">
+             <?php use_helper("Date"); ?>
+             <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
+             <?php include_partial('story/storyActions', array('story' => $story));?>
+       </div>
 
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
            <?php if(true === $sf_user->hasUser()):?>
