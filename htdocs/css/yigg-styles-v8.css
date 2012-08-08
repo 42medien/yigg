@@ -66,7 +66,7 @@ a:hover {text-decoration: none;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
 #usernav .profilepic {float: left; width: 35px}
 #navi {margin: 0; padding: 0}
-#navi li.selected a {color: #333; background: #e4e4e4;}
+#navi li.selected a, #navi li:hover a {color: #333; background: #e4e4e4;}
 #navi li, #sub-navi li {list-style: none; margin: 0px 2px 0  0; float: left; padding: 0; /*background: url(../images/splice.png) 0  -57px*/}
 #navi li a {display: block; font: 14px/32px 'Helvetica', sans-serif; color: #666666; text-transform: uppercase; padding: 0 12px; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
 /*#navi li.selected, #navi li:hover {background: url(../images/splice.png) 0 -89px}
