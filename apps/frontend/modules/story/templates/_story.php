@@ -5,7 +5,7 @@
 
   <?php if($story->type == Story::TYPE_NORMAL):?>
     <div class="screenshot">
-      <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  120, "height" => 88));?>
+      <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  310, "height" => 164));?>
     </div>
   <?php endif; ?>
 
