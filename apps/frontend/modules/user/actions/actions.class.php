@@ -415,9 +415,6 @@ class userActions extends yiggActions
             {
                 $this->user = new User();
                 $this->user->fromArray($this->form->getValues());
-                //print_r($this->user);
-                print_r("@user_public_profile?view=livestream&username=".$this->user->username);
-                die;
 
                 //create avatar
                 $avatar_content = file_get_contents('http://graph.facebook.com/'.$facebook_user.'/picture');
@@ -449,13 +446,13 @@ class userActions extends yiggActions
                     }
                 }
                 $this->user->setStatus(1);
-                //$this->user->save();
+                $this->user->save();
 
-                //$this->getUser()->login($this->user);
+                $this->getUser()->login($this->user);
 
                 $this->fb_friends = true;
 
-                return $this->redirect("@user_public_profile?view=livestream&username=".$this->getUser()->username);
+                return $this->redirect("@user_public_profile?view=livestream&username=".$this->user->username);
 
             }
             catch( Exception $e)
