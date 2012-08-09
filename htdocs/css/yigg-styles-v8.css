@@ -119,7 +119,7 @@ form.spy-filter .field label {float: none}
 .pagination {margin: 0; text-align: center; clear: both; width: 633px; line-height: 165px;}
 .pagination li {list-style: none; display: inline; padding-left: 2px}
 .pagination li a {color: #333; font: 12px 'Trebuchet MS', sans-serif; padding: 0px 10px; font-weight: bold; text-decoration: none}
-.pagination li a:hover, .pagination li.selected a {color: #00709e;}
+.pagination li a:hover, .pagination li.selected a {color: #00709e; text-decoration: underline;}
 /*.pagination li.selected a, .pagination a:hover {background: url(../images/splice.png) 100% -40px repeat-x}
 .pagination li.selected, .pagination li:hover {background: url(../images/splice.png) 0 -40px repeat-x}*/
 h1.entry-title {font-size: 1.6em}
