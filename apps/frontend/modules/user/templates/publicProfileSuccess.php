@@ -13,6 +13,12 @@
     }
 </script>
 
+<?php if($fb_friends):?>
+<script>
+    jQuery("#facebook_friends").click();
+</script>
+<?php endif; ?>
+
 <div class="profile">
   <?php echo avatar_tag($user->Avatar, "noavatar.gif", 150, 150, array("alt" => $user->username));?>
   <h1><?php echo $user['username']; ?><?php echo ( $user->getAge() ) ? " ({$user->getAge()})" : ''; ?></h1>
@@ -61,7 +67,7 @@
        <?php echo button_to("Einstellungen", "@user_settings", array("class" => "settings"));?>
      <?php endif;?>
      <?php if($user->facebook_id):?>
-       <input type="button" onclick="sendFbFriendRequest();" value="Add Facebook Friends" class="facebook">
+       <input type="button" id="facebook_friends" onclick="sendFbFriendRequest();" value="Add Facebook Friends" class="facebook">
      <?php endif;?>
    </div>
 <?php endif;?>
@@ -112,9 +118,3 @@
     <?php echo include_partial("tag/subscribe", array("tags" => $user->Tags));?>
   <?php endif;?>
 <?php end_slot()?>
-
-<?php if($fb_friends):?>
-<script>
-    sendFbFriendRequest();
-</script>
-<?php endif; ?>
