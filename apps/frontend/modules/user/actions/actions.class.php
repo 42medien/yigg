@@ -452,7 +452,7 @@ class userActions extends yiggActions
 
                 $this->fb_friends = true;
 
-                return $this->redirect("@user_public_profile?view=livestream&username=".$this->user->username);
+                return $this->redirect("@user_my_profile?view=profil&fb_friends=1");
 
             }
             catch( Exception $e)
