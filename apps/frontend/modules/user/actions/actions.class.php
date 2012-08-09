@@ -445,11 +445,13 @@ class userActions extends yiggActions
                         }
                     }
                 }
-
+                $this->user->setStatus(1);
                 $this->user->save();
 
                 $this->getUser()->login($this->user);
-                return $this->redirect("@best_stories");
+
+                $this->fb_friends = true;
+                return $this->redirect("@user_public_profile?view=livestream&username=".$this->getUser()->username);
 
             }
             catch( Exception $e)
@@ -459,7 +461,6 @@ class userActions extends yiggActions
             }
 
         }
-
         return sfView::SUCCESS;
     }
 
