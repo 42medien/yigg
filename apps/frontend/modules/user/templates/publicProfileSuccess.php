@@ -17,7 +17,9 @@
 
 <?php if($fb_friends):?>
 <script>
-    sendFbFriendRequest();
+    $(document).ready(function() {
+        sendFbFriendRequest();
+    });
 </script>
 <?php endif; ?>
 
