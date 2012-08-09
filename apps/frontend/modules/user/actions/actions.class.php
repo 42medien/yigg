@@ -289,6 +289,8 @@ class userActions extends yiggActions
 
     $request->setParameter("rss",true);
 
+    $this->fb_friends = $request->getParameter("fb_friends");
+
     return sfView::SUCCESS;
   }
 
@@ -452,7 +454,7 @@ class userActions extends yiggActions
 
                 $this->fb_friends = true;
 
-                return $this->redirect("@user_my_profile?view=profil&fb_friends=1");
+                return $this->redirect("@user_public_profile?view=livestream&fb_friends=1&username=".$this->user->username);
 
             }
             catch( Exception $e)
