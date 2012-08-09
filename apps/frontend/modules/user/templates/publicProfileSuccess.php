@@ -17,9 +17,17 @@
 
 <?php if($fb_friends):?>
 <script>
-    $(document).ready(function() {
-        sendFbFriendRequest();
-    });
+    function fbEnsureInit(callback) {
+        if(!window.fbApiInit) {
+            setTimeout(function() {fbEnsureInit(callback);}, 50);
+        } else {
+            if(callback) {
+                callback();
+            }
+        }
+    }
+
+    fbEnsureInit(sendFbFriendRequest());
 </script>
 <?php endif; ?>
 
