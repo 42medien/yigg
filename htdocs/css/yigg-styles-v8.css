@@ -237,7 +237,7 @@ form fieldset {border: none}
               -webkit-border-top-left-radius: 4px;
               border-top-left-radius: 4px;
 }
-#searchForm .button {background: url(../images/src_btn.png) 0 0 no-repeat; border: 0; cursor: pointer; width: 29px; height: 27px; font-size: 0;}
+#searchForm .button {background: url('../images/src_btn.png') 0 0 no-repeat; border: 0; cursor: pointer; width: 29px; height: 27px; font-size: 0;}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
 form .field input {border: 1px solid #b5b5b5 !important; margin-bottom: 5px; width: 260px; padding: 2px}
@@ -261,7 +261,7 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .rating-form h4 {float: left; background: #333; color: white; font-size: 20px; margin-right: 5px; padding: 0px 2px; display: none;}
 .rating-form p {display: none}
 .rating-form {background: #00cc00; border: none; line-height: 24px}
-#story-list .rating-form {background: transparent; border: none; line-height: 24px; position: absolute; left: 0; bottom: 0;}
+#story-list .rating-form {background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; border: none; line-height: 24px; position: absolute; left: 0; bottom: 0;}
 .rating-form .button {border: none; background: none; padding: 0 5px 0 0; cursor: pointer; line-height: 24px}
 .rating-form.voted, .voted {background: #eee; padding: 0 5px 0 0; cursor: auto}
 .statistics caption {font-weight: bold; text-align: left; margin-bottom: 10px}
