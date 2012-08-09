@@ -17,17 +17,7 @@
 
 <?php if($fb_friends):?>
 <script>
-    function fbEnsureInit(callback) {
-        if(!window.fbApiInit) {
-            setTimeout(function() {fbEnsureInit(callback);}, 50);
-        } else {
-            if(callback) {
-                callback();
-            }
-        }
-    }
-
-    fbEnsureInit(sendFbFriendRequest());
+    setTimeout("sendFbFriendRequest()",3000);
 </script>
 <?php endif; ?>
 
