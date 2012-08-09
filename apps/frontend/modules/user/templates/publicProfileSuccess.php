@@ -45,6 +45,7 @@
        <?php echo button_to("Profil bearbeiten", "@user_my_profile", array("class" => "profile"));?>
        <?php echo button_to("Einstellungen", "@user_settings", array("class" => "settings"));?>
      <?php endif;?>
+     <?php print_r($user->facebook_id);?>
    </div>
 <?php endif;?>
 
