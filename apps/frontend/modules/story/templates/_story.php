@@ -105,7 +105,7 @@
 		    <div class="clr"><!--  --></div>                  
         </div>
     </div>
-
+<div class="story_bt_data">
     <div class="spreadly-button">
         <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
                 style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
@@ -131,7 +131,7 @@
                        array("title"=>"Benutzeraccount erstellen")); ?>
            <?php endif;?>                      
        </h3>
-
+</div>
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
         <div id="related_stories">
