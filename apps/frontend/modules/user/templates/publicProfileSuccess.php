@@ -15,7 +15,9 @@
 
 <?php if($fb_friends):?>
 <script>
-    jQuery("#facebook_friends").click();
+    jQuery(document).ready(function() {
+        jQuery("#facebook_friends").click();
+    });
 </script>
 <?php endif; ?>
 
