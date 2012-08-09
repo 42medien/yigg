@@ -471,7 +471,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .twoThree-left #searchForm label {display: none;}
 .twoThree-left #searchForm input {height: 25px; font-size: 15px; width: 68%; float: left;}
 .twoThree-left #searchForm input.button {height: 30px; font-size: 15px; width: 30%; background: #EEE; border: 1px solid #CCC; float: right;}
-.spreadly-button{clear: right; float: left; height: 27px; margin: 5px 5px 0; position: relative; width: 130px;}
+.spreadly-button{clear: right; float: left; height: 27px; margin: 0; position: relative; width: 130px;}
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
 .anzeige_titel {height:12px; width: 345px; padding: 5px; margin-bottom: -5px;
