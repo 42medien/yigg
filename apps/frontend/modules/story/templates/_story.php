@@ -55,6 +55,7 @@
            <?php endif;?>
          <abbr><?php echo format_date(strtotime($story['created_at']),"g","de",'UTF-8');?></abbr>
        </span>
+         <p class="story_body">
        <?php if($sf_request->getModuleAction() !== "story/show"):?>
           <?php echo $story->getDescriptionSummary(ESC_RAW);?>
        <?php elseif($story->type != Story::TYPE_ARTICLE):?>
@@ -62,6 +63,7 @@
        <?php else:?>
           <?php echo $story->getPresentationDescription(ESC_RAW);?>
        <?php endif;?>
+         </p>
        <?php
 
          $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
