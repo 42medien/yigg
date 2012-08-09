@@ -1,7 +1,4 @@
-<?php echo tag( isset($total) && $total > 1 ? "li" : "div", array("class"=>"hentry post ", "id"=>"story_{$story['id']}"), true);?>
-  <?php use_helper("Date"); ?>
-  <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
-  <?php include_partial('story/storyActions', array('story' => $story));?>
+
 
    <h3 class="entry-title">
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
@@ -119,6 +116,15 @@
                        array("title"=>"Benutzeraccount erstellen")); ?>
            <?php endif;?>                      
        </h3>
+       
+       <div class="rate_yigg">
+           
+           <?php echo tag( isset($total) && $total > 1 ? "li" : "div", array("class"=>"hentry post ", "id"=>"story_{$story['id']}"), true);?>
+  <?php use_helper("Date"); ?>
+  <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
+  <?php include_partial('story/storyActions', array('story' => $story));?>
+           
+       </div>
 
     <div class="spreadly-button">
         <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
