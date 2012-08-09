@@ -192,7 +192,7 @@ h3.entry-title {font-size: 1.4em}
 .tweet_actions {position: absolute; right: 0; width: 30px; overflow: hidden; margin: 0}
 .tweet-actions li {width: 20px; height: 20px; margin: 0px 10px 5px 10px}
 .tweet-actions li a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee}
-h3.comments {float: left;}
+h3.comments {float: left; margin: 0;}
 h3.comments.heading-left {margin-bottom: 10px}
 h3.comments a {background: url(../images/comment_bg.png) 0 2px no-repeat; font: 11px 'Trebuchet MS', sans-serif; color: #333; display: block; padding: 0 0 0 21px;}
 .tags {overflow: hidden; height: 1.1em; line-height: 1.1em;}
