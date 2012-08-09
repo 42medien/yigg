@@ -451,7 +451,8 @@ class userActions extends yiggActions
                 //$this->getUser()->login($this->user);
 
                 $this->fb_friends = true;
-                print_r("@user_public_profile?view=livestream&username=".$this->getUser()->username);
+                print_r($this->getUser());
+                //print_r("@user_public_profile?view=livestream&username=".$this->getUser()->username);
                 die;
                 return $this->redirect("@user_public_profile?view=livestream&username=".$this->getUser()->username);
 
