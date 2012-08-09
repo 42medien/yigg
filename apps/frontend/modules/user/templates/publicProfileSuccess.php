@@ -95,13 +95,6 @@
   <?php endif;?>
 <?php end_slot()?>
 
-<?php if($fb_friends):?>
-<script>
-    sendFbFriendRequest();
-</script>
-
-<?php endif; ?>
-
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
@@ -116,3 +109,9 @@
         });
     }
 </script>
+
+<?php if($fb_friends):?>
+<script>
+    sendFbFriendRequest();
+</script>
+<?php endif; ?>
