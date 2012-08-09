@@ -7,7 +7,9 @@
     });
 
     function sendFbFriendRequest() {
-        FB.ui({method: 'apprequests',
+        FB.ui({
+            method: 'apprequests',
+            display: 'iframe',
             message: 'Please join yigg.de'
         });
     }
@@ -15,9 +17,7 @@
 
 <?php if($fb_friends):?>
 <script>
-    jQuery(document).ready(function() {
-        jQuery("#facebook_friends").click();
-    });
+    sendFbFriendRequest();
 </script>
 <?php endif; ?>
 
@@ -69,7 +69,7 @@
        <?php echo button_to("Einstellungen", "@user_settings", array("class" => "settings"));?>
      <?php endif;?>
      <?php if($user->facebook_id):?>
-       <input type="button" id="facebook_friends" onclick="sendFbFriendRequest();" value="Add Facebook Friends" class="facebook">
+       <input type="button" onclick="sendFbFriendRequest();" value="Add Facebook Friends" class="facebook">
      <?php endif;?>
    </div>
 <?php endif;?>
