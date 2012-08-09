@@ -192,9 +192,9 @@ h3.entry-title {font-size: 1.4em}
 .tweet_actions {position: absolute; right: 0; width: 30px; overflow: hidden; margin: 0}
 .tweet-actions li {width: 20px; height: 20px; margin: 0px 10px 5px 10px}
 .tweet-actions li a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee}
-h3.comments {margin: 0; padding-left: 20px; background: url(../images/splice.png) -80px -3px no-repeat; white-space: nowrap; line-height: 1.1em; width: 125px !important; overflow: hidden}
+h3.comments {float: left;}
 h3.comments.heading-left {margin-bottom: 10px}
-h3.comments a {float: left; background: #FFF; line-height: 1.1em; width: 100%}
+h3.comments a {background: url(../images/comment_bg.png) 0 0 no-repeat; font: 11px 'Trebuchet MS', sans-serif; color: #333; display: block; padding: 0 0 0 21px;}
 .tags {overflow: hidden; height: 1.1em; line-height: 1.1em;}
 .tags li {background: url(../images/splice.png) -380px -2px no-repeat; float: left; list-style: none; padding: 0px 0  0  20px}
 .tags li a {background: white; padding-right: 3px; display: block; line-height: 1.1em}
