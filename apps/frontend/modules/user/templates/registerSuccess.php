@@ -33,7 +33,9 @@
             if (response.authResponse) {
                 window.location = "/fb_login"
             }
-        }, {scope:'email'});
+        }, {perms:'user_interests,friends_interests,user_likes,friends_likes'});
+
+
     }
 </script>
 <!-- END FACEBOOK JAVASCRIPT SDK -->
