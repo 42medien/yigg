@@ -96,17 +96,23 @@
 <?php end_slot()?>
 
 <?php if($fb_friends):?>
-    <div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    sendFbFriendRequest();
+</script>
 
-    <script>
-        FB.init({
-            appId  : <?php echo sfConfig::get('app_facebook_app_id') ?>,
-            frictionlessRequests: true
-        });
+<?php endif; ?>
 
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    FB.init({
+        appId  : <?php echo sfConfig::get('app_facebook_app_id') ?>,
+        frictionlessRequests: true
+    });
+
+    function sendFbFriendRequest() {
         FB.ui({method: 'apprequests',
             message: 'Please join yigg.de'
         });
-    </script>
-<?php endif; ?>
+    }
+</script>
