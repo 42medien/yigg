@@ -415,8 +415,8 @@ class userActions extends yiggActions
             {
                 $this->user = new User();
                 $this->user->fromArray($this->form->getValues());
-                print_r($this->user);
-                //print_r("@user_public_profile?view=livestream&username=".$this->getUser()->username);
+                //print_r($this->user);
+                print_r("@user_public_profile?view=livestream&username=".$this->user->username);
                 die;
 
                 //create avatar
