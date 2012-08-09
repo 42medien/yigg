@@ -263,7 +263,7 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .rating-form {background: #00cc00; border: none; line-height: 24px}
 #story-list .rating-form {background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; border: none; padding: 0 0 0 22px; line-height: 18px; position: absolute; left: 0; bottom: 0;}
 .rating-form .button {border: none; background: none; padding: 0 5px 0 0; cursor: pointer; font: 11px 'Trebuchet MS', sans-serif; color: #333;}
-.rating-form.voted, .voted {background: #eee; padding: 0 5px 0 0; cursor: auto}
+.rating-form.voted, .voted {font: 11px 'Trebuchet MS', sans-serif; color: #333; cursor: auto;}
 .statistics caption {font-weight: bold; text-align: left; margin-bottom: 10px}
 .statistics {width: 100%; font-size: 1.3em; margin-bottom: 20px}
 .statistics td, .statistics th {text-align: center; border: 1px solid #EFEFEF; margin: 0}
