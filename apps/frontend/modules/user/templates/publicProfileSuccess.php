@@ -13,12 +13,6 @@
     }
 </script>
 
-<?php if($fb_friends):?>
-<script>
-    sendFbFriendRequest();
-</script>
-<?php endif; ?>
-
 <div class="profile">
   <?php echo avatar_tag($user->Avatar, "noavatar.gif", 150, 150, array("alt" => $user->username));?>
   <h1><?php echo $user['username']; ?><?php echo ( $user->getAge() ) ? " ({$user->getAge()})" : ''; ?></h1>
@@ -118,3 +112,9 @@
     <?php echo include_partial("tag/subscribe", array("tags" => $user->Tags));?>
   <?php endif;?>
 <?php end_slot()?>
+
+<?php if($fb_friends):?>
+<script>
+    sendFbFriendRequest();
+</script>
+<?php endif; ?>
