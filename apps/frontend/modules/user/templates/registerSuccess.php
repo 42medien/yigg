@@ -33,7 +33,7 @@
             if (response.authResponse) {
                 window.location = "/fb_login"
             }
-        }, {perms:'user_interests,friends_interests,user_likes,friends_likes'});
+        }, {perms:'user_interests,user_likes'});
 
 
     }
