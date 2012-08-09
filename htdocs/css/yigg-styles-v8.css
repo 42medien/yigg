@@ -483,7 +483,7 @@ background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,225,186,0
 background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,225,186,0.65) 100%);  W3C 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6ffe1ba',GradientType=1 );  IE6-9 */
 }
-.anzeige_titel p, .heading-right {font: 14px/24px 'Helvetica', sans-serif; color: #191919; text-transform: uppercase; margin: 0;}
+.anzeige_titel p, .heading-right {font: 14px/24px 'Helvetica', sans-serif; color: #191919; text-transform: uppercase;}
 
 #bar_wraper{height: 50px; background-color: #dddddd; display:block;}
 
