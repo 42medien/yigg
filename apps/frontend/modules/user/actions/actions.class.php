@@ -371,7 +371,7 @@ class userActions extends yiggActions
      */
     public function executeFbRegister($request)
     {
-
+        print_r("test");    die;
         if( true === $this->session->hasUser() )
         {
             return $this->redirect("@user_welcome");
@@ -385,7 +385,7 @@ class userActions extends yiggActions
         ));
 
         $form_array = array();
-        print_r("test");    die;
+
         $facebook_user = $facebook->getUser();
 
         if ($facebook_user)
