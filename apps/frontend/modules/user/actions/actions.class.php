@@ -479,13 +479,12 @@ class userActions extends yiggActions
 
         $facebook_user = $facebook->getUser();
 
-        print_r($facebook_user); die;
         if ($facebook_user)
         {
             try
             {
                 $facebook_user_profile = $facebook->api('/me');
-
+                print_r($facebook_user_profile); die;
                 if(!is_null($facebook_user_profile['email']))
                 {
 
