@@ -44,7 +44,7 @@ background: linear-gradient(to bottom,  #f7f7f7 0%,#e5e5e5 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
 }
 .hidden {display: none}
-abbr {font-size: 12px; color: #999; border-bottom: 1px dotted #ccc}
+abbr {font-size: 12px; color: #999; border-bottom: none;}
 a {color: #993300; text-decoration: none}
 a:visited {color: #cc9966}
 a:hover {text-decoration: none;}
