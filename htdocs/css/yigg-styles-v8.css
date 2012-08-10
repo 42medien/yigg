@@ -180,7 +180,7 @@ h3.entry-title {font-size: 1.4em}
 .story-list .hentry .entry-title a {font: 18px 'Trebuchet MS', sans-serif; color: #191919; height: 46px; display: block; overflow: hidden;}
 .story-list .hentry:hover .entry-title a, .story-list .hentry:hover .rating-form .button, .story-list .hentry:hover h3.comments a {color: #00709e;}
 .story-list .hentry:hover .rating-form .button {text-decoration: underline;}
-.story-list .hentry:hover h3.comments a {background: url('../images/comment_bg_blue.png') 0 0 no-repeat;}
+.story-list .hentry:hover h3.comments a {background: url('../images/comment_bg_blue.png') 0 10px no-repeat;}
 .story-list .hentry .entry-title a.logo {display: none;}
 .spec-list .hentry {min-height: 180px}
 .hentry {position: relative; margin-bottom: 10px; text-align: justify; width: 100%}
