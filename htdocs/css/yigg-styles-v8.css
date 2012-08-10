@@ -163,7 +163,7 @@ h3.entry-title {font-size: 1.4em}
 .userinfo input {display: inline;font-size: 1.1em;}
 .userinfo form {margin: 3px 0}
 .userinfo form fieldset {margin: 0}
-.userinfo form .ninjaRequired {width: 103px; height: 20px; margin: 0 0 0 5px; display: block; padding: 1px 3px; border: 1px solid #9d9d9d;}
+.userinfo form .ninjaRequired {width: 103px; height: 20px; margin: 0 0 13px; display: block; padding: 1px 3px; border: 1px solid #9d9d9d; border-radius: 5px;}
 .userinfo .button {height: 26px; width: 60px;border: 1px solid #666; background: #eee; padding: 2px; margin: 0 0 0 5px; text-align: center; border-radius: 3px;}
 .userinfo .avatar {float: left; margin-right: 10px; border: none}
 .userinfo ul li {list-style-type: none; float: left; margin-right: 10px; width: auto}
