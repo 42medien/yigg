@@ -257,16 +257,7 @@ form fieldset {border: none}
               -webkit-border-top-left-radius: 4px;
               border-top-left-radius: 4px;
 }
-#searchForm .button {border: 1px solid #B1B1B1; border-radius: 3px; border-left: 0; cursor: pointer; width: 29px; height: 27px; font-size: 0;
-background: #e6e6e6 url('../images/src_btn.png') 0 0 no-repeat; /* Old browsers */
-background: -moz-linear-gradient(top,  #e6e6e6 0%, #b2b2b2 100%) url('../images/src_btn.png') 0 0 no-repeat; /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6e6e6), color-stop(100%,#b2b2b2)) url('../images/src_btn.png') 0 0 no-repeat; /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #e6e6e6 0%,#b2b2b2 100%) url('../images/src_btn.png') 0 0 no-repeat; /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #e6e6e6 0%,#b2b2b2 100%) url('../images/src_btn.png') 0 0 no-repeat; /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #e6e6e6 0%,#b2b2b2 100%) url('../images/src_btn.png') 0 0 no-repeat; /* IE10+ */
-background: linear-gradient(to bottom,  #e6e6e6 0%,#b2b2b2 100%) url('../images/src_btn.png') 0 0 no-repeat; /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#b2b2b2',GradientType=0 ) url('../images/src_btn.png') 0 0 no-repeat; /* IE6-9 */
-}
+#searchForm .button {background: url('../images/src_btn.png') 0 0 no-repeat; border: 1px solid #B1B1B1; border-radius: 3px; border-left: 0; cursor: pointer; width: 29px; height: 27px; font-size: 0;}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
 form .field input {border: 1px solid #b5b5b5 !important; margin-bottom: 5px; width: 260px; padding: 2px}
