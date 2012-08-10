@@ -266,6 +266,7 @@ form fieldset {border: none}
               border-top-right-radius: 4px;
 }
 #searchForm:hover input {border-color: #75b9f0; box-shadow: 1px 1px 7px #75b9f0;}
+#searchForm .field input {box-shadow: 1px 1px 7px #75b9f0;}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
 form .field input {margin-bottom: 5px; width: 260px; padding: 2px}
