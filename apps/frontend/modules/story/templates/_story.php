@@ -33,7 +33,7 @@
 
    <div class="body entry-content<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
      <p>
-       <span>
+       <span class="story_auth"> 
          <?php echo avatar_tag($story->Author->Avatar, "icon.gif", 14, 14, array("alt" => "Avatar von {$story->Author->username}"));?>
          <?php echo link_to(
                   $story['Author']['username'],
