@@ -385,9 +385,9 @@ class userActions extends yiggActions
         ));
 
         $form_array = array();
-
+        print_r("test");    die;
         $facebook_user = $facebook->getUser();
-        print_r($facebook_user);    die;
+
         if ($facebook_user)
         {
             try
