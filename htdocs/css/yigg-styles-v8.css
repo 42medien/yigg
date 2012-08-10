@@ -87,7 +87,7 @@ a:hover {text-decoration: none;}
 #sub-navi li a {color: black; display: block; font-weight: bold; background: none; padding: 5px 10px; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
 .search_box {margin: 0; float: right;}
-.search_box li {margin: 0; list-style: none;}
+.search_box li {margin: 2px 0 0; list-style: none;}
 /*#sub-navi li.selected, #sub-navi li:hover {background: url(../images/splice.png) 0% -157px}
 #sub-navi li.selected a, #sub-navi a:hover {background: url(../images/splice.png) 100% -157px}*/
 #footer {padding: 37px 0; clear: both; box-shadow: 0 5px 7px #292929 inset; text-align: center;
