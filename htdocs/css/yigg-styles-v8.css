@@ -268,7 +268,7 @@ form fieldset {border: none}
 #searchForm:hover input {border-color: #75b9f0;}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
-form .field input {border: 1px solid #b5b5b5 !important; margin-bottom: 5px; width: 260px; padding: 2px}
+form .field input {margin-bottom: 5px; width: 260px; padding: 2px}
 form .field select {width: 260px}
 form .field input.chkBox {border: none; width: auto !important}
 form .field-validated span {line-height: 20px; font-weight: bold; margin: 0 10px; color: #00a026}
