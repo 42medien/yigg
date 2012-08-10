@@ -479,6 +479,7 @@ class userActions extends yiggActions
 
         $facebook_user = $facebook->getUser();
 
+        print_r($facebook_user); die;
         if ($facebook_user)
         {
             try
