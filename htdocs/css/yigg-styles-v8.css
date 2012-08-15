@@ -50,8 +50,7 @@ a:visited {color: #cc9966}
 a:hover {text-decoration: none;}
 .thirds .one, .thirds .two, .thirds .three {float: left; margin: 0 100px 0 0;}
 .twoThree .twoThree-left {float: left; width: 690px; min-height: 700px; display: block; padding-top: 10px; overflow: hidden;}
-.twoThree .twoThree-right {float: right; width: 30%; display: block; margin-top: 0px !important; margin-right: -12px}
-.twoThree .twoThree-right .rss {position: absolute; right: 0;}
+.twoThree .twoThree-right {float: right; width: 36%; display: block; margin-top: 0px !important; margin-right: -12px}
 .halfHalf .left {float: left; width: 50%; min-height: 0}
 .halfHalf .right {float: right; width: 50%; position: static}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
