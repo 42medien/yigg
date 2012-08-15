@@ -60,7 +60,7 @@ a:hover {text-decoration: none;}
 #container #content {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px; border-style: solid; border-color: #cdcdcd; overflow: auto;}
 .content_data {width: 1046px; margin: 0 auto; padding: 12px 0;}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 12px #000000;}
-.header_data {width: 982px; margin: 0 auto;}
+.header_data {width: 1044px; margin: 0 auto;}
 .header_data .logo_box {float: left;}
 .header_data .login_box {float: right; margin: 0;}
 .header_data .login_box ul.login_link li a {font: 14px 'Trebuchet MS', sans-serif; color: #fff; padding: 0 17px; border-right: 1px solid #fff;}
