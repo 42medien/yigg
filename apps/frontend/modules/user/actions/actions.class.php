@@ -173,7 +173,7 @@ class userActions extends yiggActions
               $file = File::createFromValidatedFile( $validatedFile, "avatars","avatar-". $this->user->username );
 
             }
-            catch(Exception $e )
+            catch(Exception $e)
             {
               $this->logMessage(sprintf("Adding/Changing Avatar failed for %s. Error: %s", $this->user->username, $e->getMessage()));
             }
