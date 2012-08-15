@@ -50,15 +50,15 @@ a:visited {color: #cc9966}
 a:hover {text-decoration: none;}
 .thirds .one, .thirds .two, .thirds .three {float: left; margin: 0 100px 0 0;}
 .twoThree .twoThree-left {float: left; width: 690px; min-height: 700px; display: block; padding-top: 10px; overflow: hidden;}
-.twoThree .twoThree-right {float: right; width: 36%; display: block; margin-top: 0px !important; margin-right: -12px}
+.twoThree .twoThree-right {float: right; width: 33%; display: block; margin-top: 0px !important; /*margin-right: -12px*/}
 .halfHalf .left {float: left; width: 50%; min-height: 0}
 .halfHalf .right {float: right; width: 50%; position: static}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
 .clr {clear: left}
 .clr.bth, .clear {clear: both;}
 #container {position: relative;}
-#container #content {width: 1008px; margin: 0 auto; background: #fff; border-width: 0 1px; border-style: solid; border-color: #cdcdcd; overflow: auto;}
-.content_data {width: 982px; margin: 0 auto; padding: 12px 0;}
+#container #content {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px; border-style: solid; border-color: #cdcdcd; overflow: auto;}
+.content_data {width: 1046px; margin: 0 auto; padding: 12px 0;}
 .header {position: relative; background: #2a2a2a; box-shadow: -5px -1px 12px #000000;}
 .header_data {width: 982px; margin: 0 auto;}
 .header_data .logo_box {float: left;}
