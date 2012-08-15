@@ -34,7 +34,7 @@
        array(
          "title" => $sf_data->getRAW("user")->getConfig()->get('website', false, 'profile'),
          "href"=> $sf_data->getRAW("user")->getConfig()->get('website', false, 'profile'),
-         "rel" => "external",
+         "rel" => "external", 
          "class" => "url",
        )
      );?>
