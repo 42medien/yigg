@@ -72,7 +72,7 @@
        <input type="button" onclick="sendFbFriendRequest();" value="Add Facebook Friends" class="facebook">
      <?php endif;?>
    </div>
-<?php endif;?>
+<?php endif;?> 
 
  <?php if(count($stories) > 0): ?>
     <ol id="story-list" class="story-list hfeed">
