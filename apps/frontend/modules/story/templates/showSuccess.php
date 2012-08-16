@@ -26,7 +26,7 @@
      <?php foreach($ratings as $k => $rating):?>
          <li><?php echo
          link_to(
-           avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48,
+           avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48, 
              array(
                "class" => "avatar",
                "alt"=> "Profil von {$rating["User"]->username} besuchen")
