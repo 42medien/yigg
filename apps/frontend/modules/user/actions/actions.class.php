@@ -127,7 +127,7 @@ class userActions extends yiggActions
 
 
     $this->storyCount = count($this->stories);
-    return sfView::SUCCESS;
+    return sfView::SUCCESS; 
   }
     
   /**
