@@ -129,29 +129,7 @@ class userActions extends yiggActions
     $this->storyCount = count($this->stories);
     return sfView::SUCCESS;
   }
-  
-  /*public function getMyYigg($request)
-  {
-      $this->user = $this->sesion->getUser();
-      $this->following = UserFollowingTable::getOnlineFollowedUsers($this->user->id);
-      
-      $query = Dosctrine_Query::create()
-              ->from("Story s")
-              ->leftJoin("s.StoryTag st")
-              ->where("st.tag_id IN (SELECT ut.tag_id FROM UserTag ut WHERE ut.user_id = ?)",
-                 array($this->user->id))
-              ->addWhere("s.created_at > DATE_SUB(NOW(), INTERVAL 1 WEEK)")
-              ->orderBy("s.created_at DESC");
-      
-      $this->stories = $this->setPagerQuery($query)->execute();
-      
-      $this->storyCount = count($this->stories);
-      
-      return sfView::SUCCESS;
-      
-  }*/
-
-
+    
   /**
    * Action for the profile-settings
    */
