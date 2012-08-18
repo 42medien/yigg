@@ -25,7 +25,7 @@
   <?php echo avatar_tag($user->Avatar, "noavatar.gif", 150, 150, array("alt" => $user->username));?>
   <h1><?php echo $user['username']; ?><?php echo ( $user->getAge() ) ? " ({$user->getAge()})" : ''; ?></h1>
   <dl>
-    <dt><?php echo 'website:' ?></dt>
+    <dt><?php echo 'Website:' ?></dt>
     <dd><?php
      echo
        content_tag(
