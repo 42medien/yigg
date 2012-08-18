@@ -123,7 +123,7 @@ class FormUserEditProfile extends yiggForm
       array(
         'avatar'   => 'Avatar:',
         'sex'            => 'Geschlecht:',
-        'city'          => 'Ort:',
+        'city'          => 'ort:',
         'birthday'  => 'Geburtstag:',
         'about_me'  => 'Über mich:',
         'why_yigg' => 'Warum YiGG:',
