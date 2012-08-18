@@ -638,7 +638,7 @@ class userActions extends yiggActions
    */
   public function executeRegister($request)
   {
-    if( true === $this->session->hasUser() )
+    if( true === $this->session->hasUser() ) 
     {
       return $this->redirect("@user_welcome");
     }
