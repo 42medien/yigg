@@ -646,8 +646,8 @@ class userActions extends yiggActions
     $this->form = new FormUserRegister();
     if( true === $this->form->processAndValidate() )
     {
-      //$ip_address = $request->getRemoteAddress();
-      //$connection = Doctrine::getConnectionByTableName("User");
+      $ip_address = $request->getRemoteAddress();
+      $connection = Doctrine::getConnectionByTableName("User");
 
       try
       {
