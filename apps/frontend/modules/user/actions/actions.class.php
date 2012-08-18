@@ -175,8 +175,8 @@ class userActions extends yiggActions
             $this->user->getConfig()->set("secret", sha1(uniqid("234hasjkdh8", true)), "new_email");
 
             $result = $this->getMailer()->sendEmail(
-              $this->profile_form->getValue("email"),
-              '[YiGG] - Bitte bestätige Deine neue E-Mail-Adresse',
+              $this->profile_form->getValue("email"), 
+              '[YiGG] - Bitte bestätige Deine neue E-Mail-Adresse', 
               $this->getPartial("system/mailChangeEmailHtml", array("user" => $this->user))
             );
             $this->session->setFlash('note','Bestätige bitte den Link in der Mail, die wir geschickt haben, damit Deine neue E-Mail Adresse übernommen wird.');
