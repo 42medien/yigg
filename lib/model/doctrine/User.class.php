@@ -166,18 +166,7 @@ class User extends BaseUser
    * @data array
    * @conn Doctrine_Connection the current connection to use
    */
-  private function notifyVia($data, $conn)
-  {
-    $notification = new NotificationMessage();
-    $notification->fromArray($data);
-
-    $result = $notification->trySave($conn);
-    if(true !== $result)
-    {
-      sfContext::getInstance()->getLogger()->log("Notification save failed for user #" .  $this->id ."\n". strip_tags( ob_get_clean() ) , 2);
-    }
-    return $notification;
-  }
+ 
 
   /**
    * removes the old avatar from the db && filesystem (cleanup)
