@@ -99,7 +99,12 @@ class FormUserEditProfile extends yiggForm
                'max_length'         => 'Schön, dass du so uns soo toll findest. Es sind allerdings nur 200 Zeichen erlaubt.'
              )
            ),
-           
+           'website'   => new yiggValidatorURL(
+             array(
+               'required' => false
+             ),
+             array()
+           ),
            'birthday' => new yiggValidatorAge(
               array(
               'required' => false,
@@ -117,7 +122,7 @@ class FormUserEditProfile extends yiggForm
     $this->widgetSchema->setLabels(
       array(
         'avatar'   => 'Avatar:',
-        'sex'            => 'Geschlecht:', 
+        'sex'            => 'Geschlecht:',
         'city'          => 'Ort:',
         'birthday'  => 'Geburtstag:',
         'about_me'  => 'Über mich:',
