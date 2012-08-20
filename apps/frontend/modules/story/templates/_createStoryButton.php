@@ -9,7 +9,7 @@
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
        .rating-form{ float:left;  margin-top:4px; text-align:center; background:/*url(images/newbutton.png) no-repeat*/ transparent;  color:#fff;  overflow:hidden;  width:56px;  height:54px; }
-       .rating-form h4{ font-size:1.9em !important;  overflow:hidden;  padding-right:6px;  text-align:right; margin:0 !important}
+/*     .rating-form h4{ font-size:1.9em !important;  overflow:hidden;  padding-right:6px;  text-align:right; margin:0 !important}*/
        .rating-form p{ margin:0;  padding-right:6px; text-align:right}
        .rating-form fieldset{ padding:0px}
        .rating-form input,  .voted span{ display:inline; background:none;  border:0; line-height:1.7em;  text-align:center;  color:#105B1B;  cursor:pointer}
@@ -17,7 +17,7 @@
        .voted span {display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px; float: left; line-height: 18px; padding: 0 2px;}
        .voted span a {text-decoration: none; color: #f5f5f5; text-shadow: 0 1px #DFAB3C;}
        .voted h4 label {-moz-transform: rotate(-45deg); background: #FFFFFF; border-color: #CCCCCC transparent transparent #CCCCCC; border-style: solid; border-width: 1px; display: block; height: 3px; left: -3px; position: absolute; top: 6px; width: 3px;}
-.voted h4 {color: #666666; float: left; font-weight: normal; margin-left: 5px; padding: 2px 3px; position: relative; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 3px 3px 3px 3px;}
+       .voted h4 {color: #666666; float: left; font-weight: normal; text-align: center; margin-left: 5px; padding: 2px 3px; position: relative; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 3px 3px 3px 3px;}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
