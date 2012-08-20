@@ -398,6 +398,7 @@ class storyActions extends yiggActions
 
     if(false !== $this->story )
     {
+        echo "rate";
       $this->renderComponent("story","rateStory", array( "story" => $this->story, "external"=> true, "flat" => (true === (bool) $request->getParameter("flat",false)) ));
       return sfView::NONE;
     }
