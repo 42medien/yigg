@@ -14,7 +14,7 @@
        .rating-form fieldset{ padding:0px}
        .rating-form input,  .voted span{ display:inline; background:none;  border:0; line-height:1.7em;  text-align:center;  color:#105B1B;  cursor:pointer}
        .voted{ background:/*url(images/newbuttonvoted.png) no-repeat 1px;*/ transparent;}
-       .voted span{display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px;}
+       .voted span {display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px; float: left; line-height: 18px; padding: 0 2px;}
        .voted span a {text-decoration: none; color: #f5f5f5;}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
