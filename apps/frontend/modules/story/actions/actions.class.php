@@ -394,6 +394,8 @@ class storyActions extends yiggActions
   {
     $this->story = Doctrine::getTable("Story")->findOneByExternalUrl($request->getParameter("url"));
 
+    echo "object:".is_object($this->story);
+
     if(false !== $this->story )
     {
       $this->renderComponent("story","rateStory", array( "story" => $this->story, "external"=> true, "flat" => (true === (bool) $request->getParameter("flat",false)) ));
