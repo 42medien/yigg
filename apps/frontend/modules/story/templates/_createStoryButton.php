@@ -14,7 +14,7 @@
        .rating-form fieldset{ padding:0px}
        .rating-form input,  .voted span{ display:inline; background:none;  border:0; line-height:1.7em;  text-align:center;  color:#105B1B;  cursor:pointer}
        .voted{ background:/*url(images/newbuttonvoted.png) no-repeat 1px;*/ transparent;}
-       .voted span{ color:#707070; display:block}
+       .voted span{ color:#707070; display:block; background: #ffc851; border: 1px solid #c7c7c7;}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
