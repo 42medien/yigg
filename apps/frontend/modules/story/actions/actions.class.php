@@ -393,6 +393,7 @@ class storyActions extends yiggActions
   public function executeExternalRate( $request )
   {
     $this->story = Doctrine::getTable("Story")->findOneByExternalUrl($request->getParameter("url"));
+      echo $request->getParameter("url");
 
     echo "object:".is_object($this->story);
 
