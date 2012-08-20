@@ -23,7 +23,6 @@
         .rating-form p{display:none}.rating-form input.Rate,
         .rating-form.voted span{ float:left; background: url(images/toolbar-yiggit.gif) 0% 50% no-repeat; border:0; height:20px; width:50px; font-size:11px; line-height:20px; text-align:center; color:#105B1B; cursor:pointer}
         .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}
-        .button {border: 0;}
       <?php endif; ?>
        </style>
     </head>
