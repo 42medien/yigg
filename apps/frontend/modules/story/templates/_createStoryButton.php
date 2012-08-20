@@ -8,12 +8,12 @@
       <?php if( !isset($flat) || isset($flat) && $flat === false ): ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
-       .rating-form{ float:left;  margin-top:4px; text-align:center; background:url(images/newbutton.png) no-repeat;  color:#fff;  overflow:hidden;  width:56px;  height:54px; }
+       .rating-form{ float:left;  margin-top:4px; text-align:center; background:/*url(images/newbutton.png) no-repeat*/ transparent;  color:#fff;  overflow:hidden;  width:56px;  height:54px; }
        .rating-form h4{ font-size:1.9em !important;  overflow:hidden;  padding-right:6px;  text-align:right; margin:0 !important}
        .rating-form p{ margin:0;  padding-right:6px; text-align:right}
        .rating-form fieldset{ padding:0px}
        .rating-form input,  .voted span{ display:inline; background:none;  border:0; line-height:1.7em;  text-align:center;  color:#105B1B;  cursor:pointer}
-       .voted{ background:url(images/newbuttonvoted.png) no-repeat 1px;}
+       .voted{ background:/*url(images/newbuttonvoted.png) no-repeat 1px;*/ transparent;}
        .voted span{ color:#707070; display:block}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
@@ -28,10 +28,10 @@
     </head>
   <body>
         <div class="rating-form voted">
-          <div>
-            <h4>0</h4>
-<!--            <p>Stimmen</p>-->
+          <div>            
+<!--        <p>Stimmen</p>-->
             <span><?php echo link_to("YiGG", "@story_create", array("target" => "_blank"));?></span>
+            <h4>0</h4>
           </div>
         </div>
     </body>
