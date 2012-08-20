@@ -16,6 +16,7 @@
        .rating-form input,  .voted span{ display:inline; background:none;  border:0; line-height:1.7em;  text-align:center;  color:#105B1B;  cursor:pointer}
        .voted{ background:url(images/newbuttonvoted.png) no-repeat 1px;}
        .voted span{ color:#707070; display:block}
+       .button {border: 0;}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
@@ -24,6 +25,7 @@
         .rating-form p{display:none}.rating-form input.Rate,
         .rating-form.voted span{ float:left; background: url(images/toolbar-yiggit.gif) 0% 50% no-repeat; border:0; height:20px; width:50px; font-size:11px; line-height:20px; text-align:center; color:#105B1B; cursor:pointer}
         .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}
+        .button {border: 0;}
       <?php endif; ?>
        </style>
     </head>
