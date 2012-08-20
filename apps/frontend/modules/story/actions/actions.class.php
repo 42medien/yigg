@@ -393,13 +393,9 @@ class storyActions extends yiggActions
   public function executeExternalRate( $request )
   {
     $this->story = Doctrine::getTable("Story")->findOneByExternalUrl(urldecode($request->getParameter("url")));
-      //echo urldecode($request->getParameter("url"));
-
-    echo "object:".is_object($this->story);
 
     if(false !== $this->story )
     {
-        echo "rate";
       $this->renderComponent("story","rateStory", array( "story" => $this->story, "external"=> true, "flat" => (true === (bool) $request->getParameter("flat",false)) ));
       return sfView::NONE;
     }
