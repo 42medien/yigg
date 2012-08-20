@@ -16,7 +16,7 @@
        .voted{ background:/*url(images/newbuttonvoted.png) no-repeat 1px;*/ transparent;}
        .voted span {display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px; float: left; line-height: 18px; padding: 0 2px;}
        .voted span a {text-decoration: none; color: #f5f5f5; text-shadow: 0 1px #DFAB3C;}
-       .voted h4:before {
+       .voted h4 label {
     -moz-transform: rotate(-45deg);
     background: none repeat scroll 0 0 #EFEFEF;
     border-color: #CCCCCC transparent transparent #CCCCCC;
@@ -58,7 +58,7 @@
           <div>            
 <!--        <p>Stimmen</p>-->
             <span><?php echo link_to("YiGG", "@story_create", array("target" => "_blank"));?></span>
-            <h4>0</h4>
+            <h4><label></label>0</h4>
           </div>
         </div>
     </body>
