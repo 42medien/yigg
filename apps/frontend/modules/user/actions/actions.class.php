@@ -160,7 +160,7 @@ class userActions extends yiggActions
             {
               $this->user->createAvatar( $file );
             }
-              $this->profile_form->offsetUnset("avatar");
+              $this->profile_form->offsetUnset("avatar"); 
           }
 
           $this->user->merge(
