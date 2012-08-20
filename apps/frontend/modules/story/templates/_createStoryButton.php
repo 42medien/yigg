@@ -41,7 +41,7 @@
     padding: 2px 4px 2px 6px;
     position: relative;
     text-shadow: 0 1px 0 #FFFFFF, 0 -1px 0 rgba(0, 0, 0, 0.4);
-    top: -6px;}
+}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
