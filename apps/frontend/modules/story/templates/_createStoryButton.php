@@ -30,8 +30,8 @@
         <div class="rating-form voted">
           <div>
             <h4>0</h4>
-            <p>Stimmen</p>
-            <span><?php echo link_to("YiGG it!", "@story_create", array("target" => "_blank"));?></span>
+<!--            <p>Stimmen</p>-->
+            <span><?php echo link_to("YiGG", "@story_create", array("target" => "_blank"));?></span>
           </div>
         </div>
     </body>
