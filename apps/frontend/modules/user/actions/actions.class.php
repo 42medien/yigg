@@ -171,8 +171,8 @@ class userActions extends yiggActions
 
           if($this->profile_form->getValue("email") !== $this->user->email)
           {
-            $this->user->getConfig()->set("email", $this->profile_form->getValue("email"), "new_email");
-            $this->user->getConfig()->set("secret", sha1(uniqid("234hasjkdh8", true)), "new_email");
+            //$this->user->getConfig()->set("email", $this->profile_form->getValue("email"), "new_email");
+            //$this->user->getConfig()->set("secret", sha1(uniqid("234hasjkdh8", true)), "new_email");
 
             $result = $this->getMailer()->sendEmail(
               $this->profile_form->getValue("email"), 
