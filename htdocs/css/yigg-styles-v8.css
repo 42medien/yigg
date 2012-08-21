@@ -289,7 +289,8 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .rating-form {float: right; margin: 0 0 0 10px; height: 24px; cursor: pointer; white-space: nowrap}
 .rating-form h4 {float: left; background: #333; color: white; font-size: 20px; margin-right: 5px; padding: 0px 2px; display: none;}
 .rating-form p {display: none}
-.rating-form {background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; border: none; padding: 0 0 0 22px; margin: 0; line-height: 18px; position: absolute; left: 0; bottom: 0;}
+.rating-form {background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; border: none; padding: 0 0 0 22px; margin: 0; line-height: 18px;}
+div.rating-form {position: absolute; left: 0; bottom: 0;}
 .rating-form .button {border: none; background: none; padding: 0 5px 0 0; cursor: pointer; font: 11px 'Trebuchet MS', sans-serif; color: #333;}
 .rating-form.voted, .voted {font: 11px/25px 'Trebuchet MS', sans-serif; color: #333; cursor: auto;}
 .twoThree .twoThree-left .rating-form.voted, .twoThree .twoThree-left .voted {font: 11px/19px 'Trebuchet MS', sans-serif;}
