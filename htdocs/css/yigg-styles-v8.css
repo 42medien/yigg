@@ -543,7 +543,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #spreadly_bar {float: left; padding: 4px 10px 0 15px;}
 
-#bar_rate_story_wraper{float:left; width: 80px; padding: 12px 25px 0 7px;}
+#bar_rate_story_wraper{float:left; width: 130px; padding: 12px 0; height: 24px; text-align: center;}
 
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 40px; float:left; margin-top: 4px;}
 
