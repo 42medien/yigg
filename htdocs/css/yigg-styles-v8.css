@@ -191,7 +191,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', end
 .story-list .hentry {width: 338px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf; margin: 0 13px 0 0; padding: 0; position: relative;}
 .story-list .hentry .entry-title {width: 310px; margin: 0; padding: 15px 0;}
 .story-list .hentry .entry-title a {font: 18px 'Trebuchet MS', sans-serif; color: #191919; height: 46px; display: block; overflow: hidden;}
-.story-list .hentry:hover .entry-title a, .story-list .hentry:hover .rating-form .button, .story-list .hentry:hover h3.comments a {color: #00709e;}
+.story-list .hentry:hover .entry-title a, .story-list .hentry:hover h3.comments a {color: #00709e;}
 /*.story-list .hentry:hover .rating-form .button {text-decoration: underline;}*/
 .story-list .hentry:hover h3.comments a {background: url('../images/comment_bg_blue.png') 0 10px no-repeat;}
 /*#story-list.story-list .hentry:hover .rating-form {background: url('../images/story_yiggit_blue.png') 0 0 no-repeat;}
