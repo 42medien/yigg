@@ -298,7 +298,7 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .voted h4, .rating-form h4 {color: #666666; float: left; font-weight: normal; line-height: 19px; text-align: center; margin-left: 5px; padding: 0 3px; position: relative; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 3px 3px 3px 3px; font-size: 12px; font-family: 'Arial';}  
 .rating-form.voted, .voted {font: 11px/25px 'Trebuchet MS', sans-serif; color: #333; cursor: auto;}
 .twoThree .twoThree-left .rating-form.voted, .twoThree .twoThree-left .voted {font: 11px/19px 'Trebuchet MS', sans-serif;}
-#bar_rate_story_wraper .rating-form {position: static; background: transparent url('../images/story_yiggit.png') 0 4px no-repeat; font-size: 12px; line-height: 25px; text-transform: uppercase;}
+#bar_rate_story_wraper .rating-form {position: static; background: transparent; font-size: 12px; display: inline-block; float: none; text-transform: uppercase;}
 .statistics caption {font-weight: bold; text-align: left; margin-bottom: 10px}
 .statistics {width: 100%; font-size: 1.3em; margin-bottom: 20px}
 .statistics td, .statistics th {text-align: center; border: 1px solid #EFEFEF; margin: 0}
