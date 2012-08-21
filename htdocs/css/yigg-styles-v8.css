@@ -286,7 +286,7 @@ form img.validating {position: absolute}
 form.article .editor textarea {height: 500px}
 form .edit-image img {float: left; border: 4px solid #eee; margin: 0 5px 5px 5px; padding: 5px}
 form .edit-image .delete-image input, form .edit-image .delete-image label {float: none; width: auto}
-.rating-form {float: right; margin: 0 0 0 10px; height: 24px; cursor: pointer; white-space: nowrap}
+.rating-form {float: left; margin: 0 0 0 10px; height: 24px; cursor: pointer; white-space: nowrap}
 /*.rating-form h4 {float: left; background: #333; color: white; font-size: 20px; margin-right: 5px; padding: 0px 2px; display: none;}*/
 .rating-form p {display: none}
 .rating-form {/*background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; padding: 0 0 0 22px;*/ border: none; margin: 0; line-height: 18px;}
