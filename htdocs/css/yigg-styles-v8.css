@@ -570,5 +570,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 /* Login Page */
 #LoginContainer, #LoginContainer + h3 {margin-left: 58px;}
-#LoginForm label {text-align: left;}
+#LoginForm label {text-align: left; display: block; font: 14px 'Trebuchet MS', sans-serif; color: #191919;}
 /* End Login Page */
