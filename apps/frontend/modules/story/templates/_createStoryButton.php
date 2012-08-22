@@ -15,8 +15,12 @@
        .rating-form input,  .voted span{ display:inline; background:none;  border:0; line-height:1.7em;  text-align:center;  color:#105B1B;  cursor:pointer}
        .voted{ background:/*url(images/newbuttonvoted.png) no-repeat 1px;*/ transparent;}
        .voted span {display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px; float: left; line-height: 18px; padding: 0 2px;}
-       .voted span a {text-decoration: none; color: #f5f5f5; text-shadow: 0 1px #DFAB3C;}
-       .voted h4 label {-moz-transform: rotate(-45deg); background: #FFFFFF; border-color: #CCCCCC transparent transparent #CCCCCC; border-style: solid; border-width: 1px; display: block; height: 3px; left: -3px; position: absolute; top: 6px; width: 3px;}
+       .voted span a {text-decoration: none; color: #000;}
+       .voted h4 label {-moz-transform: rotate(-45deg); 
+                        -webkit-transform: rotate(-45deg); /* Safari 3.1+ и Chrome 2.0+ */
+                        -o-transform: rotate(-45deg); /* Opera 10.5+ */
+                        -ms-transform: rotate(-45deg); /* IE 9.0 */
+                       background: #FFFFFF; border-color: #CCCCCC transparent transparent #CCCCCC; border-style: solid; border-width: 1px; display: block; height: 3px; left: -3px; position: absolute; top: 6px; width: 3px;}
        .voted h4 {color: #666666; float: left; font-weight: normal; text-align: center; margin-left: 5px; padding: 2px 3px; position: relative; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 3px 3px 3px 3px;}
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
