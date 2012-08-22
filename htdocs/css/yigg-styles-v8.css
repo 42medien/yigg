@@ -569,5 +569,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 /* End Relates Stories */
 
 /* Login Page */
-.advice_IDS_33680 {color: red;}
+#LoginForm label {text-align: left;}
 /* End Login Page */
