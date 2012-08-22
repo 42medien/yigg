@@ -17,9 +17,9 @@
         <div class="field remember-me">
           <?php echo $form["remember"]->render();?> <?php echo $form["remember"]->renderLabel();?>
         </div>
-        <div class="actions">
-          <?php echo link_to("Passwort vergessen?", '@user_reset_password', array('id' => 'user_reset_password')); ?>
+        <div class="actions">          
           <input type="submit" name="commit" value="Anmelden" class="button" />
+          <?php echo link_to("Passwort vergessen?", '@user_reset_password', array('id' => 'user_reset_password')); ?>
         </div>
     </fieldset>
   </form>
