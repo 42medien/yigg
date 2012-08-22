@@ -165,7 +165,7 @@ h3.entry-title {font-size: 1.4em}
 .userinfo form {margin: 0 auto; width: 219px; height: 107px; padding: 18px 0 0;}
 .userinfo form fieldset {margin: 0}
 .userinfo form .ninjaRequired {width: 211px; height: 25px; margin: 0 0 13px; display: block; padding: 1px 3px; border: 1px solid #9d9d9d; border-radius: 3px;}
-.userinfo .button, #LoginForm .button {height: 23px; width: 56px; padding: 0 0 2px; float: right; border: 1px solid #9d9d9d; text-align: center; font: 14px/25px 'Trebuchet MS', sans-serif; color: #666666; cursor: pointer; border-radius: 3px;
+.userinfo .button, #LoginForm .button {height: 23px; width: 56px; padding: 0 0 2px; float: right; border: 1px solid #9d9d9d !important; text-align: center; font: 14px/25px 'Trebuchet MS', sans-serif; color: #666666; cursor: pointer; border-radius: 3px;
 background: #e6e6e6; /* Old browsers */
 background: -moz-linear-gradient(top,  #e6e6e6 0%, #b2b2b2 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6e6e6), color-stop(100%,#b2b2b2)); /* Chrome,Safari4+ */
@@ -575,4 +575,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #LoginForm .remember-me label {line-height: 26px; color: #666666;}
 #LoginForm .remember-me input {margin-right: 5px;}
 #LoginForm input {border: 1px solid #9D9D9D; border-radius: 3px 3px 3px 3px; display: block; height: 25px; margin: 0 0 13px; padding: 1px 3px; width: 205px;}
+#LoginForm .button {float: left; width: auto;}
 /* End Login Page */
