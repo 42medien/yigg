@@ -3,6 +3,7 @@
         class="ninjaForm<?php if(true === $sf_request->isAjaxRequest() || isset($forceAjax)): ?> ninjaAjaxSubmit LoginContainer<?php endif;?>"
         action="<?php echo url_for("user_login") ?>" method="post" >
     <fieldset>
+        <p class="log_title">Login with Yigg Account</p>
        <?php if(true === $sf_user->hasFlash('error_msg')): ?>
           <p class="error"><?php echo $sf_user->getFlash('error_msg')?> </p>
         <?php endif; ?>
