@@ -321,7 +321,7 @@ p.error {background: #ff9d9d url(../images/bigicons/error.gif) no-repeat 5px 8px
 p.note {background: #feffd6 url(../images/bigicons/info_med.gif) no-repeat 5px 3px; color: #3f352f}
 p.success {background: #1ccb13 url(../images/bigicons/allfine_med.png) no-repeat 5px 3px; color: #fff}
 #LoginContainer fieldset {border-right: 1px solid #eee}
-#LoginContainer .ninjaRequired {width: 150px}
+/*#LoginContainer .ninjaRequired {width: 150px}*/
 #LoginContainer .actions * {display: inline}
 .remember-me label {float: none !important}
 .remember-me input {margin-left: 125px}
