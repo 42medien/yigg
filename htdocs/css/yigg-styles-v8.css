@@ -159,7 +159,6 @@ h3.entry-title {font-size: 1.4em}
 .userinfo {background: transparent; padding: 6px; border: 1px solid #cfcfcf; margin-bottom: 5px; height: 153px; width: 265px;}
 .userinfo .register{font: 13px/26px 'Trebuchet MS', sans-serif; display: block; text-align: center; color: #333;}
 .userinfo .register:hover {color: #00709E;}
-.userinfo h4 {margin-top: 10px}
 .userinfo label {display: none}
 .userinfo input {display: inline;font-size: 1.1em;}
 .userinfo form {margin: 0 auto; width: 219px; height: 107px; padding: 18px 0 0;}
