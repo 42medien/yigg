@@ -237,7 +237,7 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .list-style li.edit {background: url(../images/splice.png) -320px 0  no-repeat}
 .list-style li.edit-user {background: url(../images/splice.png) -360px -20px no-repeat}
 .list-style li.settings {background: url(../images/splice.png) -220px -20px no-repeat}
-.list-style li.pm {background: url(../images/splice.png) -320px -20px no-repeat}
+.list-style li.pm {background: url(../images/pm_new.png)0 0 no-repeat;}
 .list-style li.follow {background: url(../images/splice.png) -420px 0  no-repeat}
 .list-style li.unfollow {background: url(../images/splice.png) -180px -20px no-repeat}
 .list-style li.delete {background: url(../images/splice.png) -240px -20px no-repeat}
