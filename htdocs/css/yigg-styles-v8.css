@@ -178,7 +178,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', end
 .userinfo .avatar {float: left; margin-right: 6px; border: 1px solid #c7c6c6;}
 .userinfo ul {clear: both;}
 .userinfo ul li {list-style-type: none; float: none; margin: 0; width: auto}
-.userinfo ul li a {background: #666666;}
+.userinfo ul li a {background: #666666; font: 12px 'Trebuchet MS', sans-serif; color: #fff;}
 .screenshot, .consensus-holder {float: right; clear: right; background: url(../images/screenshot-loading-normal.png) top right no-repeat; height: 100px; width: 130px; margin: 5px 20px 0 10px; position: relative}
 .screenshot a, .consensus-holder a {padding: 0  9px 9px 0}
 #story-list .screenshot {height: 164px; width: 310px; margin: 0 0 7px; float: none;}
