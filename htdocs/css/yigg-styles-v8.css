@@ -175,9 +175,9 @@ background: -ms-linear-gradient(top,  #e6e6e6 0%,#b2b2b2 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #e6e6e6 0%,#b2b2b2 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
 }
-.userinfo .avatar {float: left; margin-right: 10px; border: 1px solid #c7c6c6;}
-.userinfo ul li {list-style-type: none; float: left; margin-right: 10px; width: auto}
-.userinfo ul li a {background: #F9F9F9}
+.userinfo .avatar {float: left; margin-right: 6px; border: 1px solid #c7c6c6;}
+.userinfo ul {clear: both;}
+.userinfo ul li {list-style-type: none; float: none; margin: 0; width: auto}
 .screenshot, .consensus-holder {float: right; clear: right; background: url(../images/screenshot-loading-normal.png) top right no-repeat; height: 100px; width: 130px; margin: 5px 20px 0 10px; position: relative}
 .screenshot a, .consensus-holder a {padding: 0  9px 9px 0}
 #story-list .screenshot {height: 164px; width: 310px; margin: 0 0 7px; float: none;}
