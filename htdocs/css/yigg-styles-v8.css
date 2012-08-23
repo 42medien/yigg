@@ -224,7 +224,7 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .avatar-list-style img {width: 14px; height: 14px; margin-right: 2px}
 .avatar-list-style li {margin: 0; list-style: none; display: block; overflow: hidden; white-space: nowrap; padding: 2px 5px; height: 15px}
 .list-style {margin: 0 0 10px 0}
-.list-style li {margin: 0; padding-left: 20px; list-style: none}
+.list-style li {margin: 0; padding-left: 24px; list-style: none}
 .list-style li a {padding: 2px 5px; display: block; height: 15px; overflow: hidden; background: #FFF}
 .list-style li.new {background: url(../images/splice.png) -300px -20px no-repeat}
 .list-style li.comment {background: url(../images/splice.png) -80px 0  no-repeat}
@@ -232,12 +232,12 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .list-style li.new-story {background: url(../images/splice.png) -400px 0  no-repeat}
 .list-style li.group {background: url(../images/splice.png) -280px -20px no-repeat}
 .list-style li.pm {background: url(../images/splice.png) -320px -20px no-repeat}
-.list-style li.logout {background: url(../images/splice.png) -40px -20px no-repeat}
+.list-style li.logout {background: url('../images/logout.png') 0 0 no-repeat;}
 .list-style li.admin {background: url(../images/splice.png) -360px 0  no-repeat}
 .list-style li.edit {background: url(../images/splice.png) -320px 0  no-repeat}
 .list-style li.edit-user {background: url(../images/splice.png) -360px -20px no-repeat}
 .list-style li.settings {background: url(../images/splice.png) -220px -20px no-repeat}
-.list-style li.pm {background: url(../images/pm_new.png)0 0 no-repeat;}
+.list-style li.pm {background: url('../images/pm_new.png') 0 0 no-repeat;}
 .list-style li.follow {background: url(../images/splice.png) -420px 0  no-repeat}
 .list-style li.unfollow {background: url(../images/splice.png) -180px -20px no-repeat}
 .list-style li.delete {background: url(../images/splice.png) -240px -20px no-repeat}
