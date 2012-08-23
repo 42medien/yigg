@@ -1,4 +1,4 @@
-<h1>Passwort vergessen?</h1>
+<h1 class="log_title">Passwort vergessen?</h1>
 
 <?php include_partial("system/systemMessages"); ?>
 
