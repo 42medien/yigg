@@ -603,5 +603,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #LoginForm #user_reset_password {font: 12px/23px 'Trebuchet MS', sans-serif; color: #9a9c9d;}
 #LoginForm .error {margin: 0 0 15px;}
 form#new_form input {margin: 0 20px 0 0; width: 280px;}
-.profileForm .field {float: left; margin: 0 0 20px;}
+.profileForm .field {float: left; margin: 0 0 15px; clear: none;}
 /* End Login Page */
