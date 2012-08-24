@@ -271,7 +271,7 @@ form fieldset {border: none}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
 form .field input {margin-bottom: 5px; width: 260px; padding: 2px}
-form .field select {width: 350px}
+form .field select {height: 22px; width: 294px;}
 form .field input.chkBox {border: none; width: auto !important}
 form .field-validated span {line-height: 20px; font-weight: bold; margin: 0 10px; color: #00a026}
 form .field-error span {color: #f00; line-height: 20px; font-weight: bold; margin: 0 10px}
@@ -456,9 +456,9 @@ form#new_form {margin: 0; padding: 0;}
 form#new_form input.button {width: 200px; height: 30px;}
 form#new_form input.button#Save {float: right;}
 /*form#new_form label {font-size: 14px; float: none; display: block; text-align: left; margin-bottom: 5px;}*/
-form#new_form textarea {font-size: 15px; height: 150px; padding: 5px; width: 345px; resize: none;}
+form#new_form textarea {font-size: 15px; padding: 5px; width: 584px; resize: none;}
 form#new_form.article textarea {height: 600px;}
-form#new_form.profileForm textarea {height: 30px;}
+form#new_form.profileForm textarea {height: 120px;}
 /*div.top_action_row {height: 30px; padding: 5px 8px; background: #f4f4f4; border-radius: 6px;}*/
 div.top_action_row {clear: both;}
 div.profile + div.top_action_row {margin: 0 0 55px; overflow: auto;}
