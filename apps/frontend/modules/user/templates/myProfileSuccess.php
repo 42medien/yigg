@@ -11,5 +11,5 @@
 
 <?php slot("sidebar")?>
     <h2 class="log_title">Dein Avatar:</h2>
-    <p><?php echo avatar_tag($user->Avatar, "noavatar.gif", 75, 75); ?></p>
+    <p class="prof_avtr"><?php echo avatar_tag($user->Avatar, "noavatar.gif", 75, 75); ?></p>
 <?php end_slot()?>
