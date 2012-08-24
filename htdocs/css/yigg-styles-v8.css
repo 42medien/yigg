@@ -481,7 +481,7 @@ div.top_action_row input.settings {width: 150px; color: #000; border: 1px solid 
 div.top_action_row input.settings:hover {background: #ccc url(../images/silk-icons/cog.png) no-repeat 5px 6px;}
 div.top_action_row input.delete:hover {color: #FFF; background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.delete {color: #fff !important; width: 150px; color: #000; border: 1px solid #999; background: #df4b2c url(../images/silk-icons/cancel.png) no-repeat 5px 6px;}
-div.top_action_row input.profile {background-image: url('../images/profile.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%);}
+div.top_action_row input.profile {background-image: url('../images/profile.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%); background-repeat: no-repeat;}
 div.profile {font-size: 15px; margin-bottom: 21px; overflow: auto;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
