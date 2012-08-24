@@ -1,4 +1,4 @@
-<h2>Profil bearbeiten</h2>
+<h2 class="log_title">Profil bearbeiten</h2>
 <?php include_partial("system/systemMessages")?>
 <form enctype="multipart/form-data" method="post" action="<?php echo url_for("@user_my_profile?view=profil"); ?>"  id="new_form" class="profileForm">
   <fieldset>
