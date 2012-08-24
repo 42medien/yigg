@@ -459,7 +459,8 @@ form#new_form label {font-size: 14px; float: none; display: block; text-align: l
 form#new_form textarea {font-size: 15px; height: 150px; padding: 5px; width: 100%;}
 form#new_form.article textarea {height: 600px;}
 form#new_form.profileForm textarea {height: 30px;}
-div.top_action_row {height: 30px; padding: 5px 8px; background: #f4f4f4; border-radius: 6px;}
+/*div.top_action_row {height: 30px; padding: 5px 8px; background: #f4f4f4; border-radius: 6px;}*/
+div.top_action_row {clear: both;}
 div.top_action_row input {text-align: left; font-weight: 700; height: 30px; border: #CCC; background: #6ed570; width: 130px; border-radius: 5px; padding-left: 30px; color: #FFF;}
 div.top_action_row input:hover {cursor: pointer;}
 div.top_action_row input.unfollow {background: #56aa44 url(../images/silk-icons/star.png) no-repeat 5px 6px; border: 1px solid #16920d;}
@@ -472,7 +473,7 @@ div.top_action_row input.profile:hover {border: 1px solid #999; background: #ccc
 div.top_action_row input.delete:hover {color: #FFF; background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.delete {color: #fff !important; width: 150px; color: #000; border: 1px solid #999; background: #df4b2c url(../images/silk-icons/cancel.png) no-repeat 5px 6px;}
 div.top_action_row input.profile {width: 150px; color: #000; background: #dedede url(../images/silk-icons/user_edit.png) no-repeat 5px 6px; border: 1px solid #999;}
-div.profile {font-size: 15px; margin-bottom: 10px; min-height: 155px;}
+div.profile {font-size: 15px; margin-bottom: 21px; overflow: auto;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
 div.profile dd {padding: 0; margin-left: 120px; margin-bottom: 5px;}
