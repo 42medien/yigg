@@ -455,7 +455,7 @@ form#new_form {margin: 0; padding: 0;}
 form#new_form input {font-size: 14px; height: 18px; padding: 5px; width: 100%;}
 form#new_form input.button {width: 200px; height: 30px;}
 form#new_form input.button#Save {float: right;}
-form#new_form label {font-size: 14px; float: none; display: block; text-align: left; margin-bottom: 5px;}
+/*form#new_form label {font-size: 14px; float: none; display: block; text-align: left; margin-bottom: 5px;}*/
 form#new_form textarea {font-size: 15px; height: 150px; padding: 5px; width: 100%;}
 form#new_form.article textarea {height: 600px;}
 form#new_form.profileForm textarea {height: 30px;}
