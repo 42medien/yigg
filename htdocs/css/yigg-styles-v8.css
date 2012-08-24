@@ -468,7 +468,7 @@ div.top_action_row input.unfollow {background: #56aa44 url(../images/silk-icons/
 div.top_action_row input.unfollow:hover {background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.follow {color: #000; background: #dedede url(../images/silk-icons/add.png) no-repeat 5px 6px; border: 1px solid #999;}
 div.top_action_row input.follow:hover {background: #cccece url(../images/silk-icons/add.png) no-repeat 5px 6px;}
-div.top_action_row input.settings {background-repeat: no-repeat; padding: 0 0 0 29px; text-align: center; width: 203px;
+div.top_action_row input.settings {background-repeat: no-repeat; text-align: center; width: 203px;
 background-image: url('../images/settings.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%);
 background-image: url('../images/settings.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%); /* FF3.6+ */
 background-image: url('../images/settings.png'),  -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0cfcf), color-stop(100%,#818181)); /* Chrome,Safari4+ */
