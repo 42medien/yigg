@@ -271,7 +271,7 @@ form fieldset {border: none}
 form .field label, form label {width: 150px; font-weight: bold; float: left; text-align: right; padding-right: 5px}
 form#searchForm .field label {display: none;}
 form .field input {margin-bottom: 5px; width: 260px; padding: 2px}
-form .field select {width: 260px}
+form .field select {width: 350px}
 form .field input.chkBox {border: none; width: auto !important}
 form .field-validated span {line-height: 20px; font-weight: bold; margin: 0 10px; color: #00a026}
 form .field-error span {color: #f00; line-height: 20px; font-weight: bold; margin: 0 10px}
@@ -602,4 +602,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #LoginForm .button, #ResetPasswordForm .actions input {float: left; width: auto; margin: 0 15px 0 0; padding: 0 8px 2px;}
 #LoginForm #user_reset_password {font: 12px/23px 'Trebuchet MS', sans-serif; color: #9a9c9d;}
 #LoginForm .error {margin: 0 0 15px;}
+form#new_form input {width: 350px;}
 /* End Login Page */
