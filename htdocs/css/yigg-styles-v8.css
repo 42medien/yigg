@@ -604,5 +604,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #LoginForm .error {margin: 0 0 15px;}
 form#new_form input {margin: 0 20px 0 0; width: 280px;}
 .profileForm .field {float: left; margin: 0 0 15px; clear: none;}
+form#new_form .actions {float: left; margin: 0 0 20px;}
 form#new_form #save {float: left; width: auto;}
 /* End Login Page */
