@@ -1,7 +1,7 @@
 <?php include_partial("system/systemMessages")?>
 <h1>Einstellungen</h1>
 
-<h2>Allgemeine Einstellungen</h2>
+<h2 class="log_title">Allgemeine Einstellungen</h2>
 <form method="post" action="<?php echo url_for("@user_settings?view=general")?>" class="settings">
   <fieldset><?php echo $settings_form->render(); ?></fieldset>
   <div class="actions">
