@@ -19,6 +19,7 @@
 <p class="error"><?php echo link_to("YiGG Account löschen", "@user_settings?view=delete");?></p>
 
 <?php slot("sidebar")?>
+  <div class="clear"></div>
   <h2 class="heading-right">Passworteinstellungen</h2>
   <form method="post" action="<?php echo url_for("@user_settings?view=password")?>" class="right-settings">
     <fieldset><?php echo $password_form->render(); ?></fieldset>
