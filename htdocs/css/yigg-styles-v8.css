@@ -593,7 +593,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 /* Login Page */
 #LoginContainer, #LoginContainer + h3, #ResetPasswordForm, h1.log_title {margin-left: 58px;}
 #LoginContainer + h3, #LoginContainer + h3 a {font: 14px 'Trebuchet MS', sans-serif; color: #191919;}
-#LoginForm label, #ResetPasswordForm label, .profileForm .field label {text-align: left; display: block; font: 14px 'Trebuchet MS', sans-serif; color: #191919; float: none; margin: 0 0 10px;}
+#LoginForm label, #ResetPasswordForm label, .profileForm .field label, form.right-settings label {text-align: left; display: block; font: 14px 'Trebuchet MS', sans-serif; color: #191919; float: none; margin: 0 0 10px;}
 .log_title {font: 18px 'Trebuchet MS', sans-serif; color: #191919;}
 .log_title + .succes {margin: 0 0 15px;}
 #LoginForm .field, #ResetPasswordForm .field {margin: 0 0 13px;}
