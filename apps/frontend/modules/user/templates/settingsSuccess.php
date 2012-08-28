@@ -9,7 +9,7 @@
   </div>
 </form>
 
-<h2>Benachrichtungen</h2>
+<h2 class="log_title">Benachrichtungen</h2>
 <form method="post" action="<?php echo url_for("@user_settings?view=notifications")?>" class="settings">
   <fieldset><?php echo $notification_form->render(); ?></fieldset>
   <div class="actions">
