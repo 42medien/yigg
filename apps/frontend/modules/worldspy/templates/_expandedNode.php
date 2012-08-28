@@ -5,7 +5,7 @@
 			        'rel' => 'nofollow',
 			        'title' => 'Diese Nachricht auf YiGG einstellen.',
               'class' => 'add_wspy_entry ninjaUpdater AddForm_' . $entry->id));?>
-		<?php echo img_tag("http://stromboli.yigg.de/?url=".$entry->long_link, array("height" => 88, "width" => 120));?>
+		<?php //echo img_tag("http://stromboli.yigg.de/?url=".$entry->long_link, array("height" => 88, "width" => 120));?>
   </div>
   <h2 class="entry-title"><?php
 		$title = strip_tags(substr( preg_replace("/\s+/"," ", $entry->title), 0, 128));
