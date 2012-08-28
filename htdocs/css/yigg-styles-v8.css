@@ -611,4 +611,5 @@ form#new_form .actions {float: left; margin: 0 0 20px;}
 form#new_form #save {float: left; width: auto;}
 .prof_avtr img {border: 1px solid #C7C6C6;}
 .settings .actions input {float: none; padding-bottom: 6px;}
+form.right-settings input {display: inline;}
 /* End Login Page */
