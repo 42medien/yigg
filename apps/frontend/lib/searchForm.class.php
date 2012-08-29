@@ -5,7 +5,7 @@ class searchForm extends yiggForm
   {
     parent::setup();
 
-    unset($this["_csrf_token"]); 
+    unset($this["_csrf_token"]);
     $this->setWidget('q', new sfWidgetFormInput());
     $this->setValidator('q',new sfValidatorString(array('max_length'  => 128)));
 
