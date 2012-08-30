@@ -41,7 +41,7 @@ class worldspyActions extends yiggActions
     $query = new Doctrine_Query();
     $query ->select("*")
            ->from("FeedEntry")
-           ->orderBy("epoch_time DESC")
+           ->orderBy("epoch_time ASC")
            ->limit(30);
 
     $query = $this->refineQueryWithTags($query);
