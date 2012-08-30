@@ -7,6 +7,7 @@
  <strong>Fax:</strong> 06201 . 845 20 29<br />
 <strong>Geschäftsführer:</strong> Marco Ripanti<br />
 <strong>Handelsregister:</strong> beantragt<br />
+<strong>HRB:</strong> 715271<br />
 <strong>USt-IdNr.:</strong> beantragt<br />
 <strong>Gerichtsstand:</strong> Mannheim<br />
 <p>
