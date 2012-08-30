@@ -158,7 +158,7 @@ class worldspyActions extends yiggActions
   	$query = Doctrine_Query::create()
                    ->select("*")
                    ->from("FeedEntry AS fe")
-                   ->where("fe.in_newsroom IS NOT NULL")
+                   //->where("fe.in_newsroom IS NOT NULL")
                    ->addWhere("(SELECT COUNT(s.id) as cnt FROM Story AS s WHERE s.external_url = fe.long_link AND s.deleted_at IS NULL) = 0" )
                    ->orderBy("created DESC");
     $this->entries = $this->setPagerQuery($query)->execute();
