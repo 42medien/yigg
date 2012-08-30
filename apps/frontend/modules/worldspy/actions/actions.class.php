@@ -158,9 +158,9 @@ class worldspyActions extends yiggActions
   	$query = Doctrine_Query::create()
                    ->select("*")
                    ->from("FeedEntry AS fe")
-                   //->where("fe.in_newsroom IS NOT NULL")
+                   ->where("fe.in_newsroom IS NOT NULL")
                    ->addWhere("(SELECT COUNT(s.id) as cnt FROM Story AS s WHERE s.external_url = fe.long_link AND s.deleted_at IS NULL) = 0" )
-                   ->orderBy("created ASC");
+                   ->orderBy("created DESC");
     $this->entries = $this->setPagerQuery($query)->execute();
     $this->getResponse()->setSlot('sponsoring', $this->getComponent("sponsoring","sponsoring", array( 'place_id' => 4 ,'limit' => 1)));    
     return sfView::SUCCESS;
