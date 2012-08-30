@@ -40,9 +40,7 @@ protected function configure()
     {
       $this->createStories($entries_to_create, 57086);
     }
-    
-    $this->logSection('do', 'test');
-    
+            
   }
 
   private function createStories($entries, $user_id)
