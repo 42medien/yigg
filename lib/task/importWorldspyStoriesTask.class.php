@@ -41,7 +41,7 @@ protected function configure()
       $this->createStories($entries_to_create, 57086);
     }
     
-    $this->logSection('do', ucfirst($arguments['name']));
+    $this->logSection('do', 'test');
     
   }
 
