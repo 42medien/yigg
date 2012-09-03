@@ -7,13 +7,13 @@ function createSlider() {
     var item_width = jQuery('#slides li').outerWidth();
     var left_value = item_width * (-1);
 
-    console.log(left_value);
-
     //move the last item before first item, just in case user click prev button
     jQuery('#slides li:first').before(jQuery('#slides li:last'));
 
     //set the default item to the correct position
     jQuery('#slides ul').css({'left' : left_value});
+
+    jQuery('#image_slider').val(jQuery('#slides li:nth-child(2) > img').attr('src'));
 
     //if user clicked on prev button
     jQuery('#prev').click(function() {
