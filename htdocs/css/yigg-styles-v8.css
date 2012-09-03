@@ -77,7 +77,16 @@ a:hover {text-decoration: none;}
 #navi {margin: 0; padding: 0; float: left;}
 #navi li.selected a, #navi li:hover a {}
 #navi li, #sub-navi li {list-style: none; margin: 0px 2px 0  0; float: left; padding: 0;}
-#navi li {padding: 29px 0 0px; border-right: 1px solid #cdcdcd; height: 21px;}
+#navi li {padding: 29px 0 0px; border-right: 1px solid #cdcdcd; height: 21px;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 1%, #f3f3f3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#f3f3f3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 1%,#f3f3f3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 1%,#f3f3f3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 1%,#f3f3f3 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 1%,#f3f3f3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+}
 #navi li a {display: block; font: bold 14px 'Helvetica', sans-serif; color: #333; padding: 0 12px; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
 /*#navi li.selected, #navi li:hover {background: url(../images/splice.png) 0 -89px}
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
