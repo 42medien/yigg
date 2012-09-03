@@ -26,7 +26,15 @@
  <div class="list_cont">
   <?php if($story->type == Story::TYPE_NORMAL):?>
     <div class="screenshot">
-      <?php echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  338, "height" => 164));?>
+        <?php
+        $source = $story->getStoryImageSource();
+        if($source){
+            echo img_tag("/htdocs/".$story->getStoryImageSource(), array("width" =>  121, "height" => 88));
+        }else{
+            echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array("width" =>  120, "height" => 88));
+        }
+
+        ?>
     </div>
   <?php endif; ?>
 
