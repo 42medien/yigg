@@ -56,7 +56,7 @@ a:hover {text-decoration: none;}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
 .clr {clear: left}
 .clr.bth, .clear {clear: both;}
-.hr_bt {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
+.hr_bt {width: 1073px; margin: 0 auto; padding: 20px 0 0; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
 .twoThree {display: table;}
 .twoThree .twoThree-left, .twoThree .twoThree-right {display: table-cell;}
 #container {position: relative;}
