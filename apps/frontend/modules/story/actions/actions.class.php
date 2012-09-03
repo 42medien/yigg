@@ -230,7 +230,41 @@ class storyActions extends yiggActions
       );
 
       $this->story->rate( $this->session, $conn);
-      $this->story->save($conn);
+        $this->story->save($conn);
+
+        $story_image = $this->form->getValue("image_slider");
+
+        if ($story_image)
+        {
+            $tmpfname = tempnam(sfConfig::get('sf_upload_dir'), "SL");
+            $ext = pathinfo($story_image, PATHINFO_EXTENSION);
+            $image = getimagesize($story_image);
+            $mime = $image['mime'];
+
+            file_put_contents($tmpfname, file_get_contents($story_image));
+
+            $validatedFile = new sfValidatedFile('image'.$ext, $mime, $tmpfname, filesize($tmpfname));
+
+            if( !empty($validatedFile) && $validatedFile->getSize() > 0 )
+            {
+                try
+                {
+                    $file = File::createFromValidatedFile( $validatedFile, "stories","story-". $this->story->getId() );
+                }
+                catch(Exception $e )
+                {
+                    $this->logMessage(sprintf("Adding image story failed for %s. Error: %s", $this->story->getId(), $e->getMessage()));
+                }
+
+
+                if( isset($file) && $file->id )
+                {
+                    $this->story->image_id = $file->id;
+                }
+            }
+        }
+        $this->story->save();
+
       $conn->commit();
 
       return $this->redirect($this->story->getLink());
@@ -356,8 +390,15 @@ class storyActions extends yiggActions
     $url = $this->getRequest()->getParameter( 'external_url' );
     $error = $this->form->processField('external_url', $url)->getError();
 
+      if(!$error){
+          $yiggImageParser = new ImageParser();
+          $images = $yiggImageParser->fetch($url, 100);
+          $slider_html = get_partial('story/imageSlider', array("images" => $images));
+      }
+
     $ninjaUpdater = $request->getNinjaUpdater();
     $ninjaUpdater->updateForm('external_url', $url, $error );
+    $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
     $this->populateFieldsFromUrl();
     $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
 

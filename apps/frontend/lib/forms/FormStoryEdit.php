@@ -71,6 +71,20 @@ class FormStoryEdit extends yiggForm
                 'id'  => 'external_url',
               )
             ),
+            'slider'   => new yiggWidgetFormImageSlider(
+                array(),
+                array(
+                    'class'  => 'ninjaValidate',
+                    'id'  => 'slider',
+                )
+            ),
+            'image_slider' => new sfWidgetFormInputHidden(
+                array(),
+                array(
+                    'class'  => 'sfValidatorUrl',
+                    'id'  => 'image_slider'
+                )
+            ),
             'title'        => new sfWidgetFormInput(
               array(),
               array(
@@ -123,6 +137,9 @@ class FormStoryEdit extends yiggForm
                   'min_length'=> 'Dieser Titel ist zu kurz',
                   'max_length'=> 'Der Titel darf aus maximal 128 Zeichen bestehen',
                 )
+              ),
+              'image_slider'    => new sfValidatorUrl(
+                  array('required'=>false)
               ),
               'description' => new yiggValidatorPlainText(
                   array(

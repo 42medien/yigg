@@ -1,3 +1,4 @@
+<?php use_stylesheet('carousel.css') ?>
 <form action="<?php echo url_for($story->getStoryType() === "Normal" ? "@story_create" : "@story_create_article");?>" id="new_form" class="ninjaForm <?php echo ("Normal" === $view ? "": "article" ); ?>" <?php if(true === $form->isMultipart()):?>enctype="multipart/form-data"<?php endif; ?> method="post">
   <fieldset>
     <?php $errorStack = $story->getErrorStack();
