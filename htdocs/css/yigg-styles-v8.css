@@ -82,8 +82,8 @@ a:hover {text-decoration: none;}
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
 /*#navi li.create, #navi li.create a {background: none; color: #993300}*/
 /*#navi li.create a:hover {text-decoration: underline}*/
-#sub-navi {margin: 0; position: absolute; left: 31px; top: 53px;}
-#sub-navi li {background: none; display: block;}
+#sub-navi {margin: 0; position: absolute; left: 198px; top: 53px;}
+#sub-navi li {background: none; display: block; float: none;}
 #sub-navi li a {color: black; display: block; font-weight: bold; background: none; padding: 5px 10px; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
 .search_box {margin: 0; float: right;}
