@@ -113,6 +113,10 @@ abstract class BaseStory extends sfDoctrineRecord
              'type' => 'integer',
              'length' => 11,
              ));
+        $this->hasColumn('image_id', 'string', 20, array(
+            'type' => 'integer',
+            'length' => 20,
+        ));
         $this->hasColumn('domain_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
