@@ -74,22 +74,9 @@
                     )); ?>
                 </div>
                 <div class="login_box">
-                    <ul class="login_link">
-                        <li>
-                            <a href="#">Login</a>
-                        </li>
-                        <li class="last">
-                            <a href="#">Post News</a>
-                        </li>
-                    </ul>
-                    <ul class="social_link">
-                        <li>
-                            <a href="#" class="fb">&nbsp;</a>
-                        </li>
-                        <li>
-                            <a href="#" class="tw">&nbsp;</a>
-                        </li>
-                    </ul>
+                    <div class="login_link">
+                        <a href="#">Login</a>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
