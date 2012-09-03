@@ -56,11 +56,11 @@ a:hover {text-decoration: none;}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
 .clr {clear: left}
 .clr.bth, .clear {clear: both;}
-.hr_bt {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd;}
+.hr_bt {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
 .twoThree {display: table;}
 .twoThree .twoThree-left, .twoThree .twoThree-right {display: table-cell;}
 #container {position: relative;}
-#container #content {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; overflow: auto;}
+#container #content {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3; overflow: auto;}
 .content_data {width: 1046px; margin: 0 auto;}
 .header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
 .header_data {width: 1255px; margin: 0 auto;}
