@@ -96,9 +96,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
 /*#navi li.create, #navi li.create a {background: none; color: #993300}*/
 /*#navi li.create a:hover {text-decoration: underline}*/
-#sub-navi {margin: 0; position: absolute; left: -97px; top: 53px;}
+#sub-navi {margin: 0; position: absolute; left: -67px; top: 67px;}
 #sub-navi li {background: none; display: block; float: none;}
-#sub-navi li a {color: black; display: block; font-weight: bold; background: none; padding: 5px 10px; margin-left: 2px; text-decoration: none}
+#sub-navi li a {color: black; display: block; line-height: 19px; background: none; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
 .search_box {position: absolute; right: 14px; top: 10px;}
 .search_box li {margin: 2px 0 0; list-style: none;}
