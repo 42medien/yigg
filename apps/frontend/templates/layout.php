@@ -114,6 +114,7 @@
         <br />
         </div>
       </div>
+      <div class="hr_bt"></div>
   <?php include_partial("system/footer");?>
         <script type="text/javascript">
             var _sf_async_config={uid:23222,domain:"yigg.de"};
