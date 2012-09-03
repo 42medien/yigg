@@ -112,7 +112,6 @@
         </div>
       </div>
 
-        <br />
         </div>
       </div>
       <div class="hr_bt"></div>
