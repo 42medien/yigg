@@ -130,7 +130,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', end
 .spy-filter {float: left}
 form.spy-filter .field label {float: none}
 .spy-filter #keywords {width: 120px}
-.pagination {margin: 0; text-align: center; clear: both; width: 633px; line-height: 165px; border-top: 1px solid #CFCFCF; position: relative; top: -1px;}
+.pagination {margin: 0; text-align: center; clear: both; width: 633px; line-height: 45px; border-top: 1px solid #CFCFCF; position: relative; top: -1px;}
 .pagination li {list-style: none; display: inline; padding-left: 2px}
 .pagination li a {color: #333; font: 12px 'Trebuchet MS', sans-serif; padding: 0px 10px; font-weight: bold; text-decoration: none}
 .pagination li a:hover, .pagination li.selected a {color: #00709e; text-decoration: underline;}
