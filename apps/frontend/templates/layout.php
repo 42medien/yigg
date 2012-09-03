@@ -74,6 +74,7 @@
                     )); ?>
                 </div>
                 <div class="login_box">
+                    <?php include_partial("system/navigation");?>
                     <div class="login_link">
                         <a href="#">Login</a>
                     </div>
@@ -86,7 +87,7 @@
           <?php if(true === has_slot("sponsoring")): ?>
           <?php include_slot("sponsoring"); ?>
         <?php endif; ?>
-        <?php include_partial("system/navigation");?>
+        
         <div class="twoThree clr">
         <div class="twoThree-left">
           <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>  
