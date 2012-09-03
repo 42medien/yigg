@@ -74,10 +74,13 @@
                     )); ?>
                 </div>
                 <div class="login_box">
-                    <?php include_partial("system/navigation");?>
-                    <div class="login_link">
-                        <a href="#">Login</a>
+                    <div class="login_box_cont">
+                        <?php include_partial("system/navigation"); ?>
+                        <div class="login_link">
+                            <a href="#">Login</a>
+                        </div>
                     </div>
+                    <div class="clear"></div>
                 </div>
                 <div class="clear"></div>
             </div>
