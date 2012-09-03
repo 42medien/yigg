@@ -62,7 +62,7 @@ a:hover {text-decoration: none;}
 .header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
 .header_data {width: 1255px; margin: 0 auto;}
 .header_data .logo_box {float: left;}
-.header_data .login_box {float: left; margin: 0; width: 1073px; height: 50px; border-left: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 3px solid #6d6d6d;}
+.header_data .login_box {position: relative; float: left; margin: 0; width: 1073px; height: 50px; border-left: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 3px solid #6d6d6d;}
 .header_data .login_box ul.login_link li a {font: 14px 'Trebuchet MS', sans-serif; color: #fff; padding: 0 17px; border-right: 1px solid #fff;}
 .header_data .login_box ul.login_link li.last a {border-right: none;}
 .header_data .login_box ul.social_link li a {display: block; width: 22px; height: 17px;}
@@ -97,7 +97,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #sub-navi li {background: none; display: block; float: none;}
 #sub-navi li a {color: black; display: block; font-weight: bold; background: none; padding: 5px 10px; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
-.search_box {margin: 0; float: right;}
+.search_box {position: absolute; right: 14px; top: 10px;}
 .search_box li {margin: 2px 0 0; list-style: none;}
 /*#sub-navi li.selected, #sub-navi li:hover {background: url(../images/splice.png) 0% -157px}
 #sub-navi li.selected a, #sub-navi a:hover {background: url(../images/splice.png) 100% -157px}*/
