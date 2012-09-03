@@ -62,6 +62,7 @@ a:hover {text-decoration: none;}
 .header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
 .header_data {width: 1255px; margin: 0 auto;}
 .header_data .logo_box {float: left;}
+.header_data .login_box_cont {width: 725px;}
 .header_data .login_box {position: relative; float: left; margin: 0; width: 1073px; height: 50px; border-left: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 3px solid #6d6d6d;}
 .header_data .login_box ul.login_link li a {font: 14px 'Trebuchet MS', sans-serif; color: #fff; padding: 0 17px; border-right: 1px solid #fff;}
 .header_data .login_box ul.login_link li.last a {border-right: none;}
@@ -72,7 +73,7 @@ a:hover {text-decoration: none;}
 .header_data .login_box ul.social_link {margin-left: 9px;}
 .header a.logo {padding: 0px; display: block;}
 .header a.logo img {display: block;}
-.login_link {width: 69px; height: 27px; border: 1px solid #dcdcdc;}
+.login_link {width: 69px; height: 27px; border: 1px solid #dcdcdc; float: right;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
 #usernav .profilepic {float: left; width: 35px}
 #navi {margin: 0; padding: 0; float: left;}
