@@ -33,7 +33,7 @@
 }
 
 #slides li img {
-    padding:5px;
+    display: block;
 }
 
 /* Styling for prev and next buttons */
