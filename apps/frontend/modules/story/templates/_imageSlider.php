@@ -1,7 +1,7 @@
 <div id="carousels">
     <div id="buttons">
-        <a href="#" id="prev">prev</a>
-        <a href="#" id="next">next</a>
+        <a href="#" id="prev"></a>
+        <a href="#" id="next"></a>
         <div class="clear"></div>
     </div>
 

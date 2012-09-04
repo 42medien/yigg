@@ -110,7 +110,7 @@ class FormStoryEdit extends yiggForm
             'Categories' => new sfWidgetFormChoice(
                 array('choices' => $this->categories, 'expanded' => true, 'multiple'=>true),
                 array(
-                    'class'  => 'ninjaRequired',
+                    'class'  => 'catchk',
                     'id'  => 'Categories'
                 )
               )
@@ -174,7 +174,7 @@ class FormStoryEdit extends yiggForm
                   array(
                       'choices' => array_keys($this->categories),
                       'multiple' =>true,
-                      'required' => true,
+                      'required' => false,
                   )
               )
            )
