@@ -72,5 +72,5 @@
     </script>
     </div>
 
-</div><br>
+</div>
 <?php endif;?>
