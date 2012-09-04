@@ -1,8 +1,6 @@
 <?php include_partial("user/loginform", array("form" => $form)); ?>
 
-<h3>Jetzt <?php echo link_to(
-    "registrieren",
-    '@user_register')?>, und kostenlos von vielen Funktionen!</h3>
+
 
 <?php slot("sidebar")?>
   <h2>Noch keinen Benutzernamen?</h2>
