@@ -30,6 +30,7 @@ class storyActions extends yiggActions
      */
     public function executeCategoryStories( $request )
     {
+        die;
         $sf = new yiggStoryFinder();
         $sf->confineWithCategory(4);
         $sf->sortByDate();
