@@ -477,26 +477,17 @@ form#new_form.profileForm textarea {height: 120px;}
 /*div.top_action_row {height: 30px; padding: 5px 8px; background: #f4f4f4; border-radius: 6px;}*/
 div.top_action_row {clear: both;}
 div.profile + div.top_action_row {padding: 0 0 55px 14px; margin: 0 0 20px; overflow: auto; border: 1px solid #dcdcdc; border-top: 0 none; width: 686px;}
-div.top_action_row input {height: 35px; font: 14px 'Trebuchet MS', sans-serif; color: #3e3e3e; float: left; margin: 0 14px 0 0;}
+div.top_action_row input {height: 35px; font: 14px 'Trebuchet MS', sans-serif; color: #3e3e3e; border: 1px solid #d2d2d2;  float: left; margin: 0 14px 0 0;}
 div.top_action_row input:hover {cursor: pointer;}
 div.top_action_row input.unfollow {background: #56aa44 url(../images/silk-icons/star.png) no-repeat 5px 6px; border: 1px solid #16920d;}
 div.top_action_row input.unfollow:hover {background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.follow {color: #000; background: #dedede url(../images/silk-icons/add.png) no-repeat 5px 6px; border: 1px solid #999;}
 div.top_action_row input.follow:hover {background: #cccece url(../images/silk-icons/add.png) no-repeat 5px 6px;}
-div.top_action_row input.settings {background-repeat: no-repeat; text-align: center; width: 203px;
-background-image: url('../images/settings.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%);
-background-image: url('../images/settings.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%); /* FF3.6+ */
-background-image: url('../images/settings.png'),  -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0cfcf), color-stop(100%,#818181)); /* Chrome,Safari4+ */
-background-image: url('../images/settings.png'),  -webkit-linear-gradient(top,  #d0cfcf 0%,#818181 100%); /* Chrome10+,Safari5.1+ */
-background-image: url('../images/settings.png'),  -o-linear-gradient(top,  #d0cfcf 0%,#818181 100%); /* Opera 11.10+ */
-background-image: url('../images/settings.png'),  -ms-linear-gradient(top,  #d0cfcf 0%,#818181 100%); /* IE10+ */
-background-image: url('../images/settings.png'),  linear-gradient(to bottom,  #d0cfcf 0%,#818181 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0cfcf', endColorstr='#818181',GradientType=0 ); /* IE6-9 */
-} 
+div.top_action_row input.settings {background: #f5f5f5 url(../images/settings_pic.png) no-repeat; text-align: center; width: 203px;} 
 /*div.top_action_row input.settings:hover {background: #ccc url(../images/silk-icons/cog.png) no-repeat 5px 6px;}*/
 div.top_action_row input.delete:hover {color: #FFF; background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.delete {color: #fff !important; width: 150px; color: #000; border: 1px solid #999; background: #df4b2c url(../images/silk-icons/cancel.png) no-repeat 5px 6px;}
-div.top_action_row input.profile {border: 1px solid #d2d2d2; background: #f5f5f5 url(../images/profile_pic.png) no-repeat; padding: 0 0 0 29px; text-align: center; width: 203px;}
+div.top_action_row input.profile {background: #f5f5f5 url(../images/profile_pic.png) no-repeat; padding: 0 0 0 29px; text-align: center; width: 203px;}
 div.profile {width: 700px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
