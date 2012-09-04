@@ -546,7 +546,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .spreadly-button{clear: right; float: left; height: 27px; margin: 0; position: relative; width: 130px;}
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
-.anzeige_titel, .heading-right {width: 327px; padding: 0 9px;}
+.anzeige_titel, .heading-right, .twoThree-right h2 {width: 327px; padding: 0 9px;}
 .anzeige_titel p, .heading-right, .twoThree-right h2 {font: bold 14px/36px 'Trebuchet MS', sans-serif; color: #191919; margin: 0;}
 
 #bar_wraper{height: 50px; background-color: #dddddd; display:block;}
