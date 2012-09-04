@@ -190,6 +190,18 @@ class yiggStoryFinder
       return $this;
   }
 
+    /**
+     * confines search with category
+     *
+     * @param category_id
+     * @return StoryFinder
+     */
+    public function confineWithCategory($category_id)
+    {
+        $this->joins['category'] = 'INNER JOIN story_category on s.id = story_category.story_id';
+        return $this->addWhere('story_category.category_id = ?', $category_id);
+    }
+
   /**
    * create criteria category, accepts id or category internal_url as value
    *

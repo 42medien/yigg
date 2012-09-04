@@ -24,6 +24,28 @@ class storyActions extends yiggActions
     }
 
 
+    /**
+     * Executes the category-stories (queue)
+     * @return
+     */
+    public function executeCategoryStories( $request )
+    {
+        $sf = new yiggStoryFinder();
+        $sf->confineWithCategory(4);
+        $sf->sortByDate();
+
+        // just return query for pager creation
+        $this->limit = 10;
+        $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
+
+        $this->storyCount = count($this->stories);
+        if( $this->storyCount > 0 )
+        {
+            $this->populateStoryAttributeCache();
+        }
+        return sfView::SUCCESS;
+    }
+
   /**
    * Shows the best stories (normal view)
    * @return
