@@ -198,8 +198,6 @@ class yiggStoryFinder
      */
     public function confineWithCategory($category_id)
     {
-        print_r("cat:".$category_id);
-
         $this->joins['category'] = 'INNER JOIN story_category on s.id = story_category.story_id';
         return $this->addWhere('story_category.category_id = ?', $category_id);
     }
