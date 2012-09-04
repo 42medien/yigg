@@ -29,7 +29,7 @@
   <?php endif; ?>
 
   <?php $categories = Doctrine_Core::getTable('Category')->getCategories(); if(count($categories)):?>
-    <li></li>
+    <li>&nbsp;</li>
     <?php foreach($categories as $category):?>
         <li><?php echo $category->getName();?></li>
     <?php endforeach;?>
