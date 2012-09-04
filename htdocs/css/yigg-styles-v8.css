@@ -331,6 +331,7 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .extra-info dd {text-align: right; border-bottom: 1px solid #f2f2f2}
 p.note, p.success, p.error {margin: 0; padding: 12px 10px 9px 45px; border-top: #EBE8D7 1px solid; border: #CCC 1px solid}
 p.error {background: #ff9d9d url('../images/bigicons/error.gif') no-repeat 5px 8px;}
+#twoThree-left p.error, #twoThree-left p.note, #twoThree-left p.success {width: 648px}
 p.error, p.error a {font: 14px 'Trebuchet MS', sans-serif; color: #191919;}
 p.note {background: #feffd6 url(../images/bigicons/info_med.gif) no-repeat 5px 3px; color: #3f352f}
 p.success {background: #1ccb13 url(../images/bigicons/allfine_med.png) no-repeat 5px 3px; color: #fff}
@@ -475,7 +476,7 @@ form#new_form.article textarea {height: 600px;}
 form#new_form.profileForm textarea {height: 120px;}
 /*div.top_action_row {height: 30px; padding: 5px 8px; background: #f4f4f4; border-radius: 6px;}*/
 div.top_action_row {clear: both;}
-div.profile + div.top_action_row {margin: 0 0 55px; overflow: auto; border: 1px solid #dcdcdc; border-top: 0 none;}
+div.profile + div.top_action_row {margin: 0 0 55px; overflow: auto; border: 1px solid #dcdcdc; border-top: 0 none; width: 700px;}
 div.top_action_row input {background: #d0cfcf; height: 35px; border: 1px solid #8a8989; border-radius: 5px; font: 14px 'Trebuchet MS', sans-serif; color: #FFF; text-shadow: 1px 1px #000; float: left; margin: 0 14px 0 0;}
 div.top_action_row input:hover {cursor: pointer;}
 div.top_action_row input.unfollow {background: #56aa44 url(../images/silk-icons/star.png) no-repeat 5px 6px; border: 1px solid #16920d;}
@@ -505,7 +506,7 @@ background-image: url('../images/profile.png'),  -ms-linear-gradient(top,  #d0cf
 background-image: url('../images/profile.png'),  linear-gradient(to bottom,  #d0cfcf 0%,#818181 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0cfcf', endColorstr='#818181',GradientType=0 ); /* IE6-9 */
 }
-div.profile {width: 712px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
+div.profile {width: 700px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
 div.profile dd {padding: 0; margin-left: 120px; margin-bottom: 5px;}
