@@ -104,8 +104,12 @@ class FormStoryEdit extends yiggForm
               )
             ),
             'Categories' => new sfWidgetFormInputCheckbox(
-                array('1' => 'test')
-            )
+                  array(),
+                  array(
+                      'id'  => 'Categories',
+                      'class' => 'chkBox'
+                  )
+              )
           ),
           array(),
           array(),
@@ -162,6 +166,15 @@ class FormStoryEdit extends yiggForm
                  'max_length' => 'Du hast zu viele Themen eingegeben.'
                )
               ),
+              'Categories' => new sfValidatorChoice(
+                  array(
+                      'choices' => array('true', 'on', 1)
+                  ),
+                  array(
+                      'invalid'  => "You must check 1 or more categories",
+                      'required' => "You must check 1 or more categories"
+                  )
+              )
            )
         )
       );
