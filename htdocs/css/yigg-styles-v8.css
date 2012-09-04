@@ -619,3 +619,8 @@ form#new_form #save {float: left; width: auto;}
 form.right-settings label {margin: 0 0 3px;}
 form.right-settings input {display: inline;}
 /* End Login Page */
+
+/* Categories */
+#Categories {margin: 0; width: 490px;}
+#Categories li {float: left;}
+/* End Categories */
