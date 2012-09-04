@@ -496,16 +496,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0cfcf', end
 /*div.top_action_row input.settings:hover {background: #ccc url(../images/silk-icons/cog.png) no-repeat 5px 6px;}*/
 div.top_action_row input.delete:hover {color: #FFF; background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.delete {color: #fff !important; width: 150px; color: #000; border: 1px solid #999; background: #df4b2c url(../images/silk-icons/cancel.png) no-repeat 5px 6px;}
-div.top_action_row input.profile {background-repeat: no-repeat; padding: 0 0 0 29px; text-align: center; width: 203px;
-background-image: url('../images/profile.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%);
-background-image: url('../images/profile.png'),  -moz-linear-gradient(top,  #d0cfcf 0%, #818181 100%); /* FF3.6+ */
-background-image: url('../images/profile.png'),  -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0cfcf), color-stop(100%,#818181)); /* Chrome,Safari4+ */
-background-image: url('../images/profile.png'),  -webkit-linear-gradient(top,  #d0cfcf 0%,#818181 100%); /* Chrome10+,Safari5.1+ */
-background-image: url('../images/profile.png'),  -o-linear-gradient(top,  #d0cfcf 0%,#818181 100%); /* Opera 11.10+ */
-background-image: url('../images/profile.png'),  -ms-linear-gradient(top,  #d0cfcf 0%,#818181 100%); /* IE10+ */
-background-image: url('../images/profile.png'),  linear-gradient(to bottom,  #d0cfcf 0%,#818181 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0cfcf', endColorstr='#818181',GradientType=0 ); /* IE6-9 */
-}
+div.top_action_row input.profile {padding: 0 0 0 29px; text-align: center; width: 203px;}
 div.profile {width: 700px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
