@@ -331,7 +331,7 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .extra-info dd {text-align: right; border-bottom: 1px solid #f2f2f2}
 p.note, p.success, p.error {margin: 0; padding: 12px 10px 9px 45px; border-top: #EBE8D7 1px solid; border: #CCC 1px solid}
 p.error {background: #ff9d9d url('../images/bigicons/error.gif') no-repeat 5px 8px;}
-#twoThree-left p.error, #twoThree-left p.note, #twoThree-left p.success {width: 648px}
+.twoThree-left p.error, .twoThree-left p.note, .twoThree-left p.success {width: 648px}
 p.error, p.error a {font: 14px 'Trebuchet MS', sans-serif; color: #191919;}
 p.note {background: #feffd6 url(../images/bigicons/info_med.gif) no-repeat 5px 3px; color: #3f352f}
 p.success {background: #1ccb13 url(../images/bigicons/allfine_med.png) no-repeat 5px 3px; color: #fff}
