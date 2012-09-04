@@ -595,7 +595,8 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 /* End Relates Stories */
 
 /* Login Page */
-#LoginContainer, #LoginContainer + h3, #ResetPasswordForm, h1.log_title {margin-left: 58px;}
+#LoginContainer {border: 1px solid #dcdcdc;}
+#ResetPasswordForm, h1.log_title {margin-left: 58px;}
 #LoginContainer + h3, #LoginContainer + h3 a {font: 14px 'Trebuchet MS', sans-serif; color: #191919;}
 #LoginForm label, #ResetPasswordForm label, .profileForm .field label, form.right-settings label {text-align: left; display: block; font: 14px 'Trebuchet MS', sans-serif; color: #191919; float: none; margin: 0 0 10px;}
 .log_title {font: 18px 'Trebuchet MS', sans-serif; color: #191919;}
