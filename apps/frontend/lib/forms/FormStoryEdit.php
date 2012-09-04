@@ -103,6 +103,9 @@ class FormStoryEdit extends yiggForm
                 'id'    => 'Tags'
               )
             ),
+            'Categories' => new sfWidgetFormInputCheckbox(
+                array('1' => 'test')
+            )
           ),
           array(),
           array(),
