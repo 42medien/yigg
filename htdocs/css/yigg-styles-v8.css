@@ -599,6 +599,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 #ResetPasswordForm, h1.log_title {margin-left: 58px;}
 #LoginContainer + h3, #LoginContainer + h3 a {font: 14px 'Trebuchet MS', sans-serif; color: #191919;}
 #LoginForm label, #ResetPasswordForm label, .profileForm .field label, form.right-settings label {text-align: left; display: block; font: 14px 'Trebuchet MS', sans-serif; color: #191919; float: none; margin: 0 0 10px;}
+#LoginForm label {display: none;}
 .log_title {font: 18px 'Trebuchet MS', sans-serif; color: #191919;}
 .log_title + .succes {margin: 0 0 15px;}
 #LoginForm .field, #ResetPasswordForm .field {margin: 0 0 13px;}
