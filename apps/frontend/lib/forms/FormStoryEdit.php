@@ -168,7 +168,9 @@ class FormStoryEdit extends yiggForm
               ),
               'Categories' => new sfValidatorChoice(
                   array(
-                      'choices' => array_keys($this->categories)
+                      'choices' => array_keys($this->categories),
+                      'multiple' =>true,
+                      'required' => true,
                   )
               )
            )
