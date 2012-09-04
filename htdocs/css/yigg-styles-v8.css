@@ -49,8 +49,8 @@ a {color: #993300; text-decoration: none}
 a:visited {color: #cc9966}
 a:hover {text-decoration: none;}
 .thirds .one, .thirds .two, .thirds .three {float: left; margin: 0 100px 0 0;}
-.twoThree .twoThree-left {width: 690px; min-height: 700px; display: block; padding-top: 10px; overflow: hidden;}
-.twoThree .twoThree-right {width: 30%; display: block; margin-top: 0px !important; border-left: 1px solid #e3e3e3;}
+.twoThree .twoThree-left {width: 715px; min-height: 700px; display: block; padding-top: 10px; overflow: hidden;}
+.twoThree .twoThree-right {width: 345px; display: block; margin-top: 0px !important; border-left: 1px solid #e3e3e3;}
 .halfHalf .left {float: left; width: 50%; min-height: 0}
 .halfHalf .right {float: right; width: 50%; position: static}
 .heading-left, .heading-right {margin: 15px 0 5px 0}
@@ -58,7 +58,7 @@ a:hover {text-decoration: none;}
 .clr {clear: left}
 .clr.bth, .clear {clear: both;}
 .hr_bt {width: 1073px; margin: 0 auto; padding: 20px 0; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
-.twoThree {display: table;}
+.twoThree {display: table; table-layout: fixed; width: 1061px;}
 .twoThree .twoThree-left, .twoThree .twoThree-right {display: table-cell;}
 #container {position: relative;}
 #container #content {width: 1073px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3; overflow: auto;}
