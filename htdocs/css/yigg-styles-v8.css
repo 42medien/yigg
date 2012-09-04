@@ -510,8 +510,8 @@ div.profile {width: 700px; font-size: 15px; padding-bottom: 21px; overflow: auto
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
 div.profile dd {padding: 0; margin-left: 120px; margin-bottom: 5px;}
-div.profile img {float: left; border: 1px solid #c7c6c6; margin: 0 14px 0 0;}
-div.profile h1 {font: 18px/36px 'Trebuchet MS', sans-serif; color: #191919; margin: 0}
+div.profile img {float: left; border: 1px solid #c7c6c6; margin: 14px 14px 0 14px;}
+div.profile h1 {font: 18px/36px 'Trebuchet MS', sans-serif; color: #191919; margin: 14px 0 0;}
 .user-about {position: relative; padding: 5px 0px; margin: 0; width: 100%; height: 30px; background: #f4f4f4; border-radius: 5px; position: relative;}
 .user-about dd, .user-about dt {position: absolute; width: 19%; padding: 0 5px; text-align: center;}
 .user-about dd {font-size: 1.1em; margin: 0; font-weight: bold; top: 22px;}
