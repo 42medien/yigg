@@ -605,6 +605,7 @@ form.post-box .actions input {border: 1px solid #e3e3e3; background: #f5f5f5; di
 #LoginForm .button, #ResetPasswordForm .actions input {float: left; width: auto; margin: 0 15px 0 0; padding: 0 8px 2px;}
 #LoginForm #user_reset_password {font: 12px/23px 'Trebuchet MS', sans-serif; color: #9a9c9d; float: right;}
 #LoginForm .error {margin: 0 0 5px;}
+form#new_form.ninjaForm {position: relative;}
 form#new_form.ninjaForm input {margin: 0 20px 0 0; width: 482px;}
 form#new_form.ninjaForm textarea {width: 478px;}
 .profileForm .field {float: left; margin: 0 0 15px; clear: none;}
