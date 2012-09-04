@@ -14,13 +14,13 @@
         <div class="field">
           <?php echo $form["password"]->renderRow();?>
         </div>
+        <?php echo link_to("Passwort vergessen?", '@user_reset_password', array('id' => 'user_reset_password')); ?>
         <?php echo $form->renderHiddenFields();?>
         <div class="field remember-me">
           <?php echo $form["remember"]->render();?> <?php echo $form["remember"]->renderLabel();?>
         </div>
         <div class="actions">          
-          <input type="submit" name="commit" value="Anmelden" class="button" />
-          <?php echo link_to("Passwort vergessen?", '@user_reset_password', array('id' => 'user_reset_password')); ?>
+          <input type="submit" name="commit" value="Anmelden" class="button" />          
         </div>
     </fieldset>
   </form>
