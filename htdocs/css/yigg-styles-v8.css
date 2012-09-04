@@ -621,7 +621,8 @@ form.right-settings input {display: inline;}
 /* End Login Page */
 
 /* Categories */
-ul#Categories {margin: 0; width: 490px;}
+ul#Categories {margin: 0; width: 490px; float: left; clear: both;}
 #Categories li#Categories {float: left;}
 form#new_form.ninjaForm #Categories li input, form#new_form.ninjaForm #Categories li label {width: auto; height: auto; margin: 0; padding: 0;} 
+form#new_form.ninjaForm #Categories li label {display: block;}
 /* End Categories */
