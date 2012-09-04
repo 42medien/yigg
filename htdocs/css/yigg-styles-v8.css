@@ -532,7 +532,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .ico-follow{display: inline-block;}
 .anzeige_titel, .heading-right, .twoThree-right h2, .twoThree-right p {width: 327px; padding: 0 9px;}
 .anzeige_titel {border-top: 1px solid #E3E3E3; margin: 14px 0px 0px;}
-.twoThree-right p.note {padding: 12px 10px 9px 45px;}
+.twoThree-right p.note {padding: 12px 10px 9px 45px; width: auto;}
 .anzeige_titel p, .heading-right, .twoThree-right h2 {font: bold 14px/36px 'Trebuchet MS', sans-serif; color: #191919; margin: 0;}
 .twoThree-right .anzeige_titel p {padding: 0;}
 .twoThree-right a img {display: block; margin: 0 auto 14px;}
