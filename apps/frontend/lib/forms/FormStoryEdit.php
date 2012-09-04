@@ -60,6 +60,7 @@ class FormStoryEdit extends yiggForm
    */
   protected function addNormalFields()
   {
+      $choices = array(1 => "test");
 
     $this->setWidgetSchema(
       new sfWidgetFormSchema(
@@ -103,12 +104,8 @@ class FormStoryEdit extends yiggForm
                 'id'    => 'Tags'
               )
             ),
-            'Categories' => new sfWidgetFormInputCheckbox(
-                  array(),
-                  array(
-                      'id'  => 'Categories',
-                      'class' => 'chkBox'
-                  )
+            'Categories' => new sfWidgetFormChoice(
+                array('choices' => $choices)
               )
           ),
           array(),
