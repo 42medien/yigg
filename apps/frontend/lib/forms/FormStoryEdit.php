@@ -9,6 +9,7 @@
 class FormStoryEdit extends yiggForm
 {
   private $story;
+  private $categories = array();
   protected $name = 'EditStory';
 
 
@@ -60,9 +61,8 @@ class FormStoryEdit extends yiggForm
    */
   protected function addNormalFields()
   {
-    $choices = array();
     foreach(Doctrine_Core::getTable('Category')->getCategories() as $category){
-        $choices[$category->getId()] = $category->getName();
+        $this->categories[$category->getId()] = $category->getName();
     }
 
     $this->setWidgetSchema(
@@ -78,7 +78,7 @@ class FormStoryEdit extends yiggForm
             'slider'   => new yiggWidgetFormImageSlider(
                 array(),
                 array(
-                    'class'  => 'ninjaValidate',
+                        'class'  => 'ninjaValidate',
                     'id'  => 'slider',
                 )
             ),
@@ -108,7 +108,7 @@ class FormStoryEdit extends yiggForm
               )
             ),
             'Categories' => new sfWidgetFormChoice(
-                array('choices' => $choices, 'expanded' => true, 'multiple'=>true)
+                array('choices' => $this->categories, 'expanded' => true, 'multiple'=>true)
               )
           ),
           array(),
@@ -168,11 +168,7 @@ class FormStoryEdit extends yiggForm
               ),
               'Categories' => new sfValidatorChoice(
                   array(
-                      'choices' => array('true', 'on', 1)
-                  ),
-                  array(
-                      'invalid'  => "You must check 1 or more categories",
-                      'required' => "You must check 1 or more categories"
+                      'choices' => array_keys($this->categories)
                   )
               )
            )
