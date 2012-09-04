@@ -184,7 +184,8 @@ h3.entry-title {font-size: 1.4em}
 .userinfo form {margin: 0 auto; width: 219px; height: 107px; padding: 18px 0 0;}
 .userinfo form fieldset {margin: 0}
 .userinfo form .ninjaRequired {width: 211px; height: 25px; margin: 0 0 13px; display: block; padding: 1px 3px; border: 1px solid #9d9d9d; border-radius: 3px;}
-.userinfo .button, #LoginForm .button, #ResetPasswordForm .actions input, form#new_form #save, .settings .actions input, form.right-settings .actions input, form.post-box .actions input {height: 31px; width: 56px; padding: 0 0 3px; float: right; border: 1px solid #e5e5e5 !important; text-align: center; font: bold 13px/25px 'Trebuchet MS', sans-serif; color: #000; cursor: pointer;
+.userinfo .button, #LoginForm .button, #ResetPasswordForm .actions input, form#new_form #save, .settings .actions input, form.right-settings .actions input, form.post-box .actions input,
+form#new_form.ninjaForm #Save {height: 31px; width: 56px; padding: 0 0 3px; float: right; border: 1px solid #e5e5e5 !important; text-align: center; font: bold 13px/25px 'Trebuchet MS', sans-serif; color: #000; cursor: pointer;
 background: #ffeb7e; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffeb7e 1%, #ffda05 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffeb7e), color-stop(100%,#ffda05)); /* Chrome,Safari4+ */
@@ -607,8 +608,9 @@ form.post-box .actions input {border: 1px solid #e3e3e3; background: #f5f5f5; di
 #LoginForm .error {margin: 0 0 5px;}
 form#new_form.ninjaForm {position: relative; margin: 4px 0 0;}
 form#new_form.ninjaForm .field {width: 500px; float: right; clear: both; position: static;}
+form#new_form.ninjaForm #Save {float: right; width: auto;}
 form#new_form.ninjaForm input {margin: 0 0 12px; width: 482px;}
-form#new_form.ninjaForm textarea {width: 478px; margin: 0 0 12px; border: 1px solid #e3e3e3; background: #f5f5f5;}
+form#new_form.ninjaForm textarea {width: 478px; margin: 0 0 12px; border: 1px solid #e3e3e3 !important; background: #f5f5f5;}
 .profileForm .field {float: left; margin: 0 0 15px; clear: none;}
 form#new_form .actions {float: left; margin: 0 0 20px;}
 form#new_form #save {float: left; width: auto;}
