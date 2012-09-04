@@ -552,7 +552,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .twoThree-right p.note {padding: 12px 10px 9px 45px;}
 .anzeige_titel p, .heading-right, .twoThree-right h2 {font: bold 14px/36px 'Trebuchet MS', sans-serif; color: #191919; margin: 0;}
 .twoThree-right .anzeige_titel p {padding: 0;}
-.twoThree-right a img {display: block; margin: 0 9px 9px;}
+.twoThree-right a img {display: block; margin: 0 auto 14px;}
 #bar_wraper{height: 50px; background-color: #dddddd; display:block;}
 
 #bar_content{margin: 0 auto; width: 1400px;}
