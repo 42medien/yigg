@@ -1,7 +1,10 @@
 #carousel {
-    width:255px;
-    height:290px;
+    width:200px;
+    height:200px;
     margin:0 auto;
+    position: absolute;
+    left: 0; 
+    right: 0;
 }
 
 #slides {
