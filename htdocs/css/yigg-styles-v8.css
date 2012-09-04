@@ -505,7 +505,7 @@ background-image: url('../images/profile.png'),  -ms-linear-gradient(top,  #d0cf
 background-image: url('../images/profile.png'),  linear-gradient(to bottom,  #d0cfcf 0%,#818181 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0cfcf', endColorstr='#818181',GradientType=0 ); /* IE6-9 */
 }
-div.profile {font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
+div.profile {width: 712px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
 div.profile dd {padding: 0; margin-left: 120px; margin-bottom: 5px;}
