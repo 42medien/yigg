@@ -101,7 +101,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /*#navi li.create, #navi li.create a {background: none; color: #993300}*/
 /*#navi li.create a:hover {text-decoration: underline}*/
 #sub-navi {margin: 0; position: absolute; left: -89px; top: 67px;}
-#sub-navi li {background: none; display: block; float: none;}
+#sub-navi li {background: none; display: block; float: none; width: 85px;}
 #sub-navi li a {color: black; display: block; line-height: 19px; background: none; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
 .search_box {position: absolute; right: 14px; top: 10px;}
