@@ -22,6 +22,9 @@
         <div class="actions">          
           <input type="submit" name="commit" value="Anmelden" class="button" />          
         </div>
+          <h3>Jetzt <?php echo link_to(
+    "registrieren",
+    '@user_register')?>, und kostenlos von vielen Funktionen!</h3>
     </fieldset>
   </form>
 </div>
