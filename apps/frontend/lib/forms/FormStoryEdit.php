@@ -60,7 +60,10 @@ class FormStoryEdit extends yiggForm
    */
   protected function addNormalFields()
   {
-      $choices = Doctrine_Core::getTable('Category')->getCategories();
+    $choices = array();
+    foreach(Doctrine_Core::getTable('Category')->getCategories() as $category){
+        $choices[$category->getId()] = $category->getName();
+    }
 
     $this->setWidgetSchema(
       new sfWidgetFormSchema(
