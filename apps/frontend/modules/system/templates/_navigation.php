@@ -27,4 +27,10 @@
   <?php if($sf_user->hasUser() && $sf_user->getUser()->isSponsor()):?>
     <li <?php if($sf_request->getModule() == "sponsoring"): ?>class="selected"<?php endif; ?>><?php echo link_to("Sponsorings", '@sponsoring', array('title' => 'Informationen zu Deinen YiGG-Sponsorings')); ?></li>
   <?php endif; ?>
+
+  <?php $categories = Doctrine_Core::getTable('Category')->getCategories(); if(count($categories)):?>
+    <?php foreach($categories as $category):?>
+        <li>test</li>
+    <?php endforeach;?>
+  <?php endif;?>
 </ul>
