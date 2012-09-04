@@ -5,12 +5,10 @@ function createSlider() {
 
     jQuery('#slides').hover(
         function () {
-            jQuery('#next').show();
-            jQuery('#prev').show();
+            jQuery('#buttons').show();
         },
         function () {
-            jQuery('#next').hide();
-            jQuery('#prev').hide();
+            jQuery('#buttons').hide();
         }
     );
 
