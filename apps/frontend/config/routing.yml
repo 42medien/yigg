@@ -123,7 +123,7 @@ worldspy_delete_entry:
 # Story Presentation
 category_stories:
   url:    /nachrichten/:category
-  param:  { module: story, action: bestStories }
+  param:  { module: story, action: categoryStories }
   requirements: { category: \d+ }
 
 best_stories:
