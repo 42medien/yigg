@@ -3,6 +3,17 @@ function createSlider() {
     //rotation speed and timer
     var speed = 5000;
 
+    jQuery('#slides').hover(
+        function () {
+            jQuery('#next').show();
+            jQuery('#prev').show();
+        },
+        function () {
+            jQuery('#next').hide();
+            jQuery('#prev').hide();
+        }
+    );
+
     //grab the width and calculate left value
     var item_width = jQuery('#slides li').outerWidth();
     var left_value = item_width * (-1);
