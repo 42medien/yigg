@@ -29,8 +29,9 @@
   <?php endif; ?>
 
   <?php $categories = Doctrine_Core::getTable('Category')->getCategories(); if(count($categories)):?>
+    <li></li>
     <?php foreach($categories as $category):?>
-        <li>test</li>
+        <li><?php echo $category->getName();?></li>
     <?php endforeach;?>
   <?php endif;?>
 </ul>
