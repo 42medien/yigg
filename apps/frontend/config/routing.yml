@@ -121,6 +121,11 @@ worldspy_delete_entry:
   requirements: { node_id: \d+ }
 
 # Story Presentation
+category_stories:
+  url:    /nachrichten/:category
+  param:  { module: story, action: bestStories }
+  requirements: { category: \d+ }
+
 best_stories:
   url:    /
   param:  { module: story, action: bestStories, filter: heute, rss: true}
