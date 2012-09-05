@@ -3,7 +3,7 @@ function createSlider() {
     //rotation speed and timer
     var speed = 5000;
 
-    jQuery('#slides1').hover(
+    jQuery('#slides').hover(
         function () {
             jQuery('#buttons').show();
         },
