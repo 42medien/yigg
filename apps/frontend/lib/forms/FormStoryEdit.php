@@ -111,7 +111,7 @@ class FormStoryEdit extends yiggForm
               array(
                 'class'    => 'ninjaRequired',
                 'id'    => 'Tags',
-                'placeholder' => 'Themen'
+                'placeholder' => 'Themen (Kommagetrennt)'
               )
             ),
             'Categories' => new sfWidgetFormChoice(
@@ -125,9 +125,7 @@ class FormStoryEdit extends yiggForm
           array(),
           array(),
           array(),
-          array(
-            "Tags" => "(Kommagetrennt)"
-          )
+          array()
         )
       );
   }
