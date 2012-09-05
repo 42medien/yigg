@@ -31,7 +31,7 @@ class storyActions extends yiggActions
     public function executeCategoryStories( $request )
     {
         $this->category = $this->getRoute()->getObject();
-        $this->category = Category::retrieveBySlug($this->getRequestParameter('slug'));
+        //$this->category = Category::retrieveBySlug($this->getRequestParameter('slug'));
         print_r($this->category->getName());
 
         $sf = new yiggStoryFinder();
