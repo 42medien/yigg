@@ -629,6 +629,9 @@ form#new_form #save {float: left; width: auto;}
 form.right-settings label {margin: 0 0 3px;}
 form.right-settings input {display: inline;}
 #RegisterForm h3 {clear: both; margin-top: 20px; float: left; width: 100px;}
+#RegisterForm .field {margin-bottom: 15px;}
+#RegisterForm .field_last {clear: both;}
+#RegisterForm .field_last ul {margin: 0;}
 /* End Login Page */
 
 /* Categories */
