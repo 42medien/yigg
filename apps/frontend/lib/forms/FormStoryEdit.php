@@ -53,13 +53,6 @@ class FormStoryEdit extends yiggForm
             'Tags'       => 'Themen:',
          )
       );
-
-       $this->widgetSchema->setPlaceholders(array(
-           'external_url' => 'URL der Nachricht:',
-           'title'       => 'Titel:',
-           'description' => 'Beschreibung:',
-           'Tags'       => 'Themen:',
-       ));
   }
 
   /**
