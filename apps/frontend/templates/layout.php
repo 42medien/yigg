@@ -145,7 +145,7 @@
             <?php //include_slot("sidebar_sponsoring"); ?>
           <?php //endif; ?>
           <?php if(true === has_slot("sidebar")): ?>
-            <?php //include_slot("sidebar"); ?>
+            <?php include_slot("sidebar"); ?>
           <?php endif; ?>
           
         </div>
