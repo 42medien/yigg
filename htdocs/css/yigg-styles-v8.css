@@ -75,7 +75,7 @@ a:hover {text-decoration: none;}
 .header_data .login_box ul.social_link li a.tw {background: url(../images/tw.png) 0 0 no-repeat;}
 .header_data .login_box ul, .header_data .login_box ul li {float: left; margin: 0;}
 .header_data .login_box ul.social_link {margin-left: 9px;}
-.header a.logo {padding: 0px; display: block;}
+.header a.logo {padding: 0px; display: block; margin: 0 15px 0 -15px;}
 .header a.logo img {display: block;}
 .login_link {width: 69px; height: 25px; border: 1px solid #dcdcdc; float: right; margin: 10px 0 0; text-align: center; position: relative;}
 .login_link a {font: 14px/25px 'Arial', sans-serif; color: #191919; text-transform: uppercase;}
