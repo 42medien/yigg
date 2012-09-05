@@ -47,7 +47,7 @@ class FormStoryEdit extends yiggForm
       // set labels
       $this->widgetSchema->setLabels(
         array(
-            'external_url' => '',
+            'external_url' => false,
             'title'       => '',
             'description' => '',
             'Tags'       => '',
@@ -80,7 +80,7 @@ class FormStoryEdit extends yiggForm
             'slider'   => new yiggWidgetFormImageSlider(
                 array(),
                 array(
-                        'class'  => 'ninjaValidate',
+                    'class'  => 'ninjaValidate',
                     'id'  => 'slider',
                 )
             ),
