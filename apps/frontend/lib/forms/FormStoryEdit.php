@@ -51,6 +51,7 @@ class FormStoryEdit extends yiggForm
             'title'       => 'Titel:',
             'description' => 'Beschreibung:',
             'Tags'       => 'Themen:',
+            'Categories' => ''
          )
       );
   }
@@ -94,18 +95,23 @@ class FormStoryEdit extends yiggForm
               array(),
               array(
                 'class'  => 'ninjaRequired',
-                'id'  => 'Title'
+                'id'  => 'Title',
+                'placeholder' => 'Titel'
               )
             ),
             'description' =>  new sfWidgetFormTextarea(
               array(),
-              array('class' => $this->story->getStoryType() === "Article" ? "large":"count", "id" => "Description")
+              array(
+                  'class' => $this->story->getStoryType() === "Article" ? "large":"count", "id" => "Description",
+                  'placeholder' => 'Beschreibung'
+              )
             ),
             'Tags'      => new sfWidgetFormInput(
               array(),
               array(
                 'class'    => 'ninjaRequired',
-                'id'    => 'Tags'
+                'id'    => 'Tags',
+                'placeholder' => 'Themen'
               )
             ),
             'Categories' => new sfWidgetFormChoice(
