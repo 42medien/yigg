@@ -45,7 +45,7 @@
 
 /* Styling for prev and next buttons */
 #buttons {
-    padding:0 0 5px 0;
+    display: none;
     float:right;
 }
 #buttons #prev, #buttons #next {width: 21px; height: 60px; display: block; position: absolute; z-index: 2; top: 36%;}
