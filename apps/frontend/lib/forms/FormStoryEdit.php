@@ -69,10 +69,11 @@ class FormStoryEdit extends yiggForm
       new sfWidgetFormSchema(
         array(
             'external_url'   => new sfWidgetFormInput(
-              array('label'       => 'Your Name'),
+              array(),
               array(
                 'class'  => 'ninjaValidate',
                 'id'  => 'external_url',
+                'placeholder' => 'URL der Nachricht'
               )
             ),
             'slider'   => new yiggWidgetFormImageSlider(
