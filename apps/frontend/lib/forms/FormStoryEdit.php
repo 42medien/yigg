@@ -48,10 +48,10 @@ class FormStoryEdit extends yiggForm
       $this->widgetSchema->setLabels(
         array(
             'external_url' => false,
-            'title'       => '',
-            'description' => '',
-            'Tags'       => '',
-            'Categories' => ''
+            'title'       => false,
+            'description' => false,
+            'Tags'       => false,
+            'Categories' => false
          )
       );
   }
