@@ -47,10 +47,10 @@ class FormStoryEdit extends yiggForm
       // set labels
       $this->widgetSchema->setLabels(
         array(
-            'external_url' => 'URL der Nachricht:',
-            'title'       => 'Titel:',
-            'description' => 'Beschreibung:',
-            'Tags'       => 'Themen:',
+            'external_url' => '',
+            'title'       => '',
+            'description' => '',
+            'Tags'       => '',
             'Categories' => ''
          )
       );
