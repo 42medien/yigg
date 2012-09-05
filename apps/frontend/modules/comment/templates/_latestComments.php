@@ -1,6 +1,5 @@
 <h2 class="heading-right" style="clear:both;">Debatte</h2>
 <ol class="avatar-list-style">
-    <?php echo count($comments);?>
   <?php foreach ($comments as $comment): ?>
     <li>
       <?php
