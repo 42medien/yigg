@@ -122,9 +122,12 @@ worldspy_delete_entry:
 
 # Story Presentation
 category_stories:
-  url:    /nachrichten/:category
+  url:    /nachrichten/:category_slug
+  class:   sfDoctrineRoute
+  options: { model: Category, type: object }
   param:  { module: story, action: categoryStories }
-  requirements: { category: \d+ }
+  requirements:
+      sf_method: [get]
 
 best_stories:
   url:    /
