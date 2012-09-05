@@ -119,6 +119,7 @@
                                 <a class="yigg_cnct" href="<?php echo url_for('@user_login');?>"></a>
                             </div>
                         </div>
+                        <div class="login_fb"></div>
                     </div>
                     <div class="clear"></div>
                 </div>
