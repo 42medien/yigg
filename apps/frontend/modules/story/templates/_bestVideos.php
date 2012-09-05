@@ -8,5 +8,5 @@
     googletag.display('div-gpt-ad-1346766539123-0');
     </script>
     </div>
-  </div>
+  </div> 
 <?php endif;?>
