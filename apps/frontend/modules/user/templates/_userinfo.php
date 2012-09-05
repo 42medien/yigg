@@ -85,6 +85,7 @@
         array("title" => "Lege Dir einen neuen Account bei uns an.", "class" => "register")
     ); ?>
   <?php endif; */?>
+
   <div class="clr"></div>
 </div>
 <div class="anzeige_titel">
