@@ -115,7 +115,7 @@
                         <div class="login_link">
                             <a href="#">Login</a>
                             <div class="login_box">
-                                <a class="fb_cnct" href="#" onclick="onClickloginfb();"></a>
+                                <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
                                 <div class="fb_cnct"></div>
                                 <div class="yigg_cnct"></div>
                             </div>
