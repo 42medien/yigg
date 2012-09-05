@@ -22,14 +22,16 @@ class FormUserResetPassword extends yiggForm
           ),
           array(
             'class' => 'ninjaRequired',
-            'id'    => 'Username'
+            'id'    => 'Username',
+            'placeholder' => 'Benutzername'
           )
         ),
         'email'    		=> new sfWidgetFormInput(
             array(),
             array(
               'class'	=> 'ninjaRequired',
-              'id'	=> 'Email'
+              'id'	=> 'Email',
+              'placeholder' => 'Email'
             )
           ),
           )
@@ -66,8 +68,8 @@ class FormUserResetPassword extends yiggForm
     // set labels
     $this->widgetSchema->setLabels(
       array(
-          'username'          => 'Benutzername:',
-          'email'             => 'Email:',
+          'username'          => false,
+          'email'             => false,
       )
     );
   }
