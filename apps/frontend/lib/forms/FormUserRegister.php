@@ -17,19 +17,22 @@ class FormUserRegister extends yiggForm
           'username'   => new sfWidgetFormInput(
             array(),
             array(
-              'id'    => 'Benutzername'
+              'id'    => 'Benutzername',
+              'placeholder' => 'Benutzername'
             )
           ),
           'password'    => new sfWidgetFormInputPassword(
             array(),
             array(
-              'id'  => 'Passwort'
+              'id'  => 'Passwort',
+              'placeholder' => 'Passwort'
             )
           ),
           'email'    => new sfWidgetFormInput(
             array(),
             array(
               'id'  => 'Email',
+              'placeholder' => 'Email'
             )
           ),
           'acceptedTerms' => new sfWidgetFormInputCheckbox(
@@ -101,9 +104,9 @@ class FormUserRegister extends yiggForm
   // set labels
   $this->widgetSchema->setLabels(
     array(
-        'username'          => 'Benutzername:',
-        'password'          => 'Passwort:',
-        'email'             => 'Email:',
+        'username'          => false,
+        'password'          => false,
+        'email'             => false,
         'acceptedTerms'     => 'Nutzungsbedingungen:',
       )
     );
