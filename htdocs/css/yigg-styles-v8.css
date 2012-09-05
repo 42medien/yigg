@@ -79,8 +79,11 @@ a:hover {text-decoration: none;}
 .header a.logo img {display: block;}
 .login_link {width: 69px; height: 25px; border: 1px solid #dcdcdc; float: right; margin: 10px 0 0; text-align: center; position: relative;}
 .login_link a {font: 14px/25px 'Trebuchet MS', sans-serif; color: #191919; text-transform: uppercase;}
-.login_link .login_box {background: url(../images/login_box.png) 0 0 no-repeat; display: none; position: absolute; right: -1px; top: 24px; border: 0; z-index: 2; width: 232px; height: 115px;}
+.login_link .login_box {background: url(../images/login_box.png) 0 0 no-repeat; display: none; position: absolute; right: -1px; top: 24px; border: 0; z-index: 2; width: 232px; height: 100px; padding: 15px 0 0;}
 .login_link:hover .login_box {display: block;}
+.login_link .login_box .fb_cnct, .login_link .login_box .yig_cnct {width: 202px; height: 36px; cursor: pointer; margin: 0 auto;}
+.login_link .login_box .fb_cnct {background: url(../images/fb_cnct.png) 0 0 no-repeat; margin-bottom: 9px;}
+.login_link .login_box .yigg_cnct {background: url(../images/fb_cnct.png) 0 0 no-repeat;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
 #usernav .profilepic {float: left; width: 35px}
 #navi {margin: 0; padding: 0; float: left;}
