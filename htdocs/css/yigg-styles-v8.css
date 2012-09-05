@@ -208,6 +208,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .screenshot, .consensus-holder {float: right; clear: right; background: url(../images/screenshot-loading-normal.png) top right no-repeat; height: 100px; width: 130px; margin: 5px 20px 0 10px; position: relative}
 .screenshot a, .consensus-holder a {padding: 0  9px 9px 0}
 #story-list .screenshot {height: 164px; width: 310px; margin: 0 0 7px; float: none;}
+#story-list .screenshot img {width: 338px; height: 164px;}
 .consensus-holder {height: 150px; width: 180px}
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
