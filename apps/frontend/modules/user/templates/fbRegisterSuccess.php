@@ -1,7 +1,3 @@
-
-<script>
-    jQuery("#AcceptTerms").closest('div').addClass('accept-terms');
-</script>
 <?php if( isset($result) && true === $result): ?>
 <p class="success">In Kürze erhältst Du von uns eine email mit einem Bestätigungslink. Mit Klick auf diesen
     Link aktivierst Du Dein Konto und Du kannst in unserer Community loslegen.</p>
@@ -42,3 +38,8 @@
 );
 ?>
 <?php end_slot()?>
+
+
+<script>
+    jQuery("#AcceptTerms").closest('div').addClass('accept-terms');
+</script>
