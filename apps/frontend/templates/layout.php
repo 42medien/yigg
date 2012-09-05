@@ -80,7 +80,10 @@
                         <?php include_partial("system/navigation"); ?>
                         <div class="login_link">
                             <a href="#">Login</a>
-                            <div class="login_box"></div>
+                            <div class="login_box">
+                                <div class="fb_cnct"></div>
+                                <div class="yigg_cnct"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="clear"></div>
