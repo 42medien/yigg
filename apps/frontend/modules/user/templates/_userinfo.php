@@ -65,7 +65,7 @@
        );?></li>
        <li class="logout"><?php echo link_to("Abmelden","@user_logout");?></li>
      </ul>
-  <?php else: ?>
+  <?php /* else: ?>
 
     <form action="<?php echo url_for('@user_login'); ?>" method="post">
     <fieldset>
@@ -84,7 +84,7 @@
         "@user_register",
         array("title" => "Lege Dir einen neuen Account bei uns an.", "class" => "register")
     ); ?>
-  <?php endif;?>
+  <?php endif; */?>
   <div class="clr"></div>
 </div>
 <div class="anzeige_titel">
