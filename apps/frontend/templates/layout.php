@@ -116,7 +116,7 @@
                             <a href="#">Login</a>
                             <div class="login_box">
                                 <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
-                                <?php echo link_to('Login', 'user_login', array('class=yigg_cnct'));?>
+                                <?php echo link_to('Login', 'user_login', array('class' => 'yigg_cnct'));?>
                             </div>
                         </div>
                     </div>
