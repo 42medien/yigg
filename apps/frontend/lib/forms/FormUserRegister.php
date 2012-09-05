@@ -39,7 +39,7 @@ class FormUserRegister extends yiggForm
             array(),
             array(
               'id'  => 'AcceptTerms',
-              'class' => 'chkBox'
+              'class' => 'chkBox accept-terms'
             )
           )
         )
