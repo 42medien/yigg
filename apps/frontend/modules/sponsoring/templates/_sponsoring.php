@@ -28,7 +28,7 @@
 
     <?php if( is_object($place) && true === $place->isAvailable() && $place->placesLeft() >= 1  && (!isset($preview_image) && !isset($preview_url)) ): ?>
     <?php for($i=0; $i < $place->placesLeft(); $i++): ?>
-        <!--  Sponsorship placeholders -->
+        <!--  Sponsorship placeholders 
         <div class="sponsorship preview">
             <?php if(true): //$place->intern_url == "@best_stories" AND $place->width < 200?>
             <p><strong>Ihre Anzeige hier? Buchen Sie jetzt?</strong>
@@ -37,7 +37,7 @@
             <?php endif;?>
             <?php echo link_to('Jetzt buchen!', $place->getOrderLink() , array("class"=>"button")) ?>
         </p>
-        </div>
+        </div> -->
         <?php endfor;?>
     <?php endif; ?>
     <div class="clr"></div>
