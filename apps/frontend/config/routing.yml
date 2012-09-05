@@ -316,11 +316,12 @@ story_create:
   param:  { module: story, action: create, view: Normal}
 
 category_stories:
-  url:    /nachrichten/:category_slug
+  url:    /nachrichten/:id/:category_slug
   class:   sfDoctrineRoute
   options: { model: Category, type: object }
   param:  { module: story, action: categoryStories }
   requirements:
+      id: \d+
       sf_method: [get]
 
 story_create_ext:
