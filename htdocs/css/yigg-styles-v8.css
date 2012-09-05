@@ -93,7 +93,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .login_link .login_box .fb_cnct, .login_link .login_box .yigg_cnct {width: 202px; height: 36px; cursor: pointer; margin: 0 auto; display: block;}
 .login_link .login_box .fb_cnct {background: url(../images/fb_cnct.png) 0 0 no-repeat; margin-bottom: 9px;}
 .login_link .login_box .yigg_cnct {background: url(../images/yigg_cnct.png) 0 0 no-repeat;}
-.login_fb {background: url(../images/login_fb.png) 0 0 no-repeat; width: 29px; height: 27px; cursor: pointer; display: block;}
+.login_fb {background: url(../images/login_fb.png) 0 0 no-repeat; width: 29px; height: 27px; cursor: pointer; display: block; float: right; margin: 0 0 0 1px;}
 #usernav {color: #111; padding: 0px 5px; font-size: 12px; float: right; width: 100%; margin-top: 10px}
 #usernav .profilepic {float: left; width: 35px}
 #navi {margin: 0; padding: 0; float: left;}
