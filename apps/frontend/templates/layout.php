@@ -36,7 +36,7 @@
         googletag.enableServices();
         });
     </script>
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.png" />
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
 
     <?php include_http_metas(); ?>
