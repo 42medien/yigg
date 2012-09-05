@@ -184,6 +184,7 @@ h3.entry-title {font-size: 1.4em}
 .userinfo form {margin: 0 auto; width: 219px; height: 107px; padding: 18px 0 0;}
 .userinfo form fieldset {margin: 0}
 .userinfo form .ninjaRequired {width: 211px; height: 25px; margin: 0 0 13px; display: block; padding: 1px 3px; border: 1px solid #9d9d9d; border-radius: 3px;}
+.userinfo form #Password.ninjaRequired {margin-bottom: 7px;}
 .userinfo .button, #LoginForm .button, #ResetPasswordForm .actions input, form#new_form #save, .settings .actions input, form.right-settings .actions input, form.post-box .actions input,
 form#new_form.ninjaForm #Save {height: 31px; width: 56px; padding: 0 0 3px; float: right; border: 1px solid #e5e5e5 !important; text-align: center; font: bold 13px/25px 'Trebuchet MS', sans-serif !important; color: #000; cursor: pointer;
 background: #ffeb7e; /* Old browsers */
