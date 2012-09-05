@@ -20,8 +20,8 @@
      );?>
   <?php endif; ?>
 
-<div class="userinfo">
   <?php if(true === $sf_user->hasUser()):?>
+  <div class="userinfo">
     <?php echo link_to(
       avatar_tag($sf_user->getUser()->Avatar, "noavatar-48-48.png", 48, 48),
       '@user_public_profile?username='.$sf_user->getUser()->username,
@@ -65,6 +65,8 @@
        );?></li>
        <li class="logout"><?php echo link_to("Abmelden","@user_logout");?></li>
      </ul>
+      <div class="clr"></div>
+</div>
   <?php /* else: ?>
 
     <form action="<?php echo url_for('@user_login'); ?>" method="post">
@@ -86,8 +88,7 @@
     ); ?>
   <?php*/ endif; ?>
 
-  <div class="clr"></div>
-</div>
+
 <div class="anzeige_titel">
     <p> Anzeige </p>
 </div>    
