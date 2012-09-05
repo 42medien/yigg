@@ -69,7 +69,7 @@
        <?php echo button_to("Einstellungen", "@user_settings", array("class" => "settings"));?>
      <?php endif;?>
      <?php if($user->facebook_id):?>
-       <input type="button" onclick="sendFbFriendRequest();" value="Add Facebook Friends" class="facebook">
+       <input type="button" onclick="sendFbFriendRequest();" value="Lade Deine Facebook Freunde ein" class="facebook">
      <?php endif;?>
    </div>
 <?php endif;?> 
