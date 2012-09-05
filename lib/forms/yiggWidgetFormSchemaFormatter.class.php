@@ -19,6 +19,8 @@ class yiggWidgetFormSchemaFormatter extends sfWidgetFormSchemaFormatter
             '%hidden_fields%' => null === $hiddenFields ? '%hidden_fields%' : $hiddenFields,
         ));
 
+        echo $field;
+
         return $rowFormat;
     }
 }
