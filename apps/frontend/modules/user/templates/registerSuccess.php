@@ -10,8 +10,8 @@
     <fieldset>
         <h1>Registrierung</h1>
       <?php echo $form->render();?>
-      <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>
-      <div class="field" style="margin-left:160px;">
+      <h3>Nutzungsbedingungen</h3>
+      <div class="field field_last">
         <ul>
           <li><?php echo link_to("Nutzungsbedingungen","@legal_pages?template=nutzungsbedingungen"); ?></li>
           <li><?php echo link_to("Datenschutzbestimmungen","@legal_pages?template=datenschutzrichtlinien"); ?></li>
@@ -19,7 +19,7 @@
       </div>
    </fieldset>
     <div class="actions">
-      <input type="submit" name="commit" value="Abschicken" class="button" style="font-size:1.2em; margin-left:125px" />
+      <input type="submit" name="commit" value="Abschicken" class="button" />
     </div>
   </form>
 <?php endif; ?>
