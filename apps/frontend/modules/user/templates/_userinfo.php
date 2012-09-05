@@ -84,7 +84,7 @@
         "@user_register",
         array("title" => "Lege Dir einen neuen Account bei uns an.", "class" => "register")
     ); ?>
-  <?php endif; */?>
+  <?php*/ endif; ?>
 
   <div class="clr"></div>
 </div>
