@@ -246,7 +246,7 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .tags li {background: url(../images/splice.png) -380px -2px no-repeat; float: left; list-style: none; padding: 0px 0  0  20px}
 .tags li a {background: white; padding-right: 3px; display: block; line-height: 1.1em}
 .tags.list-style {overflow: auto; height: auto; float: none}
-.avatar-list-style {margin: 0; border-bottom: 1px solid #e3e3e3;}
+.avatar-list-style {margin: 0 0 0 4px; padding: 0 0 10px; border-bottom: 1px solid #e3e3e3;}
 .twoThree-right .avatar-list-style a img {width: 14px; height: 14px; margin: 0 2px 0 0; display: inline-block;}
 .avatar-list-style li {margin: 0; list-style: none; display: block; overflow: hidden; white-space: nowrap; padding: 2px 5px; height: 15px}
 .list-style {margin: 0 0 10px 0}
