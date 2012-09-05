@@ -53,6 +53,40 @@
         
     });
     </script>
+
+      <!-- START FACEBOOK JAVASCRIPT SDK -->
+      <div id="fb-root"></div>
+      <script>
+          window.fbAsyncInit = function() {
+              FB.init({
+                  appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>,
+                  status       : false,
+                  cookie       : true,
+                  xfbml        : true,
+                  oauth        : true
+              });
+          };
+
+          // Load the SDK Asynchronously
+          (function(d){
+              var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+              if (d.getElementById(id)) {return;}
+              js = d.createElement('script'); js.id = id; js.async = true;
+              js.src = "//connect.facebook.net/en_US/all.js";
+              ref.parentNode.insertBefore(js, ref);
+          }(document));
+
+          function onClickloginfb() {
+              FB.login(function(response) {
+                  if (response.authResponse) {
+                      window.location = "/fb_login"
+                  }
+              }, {perms:'email,user_interests,user_likes'});
+
+
+          }
+      </script>
+      <!-- END FACEBOOK JAVASCRIPT SDK -->
     
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
@@ -81,6 +115,7 @@
                         <div class="login_link">
                             <a href="#">Login</a>
                             <div class="login_box">
+                                <a class="fb_cnct" href="#" onclick="onClickloginfb();"></a>
                                 <div class="fb_cnct"></div>
                                 <div class="yigg_cnct"></div>
                             </div>
