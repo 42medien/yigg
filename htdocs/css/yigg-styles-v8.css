@@ -627,4 +627,5 @@ ul#Categories {margin: 0; width: 490px; float: left; clear: both;}
 form#new_form.ninjaForm #Categories li input, form#new_form.ninjaForm #Categories li label {width: auto; height: auto; margin: 0; padding: 0; float: left;} 
 form#new_form.ninjaForm #Categories li label {display: block; font: 12px/16px 'Trebuchet MS', sans-serif; color: #000;}
 form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
+.validated_message {position: absolute; top: 90px; left: 90px;}
 /* End Categories */
