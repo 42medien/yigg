@@ -628,7 +628,7 @@ form#new_form #save {float: left; width: auto;}
 .settings .actions input, form.right-settings .actions input, form.post-box .actions input {float: none; padding-bottom: 6px;}
 form.right-settings label {margin: 0 0 3px;}
 form.right-settings input {display: inline;}
-#RegisterForm h3 {clear: both; margin-top: 20px;}
+#RegisterForm h3 {clear: both; margin-top: 20px; float: left; width: 100px;}
 /* End Login Page */
 
 /* Categories */
