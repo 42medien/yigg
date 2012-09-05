@@ -612,6 +612,7 @@ form.post-box .actions input {border: 1px solid #e3e3e3; background: #f5f5f5; di
 #LoginForm .field, #ResetPasswordForm .field {float: left; margin-right: 18px; width: 302px; clear: none; margin-bottom: 0;}
 #LoginForm .field + .field, #ResetPasswordForm .field + .field {margin-right: 0;}
 #LoginForm .field .field, #ResetPasswordForm .field .field {margin-bottom: 0;}
+#ResetPasswordForm .actions {margin: 20px 0px 0px; clear: both; float: left;}
 #LoginForm .button, #ResetPasswordForm .actions input {float: left; width: auto; margin: 0 15px 0 0; padding: 0 8px 2px;}
 #LoginForm #user_reset_password {font: 12px/23px 'Trebuchet MS', sans-serif; color: #9a9c9d; float: right;}
 #LoginForm .error {margin: 0 0 5px;}
