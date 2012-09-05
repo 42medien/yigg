@@ -94,8 +94,8 @@
         
         <div class="twoThree clr">
         <div class="twoThree-left">
-          <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>  
-          <!--  google_ad_section_start -->
+         <!-- <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>  -->
+         <!--  google_ad_section_start -->
           <?php echo $sf_data->getRaw('sf_content'); ?>
           <!--  google_ad_section_end -->          
         </div>
