@@ -601,7 +601,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 #LoginForm .field.remember-me label {display: block;}
 .log_title, #RegisterForm h1 {font: 18px 'Trebuchet MS', sans-serif; color: #191919;}
 .log_title + .succes {margin: 0 0 15px;}
-#LoginForm .field, #ResetPasswordForm .field {margin: 0 0 13px;}
+#LoginForm .field, #ResetPasswordForm .field, #RegisterForm .field {margin: 0 0 13px;}
 #LoginForm .remember-me {margin: 0 0 25px !important; clear: both !important;}
 #LoginForm .actions {clear: both;}
 #LoginForm .remember-me label, #LoginForm .remember-me input {float: left; margin-bottom: 0;}
@@ -609,9 +609,9 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 #LoginForm .remember-me input {margin-right: 5px; margin-left: 0;}
 #LoginForm input, #ResetPasswordForm input, form#new_form input, form#new_form #save, .settings .actions input, form.right-settings input, form.right-settings .actions input, 
 form.post-box .actions input {border: 1px solid #e3e3e3; background: #f5f5f5; display: block; height: 25px; padding: 1px 3px; width: 293px; color: #000;}
-#LoginForm .field, #ResetPasswordForm .field {float: left; margin-right: 18px; width: 302px; clear: none; margin-bottom: 0;}
-#LoginForm .field + .field, #ResetPasswordForm .field + .field {margin-right: 0;}
-#LoginForm .field .field, #ResetPasswordForm .field .field {margin-bottom: 0;}
+#LoginForm .field, #ResetPasswordForm .field, #RegisterForm .field {float: left; margin-right: 18px; width: 302px; clear: none; margin-bottom: 0;}
+#LoginForm .field + .field, #ResetPasswordForm .field + .field, #RegisterForm .field + .field {margin-right: 0;}
+#LoginForm .field .field, #ResetPasswordForm .field .field, #RegisterForm .field .field {margin-bottom: 0;}
 #ResetPasswordForm .actions {margin: 20px 0px 0px; clear: both; float: left;}
 #LoginForm .button, #ResetPasswordForm .actions input {float: left; width: auto; margin: 0 15px 0 0; padding: 0 8px 2px;}
 #LoginForm #user_reset_password {font: 12px/23px 'Trebuchet MS', sans-serif; color: #9a9c9d; float: right;}
