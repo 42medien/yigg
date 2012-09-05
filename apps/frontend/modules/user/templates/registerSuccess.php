@@ -6,16 +6,8 @@
   <p class="error">Wir konnten Dir keinen Bestätigungslink schicken. Bitte überprüfe und korrigiere Deine email-Adresse <?php echo $user->email; ?>
    Dein Konto kann nur nach Anmeldung mit einer bestätigten email-Adresse freigeschaltet werden</p>
 <?php else: ?>
-
-
-<button onclick="onClickloginfb();">Login</button>
-
-
   <form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
     <fieldset>
-
-
-
       <?php echo $form->render();?>
       <h3 style="margin-left:150px;">Nutzungsbedingungen</h3>
       <div class="field" style="margin-left:160px;">
