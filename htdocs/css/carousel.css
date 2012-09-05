@@ -47,8 +47,8 @@
     padding:0 0 5px 0;
     float:right;
 }
-#buttons #prev, #buttons #next {width: 21px; height: 60px;}
-#buttons #prev {background: url('../images/prev.png') 0 0 no-repeat;}
-#buttons #next {background: url('../images/next.png') 0 0 no-repeat;}
+#buttons #prev, #buttons #next {width: 21px; height: 60px; display: block; position: absolute; z-index: 2; top: 36%;}
+#buttons #prev {background: url('../images/prev.png') 0 0 no-repeat; left: 0;}
+#buttons #next {background: url('../images/next.png') 0 0 no-repeat; right: 0;}
 
 .clear {clear:both}
