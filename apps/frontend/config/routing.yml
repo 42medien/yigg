@@ -121,14 +121,6 @@ worldspy_delete_entry:
   requirements: { node_id: \d+ }
 
 # Story Presentation
-category_stories:
-  url:    /nachrichten/:category_slug
-  class:   sfDoctrineRoute
-  options: { model: Category, type: object }
-  param:  { module: story, action: categoryStories }
-  requirements:
-      sf_method: [get]
-
 best_stories:
   url:    /
   param:  { module: story, action: bestStories, filter: heute, rss: true}
@@ -322,6 +314,14 @@ story_archive:
 story_create:
   url:    /nachrichten/erstellen
   param:  { module: story, action: create, view: Normal}
+
+category_stories:
+  url:    /nachrichten/:category_slug
+  class:   sfDoctrineRoute
+  options: { model: Category, type: object }
+  param:  { module: story, action: categoryStories }
+  requirements:
+      sf_method: [get]
 
 story_create_ext:
   url:    /neu
