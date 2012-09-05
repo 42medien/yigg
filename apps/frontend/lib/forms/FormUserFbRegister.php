@@ -25,13 +25,15 @@ class FormUserFbRegister extends yiggForm
                     array(),
                     array(
                         'id'    => 'Benutzername',
-                        'value' => $this->getOption('username')
+                        'value' => $this->getOption('username'),
+                        'placeholder' => 'Benutzername'
                     )
                 ),
                 'password'    => new sfWidgetFormInputPassword(
                     array(),
                     array(
-                        'id'  => 'Passwort'
+                        'id'  => 'Passwort',
+                        'placeholder' => 'Passwort'
                     )
                 ),
                 'email'    => new sfWidgetFormInput(
@@ -39,7 +41,8 @@ class FormUserFbRegister extends yiggForm
                     array(
                         'id'  => 'Email',
                         'value' => $this->getOption('email'),
-                        'readonly'=>'readonly'
+                        'readonly'=>'readonly',
+                        'placeholder' => 'Email'
                     )
                 ),
                 'acceptedTerms' => new sfWidgetFormInputCheckbox(
@@ -111,10 +114,10 @@ class FormUserFbRegister extends yiggForm
         // set labels
         $this->widgetSchema->setLabels(
             array(
-                'facebook_id'       => 'facebook_id:',
-                'username'          => 'Benutzername:',
-                'password'          => 'Passwort:',
-                'email'             => 'Email:',
+                'facebook_id'       => false,
+                'username'          => false,
+                'password'          => false,
+                'email'             => false,
                 'acceptedTerms'     => 'Nutzungsbedingungen:',
             )
         );
