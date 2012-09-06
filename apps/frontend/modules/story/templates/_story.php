@@ -1,6 +1,6 @@
 <?php echo tag( isset($total) && $total > 1 ? "li" : "div", array("class"=>"hentry post ", "id"=>"story_{$story['id']}"), true);?>
   <?php use_helper("Date"); ?>
-  <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
+  
   <?php include_partial('story/storyActions', array('story' => $story));?>
 
    <h3 class="entry-title">
@@ -118,6 +118,7 @@
 		    <div class="clr"><!--  --></div>                  
         </div>
     </div>
+<?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
