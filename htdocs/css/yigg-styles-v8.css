@@ -222,7 +222,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .consensus-holder {height: 150px; width: 180px}
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
-#story-list {width: 702px; float: left; margin: 0;}
+#story-list {margin: 0 0 0 -12px; width: 729px; float: left;}
 #story-list .list_cont {height: 283px; overflow: hidden;}
 .story-list, spec-list {margin-left: 0}
 .story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
