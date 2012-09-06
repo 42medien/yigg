@@ -66,7 +66,7 @@ a:hover {text-decoration: none;}
 .header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
 /*.header_data {width: 1255px; margin: 0 auto;}*/
 .header_data .logo_box {float: left; margin: 0 0 0 -107px;}
-.header_data .login_box_cont {width: 713px; float: left;}
+.header_data .login_box_cont {width: 670px; float: left;}
 .header_data .login_box {position: relative; margin: 0 auto; width: 970px; height: 50px; border-left: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 3px solid #6d6d6d;}
 .header_data .login_box ul.login_link li a {font: 14px 'Arial', sans-serif; color: #fff; padding: 0 17px; border-right: 1px solid #fff;}
 .header_data .login_box ul.login_link li.last a {border-right: none;}
@@ -110,7 +110,7 @@ background: linear-gradient(to bottom,  #ffffff 1%,#f3f3f3 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
 }
 #navi li.selected, #navi li.create {border-top: 1px solid #cdcdcd;}
-#navi li a {display: block; font: bold 14px 'Arial', sans-serif; color: #333; padding: 29px 12px 0; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
+#navi li a {display: block; font: bold 14px 'Arial', sans-serif; color: #333; padding: 29px 8px 0; /*background: #ffcc99 url(../images/splice.png) 100% -57px repeat-x; margin-left: 3px; padding: 8px; color: #e57e1a; font-weight: bold; font-size: 1.1em; text-decoration: none*/}
 /*#navi li.selected, #navi li:hover {background: url(../images/splice.png) 0 -89px}
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
 /*#navi li.create, #navi li.create a {background: none; color: #993300}*/
@@ -292,7 +292,7 @@ form .Double-Dropdowns {width: 220px; float: left; margin: 0 5px 0 0}
 form .actions input {background: #eee; border: 1px solid #4d3f3e !important; padding: 1px 3px; margin: 5px 3px; width: auto; cursor: pointer; color: #000}
 form fieldset {border: none}
 #searchForm .field, #searchForm .button {float: left;}
-#searchForm .field input {width: 294px; border: 1px solid #e3e3e3; background: #f5f5f5; height: 25px; padding: 0 3px; line-height: 25px;}
+#searchForm .field input {width: 236px; border: 1px solid #e3e3e3; background: #f5f5f5; height: 25px; padding: 0 3px; line-height: 25px;}
 #searchForm .button {border: 1px solid #e3e3e3; border-left: 0; width: 31px; height: 27px; text-align: center; padding: 0 0 4px; color: #fff; font-weight: bold;
 background: #ffeb7e; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffeb7e 1%, #ffda05 100%); /* FF3.6+ */
