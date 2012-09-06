@@ -16,11 +16,13 @@
   </ul>
 
 <?php if(count($entries) > 0):?>
+<div class="story-list-cont">
   <ol class="story-list hfeed">
     <?php foreach($entries as $entry):?>
       <?php include_partial("expandedNode", array("entry" => $entry)); ?>
     <?php endforeach; ?>
   </ol>
+</div>
   <?php echo $pager->display(); ?>
 <?php else:?>
   <p class="error">Es wurden keine Top-Nachrichten gefunden!</p>
