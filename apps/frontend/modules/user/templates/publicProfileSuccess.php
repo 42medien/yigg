@@ -102,7 +102,7 @@
   <?php include_partial("userWidgetStats", array("user" => $user))?>
 
   <?php if(count($followedUsers) > 0):?>
-    <h3>Abonnements</h3>
+    <h3 class="avtr">Abonnements</h3>
     <?php include_partial("user/avatarList", array("users" => $followedUsers));?>
   <?php endif;?>
 
