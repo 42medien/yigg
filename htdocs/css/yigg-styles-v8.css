@@ -673,8 +673,9 @@ form#new_form.ninjaForm #Categories li input, form#new_form.ninjaForm #Categorie
 form#new_form.ninjaForm #Categories li label {display: block; font: 12px/16px 'Arial', sans-serif; color: #000;}
 form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .validating {position: absolute; top: 90px; left: 90px;}
-#categories-nav {position: fixed; left: 10%; top: 22%;}
+#categories-nav {position: fixed; left: 13.5%; top: 22%;}
 #categories-nav li {display: block; float: none;}
+#categories-nav li a {color: #000;}
 /* End Categories */
 
 /* FanBox */
