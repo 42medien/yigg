@@ -100,8 +100,8 @@
            <?php include_partial(
            	 "story/youtubeVideo",
                array(
-               	"width" => 360,
-               	"height"=> 280,
+               	"width" => 340,
+               	"height"=> 165,
                	"story" => $story,
                )
              );
