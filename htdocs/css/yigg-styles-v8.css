@@ -292,7 +292,7 @@ form .Double-Dropdowns {width: 220px; float: left; margin: 0 5px 0 0}
 form .actions input {background: #eee; border: 1px solid #4d3f3e !important; padding: 1px 3px; margin: 5px 3px; width: auto; cursor: pointer; color: #000}
 form fieldset {border: none}
 #searchForm .field, #searchForm .button {float: left;}
-#searchForm .field input {width: 236px; border: 1px solid #e3e3e3; background: #f5f5f5; height: 25px; padding: 0 3px; line-height: 25px;}
+#searchForm .field input {width: 261px; border: 1px solid #e3e3e3; background: #f5f5f5; height: 25px; padding: 0 3px; line-height: 25px;}
 #searchForm .button {border: 1px solid #e3e3e3; border-left: 0; width: 31px; height: 27px; text-align: center; padding: 0 0 4px; color: #fff; font-weight: bold;
 background: #ffeb7e; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffeb7e 1%, #ffda05 100%); /* FF3.6+ */
