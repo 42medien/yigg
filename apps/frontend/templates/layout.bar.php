@@ -13,7 +13,7 @@
     <?php include_http_metas(); ?>
     <?php include_metas() ?>
     <?php include_component('system','Feeds') ?>
-    <?php include_title() ?>
+    <?php //include_title() ?>
     <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
 
