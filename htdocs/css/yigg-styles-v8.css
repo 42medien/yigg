@@ -223,11 +223,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
 .story-list-cont {overflow: hidden; margin: -24px 0px 0px -12px; width: 682px;}
-#story-list {width: 730px; float: left;}
+#story-list {width: 684px; float: left; margin: 0;}
 #story-list .list_cont {height: 283px; overflow: hidden;}
 .story-list, spec-list {margin-left: 0}
 .story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
-.story-list .hentry {width: 338px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf; border-right: 1px solid #cfcfcf; padding: 0 13px; position: relative; margin: 0;}
+.story-list .hentry {width: 315px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf; border-right: 1px solid #cfcfcf; padding: 0 13px; position: relative; margin: 0;}
 .story-list .hentry .entry-title {width: 310px; margin: 0; padding: 15px 0;}
 .story-list .hentry .entry-title a {font: 18px 'Arial', sans-serif; color: #191919; height: 46px; display: block; overflow: hidden;}
 .story-list .hentry:hover .entry-title a, .story-list .hentry:hover h3.comments a {color: #00709e;}
