@@ -57,17 +57,17 @@ a:hover {text-decoration: none;}
 .heading-right {margin: 0;}
 .clr {clear: left}
 .clr.bth, .clear {clear: both;}
-.hr_bt {width: 995px; margin: 0 auto; padding: 20px 0; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
+.hr_bt {width: 1010px; margin: 0 auto; padding: 20px 0; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
 .twoThree {display: table; table-layout: fixed; width: 995px;}
 .twoThree .twoThree-left, .twoThree .twoThree-right {display: table-cell; vertical-align: top;}
 #container {position: relative;}
-#container #content {width: 995px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3; overflow: auto;}
+#container #content {width: 1010px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3; overflow: auto;}
 .content_data {margin: 0 0 0 12px; width: 1061px;}
 .header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
 /*.header_data {width: 1255px; margin: 0 auto;}*/
 .header_data .logo_box {float: left; margin: 0 0 0 -107px;}
 .header_data .login_box_cont {width: 670px; float: left;}
-.header_data .login_box {position: relative; margin: 0 auto; width: 995px; height: 50px; border-left: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 3px solid #6d6d6d;}
+.header_data .login_box {position: relative; margin: 0 auto; width: 1010px; height: 50px; border-left: 1px solid #cdcdcd; border-right: 1px solid #cdcdcd; border-bottom: 3px solid #6d6d6d;}
 .header_data .login_box ul.login_link li a {font: 14px 'Arial', sans-serif; color: #fff; padding: 0 17px; border-right: 1px solid #fff;}
 .header_data .login_box ul.login_link li.last a {border-right: none;}
 .header_data .login_box ul.social_link li a {display: block; width: 22px; height: 17px;}
@@ -133,7 +133,7 @@ background: -ms-linear-gradient(top, #434343 0%,#222222 100%); /* IE10+ */
 background: linear-gradient(to bottom, #434343 0%,#222222 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
 }
-#footer fieldset {display: block; margin: 0 auto; width: 995px; text-align: left;}
+#footer fieldset {display: block; margin: 0 auto; width: 1010px; text-align: left;}
 #footer fieldset ul {margin: 0;}
 #footer fieldset h4 {margin-left: 0; margin-bottom: 15px;}
 #footer ul li {list-style: none; margin: 0 0 6px;}
@@ -292,7 +292,7 @@ form .Double-Dropdowns {width: 220px; float: left; margin: 0 5px 0 0}
 form .actions input {background: #eee; border: 1px solid #4d3f3e !important; padding: 1px 3px; margin: 5px 3px; width: auto; cursor: pointer; color: #000}
 form fieldset {border: none}
 #searchForm .field, #searchForm .button {float: left;}
-#searchForm .field input {width: 261px; border: 1px solid #e3e3e3; background: #f5f5f5; height: 25px; padding: 0 3px; line-height: 25px;}
+#searchForm .field input {width: 275px; border: 1px solid #e3e3e3; background: #f5f5f5; height: 25px; padding: 0 3px; line-height: 25px;}
 #searchForm .button {border: 1px solid #e3e3e3; border-left: 0; width: 31px; height: 27px; text-align: center; padding: 0 0 4px; color: #fff; font-weight: bold;
 background: #ffeb7e; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffeb7e 1%, #ffda05 100%); /* FF3.6+ */
