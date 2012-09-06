@@ -2,12 +2,19 @@
 slot(
     'canonical',
     '<link href="'.url_for_story($story).'" rel="canonical">');
+
+$source = $story->getStoryImageSource();
+if($source){
+    $image_source = $sf_request->getUriPrefix().$sf_request->getRelativeUrlRoot()."/".$source;
+}else{
+    $image_source = "http://stromboli.yigg.de/?url=" . $story->external_url;
+}
 slot(
     'ogp',
     '<meta property="og:title" content="'.$story->getTitle().'" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="'.url_for_story($story, "bar").'" />
-    <meta property="og:image" content="'.$sf_request->getUriPrefix().$sf_request->getRelativeUrlRoot().'"  />
+    <meta property="og:image" content="'.$image_source.'"  />
     <meta property="og:description" content="'.$story->getDescription().'" />');
 ?>
 
