@@ -111,10 +111,10 @@
                 </div>
                 <div class="login_box">
                     <div class="login_box_cont">
-                        <?php include_partial("system/navigation"); ?>
-                        <div class="login_fb"></div>
+                        <?php include_partial("system/navigation"); ?>                        
                         <div class="login_link">
                             <a href="#">Login</a>
+                            <div class="login_fb"></div>
                             <div class="login_box">
                                 <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
                                 <a class="yigg_cnct" href="<?php echo url_for('@user_login');?>"></a>
