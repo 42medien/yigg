@@ -93,23 +93,22 @@
   <body>
     <div id="container">
         <div class="header">
-            <div class="header_data">
-                <div class="logo_box">
-                    <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
-                    <?php
-                    echo link_to(img_tag('yigg_logo.png', array(
-                                'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                                'width' => 90,
-                                'height' => 53
-                            )),
-                            '@best_stories',
-                            array(
-                                'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                                'rel' => 'home',
-                                'class' => 'logo'
-                    )); ?>
-                </div>
+            <div class="header_data">                
                 <div class="login_box">
+                    <div class="logo_box">
+                        <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
+                        <?php
+                        echo link_to(img_tag('yigg_logo.png', array(
+                                    'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+                                    'width' => 90,
+                                    'height' => 53
+                                )), '@best_stories', array(
+                            'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+                            'rel' => 'home',
+                            'class' => 'logo'
+                        ));
+                        ?>
+                    </div>
                     <div class="login_box_cont">
                         <?php include_partial("system/navigation"); ?>                        
                         <div class="login_link">
