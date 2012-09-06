@@ -117,7 +117,6 @@ class StoryTable extends Doctrine_Table
         $stories = yiggStoryFinder::create()
             ->confineWithTags($tags)
             ->excludeId($story->getId())
-            ->groupById()
             ->setLimit($limit)
             ->sortByDate()
             ->executeQuery();
