@@ -70,8 +70,8 @@ class yiggYouTubeVideo extends yiggExternalVideoSupport implements yiggExternalV
     $partial = new sfPartialView( sfContext::getInstance(), "video","_Youtube","");
     $partial->setPartialVars(array(
       'video' => $this,
-      'width' => isset($this->width) ? $this->width : 535,
-      'height' => isset($this->height) ? $this->height : 400
+      'width' => isset($this->width) ? $this->width : 340,
+      'height' => isset($this->height) ? $this->height : 165
     ));
     return $partial->render();
   }
