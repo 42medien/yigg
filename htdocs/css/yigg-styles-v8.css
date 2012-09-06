@@ -213,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 }
 .userinfo .avatar {float: left; margin-right: 6px; border: 1px solid #c7c6c6;}
 .userinfo ul {clear: both; padding: 13px 0 0; margin: 0;}
-.userinfo ul li {list-style-type: none; float: none; margin: 0 0 4px; width: auto}
+.userinfo ul li {list-style-type: none; float: none; margin: 0 0 6px; width: auto}
 .userinfo ul li a {background: #666666; font: 12px 'Arial', sans-serif; color: #fff; text-shadow: 1px 1px #000; width: 90px; text-align: center;}
 .screenshot, .consensus-holder {float: right; clear: right; background: url(../images/screenshot-loading-normal.png) top right no-repeat; height: 100px; width: 130px; margin: 5px 20px 0 10px; position: relative}
 .screenshot a, .consensus-holder a {padding: 0  9px 9px 0}
@@ -272,7 +272,7 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .list-style li.new-story {background: url(../images/splice.png) -400px 0  no-repeat}
 .list-style li.group {background: url(../images/splice.png) -280px -20px no-repeat}
 .list-style li.pm {background: url(../images/splice.png) -320px -20px no-repeat}
-.list-style li.logout {background: url('../images/logout.png') 0 0 no-repeat; margin: 0;}
+.list-style li.logout {background: url('../images/logout.png') 0 0 no-repeat; margin: 0; clear: both;}
 .list-style li.admin {background: url(../images/splice.png) -360px 0  no-repeat}
 .list-style li.edit {background: url(../images/splice.png) -320px 0  no-repeat}
 .list-style li.edit-user {background: url(../images/splice.png) -360px -20px no-repeat}
