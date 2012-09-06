@@ -63,6 +63,9 @@
            "title" => "Zu meiner Pinwand",
          )
        );?></li>
+       <li class="fb_acc">
+           <a href="#">Lade Freunde ein</a>
+       </li>
        <li class="logout"><?php echo link_to("Abmelden","@user_logout");?></li>
      </ul>
       <div class="clr"></div>
