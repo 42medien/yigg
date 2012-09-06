@@ -20,6 +20,7 @@ class storyActions extends yiggActions
 
         $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
 
+        $this->getResponse()->setTitle($this->story->getTitle());
         $this->setLayout('layout.bar');
     }
 
