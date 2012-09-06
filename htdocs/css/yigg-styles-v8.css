@@ -61,7 +61,7 @@ a:hover {text-decoration: none;}
 .twoThree {display: table; table-layout: fixed; width: 995px;}
 .twoThree .twoThree-left, .twoThree .twoThree-right {display: table-cell; vertical-align: top;}
 #container {position: relative;}
-#container #content {width: 1010px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3; overflow: auto;}
+#container #content {width: 1010px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
 .content_data {margin: 0 0 0 12px;}
 .header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
 /*.header_data {width: 1255px; margin: 0 auto;}*/
@@ -262,7 +262,7 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .twoThree-right .avatar-list-style a {height: 19px; line-height: 19px;}
 .twoThree-right .avatar-list-style a img {width: 14px; height: 14px; margin: 0 5px 0 0; display: inline-block; vertical-align: middle;}
 .twoThree-right .avatar-list-style a.title {font: 14px/17px 'Arial', sans-serif; color: #444;}
-.avatar-list-style li {margin: 0; list-style: none; display: block; overflow: hidden; white-space: nowrap; padding: 2px 5px; height: 16px; width: 320px;}
+.avatar-list-style li {margin: 0; list-style: none; display: block; overflow: hidden; white-space: nowrap; padding: 2px 5px; height: 16px; width: 300px;}
 .list-style {margin: 0 0 10px 0}
 .list-style li {margin: 0; padding-left: 24px; list-style: none}
 .list-style li a {padding: 2px 5px; display: block; height: 15px; overflow: hidden; background: #FFF}
