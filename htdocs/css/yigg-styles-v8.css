@@ -327,6 +327,8 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .rating-form p {display: none}
 .rating-form {/*background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; padding: 0 0 0 22px;*/ border: none; margin: 0; line-height: 18px;}
 #story-list .rating-form {position: absolute; left: 13px; bottom: 0;}
+.list_cont + .rating-form {float: left; margin: 10px 0 0;}
+.list_cont + .rating-form + .story_bt_data {float: right;}
 .voted span, .rating-form input, .rating-form .button {display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px; float: left; line-height: 18px; padding: 0 2px;}
 .rating-form .button {cursor: pointer; padding: 0; height: 20px; font: 11px 'Arial', sans-serif;}
 .rating-form input, .voted span, .voted span a {text-decoration: none; color: /*#f5f5f5; text-shadow: 0 1px #DFAB3C*/ #000;}
