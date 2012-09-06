@@ -649,7 +649,7 @@ form#new_form.ninjaForm .field {width: 456px; float: right; clear: both; positio
 form#new_form.ninjaForm #Save {float: right; width: auto; padding: 0 8px 2px;}
 form#new_form.ninjaForm input {margin: 0 0 12px; width: 434px;}
 form#new_form.ninjaForm textarea {width: 429px; margin: 0 0 12px; border: 1px solid #e3e3e3 !important; background: #f5f5f5;}
-.profileForm .field {float: left; margin: 0 0 15px; clear: none;}
+.profileForm .field {float: left; margin: 0 15px 15px 0; clear: none;}
 form#new_form .actions {margin: 0 10px 20px 0;}
 form#new_form #save {float: left; width: auto;}
 .prof_avtr img {border: 1px solid #C7C6C6;}
