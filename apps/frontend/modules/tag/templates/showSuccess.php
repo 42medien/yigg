@@ -7,7 +7,7 @@
        <?php endif;?>
    </div>
 <?php endif;?>
-
+<div class="story-list-cont">
 <ol class="story-list hfeed">
   <?php foreach($stories as $k => $story ): ?>
     <?php include_partial('story/story',
@@ -22,6 +22,7 @@
     ?>
   <?php endforeach; ?>
 </ol>
+</div>
 <?php echo $pager->display();?>
 
 <?php slot("sidebar")?>
