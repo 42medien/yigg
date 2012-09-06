@@ -7,7 +7,7 @@ slot(
     '<meta property="og:title" content="'.$story->getTitle().'" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="'.url_for_story($story, "bar").'" />
-    <meta property="og:image" content="'.$sf_request->getRelativeUrlRoot().'"  />
+    <meta property="og:image" content="'.$sf_request->getUriPrefix().$sf_request->getRelativeUrlRoot().'"  />
     <meta property="og:description" content="'.$story->getDescription().'" />');
 ?>
 
