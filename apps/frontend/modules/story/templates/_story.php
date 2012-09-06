@@ -18,7 +18,8 @@
            $story["external_url"],
            array(
                'title' => $story->title,
-               'class' => 'logo'
+               'class' => 'logo',
+               'target' => '_blank'
            ));
        ?>
    </h3>
