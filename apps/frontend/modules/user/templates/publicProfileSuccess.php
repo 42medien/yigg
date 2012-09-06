@@ -107,7 +107,7 @@
   <?php endif;?>
 
   <?php if(count($followingUsers) > 0):?>
-    <h3>Abonnenten</h3>
+    <h3 class="avtr">Abonnenten</h3>
     <?php include_partial("user/avatarList", array("users" => $followingUsers));?>
   <?php endif;?>
 
