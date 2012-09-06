@@ -686,3 +686,5 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 /* FanBox */
 .fb_iframe_widget {display: block !important; width: 300px; margin: 15px auto;}
 /* End FanBox */
+
+#PostboxCreateMessage .actions input {margin: 10px auto 0;}
