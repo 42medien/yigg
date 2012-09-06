@@ -20,8 +20,12 @@ class storyActions extends yiggActions
 
         $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
 
-        $this->getResponse()->addMeta('title', $this->story->getTitle());
-        $this->getResponse()->addMeta('description', $this->story->getDescription());
+        //$this->getResponse()->addMeta('title', $this->story->getTitle());
+        //$this->getResponse()->addMeta('description', $this->story->getDescription());
+
+        slot(
+        'title',
+         'test');
         //$this->getResponse()->setTitle($this->story->getTitle());
         $this->setLayout('layout.bar');
     }
