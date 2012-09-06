@@ -1,7 +1,12 @@
 <?php slot(
     'canonical',
-    '<link href="'.url_for_story($story).'" rel="canonical">')
+    '<link href="'.url_for_story($story).'" rel="canonical">');
+slot(
+    'ogp',
+    '<meta property="og:title" content="5 Social Media Strategien (via YiGG)" />');
 ?>
+
+
 <div id="bar_wraper">
     <div id="bar_content">
         <div id="bar_logo">

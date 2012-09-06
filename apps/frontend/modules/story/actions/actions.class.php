@@ -23,9 +23,7 @@ class storyActions extends yiggActions
         $this->getResponse()->addMeta('title', $this->story->getTitle());
         $this->getResponse()->addMeta('description', $this->story->getDescription());
 
-        slot(
-        'ogp',
-         '<meta property="og:title" content="5 Social Media Strategien (via YiGG)" />');
+
         //$this->getResponse()->setTitle($this->story->getTitle());
         $this->setLayout('layout.bar');
     }
