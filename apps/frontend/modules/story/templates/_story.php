@@ -41,7 +41,31 @@
 
 
    <div class="body entry-content<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
-     <p>                                
+     <p>
+       
+       <?php if($story->type == Story::TYPE_VIDEO): ?>
+           <?php $video = yiggExternalVideoFactory::createFromUrl($story->external_url);
+                echo false === empty($video) ? $video->render() : "" ; ?>
+        <?php endif; ?>
+
+
+         <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()): ?>
+
+           <?php include_partial(
+           	 "story/youtubeVideo",
+               array(
+               	"width" => 360,
+               	"height"=> 280,
+               	"story" => $story, 
+               )
+             );
+           ?>
+           <!--<div class="story-inline-advert"> -->
+             <?php //echo adsense_ad_tag(7012733842, 468, 60);?>
+            <!-- </div> -->
+          <?php endif; ?>  
+         
+         
        <span class="story_auth"> 
          <?php echo avatar_tag($story->Author->Avatar, "icon.gif", 14, 14, array("alt" => "Avatar von {$story->Author->username}"));?>
          <?php echo link_to(
@@ -89,27 +113,7 @@
             <!-- </div> -->
         <?php endif;?>
 
-        <?php if($story->type == Story::TYPE_VIDEO): ?>
-           <?php $video = yiggExternalVideoFactory::createFromUrl($story->external_url);
-                echo false === empty($video) ? $video->render() : "" ; ?>
-        <?php endif; ?>
-
-
-         <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()): ?>
-
-           <?php include_partial(
-           	 "story/youtubeVideo",
-               array(
-               	"width" => 360,
-               	"height"=> 280,
-               	"story" => $story, 
-               )
-             );
-           ?>
-           <!--<div class="story-inline-advert"> -->
-             <?php //echo adsense_ad_tag(7012733842, 468, 60);?>
-            <!-- </div> -->
-          <?php endif; ?>  
+        
 
 		    <div class="clr"><!--  --></div>                  
         </div>
