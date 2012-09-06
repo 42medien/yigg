@@ -34,6 +34,7 @@
   <div class="clr"><!--  --></div>
 </div>
 <?php if(isset($stories)&& count($stories) > 0): ?>
+<div class="story-list-cont">
   <ol id="story-list" class="story-list hfeed">
     <?php foreach($stories as $k => $story ): ?>
       <?php
@@ -50,6 +51,7 @@
       ?>
     <?php endforeach; ?>
   </ol>
+</div>
 <?php elseif(false != $day): ?>
   <p class="error">Es wurden keine Nachrichten gefunden.</p>
 <?php endif; ?>
