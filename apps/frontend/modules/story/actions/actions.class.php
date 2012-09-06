@@ -18,7 +18,7 @@ class storyActions extends yiggActions
     {
         $this->findOrRedirect($request);
 
-        $this->relatedStories = StoryTable::retrieveRelatedStories($this->story->getTags());
+        $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
 
         $this->setLayout('layout.bar');
     }
@@ -155,7 +155,7 @@ class storyActions extends yiggActions
   {
     $this->findOrRedirect($request);
 
-      $this->relatedStories = Doctrine_Core::getTable('Story')->retrieveRelatedStories($this->story->getTags());
+      $this->relatedStories = Doctrine_Core::getTable('Story')->retrieveRelatedStories($this->story);
 
     switch($request->getParameter("view"))
     {

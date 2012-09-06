@@ -305,6 +305,20 @@ class yiggStoryFinder
     return $this;
   }
 
+    /**
+     *
+     * @param    string  $criteria
+     * @return    StoryFinder
+     */
+    public function excludeId($criteria)
+    {
+        if( $id = intval($criteria) )
+        {
+            $this->wheres['id'] = 's.id != '.$id;
+        }
+        return $this;
+    }
+
   public function confineWithStoriesWithComments()
   {
     $this->joins['story_comments'] = 'INNER JOIN story_comment on s.id = story_comment.story_id';

@@ -108,14 +108,16 @@ class StoryTable extends Doctrine_Table
 
     /**
      * @static
-     * @param $tags Doctrine collection Story tags
+     * @param $sotry Story
      * @param $limit
      */
-    public static function retrieveRelatedStories($tags, $limit = 5)
+    public static function retrieveRelatedStories($story, $limit = 5)
     {
-
+        $tags = $story->getTags();
         $stories = yiggStoryFinder::create()
             ->confineWithTags($tags)
+            ->excludeId($story->getId())
+            ->groupById()
             ->setLimit($limit)
             ->sortByDate()
             ->executeQuery();
