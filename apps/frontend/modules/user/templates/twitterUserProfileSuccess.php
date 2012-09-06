@@ -1,6 +1,7 @@
 <h1 class="username"><?php echo $username; ?></h1>
 
 <?php if(count($stories) > 0): ?>
+<div class="story-list-cont">
   <ol id="story-list" class="story-list hfeed ">
     <?php foreach($stories as $k => $story ): ?>
       <?php
@@ -16,6 +17,7 @@
       ?>
     <?php endforeach; ?>
   </ol>
+</div>
   <?php echo $pager->display(); ?>
 <?php else: ?>
   <p class="note">Es wurden keine Nachrichten gefunden</p>
