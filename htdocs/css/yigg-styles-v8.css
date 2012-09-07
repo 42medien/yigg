@@ -230,7 +230,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .filters + .story-list-cont .story-list, #archive + .story-list-cont .story-list {border-top: 1px solid #CFCFCF;}
 #archive + .story-list-cont {margin: -24px 0 -1px -12px;}
 #story-list, .story-list {width: 684px; float: left; margin: 13px 0 0;}
-#story-list .list_cont {height: 283px; overflow: hidden;}
+#story-list .list_cont {height: 294px; overflow: hidden;}
 .story-list, spec-list {margin-left: 0}
 .story-list .hentry, .spec-list .hentry {list-style: none; min-height: 130px; padding-bottom: 30px;}
 .story-list .hentry {width: 315px; float: left; max-height: 390px; border-bottom: 1px solid #cfcfcf; border-right: 1px solid #cfcfcf; padding: 0 13px; position: relative; margin: 0;}
