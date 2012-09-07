@@ -57,7 +57,7 @@ class atPageActions extends yiggActions
       $conn->commit();
       $this->form = new FormPostboxSimpleCreate();
 
-      $this->ajax_pm = "Message send!";
+      $this->ajax_pm = "Nachricht gesendet!";
     }
 
     if(true === $request->isAjaxRequest())
