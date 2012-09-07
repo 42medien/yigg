@@ -348,7 +348,7 @@ story_create_validation:
     action: check.*
 
 story_create_validation:
-  url:    /weltspion/top-stories/:node/:action
+  url:    /weltspion/erstellen/:node/:action
   param:  { module: story, view: Normal }
   requirements:
     sf_method: post
