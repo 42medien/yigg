@@ -695,5 +695,6 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 #PostboxCreateMessage {padding: 0 0 10px; border-bottom: 1px solid #E3E3E3;}
 #PostboxCreateMessage .actions input {margin: 10px auto 0;}
 .avtr {margin: 1em auto; width: 297px;}
-.help_icon {width: 315px;}
+.help_icon {width: 310px; margin-left: 10px;}
 .help_icon a {float: right;}
+.now_later_button {margin-left: 10px;}
