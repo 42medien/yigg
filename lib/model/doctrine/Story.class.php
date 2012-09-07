@@ -207,6 +207,11 @@ class Story extends BaseStory
      */
     public function update(array $data , $conn=null)
     {
+        if(array_key_exists("Categories", $data ) )
+        {
+            $this->updateCategories( $data['Categories'] );
+            unset($data['Categories']);
+        }
         print_r($data['Categories']); die;
         if(array_key_exists("Tags", $data ) )
         {
