@@ -226,7 +226,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .top_action_row + .story-list-cont {margin: -33px 0px 0px -12px;}
 .profile + .story-list-cont {margin: -13px 0px 0px -12px;}
 .filters + .story-list-cont {margin: -7px 0px 0px -12px;}
-.filters + .story-list-cont .story-list {border-top: 1px solid #CFCFCF;}
+.filters + .story-list-cont .story-list, #archive + .story-list-cont .story-list {border-top: 1px solid #CFCFCF;}
 #story-list, .story-list {width: 684px; float: left; margin: 13px 0 0;}
 #story-list .list_cont {height: 283px; overflow: hidden;}
 .story-list, spec-list {margin-left: 0}
