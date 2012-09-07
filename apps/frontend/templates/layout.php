@@ -91,8 +91,7 @@
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-      <div id="container">
-          <ul id="categories-nav">
+      <ul id="categories-nav">
               <?php $categories = Doctrine_Core::getTable('Category')->getCategories();
               if (count($categories)):
                   ?>
@@ -101,6 +100,7 @@
                   <?php endforeach; ?>
           <?php endif; ?>
           </ul>
+      <div id="container">          
         <div class="header">
             <div class="header_data">                
                 <div class="login_box">
