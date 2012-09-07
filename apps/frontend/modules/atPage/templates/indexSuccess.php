@@ -1,39 +1,43 @@
-<ul class="filters">
-  <li <?php if($sf_request->getAction() === "index"): ?>class="selected"<?php endif;?>>
-    <?php echo link_to(sprintf("Pinnwand (%s)",$sf_user->getUser()->getNotificationCount()),
-          "@notification_index",array( "title" => "Lies deine privaten Nachrichten")); ?></li>
+<?php if(true !== $sf_request->isAjaxRequest()):?>
+    <ul class="filters">
+      <li <?php if($sf_request->getAction() === "index"): ?>class="selected"<?php endif;?>>
+        <?php echo link_to(sprintf("Pinnwand (%s)",$sf_user->getUser()->getNotificationCount()),
+              "@notification_index",array( "title" => "Lies deine privaten Nachrichten")); ?></li>
 
-  <li <?php if($sf_request->getParameter("view",false) === "all"): ?>class="selected"<?php endif;?>>
-    <?php echo link_to(sprintf("Benachrichtigungen (%s)",$sf_user->getUser()->getNotificationCount($sf_user->getUser()->id,array("New", "NewAt"))),
-          "@notification_views?view=all&username={$sf_user->getUser()->username}"); ?></li>
+      <li <?php if($sf_request->getParameter("view",false) === "all"): ?>class="selected"<?php endif;?>>
+        <?php echo link_to(sprintf("Benachrichtigungen (%s)",$sf_user->getUser()->getNotificationCount($sf_user->getUser()->id,array("New", "NewAt"))),
+              "@notification_views?view=all&username={$sf_user->getUser()->username}"); ?></li>
 
-  <li <?php if($sf_request->getParameter("view",false) === "replies"): ?>class="selected"<?php endif;?>>
-  <?php echo link_to(sprintf("PM Eingang (%s)",$sf_user->getUser()->getPmCount()),
-       "@notification_views?view=inbox&username={$sf_user->getUser()->username}"
-      );?></li>
-  <li <?php if($sf_request->getParameter("view",false) === "outbox"): ?>class="selected"<?php endif;?>>
-  <?php echo link_to("PM Ausgang","@notification_views?view=outbox&username={$sf_user->getUser()->username}");?></li>
-</ul>
-<?php if(isset($notifications) AND count($notifications) > 0):?>
-  <ol class="notification-list">
-    <?php foreach($notifications as $notification): ?>
-      <?php $object = $notification->getReferencedObject(); ?>
-      <?php if(false !== $object && null !== $object || $notification->ref_object_type == "NotificationMessage"): ?>
-        <li id="notification_<?php echo $notification->id?>" class="<?php echo $notification->isRead() ? 'read' : 'new'; ?> clr">
-          <?php include_partial(
-            "notification" . $notification->ref_object_type ,
-            array(
-              "notification" => $notification,
-              "obj" => $notification->ref_object_type == "NotificationMessage" ? $notification : $object
-            )
-          ); ?>
-        </li>
-      <?php endif; ?>
-    <?php endforeach; ?>
-  </ol>
-    <?php echo $pager->display(); ?>
-<?php else: ?>
-    <p class="note">Keine neuen Benachrichtigungen.</p>
+      <li <?php if($sf_request->getParameter("view",false) === "replies"): ?>class="selected"<?php endif;?>>
+      <?php echo link_to(sprintf("PM Eingang (%s)",$sf_user->getUser()->getPmCount()),
+           "@notification_views?view=inbox&username={$sf_user->getUser()->username}"
+          );?></li>
+      <li <?php if($sf_request->getParameter("view",false) === "outbox"): ?>class="selected"<?php endif;?>>
+      <?php echo link_to("PM Ausgang","@notification_views?view=outbox&username={$sf_user->getUser()->username}");?></li>
+    </ul>
+    <?php if(isset($notifications) AND count($notifications) > 0):?>
+      <ol class="notification-list">
+        <?php foreach($notifications as $notification): ?>
+          <?php $object = $notification->getReferencedObject(); ?>
+          <?php if(false !== $object && null !== $object || $notification->ref_object_type == "NotificationMessage"): ?>
+            <li id="notification_<?php echo $notification->id?>" class="<?php echo $notification->isRead() ? 'read' : 'new'; ?> clr">
+              <?php include_partial(
+                "notification" . $notification->ref_object_type ,
+                array(
+                  "notification" => $notification,
+                  "obj" => $notification->ref_object_type == "NotificationMessage" ? $notification : $object
+                )
+              ); ?>
+            </li>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </ol>
+        <?php echo $pager->display(); ?>
+    <?php else: ?>
+        <p class="note">Keine neuen Benachrichtigungen.</p>
+    <?php endif; ?>
+<?php elseif((true === $sf_request->isAjaxRequest()) AND $this->ajax_pm): ?>
+    <p class="note"><?php echo $this->ajax_pm;?></p>
 <?php endif; ?>
 
 <?php if($sf_user->getUser()->getNotificationCount() > 0):?>
