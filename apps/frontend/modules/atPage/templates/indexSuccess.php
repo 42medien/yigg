@@ -48,7 +48,7 @@
   <h3 class="help_icon">Private Mitteilung schreiben</h3>
   <form <?php if(isset($reply_pm) AND $reply_pm): ?>id="pm_<?php echo $reply_pm->id; ?>_reply"<?php endif; ?> method="post" action="<?php echo url_for( "@notification_index"); ?>" class="post-box ninjaForm ninjaAjaxSubmit <?php if(isset($reply_pm) AND $reply_pm): ?>pm_<?php echo $reply_pm->id; ?>_reply<?php endif?>">
     <?php if( true === $sf_request->isMethod("post")):?>
-       <?php if(isset($pm) && $pm->isValid() ): ?>
+       <?php if(true === $sf_request->isAjaxRequest() && true === $form->isValid()): ?>
         <p class="success">Deine PM wurde erfolgreich versendet!</p>
        <?php elseif((true === $sf_request->isAjaxRequest() && false === $form->isValid() || true === $sf_request->isAjaxRequest() && isset($this->recipients) && count($this->recipients) < 1)): ?>
         <p class="note">Füge unten einen Text + @Empfänger ein und schon wird eine PM versendet.</p>
