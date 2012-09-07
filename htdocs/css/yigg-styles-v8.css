@@ -422,7 +422,7 @@ dl.basic-dl dt {font-weight: bold; margin-top: 5px; float: left; width: 150px; c
 dl.basic-dl dd {margin: 5px 0  0  150px}
 #toggleAnimation {background: #CBCBCB; border: 1px solid #4D3F3E; color: #000; cursor: pointer; margin: 5px 3px; padding: 1px 3px; font-size: 1.2em; float: right; clear: right}
 #ajaxIndicator {float: right;}
-#NodeList {border: 1px solid #EFEFEF; border-bottom: none; margin-left: 10px; clear: both; position: relative; width: 100%}
+#NodeList {border: 1px solid #EFEFEF; border-bottom: none; margin-left: 10px; clear: both; position: relative; width: 95%;}
 #NodeList li.spyNode.odd {background-color: #FAFAFA}
 #NodeList .icon, #NodeList .votes {float: left; height: 20px; line-height: 25px; width: 60px}
 #NodeList .icon {width: 25px}
