@@ -410,26 +410,40 @@ class storyActions extends yiggActions
       return $this->send403();
     }
 
-    $this->story = new Story();
-    $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
-    $url_is_valid =
-      sfView::HEADER_ONLY === $this->checkFieldValidation($this->form, 'external_url')
-      && true === $this->form['external_url']->hasError();
-
+    $node_id = (int) $request->getParameter("node");
     $url = $this->getRequest()->getParameter( 'external_url' );
-    $error = $this->form->processField('external_url', $url)->getError();
 
-      if(!$error){
-          $yiggImageParser = new ImageParser();
-          $images = $yiggImageParser->fetch($url, 100);
-          $slider_html = get_partial('story/imageSlider', array("images" => $images));
-      }
+    if($node_id){
+        $yiggImageParser = new ImageParser();
+        $images = $yiggImageParser->fetch($url, 100);
+        $slider_html = get_partial('story/imageSlider', array("images" => $images));
 
-    $ninjaUpdater = $request->getNinjaUpdater();
-    $ninjaUpdater->updateForm('external_url', $url, $error );
-    $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
-    $this->populateFieldsFromUrl();
-    $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+        $ninjaUpdater = $request->getNinjaUpdater();
+        $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
+        $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+    }else{
+        $this->story = new Story();
+        $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
+        $url_is_valid =
+            sfView::HEADER_ONLY === $this->checkFieldValidation($this->form, 'external_url')
+                && true === $this->form['external_url']->hasError();
+
+
+        $error = $this->form->processField('external_url', $url)->getError();
+
+        if(!$error){
+            $yiggImageParser = new ImageParser();
+            $images = $yiggImageParser->fetch($url, 100);
+            $slider_html = get_partial('story/imageSlider', array("images" => $images));
+        }
+
+        $ninjaUpdater = $request->getNinjaUpdater();
+        $ninjaUpdater->updateForm('external_url', $url, $error );
+        $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
+        $this->populateFieldsFromUrl();
+        $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+    }
+
 
     return sfView::HEADER_ONLY;
   }  
