@@ -550,7 +550,7 @@ div.now_later_button a.now {display: block; color: #000; height: 15px; line-heig
 div.now_later_button.subscribed a.later {background: #659066 url(../images/silk-icons/accept.png) no-repeat 4px 4px;}
 div.now_later_button.subscribed a.later:hover {background: #df4b2c url(../images/silk-icons/bell_delete.png) no-repeat 4px 4px;}
 .post.wspy {position: relative;}
-.post.wspy .screenshot {position: absolute; right: 0; top: 20px; margin: 0;}
+.post.wspy .screenshot {position: absolute; right: 0; top: 20px; margin: 64px 10px 0px 0;}
 .post.wspy .screenshot img {position: absolute; top: 0; left: 0;}
 .post.wspy .body {margin-right: 155px;}
 .post.wspy .body p {overflow: hidden; height: 160px;}
