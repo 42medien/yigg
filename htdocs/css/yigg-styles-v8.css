@@ -433,8 +433,8 @@ dl.basic-dl dd {margin: 5px 0  0  150px}
 #NodeList li.spyNode .node  * {border: 1px solid #FFF}
 #NodeList li.spyNode.odd .node * {border: 1px solid #FAFAFA}
 #NodeList .votes {width: 60px; white-space: nowrap; overflow: hidden}
-#NodeList .tinyavatar {float: right; width: 14px}
-#NodeList .node .link, #NodeList .node .vcard {float: right; border: none; width: 60px; clear: left; overflow: hidden; text-align: right; padding: 5px; white-space: nowrap}
+#NodeList .tinyavatar {float: right; width: 14px; margin: 6px 0 0px;}
+#NodeList .node .link, #NodeList .node .vcard {float: right; border: none; width: 85px; clear: left; overflow: hidden; text-align: right; padding: 5px; white-space: nowrap}
 #NodeList .node .link {width: 160px}
 #NodeList .node a.storylink {color: #3f352f !important}
 #NodeList li {list-style-type: none}
