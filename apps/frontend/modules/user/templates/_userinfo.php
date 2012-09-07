@@ -80,7 +80,7 @@
            "title" => "Zu meiner Pinwand",
          )
        );?></li>
-       <li class="fb_acc"  onclick="sendFbFriendRequest();">
+       <li class="fb_acc" onclick="sendFbFriendRequest(); return false;">
            <a href="#">Lade Freunde ein</a>
        </li>
        <li class="logout"><?php echo link_to("Abmelden","@user_logout");?></li>
