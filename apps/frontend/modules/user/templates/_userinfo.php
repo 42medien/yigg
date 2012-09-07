@@ -1,3 +1,20 @@
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    FB.init({
+        appId  : <?php echo sfConfig::get('app_facebook_app_id') ?>,
+        frictionlessRequests: true
+    });
+
+    function sendFbFriendRequest() {
+        FB.ui({
+            method: 'apprequests',
+            display: 'iframe',
+            message: 'Möchtest Du Yigg auch beitreten? Na dann los, denn bei Yigg findest Du die wichtigsten News auf einen Blick!'
+        });
+    }
+</script>
+
   <?php if(true === $sf_request->hasParameter("rss")): ?>
     <?php echo link_to(
       img_tag(
@@ -63,7 +80,7 @@
            "title" => "Zu meiner Pinwand",
          )
        );?></li>
-       <li class="fb_acc">
+       <li class="fb_acc"  onclick="sendFbFriendRequest();">
            <a href="#">Lade Freunde ein</a>
        </li>
        <li class="logout"><?php echo link_to("Abmelden","@user_logout");?></li>
