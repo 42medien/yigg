@@ -60,6 +60,30 @@ class worldspyActions extends yiggActions
     return sfView::SUCCESS;
   }
 
+    /**
+     * check external url and return images
+     *
+     * @return   string
+     */
+    public function executeCheckExternal_url( $request )
+    {
+        if(false === $this->isAjaxRequest())
+        {
+            return $this->send403();
+        }
+        $url = $this->getRequest()->getParameter( 'external_url' );
+
+        $yiggImageParser = new ImageParser();
+        $images = $yiggImageParser->fetch($url, 100);
+        $slider_html = get_partial('story/imageSlider', array("images" => $images));
+
+        $ninjaUpdater = $request->getNinjaUpdater();
+        $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
+        $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+
+        return sfView::HEADER_ONLY;
+    }
+
   /**
    * Finds any new nodes from a request.
    *
