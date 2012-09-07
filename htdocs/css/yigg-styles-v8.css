@@ -263,9 +263,9 @@ h3.comments a {background: url(../images/comment_bg.png) 0 10px no-repeat; font:
 .tags li a {background: white; padding-right: 3px; display: block; line-height: 1.1em}
 .tags.list-style {overflow: auto; height: auto; float: none}
 .avatar-list-style {margin: 0 0 0 4px; padding: 0 0 10px; border-bottom: 1px solid #e3e3e3;}
-.twoThree-right .avatar-list-style a {height: 19px; line-height: 19px;}
-.twoThree-right .avatar-list-style a img {width: 14px; height: 14px; margin: 0 5px 0 0; display: inline-block; vertical-align: middle;}
-.twoThree-right .avatar-list-style a.title {font: 14px/17px 'Arial', sans-serif; color: #444;}
+.twoThree-right .avatar-list-style a {line-height: 19px; float: left; width: 20px;}
+.twoThree-right .avatar-list-style a img {width: 14px; height: 14px; margin: 2px 5px 0 0; display: inline-block;}
+.twoThree-right .avatar-list-style a.title {font: 14px/17px 'Arial', sans-serif; color: #444; width: 280px;}
 .avatar-list-style li {margin: 0; list-style: none; display: block; overflow: hidden; padding: 2px 5px; width: 300px;}
 .list-style {margin: 0 0 10px 0}
 .list-style li {margin: 0; padding-left: 24px; list-style: none}
