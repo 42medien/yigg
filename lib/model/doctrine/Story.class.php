@@ -9,6 +9,8 @@ class Story extends BaseStory
     private $cachedUrl = null;
     private $cache;
 
+    public $categories = array();
+
     public function construct()
     {
         $this->cache = new sfParameterHolder();
