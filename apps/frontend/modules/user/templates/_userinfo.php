@@ -111,5 +111,9 @@
 
 <div class="anzeige_titel">
     <p> Anzeige </p>
-</div>    
+</div>
+
+<div class="anzeige_titel">
+    <p> Anzeige2 </p>
+</div>  
     
