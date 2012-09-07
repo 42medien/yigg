@@ -14,8 +14,7 @@
   <li <?php if($sf_request->getParameter("view",false) === "outbox"): ?>class="selected"<?php endif;?>>
   <?php echo link_to("PM Ausgang","@notification_views?view=outbox&username={$sf_user->getUser()->username}");?></li>
 </ul>
-<?php print_r($notifications);?>
-<?php if(count($notifications) > 0):?>
+<?php if(isset($notifications) AND count($notifications) > 0):?>
   <ol class="notification-list">
     <?php foreach($notifications as $notification): ?>
       <?php $object = $notification->getReferencedObject(); ?>
