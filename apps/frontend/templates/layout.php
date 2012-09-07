@@ -145,7 +145,9 @@
             <?php //if(true === has_slot("sidebar_sponsoring")): ?>
             <?php //include_slot("sidebar_sponsoring");  ?>
           <?php //endif; ?>
-          
+          <?php if(true === has_slot("sidebar")): ?>
+            <?php include_slot("sidebar"); ?>
+          <?php endif; ?> 
             <div class="fb-like-box"
                  data-href="http://www.facebook.com/yiggde"
                  data-width="300"
@@ -154,7 +156,8 @@
                  data-stream="false"
                  data-header="false">
             </div>
-            
+            <?php include_partial("user/userinfo"); ?>
+          <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
         </div>
       </div>
 
