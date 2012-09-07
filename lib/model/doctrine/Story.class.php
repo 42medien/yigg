@@ -223,6 +223,15 @@ class Story extends BaseStory
         $this->save($conn);
     }
 
+    public function updateCategories($categories){
+        foreach($categories as $category_id){
+            $category = new Category();
+            $category->setStoryId($this->getId());
+            $category->setCategoryId($category_id);
+            $category->save();
+        }
+    }
+
     public function preValidate($event)
     {
         if(array_key_exists("title", $this->getModified()))
