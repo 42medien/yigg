@@ -45,7 +45,7 @@
           Schulstrasse 8<br />
           69469 Weinheim<br />
           <strong>eMail:</strong> <a href="mailto:info@ekaabo.com">info@ekaabo.com</a><br />
-          <strong>Telefon:</strong> 06201 . 845 200 
+          <strong>Telefon:</strong> 06201 . 845 200<br /> 
           <strong>Fax:</strong> 06201 . 845 20 29 
         </p>
       </li>
