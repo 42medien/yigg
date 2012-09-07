@@ -229,6 +229,7 @@ class storyActions extends yiggActions
     $exturl = $request->getParameter("exturl", false);
     $exturl = (false !== $exturl) ? yiggStringTools::utf8_urldecode($exturl) : $exturl;
 
+
     if(false === $request->isMethod("post") && $exturl !== false && true === yiggTools::isProperURL($exturl))
     {
       $existing_story = StoryTable::getTable()->findOneByExternalUrl($exturl);
@@ -257,14 +258,11 @@ class storyActions extends yiggActions
         ),
         $conn
       );
-        die;
 
       $this->story->rate( $this->session, $conn);
         $this->story->save($conn);
 
         $this->story->updateCategories();
-        echo "id".$this->story->getId;
-        die;
 
         $story_image = $this->form->getValue("image_slider");
 
