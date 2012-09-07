@@ -226,7 +226,7 @@ class storyActions extends yiggActions
     }
 
     $this->getResponse()->addMeta('robots',  'noindex, follow' );
-    $exturl = $request->getParameter("exturl", false);
+    $exturl = $request->getParameter("yigg_url", false);
     $exturl = (false !== $exturl) ? yiggStringTools::utf8_urldecode($exturl) : $exturl;
 
     echo "ext:".$exturl;
