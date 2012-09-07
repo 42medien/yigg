@@ -1,7 +1,7 @@
 <?php
 slot(
     'canonical',
-    '<link href="'.url_for_story($story).'" rel="canonical">');
+    '<link href="'.$sf_request->getUriPrefix().url_for_story($story).'" rel="canonical">');
 
 $source = $story->getStoryImageSource();
 if($source){
@@ -13,7 +13,7 @@ slot(
     'ogp',
     '<meta property="og:title" content="'.$story->getTitle().'" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="'.url_for_story($story, "bar").'" />
+    <meta property="og:url" content="'.$sf_request->getUriPrefix().url_for_story($story, "bar").'" />
     <meta property="og:image" content="'.$image_source.'"  />
     <meta property="og:description" content="'.$story->getDescription().'" />');
 ?>
