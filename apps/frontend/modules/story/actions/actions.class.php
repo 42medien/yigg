@@ -257,7 +257,6 @@ class storyActions extends yiggActions
         ),
         $conn
       );
-        die;
 
       $this->story->rate( $this->session, $conn);
         $this->story->save($conn);
