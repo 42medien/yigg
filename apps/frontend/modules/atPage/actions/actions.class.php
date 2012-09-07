@@ -60,7 +60,7 @@ class atPageActions extends yiggActions
 
     if(true === $request->isAjaxRequest())
     {
-      return sfView::SUCCESS;
+        return sfView::NONE;
     }
     
     $this->limit = 8;
