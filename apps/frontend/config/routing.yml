@@ -347,6 +347,13 @@ story_create_validation:
     sf_method: post
     action: check.*
 
+story_create_validation:
+  url:    /nachrichten/erstellen/:node/:action
+  param:  { module: story, view: Normal }
+  requirements:
+    sf_method: post
+    action: check.*
+
 story_edit_validation:
   url:    /nachrichten/:year/:month/:day/:slug/edit/:action
   param:  { module: story}
