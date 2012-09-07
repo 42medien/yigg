@@ -157,7 +157,7 @@
                  data-header="false">
             </div>
             <?php include_partial("user/userinfo"); ?>
-          <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
+          <?php include_component("story", "bestVideosBottom", array( "height"=> 285, "width" => 370)); ?>
         </div>
       </div>
 
