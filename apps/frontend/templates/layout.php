@@ -91,7 +91,16 @@
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="container">
+      <div id="container">
+          <ul id="categories-nav">
+              <?php $categories = Doctrine_Core::getTable('Category')->getCategories();
+              if (count($categories)):
+                  ?>
+                  <?php foreach ($categories as $category): ?>
+                      <li><?php echo link_to($category->getName(), 'category_stories', $category); ?></li>
+                  <?php endforeach; ?>
+          <?php endif; ?>
+          </ul>
         <div class="header">
             <div class="header_data">                
                 <div class="login_box">
@@ -126,14 +135,6 @@
             </div>
         </div>        
       <div id="content">
-          <ul id="categories-nav">
-            <?php $categories = Doctrine_Core::getTable('Category')->getCategories();
-            if (count($categories)): ?>
-                <?php foreach ($categories as $category): ?>
-                    <li><?php echo link_to($category->getName(), 'category_stories', $category); ?></li>
-                <?php endforeach; ?>
-        <?php endif; ?>
-        </ul>
           <div class="content_data">
           <?php if(true === has_slot("sponsoring")): ?>
           <?php include_slot("sponsoring"); ?>
