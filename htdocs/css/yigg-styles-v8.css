@@ -420,7 +420,7 @@ form.right-settings label {width: 100%; text-align: left}
 dl.basic-dl {margin: 0}
 dl.basic-dl dt {font-weight: bold; margin-top: 5px; float: left; width: 150px; clear: both}
 dl.basic-dl dd {margin: 5px 0  0  150px}
-#toggleAnimation {background: #CBCBCB; border: 1px solid #4D3F3E; color: #000; cursor: pointer; margin: 5px 3px; padding: 1px 3px; font-size: 1.2em; float: right; clear: right}
+#toggleAnimation {background: #CBCBCB; border: 1px solid #4D3F3E; color: #000; cursor: pointer; margin: 5px 23px; padding: 1px 3px; font-size: 1.2em; float: right; clear: right}
 #ajaxIndicator {float: right;}
 #NodeList {border: 1px solid #EFEFEF; border-bottom: none; margin-left: 10px; clear: both; position: relative; width: 95%;}
 #NodeList li.spyNode.odd {background-color: #FAFAFA}
