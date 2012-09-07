@@ -227,6 +227,7 @@ class Story extends BaseStory
 
     public function updateCategories(){
         print_r($this->categories);
+        echo $this->id;
         foreach($this->categories as $category_id){
             echo $this->id;
             $category = new StoryCategory();
