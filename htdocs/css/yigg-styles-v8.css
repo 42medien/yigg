@@ -527,7 +527,7 @@ background-image: url(../images/fb_inp.png), -ms-linear-gradient(top,  #556fa6 0
 background-image: url(../images/fb_inp.png), linear-gradient(to bottom,  #556fa6 0%,#3f5d9a 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#556fa6', endColorstr='#3f5d9a',GradientType=0 ); /* IE6-9 */
 }
-div.profile {width: 657px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc; border-bottom: 0 none;}
+div.profile {width: 657px; font-size: 15px; padding-bottom: 21px; overflow: auto; border: 1px solid #dcdcdc;}
 div.profile .about {margin-top: 10px;}
 div.profile dt {display: none;}
 div.profile dd {padding: 0; margin-left: 120px; margin-bottom: 5px;}
