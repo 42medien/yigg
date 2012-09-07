@@ -33,7 +33,7 @@
   </ol>
     <?php echo $pager->display(); ?>
 <?php else: ?>
-    <p class="note">Keine neuen Benachrichtigungen.</p>
+   <!-- <p class="note">Keine neuen Benachrichtigungen.</p> -->
 <?php endif; ?>
 
 <?php if($sf_user->getUser()->getNotificationCount() > 0):?>
