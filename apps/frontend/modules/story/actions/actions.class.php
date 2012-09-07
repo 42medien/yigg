@@ -229,6 +229,9 @@ class storyActions extends yiggActions
     $exturl = $request->getParameter("exturl", false);
     $exturl = (false !== $exturl) ? yiggStringTools::utf8_urldecode($exturl) : $exturl;
 
+    echo "ext:".$exturl;
+
+
     if(false === $request->isMethod("post") && $exturl !== false && true === yiggTools::isProperURL($exturl))
     {
       $existing_story = StoryTable::getTable()->findOneByExternalUrl($exturl);
