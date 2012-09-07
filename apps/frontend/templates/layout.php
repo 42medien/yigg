@@ -124,8 +124,9 @@
                 </div>
                 <div class="clear"></div>
             </div>
-        </div>
-        <ul id="categories-nav">
+        </div>        
+      <div id="content">
+          <ul id="categories-nav">
             <?php $categories = Doctrine_Core::getTable('Category')->getCategories();
             if (count($categories)): ?>
                 <?php foreach ($categories as $category): ?>
@@ -133,7 +134,6 @@
                 <?php endforeach; ?>
         <?php endif; ?>
         </ul>
-      <div id="content">
           <div class="content_data">
           <?php if(true === has_slot("sponsoring")): ?>
           <?php include_slot("sponsoring"); ?>
