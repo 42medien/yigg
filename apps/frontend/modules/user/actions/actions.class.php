@@ -462,7 +462,7 @@ class userActions extends yiggActions
             try
             {
                 $facebook_user_profile = $facebook->api('/me');
-                print_r($facebook_user_profile); die;
+
                 if(!is_null($facebook_user_profile['email']))
                 {
 
@@ -491,8 +491,11 @@ class userActions extends yiggActions
             {
                 error_log($e);
                 $facebook_user = null;
+
             }
         }
+        $this->session->setFlash("error_msg",'Faild to login with facebook');
+        return $this->redirect("@best_stories");
     }
 
     public function executeFbAddFriends($request)
