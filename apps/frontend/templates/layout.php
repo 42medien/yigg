@@ -156,7 +156,7 @@
                  data-stream="false"
                  data-header="false">
             </div>
-            <?php include_component("story", "bestVideosBottom", array( "height"=> 285, "width" => 370)); ?>
+            
         </div>
       </div>
 
