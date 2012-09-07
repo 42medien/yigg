@@ -148,7 +148,14 @@
           <?php if(true === has_slot("sidebar")): ?>
             <?php include_slot("sidebar"); ?>
           <?php endif; ?> 
-           
+            <div class="fb-like-box"
+                 data-href="http://www.facebook.com/yiggde"
+                 data-width="300"
+                 data-height="300"
+                 data-show-faces="true"
+                 data-stream="false"
+                 data-header="false">
+            </div>
             
         </div>
       </div>
