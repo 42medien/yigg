@@ -29,4 +29,11 @@
   <?php endif; ?>
 </ul>
 
-
+<ul id="categories-nav">
+    <h2>Kategorien</h2>
+    <?php $categories = Doctrine_Core::getTable('Category')->getCategories(); if(count($categories)):?>
+    <?php foreach($categories as $category):?>
+        <li><?php echo link_to($category->getName(), 'category_stories', $category); ?></li>
+        <?php endforeach;?>
+    <?php endif;?>
+</ul>
