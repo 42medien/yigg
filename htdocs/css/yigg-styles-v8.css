@@ -479,7 +479,7 @@ ul.recommendations {margin-left: 0;}
 .recommendations li p {margin-left: 55px;}
 .recommendations img {float: left;}
 form.comment label {display: block; width: 100%; text-align: left;}
-form.comment fieldset input, form.comment fieldset textarea {width: 100% !important;}
+form.comment fieldset input, form.comment fieldset textarea {width: 98% !important;}
 .list-style.user-links li a {display: inline;}
 a.storyDescLink {color: #333;}
 a.storyDescLink:hover {text-decoration: none !important;}
