@@ -499,7 +499,8 @@ ul.recommended_users li a.avatar {position: absolute; border: none;}
 ul.recommended_users li p {margin-left: 34px; margin-bottom: 1px; margin-top: 0; line-height: 1em;}
 ul.recommended_users li p strong a {color: #000;}
 ul.recommmended_users li {height: 40px;}
-div.sidead {margin: auto; width: 301px; padding-bottom: 10px; overflow: auto; border-bottom: 1px solid #E3E3E3; text-align: center;}
+div.sidead {margin: auto; width: 301px; padding-bottom: 10px; overflow: auto; text-align: center;}
+.userinfo + .anzeige_titel + div.sidead {border-bottom: 1px solid #E3E3E3;}
 div.sidead div {display: inline-block;}
 form#new_form {margin: 0; padding: 0;}
 /*form#new_form input {font-size: 14px; padding: 5px; width: 100%;}*/
