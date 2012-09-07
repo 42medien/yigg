@@ -698,7 +698,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 
 /* FanBox */
 .fb_iframe_widget {display: block !important; width: 300px; margin: 15px 0 0; padding: 15px; border-top: 1px solid #E3E3E3;}
-.sidead + .fb_iframe_widget {border-top: 0 none;}
+.sidead + .fb_iframe_widget {border-top: 0 none; margin: 0;}
 /* End FanBox */
 
 #PostboxCreateMessage {padding: 0 0 10px; border-bottom: 1px solid #E3E3E3;}
