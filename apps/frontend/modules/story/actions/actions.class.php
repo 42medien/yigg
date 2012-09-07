@@ -262,6 +262,9 @@ class storyActions extends yiggActions
       $this->story->rate( $this->session, $conn);
         $this->story->save($conn);
 
+        $this->story->updateCategories();
+        die;
+
         $story_image = $this->form->getValue("image_slider");
 
         if ($story_image)

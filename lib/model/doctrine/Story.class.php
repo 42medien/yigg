@@ -209,10 +209,10 @@ class Story extends BaseStory
     {
         if(array_key_exists("Categories", $data ) )
         {
-            $this->updateCategories( $data['Categories'] );
-            //unset($data['Categories']);
+            $this->categories = $data['Categories'];
+            unset($data['Categories']);
         }
-        print_r($data['Categories']); die;
+
         if(array_key_exists("Tags", $data ) )
         {
             $this->updateTags( $data['Tags'] );
@@ -223,13 +223,13 @@ class Story extends BaseStory
         $this->save($conn);
     }
 
-    public function updateCategories($categories){
-        foreach($categories as $category_id){
+    public function updateCategories(){
+        foreach($this->categories as $category_id){
             echo $this->id;
-            //$category = new StoryCategory();
-            //$category->setStoryId($this->getId());
-            //$category->setCategoryId($category_id);
-            //$category->save();
+            $category = new StoryCategory();
+            $category->setStoryId($this->getId());
+            $category->setCategoryId($category_id);
+            $category->save();
         }
     }
 
