@@ -11,6 +11,17 @@ class storyComponents extends sfComponents
     $this->video = $query->fetchOne();
     return sfView::SUCCESS;
   }
+  
+  public function executeBestVideosBottom(sfWebRequest $request)
+  {
+    $query = Doctrine::getTable("VideoAd")
+      ->getQueryObject()
+      ->orderBy("rand() * push DESC")
+      ->limit(1);
+
+    $this->video = $query->fetchOne();
+    return sfView::SUCCESS;
+  }
 
   public function executeLatestStoriesWidget(sfWebRequest $request)
   {
