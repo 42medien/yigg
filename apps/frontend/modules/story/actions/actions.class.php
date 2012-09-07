@@ -226,11 +226,8 @@ class storyActions extends yiggActions
     }
 
     $this->getResponse()->addMeta('robots',  'noindex, follow' );
-    $exturl = $request->getParameter("yigg_url", false);
+    $exturl = $request->getParameter("exturl", false);
     $exturl = (false !== $exturl) ? yiggStringTools::utf8_urldecode($exturl) : $exturl;
-
-    echo "ext:".$exturl;
-
 
     if(false === $request->isMethod("post") && $exturl !== false && true === yiggTools::isProperURL($exturl))
     {
@@ -260,11 +257,14 @@ class storyActions extends yiggActions
         ),
         $conn
       );
+        die;
 
       $this->story->rate( $this->session, $conn);
         $this->story->save($conn);
 
         $this->story->updateCategories();
+        echo "id".$this->story->getId;
+        die;
 
         $story_image = $this->form->getValue("image_slider");
 
