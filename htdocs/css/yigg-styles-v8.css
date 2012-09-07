@@ -411,6 +411,7 @@ form.comment .mceLayout {width: 100% !important}
 .sponsoring.navigation .preview a.button {text-align: center; line-height: 2em; font-size: 1.1em; padding: 2px 5px}
 .sponsoring.navigation .sponsorship {float: left; width: 170px; height: 120px; margin: 5px 5px 0 0}
 .actions .voted {font-size: 11px}
+.post-box {padding: 0 0 10px 12px; border-bottom: 1px solid #E3E3E3;}
 .post-box label {display: none}
 .post-box textarea {width: 89%; height: 80px; margin: 0 auto; padding: 0; display: block;}
 form.settings {width: 575px;}
