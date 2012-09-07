@@ -224,6 +224,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .consensus-holder p {position: absolute; top: 0; left: 50%}
 .story-list-cont {overflow: hidden; margin: -24px 0px 0px -12px; width: 682px;}
 .top_action_row + .story-list-cont {margin: -33px 0px 0px -12px;}
+.profile + .story-list-cont {margin: -13px 0px 0px -12px;}
 #story-list {width: 684px; float: left; margin: 13px 0 0;}
 #story-list .list_cont {height: 283px; overflow: hidden;}
 .story-list, spec-list {margin-left: 0}
