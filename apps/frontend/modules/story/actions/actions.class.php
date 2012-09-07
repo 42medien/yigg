@@ -263,6 +263,7 @@ class storyActions extends yiggActions
         $this->story->save($conn);
 
         $this->story->updateCategories();
+        echo "id".$this->story->id;
         die;
 
         $story_image = $this->form->getValue("image_slider");
