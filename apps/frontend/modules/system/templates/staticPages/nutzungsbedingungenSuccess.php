@@ -42,10 +42,11 @@
         </p>
         <p>
           YiGG GmbH<br />
-          Steinkirchner Strasse 31<br />
-          81475 München<br />
-          <strong>eMail:</strong> <a href="mailto:widerruf@yigg.de">widerruf@yigg.de</a><br />
-          <strong>Fax:</strong> +49 (0) 897 248 365 - 9
+          Schulstrasse 8<br />
+          69469 Weinheim<br />
+          <strong>eMail:</strong> <a href="mailto:info@ekaabo.com">info@ekaabo.com</a><br />
+          <strong>Telefon:</strong> 06201 . 845 200 
+          <strong>Fax:</strong> 06201 . 845 20 29 
         </p>
       </li>
       <li>
