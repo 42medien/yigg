@@ -139,7 +139,7 @@
 </ul>
     
 
-  <h3>Jetzt und später mehr von dieser Quelle:
+  <h3 class="help_icon">Jetzt und später mehr von dieser Quelle:
     <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
   </h3>
   <?php if($sf_user->hasUser() && $story->Domain->isSubscriber($sf_user->getUser())):?>
@@ -155,7 +155,7 @@
   <div class="clr"></div>
 
   <?php if(count($story->Tags) > 0):?>
-    <h3>
+    <h3 class="help_icon">
       Mehr lesen zu diesen Themen:                                    
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
