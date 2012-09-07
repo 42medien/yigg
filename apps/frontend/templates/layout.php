@@ -31,6 +31,7 @@
         googletag.defineSlot('/1043423/Yigg-Button-5L', [170, 125], 'div-gpt-ad-1342004948184-8').addService(googletag.pubads());
         googletag.defineSlot('/1043423/Yigg-Button-5R', [170, 125], 'div-gpt-ad-1342004948184-9').addService(googletag.pubads());*/
         googletag.defineSlot('/1043423/rectangle', [300, 250], 'div-gpt-ad-1346766539123-0').addService(googletag.pubads());
+        googletag.defineSlot('/1043423/rectangle2', [300, 250], 'div-gpt-ad-1347010073546-1').addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
         //googletag.pubads().collapseEmptyDivs();
         googletag.enableServices();
