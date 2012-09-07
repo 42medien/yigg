@@ -25,7 +25,7 @@
 
 <?php slot("sidebar")?>
   <?php if($following->count() > 0):?>
-    <h3>Freunde Online (<?php echo count($following)?>)</h3>
+    <h3 class="help_icon">Freunde Online (<?php echo count($following)?>)</h3>
     <?php include_partial("user/avatarList", array("users" => $following));?>
   <?php endif;?>
 
