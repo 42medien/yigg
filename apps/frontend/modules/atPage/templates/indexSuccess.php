@@ -47,8 +47,7 @@
   <?php include_partial("user/avatarList", array("users" => $following));?>
 
   <h3 class="help_icon">Private Mitteilung schreiben</h3>
-      <?php echo "rep:".$reply_pm;?>
-  <form <?php if(isset($reply_pm)): ?>id="pm_<?php echo $reply_pm->id; ?>_reply"<?php endif; ?> method="post" action="<?php echo url_for( "@notification_index"); ?>" class="post-box ninjaForm ninjaAjaxSubmit <?php if(isset($reply_pm)): ?>pm_<?php echo $reply_pm->id; ?>_reply<?php endif?>">
+  <form <?php if(isset($reply_pm) AND $reply_pm): ?>id="pm_<?php echo $reply_pm->id; ?>_reply"<?php endif; ?> method="post" action="<?php echo url_for( "@notification_index"); ?>" class="post-box ninjaForm ninjaAjaxSubmit <?php if(isset($reply_pm) AND $reply_pm): ?>pm_<?php echo $reply_pm->id; ?>_reply<?php endif?>">
     <?php if( true === $sf_request->isMethod("post")):?>
        <?php if(isset($pm) && $pm->isValid() ): ?>
         <p class="success">Deine PM wurde erfolgreich versendet!</p>
