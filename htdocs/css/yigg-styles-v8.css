@@ -223,10 +223,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .consensus-holder {height: 150px; width: 180px}
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
-.story-list-cont {overflow: hidden; margin: -24px 0px 0px -12px; width: 682px;}
-.top_action_row + .story-list-cont {margin: -33px 0px 0px -12px;}
-.profile + .story-list-cont {margin: -13px 0px 0px -12px;}
-.filters + .story-list-cont {margin: -7px 0px 0px -12px;}
+.story-list-cont {overflow: hidden; margin: -24px 0px -1px -12px; width: 682px;}
+.top_action_row + .story-list-cont {margin: -33px 0px -1px -12px;}
+.profile + .story-list-cont {margin: -13px 0px -1px -12px;}
+.filters + .story-list-cont {margin: -7px 0px -1px -12px;}
 .filters + .story-list-cont .story-list, #archive + .story-list-cont .story-list {border-top: 1px solid #CFCFCF;}
 #archive + .story-list-cont {margin: -24px 0 -1px -12px;}
 #story-list, .story-list {width: 684px; float: left; margin: 13px 0 0;}
