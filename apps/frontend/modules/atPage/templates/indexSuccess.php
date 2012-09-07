@@ -43,10 +43,10 @@
 
 <?php slot("sidebar")?>
   <?php $following =  UserFollowingTable::getOnlineFollowedUsers($sf_user->getUserId()); ?>
-  <h3>Freunde Online (<?php echo count($following)?>)</h3>
+  <h3 class="help_icon">Freunde Online (<?php echo count($following)?>)</h3>
   <?php include_partial("user/avatarList", array("users" => $following));?>
 
-  <h3>Private Mitteilung schreiben</h3>
+  <h3 class="help_icon">Private Mitteilung schreiben</h3>
   <form <?php if(isset($reply_pm)): ?>id="pm_<?php echo $reply_pm->id; ?>_reply"<?php endif; ?> method="post" action="<?php echo url_for( "@notification_index"); ?>" class="post-box ninjaForm ninjaAjaxSubmit <?php if(isset($reply_pm)): ?>pm_<?php echo $reply_pm->id; ?>_reply<?php endif?>">
     <?php if( true === $sf_request->isMethod("post")):?>
        <?php if(isset($pm) && $pm->isValid() ): ?>
