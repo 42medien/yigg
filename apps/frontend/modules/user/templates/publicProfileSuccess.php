@@ -10,7 +10,7 @@
         FB.ui({
             method: 'apprequests',
             display: 'iframe',
-            message: 'Please join yigg.de'
+            message: 'Möchtest Du Yigg auch beitreten? Na dann los, denn bei Yigg findest Du die wichtigsten News auf einen Blick!'
         });
     }
 </script>
