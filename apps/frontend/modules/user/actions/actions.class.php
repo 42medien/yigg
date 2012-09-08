@@ -186,7 +186,7 @@ class userActions extends yiggActions
           $this->user->getConfig()->add($this->profile_form->getValues(), "profile"); 
           $this->user->save();        
 
-          $this->session->setFlash('success_msg','Dein Profil wurde erfolgreich aktualisiert.');      
+          $this->session->setFlash('success_msg','Dein Profil wurde erfolgreich aktualisiert.');
         }
       break;
 
