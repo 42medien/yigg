@@ -183,8 +183,8 @@ class userActions extends yiggActions
           }
 
           $this->profile_form->batchUnsetOffsets(array("Tags", "email", "gender")); 
-          $this->user->getConfig()->add($this->profile_form->getValues(), "profile"); 
-          $this->user->save();
+          //$this->user->getConfig()->add($this->profile_form->getValues(), "profile"); 
+          //$this->user->save();
 
           $this->session->setFlash('success_msg','Dein Profil wurde erfolgreich aktualisiert.');      
         }
