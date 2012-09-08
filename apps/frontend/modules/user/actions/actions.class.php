@@ -242,7 +242,7 @@ class userActions extends yiggActions
     // Sets a robots-meta-tag that prevents crawling of profiles of inactive users or users that choose to be private
     if( false === $this->user->isActive() || $this->user->privacy == 1)
     {
-      //$this->getResponse()->addMeta('robots',  'noindex, nofollow' );
+      $this->getResponse()->addMeta('robots',  'noindex, nofollow' );
     }
 
     $sf = yiggStoryFinder::create()
