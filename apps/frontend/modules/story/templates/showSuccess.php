@@ -77,8 +77,8 @@
  <ul class="avatarList">
     <li>             
         <?php 
-        echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-        echo $story["external_url"]; 
+        //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
+        //echo $story["external_url"]; 
         $host_name = $story["external_url"];
         if($host_name != '')
         {
