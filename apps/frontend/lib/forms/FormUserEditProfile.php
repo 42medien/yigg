@@ -122,7 +122,7 @@ class FormUserEditProfile extends yiggForm
     $this->widgetSchema->setLabels(
       array(
         'avatar'   => 'Avatar:',
-        'sex'            => 'Geschlecht:', 
+        'sex'            => 'Geschlecht:',
         'city'          => 'Ort:',
         'birthday'  => 'Geburtstag:',
         'about_me'  => 'Über mich:',
