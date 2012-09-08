@@ -5,7 +5,7 @@
     <?php echo $profile_form->render() ?>
   </fieldset>
   <div class="actions">
-    <input type="submit" value="Profil bearbeiten" class="button" id="save" />
+    <input type="submit" value="Profil bearbeiten" class="button" id="save" /> 
   </div>
 </form>
 
