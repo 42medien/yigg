@@ -11,11 +11,13 @@
       <?php echo $form->render();?>
       <div class="field field_last">
         <ul>
-          <li><?php echo link_to("Nutzungsbedingungen","@legal_pages?template=nutzungsbedingungen"); ?>
+          <li>
               <input type="checkbox" class="chkBox" id="AcceptTerms" />
+              <?php echo link_to("Nutzungsbedingungen","@legal_pages?template=nutzungsbedingungen"); ?> 
           </li>
-          <li><?php echo link_to("Datenschutzbestimmungen","@legal_pages?template=datenschutzrichtlinien"); ?>
+          <li>
               <input type="checkbox" class="chkBox" id="AcceptTerms" />
+              <?php echo link_to("Datenschutzbestimmungen","@legal_pages?template=datenschutzrichtlinien"); ?>
           </li>
         </ul>
       </div>
