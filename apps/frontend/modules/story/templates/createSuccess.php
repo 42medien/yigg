@@ -12,6 +12,11 @@
      <input type="submit" name="formAction[save]" value="Erstellen" id="Save" class="button" style="font-size:1.4em;" />
   </div>
 </form>
+<script type="text/javascript">
+    if(jQuery("#external_url").val()){
+        jQuery('#external_url').blur();
+    }
+</script>
 
 <?php slot('sidebar') ?>
   <p class="note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.
