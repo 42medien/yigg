@@ -9,18 +9,6 @@
     <fieldset>
         <h1>Registrierung</h1>
       <?php echo $form->render();?>
-      <div class="field field_last">
-        <ul>
-          <li>
-              <input type="checkbox" class="chkBox" id="AcceptTerms" />
-              <?php echo link_to("Nutzungsbedingungen","@legal_pages?template=nutzungsbedingungen"); ?> 
-          </li>
-          <li>
-              <input type="checkbox" class="chkBox" id="AcceptTerms" />
-              <?php echo link_to("Datenschutzbestimmungen","@legal_pages?template=datenschutzrichtlinien"); ?>
-          </li>
-        </ul>
-      </div>
    </fieldset>
     <div class="actions">
       <input type="submit" name="commit" value="Abschicken" class="button" />
