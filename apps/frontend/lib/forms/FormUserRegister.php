@@ -35,7 +35,7 @@ class FormUserRegister extends yiggForm
               'placeholder' => 'Email'
             )
           ),
-          'acceptedTerms' => new sfWidgetFormInputCheckbox(
+          'acceptedTerms' => new yiggWidgetFormInputCheckbox(
             array(),
             array(
                'id'  => 'AcceptTerms',
@@ -43,7 +43,7 @@ class FormUserRegister extends yiggForm
                'link' => array('name' => "Nutzungsbedingungen", 'url' => "@legal_pages?template=nutzungsbedingungen")
             )
           ),
-          'acceptedTermsd' => new sfWidgetFormInputCheckbox(
+          'acceptedTermsd' => new yiggWidgetFormInputCheckbox(
                 array(),
                 array(
                     'id'  => 'AcceptTermsd',
