@@ -38,9 +38,18 @@ class FormUserRegister extends yiggForm
           'acceptedTerms' => new sfWidgetFormInputCheckbox(
             array(),
             array(
-              'id'  => 'AcceptTerms',
-              'class' => 'chkBox'
+               'id'  => 'AcceptTerms',
+               'class' => 'chkBox',
+               'link' => array('name' => "Nutzungsbedingungen", 'url' => "@legal_pages?template=nutzungsbedingungen")
             )
+          ),
+          'acceptedTermsd' => new sfWidgetFormInputCheckbox(
+                array(),
+                array(
+                    'id'  => 'AcceptTermsd',
+                    'class' => 'chkBox',
+                    'link' => array('name' => "Datenschutzbestimmungen", 'url' => "@legal_pages?template=datenschutzrichtlinien")
+                )
           )
         )
     );
@@ -89,10 +98,19 @@ class FormUserRegister extends yiggForm
             'choices' => array('true', 'on', 1)
           ),
           array(
-           'invalid'  => "Du musst den Nutzungsbedingungen zustimmen",
-           'required' => "Du musst den Nutzungsbedingungen zustimmen"
+           'invalid'  => "Du musst den Datenschutzbestimmungen zustimmen",
+           'required' => "Du musst den Datenschutzbestimmungen zustimmen"
           )
-       )
+       ),
+            'acceptedTermsd' => new sfValidatorChoice(
+                array(
+                    'choices' => array('true', 'on', 1)
+                ),
+                array(
+                    'invalid'  => "Du musst den Datenschutzbestimmungen zustimmen",
+                    'required' => "Du musst den Datenschutzbestimmungen zustimmen"
+                )
+            )
      )
   );
 
@@ -107,7 +125,8 @@ class FormUserRegister extends yiggForm
         'username'          => false,
         'password'          => false,
         'email'             => false,
-        'acceptedTerms'     => 'Nutzungsbedingungen:',
+        'acceptedTerms'     => false,
+        'acceptedTermsd'     => false
       )
     );
   }
