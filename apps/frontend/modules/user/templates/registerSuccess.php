@@ -9,11 +9,14 @@
     <fieldset>
         <h1>Registrierung</h1>
       <?php echo $form->render();?>
-      <h3>Nutzungsbedingungen</h3>
       <div class="field field_last">
         <ul>
-          <li><?php echo link_to("Nutzungsbedingungen","@legal_pages?template=nutzungsbedingungen"); ?></li>
-          <li><?php echo link_to("Datenschutzbestimmungen","@legal_pages?template=datenschutzrichtlinien"); ?></li>
+          <li><?php echo link_to("Nutzungsbedingungen","@legal_pages?template=nutzungsbedingungen"); ?>
+              <input type="checkbox" class="chkBox" id="AcceptTerms" />
+          </li>
+          <li><?php echo link_to("Datenschutzbestimmungen","@legal_pages?template=datenschutzrichtlinien"); ?>
+              <input type="checkbox" class="chkBox" id="AcceptTerms" />
+          </li>
         </ul>
       </div>
    </fieldset>
