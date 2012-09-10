@@ -3,7 +3,8 @@
         <?php echo link_to("Nachricht einstellen", '@worldspy_create_story?node_id=' . $entry->id ,
 			      array(
 			        'rel' => 'nofollow',
-			        'title' => 'Diese Nachricht auf YiGG einstellen.'));?>
+			        'title' => 'Diese Nachricht auf YiGG einstellen.',
+              'class' => 'add_wspy_entry'));?>
 		<?php echo img_tag("http://stromboli.yigg.de/?url=".$entry->long_link, array("height" => 88, "width" => 120));?>
   </div>
   <h2 class="entry-title"><?php
