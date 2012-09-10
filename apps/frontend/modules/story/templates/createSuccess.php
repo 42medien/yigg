@@ -13,9 +13,11 @@
   </div>
 </form>
 <script type="text/javascript">
-    if(jQuery("#external_url").val()){
-        jQuery('#external_url').blur();
-    }
+    jQuery(document).ready(function() {
+        if(jQuery("#external_url").val()){
+            jQuery('#external_url').blur();
+        }
+    });
 </script>
 
 <?php slot('sidebar') ?>
