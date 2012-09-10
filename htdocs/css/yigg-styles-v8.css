@@ -677,7 +677,7 @@ form.right-settings input {display: inline;}
 #RegisterForm .field.accept-terms {clear: both; margin: 0; display: none;}
 #RegisterForm .field.accept-terms, #RegisterForm .field.field_last input {margin: 3px 0 0; height: 18px; float: left;}
 #RegisterForm .field.accept-terms label {margin: 0 10px 0 0; padding: 0; text-align: left; width: auto;}
-#RegisterForm .field.field_last a {margin: 0 10px 0 0; padding: 0; text-align: left; width: auto; float: left;}
+#RegisterForm .field.field_last a {margin: 0 10px 0 0; padding: 0; text-align: left; width: 155px; float: left;}
 #RegisterForm .field_last {clear: both;}
 #RegisterForm .field_last ul {margin: 0;}
 #RegisterForm .field_last ul, #RegisterForm .field_last ul li {float: left; clear: both;}
