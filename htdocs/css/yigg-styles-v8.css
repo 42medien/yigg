@@ -681,7 +681,7 @@ form.right-settings input {display: inline;}
 #RegisterForm .field_last {clear: both;}
 #RegisterForm .field_last ul {margin: 0;}
 #RegisterForm .field_last ul, #RegisterForm .field_last ul li {float: left; clear: both;}
-#RegisterForm .field.accept-terms a, #RegisterForm .field.accept-terms + .field a {line-height: 23px;}
+#RegisterForm .field.accept-terms a, #RegisterForm .field.accept-terms + .field a {line-height: 23px; text-decoration: underline;}
 /* End Login Page */
 
 /* Categories */
