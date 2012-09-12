@@ -209,6 +209,11 @@ abstract class BaseUser extends sfDoctrineRecord
              'notnull' => true,
              'length' => 64,
              ));
+        $this->hasColumn('fb_user_id', 'integer', 64, array(
+            'type' => 'integer',
+            'unsigned' => true,
+            'length' => 64,
+        ));
         $this->hasColumn('settings as configuration', 'string', 100000, array(
              'type' => 'string',
              'length' => 100000,
@@ -221,6 +226,9 @@ abstract class BaseUser extends sfDoctrineRecord
         $this->index('mclient_salt', array(
              'fields' => 'mclient_salt',
              ));
+        $this->index('fb_user_id', array(
+            'fields' => 'fb_user_id',
+        ));
         $this->option('collate', 'utf8_unicode_ci');
         $this->option('charset', 'utf8');
     }
