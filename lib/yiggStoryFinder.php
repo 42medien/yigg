@@ -560,7 +560,7 @@ class yiggStoryFinder
    */
   public function sortByDate($direction = self::SORT_DESC)
   {
-    $this->sorters['date']    = 's.id '  . $direction;
+    $this->sorters['date']    = 's.title '  . $direction;
     return $this;
   }
 
