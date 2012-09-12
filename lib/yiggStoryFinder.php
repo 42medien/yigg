@@ -20,9 +20,6 @@ class yiggStoryFinder
   // use our rating algorithim.
   private $use_algorithim = false;
   
-  // use new algorithim for news.
-  private $use_news_algorithim = false;
-
   /**
    * sql statement to find a story
    *
@@ -876,7 +873,8 @@ class yiggStoryFinder
       ';
       $this->query->addWhere('s.user_votes > 2');
     }
-    if($this->$use_news_algorithim == true)
+    //if($this->$use_news_algorithim == true)
+    else
     {
         $this->sql = '
         (
