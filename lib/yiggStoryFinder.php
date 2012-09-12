@@ -874,21 +874,24 @@ class yiggStoryFinder
       $this->query->addWhere('s.user_votes > 2');
     }
     //if($this->$use_news_algorithim == true)
-    else
+    /*else
     {
         $this->sql = '
         (
         SELECT
           ROUND(                        
-                (1 * s.comments) + 
-                (2 * s.story_tweet_l) + 
-                (1 * s.story_tweet_a)            
-            ) as yttcs
+                (1 * sv.comments) + 
+                (2 * sv.story_tweet_l) + 
+                (1 * sv.story_tweet_a)            
+            ) as yttcs,
+            sv.*
           FROM
-         '. $this->sql . '        
+         '. $this->sql . '
+         GROUP BY
+         sv.id
       ) as s
       ';
-    }
+    }*/
     
 
     $this->query->from($this->sql);
