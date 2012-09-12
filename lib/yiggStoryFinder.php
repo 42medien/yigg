@@ -353,17 +353,17 @@ class yiggStoryFinder
       SELECT count(st.id)
       FROM story_tweet st
       WHERE st.story_id = s.id AND
-      s.created_at > \'' . $this->time_from .'\'
+      s.created_at > \"' . $this->time_from .'\"
          AND
-        s.created_at < \''. $this->time_until .'\'
+        s.created_at < \"'. $this->time_until .'\"
     ) AS story_tweet_l
     (
       SELECT count(st.id)
       FROM story_tweet st
       WHERE st.story_id = s.id AND
-      s.created_at > \'' . $this->time_from .'\'
+      s.created_at > \"' . $this->time_from .'\"
          AND
-        s.created_at < \''. $this->time_until .'\'
+        s.created_at < \"'. $this->time_until .'\"
     ) AS story_tweet_a
     ';
 
@@ -874,7 +874,7 @@ class yiggStoryFinder
       $this->query->addWhere('s.user_votes > 2');
     }
     //if($this->$use_news_algorithim == true)
-    /*else
+    else
     {
         $this->sql = '
         (
@@ -891,7 +891,7 @@ class yiggStoryFinder
          sv.id
       ) as s
       ';
-    }*/
+    }
     
 
     $this->query->from($this->sql);
