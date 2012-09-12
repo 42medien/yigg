@@ -341,7 +341,7 @@ class yiggStoryFinder
    */
   public function sortByYTTCS($direction = self::SORT_DESC)
   {
-    $this->$use_algorithim = false;
+    $this->use_algorithim = false;
     $this->selectors['yttcs'] = '    
     (
      SELECT count(c.id)
