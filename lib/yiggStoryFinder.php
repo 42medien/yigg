@@ -353,30 +353,7 @@ class yiggStoryFinder
       $this->sorters['yttcs']    = 'yttcs '. $direction;
       return $this;
   }
-  
-  /*public function sortByRatingDate($direction = self::SORT_DESC)
-  {
-    $this->selectors['latestRating'] = '(
-      SELECT
-        (r.created_at)
-      FROM
-        StoryRating sr
-      LEFT JOIN
-        Rating r
-      ON
-        sr.rating_id = r.id
-      WHERE
-        sr.story_id = s.id
-      ORDER BY
-        (r.created at)
-      LIMIT(1)
-      ) as latestRating';
-
-    $this->sorters['latestRating']    = 'latestRating '. $direction;
-    return $this;
-  }*/
-  
-
+      
   /**
    * confine resultset by average votes
    * the voting average is calculated, stories with less than the average votes will
