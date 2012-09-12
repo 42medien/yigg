@@ -880,15 +880,14 @@ class yiggStoryFinder
         (
         SELECT
           ROUND(                        
-                (1 * sv.comments) + 
-                (2 * sv.story_tweet_l) + 
-                (1 * sv.story_tweet_a)            
-            ) as yttcs,
-            sv.*
+                (1 * s.comments) + 
+                (2 * s.story_tweet_l) + 
+                (1 * s.story_tweet_a)            
+            ) as yttcs
           FROM
          '. $this->sql . '
          GROUP BY
-         sv.id
+         s.id
       ) as s
       ';
     }
