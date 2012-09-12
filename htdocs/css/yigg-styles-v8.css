@@ -712,4 +712,4 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .now_later_button {margin-left: 12px !important;}
 
 .bg_top {background: url('../images/bg_top.png') 0 0 repeat-x;}
-.bg_bt {background: url('../images/bg_bt.png') left bottom repeat-x;}
+.bg_bt {background: url('../images/bg_bt.png') left bottom repeat-x; padding: 0 0 193px;}
