@@ -20,6 +20,9 @@ class yiggStoryFinder
   // use our rating algorithim.
   private $use_algorithim = false;
   
+  // use new news algo
+  private $use_news_algorithim = false;
+  
   /**
    * sql statement to find a story
    *
@@ -341,29 +344,33 @@ class yiggStoryFinder
    */
   public function sortByYTTCS($direction = self::SORT_DESC)
   {
-    $this->use_algorithim = false;
+    $this->use_news_algorithim = true;
     $this->selectors['yttcs'] = '    
     (
      SELECT count(c.id)
      FROM comment c
      INNER JOIN story_comment scom on c.id = scom.comment_id
      WHERE scom.story_id = s.id AND c.deleted_at is null
-     ) AS comments,   
+     ) AS comments,
+     (
+      SELECT count(r.id)
+      FROM story_rating r
+      LEFT JOIN rating ON r.rating_id = rating.id
+      WHERE r.story_id = s.id
+        AND
+      rating.created_at > \'' . $this->time_from . '\'
+        AND
+      rating.created_at < \''. $this->time_until .'\'
+    ) AS votes,
     (
       SELECT count(st.id)
       FROM story_tweet st
-      WHERE st.story_id = s.id AND
-      s.created_at > \'' . $this->time_from .'\'
-         AND
-        s.created_at < \''. $this->time_until .'\'
+      WHERE st.story_id = s.id
     ) AS story_tweet_l,
     (
       SELECT count(st.id)
       FROM story_tweet st
-      WHERE st.story_id = s.id AND
-      s.created_at > \'' . $this->time_from .'\'
-         AND
-        s.created_at < \''. $this->time_until .'\'
+      WHERE st.story_id = s.id
     ) AS story_tweet_a
     ';
 
@@ -777,7 +784,7 @@ class yiggStoryFinder
          SELECT
            s.* '. $selectors. '
            FROM ' . $this->sql .
-      ') as ' . (($this->use_algorithim == true) ? 'sv' : 's');
+      ') as ' . (($this->use_algorithim == true || $this->use_news_algorithim == true) ? 'sv' : 's');
     }
   }
 
@@ -873,13 +880,13 @@ class yiggStoryFinder
       ';
       $this->query->addWhere('s.user_votes > 2');
     }
-    //if($this->$use_news_algorithim == true)
-    /*else
+    if($this->use_news_algorithim == true)    
     {
         $this->sql = '
         (
         SELECT
-          ROUND(                        
+          ROUND(
+                (1 * sv.votes ) + 
                 (1 * sv.comments) + 
                 (2 * sv.story_tweet_l) + 
                 (1 * sv.story_tweet_a)            
@@ -891,9 +898,8 @@ class yiggStoryFinder
          sv.id
       ) as s
       ';
-    }*/
+    }
     
-
     $this->query->from($this->sql);
 
     $this->query->addComponent("s","Story");
