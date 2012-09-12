@@ -885,9 +885,7 @@ class yiggStoryFinder
                 (1 * s.story_tweet_a)            
             ) as yttcs
           FROM
-         '. $this->sql . '
-         GROUP BY
-         s.id
+         '. $this->sql . '        
       ) as s
       ';
     }
