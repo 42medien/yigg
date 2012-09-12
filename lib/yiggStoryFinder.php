@@ -324,6 +324,58 @@ class yiggStoryFinder
     $this->joins['story_comments'] = 'INNER JOIN story_comment on s.id = story_comment.story_id';
     return $this;
   }
+  
+  
+  
+  /*
+   * new Algorythm for calculation the news on the main page of yigg 
+   * FORMULA:
+   * 1 * counts of yiggs + 
+   * 1 * counts of Tweets (last 24 hours) + 
+   * 2 * counts of Tweets (after the first 24 hours) + 
+   * 1 * counts comments + 
+   * 1,5 * shares via spreadly
+   * 
+   * @return
+   * @param $direction Object[optional]
+   */
+  public function sortByYTTCS($direction = self::SORT_DESC)
+  {
+      //$this->use_algorithim = true;
+      $this->selectors['yttcs'] = '(          
+          SELECT st.story_id,
+                 count(*) AS tweet_count
+            FROM story_tweet AS st
+        GROUP BY story_id   
+        ORDER BY (st.tweet_count)
+      ) as yttcs';
+      
+      $this->sorters['yttcs']    = 'yttcs '. $direction;
+      return $this;
+  }
+  
+  /*public function sortByRatingDate($direction = self::SORT_DESC)
+  {
+    $this->selectors['latestRating'] = '(
+      SELECT
+        (r.created_at)
+      FROM
+        StoryRating sr
+      LEFT JOIN
+        Rating r
+      ON
+        sr.rating_id = r.id
+      WHERE
+        sr.story_id = s.id
+      ORDER BY
+        (r.created at)
+      LIMIT(1)
+      ) as latestRating';
+
+    $this->sorters['latestRating']    = 'latestRating '. $direction;
+    return $this;
+  }*/
+  
 
   /**
    * confine resultset by average votes
