@@ -874,7 +874,7 @@ class yiggStoryFinder
       $this->query->addWhere('s.user_votes > 2');
     }
     //if($this->$use_news_algorithim == true)
-    else
+    /*else
     {
         $this->sql = '
         (
@@ -891,7 +891,7 @@ class yiggStoryFinder
          sv.id
       ) as s
       ';
-    }
+    }*/
     
 
     $this->query->from($this->sql);
