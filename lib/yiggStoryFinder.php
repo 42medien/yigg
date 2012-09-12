@@ -347,16 +347,8 @@ class yiggStoryFinder
     $this->use_news_algorithim = true;
     
     $context = time();
-    if( true === $round )
-    {
-      $this->time_from = yiggTools::getRoundedTime( $context - 86400 );
-      $this->time_until = yiggTools::getRoundedTime( $context );
-    }
-    else
-    {
-      $this->time_from = yiggTools::getDbDate( null, $context - 86400);
-      $this->time_until = 'NOW()';
-    }
+    $this->time_from = yiggTools::getRoundedTime( $context - 86400 );
+    $this->time_until = yiggTools::getRoundedTime( $context );
     
     $this->selectors['yttcs'] = '    
     (
