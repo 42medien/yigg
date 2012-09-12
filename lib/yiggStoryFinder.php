@@ -19,6 +19,9 @@ class yiggStoryFinder
 
   // use our rating algorithim.
   private $use_algorithim = false;
+  
+  // use new algorithim for news.
+  private $use_news_algorithim = false;
 
   /**
    * sql statement to find a story
@@ -341,17 +344,34 @@ class yiggStoryFinder
    */
   public function sortByYTTCS($direction = self::SORT_DESC)
   {
-      //$this->use_algorithim = true;
-      $this->selectors['yttcs'] = '(          
-          SELECT st.story_id,
-                 count(*) AS tweet_count
-            FROM story_tweet AS st
-        GROUP BY story_id   
-        ORDER BY (tweet_count)
-      ) as yttcs';
-      
-      $this->sorters['yttcs']    = 'yttcs '. $direction;
-      return $this;
+    $this->$use_news_algorithim = true;
+    $this->selectors['yttcs'] = '    
+    (
+     SELECT count(c.id)
+     FROM comment c
+     INNER JOIN story_comment scom on c.id = scom.comment_id
+     WHERE scom.story_id = s.id AND c.deleted_at is null
+     ) AS comments,   
+    (
+      SELECT count(st.id)
+      FROM story_tweet st
+      WHERE st.story_id = s.id AND
+      s.created_at > \'' . $this->time_from .'\'
+         AND
+        s.created_at < \''. $this->time_until .'\'
+    ) AS story_tweet_l
+    (
+      SELECT count(st.id)
+      FROM story_tweet st
+      WHERE st.story_id = s.id AND
+      s.created_at > \'' . $this->time_from .'\'
+         AND
+        s.created_at < \''. $this->time_until .'\'
+    ) AS story_tweet_a
+    ';
+
+    $this->sorters['yttcs'] = "s.yttcs DESC";
+    return $this;
   }
       
   /**
@@ -856,6 +876,25 @@ class yiggStoryFinder
       ';
       $this->query->addWhere('s.user_votes > 2');
     }
+    if($this->$use_news_algorithim == true)
+    {
+        $this->sql = '
+        (
+        SELECT
+          ROUND(                        
+                (1 * sv.comments) + 
+                (2 * sv.story_tweet_l) + 
+                (1 * sv.story_tweet_a)            
+            ) as yttcs,
+            sv.*
+          FROM
+         '. $this->sql . '
+         GROUP BY
+         sv.id
+      ) as s
+      ';
+    }
+    
 
     $this->query->from($this->sql);
 
