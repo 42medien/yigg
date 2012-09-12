@@ -17,10 +17,10 @@
      <link href="http://yigg.it/css/yigg-styles-backend.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-   <div class="bg_top">
+    <div id="container">
+           <div class="bg_top">
    <div class="bg_bt">
    <div class="bg_mid">
-    <div id="container">
       <div class="header">
         <a tabindex="1" href="#Content" class="hidden">Direkt zum Inhalt </a>
         <?php
