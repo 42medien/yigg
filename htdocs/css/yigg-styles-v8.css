@@ -123,15 +123,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .search_box li {margin: 2px 0 0; list-style: none;}
 /*#sub-navi li.selected, #sub-navi li:hover {background: url(../images/splice.png) 0% -157px}
 #sub-navi li.selected a, #sub-navi a:hover {background: url(../images/splice.png) 100% -157px}*/
-#footer {padding: 37px 0; clear: both; box-shadow: 0 5px 7px #292929 inset; text-align: center;
-background: #434343; /* Old browsers */
-background: -moz-linear-gradient(top, #434343 0%, #222222 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#434343), color-stop(100%,#222222)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #434343 0%,#222222 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #434343 0%,#222222 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #434343 0%,#222222 100%); /* IE10+ */
-background: linear-gradient(to bottom, #434343 0%,#222222 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+#footer {padding: 37px 0; clear: both; height: 119px; text-align: center;
+/*box-shadow: 0 5px 7px #292929 inset; 
+background: #434343;  Old browsers 
+background: -moz-linear-gradient(top, #434343 0%, #222222 100%);  FF3.6+ 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#434343), color-stop(100%,#222222));  Chrome,Safari4+ 
+background: -webkit-linear-gradient(top, #434343 0%,#222222 100%);  Chrome10+,Safari5.1+ 
+background: -o-linear-gradient(top, #434343 0%,#222222 100%);  Opera 11.10+ 
+background: -ms-linear-gradient(top, #434343 0%,#222222 100%);  IE10+ 
+background: linear-gradient(to bottom, #434343 0%,#222222 100%);  W3C 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', endColorstr='#222222',GradientType=0 );  IE6-9 */
 }
 #footer fieldset {display: block; margin: 0 auto; width: 1010px; text-align: left;}
 #footer fieldset ul {margin: 0;}
