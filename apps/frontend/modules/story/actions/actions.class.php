@@ -70,7 +70,7 @@ class storyActions extends yiggActions
     {
       $sf->confineWithMarkedForFrontpage();
     }
-    $sf->sortByDate();
+    $sf->sortByAvg();
     $query = $sf->getQuery();
     $query->groupBy("s.id");
 
