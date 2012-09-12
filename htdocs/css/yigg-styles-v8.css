@@ -63,7 +63,7 @@ a:hover {text-decoration: none;}
 #container {position: relative;}
 #container #content {width: 1010px; margin: 0 auto; background: #fff; border-width: 0 1px 1px; border-style: solid; border-color: #cdcdcd; border-bottom-color: #e3e3e3;}
 .content_data {margin: 0 0 0 12px;}
-.header {position: relative; background: #fff; border-bottom: 1px solid #cdcdcd;}
+.header {position: relative; border-bottom: 1px solid #cdcdcd;}
 /*.header_data {width: 1255px; margin: 0 auto;}*/
 .header_data .logo_box {float: left; margin: 0 0 0 -107px;}
 .header_data .login_box_cont {width: 670px; float: left;}
