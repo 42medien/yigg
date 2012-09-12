@@ -378,6 +378,9 @@ class yiggStoryFinder
       WHERE st.story_id = s.id
     ) AS story_tweet_a
     ';
+    
+    $this->time_from = null;
+    $this->time_until = null;
 
     $this->sorters['yttcs'] = "s.yttcs DESC";
     return $this;
