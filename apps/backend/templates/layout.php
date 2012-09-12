@@ -17,6 +17,9 @@
      <link href="http://yigg.it/css/yigg-styles-backend.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+   <div class="bg_top">
+   <div class="bg_bt">
+   <div class="bg_mid">
     <div id="container">
       <div class="header">
         <a tabindex="1" href="#Content" class="hidden">Direkt zum Inhalt </a>
@@ -95,6 +98,9 @@
        <div class="clr bth"><!--  clearer --></div>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
 
     <?php if(false === $sf_request->isMobile()): ?>
       <script type="text/javascript" src="<?php echo sfConfig::get('static_host')?>js/prototype.js"></script>
