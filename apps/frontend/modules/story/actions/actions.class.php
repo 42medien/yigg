@@ -76,9 +76,7 @@ class storyActions extends yiggActions
 
     $this->limit = 10;
     $this->stories = $this->setPagerQuery($query)->execute();
-    
-    echo 'test place';
-
+        
     $this->storyCount = count($this->stories->getKeys());
     if( $this->storyCount > 0 )
     {
