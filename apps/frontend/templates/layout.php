@@ -92,6 +92,9 @@
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div class="bg_top">
+    <div class="bg_bt">
+    <div class="bg_mid">
       <div id="container">          
         <div class="header">
             <div class="header_data">                
@@ -166,6 +169,10 @@
       <div class="hr_bt"></div>
       <div class="hr_bt"></div>
   <?php include_partial("system/footer");?>
+        </div>
+  </div>
+  </div>
+  </div>
         <script type="text/javascript">
             var _sf_async_config={uid:23222,domain:"yigg.de"};
             (function(){
