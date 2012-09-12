@@ -71,7 +71,7 @@ class storyActions extends yiggActions
       $sf->confineWithMarkedForFrontpage();
     }
     
-    //$sf->confineWithDate24(true);
+    $sf->confineWithDate24(true);
     
     $sf->sortByDate();
     $query = $sf->getQuery();
