@@ -341,7 +341,7 @@ class yiggStoryFinder
    */
   public function sortByYTTCS($direction = self::SORT_DESC)
   {
-    $this->$use_news_algorithim = true;
+    $this->$use_algorithim = false;
     $this->selectors['yttcs'] = '    
     (
      SELECT count(c.id)
