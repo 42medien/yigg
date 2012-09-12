@@ -347,7 +347,7 @@ class yiggStoryFinder
                  count(*) AS tweet_count
             FROM story_tweet AS st
         GROUP BY story_id   
-        ORDER BY (st.tweet_count)
+        ORDER BY (tweet_count)
       ) as yttcs';
       
       $this->sorters['yttcs']    = 'yttcs '. $direction;
