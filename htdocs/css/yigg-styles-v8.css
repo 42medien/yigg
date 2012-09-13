@@ -715,7 +715,8 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .bg_bt {background: url('../images/bg_bt.png') left bottom repeat-x;}
 
 /* BackEnd */
-.b_end .header {margin: 0 auto; width: 1000px;}
-.b_end .logo, .b_end #navi {float: left;}
-.b_end #navi {background: red;}
+.b_end .header {margin: 0 auto; width: 1010px; border: 0;}
+.b_end .logo {float: left;}
+.b_end #navi {float: right; width: 878px;}
+.b_end #navi li a {min-width: 110px;}
 /* End Backend */
