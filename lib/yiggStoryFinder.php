@@ -799,7 +799,7 @@ class yiggStoryFinder
     
     $context = time();
     $this->time_until = yiggTools::getRoundedTime( $context - 86400 ); // yesterday    
-    $this->time_from = yiggTools::getRoundedTime( $context ); // time at the moment
+    $this->time_from = yiggTools::getRoundedTime( $context ); // time at the moment    
                 
     $this->selectors['yttcs'] = '    
      (
