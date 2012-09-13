@@ -720,6 +720,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .b_end #navi {float: right; width: 878px; border-right: 1px solid #CDCDCD;}
 .b_end #navi li {border-left: 1px solid #CDCDCD; border-bottom: 1px solid #CDCDCD; border-right: 0;}
 .b_end #navi li a {min-width: 110px; text-align: center;}
+#container.b_end #content {width: 1299px;}
 #sf_admin_container {background: #fff; clear: both; padding: 20px; width: 1258px; float: left;}
 #sf_admin_container h1 {margin: 0 0 20px 20px;}
 .sf_admin_list_td_image img {width: 100px !important;}
