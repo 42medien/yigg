@@ -715,9 +715,9 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .bg_bt {background: url('../images/bg_bt.png') left bottom repeat-x;}
 
 /* BackEnd */
-.b_end .header {margin: 0 auto; width: 1010px; border: 0;}
+.b_end .header {background: #fff; margin: 0 auto; width: 1299px; border: 0; height: 54px;}
 .b_end .logo {float: left; margin: 0 0 0 20px !important;}
-.b_end #navi {float: right; width: 878px;}
+.b_end #navi {float: right; width: 878px; border-right: 1px solid #CDCDCD;}
 .b_end #navi li {border-left: 1px solid #CDCDCD; border-bottom: 1px solid #CDCDCD; border-right: 0;}
 .b_end #navi li a {min-width: 110px; text-align: center;}
 #sf_admin_container {background: #fff; clear: both; padding: 20px; width: 1258px; float: left;}
