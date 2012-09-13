@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" class="bend">
   <head profile='http://www.w3.org/2006/03/hcard'>
     <link rel="shortcut icon" href="<?php echo sfConfig::get('static_host_images')?>/favicon.ico" />
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
