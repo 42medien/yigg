@@ -720,5 +720,6 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .b_end #navi {float: right; width: 878px;}
 .b_end #navi li {border-left: 1px solid #CDCDCD; border-bottom: 1px solid #CDCDCD; border-right: 0;}
 .b_end #navi li a {min-width: 110px; text-align: center;}
-#sf_admin_container {clear: both;}
+#sf_admin_container {clear: both; padding: 20px 0 0;}
+#sf_admin_container h1 {margin: 0 0 20px 20px;}
 /* End Backend */
