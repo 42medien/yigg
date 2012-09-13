@@ -840,7 +840,7 @@ class yiggStoryFinder
     $this->time_from = null;
     $this->time_until = null;
 
-    $this->sorters['yttcs'] = "s.yttcs ASC";
+    $this->sorters['yttcs'] = "s.yttcs DESC";
     return $this;
   }
 
