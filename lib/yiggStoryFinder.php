@@ -327,65 +327,7 @@ class yiggStoryFinder
     $this->joins['story_comments'] = 'INNER JOIN story_comment on s.id = story_comment.story_id';
     return $this;
   }
-  
-  
-  
-  /*
-   * new Algorythm for calculation the news on the main page of yigg 
-   * FORMULA:
-   * 1 * counts of yiggs + 
-   * 1 * counts of Tweets (last 24 hours) + 
-   * 2 * counts of Tweets (after the first 24 hours) + 
-   * 1 * counts comments 
-   * /--  1,5 * shares via spreadly --/ - excluded from the formula calculation
-   * 
-   * @return
-   * @param $direction Object[optional]
-   */
-  public function sortByYTTCS($direction = self::SORT_DESC)
-  {
-    $this->use_news_algorithim = true;
-    
-    $context = time();
-    $this->time_from = yiggTools::getRoundedTime( $context - 86400 );
-    $this->time_until = yiggTools::getRoundedTime( $context );
-    
-    $this->selectors['yttcs'] = '    
-    (
-     SELECT count(c.id)
-     FROM comment c
-     INNER JOIN story_comment scom on c.id = scom.comment_id
-     WHERE scom.story_id = s.id AND c.deleted_at is null
-     ) AS comments,
-     (
-      SELECT count(r.id)
-      FROM story_rating r
-      LEFT JOIN rating ON r.rating_id = rating.id
-      WHERE r.story_id = s.id
-        AND
-      rating.created_at > \'' . $this->time_from . '\'
-        AND
-      rating.created_at < \''. $this->time_until .'\'
-    ) AS votes,
-    (
-      SELECT count(st.id)
-      FROM story_tweet st
-      WHERE st.story_id = s.id
-    ) AS story_tweet_l,
-    (
-      SELECT count(st.id)
-      FROM story_tweet st
-      WHERE st.story_id = s.id
-    ) AS story_tweet_a
-    ';
-    
-    $this->time_from = null;
-    $this->time_until = null;
-
-    $this->sorters['yttcs'] = "s.yttcs DESC";
-    return $this;
-  }
-      
+              
   /**
    * confine resultset by average votes
    * the voting average is calculated, stories with less than the average votes will
@@ -837,6 +779,62 @@ class yiggStoryFinder
        AND
       u.deleted_at IS NULL
     ';
+  }
+  
+  /*
+   * new Algorythm for calculation the news on the main page of yigg 
+   * FORMULA:
+   * 1 * counts of yiggs + 
+   * 1 * counts of Tweets (last 24 hours) + 
+   * 2 * counts of Tweets (after the first 24 hours) + 
+   * 1 * counts comments 
+   * /--  1,5 * shares via spreadly --/ - excluded from the formula calculation
+   * 
+   * @return
+   * @param $direction Object[optional]
+   */
+  public function sortByYTTCS($direction = self::SORT_DESC)
+  {
+    $this->use_news_algorithim = true;
+    
+    $context = time();
+    $this->time_from = yiggTools::getRoundedTime( $context - 86400 );
+    $this->time_until = yiggTools::getRoundedTime( $context );
+    
+    $this->selectors['yttcs'] = '    
+     (
+     SELECT count(c.id)
+     FROM comment c
+     INNER JOIN story_comment scom on c.id = scom.comment_id
+     WHERE scom.story_id = s.id AND c.deleted_at is null
+     ) AS comments,
+     (
+      SELECT count(r.id)
+      FROM story_rating r
+      LEFT JOIN rating ON r.rating_id = rating.id
+      WHERE r.story_id = s.id
+        AND
+      rating.created_at > \'' . $this->time_from . '\'
+        AND
+      rating.created_at < \''. $this->time_until .'\'
+    ) AS votes,
+    (
+      SELECT count(st.id)
+      FROM story_tweet st
+      WHERE st.story_id = s.id
+    ) AS story_tweet_l,
+    (
+      SELECT count(st.id)
+      FROM story_tweet st
+      WHERE st.story_id = s.id
+    ) AS story_tweet_a
+    ';
+    
+    $this->time_from = null;
+    $this->time_until = null;
+
+    $this->sorters['yttcs'] = "s.yttcs DESC";
+    return $this;
   }
 
   /**
