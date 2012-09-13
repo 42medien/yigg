@@ -719,4 +719,5 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .b_end .logo {float: left;}
 .b_end #navi {float: right; width: 878px;}
 .b_end #navi li a {min-width: 110px;}
+#sf_admin_container {clear: both;}
 /* End Backend */
