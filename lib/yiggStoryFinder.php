@@ -808,10 +808,15 @@ class yiggStoryFinder
      INNER JOIN story_comment scom on c.id = scom.comment_id
      WHERE scom.story_id = s.id AND c.deleted_at is null
      ) AS comments,
-     (
+    (
       SELECT count(r.id)
       FROM story_rating r
+      LEFT JOIN rating ON r.rating_id = rating.id
       WHERE r.story_id = s.id
+        AND
+      rating.created_at > \'' . $this->time_until . '\'
+        AND
+      rating.created_at < \''. $this->time_from .'\'
     ) AS votes,
     (
       SELECT count(st.id)
