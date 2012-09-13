@@ -817,25 +817,22 @@ class yiggStoryFinder
     (
       SELECT count(st.id)
       FROM story_tweet st
+      LEFT JOIN tweet AS t ON t.id = st.tweet_id
       WHERE st.story_id = s.id 
         AND
-            s.created_at > \'' . $this->time_until .'\'
+            t.created_at > \'' . $this->time_until .'\'
         AND
-            s.created_at < \''. $this->time_from .'\'
+            t.created_at < \''. $this->time_from .'\'
     ) AS story_tweet_l,
     (
       SELECT count(st.id)
       FROM story_tweet st
+      LEFT JOIN tweet AS t ON t.id = st.tweet_id
       WHERE st.story_id = s.id 
-        AND s.created_at < \'' . $this->time_until .'\'
+        AND t.created_at < \'' . $this->time_until .'\'
     ) AS story_tweet_a
     ';
-    
-    /*
-     * AND rating.created_at > '2012-09-12 09:15'
-           AND rating.created_at < '2012-09-13 09:15') AS votes,
-     */
-    
+        
     $this->time_from = null;
     $this->time_until = null;
 
