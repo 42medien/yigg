@@ -15,6 +15,7 @@
      <link href="http://yigg.it/css/default.css" rel="stylesheet" type="text/css" />
      <link href="http://yigg.it/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
      <link href="http://yigg.it/css/yigg-styles-backend.css" rel="stylesheet" type="text/css" />
+     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
    <div id="container" class="b_end">
