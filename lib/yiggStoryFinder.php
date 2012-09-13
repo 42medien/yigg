@@ -827,7 +827,7 @@ class yiggStoryFinder
       SELECT count(st.id)
       FROM story_tweet st
       WHERE st.story_id = s.id 
-        AND s.created_at > \'' . $this->time_until .'\'
+        AND s.created_at < \'' . $this->time_until .'\'
     ) AS story_tweet_a
     ';
     
