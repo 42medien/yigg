@@ -713,3 +713,8 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 
 .bg_top {background: url('../images/bg_top.png') 0 0 repeat-x;}
 .bg_bt {background: url('../images/bg_bt.png') left bottom repeat-x;}
+
+/* BackEnd */
+.b_end .header {margin: 0 auto; width: 1000px;}
+.b_end .logo, .b_end #navi {float: left;}
+/* End Backend */
