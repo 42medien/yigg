@@ -71,7 +71,7 @@ class yiggStoryFinder
    */
   private $time_until = null;
   private $time_from = null;
-
+    
   /**
    * @var precompiled sql
    */
@@ -798,9 +798,9 @@ class yiggStoryFinder
     $this->use_news_algorithim = true;
     
     $context = time();
-    $this->time_from = yiggTools::getRoundedTime( $context - 86400 );
-    $this->time_until = yiggTools::getRoundedTime( $context );
-    
+    $this->time_until = yiggTools::getRoundedTime( $context - 86400 ); // yesterday    
+    $this->time_from = yiggTools::getRoundedTime( $context ); // time at the moment
+                
     $this->selectors['yttcs'] = '    
      (
      SELECT count(c.id)
@@ -813,22 +813,28 @@ class yiggStoryFinder
       FROM story_rating r
       LEFT JOIN rating ON r.rating_id = rating.id
       WHERE r.story_id = s.id
-        AND
-      rating.created_at > \'' . $this->time_from . '\'
-        AND
-      rating.created_at < \''. $this->time_until .'\'
     ) AS votes,
     (
       SELECT count(st.id)
       FROM story_tweet st
-      WHERE st.story_id = s.id
+      WHERE st.story_id = s.id 
+        AND
+            s.created_at > \'' . $this->time_until .'\'
+        AND
+            s.created_at < \''. $this->time_from .'\'
     ) AS story_tweet_l,
     (
       SELECT count(st.id)
       FROM story_tweet st
-      WHERE st.story_id = s.id
+      WHERE st.story_id = s.id 
+        AND s.created_at > \'' . $this->time_until .'\'
     ) AS story_tweet_a
     ';
+    
+    /*
+     * AND rating.created_at > '2012-09-12 09:15'
+           AND rating.created_at < '2012-09-13 09:15') AS votes,
+     */
     
     $this->time_from = null;
     $this->time_until = null;
@@ -893,9 +899,9 @@ class yiggStoryFinder
         SELECT
           ROUND(
                 (1 * sv.votes ) + 
-                (1 * sv.comments) + 
-                (2 * sv.story_tweet_l) + 
-                (1 * sv.story_tweet_a)            
+                (1 * sv.story_tweet_l) + 
+                (2 * sv.story_tweet_a) + 
+                (1 * sv.comments)
             ) as yttcs,
             sv.*
           FROM
