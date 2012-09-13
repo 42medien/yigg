@@ -726,4 +726,5 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 #sf_admin_container h1 {margin: 0 0 20px;}
 .sf_admin_list_td_image img {width: 100px !important;}
 #sf_admin_bar form {margin: 0;}
+.sf_admin_pagination {line-height: 15px;}
 /* End Backend */
