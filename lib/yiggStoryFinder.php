@@ -336,8 +336,8 @@ class yiggStoryFinder
    * 1 * counts of yiggs + 
    * 1 * counts of Tweets (last 24 hours) + 
    * 2 * counts of Tweets (after the first 24 hours) + 
-   * 1 * counts comments + 
-   * 1,5 * shares via spreadly
+   * 1 * counts comments 
+   * /--  1,5 * shares via spreadly --/ - excluded from the formula calculation
    * 
    * @return
    * @param $direction Object[optional]
