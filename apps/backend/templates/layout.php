@@ -17,7 +17,7 @@
      <link href="http://yigg.it/css/yigg-styles-backend.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-   <div id="container">
+   <div id="container b_end">
     
       <div class="header">
         <a tabindex="1" href="#Content" class="hidden">Direkt zum Inhalt </a>
