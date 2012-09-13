@@ -811,7 +811,6 @@ class yiggStoryFinder
      (
       SELECT count(r.id)
       FROM story_rating r
-      LEFT JOIN rating ON r.rating_id = rating.id
       WHERE r.story_id = s.id
     ) AS votes,
     (
