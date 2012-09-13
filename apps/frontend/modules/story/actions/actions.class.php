@@ -71,8 +71,8 @@ class storyActions extends yiggActions
       $sf->confineWithMarkedForFrontpage();
     }
     
-    //$sf->sortByDate();
-    $sf->sortByYTTCS();
+    $sf->sortByDate();
+    //$sf->sortByYTTCS();
     
     $query = $sf->getQuery();
     $query->groupBy("s.id");
