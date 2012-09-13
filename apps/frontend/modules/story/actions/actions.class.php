@@ -72,8 +72,8 @@ class storyActions extends yiggActions
     }
     
     //$sf->confineWithDate24(true);
-    //$sf->sortByDate();    
-    $sf->sortByYTTCS();
+    $sf->sortByDate();    
+    //$sf->sortByYTTCS();
     
     $query = $sf->getQuery();
     $query->groupBy("s.id");
