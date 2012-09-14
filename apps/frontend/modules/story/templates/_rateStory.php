@@ -55,7 +55,6 @@
       <?php endif; ?>
       
       
-      <br> <br>
               <style type="text/css" media="screen"> 
           .yiggbutton { float:left; padding:3px 5px 5px 5px; } 
       </style> 
