@@ -165,9 +165,9 @@ h3.entry-title {font-size: 1.4em}
 .entry-title a.logo {float: left; margin: 0; overflow: hidden; white-space: nowrap; width: auto;}
 .entry-content {margin: 5px 160px 0 0}
 #story-list .entry-content {margin: 0}
-#story-list .entry-content .story_auth {line-height: 20px; width: 100%;}
+#story-list .entry-content .story_auth {line-height: 20px; width: 100%; display: inline-block;}
 #story-list .entry-content .story_auth img {display: inline; vertical-align: middle;}
-#story-list .entry-content .story_body {font: 14px/20px 'Arial', sans-serif; color: #444444; display: inline-block; height: 60px; overflow: hidden; width: 100%;}
+#story-list .entry-content .story_body {font: 14px/20px 'Arial', sans-serif; color: #444444; display: inline-block; height: 85px; overflow: hidden; width: 100%;}
 #story-list .entry-content .story_body + a, #RegisterForm .field_last ul li a {font: 12px 'Arial', sans-serif; color: #333; text-decoration: underline;}
 #story-list .entry-content .story_auth a {color: #00709E;}
 .entry-content.video {margin: 5px 30px 0 0}
