@@ -65,7 +65,7 @@
       
       <div class="yiggbutton"> 
           <script> yigg_url = 'URL DER NACHRICHT'; </script> 
-          <script src="http://static.yigg.de/v6/js/embed_button.js"></script> 
+          <script src="http://static.yigg.de/v6/js/embed_flat_button.js"></script> 
       </div>
       
       
