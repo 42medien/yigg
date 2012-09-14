@@ -57,7 +57,7 @@
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
-      
+      <br><br>
       
       <style type="text/css" media="screen"> 
           .yiggbutton { float:left; padding:3px 5px 5px 5px; } 
