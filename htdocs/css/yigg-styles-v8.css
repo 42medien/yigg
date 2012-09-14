@@ -337,7 +337,7 @@ form .edit-image .delete-image input, form .edit-image .delete-image label {floa
 .rating-form {/*background: transparent url('../images/story_yiggit.png') 0 0 no-repeat; padding: 0 0 0 22px;*/ border: none; margin: 0; line-height: 18px;}
 #story-list .rating-form {position: absolute; left: 13px; bottom: 0;}
 .list_cont + .rating-form {float: left; margin: 10px 0 0;}
-.list_cont + .rating-form + .story_bt_data {float: right; margin: 3px 10px 0px 0px; width: 300px;}
+.list_cont + .rating-form + .story_bt_data {float: right; margin: 3px 10px 40px 0px; width: 300px;}
 .list_cont + .rating-form + .story_bt_data .spreadly-button {float: left; margin: 0px -6px 0 0;}
 .list_cont + .rating-form + .story_bt_data h3.comments.heading-left {float: right;}
 .voted span, .rating-form input, .rating-form .button {display:block; background: #ffc851; border: 1px solid #c7c7c7; border-radius: 3px; float: left; line-height: 18px; padding: 0 2px;}
