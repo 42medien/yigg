@@ -36,10 +36,6 @@
        </style>
     </head>
   <body>
-      
-      
-      
-      
 <?php endif; ?>
       <!-- RatingForm -->
       <?php $hasRated = ( null === $story->hasRated() ? $sf_user->hasRated($story['id']) : $story->hasRated() );
@@ -57,18 +53,6 @@
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
-      <br><br>
-      
-      <style type="text/css" media="screen"> 
-          .yiggbutton { float:left; padding:3px 5px 5px 5px; } 
-      </style> 
-      
-      <div class="yiggbutton"> 
-          <script> yigg_url = 'URL DER NACHRICHT'; </script> 
-          <script src="http://static.yigg.de/v6/js/embed_flat_button.js"></script> 
-      </div>
-      
-      
 <?php if(false === $sf_request->isAjaxRequest() && isset($external) && $external == true): ?>
     </body>
   </html>
