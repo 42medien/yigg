@@ -1,4 +1,4 @@
-<h2>YiGG Administration Login</h2>
+<h2 class="adm_hd">YiGG Administration Login</h2>
 
 <div class="boxtext shadedBg">
   <form id="LoginForm" action="<?php echo url_for("@user_login"); ?>"  method="post" class="ninjaForm ">
