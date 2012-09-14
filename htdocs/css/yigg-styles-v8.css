@@ -203,7 +203,7 @@ h3.entry-title {font-size: 1.4em}
 .userinfo form .ninjaRequired {width: 211px; height: 25px; margin: 0 0 13px; display: block; padding: 1px 3px; border: 1px solid #9d9d9d; border-radius: 3px;}
 .userinfo form #Password.ninjaRequired {margin-bottom: 7px;}
 .userinfo .button, #LoginForm .button, #ResetPasswordForm .actions input, form#new_form #save, .settings .actions input, form.right-settings .actions input, form.post-box .actions input,
-form#new_form.ninjaForm #Save, #RegisterForm .actions input {height: 31px; width: 56px; padding: 0 0 3px; float: right; border: 1px solid #e5e5e5 !important; text-align: center; font: bold 13px/25px 'Arial', sans-serif !important; color: #000; cursor: pointer;
+form#new_form.ninjaForm #Save, #RegisterForm .actions input, .b_end #LoginForm .actions input {height: 31px; width: 56px; padding: 0 0 3px; float: right; border: 1px solid #e5e5e5 !important; text-align: center; font: bold 13px/25px 'Arial', sans-serif !important; color: #000; cursor: pointer;
 background: #ffeb7e; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffeb7e 1%, #ffda05 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffeb7e), color-stop(100%,#ffda05)); /* Chrome,Safari4+ */
@@ -732,5 +732,5 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 #sf_admin_container fieldset label {margin: 0;}
 .b_end #LoginForm fieldset .field:last-of-type {width: 185px; padding: 12px 0 0;}
 .b_end #LoginForm fieldset .field:last-of-type label {display: block; float: right; margin: 0; line-height: 26px;}
-.adm_hd {margin: 0;}
+.adm_hd {margin: 0 0 15px;}
 /* End Backend */
