@@ -17,6 +17,7 @@
         </ul>
         <div class="clear"></div>
     </div>
+    <p class="bt_info">Bitte wähle ein passendes Bild aus</p>
 </div>
 <script>createSlider();</script>
 
