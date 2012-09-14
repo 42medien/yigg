@@ -42,7 +42,7 @@
         if (false === $hasRated ):?>
         <form id="StoryRate<?php echo $story->id ?>" class="rating-form ninjaForm ninjaAjaxSubmit" action="<?php echo url_for_story($story, "rate"); ?>" method="post">
             <fieldset>
-               <p>YiGGs</p>
+<!--                <p>YiGGs</p>*/-->
                 <input type="hidden" name="StoryRate[_csrf_token]" value="<?php echo $form[$form->getCSRFFieldName()]->getValue() ?>" id="StoryRate<?php echo $story->id; ?>__csrf_token" /><input name="StoryRate[ratingtoken]" id="StoryRate_ratingtoken<?php echo $story->id; ?>" type="hidden" value="<?php echo md5(rand(1,10000));?>" /><input type="submit" value="YiGG it!" class="button" id="Rate<?php echo $story->id?>" />
                 <h4><label></label><?php echo $story->currentRating(); ?></h4>
             </fieldset></form>
