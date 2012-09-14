@@ -374,7 +374,7 @@ p.success {background: #1ccb13 url(../images/bigicons/allfine_med.png) no-repeat
 #LoginContainer .actions * {display: inline}
 .remember-me label {float: none !important}
 .remember-me input {margin-left: 125px}
-.boxtext {padding: 5px 5px 0  5px; border: 1px solid #ccc !important; background: #ececec repeat-x}
+.boxtext {padding: 5px 5px 0  5px; border: 0 !important; background: transparent;}
 blockquote:before {content: "Zitat:"attr(cite); font-weight: bold; border-top: 5px}
 blockquote {text-align: left; padding-left: 5px; margin-bottom: 5px; border-left: 2px solid #ccc; font-style: italic}
 .user {text-align: right}
@@ -721,7 +721,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .b_end #navi {float: right; border-right: 1px solid #CDCDCD;}
 .b_end #navi li {border-left: 1px solid #CDCDCD; border-bottom: 1px solid #CDCDCD; border-right: 0;}
 .b_end #navi li a {min-width: 110px; text-align: center;}
-#container.b_end #content {width: 1299px;}
+#container.b_end #content {width: 1297px; min-height: 700px;}
 #sf_admin_container {background: #fff; clear: both; padding: 20px; width: 1258px; float: left; min-height: 600px;}
 #sf_admin_container h1 {margin: 0 0 20px;}
 .sf_admin_list_td_image img {width: 100px !important;}
