@@ -53,7 +53,7 @@
       <?php else: ?>
        <div class="<?php if(false === $sf_request->isAjaxRequest() || true === isset($completeStory)):?>rating-form <?php endif;?>voted">   
 <!--      <p>YiGGs</p>-->
-          <span class="voted">YiGGGed</span>
+          <span class="voted">YiGGGed</span> 
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
