@@ -115,7 +115,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #navi li.selected a, #navi li a:hover {background: #e57e1a url(../images/splice.png) 100% -89px; color: white}*/
 /*#navi li.create, #navi li.create a {background: none; color: #993300}*/
 /*#navi li.create a:hover {text-decoration: underline}*/
-#sub-navi, #categories-nav {margin: 0; position: absolute; left: -104px; top: 67px;}
+#sub-navi, #categories-nav {margin: 0; position: absolute; left: -140px; top: 67px;}
 #sub-navi li {background: none; display: block; float: none; width: 100px; overflow: hidden;}
 #sub-navi li a {color: black; display: block; line-height: 19px; background: none; margin-left: 2px; text-decoration: none}
 #sub-navi li a:hover, #sub-navi li.selected a {color: #e57e1a}
