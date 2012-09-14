@@ -717,6 +717,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .bg_bt {background: url('../images/bg_bt.png') left bottom repeat-x;}
 
 #Comment .actions {float: right;}
+#related_stories {clear: both;}
 
 /* BackEnd */
 #container.b_end {width: 1300px;}
