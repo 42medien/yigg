@@ -160,7 +160,8 @@ form.spy-filter .field label {float: none}
 h1.entry-title {font-size: 1.6em}
 h2.entry-title {font-size: 1.5em}
 h3.entry-title {font-size: 1.4em}
-.entry-title {font-weight: normal; margin: 0px 50px 5px 0; text-align: left; overflow: hidden; max-height: 2.5em; width: 400px}
+.entry-title {font-weight: normal; margin: 0px 0 5px 0; text-align: left; overflow: hidden; max-height: 2.5em; width: 660px}
+.entry-title a {float: left; margin: 0 10px 0 0; overflow: hidden; white-space: nowrap; width: 625px;}
 .entry-content {margin: 5px 160px 0 0}
 #story-list .entry-content {margin: 0}
 #story-list .entry-content .story_auth {line-height: 20px; width: 100%;}
@@ -721,7 +722,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .b_end #navi {float: right;}
 .b_end #navi li {border-left: 1px solid #CDCDCD; border-bottom: 1px solid #CDCDCD; border-right: 0;}
 .b_end #navi li a {min-width: 110px; text-align: center;}
-#container.b_end #content {width: 1299px; min-height: 700px;}
+#container.b_end #content {width: 1299px; min-height: 700px; float: left;}
 #sf_admin_container {background: #fff; clear: both; padding: 20px; width: 1258px; float: left; min-height: 600px;}
 #sf_admin_container h1 {margin: 0 0 20px;}
 .sf_admin_list_td_image img {width: 100px !important;}
