@@ -730,6 +730,6 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .sf_admin_pagination a {vertical-align: middle;}
 .sf_admin_pagination a img {vertical-align: top !important;}
 #sf_admin_container fieldset label {margin: 0;}
-.b_end #LoginForm fieldset .field:last-of-type {width: 185px;}
-.b_end #LoginForm fieldset .field:last-of-type label {display: block; float: right; margin: 0; line-height: 25px;}
+.b_end #LoginForm fieldset .field:last-of-type {width: 185px; padding: 12px 0 0;}
+.b_end #LoginForm fieldset .field:last-of-type label {display: block; float: right; margin: 0; line-height: 26px;}
 /* End Backend */
