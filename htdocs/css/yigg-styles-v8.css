@@ -720,6 +720,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 #related_stories {clear: both;}
 #related_stories .avatar-list-style {border: 0; width: 655px;}
 #related_stories .avatar-list-style li {width: auto;}
+.story_auth + br {display: none;}
 
 /* BackEnd */
 #container.b_end {width: 1300px;}
