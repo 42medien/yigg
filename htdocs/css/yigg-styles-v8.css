@@ -744,4 +744,5 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .b_end #LoginForm fieldset .field:last-of-type label {display: block; float: right; margin: 0; line-height: 26px;}
 .adm_hd {margin: 0 0 15px;}
 .b_end #LoginForm .actions input {float: left; margin: 0;}
+#video_ad_filters_title_is_empty {margin: 5px 0 0;}
 /* End Backend */
