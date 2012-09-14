@@ -36,6 +36,10 @@
        </style>
     </head>
   <body>
+      
+      
+      
+      
 <?php endif; ?>
       <!-- RatingForm -->
       <?php $hasRated = ( null === $story->hasRated() ? $sf_user->hasRated($story['id']) : $story->hasRated() );
@@ -49,7 +53,7 @@
       <?php else: ?>
        <div class="<?php if(false === $sf_request->isAjaxRequest() || true === isset($completeStory)):?>rating-form <?php endif;?>voted">   
 <!--      <p>YiGGs</p>-->
-          <span class="voted">YiGGed</span>
+          <span class="voted">YiGGGed</span>
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
