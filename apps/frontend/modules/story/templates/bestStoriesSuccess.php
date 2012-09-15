@@ -22,7 +22,7 @@
         <span style="font-weight:<?php echo $highlight; ?>; 
                      font-size:<?php echo $font_size; ?>;">
         <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
-        </span>
+        </span>&nbsp;&nbsp;&nbsp;
     <?php endforeach;?>
 <?php endif;?>
 <?php if($storyCount > 0): ?>
