@@ -116,7 +116,7 @@
                     <div class="login_box_cont">
                         <?php include_partial("system/navigation"); ?>                        
                         <div class="login_link">
-                            <a href="<?php echo url_for('@user_login');?>">Login</a>
+                            <a href="<?php echo url_for('@user_login');?>">Login2</a>
                             <div class="login_fb" onclick="onClickloginfb(); return false;"></div>
                             <div class="login_box">
                                 <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
