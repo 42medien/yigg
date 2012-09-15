@@ -315,14 +315,7 @@ story_create:
   url:    /nachrichten/erstellen
   param:  { module: story, action: create, view: Normal}
 
-category_stories:
-  url:    /nachrichten/:id/:category_slug
-  class:   sfDoctrineRoute
-  options: { model: Category, type: object }
-  param:  { module: story, action: categoryStories }
-  requirements:
-      id: \d+
-      sf_method: [get]
+
 
 story_create_ext:
   url:    /neu
