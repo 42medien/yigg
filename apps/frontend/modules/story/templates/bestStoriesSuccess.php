@@ -7,7 +7,7 @@
             $get_parameter = str_replace("-"," ",$get_parameter);            
         }
         else
-            $get_parameter = '12 Tage';
+            $get_parameter = '12 Std';
         if(trim(strtolower($filter_option->getName())) == trim(strtolower($get_parameter)))
         {
             $highlight = 'bold';            
