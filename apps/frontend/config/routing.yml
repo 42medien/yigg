@@ -325,12 +325,12 @@ category_stories:
       sf_method: [get]
       
 filter_stories:
-  url:    /:id/:story_filter_option_slug
+  url:    /:value/:story_filter_option_slug
   class:   sfDoctrineRoute
   options: { model: StoryFilterOption, type: object }
   param:  { module: story, action: bestStories }
   requirements:
-      id: \d+
+      value: \d+
       sf_method: [get]
 
 story_create_ext:
