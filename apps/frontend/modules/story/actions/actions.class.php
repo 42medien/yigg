@@ -81,8 +81,8 @@ class storyActions extends yiggActions
     }
     if($value)
        $sf->confineWithStoryFilter($value);
-    $sf->sortByDate();
-    //$sf->sortByYTTCS();
+    //$sf->sortByDate();
+    $sf->sortByYTTCS();
     
     $query = $sf->getQuery();
     $query->groupBy("s.id");
