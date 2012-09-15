@@ -61,7 +61,7 @@ class storyActions extends yiggActions
   {
     //$this->story_filter_option = $this->getRoute()->getObject();  
     
-    $this->best = $this->getRoute()->getObject();
+    $this->category = $this->getRoute()->getObject();
       
     $sf = new yiggStoryFinder();    
     $user = $this->session->getUser();
@@ -75,7 +75,7 @@ class storyActions extends yiggActions
       $sf->confineWithMarkedForFrontpage();
     }
     
-    $sf->confineWithStoryFilter($this->best->getId());
+    $sf->confineWithStoryFilter($this->category->getId());
     $sf->sortByDate();
     //$sf->sortByYTTCS();
     
