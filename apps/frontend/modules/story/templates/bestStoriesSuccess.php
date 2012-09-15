@@ -7,7 +7,7 @@
         }
         else
             $get_parameter = '12 Hours';
-        if($filter_option->getName() = $get_parameter)
+        if($filter_option->getName() == $get_parameter)
             $highlight = 'bold';
         else
             $highlight = 'normal';
