@@ -3,7 +3,6 @@
 3 hours, 12 hours, 24 hours, 2 days, 7 days
 -->
 
-s<?php //echo link_to($category->getName(), 'category_stories', $category); ?>
 <?php $filter_options = Doctrine_Core::getTable('StoryFilterOption')->getStoryFilterOptions(); if(count($filter_options)):?>
 <?php foreach($filter_options as $filter_option):?>
     <?php echo link_to($filter_option->getName(), 'best_stories', $filter_option); ?>
