@@ -60,6 +60,7 @@ class storyActions extends yiggActions
   public function executeBestStories( $request )
   {
     $sf = new yiggStoryFinder();
+    $this->story_filter = $this->getRoute()->getObject();
     $user = $this->session->getUser();
 
     if(false !== $user)
@@ -71,6 +72,7 @@ class storyActions extends yiggActions
       $sf->confineWithMarkedForFrontpage();
     }
     
+    $sf->confineWithStoryFilter($this->story_filter->getValue());
     $sf->sortByDate();
     //$sf->sortByYTTCS();
     
