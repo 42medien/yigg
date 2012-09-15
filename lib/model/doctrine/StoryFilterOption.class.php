@@ -1,4 +1,4 @@
 <?php
-class Category extends BaseStoryFilterOption
+class StoryFilterOption extends BaseStoryFilterOption
 {    
 }
