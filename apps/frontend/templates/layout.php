@@ -114,15 +114,22 @@
                         ?>
                     </div>
                     <div class="login_box_cont">
-                        <?php include_partial("system/navigation"); ?>                        
-                        <div class="login_link">
-                            <a href="<?php echo url_for('@user_login');?>">Login2</a>
-                            <div class="login_fb" onclick="onClickloginfb(); return false;"></div>
-                            <div class="login_box">
-                                <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
-                                <a class="yigg_cnct" href="<?php echo url_for('@user_login');?>"></a>
+                        <?php include_partial("system/navigation"); ?>
+                        <?php if(true === $sf_user->hasUser()):?>
+                            <?php //echo link_to("Abmelden","@user_logout");?>
+                            <div class="login_link">
+                                <a href="<?php echo url_for('@user_logout');?>">Logout</a>                                
                             </div>
-                        </div>                        
+                        <?php else: ?>
+                            <div class="login_link">
+                                <a href="<?php echo url_for('@user_login');?>">Login2</a>
+                                <div class="login_fb" onclick="onClickloginfb(); return false;"></div>
+                                <div class="login_box">
+                                    <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
+                                    <a class="yigg_cnct" href="<?php echo url_for('@user_login');?>"></a>
+                                </div>
+                            </div>
+                        <?php endif; ?>                                                                           
                     </div>
                     <div class="clear"></div>
                 </div>
