@@ -2,7 +2,7 @@
     <?php foreach($filter_options as $filter_option):?>
         
         <?php
-        echo sfContext::getInstance()->getRequest()->getParameter('value');
+        echo sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
 
             //if($this->getRequest()->getParameter("value"))
                 //echo $this->getRequest()->getParameter("value");
