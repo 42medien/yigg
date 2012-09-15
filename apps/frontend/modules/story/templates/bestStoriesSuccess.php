@@ -15,7 +15,7 @@ $filter_options = array(
 <?php //echo link_to($category->getName(), 'category_stories', $category); ?>
 
 <?php
-    foreach ($filter_options as $option => $key)
+    foreach ($filter_options as $option)
     {
         //echo '<pre>';
         //print_r($option);
