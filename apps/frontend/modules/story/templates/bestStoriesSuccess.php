@@ -2,24 +2,14 @@
 <!--
 3 hours, 12 hours, 24 hours, 2 days, 7 days
 -->
-<?php
-$filter_options = array(
-    "604800" => "7 Days",
-    "172800" => "2 Days",
-    "86400" => "24 Hours",
-    "43200" => "12 Hours",
-    "10800" => "3 Hours"
-);
-?>
 
-<?php //echo link_to($category->getName(), 'category_stories', $category); ?>
-
-<?php
-    foreach ($filter_options as $key => $value)
-    {
-        echo link_to($value, 'best_stories', $filter_options).'&nbsp;&nbsp;&nbsp;';
-    };
-?>
+s<?php //echo link_to($category->getName(), 'category_stories', $category); ?>
+<?php $filter_options = Doctrine_Core::getTable('StoryFilterOption')->getStoryFilterOptions(); if(count($filter_options)):?>
+<?php foreach($filter_options as $filter_option):?>
+    <?php echo link_to($filter_option->getName(), 'best_stories', $filter_option); ?>
+    <?php endforeach;?>
+<?php endif;?>
+          
 <br>
 <div class="story-list-cont">
   <ol id="story-list" class="story-list hfeed ">
