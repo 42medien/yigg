@@ -12,7 +12,7 @@ $filter_options = array(
 );
 ?>
 
-<?php echo link_to($category->getName(), 'category_stories', $category); ?>
+<?php //echo link_to($category->getName(), 'category_stories', $category); ?>
 
 <?php
     foreach ($filter_options as $key => $value) 
