@@ -1,14 +1,18 @@
 <?php $filter_options = Doctrine_Core::getTable('StoryFilterOption')->getStoryFilterOptions(); if(count($filter_options)):?>
-    <?php foreach($filter_options as $filter_option):?>
-        
-        <?php
-        echo sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
-
-            //if($this->getRequest()->getParameter("value"))
-                //echo $this->getRequest()->getParameter("value");
+    <?php foreach($filter_options as $filter_option):?>               
+        <?php 
+        if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug'))
+        {
+            $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
+        }
+        else
+            $get_parameter = '12 Hours';
+        if($filter_option->getName() = $get_parameter)
+            $highlight = 'bold';
+        else
+            $highlight = 'normal';
         ?>
-
-        <span style="font-weight: bold;">
+        <span style="font-weight: <?php echo $highlight; ?>;">
         <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
         </span>
     <?php endforeach;?>
