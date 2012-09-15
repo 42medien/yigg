@@ -258,7 +258,7 @@ class yiggStoryFinder
 
   public function confineWithMarkedForFrontpage($user_id=null)
   {
-      $this->joins['history'] = 'LEFT JOIN history on s.id = history.story_id';
+      $this->joins['history'] = 'INNER JOIN history on s.id = history.story_id'; // Why Inner Join?
 
       if(0 !== strlen($user_id))
       {
