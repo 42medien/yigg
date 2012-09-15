@@ -46,7 +46,7 @@
     <?php include_title() ?>
     <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
-    <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script>
+    <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script> 
     <?php include_stylesheets() ?>
     
     <script type='text/javascript'>
