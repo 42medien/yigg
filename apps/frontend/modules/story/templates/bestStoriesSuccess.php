@@ -5,7 +5,7 @@
 
 <?php $filter_options = Doctrine_Core::getTable('StoryFilterOption')->getStoryFilterOptions(); if(count($filter_options)):?>
 <?php foreach($filter_options as $filter_option):?>
-    <?php echo link_to($filter_option->getName(), 'best_stories', $filter_option);?>
+    <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
     <?php endforeach;?>
 <?php endif;?>
           
