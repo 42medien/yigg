@@ -213,8 +213,12 @@ class yiggStoryFinder
      * @return StoryFinder
      */
     public function confineWithStoryFilter($filter_value)
-    {        
-        $this->wheres['s.created_at'] = sprintf("%s < %s", "s.created_at", $filter_value);
+    {
+        $context = time();
+        $time_until = yiggTools::getRoundedTime( $context - $filter_value ); // yesterday    
+        $time_from = yiggTools::getRoundedTime( $context ); // time at the moment  
+        
+        $this->wheres['s.created_at'] = sprintf("%s > %s AND %s < %s", "s.created_at", $time_until, "s.created_at", $time_from);                        	        
         return $this;
     }
 
