@@ -15,9 +15,10 @@ $filter_options = array(
 <?php //echo link_to($category->getName(), 'category_stories', $category); ?>
 
 <?php
-    foreach ($filter_options as $key => $value) 
-    {         
-        echo $value.' = '.$key;
+    foreach ($filter_options as $key => $value)
+    {
+        echo $value;
+        echo link_to($value, 'best_stories', $key);
     }; 
 ?>
 <br>
