@@ -2,8 +2,8 @@
     <?php foreach($filter_options as $filter_option):?>
         
         <?php
-            if($this->getRequest()->getParameter("value"))
-                echo $this->getRequest()->getParameter("value");
+            //if($this->getRequest()->getParameter("value"))
+                //echo $this->getRequest()->getParameter("value");
         ?>
 
         <span style="font-weight: bold;">
