@@ -62,7 +62,11 @@ class storyActions extends yiggActions
     //$this->story_filter_option = $this->getRoute()->getObject();  
     
     //$this->story_filter_option = $this->getRoute()->getObject();
-    $value = $this->getRequest()->getParameter("value");
+    
+    if($this->getRequest()->getParameter("value"))
+        $value = $this->getRequest()->getParameter("value");
+    else
+        $value = 43200; // 12 Hours By Default
           
     $sf = new yiggStoryFinder();    
     $user = $this->session->getUser();
