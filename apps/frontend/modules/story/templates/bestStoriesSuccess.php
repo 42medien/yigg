@@ -2,6 +2,8 @@
     <?php foreach($filter_options as $filter_option):?>
         
         <?php
+        sfContext::getInstance()->getRequest()->getParameter('value');
+
             //if($this->getRequest()->getParameter("value"))
                 //echo $this->getRequest()->getParameter("value");
         ?>
