@@ -16,8 +16,7 @@ $filter_options = array(
 
 <?php
     foreach ($filter_options as $key => $value) 
-    {         
-        echo $value;
+    {                
         echo link_to($value, 'best_stories', $filter_options);
         // $key = value
     }; 
