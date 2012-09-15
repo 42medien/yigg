@@ -62,7 +62,7 @@ class storyActions extends yiggActions
     //$this->story_filter_option = $this->getRoute()->getObject();  
     
     //$this->story_filter_option = $this->getRoute()->getObject();
-    $id = $this->getRequest()->getParameter("id");
+    $value = $this->getRequest()->getParameter("value");
           
     $sf = new yiggStoryFinder();    
     $user = $this->session->getUser();
@@ -75,8 +75,8 @@ class storyActions extends yiggActions
     {
       $sf->confineWithMarkedForFrontpage();
     }
-    if($id)
-       $sf->confineWithStoryFilter($id);
+    if($value)
+       $sf->confineWithStoryFilter($value);
     $sf->sortByDate();
     //$sf->sortByYTTCS();
     
