@@ -1,4 +1,28 @@
 <?php if($storyCount > 0): ?>
+
+<!--
+3 hours, 12 hours, 24 hours, 2 days, 7 days
+-->
+<table>
+    <tr>
+        <td>
+            <a href="">7 days</a>
+        </td>
+        <td>
+            <a href="">2 days</a>
+        </td>
+        <td>
+            <a href="">24 hours</a>
+        </td>
+        <td>
+            <a href="">12 hours</a>
+        </td>
+        <td>
+            <a href="">3 hours</a>
+        </td>
+    </tr>
+</table>
+<br>
 <div class="story-list-cont">
   <ol id="story-list" class="story-list hfeed ">
     <?php foreach($stories as $k => $story ): ?>
