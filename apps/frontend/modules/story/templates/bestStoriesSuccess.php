@@ -1,27 +1,25 @@
 <?php if($storyCount > 0): ?>
-
 <!--
 3 hours, 12 hours, 24 hours, 2 days, 7 days
 -->
-<table>
-    <tr>
-        <td>
-            <a href="">7 days</a>
-        </td>
-        <td>
-            <a href="">2 days</a>
-        </td>
-        <td>
-            <a href="">24 hours</a>
-        </td>
-        <td>
-            <a href="">12 hours</a>
-        </td>
-        <td>
-            <a href="">3 hours</a>
-        </td>
-    </tr>
-</table>
+<?php
+$filter_options = array(
+    "604800" => "7 Days",
+    "172800" => "2 Days",
+    "86400" => "24 Hours",
+    "43200" => "12 Hours",
+    "10800" => "3 Hours"
+);
+?>
+
+<?php echo link_to($category->getName(), 'category_stories', $category); ?>
+
+<?php
+    foreach ($filter_options as $key => $value) 
+    {         
+        echo $value.' = '.$key;
+    }; 
+?>
 <br>
 <div class="story-list-cont">
   <ol id="story-list" class="story-list hfeed ">
