@@ -40,12 +40,26 @@
       <!-- RatingForm -->
       <?php $hasRated = ( null === $story->hasRated() ? $sf_user->hasRated($story['id']) : $story->hasRated() );
         if (false === $hasRated ):?>
-        <form id="StoryRate<?php echo $story->id ?>" class="rating-form ninjaForm ninjaAjaxSubmit" action="<?php echo url_for_story($story, "rate"); ?>" method="post">
-            <fieldset>
+        <form id="StoryRate<?php echo $story->id ?>" 
+              class="rating-form ninjaForm ninjaAjaxSubmit" 
+              action="<?php echo url_for_story($story, "rate"); ?>" 
+              method="post">
+              <fieldset>
 <!--                <p>YiGGs</p>*/-->
-                <input type="hidden" name="StoryRate[_csrf_token]" value="<?php echo $form[$form->getCSRFFieldName()]->getValue() ?>" id="StoryRate<?php echo $story->id; ?>__csrf_token" /><input name="StoryRate[ratingtoken]" id="StoryRate_ratingtoken<?php echo $story->id; ?>" type="hidden" value="<?php echo md5(rand(1,10000));?>" /><input type="submit" value="YiGG it!" class="button" id="Rate<?php echo $story->id?>" />
+                <input type="hidden" 
+                       name="StoryRate[_csrf_token]" 
+                       value="<?php echo $form[$form->getCSRFFieldName()]->getValue() ?>" 
+                       id="StoryRate<?php echo $story->id; ?>__csrf_token" />
+                <input name="StoryRate[ratingtoken]" 
+                       id="StoryRate_ratingtoken<?php echo $story->id; ?>" 
+                       type="hidden" 
+                       value="<?php echo md5(rand(1,10000));?>" />
+                <input type="submit" 
+                       value="YiGG it!" 
+                       class="button" 
+                       id="Rate<?php echo $story->id?>" />
                 <h4><label></label><?php echo $story->currentRating(); ?></h4>
-            </fieldset></form>
+              </fieldset></form>
       <?php else: ?>
        <div class="<?php if(false === $sf_request->isAjaxRequest() || true === isset($completeStory)):?>rating-form <?php endif;?>voted">   
 <!--      <p>YiGGs</p>-->
@@ -54,7 +68,16 @@
         </div>
       <?php endif; ?>
       
-    
+      <style type="text/css" media="screen"> 
+          .yiggbutton { 
+              float:left; 
+              padding:3px 5px 5px 5px; 
+          } 
+      </style> 
+      <div class="yiggbutton"> 
+          <script> yigg_url = 'URL DER NACHRICHT'; </script> 
+          <script src="http://static.yigg.de/v6/js/embed_flat_button.js"></script> 
+      </div>
       
 <?php if(false === $sf_request->isAjaxRequest() && isset($external) && $external == true): ?>
     </body>
