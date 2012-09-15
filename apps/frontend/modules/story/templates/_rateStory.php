@@ -67,7 +67,7 @@
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
-      
+      <!--
       <style type="text/css" media="screen"> 
           .yiggbutton { 
               float:left; 
@@ -77,7 +77,7 @@
       <div class="yiggbutton"> 
           <script> yigg_url = 'URL DER NACHRICHT'; </script> 
           <script src="http://static.yigg.de/v6/js/embed_flat_button.js"></script> 
-      </div>
+      </div> -->
       
 <?php if(false === $sf_request->isAjaxRequest() && isset($external) && $external == true): ?>
     </body>
