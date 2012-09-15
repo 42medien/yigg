@@ -205,6 +205,18 @@ class yiggStoryFinder
         $this->wheres['story_category.category_id'] = sprintf("%s = %s", "story_category.category_id", $category_id);
         return $this;
     }
+    
+    /**
+     * confines search story filter options
+     *
+     * @param filter Value
+     * @return StoryFinder
+     */
+    public function confineWithStoryFilter($filter_value)
+    {        
+        $this->wheres['s.created_at'] = sprintf("%s < %s", "s.created_at", $filter_value);
+        return $this;
+    }
 
   /**
    * create criteria category, accepts id or category internal_url as value
