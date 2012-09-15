@@ -15,11 +15,10 @@ $filter_options = array(
 <?php //echo link_to($category->getName(), 'category_stories', $category); ?>
 
 <?php
-    foreach ($filter_options as $key => $value) 
-    {                
+    foreach ($filter_options as $key => $value)
+    {
         echo link_to($value, 'best_stories', $filter_options).'&nbsp;&nbsp;&nbsp;';
-        // $key = value
-    }; 
+    };
 ?>
 <br>
 <div class="story-list-cont">
