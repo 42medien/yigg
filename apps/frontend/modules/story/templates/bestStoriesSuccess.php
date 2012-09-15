@@ -4,6 +4,7 @@
         if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug'))
         {
             $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
+            $get_parameter = str_replace("-"," ",$get_parameter);            
         }
         else
             $get_parameter = '12 Hours';
