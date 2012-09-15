@@ -10,19 +10,16 @@
             $get_parameter = '12 Hours';
         if(trim(strtolower($filter_option->getName())) == trim(strtolower($get_parameter)))
         {
-            $highlight = 'bold';
-            $underline = 'underline !important';
+            $highlight = 'bold';            
             $font_size = '14px !important';
         }
         else
         {
-            $highlight = 'normal';
-            $underline = 'none !important';
+            $highlight = 'normal';            
             $font_size = '12px !important';
         }
         ?>
-        <span style="font-weight:<?php echo $highlight; ?>;  
-                     text-decoration:<?php echo $underline; ?>; 
+        <span style="font-weight:<?php echo $highlight; ?>; 
                      font-size:<?php echo $font_size; ?>;">
         <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
         </span>
