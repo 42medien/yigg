@@ -45,9 +45,7 @@
     //-->
 </script>
 <?php else:?>
-
 <div id="plista_widget_standard_1"></div>
-
 <script type="text/javascript">
         PLISTA.items.push({
             objectid: "1137092b50",
