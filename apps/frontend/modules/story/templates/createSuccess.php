@@ -1,8 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        if($("#external_url").val()){            
-            jQuery('#external_url').triggerHandler('blur');
-        }
+        //if($("#external_url").val()){            
+            //jQuery('#external_url').triggerHandler('blur');
+        //}
         alert(test);
     });
 </script>
