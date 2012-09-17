@@ -16,6 +16,7 @@
         .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}
         .button {border: 0;}
       
+       </style>
     </head>
   <body>
 <?php endif; ?>
