@@ -118,9 +118,9 @@
 		    <div class="clr"><!--  --></div>                  
         </div>
     </div>
-test text
+testtext1
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
-test text
+testtext2
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
