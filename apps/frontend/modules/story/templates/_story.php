@@ -120,6 +120,7 @@
     </div>
 test text
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
+test text
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
