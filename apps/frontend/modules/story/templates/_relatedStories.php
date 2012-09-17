@@ -58,7 +58,7 @@
         PLISTA.partner.init();
 </script>
 
-<div style="font-size: 108% !important; font-weight: bold; margin-top: 10px; margin-bottom:3px;">Das könnte Sie auch interessieren:</div>
+<!--<div style="font-size: 108% !important; font-weight: bold; margin-top: 10px; margin-bottom:3px;">Das könnte Sie auch interessieren:</div>-->
 <div id="related_stories_content">
     <ol class="avatar-list-style">
         <?php foreach ( $stories as $story): ?>
