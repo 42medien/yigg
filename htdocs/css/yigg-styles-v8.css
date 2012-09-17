@@ -163,8 +163,8 @@ h3.entry-title {font-size: 1.4em}
 .entry-title {font-weight: normal; margin: 0px 0 5px 0; text-align: left; overflow: hidden; max-height: 2.5em; width: 660px}
 .entry-title a {float: left; margin: 0 10px 0 0; overflow: hidden; white-space: nowrap; max-width: 625px;}
 .entry-title a.logo {float: left; margin: 0; overflow: hidden; white-space: nowrap; width: auto;}
-.entry-content {margin: 5px 160px 0 0}
-#story-list .entry-content {margin: 0}
+.entry-content {margin: 0; float: left; width: 500px;}
+#story-list .entry-content {margin: 0; float: none; width: auto;}
 #story-list .entry-content .story_auth {line-height: 20px; width: 100%; display: inline-block;}
 #story-list .entry-content .story_auth img {display: inline; vertical-align: middle;}
 #story-list .entry-content .story_body {font: 14px/20px 'Arial', sans-serif; color: #444444; display: inline-block; height: 60px; overflow: hidden; width: 100%;}
