@@ -1,28 +1,27 @@
 <?php $filter_options = Doctrine_Core::getTable('StoryFilterOption')->getStoryFilterOptions(); if(count($filter_options)):?>
     <?php foreach($filter_options as $filter_option):?>               
         <?php 
-        if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug'))
-        {
-            $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
-            $get_parameter = str_replace("-"," ",$get_parameter);            
-        }
-        else
-            $get_parameter = '12 Std';
-        if(trim(strtolower($filter_option->getName())) == trim(strtolower($get_parameter)))
-        {
-            $highlight = 'bold';            
-            $font_size = '14px !important';
-        }
-        else
-        {
-            $highlight = 'normal';            
-            $font_size = '12px !important';
-        }
+            if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug'))
+            {
+                $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
+                $get_parameter = str_replace("-"," ",$get_parameter);            
+            }
+            else
+                $get_parameter = '12 Std'; // By Default Search Criteria
+
+            if(trim(strtolower($filter_option->getName())) == trim(strtolower($get_parameter)))
+            {
+                $class_name = 'active';
+            }
+            else
+            {
+                $class_name = 'normal';
+            }
         ?>
-        <span style="font-weight:<?php echo $highlight; ?>; 
-                     font-size:<?php echo $font_size; ?>;">
-        <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
-        </span>&nbsp;&nbsp;&nbsp;
+
+        <div class="<?php echo $class_name; ?>">
+            <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
+        </div>
     <?php endforeach;?>
 <?php endif;?>
 <?php if($storyCount > 0): ?>
