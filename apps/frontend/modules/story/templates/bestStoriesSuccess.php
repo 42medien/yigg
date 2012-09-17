@@ -21,7 +21,7 @@
             ?>
 
             <span class="<?php echo $class_name; ?>">
-                <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option);?>
+                <?php echo link_to(strtoupper($filter_option->getName()), 'filter_stories', $filter_option);?>
             </span>
         <?php endforeach;?>
     </div>
