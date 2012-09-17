@@ -67,6 +67,10 @@
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
+      
+      <input type="text" value="YIGG"/>
+      <h4>0</h4>
+      
       <!--
       <style type="text/css" media="screen"> 
           .yiggbutton { 
