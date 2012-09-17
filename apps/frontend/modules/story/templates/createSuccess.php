@@ -17,10 +17,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         if($("#external_url").val()){            
-            $('#external_url').focus();
+            $('#external_url').focus().select();
             $('#external_url').blur();
         }
-        alert('test');
+        //alert('test');
     });
 </script>
 
