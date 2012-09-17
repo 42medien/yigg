@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    jQuery(document).ready(function() {
+    $(document).ready(function() {
         if($("#external_url").val()){            
             jQuery('#external_url').triggerHandler('blur');
         }
@@ -17,7 +17,7 @@
     <?php echo $form->render(); ?>
   </fieldset>
   <div class="actions">
-     <input type="submit" name="formAction[save]" value="Erstellen2" id="Save" class="button" style="font-size:1.4em;" />
+     <input type="submit" name="formAction[save]" value="Erstellen" id="Save" class="button" style="font-size:1.4em;" />
   </div>
 </form>
 
