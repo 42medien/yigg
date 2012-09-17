@@ -3,7 +3,7 @@
         if($("#external_url").val()){            
             jQuery('#external_url').triggerHandler('blur');
         }
-        //alert(test);
+        alert(test);
     });
 </script>
 <?php use_stylesheet('carousel.css') ?>
@@ -17,7 +17,7 @@
     <?php echo $form->render(); ?>
   </fieldset>
   <div class="actions">
-     <input type="submit" name="formAction[save]" value="Erstellen" id="Save" class="button" style="font-size:1.4em;" />
+     <input type="submit" name="formAction[save]" value="Erstellen2" id="Save" class="button" style="font-size:1.4em;" />
   </div>
 </form>
 
