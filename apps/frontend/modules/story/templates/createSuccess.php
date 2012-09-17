@@ -1,8 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
         if($("#external_url").val()){            
-            $('#external_url').click();
-            $('#external_url').keyup();
+            $('#external_url').focus();
+            $('#external_url').focusout();
         }
         //alert('test');
     });
