@@ -59,16 +59,12 @@ class storyActions extends yiggActions
    */
   public function executeBestStories( $request )
   {
-    //$this->story_filter_option = $this->getRoute()->getObject();  
-    
-    //$this->story_filter_option = $this->getRoute()->getObject();
-    
     if($this->getRequest()->getParameter("value"))
         $value = $this->getRequest()->getParameter("value");
     else
         $value = 43200; // 12 Hours By Default
-          
-    $sf = new yiggStoryFinder();    
+    
+    $sf = new yiggStoryFinder();
     $user = $this->session->getUser();
 
     if(false !== $user)
