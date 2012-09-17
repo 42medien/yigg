@@ -727,7 +727,10 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .bt_info {margin: 7px 0 0; text-align: center; font-size: 12px;}
 .hlp_txt {float: left; font-size: 11px;}
 .hlp_txt.fst {margin-right: 44px;}
-.news-filter {border-bottom: 1px solid #CFCFCF; margin: 0 0 0 -12px; padding: 0 0 0 12px;}
+.news-filter {border-bottom: 1px solid #CFCFCF; margin: 0 0 0 -12px; padding: 0 0 10px 12px;}
+.news-filter span {display: inline-block;}
+.news-filter span a {font: 14px 'Arial', sans-serif; color: #1368a9;}
+.news-filter span.active a, .news-filter span:hover a {color: #191919;}
 
 /* BackEnd */
 #container.b_end {width: 1300px;}
