@@ -1,12 +1,4 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        if($("#external_url").val()){            
-            $('#external_url').focus();
-            $('#external_url').focusout();
-        }
-        //alert('test');
-    });
-</script>
+
 <?php use_stylesheet('carousel.css') ?>
 <form action="<?php echo url_for($story->getStoryType() === "Normal" ? "@story_create" : "@story_create_article");?>" id="new_form" class="ninjaForm <?php echo ("Normal" === $view ? "": "article" ); ?>" <?php if(true === $form->isMultipart()):?>enctype="multipart/form-data"<?php endif; ?> method="post">
   <fieldset>
@@ -21,6 +13,16 @@
      <input type="submit" name="formAction[save]" value="Erstellen" id="Save" class="button" style="font-size:1.4em;" />
   </div>
 </form>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        if($("#external_url").val()){            
+            $('#external_url').focus();
+            $('#external_url').blur();
+        }
+        alert('test');
+    });
+</script>
 
 <?php slot('sidebar') ?>
   <p class="note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.
