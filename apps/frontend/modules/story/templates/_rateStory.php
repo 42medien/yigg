@@ -37,6 +37,7 @@
     </head>
   <body>
 <?php endif; ?>
+      <font color="red">test text</font>
       <!-- RatingForm -->
       <?php $hasRated = ( null === $story->hasRated() ? $sf_user->hasRated($story['id']) : $story->hasRated() );
         if (false === $hasRated ):?>
