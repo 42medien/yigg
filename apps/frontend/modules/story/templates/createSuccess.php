@@ -16,12 +16,20 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        
+        //alert('test');        
+        setTimeout("setAtrribute()", 2000);
+        
+    });
+    
+    
+    function setAtrribute()
+    {
         if($("#external_url").val()){            
             $('#external_url').focus().select();
             $('#external_url').blur();
         }
-        //alert('test');
-    });
+    }
 </script>
 
 <?php slot('sidebar') ?>
