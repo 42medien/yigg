@@ -30,7 +30,7 @@
         <?php
         $source = $story->getStoryImageSource();
         if($source){
-            echo img_tag($story->getStoryImageSource(), array("width" =>  121, "height" => 88));
+            echo img_tag($story->getStoryImageSource(), array());
         }else{
             echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
         }
