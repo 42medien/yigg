@@ -726,6 +726,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .bt_info {margin: 7px 0 0; text-align: center; font-size: 12px;}
 .hlp_txt {float: left; font-size: 11px;}
 .hlp_txt.fst {margin-right: 44px;}
+.news-filter {border-bottom: 1px solid #CFCFCF; margin: 0 0 0 -12px; padding: 0 0 0 12px;}
 
 /* BackEnd */
 #container.b_end {width: 1300px;}
