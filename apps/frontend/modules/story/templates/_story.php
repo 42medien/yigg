@@ -118,6 +118,7 @@
 		    <div class="clr"><!--  --></div>                  
         </div>
     </div>
+test text
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
