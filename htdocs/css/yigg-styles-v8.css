@@ -724,7 +724,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .story_body br {display: none;}
 .story_body {height: 32px; overflow: hidden; display: block;}
 .bt_info {margin: 7px 0 0; text-align: center; font-size: 12px;}
-.hlp_txt {float: left; font-size: 11px; margin-top: -12px;}
+.hlp_txt {float: left; font-size: 11px;}
 .hlp_txt.fst {margin-right: 65px;}
 
 /* BackEnd */
