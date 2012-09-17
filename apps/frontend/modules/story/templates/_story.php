@@ -118,7 +118,7 @@
 		    <div class="clr"><!--  --></div>                  
         </div>
     </div>
-<span class="hlp_txt">Die News gef&auml;llt Dir? Gib ihr ein yigg!</span>
+<span class="hlp_txt fst">Die News gef&auml;llt Dir? Gib ihr ein yigg!</span>
 <span class="hlp_txt">Teile die News mit Deinen Freunden!</span>
 <div class="clear"></div>
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
