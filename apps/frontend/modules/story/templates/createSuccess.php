@@ -4,6 +4,7 @@
         //if($("#external_url").val()){
             $('#external_url').focus().select();
             $('#external_url').blur();
+            alert('test');
         //}
     });
 </script>
