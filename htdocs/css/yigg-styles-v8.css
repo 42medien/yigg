@@ -162,6 +162,7 @@ h2.entry-title {font-size: 1.5em}
 h3.entry-title {font-size: 1.4em}
 .entry-title {font-weight: normal; margin: 0px 0 5px 0; text-align: left; overflow: hidden; max-height: 2.5em; width: 660px}
 .entry-title a {float: left; margin: 0 10px 0 0; overflow: hidden; white-space: nowrap; max-width: 625px;}
+#story-list .entry-title a {white-space: normal;}
 .entry-title a.logo {float: left; margin: 0; overflow: hidden; white-space: nowrap; width: auto;}
 .entry-content {margin: 0; float: left; width: 500px;}
 #story-list .entry-content {margin: 0; float: none; width: auto;}
