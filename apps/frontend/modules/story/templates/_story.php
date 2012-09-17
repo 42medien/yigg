@@ -118,12 +118,12 @@
 		    <div class="clr"><!--  --></div>                  
         </div>
     </div>
-testtext1
+<span class="hlp_txt">Die News gef&auml;llt Dir? Gib ihr ein yigg!</span>
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
-        testtext2
+        <span class="hlp_txt">Teile die News mit Deinen Freunden!</span>
         <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
                 style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
                 frameborder="0"
