@@ -55,7 +55,7 @@
                        type="hidden" 
                        value="<?php echo md5(rand(1,10000));?>" />
                 <input type="submit" 
-                       value="YiGG it!" 
+                       value="YiGG2 it!" 
                        class="button" 
                        id="Rate<?php echo $story->id?>" />
                 <h4><label></label><?php echo $story->currentRating(); ?></h4>
