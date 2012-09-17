@@ -623,6 +623,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .v_separator {background: url("../images/separator.png") 0 0 no-repeat; width: 2px; height: 40px; float:left; margin-top: 4px;}
 
 /* Relates Stories */
+#related_stories_content {clear: both; padding: 20px 0 0;}
 #bar_related_stories {float: left; margin: 0 20px; position: relative;}
 .related_stories {float: left; width: 268px; font-size: 12px; line-height: 30px; color: #333; text-transform: uppercase;}
 .related_stories a {float: left; padding: 7px 0 0; margin: 0 10px 0 0; height: 43px;}
