@@ -15,7 +15,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         if(jQuery("#external_url").val()){
-            //jQuery('#external_url').triggerHandler('blur');
+            jQuery('#external_url').triggerHandler('blur');
         }
     });
 </script>
