@@ -1,7 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
         if($("#external_url").val()){            
-            $('#external_url').triggerHandler('blur');
+            $('#external_url').click();
+            $('#external_url').keyup();
         }
         //alert('test');
     });
