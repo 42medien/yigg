@@ -15,12 +15,12 @@
 </form>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    //$(document).ready(function() {
         //if($("#external_url").val()){
-            $('#external_url').focus().select();
-            $('#external_url').blur();
+           // $('#external_url').focus().select();
+           // $('#external_url').blur();
        // }
-    });
+    //});
 </script>
 
 <?php slot('sidebar') ?>
