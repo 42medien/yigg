@@ -14,8 +14,9 @@
 </form>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        if(jQuery("#external_url").val()){
-            jQuery('#external_url').triggerHandler('blur');
+        if($("#external_url").val()){
+            alert($("#external_url").val());
+            //jQuery('#external_url').triggerHandler('blur');
         }
     });
 </script>
