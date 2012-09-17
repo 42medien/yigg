@@ -14,15 +14,6 @@
   </div>
 </form>
 
-<script type="text/javascript">
-    //$(document).ready(function() {
-        //if($("#external_url").val()){
-           // $('#external_url').focus().select();
-           // $('#external_url').blur();
-       // }
-    //});
-</script>
-
 <?php slot('sidebar') ?>
   <p class="note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.
   <?php echo
