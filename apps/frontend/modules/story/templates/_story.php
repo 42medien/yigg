@@ -163,11 +163,13 @@ jQuery("img.js-resize").ready(function(){
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
-        <a href="{http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500}" 
-           title="{<?php echo urlencode($story->title);?>}" 
-           class="spreadly-button" 
-           rel="share like"> 
-        </a> 
+         <a href="http://spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>" 
+            target="_blank"
+            title="<?php echo urlencode($story->title);?>"
+            rel="like">
+           <img src="http://spreadly.com/img/staticbutton.png" alt="Like" />
+         </a>
+        
     </div>
     <?php endif;?>
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
