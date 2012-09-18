@@ -21,7 +21,7 @@ class FormUserRegister extends yiggForm
               'placeholder' => 'Benutzername'
             )
           ),
-          'password'    => new sfWidgetFormInputPassword(
+          'password'   => new sfWidgetFormInputPassword(
             array(),
             array(
               'id'  => 'Passwort',
@@ -35,6 +35,17 @@ class FormUserRegister extends yiggForm
               'placeholder' => 'Email'
             )
           ),
+
+	/* captcha */
+	  'captcha' => new yiggWidgetFormInputCaptcha(
+		array(),
+		array(
+			'id' => 'captchaInput',
+			'class' => 'captchaBox'
+		)
+	  ),	
+	/* end captcha */
+
           'acceptedTerms' => new yiggWidgetFormInputCheckbox(
             array(),
             array(
