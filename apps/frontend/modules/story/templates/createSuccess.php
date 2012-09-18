@@ -33,6 +33,23 @@
         //$j('#Title').focus().click();
         alert($j('#external_url').val());
         //$j('#Title').focus().select();
+        var external_url = $j('#external_url').val(); 
+        var postData = "external_url=" + external_url + "&rand=" + Math.random();
+        var baseUrl = '/neu/checkExternal_url?exturl=' + external_url;
+        $.ajax({
+            type: "POST",
+            url: baseUrl,
+            data: postData,
+            beforeSend: function() {
+
+            },
+            success: function() {
+               $j('#Title').focus().click();
+            },
+            error: function() {
+               //alert("<?php //echo $this->translate('Dev: Ajax Failure!');?>"); // Development Stage
+            }
+         });
         
       }
     );
