@@ -160,7 +160,6 @@ jQuery("img.js-resize").ready(function(){
 <span class="hlp_txt">Teile die News mit Deinen Freunden!</span>
 <div class="clear"></div>
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
-<script type='text/javascript' src='http://button.spread.ly/js/v1/loader.js'></script>
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
