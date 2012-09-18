@@ -29,27 +29,10 @@
       function() {
         //alert($j("#Description").val()); //object is properly initialized
         //$j('#Description').focus().select();
-        //$j('#external_url').focus();
+        $j('#external_url').focus();
         //$j('#Title').focus().click();
         //alert($j('#external_url').val());
-        //$j('#Title').focus().select();
-        var external_url = escape($j('#external_url').val()); 
-        var postData = "external_url=" + external_url;
-        var baseUrl = '/htdocs/index.php/neu/checkExternal_url?exturl=' + external_url;
-        $j.ajax({
-            type: "POST",
-            url: baseUrl,
-            data: postData,
-            beforeSend: function() {
-
-            },
-            success: function() {
-               $j('#Title').focus().click();
-            },
-            error: function() {               
-            }
-         });
-        
+        //$j('#Title').focus().select();                
       }
     );
 </script>
