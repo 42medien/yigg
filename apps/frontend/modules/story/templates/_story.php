@@ -43,11 +43,17 @@ var img_resize = function(img, maxh, maxw) {
 };
 
 $().ready(function(){
-	$(".js-resize").each(function(){
+	$("img.js-resize").each(function(){
+		console.log("start resizing");
+
 		var w = $(this).attr('data-w');
 		var h = $(this).attr('data-h');
 
+		console.log("WxH = " + w + "x" + h);
+
 		img_resize($(this), h, w);
+
+		console.log("resized");
 	});
 });
 </script>
