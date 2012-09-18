@@ -4,7 +4,7 @@
         //if($("#external_url").val()){
             //$('#Description').focus().select();
             //$('#external_url').blur();            
-            setTimeout("prepareOnLoad()", 5000);
+            setTimeout("prepareOnLoad()", 2000);
         //}
     });
     
