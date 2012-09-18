@@ -29,6 +29,7 @@ NinjaCommander = Class.create({
      */
     startActions: function(){
         // Setup the ninjaActions
+        alert('test');
         $$('a.ninjaAction').each(function(el)
         {
           if (!el.id)
