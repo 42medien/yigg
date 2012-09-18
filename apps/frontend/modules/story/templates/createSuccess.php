@@ -15,13 +15,22 @@
 
 
 <script type="text/javascript">
-    $('*').ready(function() {
+    //$('*').ready(function() {
         //if($("#external_url").val()){
             //$('#Description').focus().select();
             //$('#external_url').blur();            
-            setTimeout("prepareOnLoad()", 2000);
+            //setTimeout("prepareOnLoad()", 2000);
         //}
-    });
+    //});
+    
+    
+    var $j = jQuery.noConflict();
+    $j(document).ready(
+      function() {
+        alert($j("#external_url").val()); //object is properly initialized
+      }
+    );
+
     
     function prepareOnLoad()
     {
