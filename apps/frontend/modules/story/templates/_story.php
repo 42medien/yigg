@@ -51,7 +51,7 @@ jQuery("*").ready(function(){
 
 		console.log("WxH = " + w + "x" + h);
 
-		img_resize(jQuery(this), h, w);
+		img_resize(this, h, w);
 
 		console.log("resized");
 	});
