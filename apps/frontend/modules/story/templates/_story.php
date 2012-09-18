@@ -54,7 +54,7 @@ jQuery("*").ready(function(){
 		img_resize(this, h, w);
 	});
 
-	jQuery(".screenshot").css("background", "none");
+	//jQuery(".screenshot").css("background", "none");
 });
 </script>
 
