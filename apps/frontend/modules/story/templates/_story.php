@@ -42,10 +42,10 @@ var img_resize = function(img, maxh, maxw) {
   } 
 };
 
-$("*").ready(function(){
+$("img.js-resize").ready(function(){
 	console.log("starting JS func");
 
-	$(".js-resize").each(function(){
+	$("img.js-resize").each(function(index){
 		console.log("start resizing");
 
 		var w = $(this).attr('data-w');
