@@ -24,13 +24,45 @@
        ?>
    </h3>
  
+<script>
+var img_resize = function(img, maxh, maxw) {
+  var ratio = maxh/maxw;
+  if (img.height/img.width > ratio){
+     // height is the problem
+    if (img.height > maxh){
+      img.width = Math.round(img.width*(maxh/img.height));
+      img.height = maxh;
+    }
+  } else {
+    // width is the problem
+    if (img.width > maxh){
+      img.height = Math.round(img.height*(maxw/img.width));
+      img.width = maxw;
+    }
+  } 
+};
+
+$().ready(function(){
+	$(".js-resize").each(function(){
+		var w = $(this).attr('width');
+		var h = $(this).attr('height');
+
+		img_resize($(this), h, w);
+	});
+});
+</script>
+
  <div class="list_cont">
   <?php if($story->type == Story::TYPE_NORMAL):?>
     <div class="screenshot">
         <?php
         $source = $story->getStoryImageSource();
         if($source){
-            echo img_tag($story->getStoryImageSource(), 'size=130x93');
+            echo img_tag($story->getStoryImageSource(), array(
+			'width' => 130,
+			'height' => 93,
+			'class' => 'js-resize'	
+		));
         }else{
             echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
         }
