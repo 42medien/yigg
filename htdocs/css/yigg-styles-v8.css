@@ -565,6 +565,7 @@ div.now_later_button.subscribed a.later:hover {background: #df4b2c url(../images
 .post.wspy .screenshot {position: absolute; right: 0; top: 20px; margin: 64px 10px 0px 0;}
 .post.wspy .screenshot img {position: absolute; top: 0; left: 0;}
 .post.wspy .body {margin-right: 155px; width: auto;}
+.story-list .hentry.post.wspy .entry-title a {white-space: normal;}
 .post.wspy .body p {overflow: hidden; height: 160px;}
 .post.wspy a.add_wspy_entry {display: block; position: absolute; left: 0; font-size: 12px; top: 95px; background: #659066; width: 115px; height: 20px; line-height: 20px; color: #FFF; border: 1px solid #CCC; padding: 0 3px; text-align: center;}
 ul.ymod_links {margin: 20px 0;}
