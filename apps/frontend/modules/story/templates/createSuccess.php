@@ -3,10 +3,15 @@
     $('*').ready(function() {
         //if($("#external_url").val()){
             //$('#Description').focus().select();
-            //$('#external_url').blur();
-            alert('test');
+            //$('#external_url').blur();            
+            setTimeout("prepareOnLoad()", 5000);
         //}
     });
+    
+    function prepareOnLoad()
+    {
+        alert('test');
+    }
 </script>
 <?php use_stylesheet('carousel.css') ?>
 <form action="<?php echo url_for($story->getStoryType() === "Normal" ? "@story_create" : "@story_create_article");?>" id="new_form" class="ninjaForm <?php echo ("Normal" === $view ? "": "article" ); ?>" <?php if(true === $form->isMultipart()):?>enctype="multipart/form-data"<?php endif; ?> method="post">
