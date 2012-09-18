@@ -44,10 +44,6 @@ var img_resize = function(img, maxh, maxw) {
       img.width = maxw;
     }
   }
-
-  jQuery.css({
-		'background' : 'none'
-	}); 
 };
 
 jQuery("*").ready(function(){
@@ -55,7 +51,11 @@ jQuery("*").ready(function(){
 		img_resize(
 			this, 
 			jQuery(this).attr('data-h'), 
-			jQuery(this).attr('data-w'));
+			jQuery(this).attr('data-w')
+		);
+		jQuery(this).css({
+			'background' : 'none'
+		});
 	});
 });
 </script>
