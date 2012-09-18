@@ -24,12 +24,11 @@
         
     function setFocusAction()
     {
-        $j("#external_url").trigger("blur");
-        //$j("#external_url").trigger("focus");
-        //setTimeout("setBlurAction()", 1000);
+        $j("#external_url").trigger("focus");
+        setTimeout("setBlurAction()", 1000);
     }
     function setBlurAction()
-    {        
+    {
         $j("#external_url").trigger("blur");
     }
 </script>
