@@ -28,8 +28,7 @@ NinjaCommander = Class.create({
      * Creates behaviours for the actions like storyclick.
      */
     startActions: function(){
-        // Setup the ninjaActions
-        alert('test');
+        // Setup the ninjaActions        
         $$('a.ninjaAction').each(function(el)
         {
           if (!el.id)
