@@ -13,7 +13,6 @@
   </div>
 </form>
 
-
 <script type="text/javascript">
     var $j = jQuery.noConflict();
     $j(document).ready(
@@ -27,6 +26,7 @@
         $j("#external_url").trigger("focus");
         setTimeout("setBlurAction()", 1000);
     }
+    
     function setBlurAction()
     {
         $j("#external_url").trigger("blur");
