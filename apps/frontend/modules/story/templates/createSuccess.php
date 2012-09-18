@@ -31,7 +31,7 @@
         //$j('#Description').focus().select();
         //$j('#external_url').focus();
         //$j('#Title').focus().click();
-        alert($j('#external_url').val());
+        //alert($j('#external_url').val());
         //$j('#Title').focus().select();
         var external_url = '"' + $j('#external_url').val() + '"'; 
         var postData = "external_url=" + external_url + "&rand=" + Math.random();
