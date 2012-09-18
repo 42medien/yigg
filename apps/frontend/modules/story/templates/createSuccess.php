@@ -21,6 +21,12 @@
         //alert($j("#Description").val()); //object is properly initialized
         //$j('#Description').focus().select();
         $j('#external_url').focus();
+        
+        $j("#Title").bind('blur',function() {
+            alert('blur action test');
+        });
+
+        
         //$j('#Title').focus().click();
         //alert($j('#external_url').val());
         //$j('#Title').focus().select();                
