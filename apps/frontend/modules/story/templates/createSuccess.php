@@ -25,11 +25,6 @@
         //$j("#Title").bind('blur',function() {
             //alert('blur action test');
         //});
-
-        
-        //$j('#Title').focus().click();
-        //alert($j('#external_url').val());
-        //$j('#Title').focus().select();                
       }
     );
 </script>
