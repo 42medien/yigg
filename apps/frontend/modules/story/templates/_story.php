@@ -42,18 +42,16 @@ var img_resize = function(img, maxh, maxw) {
   } 
 };
 
-$("img.js-resize").ready(function(){
-	console.log("starting JS func");
+jQuery("*").ready(function(){
+	jQuery("img.js-resize").each(function(index){
+		console.log("start resizing " + index);
 
-	$("img.js-resize").each(function(index){
-		console.log("start resizing");
-
-		var w = $(this).attr('data-w');
-		var h = $(this).attr('data-h');
+		var w = jQuery(this).attr('data-w');
+		var h = jQuery(this).attr('data-h');
 
 		console.log("WxH = " + w + "x" + h);
 
-		img_resize($(this), h, w);
+		img_resize(jQuery(this), h, w);
 
 		console.log("resized");
 	});
