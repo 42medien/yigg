@@ -53,9 +53,9 @@ jQuery("*").ready(function(){
 			jQuery(this).attr('data-h'), 
 			jQuery(this).attr('data-w')
 		);
-		jQuery(this).css({
+		/*jQuery(this).css({
 			'background' : 'none'
-		});
+		});*/
 	});
 });
 </script>
