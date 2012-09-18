@@ -31,6 +31,9 @@
         //$j('#Description').focus().select();
         $j('#external_url').focus().select();
         $j('#carousel').click();
+        $("#external_url").bind('blur',function(event) {
+            $j('#Title').focus().select();
+        });
       }
     );
 </script>
