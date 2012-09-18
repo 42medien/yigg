@@ -48,14 +48,13 @@ var img_resize = function(img, maxh, maxw) {
 
 jQuery("*").ready(function(){
 	jQuery("img.js-resize").each(function(){
-		console.log("resising");
 		var h = jQuery(this).attr('data-h');
 		var w = jQuery(this).attr('data-w');
-	console.log("using HxW = " + h + "=" + w);
+
 		img_resize(this, h, w);
 	});
 
-	//jQuery(".screenshot").css("background", "none");
+	jQuery(".screenshot").css("background", "none");
 });
 </script>
 
