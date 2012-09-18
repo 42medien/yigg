@@ -15,15 +15,6 @@
 
 
 <script type="text/javascript">
-    //$('*').ready(function() {
-        //if($("#external_url").val()){
-            //$('#Description').focus().select();
-            //$('#external_url').blur();            
-            //setTimeout("prepareOnLoad()", 2000);
-        //}
-    //});
-    
-    
     var $j = jQuery.noConflict();
     $j(document).ready(
       function() {
