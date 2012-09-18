@@ -26,8 +26,9 @@
  
 <script>
 var img_resize = function(img, maxh, maxw) {
-  var ratio = maxh/maxw;
-  if (img.height/img.width > ratio){
+  var ratio = maxh / maxw;
+
+  if (img.height / img.width > ratio){
      // height is the problem
     if (img.height > maxh){
       img.width = Math.round(img.width*(maxh/img.height));
@@ -36,24 +37,20 @@ var img_resize = function(img, maxh, maxw) {
   } else {
     // width is the problem
     if (img.width > maxh){
-      img.height = Math.round(img.height*(maxw/img.width));
+      img.height = Math.round(img.height * (maxw / img.width));
       img.width = maxw;
     }
-  } 
+  }
+
+  console.log(img); 
 };
 
 jQuery("*").ready(function(){
-	jQuery("img.js-resize").each(function(index){
-		console.log("start resizing " + index);
-
-		var w = jQuery(this).attr('data-w');
-		var h = jQuery(this).attr('data-h');
-
-		console.log("WxH = " + w + "x" + h);
-
-		img_resize(this, h, w);
-
-		console.log("resized");
+	jQuery("img.js-resize").each(function(){
+		img_resize(
+			this, 
+			jQuery(this).attr('data-h'), 
+			jQuery(this).attr('data-w'));
 	});
 });
 </script>
