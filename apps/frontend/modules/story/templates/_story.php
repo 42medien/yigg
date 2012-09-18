@@ -163,7 +163,7 @@ jQuery("img.js-resize").ready(function(){
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
-         <a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
+         <a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, 'bar');?>" 
             target="_blank"
             rel="like">
          </a>
