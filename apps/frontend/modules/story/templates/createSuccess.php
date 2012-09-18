@@ -24,8 +24,7 @@
         
     function setFocusAction()
     {
-        //$j("#external_url").trigger("blur");
-        $j("#external_url").blur();
+        $j("#external_url").trigger("blur");
         //$j("#external_url").trigger("focus");
         //setTimeout("setBlurAction()", 1000);
     }
