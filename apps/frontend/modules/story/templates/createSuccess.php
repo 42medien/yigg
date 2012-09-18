@@ -25,8 +25,8 @@
     
     function prepareOnLoad()
     {
-        alert('test');
-        $('#Description').focus().select();
+        alert($('#external_url').val());
+        //$('#new_form').val();
     }
 </script>
 
