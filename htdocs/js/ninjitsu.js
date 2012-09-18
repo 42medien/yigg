@@ -76,17 +76,17 @@ NinjaCommander = Class.create({
                 // Setup the event listeners for required attributes
                 el.requiredElements = $$("#" + el.id + ' .ninjaRequired');
                 if (el.requiredElements) {
-                    el.requiredElements.invoke("observe", "blur", function(e){
+                    //el.requiredElements.invoke("observe", "blur", function(e){
                         this.ninjaValidator.requiredCheck(e);
-                    }.bind(el));
+                    //}.bind(el));
                 }
 
                 // Setup the event listeners for validate attributes
                 el.validationElements = $$("#" + el.id + ' .ninjaValidate');
                 if (el.validationElements) {
-                    el.validationElements.invoke("observe", "blur", function(e){
+                    //el.validationElements.invoke("observe", "blur", function(e){
                         this.ninjaValidator.validateField(e);
-                    }.bind(el));
+                    //}.bind(el));
                 }
 
                 // Setup the event listeners for form submit element.
@@ -295,9 +295,9 @@ NinjaValidator = ({
    * or element in question.
    */
   requiredCheck : function(el){
-    if(el.type == "blur"){
+    //if(el.type == "blur"){
       el = Event.element(el);
-    }
+    //}
     var currentParent = el.parentNode;
     this.resetFieldHolder(currentParent);
 
@@ -322,9 +322,9 @@ NinjaValidator = ({
   validateField : function(el){
 
     // Grab the element if this is triggered from an event
-    if(el.type == "blur"){
+    //if(el.type == "blur"){
       el = Event.element(el);
-    }
+    //}
 
     // Reset the holder.
     var currentParent = el.parentNode;
