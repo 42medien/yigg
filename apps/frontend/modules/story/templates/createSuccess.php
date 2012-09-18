@@ -19,15 +19,24 @@
     $j(document).ready(
       function() {
         //$j('#Description').focus().select();
-        $j("#external_url").trigger("change");
-        $j("#external_url").trigger("blur");
+        //$j("#external_url").trigger("change");
+        //$j("#external_url").trigger("blur");
         //$j('#external_url').focus().blur();
-        
-        //$j("#Title").bind('blur',function() {
-            //alert('blur action test');
-        //});
+        setTimeout("setFocusAction()", 1000);
       }
     );
+        
+    function setFocusAction()
+    {
+        $j("#external_url").trigger("focus");
+        setTimeout("setBlurAction()", 1000);
+    }
+    function setBlurAction()
+    {
+        //$j("#external_url").trigger("focus");
+        //setTimeout("setAttribute()", 1000);
+        $j("#external_url").trigger("blur");
+    }
 </script>
 
 
