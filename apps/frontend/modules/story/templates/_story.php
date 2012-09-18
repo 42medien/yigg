@@ -49,9 +49,9 @@ var img_resize = function(img, maxh, maxw) {
 jQuery("*").ready(function(){
 	jQuery("img.js-resize").each(function(){
 		img_resize(this, jQuery(this).attr('data-h'), jQuery(this).attr('data-w'));
-
-		jQuery(this).css("background", "none");
 	});
+
+	jQuery(".screenshot").css("background", "none");
 });
 </script>
 
