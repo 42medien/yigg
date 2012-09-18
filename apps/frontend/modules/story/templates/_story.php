@@ -31,8 +31,8 @@
         $source = $story->getStoryImageSource();
         if($source){
             echo img_tag($story->getStoryImageSource(), array(
-			'width' => 130,
-			'height' => 93
+			'max-width' => 130,
+			'max-height' => 93
 		));
         }else{
             echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
