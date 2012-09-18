@@ -29,9 +29,9 @@ NinjaValidator = ({
    * or element in question.
    */
   requiredCheck : function(el){
-    if(el.type == "blur"){
+    //if(el.type == "blur"){
       el = Event.element(el);
-    }
+    //}
     var currentParent = el.parentNode;
     this.resetFieldHolder(currentParent);
 
@@ -56,9 +56,9 @@ NinjaValidator = ({
   validateField : function(el){
 
     // Grab the element if this is triggered from an event
-    if(el.type == "blur"){
+    //if(el.type == "blur"){
       el = Event.element(el);
-    }
+    //}
 
     // Reset the holder.
     var currentParent = el.parentNode;
