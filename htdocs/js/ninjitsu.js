@@ -88,6 +88,8 @@ NinjaCommander = Class.create({
                         this.ninjaValidator.validateField(e);
                     }.bind(el));
                 }
+                
+                alert(el.id);
 
                 // Setup the event listeners for form submit element.
                 el.observe("submit", function(e)
