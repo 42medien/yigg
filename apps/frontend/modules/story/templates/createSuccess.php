@@ -30,9 +30,9 @@
         //alert($j("#Description").val()); //object is properly initialized
         //$j('#Description').focus().select();
         $j('#external_url').focus().select();
-        $j('#external_url').blur();
+        $j('#external_url').keyup();
         
-        $j('#Title').focus().select();
+        //$j('#Title').focus().select();
         
       }
     );
