@@ -28,7 +28,7 @@
     $j(document).ready(
       function() {
         //alert($j("#Description").val()); //object is properly initialized
-        $('#Description').focus().select();
+        $j('#Description').focus().select();
       }
     );
 
