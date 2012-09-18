@@ -165,7 +165,7 @@ jQuery("img.js-resize").ready(function(){
     
          <a href="http://spread.ly/?url=<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>&social=0" 
             title="<?php echo $story->title;?>"
-            class="spreadly-button"
+            
             rel="share like">
          </a>
     
