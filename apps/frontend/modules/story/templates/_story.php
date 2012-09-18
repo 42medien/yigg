@@ -47,8 +47,6 @@ var img_resize = function(img, maxh, maxw) {
 };
 
 jQuery("*").ready(function(){
-	jQuery(".screenshot").css({'background' : 'transparent'});
-
 	jQuery("img.js-resize").each(function(){
 		img_resize(
 			this, 
@@ -61,7 +59,7 @@ jQuery("*").ready(function(){
 
  <div class="list_cont">
   <?php if($story->type == Story::TYPE_NORMAL):?>
-    <div class="screenshot">
+    <div class="screenshot" style="background: none;">
         <?php
         $source = $story->getStoryImageSource();
         if($source){
