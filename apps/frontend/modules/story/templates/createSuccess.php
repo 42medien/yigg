@@ -36,7 +36,7 @@
         var external_url = $j('#external_url').val(); 
         var postData = "external_url=" + external_url + "&rand=" + Math.random();
         var baseUrl = '/neu/checkExternal_url?exturl=' + external_url;
-        $.ajax({
+        $j.ajax({
             type: "POST",
             url: baseUrl,
             data: postData,
