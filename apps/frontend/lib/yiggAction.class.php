@@ -210,10 +210,10 @@ class yiggActions extends sfActions
 
     if( $this->isAjaxRequest() )
     {
-      //$ninjaUpdater = $this->getRequest()->getNinjaUpdater();
-      //$ninjaUpdater->updateForm( $fieldId, $value, $error );
-      //$ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
-      //return sfView::HEADER_ONLY;
+      $ninjaUpdater = $this->getRequest()->getNinjaUpdater();
+      $ninjaUpdater->updateForm( $fieldId, $value, $error );
+      $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+      return sfView::HEADER_ONLY;
     }
     else
     {
