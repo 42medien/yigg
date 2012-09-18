@@ -165,6 +165,7 @@ jQuery("img.js-resize").ready(function(){
     <div class="spreadly-button">
          <a href="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>" 
             target="_blank"
+            class="spreadly-button"
             rel="like">
          </a>
     </div>
