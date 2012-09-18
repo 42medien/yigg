@@ -11,6 +11,7 @@
     function prepareOnLoad()
     {
         alert('test');
+        $('#Description').focus().select();
     }
 </script>
 <?php use_stylesheet('carousel.css') ?>
