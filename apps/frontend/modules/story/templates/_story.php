@@ -28,16 +28,19 @@
 var img_resize = function(img, maxh, maxw) {
   var ratio = maxh / maxw;
 
-  if (img.height / img.width > ratio){
+  var h = img.clientHeight;
+  var w = img.clientWidth;
+
+  if (h / w > ratio){
      // height is the problem
-    if (img.height > maxh){
-      img.width = Math.round(img.width*(maxh/img.height));
+    if (h > maxh){
+      img.width = Math.round(w * (maxh / h));
       img.height = maxh;
     }
   } else {
     // width is the problem
-    if (img.width > maxh){
-      img.height = Math.round(img.height * (maxw / img.width));
+    if (w > maxh){
+      img.height = Math.round(h * (maxw / w));
       img.width = maxw;
     }
   }
