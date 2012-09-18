@@ -10,7 +10,25 @@
 class yiggNinjaUpdater
 {
   protected $actions;
- 
+  /**
+   * Adds a formFieldresponse.
+   * @return
+   * @param $id Object
+   * @param $field Object
+   * @param $value Object
+   * @param $error Object
+   */
+  public function updateForm( $id, $value = null, $error = null )
+  {
+    $this->actions[] = array(
+      "className" => "NinjaValidator",
+      "action" => "updateForm",
+      "type" => empty($error) ? "ok" : "error",
+      "elementId" => $id,
+      "value" => $value,
+      "error" => empty($error) ? "" : $error->__toString()
+    );
+  }
 
   /**
    * Updates a form field value specified.
