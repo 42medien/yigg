@@ -49,7 +49,7 @@ a {color: #993300; text-decoration: none}
 a:visited {color: #cc9966}
 a:hover {text-decoration: none;}
 .thirds .one, .thirds .two, .thirds .three {float: left; margin: 0 100px 0 0;}
-.twoThree .twoThree-left {width: 670px; min-height: 700px; display: block; padding-top: 10px;}
+.twoThree .twoThree-left {width: 670px; min-height: 700px; display: block; padding-top: 10px; position: relative;}
 .twoThree .twoThree-right {width: 325px; display: block; margin-top: 0px !important; border-left: 1px solid #e3e3e3; overflow: hidden;}
 .halfHalf .left {float: left; width: 50%; min-height: 0}
 .halfHalf .right {float: right; width: 50%; position: static}
@@ -736,7 +736,8 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .news-filter span a {font: 14px 'Arial', sans-serif; color: #1368a9;}
 .news-filter span.active a, .news-filter span:hover a {color: #191919;}
 
-#spreadly-advertisement-container {position: static !important;}
+#spreadly-advertisement-container {position: static;}
+.spreadly-advertisement {right: 0; top: 0;}
 
 /* BackEnd */
 #container.b_end {width: 1300px;}
