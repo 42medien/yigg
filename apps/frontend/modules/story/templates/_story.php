@@ -167,7 +167,7 @@ jQuery("img.js-resize").ready(function(){
             title="<?php echo urlencode($story->title);?>" 
             target="_blank"
             class="spreadly-button"
-            rel="like">
+            rel="share like">
          </a>
     </div>
     <?php endif;?>
