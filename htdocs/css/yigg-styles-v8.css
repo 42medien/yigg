@@ -736,6 +736,8 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .news-filter span a {font: 14px 'Arial', sans-serif; color: #1368a9;}
 .news-filter span.active a, .news-filter span:hover a {color: #191919;}
 
+#spreadly-advertisement-container {position: static !important;}
+
 /* BackEnd */
 #container.b_end {width: 1300px;}
 .b_end .header {background: #fff; margin: 0 auto; width: 1299px; border: 0; height: 54px; border-width: 0 1px; border-style: solid; border-color: #CDCDCD;}
