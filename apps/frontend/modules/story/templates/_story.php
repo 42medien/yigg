@@ -164,12 +164,11 @@ jQuery("img.js-resize").ready(function(){
     <?php if($sf_request->getModuleAction() === "story/show"):?>
     <div class="spreadly-button">
          <a href="http://spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>" 
-            target="_blank"
-            title="<?php echo urlencode($story->title);?>"
-            rel="like">
-           <img src="http://spreadly.com/img/staticbutton.png" alt="Like" />
+            target="_blank" 
+            title="<?php echo urlencode($story->title);?>"  
+            class="spreadly-button" 
+            rel="share like">
          </a>
-        
     </div>
     <?php endif;?>
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
