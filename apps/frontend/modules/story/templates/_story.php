@@ -12,8 +12,8 @@
        <?php
        echo link_to(img_tag('external_link.png', array(
                'alt' => $story->title,
-               /*'width' => 17,
-               'height' => 9*/
+               'width' => 17,
+               'height' => 9
            )),
            $story["external_url"],
            array(
@@ -30,7 +30,10 @@
         <?php
         $source = $story->getStoryImageSource();
         if($source){
-            echo img_tag($story->getStoryImageSource(), array());
+            echo img_tag($story->getStoryImageSource(), array(
+			'width' => 130,
+			'height' => 93
+		));
         }else{
             echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
         }
