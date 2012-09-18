@@ -46,15 +46,15 @@ var img_resize = function(img, maxh, maxw) {
   }
 };
 
-jQuery("*").ready(function(){
+jQuery("img.js-resize").ready(function(){
 	jQuery("img.js-resize").each(function(){
 		var h = jQuery(this).attr('data-h');
 		var w = jQuery(this).attr('data-w');
-		console.log("resising WxH = " + w + "x" + h);
+		//console.log("resising WxH = " + w + "x" + h);
 		img_resize(this, h, w);
 	});
 
-	//jQuery(".screenshot").css("background", "none");
+	jQuery(".screenshot").css("background", "none");
 });
 </script>
 
