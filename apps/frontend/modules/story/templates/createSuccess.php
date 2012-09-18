@@ -2,7 +2,7 @@
 <script type="text/javascript">
     $('*').ready(function() {
         //if($("#external_url").val()){
-            $('#Description').focus().select();
+            //$('#Description').focus().select();
             //$('#external_url').blur();
             alert('test');
         //}
