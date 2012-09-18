@@ -46,8 +46,7 @@
             success: function() {
                $j('#Title').focus().click();
             },
-            error: function() {
-               //alert("<?php //echo $this->translate('Dev: Ajax Failure!');?>"); // Development Stage
+            error: function() {               
             }
          });
         
