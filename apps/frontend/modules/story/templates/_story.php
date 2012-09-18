@@ -12,8 +12,8 @@
        <?php
        echo link_to(img_tag('external_link.png', array(
                'alt' => $story->title,
-               'width' => 17,
-               'height' => 9
+               /*'width' => 17,
+               'height' => 9*/
            )),
            $story["external_url"],
            array(
