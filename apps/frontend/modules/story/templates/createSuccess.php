@@ -29,9 +29,9 @@
       function() {
         //alert($j("#Description").val()); //object is properly initialized
         //$j('#Description').focus().select();
-        $j('#external_url').focus();
-        $j('#Title').focus().click();
-        
+        //$j('#external_url').focus();
+        //$j('#Title').focus().click();
+        alert($j('#external_url').val());
         //$j('#Title').focus().select();
         
       }
