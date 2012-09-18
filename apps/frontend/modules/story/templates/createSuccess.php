@@ -34,7 +34,7 @@
         //alert($j('#external_url').val());
         //$j('#Title').focus().select();
         var external_url = escape($j('#external_url').val()); 
-        var postData = "external_url=" + external_url + "&rand=" + Math.random();
+        var postData = "external_url=" + external_url;
         var baseUrl = '/neu/checkExternal_url?exturl=' + external_url;
         $j.ajax({
             type: "POST",
