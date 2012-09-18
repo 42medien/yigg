@@ -25,7 +25,7 @@
     
     function prepareOnLoad()
     {
-        alert($('#external_url').val());
+        alert($('#new_form').val());
         //$('#new_form').val();
     }
 </script>
