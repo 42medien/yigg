@@ -49,15 +49,13 @@ var img_resize = function(img, maxh, maxw) {
 jQuery("img.js-resize").ready(function(){
 	jQuery("img.js-resize").each(function(){
 		var self = this;
-		$(this).load(function(self){
-			var h = jQuery(self).attr('data-h');
-			var w = jQuery(self).attr('data-w');
-			//console.log("resising WxH = " + w + "x" + h);
-			img_resize(self, h, w);
-		});
+		var h = jQuery(self).attr('data-h');
+		var w = jQuery(self).attr('data-w');
+		//console.log("resising WxH = " + w + "x" + h);
+		img_resize(self, h, w);
 	});
 
-	jQuery(".screenshot").css("background", "none");
+	//jQuery(".screenshot").css("background", "none");
 });
 </script>
 
