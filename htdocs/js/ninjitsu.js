@@ -76,17 +76,17 @@ NinjaCommander = Class.create({
                 // Setup the event listeners for required attributes
                 el.requiredElements = $$("#" + el.id + ' .ninjaRequired');
                 if (el.requiredElements) {
-                    el.requiredElements.invoke("observe", "blur", function(e){
+                    //el.requiredElements.invoke("observe", "blur", function(e){
                         this.ninjaValidator.requiredCheck(e);
-                    }.bind(el));
+                    //}.bind(el));
                 }
 
                 // Setup the event listeners for validate attributes
                 el.validationElements = $$("#" + el.id + ' .ninjaValidate');
                 if (el.validationElements) {
-                    el.validationElements.invoke("observe", "blur", function(e){
+                    //el.validationElements.invoke("observe", "blur", function(e){
                         this.ninjaValidator.validateField(e);
-                    }.bind(el));
+                    //}.bind(el));
                 }
                                 
                 // Setup the event listeners for form submit element.
