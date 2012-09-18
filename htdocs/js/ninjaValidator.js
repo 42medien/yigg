@@ -262,7 +262,24 @@ NinjaValidator = ({
    *
    * @param {Object} json
    */
-  
+  updateForm : function (json){
+
+    var el = $( json.elementId );
+    if( true === Object.isElement(el) ){
+
+      if( json.type == "error" ){
+        NinjaValidator.addMessageSpan(el, el.parentNode, json.error);
+
+      }else{
+        NinjaValidator.addValidatedSpan(el,el.parentNode);
+      }
+
+    }else if( json ){
+
+      NinjaValidator.throwError("An Error was returned: " +  json.error + ", but there was no element found");
+    }
+
+  },
 
   unCamelize: function(value) {
     return value.replace(
