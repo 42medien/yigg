@@ -17,7 +17,8 @@
     var $j = jQuery.noConflict();
     $j(document).ready(
       function() {
-        setTimeout("setFocusAction()", 1000);
+        if($j("#external_url").val() != '')
+            setTimeout("setFocusAction()", 1000);
       }
     );
         
