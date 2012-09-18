@@ -45,7 +45,9 @@ var img_resize = function(img, maxh, maxw) {
     }
   }
 
-  console.log(img); 
+  jQuery.css({
+		'background' : 'none'
+	}); 
 };
 
 jQuery("*").ready(function(){
