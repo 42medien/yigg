@@ -29,7 +29,7 @@ NinjaValidator = ({
    * or element in question.
    */
   requiredCheck : function(el){
-    if(el.type == "click"){
+    if(el.type == "keyup"){
       el = Event.element(el);
     }
     var currentParent = el.parentNode;
@@ -56,7 +56,7 @@ NinjaValidator = ({
   validateField : function(el){
 
     // Grab the element if this is triggered from an event
-    if(el.type == "click"){
+    if(el.type == "keyup"){
       el = Event.element(el);
     }
 
