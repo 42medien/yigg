@@ -29,7 +29,7 @@
       function() {
         //alert($j("#Description").val()); //object is properly initialized
         //$j('#Description').focus().select();
-        $j('#external_url').click().mouseleave();
+        $j('#external_url').click();
         //$j('#Title').focus().select();
       }
     );
