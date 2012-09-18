@@ -42,7 +42,9 @@ var img_resize = function(img, maxh, maxw) {
   } 
 };
 
-$().ready(function(){
+$("*").ready(function(){
+	console.log("starting JS func");
+
 	$("img.js-resize").each(function(){
 		console.log("start resizing");
 
