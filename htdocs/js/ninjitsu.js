@@ -141,46 +141,7 @@ NinjaComs = Class.create({
   debug : 0,
 
 
-  /**
-   * Make a Ajax Request
-   * @param {String} callMethod - The URL you wish to submit too.
-   * @param {Object} param - The parameters you want to submit
-   */
-  request : function( connectionToken, callMethod, param, method, onCompleteFunction, absoluteURL ){
-
-    var url = callMethod;
-    if(!absoluteURL)
-    {
-      url = window.location.toString();
-      if( url.indexOf("?") > 0)
-      {
-        var getparams = url.substring( url.indexOf("?"), url.length);
-        url = url.substring( 0, url.indexOf("?"));
-        url = url.substring( url.length -1 , url.length ) == "/" ?  url + callMethod : url + '/' + callMethod  + getparams;
-      }
-      else
-      {
-        url = url.substring( url.length -1 , url.length ) == "/" ?  url + callMethod : url + '/' + callMethod;
-      }
-    }
-
-    var request = new Ajax.Request(
-      url,
-      {
-        parameters: param,
-        onComplete: onCompleteFunction,
-        onSuccess: this.handleResponse.bind(this),
-        onFailure: this.handleResponse.bind(this),
-        evalJS: false,
-        sanitizeJSON: true,
-        requestHeaders: {
-            "Content-Token": connectionToken
-        }
-      }
-    );
-
-  },
-
+  
   updater : function( connectionToken, callMethod, element, param , methodType, onCompleteFunction )
   {
     if(!methodType)
