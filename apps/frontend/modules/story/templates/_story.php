@@ -162,14 +162,12 @@ jQuery("img.js-resize").ready(function(){
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
 <div class="story_bt_data">
     <?php if($sf_request->getModuleAction() === "story/show"):?>
-    <div class="spreadly-button">        
-        <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
-                style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                allowTransparency="true">
-        </iframe>
+    <div class="spreadly-button">
+        <a href="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500" 
+           title="<?php echo urlencode($story->title);?>" 
+           class="spreadly-button" 
+           rel="share like"> 
+        </a> 
     </div>
     <?php endif;?>
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
