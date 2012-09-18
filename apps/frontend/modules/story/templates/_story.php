@@ -59,7 +59,7 @@ jQuery("*").ready(function(){
 
  <div class="list_cont">
   <?php if($story->type == Story::TYPE_NORMAL):?>
-    <div class="screenshot" style="background: none;">
+    <div class="screenshot">
         <?php
         $source = $story->getStoryImageSource();
         if($source){
