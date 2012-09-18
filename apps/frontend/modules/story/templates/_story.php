@@ -47,7 +47,7 @@ var img_resize = function(img, maxh, maxw) {
 };
 
 jQuery("*").ready(function(){
-	jQuery(".").css({'background' : 'transparent'});
+	jQuery(".screenshot").css({'background' : 'transparent'});
 
 	jQuery("img.js-resize").each(function(){
 		img_resize(
