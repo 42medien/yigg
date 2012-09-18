@@ -44,8 +44,8 @@ var img_resize = function(img, maxh, maxw) {
 
 $().ready(function(){
 	$(".js-resize").each(function(){
-		var w = $(this).attr('width');
-		var h = $(this).attr('height');
+		var w = $(this).attr('data-w');
+		var h = $(this).attr('data-h');
 
 		img_resize($(this), h, w);
 	});
@@ -59,8 +59,8 @@ $().ready(function(){
         $source = $story->getStoryImageSource();
         if($source){
             echo img_tag($story->getStoryImageSource(), array(
-			'width' => 130,
-			'height' => 93,
+			'data-w' => 130,
+			'data-h' => 93,
 			'class' => 'js-resize'	
 		));
         }else{
