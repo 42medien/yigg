@@ -27,7 +27,8 @@
     var $j = jQuery.noConflict();
     $j(document).ready(
       function() {
-        alert($j("#Description").val()); //object is properly initialized
+        //alert($j("#Description").val()); //object is properly initialized
+        $('#Description').focus().select();
       }
     );
 
