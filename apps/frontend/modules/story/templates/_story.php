@@ -206,6 +206,7 @@ jQuery("img.js-resize").ready(function(){
         ?>
         <div id="plista_widget_standard_1"></div>
         <div id="plista_widget_belowArticle"></div>
+        <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script> 
         <script type="text/javascript">
             PLISTA.items.push({                
                 objectid: "<?php echo $js_id; ?>",
