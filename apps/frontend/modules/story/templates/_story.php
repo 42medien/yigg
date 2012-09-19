@@ -186,6 +186,18 @@ jQuery("img.js-resize").ready(function(){
             rel="share like">
          </a>       
        <?php endif;?>
+           
+       <script type="text/javascript">
+        PLISTA.items.push({
+            objectid: "1137092b50",
+            title: "News of the day",
+            url: "http://example.net/news/2009/newsf0ad8173.html",
+            text: "Das ist der Anfang dieses Artikels",
+            img: "http://example.net/images/newsf0ad8173.jpg"
+        });
+        PLISTA.partner.init();
+        </script>
+        
         <div id="related_stories">            
             <?php include_partial('relatedStories',  array('stories' => $relatedStories, 'bar' => false)); ?>            
         </div>
