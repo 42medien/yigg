@@ -161,6 +161,17 @@ jQuery("img.js-resize").ready(function(){
 <div class="clear"></div>
 <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
 <div class="story_bt_data">
+    <?php if($sf_request->getModuleAction() === "story/show"):?>
+    <div class="spreadly-button">
+        <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
+                style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                allowTransparency="true">
+        </iframe>
+    </div>
+    <?php endif;?>
        <h3 class="comments <?php if($sf_request->getModuleAction() === "story/show" && false === $sf_request->isAjaxRequest()):?>heading-left<?php endif;?>">
            <?php if(true === $sf_user->hasUser()):?>
                <?php echo link_to_story(
@@ -177,17 +188,6 @@ jQuery("img.js-resize").ready(function(){
            <?php endif;?>                      
        </h3>
 </div>
-    <?php if($sf_request->getModuleAction() === "story/show"):?>
-    <div class="spreadly-button">
-        <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
-                style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                allowTransparency="true">
-        </iframe>
-    </div>
-    <?php endif;?>
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
         <div id="related_stories">
