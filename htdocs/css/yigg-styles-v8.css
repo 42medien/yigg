@@ -686,7 +686,7 @@ form.right-settings input {display: inline;}
 #RegisterForm .captcha-container {clear: both; margin-left: -3px;}
 #RegisterForm .captcha-container label {display: none;}
 #RegisterForm .captcha-container #recaptcha_widget_div label {display: block; font-weight: normal;}
-#RegisterForm .captcha-container #recaptcha_widget_div #recaptcha_response_field {height: auto;}
+#RegisterForm .captcha-container #recaptcha_widget_div #recaptcha_response_field {height: auto; border: 1px solid #CCA940;}
 #RegisterForm .field.accept-terms {clear: both; margin: 0; float: none; width: 500px;}
 #RegisterForm .field.accept-terms + .field {width: 500px;}
 #RegisterForm .field.accept-terms input, #RegisterForm .field.accept-terms + .field input {margin: 3px 10px 0 0; height: 18px; float: left;}
