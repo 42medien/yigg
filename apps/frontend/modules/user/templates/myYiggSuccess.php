@@ -30,7 +30,7 @@
   <?php endif;?>
 
   <?php if(count($user->Domains) > 0):?>
-    <h3>Lieblings-Nachrichtenquellen:
+    <h3 class="help_icon">Lieblings-Nachrichtenquellen:
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <?php foreach($user->Domains as $domain):?>
@@ -42,7 +42,7 @@
   <?php endif;?>
 
   <?php if(count($user->Tags) > 0):?>
-    <h3>Themen, die mich interessieren:
+    <h3 class="help_icon">Themen, die mich interessieren:
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <?foreach($user->Tags as $tag):?>
