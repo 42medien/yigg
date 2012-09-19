@@ -210,11 +210,16 @@ jQuery("img.js-resize").ready(function(){
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
             PLISTA.items.push({
-                objectid: "<?php echo $js_id; ?>",
-                title: "title",
-                url: "<?php echo $js_url; ?>",
-                text: "text",
-                img: "<?php echo $js_img; ?>"
+                //objectid: "<?php //echo $js_id; ?>",
+                //title: "<?php //echo $js_title; ?>",
+                //url: "<?php //echo $js_url; ?>",
+                //text: "<?php //echo $js_text; ?>",
+                //img: "<?php //echo $js_img; ?>"
+                objectid: "1137092b50",
+                title: "News of the day",
+                url: "http://example.net/news/2009/newsf0ad8173.html",
+                text: "Das ist der Anfang dieses Artikels",
+                img: "http://example.net/images/newsf0ad8173.jpg"
             });
 
             PLISTA.partner.init();
