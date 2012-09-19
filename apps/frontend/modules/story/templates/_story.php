@@ -194,7 +194,7 @@ jQuery("img.js-resize").ready(function(){
                 $img_source = img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
             }
 
-            $js_id = $story['id'];
+            //$js_id = $story['id'];
             $js_title = $story['title'];
             $js_url = $sf_request->getUriPrefix().url_for_story($story, false);
             $js_text = addslashes($story->getDescriptionSummary(100, ESC_RAW));
