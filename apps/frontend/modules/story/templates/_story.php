@@ -205,6 +205,7 @@ jQuery("img.js-resize").ready(function(){
             //echo 'img: '.$js_img.'<br><br>';
         ?>
         <div id="plista_widget_standard_1"></div>
+        <div id="plista_widget_belowArticle"></div>
         <script type="text/javascript">
             PLISTA.items.push({                
                 objectid: "<?php echo $js_id; ?>",
