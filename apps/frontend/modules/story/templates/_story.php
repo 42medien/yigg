@@ -178,15 +178,13 @@ jQuery("img.js-resize").ready(function(){
 </div>
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
-    <?php if($sf_request->getModuleAction() === "story/show"):?>
-       
+    <?php if($sf_request->getModuleAction() === "story/show"):?>       
            <span class="hlp_txt">Teile die News mit Deinen Freunden!</span>
            <a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
             title="<?php echo $story->title;?>"
             class="spreadly-button" 
             rel="share like">
-         </a>
-       
+         </a>       
        <?php endif;?>
         <div id="related_stories">            
             <?php include_partial('relatedStories',  array('stories' => $relatedStories, 'bar' => false)); ?>            
