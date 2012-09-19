@@ -187,6 +187,9 @@ jQuery("img.js-resize").ready(function(){
          </a>       
        <?php endif;?>
         <br><br><br>
+        <?php
+            echo 'objectid: ' . $story['id'] . '<br><br>';
+        ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
             PLISTA.items.push({
