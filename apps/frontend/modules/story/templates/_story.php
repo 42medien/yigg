@@ -202,8 +202,8 @@ jQuery("img.js-resize").ready(function(){
             
             //echo 'objectId: '.$js_id.'<br><br>';
             //echo 'title: '.$js_title.'<br><br>';
-            echo 'url: '.$js_url.'<br><br>';
-            echo 'text: '.$js_text.'<br><br>';
+            //echo 'url: '.$js_url.'<br><br>';
+            //echo 'text: '.$js_text.'<br><br>';
             echo 'img: '.$js_img.'<br><br>';
             
         ?>
@@ -218,8 +218,8 @@ jQuery("img.js-resize").ready(function(){
                 objectid: "<?php echo $js_id; ?>",
                 title: "<?php echo $js_title; ?>",
                 url: "<?php echo $js_url; ?>",
-                text: "Das ist der Anfang dieses Artikels",
-                img: "<?php echo $js_img; ?>"
+                text: "<?php echo $js_text; ?>",
+                img: "http://example.net/images/newsf0ad8173.jpg"
             });
 
             PLISTA.partner.init();
