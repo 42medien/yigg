@@ -206,14 +206,21 @@ jQuery("img.js-resize").ready(function(){
             //echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
             //echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
             //echo '<b>img:</b> ' . $img_source . '<br><br>';
+            
+            
+            $js_id = $story['id'];
+            $js_title = $story['title'];
+            $js_url = $sf_request->getUriPrefix().url_for_story($story, false);
+            $js_text = $story->getDescriptionSummary(600, ESC_RAW);
+            
         ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
             PLISTA.items.push({
-                objectid: "<?php echo $story['id']; ?>",
-                title: "<?php echo $story['title']; ?>",
-                url: "<?php echo $sf_request->getUriPrefix().url_for_story($story, false); ?>",
-                text: "Das ist der Anfang dieses Artikels",
+                objectid: "<?php echo $js_id; ?>",
+                title: "<?php echo $js_title; ?>",
+                url: "<?php echo $js_url; ?>",
+                text: "<?php echo $js_text; ?>",
                 img: "http://example.net/images/newsf0ad8173.jpg"
             });
 
