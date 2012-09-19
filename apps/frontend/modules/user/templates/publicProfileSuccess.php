@@ -116,7 +116,7 @@
   <?php endif; ?>
 
   <?php if(count($user->Tags) > 0):?>
-    <h3><?php echo $user->username;?> interessiert sich für:
+    <h3 class="help_icon"><?php echo $user->username;?> interessiert sich für:
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
     <?php echo include_partial("tag/subscribe", array("tags" => $user->Tags));?>
