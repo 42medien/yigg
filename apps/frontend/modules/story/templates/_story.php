@@ -190,7 +190,7 @@ jQuery("img.js-resize").ready(function(){
         <?php
             $source = $story->getStoryImageSource();
             if($source){
-                $img_source = $sf_request->getUriPrefix().$source;
+                $img_source = $sf_request->getUriPrefix().'/'.$source;
             }else{
                 $img_source = img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
             }
