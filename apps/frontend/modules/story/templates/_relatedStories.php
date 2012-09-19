@@ -45,7 +45,11 @@
     //-->
 </script>
 <?php else:?>
-<?php echo $story['id']; ?>
+<?php 
+    foreach ( $stories as $story){
+        echo $story['id'];
+    }
+?>
 <br />
 <div id="plista_widget_standard_1"></div>
 <script type="text/javascript">
