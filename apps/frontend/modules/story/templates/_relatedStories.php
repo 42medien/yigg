@@ -45,27 +45,6 @@
     //-->
 </script>
 <?php else:?>
-<?php 
-    foreach ( $stories as $story){
-        echo $story['id'];
-        echo $story['title'];        
-        echo $story['external_url'];
-        echo $story['description'];
-    }
-?>
-<br />
-<div id="plista_widget_standard_1"></div>
-<script type="text/javascript">
-    PLISTA.items.push({
-        objectid: "1137092b50",
-        title: "News of the day",
-        url: "http://example.net/news/2009/newsf0ad8173.html",
-        text: "Das ist der Anfang dieses Artikels",
-        img: "http://example.net/images/newsf0ad8173.jpg"
-    });
-
-    PLISTA.partner.init();
-</script>
 <!--<div style="font-size: 108% !important; font-weight: bold; margin-top: 10px; margin-bottom:3px;">Das könnte Sie auch interessieren:</div>-->
 <div id="related_stories_content">
     <ol class="avatar-list-style">
