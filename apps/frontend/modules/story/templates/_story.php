@@ -193,32 +193,25 @@ jQuery("img.js-resize").ready(function(){
             }else{
                 $img_source = "http://stromboli.yigg.de/?url=" . $story->external_url;
             }
-
             $js_id = $story['id'];
             $js_title = $story['title'];
             $js_url = $sf_request->getUriPrefix().url_for_story($story, false);
             $js_text = addslashes($story->getDescriptionSummary(100, ESC_RAW));
-            $js_img = $img_source;
-            
+            $js_img = $img_source;            
             //echo 'objectId: '.$js_id.'<br><br>';
             //echo 'title: '.$js_title.'<br><br>';
             //echo 'url: '.$js_url.'<br><br>';
             //echo 'text: '.$js_text.'<br><br>';
-            echo 'img: '.$js_img.'<br><br>';
+            //echo 'img: '.$js_img.'<br><br>';
         ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
-            PLISTA.items.push({
-                //objectid: "<?php //echo $js_id; ?>",
-                //title: "<?php //echo $js_title; ?>",
-                //url: "<?php //echo $js_url; ?>",
-                //text: "<?php //echo $js_text; ?>",
-                //img: "<?php //echo $js_img; ?>"
+            PLISTA.items.push({                
                 objectid: "<?php echo $js_id; ?>",
                 title: "<?php echo $js_title; ?>",
                 url: "<?php echo $js_url; ?>",
                 text: "<?php echo $js_text; ?>",
-                img: "http://example.net/images/newsf0ad8173.jpg"
+                img: "<?php echo $js_img; ?>"
             });
 
             PLISTA.partner.init();
