@@ -215,7 +215,7 @@ jQuery("img.js-resize").ready(function(){
                 //url: "<?php //echo $js_url; ?>",
                 //text: "<?php //echo $js_text; ?>",
                 //img: "<?php //echo $js_img; ?>"
-                objectid: "1137092b50",
+                objectid: "<?php echo $js_id; ?>",
                 title: "News of the day",
                 url: "http://example.net/news/2009/newsf0ad8173.html",
                 text: "Das ist der Anfang dieses Artikels",
