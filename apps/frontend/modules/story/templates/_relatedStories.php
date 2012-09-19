@@ -45,6 +45,7 @@
     //-->
 </script>
 <?php else:?>
+<?php echo $story['id']; ?>
 <br />
 <div id="plista_widget_standard_1"></div>
 <script type="text/javascript">
