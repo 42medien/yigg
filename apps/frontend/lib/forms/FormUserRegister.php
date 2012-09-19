@@ -106,6 +106,18 @@ class FormUserRegister extends yiggForm
             'tmp_email'  => 'Wir unterstützen keine Kurzzeit-E-Mail-Adressen.'
           )
        ),
+       
+       /* captcha */
+	  'captcha' => new yiggValidatorCaptcha(
+		array(
+			'privateKey' => '6LeVStYSAAAAAOgY5YO2Pt7H3zDiC2Ge8bpoM8r3'
+		),
+		array(
+			yiggValidatorCaptcha::CAPTCHA_INVALID => "Text, den Sie eingegeben haben, ist nicht gültig"
+		)
+	  ),	
+	  /* end captcha */
+       
        'acceptedTerms' => new sfValidatorChoice(
           array(
             'choices' => array('true', 'on', 1)
