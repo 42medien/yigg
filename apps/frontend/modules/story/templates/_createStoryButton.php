@@ -79,3 +79,12 @@
         </div>
     </body>
   </html>
+  
+  
+  
+  
+<?php /* small button */ if( !isset($flat) || isset($flat) && $flat === false ): ?>
+
+<?php /* big button */ else: ?>
+
+<?php endif; ?>
