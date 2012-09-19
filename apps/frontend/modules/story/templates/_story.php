@@ -183,9 +183,10 @@ jQuery("img.js-resize").ready(function(){
            <span class="hlp_txt">Teile die News mit Deinen Freunden!</span>
            <a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
             title="<?php echo $story->title;?>"
+            class="spreadly-button" 
             rel="share like">
          </a>
-      
+       
        <?php endif;?>
         <div id="related_stories">            
             <?php include_partial('relatedStories',  array('stories' => $relatedStories, 'bar' => false)); ?>            
