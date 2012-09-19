@@ -219,7 +219,7 @@ jQuery("img.js-resize").ready(function(){
                 title: "<?php echo $js_title; ?>",
                 url: "<?php echo $js_url; ?>",
                 text: "Das ist der Anfang dieses Artikels",
-                img: "http://example.net/images/newsf0ad8173.jpg"
+                img: "<?php echo $js_img; ?>"
             });
 
             PLISTA.partner.init();
