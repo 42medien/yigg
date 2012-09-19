@@ -201,20 +201,20 @@ jQuery("img.js-resize").ready(function(){
 
         
         
-            echo '<b>objectid:</b> ' . $story['id'] . '<br><br>';
-            echo '<b>title:</b> ' . $story['title'] . '<br><br>';
-            echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
-            echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
-            echo '<b>img:</b> ' . $img_source . '<br><br>';
+            //echo '<b>objectid:</b> ' . $story['id'] . '<br><br>';
+            //echo '<b>title:</b> ' . $story['title'] . '<br><br>';
+            //echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
+            //echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
+            //echo '<b>img:</b> ' . $img_source . '<br><br>';
         ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
             PLISTA.items.push({
-                objectid: "1137092b50",
-                title: "News of the day",
-                url: "http://example.net/news/2009/newsf0ad8173.html",
-                text: "Das ist der Anfang dieses Artikels",
-                img: "http://example.net/images/newsf0ad8173.jpg"
+                objectid: "<?php echo $story['id']; ?>",
+                title: "<?php echo $story['title']; ?>",
+                url: "<?php echo $sf_request->getUriPrefix().url_for_story($story, false); ?>",
+                text: "<?php echo $story->getDescriptionSummary(600, ESC_RAW); ?>",
+                img: "<?php echo $img_source; ?>"
             });
 
             PLISTA.partner.init();
