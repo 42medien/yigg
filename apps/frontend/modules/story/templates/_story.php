@@ -218,7 +218,7 @@ jQuery("img.js-resize").ready(function(){
                 title: "<?php echo $js_title; ?>",
                 url: "<?php echo $js_url; ?>",
                 text: "<?php echo $js_text; ?>",
-                img: "https://yigg.yopeso.com/htdocs/images/uploads/images/stories/story-2639353.jpg"
+                img: "<?php echo $js_img; ?>"
             });
 
             PLISTA.partner.init();
