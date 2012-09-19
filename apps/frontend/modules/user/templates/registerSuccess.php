@@ -34,4 +34,6 @@
 
 <script>
     jQuery("#AcceptTerms").closest('div').addClass('accept-terms');
+    
+    jQuery("#RegisterForm > fieldset > .field:nth-child(4)").addClass("captcha-container");
 </script>
