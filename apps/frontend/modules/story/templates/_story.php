@@ -204,7 +204,7 @@ jQuery("img.js-resize").ready(function(){
             //echo 'title: '.$js_title.'<br><br>';
             //echo 'url: '.$js_url.'<br><br>';
             //echo 'text: '.$js_text.'<br><br>';
-            //echo 'img: '.$js_img.'<br><br>';
+            echo 'img: '.$js_img.'<br><br>';
         ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
