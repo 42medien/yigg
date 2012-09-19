@@ -200,7 +200,7 @@ jQuery("img.js-resize").ready(function(){
             $js_text = $story->getDescriptionSummary(100, ESC_RAW);
             $js_img = $img_source;
         ?>
-        <div id="plista_widget_standard_1" style="margin-top: 20px;"></div>
+        <div id="plista_widget_standard_1" style="margin-top: 25px;"></div>
         <script type="text/javascript">
             PLISTA.items.push({
                 objectid: "<?php echo $js_id; ?>",
