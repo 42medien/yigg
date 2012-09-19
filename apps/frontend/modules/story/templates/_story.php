@@ -201,10 +201,10 @@ jQuery("img.js-resize").ready(function(){
             $js_img = $img_source;
             
             echo 'objectId: '.$js_id.'<br><br>';
-            echo 'objectId: '.$js_title.'<br><br>';
-            echo 'objectId: '.$js_url.'<br><br>';
-            echo 'objectId: '.$js_text.'<br><br>';
-            echo 'objectId: '.$js_img.'<br><br>';
+            echo 'title: '.$js_title.'<br><br>';
+            echo 'url: '.$js_url.'<br><br>';
+            echo 'text: '.$js_text.'<br><br>';
+            echo 'img: '.$js_img.'<br><br>';
             
         ?>
         <div id="plista_widget_standard_1"></div>
