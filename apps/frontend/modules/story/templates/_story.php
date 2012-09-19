@@ -211,7 +211,7 @@ jQuery("img.js-resize").ready(function(){
         <script type="text/javascript">
             PLISTA.items.push({
                 objectid: "<?php echo $story['id']; ?>",
-                title: "News of the day",
+                title: "<?php echo $story['title']; ?>",
                 url: "http://example.net/news/2009/newsf0ad8173.html",
                 text: "Das ist der Anfang dieses Artikels",
                 img: "http://example.net/images/newsf0ad8173.jpg"
