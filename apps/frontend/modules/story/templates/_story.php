@@ -201,7 +201,7 @@ jQuery("img.js-resize").ready(function(){
             $js_img = $img_source;
             
             //echo 'objectId: '.$js_id.'<br><br>';
-            echo 'title: '.$js_title.'<br><br>';
+            //echo 'title: '.$js_title.'<br><br>';
             echo 'url: '.$js_url.'<br><br>';
             echo 'text: '.$js_text.'<br><br>';
             echo 'img: '.$js_img.'<br><br>';
@@ -216,7 +216,7 @@ jQuery("img.js-resize").ready(function(){
                 //text: "<?php //echo $js_text; ?>",
                 //img: "<?php //echo $js_img; ?>"
                 objectid: "<?php echo $js_id; ?>",
-                title: "News of the day",
+                title: "<?php echo $js_title; ?>",
                 url: "http://example.net/news/2009/newsf0ad8173.html",
                 text: "Das ist der Anfang dieses Artikels",
                 img: "http://example.net/images/newsf0ad8173.jpg"
