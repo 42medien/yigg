@@ -583,8 +583,8 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .twoThree-left #searchForm label {display: none;}
 .twoThree-left #searchForm input {height: 25px; font-size: 15px; width: 275px; float: left;}
 .twoThree-left #searchForm input.button {float: left; cursor: pointer;}
-.spreadly-button{clear: right; float: right; height: 27px; margin: -33px 140px 0 0; position: relative; width: 100px;}
-#spreadly-advertisement-container + .spreadly-button {margin: -33px 180px 0 0;}
+.spreadly-button{clear: right; float: right; height: 27px; margin: -33px 140px 0 0; position: relative; width: auto;}
+#spreadly-advertisement-container + .spreadly-button {margin: -33px 180px 0 0; width: 100px;}
 #bar_content .spreadly-button{clear: right; float: left; height: 27px; margin: 0; position: relative; width: 130px;}
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
