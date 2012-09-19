@@ -190,18 +190,14 @@ jQuery("img.js-resize").ready(function(){
         <?php
             $source = $story->getStoryImageSource();
             if($source){
-                $img_source = img_tag($story->getStoryImageSource(), array(
-                            'data-w' => 130,
-                            'data-h' => 93,
-                            'class' => 'js-resize'	
-                    ));
+                $img_source = $sf_request->getUriPrefix().$source;
             }else{
                 $img_source = img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
             }
 
         
         
-            echo '<b>objectid:</b> ' . $sf_request->getUriPrefix() . '<br><br>';
+            echo '<b>objectid:</b> ' . $img_source . '<br><br>';
             //echo '<b>title:</b> ' . $story['title'] . '<br><br>';
             //echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
             //echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
