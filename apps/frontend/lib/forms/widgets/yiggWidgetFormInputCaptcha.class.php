@@ -35,7 +35,7 @@ class yiggWidgetFormInputCaptcha extends sfWidgetForm
     }
     else
     {
-      echo recaptcha_get_noscriptHTML(
+      echo /*recaptcha_get_noscriptHTML*/ recaptcha_get_html(
         $this->getOption('publicKey'),
         $error = null,
         $this->getOption('useSSL')
