@@ -211,7 +211,7 @@ jQuery("img.js-resize").ready(function(){
             $js_id = $story['id'];
             $js_title = $story['title'];
             $js_url = $sf_request->getUriPrefix().url_for_story($story, false);
-            $js_text = $story->getDescriptionSummary(600, ESC_RAW);
+            $js_text = $story->getDescriptionSummary(100, ESC_RAW);
             
         ?>
         <div id="plista_widget_standard_1"></div>
