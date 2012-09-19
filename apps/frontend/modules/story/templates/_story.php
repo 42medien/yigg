@@ -210,10 +210,10 @@ jQuery("img.js-resize").ready(function(){
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
             PLISTA.items.push({
-                objectid: "<?php echo $story['id']; ?>",
-                title: "<?php echo $story['title']; ?>",
-                url: "<?php echo $sf_request->getUriPrefix().url_for_story($story, false); ?>",
-                text: "<?php echo $story->getDescriptionSummary(600, ESC_RAW); ?>",
+                objectid: "1137092b50",
+                title: "News of the day",
+                url: "http://example.net/news/2009/newsf0ad8173.html",
+                text: "Das ist der Anfang dieses Artikels",
                 img: "http://example.net/images/newsf0ad8173.jpg"
             });
 
