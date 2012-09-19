@@ -38,7 +38,9 @@ class FormUserRegister extends yiggForm
 
 	/* captcha */
 	  'captcha' => new yiggWidgetFormInputCaptcha(
-		array(),
+		array(
+			'publicKey' => '6LeVStYSAAAAAFpqUyWyk3msYS6Z2EgxGfofzlJi'
+		),
 		array(
 			'id' => 'captchaInput',
 			'class' => 'captchaBox'
