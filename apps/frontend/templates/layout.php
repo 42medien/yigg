@@ -45,9 +45,9 @@
     <?php include_component('system','Feeds') ?>
     <?php include_title() ?>
     <?php use_javascript('jquery-1.7.1.js') ?>
-    <?php include_javascripts() ?>          
-    <?php include_stylesheets() ?>
-    
+    <?php include_javascripts() ?>
+    <script type='text/javascript' src='http://button.spread.ly/js/v1/loader.js'></script>
+    <?php include_stylesheets() ?>    
     <script type='text/javascript'>
     $(document).ready(function(){
        // alert('test jquery');       
