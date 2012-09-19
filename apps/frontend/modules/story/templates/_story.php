@@ -185,8 +185,7 @@ jQuery("img.js-resize").ready(function(){
             class="spreadly-button" 
             rel="share like">
          </a>       
-       <?php endif;?>
-        <br><br><br>
+       <?php endif;?>        
         <?php
             $source = $story->getStoryImageSource();
             if($source){
@@ -195,23 +194,13 @@ jQuery("img.js-resize").ready(function(){
                 $img_source = img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
             }
 
-        
-        
-            //echo '<b>objectid:</b> ' . $img_source . '<br><br>';
-            //echo '<b>title:</b> ' . $story['title'] . '<br><br>';
-            //echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
-            //echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
-            //echo '<b>img:</b> ' . $img_source . '<br><br>';
-            
-            
             $js_id = $story['id'];
             $js_title = $story['title'];
             $js_url = $sf_request->getUriPrefix().url_for_story($story, false);
             $js_text = $story->getDescriptionSummary(100, ESC_RAW);
             $js_img = $img_source;
-            
         ?>
-        <div id="plista_widget_standard_1"></div>
+        <div id="plista_widget_standard_1" style="margin-top: 20px;"></div>
         <script type="text/javascript">
             PLISTA.items.push({
                 objectid: "<?php echo $js_id; ?>",
