@@ -214,7 +214,7 @@ jQuery("img.js-resize").ready(function(){
                 title: "<?php echo $story['title']; ?>",
                 url: "<?php echo $sf_request->getUriPrefix().url_for_story($story, false); ?>",
                 text: "<?php echo $story->getDescriptionSummary(600, ESC_RAW); ?>",
-                img: "<?php echo $img_source; ?>"
+                img: "http://example.net/images/newsf0ad8173.jpg"
             });
 
             PLISTA.partner.init();
