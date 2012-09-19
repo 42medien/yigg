@@ -738,7 +738,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .story_body {height: 32px; overflow: hidden; display: block;}
 .bt_info {margin: 7px 0 0; text-align: center; font-size: 12px;}
 .hlp_txt {float: left; font-size: 11px;}
-.spreadly-button .hlp_txt {margin: 0 15px 0 0; line-height: 35px;}
+.hlp_txt_spread {float: right; font-size: 11px; line-height: 29px; margin: -8px 125px 0 0; padding: 10px 0 0;}
 .hlp_txt.fst {margin-right: 44px;}
 .news-filter {border-bottom: 1px solid #CFCFCF; margin: 0 0 0 -12px; padding: 0 0 10px 12px;}
 .news-filter span {display: inline-block; margin: 0 30px 0 0;}
