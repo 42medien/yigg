@@ -92,7 +92,7 @@
     
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
+  <body class="<?php print_r($sf_user); echo ( (isset($sf_user) ) ? "user-anon" : "user-auth" )?>">
     <div class="bg_top">
     <div class="bg_bt">
     <div class="bg_mid">
