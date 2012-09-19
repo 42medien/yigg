@@ -191,7 +191,7 @@ jQuery("img.js-resize").ready(function(){
             if($source){
                 $img_source = $sf_request->getUriPrefix().'/'.$source;
             }else{
-                $img_source = img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
+                $img_source = "http://stromboli.yigg.de/?url=" . $story->external_url;
             }
 
             $js_id = $story['id'];
@@ -204,9 +204,7 @@ jQuery("img.js-resize").ready(function(){
             //echo 'title: '.$js_title.'<br><br>';
             //echo 'url: '.$js_url.'<br><br>';
             //echo 'text: '.$js_text.'<br><br>';
-            echo 'img: '.$js_img.'<br><br>';
-            echo $story->getStoryImageSource().'<br><br>';
-            
+            //echo 'img: '.$js_img.'<br><br>';
         ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
