@@ -181,13 +181,11 @@ jQuery("img.js-resize").ready(function(){
     <?php if($sf_request->getModuleAction() === "story/show"):?>
        <div class="spreadly-button">
            <span class="hlp_txt">Teile die News mit Deinen Freunden!</span>
-           <iframe src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false));?>&social=0&color=ff9500&title=<?php echo urlencode($story->title);?>"
-                   style="overflow:hidden; width: 175px; height: 30px; padding: 0px 0;"
-                   frameborder="0"
-                   scrolling="no"
-                   marginheight="0"
-                   allowTransparency="true">
-           </iframe>
+           <a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
+                title="<?php echo $story->title;?>"
+                class="spreadly-button" 
+                rel="share like">
+             </a>
        </div>
        <?php endif;?>
         <div id="related_stories">            
