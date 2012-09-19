@@ -682,6 +682,8 @@ form.right-settings label {margin: 0 0 3px;}
 form.right-settings input {display: inline;}
 #RegisterForm h3 {clear: both; float: left; width: 100px; margin-bottom: 5px;}
 #RegisterForm .field {margin-bottom: 15px;}
+#RegisterForm .captcha-container {clear: both; margin-left: -3px;}
+#RegisterForm .captcha-container label {display: none;}
 #RegisterForm .field.accept-terms {clear: both; margin: 0; float: none; width: 500px;}
 #RegisterForm .field.accept-terms + .field {width: 500px;}
 #RegisterForm .field.accept-terms input, #RegisterForm .field.accept-terms + .field input {margin: 3px 10px 0 0; height: 18px; float: left;}
