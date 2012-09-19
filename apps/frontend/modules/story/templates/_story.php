@@ -213,7 +213,7 @@ jQuery("img.js-resize").ready(function(){
                 objectid: "<?php echo $js_id; ?>",
                 title: "title",
                 url: "<?php echo $js_url; ?>",
-                text: "<?php echo $js_text; ?>",
+                text: "text",
                 img: "<?php echo $js_img; ?>"
             });
 
