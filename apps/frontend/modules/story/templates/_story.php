@@ -212,6 +212,7 @@ jQuery("img.js-resize").ready(function(){
             $js_title = $story['title'];
             $js_url = $sf_request->getUriPrefix().url_for_story($story, false);
             $js_text = $story->getDescriptionSummary(100, ESC_RAW);
+            $js_img = $img_source;
             
         ?>
         <div id="plista_widget_standard_1"></div>
@@ -221,7 +222,7 @@ jQuery("img.js-resize").ready(function(){
                 title: "<?php echo $js_title; ?>",
                 url: "<?php echo $js_url; ?>",
                 text: "<?php echo $js_text; ?>",
-                img: "http://example.net/images/newsf0ad8173.jpg"
+                img: "<?php echo $js_img; ?>"
             });
 
             PLISTA.partner.init();
