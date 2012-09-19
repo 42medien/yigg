@@ -192,7 +192,7 @@ jQuery("img.js-resize").ready(function(){
             echo '<b>title:</b> ' . $story['title'] . '<br><br>';
             echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
             echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
-            echo '<b>img:</b> ' . $story->getStoryImageSource() . '<br><br>';
+            echo '<b>img:</b> ' . img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array()) . '<br><br>';
         ?>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
