@@ -186,7 +186,7 @@ jQuery("img.js-resize").ready(function(){
             rel="share like">
          </a>       
        <?php endif;?>
-        <br><br>
+        <br><br><br>
         <div id="plista_widget_standard_1"></div>
         <script type="text/javascript">
             PLISTA.items.push({
