@@ -48,6 +48,9 @@
 <?php 
     foreach ( $stories as $story){
         echo $story['id'];
+        echo $story['title'];        
+        echo $story['external_url'];
+        echo $story['description'];
     }
 ?>
 <br />
