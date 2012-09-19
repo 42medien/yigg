@@ -197,7 +197,7 @@ jQuery("img.js-resize").ready(function(){
 
         
         
-            echo '<b>objectid:</b> ' . $img_source . '<br><br>';
+            //echo '<b>objectid:</b> ' . $img_source . '<br><br>';
             //echo '<b>title:</b> ' . $story['title'] . '<br><br>';
             //echo '<b>url:</b> ' . $sf_request->getUriPrefix().url_for_story($story, false) . '<br><br>';
             //echo '<b>text:</b> ' . $story->getDescriptionSummary(600, ESC_RAW) . '<br><br>';
