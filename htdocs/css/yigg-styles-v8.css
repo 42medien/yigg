@@ -584,7 +584,7 @@ ul.ymod_links li {display: block; height: 20px; width: 120px; float: left; paddi
 .twoThree-left #searchForm input {height: 25px; font-size: 15px; width: 275px; float: left;}
 .twoThree-left #searchForm input.button {float: left; cursor: pointer;}
 .spreadly-button{clear: right; float: right; height: 27px; margin: -33px 142px 0 0; width: 140px;}
-.user-anon .spreadly-button{clear: none; float: right; width: 280px;}
+.user-anon .spreadly-button{clear: none; float: right; width: 280px; margin: 29px 0 0;}
 #bar_content .spreadly-button{clear: right; float: left; height: 27px; margin: 0; position: relative; width: 130px;}
 .ico a {height: 20px; overflow: hidden; white-space: nowrap; padding-left: 20px; display: block; background: #eee; width: 0}
 .ico-follow{display: inline-block;}
