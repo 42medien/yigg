@@ -739,7 +739,7 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .bt_info {margin: 7px 0 0; text-align: center; font-size: 12px;}
 .hlp_txt {float: left; font-size: 11px;}
 .hlp_txt_spread {float: right; font-size: 11px; line-height: 29px; margin: -8px 125px 0 0; padding: 10px 0 0;}
-.user-anon .hlp_txt_spread {margin: 116px 293px 1px 0;}
+.user-anon .hlp_txt_spread {margin: 23px 0 0 205px;}
 #plista_widget_standard_1 {clear: both;}
 .hlp_txt.fst {margin-right: 44px;}
 .news-filter {border-bottom: 1px solid #CFCFCF; margin: 0 0 0 -12px; padding: 0 0 10px 12px;}
@@ -751,9 +751,10 @@ form#new_form.ninjaForm #Categories li input {float: right; margin: 2px 0 0;}
 .right-settings .actions input {margin-left: 0px;}
 
 #spreadly-advertisement-container {position: relative;}
+.user_anon #spreadly-advertisement-container {float: left; height: 10px; position: relative; width: 10px;}
 .spreadly-advertisement {bottom: /*324*/20px; left: 217px;}
 /*.user-anon #spreadly-advertisement-container {position: static;}*/
-.user-anon  .spreadly-advertisement {bottom: -155px;}
+.user-anon .spreadly-advertisement {bottom: 0; left: -163px;}
 
 /* BackEnd */
 #container.b_end {width: 1300px;}
