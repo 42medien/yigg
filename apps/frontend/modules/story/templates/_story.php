@@ -176,28 +176,17 @@ jQuery("img.js-resize").ready(function(){
            <?php endif;?>                      
        </h3>
 </div>
-    <?php if($sf_user->isAuthenticated() && $sf_request->getModuleAction() === "story/show"): ?>
-           <span class="hlp_txt_spread">Teile die News mit Deinen Freunden!</span>
-           <iframe class="spreadly-button" frameBorder="0" scrolling="no" style="border: 0; height: 29px;" src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false)) ?>"></iframe>
-           <?php /*<a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
-            title="<?php echo $story->title;?>"
-            class="spreadly-button" 
-            rel="share like">
-          </a>*/ ?> 
-        <?php endif; ?>
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
     <?php if($sf_request->getModuleAction() === "story/show"):?>       
-		<?php if(!$sf_user->isAuthenticated()): ?>
+		<?php if($sf_user->isAuthenticated()): ?><br/><?php endif; ?>
            <span class="hlp_txt_spread">Teile die News mit Deinen Freunden!</span>
            <iframe class="spreadly-button" frameBorder="0" scrolling="no" style="border: 0; height: 29px;" src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false)) ?>"></iframe>
            <?php /*<a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
             title="<?php echo $story->title;?>"
             class="spreadly-button" 
             rel="share like">
-          </a>*/ ?> 
-        <?php endif; ?>
-             
+          </a>*/ ?>    
        <?php endif;?>        
         <?php
             $source = $story->getStoryImageSource();
