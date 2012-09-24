@@ -50,7 +50,7 @@ jQuery("img.js-resize").ready(function(){
 	jQuery("img.js-resize").each(function(){
 		var h = jQuery(this).parent(".screenshot").innerHeight();
 		var w = jQuery(this).parent(".screenshot").innerWidth();
-		console.log("resising WxH = " + w + "x" + h);
+		//console.log("resising WxH = " + w + "x" + h);
 		img_resize(this, h, w);
 	});
 
@@ -180,11 +180,12 @@ jQuery("img.js-resize").ready(function(){
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
     <?php if($sf_request->getModuleAction() === "story/show"):?>       
            <span class="hlp_txt_spread">Teile die News mit Deinen Freunden!</span>
-           <a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
+           <iframe src="http://button.spread.ly/?url=<?php urlencode(echo $sf_request->getUriPrefix().url_for_story($story, false)) ?>"></iframe>
+           <?php /*<a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
             title="<?php echo $story->title;?>"
             class="spreadly-button" 
             rel="share like">
-         </a>       
+          </a>*/ ?>       
        <?php endif;?>        
         <?php
             $source = $story->getStoryImageSource();
