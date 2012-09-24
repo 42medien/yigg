@@ -178,6 +178,12 @@ jQuery("img.js-resize").ready(function(){
 </div>
     <?php if("story/show" === $sf_request->getModuleAction()): ?>
       <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false)); ?>
+      <style>
+		#Comment .actions {
+				margin-top: -10px;
+		}  
+	  </style>	  
+      
     <?php if($sf_request->getModuleAction() === "story/show"):?>       
 		<?php if($sf_user->isAuthenticated()): ?><br/><?php endif; ?>
            <span class="hlp_txt_spread">Teile die News mit Deinen Freunden!</span>
