@@ -58,7 +58,7 @@
 			head.appendChild(css);
 			var s = document.createElement('script');
 			s.type = 'text/javascript';
-			s.src = '//button.spread.ly/js/v1/button.js';
+			s.src = '//button.spread.ly/js/v2/button.js';
 			head.appendChild(s);
 			//var a = document.createElement('script');
 			//a.type = 'text/javascript';
