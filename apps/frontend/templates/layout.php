@@ -46,7 +46,29 @@
     <?php include_title() ?>
     <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
-    <script type='text/javascript' src='http://button.spread.ly/js/v1/loader.js'></script>    
+
+    <?php //<script type='text/javascript' src='http://button.spread.ly/js/v1/loader.js'></script> ?>
+    <script>
+		window.onload = function(){
+			var head = document.getElementsByTagName("head")[0];
+			var css = document.createElement('link');
+			css.type = 'text/css';
+			css.rel = 'stylesheet';
+			css.href = '//button.spread.ly/css/v1/button.css';
+			head.appendChild(css);
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.src = '//button.spread.ly/js/v1/button.js';
+			head.appendChild(s);
+			//var a = document.createElement('script');
+			//a.type = 'text/javascript';
+			//a.src = '//button.spread.ly/js/v1/advertisement.js';
+			//head.appendChild(a);
+		};
+	</script>
+    
+    <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script> 
+    
     <?php include_stylesheets() ?>    
     <script type='text/javascript'>
     $(document).ready(function(){
