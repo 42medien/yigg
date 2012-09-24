@@ -48,7 +48,7 @@
     <?php include_javascripts() ?>
 
     <?php //<script type='text/javascript' src='http://button.spread.ly/js/v1/loader.js'></script> ?>
-    <script>
+    <?php /*<script>
 		window.onload = function(){
 			var head = document.getElementsByTagName("head")[0];
 			var css = document.createElement('link');
@@ -58,14 +58,14 @@
 			head.appendChild(css);
 			var s = document.createElement('script');
 			s.type = 'text/javascript';
-			s.src = '//button.spread.ly/js/v2/button.js';
+			s.src = '//button.spread.ly/js/v1/button.js';
 			head.appendChild(s);
 			//var a = document.createElement('script');
 			//a.type = 'text/javascript';
 			//a.src = '//button.spread.ly/js/v1/advertisement.js';
 			//head.appendChild(a);
 		};
-	</script>
+	</script>*/?>
     
     <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script> 
     
