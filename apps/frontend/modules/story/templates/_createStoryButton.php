@@ -30,7 +30,7 @@
         .rating-form p{display:none}.rating-form input.Rate,
         .rating-form.voted span{ float:left; background: url(images/toolbar-yiggit.gif) 0% 50% no-repeat; border:0; height:20px; width:50px; font-size:11px; line-height:20px; text-align:center; color:#105B1B; cursor:pointer}
         .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}*/
-        .rating-form span {background: none repeat scroll 0 0 #FFC851; border: 1px solid #C7C7C7; border-radius: 3px 3px 3px 3px; cursor: pointer; font: 13px/30px 'Arial',sans-serif; height: 30px; padding: 0 3px; max-width: 54px; text-align: center; display: block; margin: 40px 0 0;}
+        .rating-form span {background: none repeat scroll 0 0 #FFC851; border: 1px solid #C7C7C7; border-radius: 3px 3px 3px 3px; cursor: pointer; font: 13px/23px 'Arial',sans-serif; height: 21px; padding: 0 3px; max-width: 54px; text-align: center; display: block; margin: 40px 0 0;}
         .rating-form span a {text-decoration: none;}
         .rating-form h4 {background: none repeat scroll 0 0 #FFFFFF;
             border: 1px solid #CCCCCC;
@@ -40,7 +40,7 @@
             font-size: 12px;
             font-weight: normal;
             left: 3px;
-            line-height: 19px;
+            line-height: 30px;
             margin: 0;
             max-width: 46px;
             padding: 0 3px;
