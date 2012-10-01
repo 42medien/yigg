@@ -26,12 +26,47 @@
       <?php else: ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
-        .rating-form fieldset, form .rating-form.voted, .rating-form.voted{ padding-left:2px; background: url(images/toolbar-digits-left.gif) 0% 50% no-repeat}
+/*        .rating-form fieldset, form .rating-form.voted, .rating-form.voted{ padding-left:2px; background: url(images/toolbar-digits-left.gif) 0% 50% no-repeat}
         .rating-form h4{ float:left; color:#fff; font-size:15px; line-height:20px; padding-right:3px; height:20px; text-align:right; background: url(images/toolbar-digits-long.gif) 100% 50% no-repeat}
         .rating-form p{display:none}.rating-form input.Rate,
         .rating-form.voted span{ float:left; background: url(images/toolbar-yiggit.gif) 0% 50% no-repeat; border:0; height:20px; width:50px; font-size:11px; line-height:20px; text-align:center; color:#105B1B; cursor:pointer}
-        .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}
-        .button {border: 0;}
+        .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}*/
+        .rating-form span {background: none repeat scroll 0 0 #FFC851; border: 1px solid #C7C7C7; border-radius: 3px 3px 3px 3px; cursor: pointer; font: 13px/23px 'Arial',sans-serif; height: 21px; padding: 0 3px; max-width: 54px; text-align: center; display: block; margin: 40px 0 0;}
+        .rating-form span a {text-decoration: none;}
+        .rating-form h4 {background: none repeat scroll 0 0 #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 3px 3px 3px 3px;
+            color: #666666;
+            font-family: 'Arial';
+            font-size: 12px;
+            font-weight: normal;
+            left: 3px;
+            line-height: 30px;
+            margin: 0;
+            max-width: 46px;
+            padding: 0 3px;
+            position: relative;
+            text-align: center;
+            top: -63px;
+        }
+        .rating-form h4 label {-moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            background: none repeat scroll 0 0 #FFFFFF;
+            border-color: transparent transparent #CCCCCC #CCCCCC;
+            border-style: solid;
+            border-width: 1px;
+            bottom: -5px;
+            display: block;
+            height: 7px;
+            left: 41%;
+            padding: 0;
+            position: absolute;
+            width: 7px;
+        }
+        .rating-form {position: relative;}
       <?php endif; ?>
        </style>
     </head>
