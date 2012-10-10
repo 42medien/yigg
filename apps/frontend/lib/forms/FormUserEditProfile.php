@@ -38,7 +38,7 @@ class FormUserEditProfile extends yiggForm
           'about_me' => new sfWidgetFormTextarea(array(), array("placeholder" => "Erzähl uns etwas über Dich. (Max 200 Zeichen)")),
           'city' => new sfWidgetFormInput(array(), array("placeholder" => "Musterstadt, Deutschland")),
           'birthday' => new sfWidgetFormInput(array(), array("placeholder" => "27.01.1976")),
-          //'website' => new sfWidgetFormInput(array(), array("placeholder" => "http://yigg.de")),
+          'website' => new sfWidgetFormInput(array(), array("placeholder" => "http://yigg.de")),
           'why_yigg' => new sfWidgetFormTextarea(array(), array("placeholder" => "Warum benutzt Du YiGG? (Max 200 Zeichen)")),
           'email' => new sfWidgetFormInput(array(), array("placeholder" => "marvin@hampster.com"))
           )
