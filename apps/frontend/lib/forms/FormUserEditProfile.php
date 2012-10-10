@@ -54,8 +54,8 @@ class FormUserEditProfile extends yiggForm
                 'required'  =>  false,
                  'mime_types' => array(
                    'image/jpeg',
-                   'image/pjpeg',
-                   'image/png',
+                   //'image/pjpeg',
+                   //'image/png',
                    'image/x-png',
                    'image/gif',
                  ),
