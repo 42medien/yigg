@@ -187,9 +187,7 @@ class userActions extends yiggActions
           $this->user->save();        
 
           $this->session->setFlash('success_msg','Dein Profil wurde erfolgreich aktualisiert.'); 
-          
-          $this->session->setFlash('test_note');
-          
+                    
         }
       break;
 
