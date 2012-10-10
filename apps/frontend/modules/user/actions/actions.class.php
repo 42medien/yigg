@@ -197,7 +197,7 @@ class userActions extends yiggActions
       default:
         return $this->forward404();
     }
-
+    
     $this->profile_form->setDefaults(
      array_merge(
        $this->user->getConfig()->getAll("profile"),
