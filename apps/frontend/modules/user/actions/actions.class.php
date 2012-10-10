@@ -148,7 +148,7 @@ class userActions extends yiggActions
           {
             try 
             {
-              $file = File::createFromValidatedFile( $validatedFile, "avatars","avatar-". $this->user->username );
+              //$file = File::createFromValidatedFile( $validatedFile, "avatars","avatar-". $this->user->username );
 
             }
             catch(Exception $e)
