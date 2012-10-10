@@ -135,8 +135,8 @@ class userActions extends yiggActions
    */
   public function executeMyProfile($request)
   {
-    $this->user = $this->session->getUser();
-    $this->profile_form  = new FormUserEditProfile();
+    //$this->user = $this->session->getUser();
+    //$this->profile_form  = new FormUserEditProfile();
 
     switch ($request->getParameter('view'))
     {
