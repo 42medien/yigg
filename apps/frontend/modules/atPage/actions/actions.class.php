@@ -10,7 +10,6 @@ class atPageActions extends yiggActions
   public function executeIndex($request)
   {
     $this->form = new FormPostboxSimpleCreate();
-    //$this->ajax_pm = "Nachricht gesendet!";
     if(false !== $request->getParameter("id",false))
     {
       $this->reply_pm = Doctrine::getTable("NotificationMessage")->findOneById(intval($request->getParameter("id")));
@@ -34,7 +33,7 @@ class atPageActions extends yiggActions
         return sfView::SUCCESS;
       }
     } 
-       
+       $this->ajax_pm = "Bug with:";
     // Support for Pms.
     if(true === $this->form->processAndValidate())
     {
