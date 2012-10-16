@@ -34,9 +34,7 @@ class atPageActions extends yiggActions
         return sfView::SUCCESS;
       }
     } 
-    
-    echo 'test pm variable';
-
+       
     // Support for Pms.
     if(true === $this->form->processAndValidate())
     {
