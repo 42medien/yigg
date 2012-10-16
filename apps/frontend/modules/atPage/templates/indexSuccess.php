@@ -36,8 +36,8 @@
     <?php else: ?>
         <p class="note">Keine neuen Benachrichtigungen.</p>
     <?php endif; ?>
-<?php elseif((true === $sf_request->isAjaxRequest()) AND $this->ajax_pm): ?>
-    <p class="note"><?php echo $this->$ajax_pm;?></p>
+<?php elseif((true === $sf_request->isAjaxRequest()) AND $ajax_pm): ?>
+    <p class="note"><?php echo $ajax_pm;?></p>
 <?php endif; ?>
 
 <?php if($sf_user->getUser()->getNotificationCount() > 0):?>
