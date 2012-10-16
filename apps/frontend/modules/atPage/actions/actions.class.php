@@ -29,10 +29,10 @@ class atPageActions extends yiggActions
         }
       }
 
-      //if( true === $request->isAjaxRequest() && true === $request->isMethod('get'))
-      //{
-      //  return sfView::SUCCESS;
-     // }
+      if( true === $request->isAjaxRequest() && true === $request->isMethod('post'))
+      {
+        return sfView::SUCCESS;
+      }
     }    
 
     // Support for Pms.
