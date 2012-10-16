@@ -43,7 +43,7 @@
   <ul class="list-style clr">
     <li class="comment"><?php echo
       link_to(
-        "Antworten",
+        "Antworten2",
         '@notification_index?id=' . $notification->id,
         array(
           "class" => "ninjaUpdater pm_" . $obj->id ."_replyHolder",
