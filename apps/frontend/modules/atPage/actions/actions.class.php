@@ -10,7 +10,7 @@ class atPageActions extends yiggActions
   public function executeIndex($request)
   {
     $this->form = new FormPostboxSimpleCreate();
-    $this->ajax_pm = "";
+    $this->ajax_pm = "some stuff";
     
     if(false !== $request->getParameter("id",false))
     {
