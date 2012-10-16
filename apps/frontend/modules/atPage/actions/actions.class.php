@@ -60,6 +60,10 @@ class atPageActions extends yiggActions
 
       $this->ajax_pm = "Nachricht gesendet!";
     }
+    else
+    {
+      $this->ajax_pm = "Bug with:" . $this->form->processAndValidate();  
+    }
 
     if(true === $request->isAjaxRequest())
     {
