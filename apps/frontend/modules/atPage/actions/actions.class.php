@@ -33,8 +33,12 @@ class atPageActions extends yiggActions
       {
         return sfView::SUCCESS;
       }
-    } 
-    $this->ajax_pm = "Bug with:";
+    }
+    else
+    {
+        $this->ajax_pm = "Bug with:";
+    }
+
     // Support for Pms.
     if(true === $this->form->processAndValidate())
     {
