@@ -10,6 +10,7 @@ class atPageActions extends yiggActions
   public function executeIndex($request)
   {
     $this->form = new FormPostboxSimpleCreate();
+    $this->ajax_pm = "";
     
     if(false !== $request->getParameter("id",false))
     {
@@ -29,7 +30,7 @@ class atPageActions extends yiggActions
         }
       }
 
-      if( true === $request->isAjaxRequest() && true === $request->isMethod('post'))
+      if( true === $request->isAjaxRequest() && true === $request->isMethod('get'))
       {
         return sfView::SUCCESS;
       }
@@ -59,10 +60,6 @@ class atPageActions extends yiggActions
       $this->form = new FormPostboxSimpleCreate();
 
       $this->ajax_pm = "Nachricht gesendet!";
-    }
-    else
-    {
-      $this->ajax_pm = "Bug with:" . $this->form->processAndValidate();  
     }
 
     if(true === $request->isAjaxRequest())
