@@ -1,4 +1,4 @@
-<?php //if(true !== $sf_request->isAjaxRequest()):?>
+<?php if(true !== $sf_request->isAjaxRequest()):?>
     <ul class="filters">
       <li <?php if($sf_request->getAction() === "index"): ?>class="selected"<?php endif;?>>
         <?php echo link_to(sprintf("Pinnwand (%s)",$sf_user->getUser()->getNotificationCount()),
@@ -36,9 +36,9 @@
     <?php else: ?>
         <p class="note">Keine neuen Benachrichtigungen.</p>
     <?php endif; ?>
-<?php //elseif((true === $sf_request->isAjaxRequest()) AND $ajax_pm): ?>
+<?php elseif((true === $sf_request->isAjaxRequest()) AND $ajax_pm): ?>
     <p class="note"><?php echo $ajax_pm;?></p>
-<?php //endif; ?>
+<?php endif; ?>
 
 <?php if($sf_user->getUser()->getNotificationCount() > 0):?>
     <p class="note"><?php printf("Noch %s weitere Benachrichtigungen im Ordner Benachrichtigungen.", $sf_user->getUser()->getNotificationCount())?></p>
