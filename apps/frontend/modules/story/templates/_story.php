@@ -11,8 +11,9 @@
             //if(strlen($story->title) >= 75)
                 //$story_title = substr($story->title, 0, 75)." ...";
             //else
-                //$story_title = $story->title;
+                $story_title = $story->title;
             //echo link_to_story(preg_replace('/\s+?(\S+)?$/', '', $story_title), $story, array("title" => $story->title));
+            echo link_to_story($story_title, $story, array("title" => $story->title));
        ?>
      <?php endif; ?>
        <?php
