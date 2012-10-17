@@ -8,9 +8,9 @@
        <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
      <?php else:?>
        <?php
-            //if(strlen($story->title) >= 75)
-                //$story_title = substr($story->title, 0, 75)." ...";
-            //else
+            if(strlen($story->title) >= 75)
+                $story_title = preg_replace('/\s+?(\S+)?$/', '', substr($story->title, 0, 75))." ...";
+            else
                 $story_title = $story->title;
             //echo link_to_story(preg_replace('/\s+?(\S+)?$/', '', $story_title), $story, array("title" => $story->title));
             echo link_to_story($story_title, $story, array("title" => $story->title));
