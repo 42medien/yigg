@@ -7,7 +7,7 @@
      <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
        <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
      <?php else:?>
-       <?php echo link_to_story(preg_replace('/\s+?(\S+)?$/', '', $story->title)." ...", $story, array("title" => $story->title));?>
+       <?php echo link_to_story(preg_replace('/\s+?(\S+)?$/', '', substr($story->title, 0, 75))." ...", $story, array("title" => $story->title));?>
      <?php endif; ?>
        <?php
        echo link_to(img_tag('external_link.png', array(
