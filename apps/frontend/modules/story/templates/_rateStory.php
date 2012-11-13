@@ -9,7 +9,7 @@
       <?php if( !isset($flat) || isset($flat) && $flat === false ): ?>
         body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
         a img, fieldset{ border:none}
-       .rating-form{ float:left;  margin-top:4px; text-align:center; background:/*url(images/newbutton.png) no-repeat*/ transparent;  color:#fff;  overflow:hidden;  width:200px;  height:54px; }
+       .rating-form{ float:left;  text-align:center; background:/*url(images/newbutton.png) no-repeat*/ transparent;  color:#fff;  overflow:hidden;  width:200px;  height:54px; }
 /*     .rating-form h4{ font-size:1.9em !important;  overflow:hidden;  padding-right:6px;  text-align:right; margin:0 !important}*/
        .rating-form p{ margin:0;  padding-right:6px; text-align:right}
        .rating-form fieldset{ padding:0px}
