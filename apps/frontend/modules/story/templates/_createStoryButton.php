@@ -73,7 +73,14 @@
         <div class="rating-form voted">
           <div>            
 <!--        <p>Stimmen</p>-->
-            <span><?php echo link_to("YiGG", "@story_create", array("target" => "_blank"));?></span>
+            <span>
+                <?php
+                    $protocol_array = explode("/", $_SERVER['SERVER_PROTOCOL']);
+                    $protocol = strtolower($protocol_array[0]);	
+                    $url = $protocol."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                    echo link_to("YiGG", "@story_create?exturl={$url}", array("target" => "_blank"));
+                ?>
+            </span>
             <h4><label></label>0</h4>
           </div>
         </div>
