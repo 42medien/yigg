@@ -77,8 +77,8 @@
                 <?php
                     $protocol_array = explode("/", $_SERVER['SERVER_PROTOCOL']);
                     $protocol = strtolower($protocol_array[0]);	
-                    $url = $protocol."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-                    echo link_to("YiGG", "@story_create?exturl={$url}", array("target" => "_blank"));
+                    $url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                    echo link_to("ZYiGG", "@story_create", array("target" => "_blank", "query_string" => "exturl={$url}"));
                 ?>
             </span>
             <h4><label></label>0</h4>

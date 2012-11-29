@@ -312,8 +312,8 @@ story_archive:
     year: \d{4,4}
 
 story_create:
-  url:    /nachrichten/erstellen/:exturl
-  param:  { module: story, action: create, view: Normal, exturl: false}
+  url:    /nachrichten/erstellen
+  param:  { module: story, action: create, view: Normal}
 
 category_stories:
   url:    /nachrichten/:id/:category_slug
