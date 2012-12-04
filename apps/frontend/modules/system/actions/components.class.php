@@ -31,9 +31,9 @@ class systemComponents extends sfComponents
   /**
    * Render Vibrant Media intelli txt
    */
-  public function executeVibrantAds($request)
-  {
-    $this->intelliId = 11061;
-    return sfView::SUCCESS;
-  }
+//  public function executeVibrantAds($request)
+//  {
+//    $this->intelliId = 11061;
+//    return sfView::SUCCESS;
+//  }
 }
