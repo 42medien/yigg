@@ -24,7 +24,7 @@
             var script = document.createElement('script');
             script.type = 'text/javascript';
             script.async = true;
-            script.src = scriptProto+'js.cdn.yieldkit.com/v1/js?api_key=5561bd81c7f3309dd647804cde2fe543&site='+document.domain+'';
+            script.src = scriptProto+'js.cdn.yieldkit.com/v1/js?api_key=5561bd81c7f3309dd647804cde2fe543&site=http://www.'+document.domain+'';
             (document.getElementsByTagName('head')[0] || document.body).appendChild(script); 
         })();
     </script>
