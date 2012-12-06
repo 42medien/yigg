@@ -1,27 +1,58 @@
-<br />
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'yigg'; // required: replace example with your forum shortname
+<?php
+    use_helper("Date");
+    $at_beginning = isset($at_beginning)?$at_beginning:false;
+?>
+<?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
+  <div id="<?php echo strtolower(get_class($sf_data->getRaw("obj"))); ?>-comments-<?php echo $obj['id']; ?>" class="clr">
+<?php endif; ?>
+<?php if($at_beginning === true && false === $inlist && $sf_user->hasUser()):?>
+    <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
+<?php endif;?>
+<?php if(count($comments) > 0): ?>
+  <ul class="comments-list <?php if(false === $inlist): ?>expanded<?php endif;?>">
+    <?php foreach($comments as $k => $comment):  ?>
+      <li id="comment-<?php echo $comment['id']; ?>" <?php if($k == $comments->count()- 1):?>class="last"<?php endif;?>>
+        <?php if( false === $inlist && false === isset($hideactionitems)): ?>
+          <?php if($comment['user_id'] == $sf_user->getUserId() || true === $sf_user->isModerator()): ?>
+            <ul class="comment-actions ico">
+              <li class="delete">
+                <?php echo link_to("delete",
+                    "@comment_actions?action=delete&object=".strtolower(get_class($sf_data->getRaw("obj")))."&id={$comment['id']}",
+                    array("class" => "delete ninjaUpdater comment-{$comment['id']}", "rel" => "nofollow")); ?>
+              </li>
+            </ul>
+          <?php endif;?>
+        <?php endif; ?>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-<div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'yigg'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <p>
+          <span>
+            <?php if(1 != $comment->user_id):?>
+              <?php echo link_to(avatar_tag($comment->Author->Avatar, "noavatar-48-48.png", (true === $inlist ? 14 : 48), (true === $inlist ? 14 : 48)),
+                           '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
+                           array("title" => "Profil von {$comment['Author']['username']} besuchen", "class" => "comment-avatar"));?>
+              von <?php echo link_to($comment['Author']['username'], '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']));?>
+            <?php else:?>
+              <?php echo img_tag("http://www.gravatar.com/avatar/".md5($comment->email)."?s=".(true === $inlist ? 14 : 48), array("class" => "comment-avatar")); ?>
+              von <?php echo $comment->name;?>
+            <?php endif;?>
+            -
+            <?php if(false === $inlist):?>
+              <?php echo content_tag(
+                  "abbr",
+                  format_date(strtotime($comment['created_at']),"g","de",'utf-8'),
+                  array("title" => date(DATE_ATOM, strtotime($comment['created_at'])),"class" => "updated published"));?>
+            <?php endif;?>
+          </span>
+          <?php echo $comment->getPresentationDescription(ESC_RAW);?>
+        </p>
+       <span id="actions-<?php echo $comment['id']; ?>"></span>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+<?php endif; ?>
+<?php if($at_beginning !== true && false === $inlist && $sf_user->hasUser()):?>
+  <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
+<?php endif;?>
+<?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
+  </div>
+<?php endif; ?>
