@@ -25,11 +25,11 @@
        .voted h4, .rating-form h4 {color: #666666; float: left; font-weight: normal; text-align: center; margin-left: 5px; padding: 2px 3px; position: relative; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 3px 3px 3px 3px;}
       <?php else: ?>
         body {
-            font-family:Arial,Helvetica,sans-serif !important; 
-            font-size:62.5% !important; 
-            color:#3F352F !important; 
-            position:relative !important;
-            font-size: 11px !important;
+            font-family:Arial,Helvetica,sans-serif; 
+            font-size:62.5%; 
+            color:#3F352F; 
+            position:relative;
+            font-size: 11px;
         }
         a img, fieldset{ border:none}
 /*        .rating-form fieldset, form .rating-form.voted, .rating-form.voted{ padding-left:2px; background: url(images/toolbar-digits-left.gif) 0% 50% no-repeat}
@@ -82,10 +82,11 @@
             cursor: pointer;
             display: block;
             font: 13px/23px 'Arial',sans-serif;
-            height: 21px;
-            margin: 45px 0 0;
-            max-width: 54px;
-            padding: 0 3px;
+            color: #3F352F;
+            height: 23px;
+            margin: 43px 0 0;
+            max-width: 60px;
+            padding: 0 6px;
             text-align: center;
         }
       <?php endif; ?>
