@@ -24,7 +24,13 @@
                              background: #FFFFFF; border-color: #CCCCCC transparent transparent #CCCCCC; border-style: solid; border-width: 1px; display: block; height: 3px; left: -3px; position: absolute; top: 6px; width: 3px;}
        .voted h4, .rating-form h4 {color: #666666; float: left; font-weight: normal; text-align: center; margin-left: 5px; padding: 2px 3px; position: relative; background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 3px 3px 3px 3px;}
       <?php else: ?>
-        body{ font-family:Arial,Helvetica,sans-serif; font-size:62.5%; color:#3F352F; position:relative;   font-size: 11px;}
+        body {
+            font-family:Arial,Helvetica,sans-serif !important; 
+            font-size:62.5% !important; 
+            color:#3F352F !important; 
+            position:relative !important;
+            font-size: 11px !important;
+        }
         a img, fieldset{ border:none}
 /*        .rating-form fieldset, form .rating-form.voted, .rating-form.voted{ padding-left:2px; background: url(images/toolbar-digits-left.gif) 0% 50% no-repeat}
         .rating-form h4{ float:left; color:#fff; font-size:15px; line-height:20px; padding-right:3px; height:20px; text-align:right; background: url(images/toolbar-digits-long.gif) 100% 50% no-repeat}
@@ -33,7 +39,8 @@
         .rating-form.voted span{ color:white; cursor:none; background: url(images/toolbar-yigged.gif) 0% 50% repeat-x}*/
         .rating-form span {background: none repeat scroll 0 0 #FFC851; border: 1px solid #C7C7C7; border-radius: 3px 3px 3px 3px; cursor: pointer; font: 13px/23px 'Arial',sans-serif; height: 21px; padding: 0 3px; max-width: 54px; text-align: center; display: block; margin: 40px 0 0;}
         .rating-form span a {text-decoration: none;}
-        .rating-form h4 {background: none repeat scroll 0 0 #FFFFFF;
+        .rating-form h4 {
+            background: none repeat scroll 0 0 #FFFFFF;
             border: 1px solid #CCCCCC;
             border-radius: 3px 3px 3px 3px;
             color: #666666;
@@ -49,8 +56,9 @@
             text-align: center;
             top: -63px;
         }
-        .rating-form h4 label {-moz-transform: rotate(-45deg);
-                -ms-transform: rotate(-45deg);
+        .rating-form h4 label {
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
             -o-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -67,6 +75,19 @@
             width: 7px;
         }
         .rating-form {position: relative;}
+        .rating-form .button {
+            background: none repeat scroll 0 0 #FFC851;
+            border: 1px solid #C7C7C7;
+            border-radius: 3px 3px 3px 3px;
+            cursor: pointer;
+            display: block;
+            font: 13px/23px 'Arial',sans-serif;
+            height: 21px;
+            margin: 45px 0 0;
+            max-width: 54px;
+            padding: 0 3px;
+            text-align: center;
+        }
       <?php endif; ?>
        </style>
     </head>
@@ -102,8 +123,6 @@
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>
       <?php endif; ?>
-      
-                        
 <?php if(false === $sf_request->isAjaxRequest() && isset($external) && $external == true): ?>
     </body>
   </html>
