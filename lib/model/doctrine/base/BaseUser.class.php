@@ -157,6 +157,10 @@ abstract class BaseUser extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => false,
              ));
+        $this->hasColumn('block_post', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
         $this->hasColumn('facebook_id', 'string', 30, array(
             'type' => 'string',
             'length' => 30,
