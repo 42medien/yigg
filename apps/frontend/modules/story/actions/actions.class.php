@@ -228,8 +228,14 @@ class storyActions extends yiggActions
    * @return sfView
    */
   public function executeCreate( $request )
-  {
-    if(false === $this->getUser()->getUser()->hasPostingStoryPermissions())
+  {  
+//    if(false === $this->getUser()->getUser()->hasPostingStoryPermissions())
+//    {
+//      return sfView::ERROR;
+//    }
+    
+    $userModel = new User; 
+    if(true === $userModel->isPostStoryBlocked($this->session->getUserId()))
     {
       return sfView::ERROR;
     }
@@ -331,6 +337,7 @@ class storyActions extends yiggActions
         'Tags'      => isset($autotags) && count($autotags) > 0 ? implode($autotags, ", ") : null,
       )
     );
+    
     return sfView::SUCCESS;
   }
 

@@ -36,6 +36,17 @@ class User extends BaseUser
     //return $stats->yiggs_total >= sfConfig::get("app_user_minYiggs", 100)
            //&& $stats->friends_total >= sfConfig::get("app_user_minFriends", 3);
   }
+  
+  public function isPostStoryBlocked($user_id)
+  {
+      $user = Doctrine_Query::create()
+              ->select('block_post')
+              ->from("User")
+              ->where("id = ?", $user_id)
+              ->fetchArray();
+      
+      return ($user[0]['block_post'] == 1) ? true : false;
+  }
 
   public function hasAvatar()
   {
