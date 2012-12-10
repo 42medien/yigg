@@ -114,5 +114,9 @@ class userActions extends autoUserActions
         $this->getResponse()->setHttpHeader('Content-Type', 'application/vnd.ms-excel');
         $this->getResponse()->setHttpHeader('Content-Disposition', "attachment; filename=export_from_".date("YmdHis").".csv");
         $this->data1 = $data;
-    }    
+    }
+    
+    public function executeSendNotification(sfWebRequest $request) {
+        $user_id = $request->getParameter('id');
+    }
 }

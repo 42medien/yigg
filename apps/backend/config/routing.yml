@@ -88,6 +88,11 @@ sponsoring_place:
     column:               id
     with_wildcard_routes: true
 
+send_notification:
+  url: /user/:id/send_notification/
+  param: { module: user, action: SendNotification, id: false}
+  requirements: { id: \d+ }
+
 user_logout:
   url:   /logout
   param: { module: security, action: logout }
