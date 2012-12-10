@@ -416,4 +416,37 @@ class UserTable extends Doctrine_Table
   	      ->limit($limit)
   	      ->execute();
   }
-}
+  
+  public static function retrieveAllUsernames($limit = NULL, $uid = NULL)
+  {
+      if($uid){
+        return Doctrine_Query::create()
+              ->select(
+                "u.username,
+                 u.email,
+                 u.settings settings,
+                (select count(user_id) from story where user_id = ".$uid.") as story_count, 
+                (select count(user_id) from comment where user_id = ".$uid.") as comment_count")
+  	      ->from("User u")
+              ->where("u.id = ?", $uid)
+  	      ->fetchArray();
+          
+      } else{
+        $query = Doctrine_Query::create()
+            ->select(
+                "u.username, 
+                 u.email,
+                 u.settings settings,
+                 (select count(user_id) from story where user_id = u.id) as story_count, 
+                 (select count(user_id) from comment where user_id = u.id) as comment_count")
+  	      ->from("User u");
+            if($limit){
+                $query->limit($limit);
+            }
+         return $query->fetchArray();
+      }
+
+  }
+  
+    
+}  

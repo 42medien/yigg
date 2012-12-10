@@ -95,6 +95,10 @@ user_logout:
 user_login:
   url:   /login
   param: { module: security, action: index }
+    
+export_data:
+  url:   /user/ExportToCsv/
+  param: { module: user, action: ExportToCsv }
 
 homepage:
   url:   /
