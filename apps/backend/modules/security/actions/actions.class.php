@@ -44,7 +44,7 @@ class securityActions extends sfActions
     }
     elseif (false === $userSession->hasUser())
     {
-        $this->getUser()->setFlash("login:error","Please login first.");
+        
     }
     else
     {
