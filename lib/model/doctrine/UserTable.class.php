@@ -417,7 +417,7 @@ class UserTable extends Doctrine_Table
   	      ->execute();
   }
   
-  public static function retrieveAllUsernames($limit = NULL, $uid = NULL)
+  public static function retrieveAllUsernames($limit = NULL, $offset = NULL, $uid = NULL)
   {
       if($uid){
         return Doctrine_Query::create()
@@ -440,13 +440,62 @@ class UserTable extends Doctrine_Table
                  (select count(user_id) from story where user_id = u.id) as story_count, 
                  (select count(user_id) from comment where user_id = u.id) as comment_count")
   	      ->from("User u");
-            if($limit){
+            if(isset($limit) && isset($offset)){
                 $query->limit($limit);
+                $query->offset($offset);
             }
          return $query->fetchArray();
       }
 
   }
   
+  public static function retrieveNumberOfUsers() {
+   
+      $query = Doctrine_Query::create()
+              ->select('count(id)')
+              ->from('user');
+      
+      return $query->fetchArray();
+      
+  }
+  
+  public static function getNumberOfOptions()
+  {      
+    //Returns options for form select in User page
+      
+    $data = "";
+    $nrOfUsersArray = self::retrieveNumberOfUsers();
+    $nrOfUsers = $nrOfUsersArray[0]['count'];
+    $offset = 100000;
+    $final = $nrOfUsers / $offset;
+    if ($final >= 1) {
+        
+        for ($i = 0; $i < ceil($final); $i++) {
+            if ($i == 0) { 
+                $value = $i;
+                $temp1 = $i + $offset;
+                $option = $i ." - ". $temp1; 
+            } else {
+                $value = $i * $offset;
+                if($i+1 == ceil($final) ) {
+                    $option = $value ." - ". $nrOfUsers;
+                } else {
+                    $temp2 = $value + $offset;
+                    $option =  $value ." - ". $temp2;
+                }
+            }
+               
+            $data .= "<option value=\"".$value."\">".$option."</option>";           
+        }
+        return $data;
+        
+    } else {
+        
+        $value = 0;
+        $data .= "<option value=\"".$value."\">Export all users</option>";
+        return $data;
+        
+    }
+  }  
     
 }  

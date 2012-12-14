@@ -64,9 +64,18 @@ class userActions extends autoUserActions
     
     public function executeExportToCsv(sfWebRequest $request) 
     {
-             
-        $this->users = UserTable::retrieveAllUsernames();
-
+                   
+        $limit = 100000;
+        $offset = $request->getParameter('selectExport');
+        
+        $this->users = UserTable::retrieveAllUsernames($limit, $offset);
+        $nrOfUsers = UserTable::retrieveNumberOfUsers();
+        
+        if ($offset == 0) {
+            $partNumber = 1;
+        } else {
+            $partNumber = ($offset / 100000) + 1;
+        }   
         
         //formate header
         $data = 'Username,Nr of Articles,Nr of Comments,Email,Website'."\n";
@@ -112,7 +121,7 @@ class userActions extends autoUserActions
         $this->getResponse()->clearHttpHeaders();
         
         $this->getResponse()->setHttpHeader('Content-Type', 'application/vnd.ms-excel');
-        $this->getResponse()->setHttpHeader('Content-Disposition', "attachment; filename=export_from_".date("YmdHis").".csv");
+        $this->getResponse()->setHttpHeader('Content-Disposition', "attachment; filename=users_".$nrOfUsers[0]['count']."_part_".$partNumber."_".date("Ymd").".csv");
         $this->data1 = $data;
     }
     
