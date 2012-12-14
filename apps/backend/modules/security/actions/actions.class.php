@@ -23,6 +23,8 @@ class securityActions extends sfActions
     if( (true === $request->isMethod('post')) && (true === $this->form->processRequest()->isValid()) )
     {
       // Login was successful.
+       $user = Doctrine::getTable("User")->findOneByUsername($this->form->getValue("username"));
+       $this->getUser()->login($user, $this->form->getValue("remember"));
        return $this->redirect("@homepage");
     }
     elseif(  (true === $userSession->hasUser()) && (false === $userSession->isAdmin()) )
@@ -39,6 +41,14 @@ class securityActions extends sfActions
     {
       // general authentication error.
       $this->getUser()->setFlash("login:error","Sorry, your session has timed out, please login again");
+    }
+    elseif (false === $userSession->hasUser())
+    {
+        $this->getUser()->setFlash("login:error","Please login first.");
+    }
+    else
+    {
+        $this->getUser()->setFlash("login:error","You don't have access to this section.");
     }
     return sfView::SUCCESS;
   }
