@@ -65,64 +65,70 @@ class userActions extends autoUserActions
     public function executeExportToCsv(sfWebRequest $request) 
     {
                    
-        $limit = 100000;
-        $offset = $request->getParameter('selectExport');
+        if ($request->hasParameter('selectExport')) {            
         
-        $this->users = UserTable::retrieveAllUsernames($limit, $offset);
-        $nrOfUsers = UserTable::retrieveNumberOfUsers();
-        
-        if ($offset == 0) {
-            $partNumber = 1;
-        } else {
-            $partNumber = ($offset / 100000) + 1;
-        }   
-        
-        //formate header
-        $data = 'Username,Nr of Articles,Nr of Comments,Email,Website'."\n";
-        
-        $colums = array('username', 'story_count', 'comment_count', 'email', 'website');
-        $users = $this->users;
-        foreach($users as $key => $value)
-        {
-            foreach($value as $k => $v)
+            $limit = 100000;
+            $offset = $request->getParameter('selectExport');
+
+            $this->users = UserTable::retrieveAllUsernames($limit, $offset);
+            $nrOfUsers = UserTable::retrieveNumberOfUsers();
+
+            if ($offset == 0) {
+                $partNumber = 1;
+            } else {
+                $partNumber = ($offset / 100000) + 1;
+            }   
+
+            //formate header
+            $data = 'Username,Nr of Articles,Nr of Comments,Email,Website'."\n";
+
+            $colums = array('username', 'story_count', 'comment_count', 'email', 'website');
+            $users = $this->users;
+            foreach($users as $key => $value)
             {
-                if($k == 'settings'){
-                    $settings = unserialize($v);
-                    if(isset($settings) && !empty($settings)){
-                        if(isset($settings[1]['profile']['website']) && !empty($settings[1]['profile']['website'])){
-                            $users[$key]['website'] = $settings[1]['profile']['website'];
+                foreach($value as $k => $v)
+                {
+                    if($k == 'settings'){
+                        $settings = unserialize($v);
+                        if(isset($settings) && !empty($settings)){
+                            if(isset($settings[1]['profile']['website']) && !empty($settings[1]['profile']['website'])){
+                                $users[$key]['website'] = $settings[1]['profile']['website'];
+                            }
+                            else{
+                                $users[$key]['website'] = '';
+                            }
                         }
-                        else{
-                            $users[$key]['website'] = '';
-                        }
+                        unset($users[$key][$k]);
                     }
-                    unset($users[$key][$k]);
                 }
             }
-        }
-        
-        //formate rows
-        foreach($users as $u_key => $u_value)
-        {
-            $tmp_row = '';
-            foreach($colums as $c_v)
+
+            //formate rows
+            foreach($users as $u_key => $u_value)
             {
-                if($c_v == 'website'){
-                    $tmp_row .= $u_value[$c_v]."\n";
+                $tmp_row = '';
+                foreach($colums as $c_v)
+                {
+                    if($c_v == 'website'){
+                        $tmp_row .= $u_value[$c_v]."\n";
+                    }
+                    else{
+                        $tmp_row .= $u_value[$c_v].",";
+                    }
                 }
-                else{
-                    $tmp_row .= $u_value[$c_v].",";
-                }
+                $data .= $tmp_row;
             }
-            $data .= $tmp_row;
-        }
-        
-        $this->setlayout(FALSE);
-        $this->getResponse()->clearHttpHeaders();
-        
-        $this->getResponse()->setHttpHeader('Content-Type', 'application/vnd.ms-excel');
-        $this->getResponse()->setHttpHeader('Content-Disposition', "attachment; filename=users_".$nrOfUsers[0]['count']."_part_".$partNumber."_".date("Ymd").".csv");
-        $this->data1 = $data;
+
+            $this->setlayout(FALSE);
+            $this->getResponse()->clearHttpHeaders();
+
+            $this->getResponse()->setHttpHeader('Content-Type', 'application/vnd.ms-excel');
+            $this->getResponse()->setHttpHeader('Content-Disposition', "attachment; filename=users_".$nrOfUsers[0]['count']."_part_".$partNumber."_".date("Ymd").".csv");
+            $this->data1 = $data;
+            
+        } else {
+            exit;
+        }            
     }
     
     public function executeSendNotification(sfWebRequest $request) {
