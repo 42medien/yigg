@@ -90,13 +90,15 @@ class userActions extends autoUserActions
                 {
                     if($k == 'settings'){
                         $settings = unserialize($v);
-                        if(isset($settings) && !empty($settings)){
+                        if(isset($settings) && !empty($settings) ){
                             if(isset($settings[1]['profile']['website']) && !empty($settings[1]['profile']['website'])){
                                 $users[$key]['website'] = $settings[1]['profile']['website'];
                             }
-                            else{
+                            else {
                                 $users[$key]['website'] = '';
                             }
+                        } else {
+                            $users[$key]['website'] = '';
                         }
                         unset($users[$key][$k]);
                     }
