@@ -24,7 +24,10 @@ class securityActions extends sfActions
     {
       // Login was successful.
        $user = Doctrine::getTable("User")->findOneByUsername($this->form->getValue("username"));
-       $this->getUser()->login($user, $this->form->getValue("remember"));
+       
+       if ($user->isAdmin()) {
+           $this->getUser()->login($user, $this->form->getValue("remember"));
+       }
        return $this->redirect("@homepage");
     }
     elseif(  (true === $userSession->hasUser()) && (false === $userSession->isAdmin()) )
