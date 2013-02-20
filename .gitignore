@@ -1,0 +1,7 @@
+lib/form/doctrine/base/*
+lib/model/doctrine/base/*
+lib/filter/doctrine/base/*
+lib/vendor/symfony/*
+cache/*
+log/*
+data/sql/*

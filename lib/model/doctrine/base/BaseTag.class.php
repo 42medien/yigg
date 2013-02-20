@@ -9,15 +9,18 @@
  * @property string $name
  * @property Doctrine_Collection $Users
  * @property Doctrine_Collection $Stories
+ * @property Doctrine_Collection $Story
  * 
  * @method integer             getId()      Returns the current record's "id" value
  * @method string              getName()    Returns the current record's "name" value
  * @method Doctrine_Collection getUsers()   Returns the current record's "Users" collection
  * @method Doctrine_Collection getStories() Returns the current record's "Stories" collection
+ * @method Doctrine_Collection getStory()   Returns the current record's "Story" collection
  * @method Tag                 setId()      Sets the current record's "id" value
  * @method Tag                 setName()    Sets the current record's "name" value
  * @method Tag                 setUsers()   Sets the current record's "Users" collection
  * @method Tag                 setStories() Sets the current record's "Stories" collection
+ * @method Tag                 setStory()   Sets the current record's "Story" collection
  * 
  * @package    yigg
  * @subpackage model
@@ -58,6 +61,11 @@ abstract class BaseTag extends sfDoctrineRecord
              'refClass' => 'StoryTag',
              'local' => 'tag_id',
              'foreign' => 'story_id'));
+
+        $this->hasMany('Story', array(
+             'refClass' => 'StoryTag',
+             'local' => 'story_id',
+             'foreign' => 'id'));
 
         $yiggmultiplereference0 = new yiggMultipleReference(array(
              ));

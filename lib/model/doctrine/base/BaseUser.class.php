@@ -10,6 +10,7 @@
  * @property string $salt
  * @property string $password
  * @property boolean $status
+ * @property string $facebook_id
  * @property timestamp $last_login
  * @property string $email
  * @property boolean $privacy
@@ -49,6 +50,7 @@
  * @method string              getSalt()                   Returns the current record's "salt" value
  * @method string              getPassword()               Returns the current record's "password" value
  * @method boolean             getStatus()                 Returns the current record's "status" value
+ * @method string              getFacebookId()             Returns the current record's "facebook_id" value
  * @method timestamp           getLastLogin()              Returns the current record's "last_login" value
  * @method string              getEmail()                  Returns the current record's "email" value
  * @method boolean             getPrivacy()                Returns the current record's "privacy" value
@@ -87,6 +89,7 @@
  * @method User                setSalt()                   Sets the current record's "salt" value
  * @method User                setPassword()               Sets the current record's "password" value
  * @method User                setStatus()                 Sets the current record's "status" value
+ * @method User                setFacebookId()             Sets the current record's "facebook_id" value
  * @method User                setLastLogin()              Sets the current record's "last_login" value
  * @method User                setEmail()                  Sets the current record's "email" value
  * @method User                setPrivacy()                Sets the current record's "privacy" value
@@ -157,14 +160,10 @@ abstract class BaseUser extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => false,
              ));
-        $this->hasColumn('block_post', 'boolean', null, array(
-             'type' => 'boolean',
-             'default' => 0,
-             ));
         $this->hasColumn('facebook_id', 'string', 30, array(
-            'type' => 'string',
-            'length' => 30,
-        ));
+             'type' => 'string',
+             'length' => 30,
+             ));
         $this->hasColumn('last_login', 'timestamp', 25, array(
              'type' => 'timestamp',
              'length' => 25,
@@ -213,11 +212,6 @@ abstract class BaseUser extends sfDoctrineRecord
              'notnull' => true,
              'length' => 64,
              ));
-        $this->hasColumn('fb_user_id', 'integer', 64, array(
-            'type' => 'integer',
-            'unsigned' => true,
-            'length' => 64,
-        ));
         $this->hasColumn('settings as configuration', 'string', 100000, array(
              'type' => 'string',
              'length' => 100000,
@@ -230,9 +224,6 @@ abstract class BaseUser extends sfDoctrineRecord
         $this->index('mclient_salt', array(
              'fields' => 'mclient_salt',
              ));
-        $this->index('fb_user_id', array(
-            'fields' => 'fb_user_id',
-        ));
         $this->option('collate', 'utf8_unicode_ci');
         $this->option('charset', 'utf8');
     }

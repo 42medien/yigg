@@ -8,13 +8,16 @@
  * @property integer $id
  * @property integer $story_id
  * @property integer $tag_id
+ * @property Story $Story
  * 
  * @method integer  getId()       Returns the current record's "id" value
  * @method integer  getStoryId()  Returns the current record's "story_id" value
  * @method integer  getTagId()    Returns the current record's "tag_id" value
+ * @method Story    getStory()    Returns the current record's "Story" value
  * @method StoryTag setId()       Sets the current record's "id" value
  * @method StoryTag setStoryId()  Sets the current record's "story_id" value
  * @method StoryTag setTagId()    Sets the current record's "tag_id" value
+ * @method StoryTag setStory()    Sets the current record's "Story" value
  * 
  * @package    yigg
  * @subpackage model
@@ -50,6 +53,8 @@ abstract class BaseStoryTag extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('Story', array(
+             'local' => 'story_id',
+             'foreign' => 'id'));
     }
 }
