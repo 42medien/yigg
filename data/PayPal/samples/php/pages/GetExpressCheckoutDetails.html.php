@@ -36,7 +36,7 @@ $final_url = 'ECReceipt.php?token='.$token.'&payerID='.$payer_id.'&paymentAmount
 
 <tr>
    <td><b>Order Total:</b></td>
-   <td><?=$order_total?></td>
+   <td><?php echo $order_total?></td>
 </tr>
 
 <tr>
@@ -45,38 +45,38 @@ $final_url = 'ECReceipt.php?token='.$token.'&payerID='.$payer_id.'&paymentAmount
 
 <tr>
    <td>Street 1:</td>
-   <td><?=$street1?></td>
+   <td><?php echo $street1?></td>
 </tr>
 
 <tr>
    <td>Street 2:</td>
-   <td><?=$street2?></td>
+   <td><?php echo $street2?></td>
 </tr>
 
 <tr>
    <td>City:</td>
-   <td><?=$city_name?></td>
+   <td><?php echo $city_name?></td>
 </tr>
 
 <tr>
    <td>State:</td>
-   <td><?=$state_province?></td>
+   <td><?php echo $state_province?></td>
 </tr>
 
 <tr>
    <td>Postal code:</td>
-   <td><?=$postal_code?></td>
+   <td><?php echo $postal_code?></td>
 </tr>
 
 <tr>
    <td>Country:</td>
-   <td><?=$country_code?></td>
+   <td><?php echo $country_code?></td>
 </tr>
 
 </table>
 
 <!-- Link to ECReceipt.php -->
-<a id="ECReceiptLink" href="<?=$final_url?>">Pay</a>
+<a id="ECReceiptLink" href="<?php echo $final_url?>">Pay</a>
 
 </center>
 

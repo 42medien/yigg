@@ -12,7 +12,7 @@
 <body>
     <center>
 	<form action="ReviewOrder.php" method="post" name="ExpressCheckoutForm">
-	<input type=hidden name=paymentType value=<?=$paymentType?>>
+	<input type=hidden name=paymentType value=<?php echo $paymentType?>>
 	<span id=apiheader>SetExpressCheckout</span>
     <table class="api">
          <tr>

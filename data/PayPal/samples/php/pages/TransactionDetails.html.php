@@ -43,37 +43,37 @@
             <td >
                 Payer:
             </td>
-            <td><?=$payer?></td>
+            <td><?php echo $payer?></td>
         </tr>
         <tr>
             <td >
                 Payer ID:
             </td>
-            <td><?=$payer_id?></td>
+            <td><?php echo $payer_id?></td>
         </tr>
         <tr>
             <td >
                 First Name:
             </td>
-            <td><?=$payer_fname?></td>
+            <td><?php echo $payer_fname?></td>
         </tr>
         <tr>
             <td >
                 Last Name:
             </td>
-            <td><?=$payer_lname?></td>
+            <td><?php echo $payer_lname?></td>
         </tr>
         <tr>
             <td >
                 Transaction ID:
             </td>
-            <td><?=$tran_ID?></td>
+            <td><?php echo $tran_ID?></td>
         </tr>
         <tr>
             <td >
                 Parent Transaction ID (if any):
             </td>
-            <td><?=$tran_ID_parent?></td>
+            <td><?php echo $tran_ID_parent?></td>
         </tr>
         <tr>
             <td >
@@ -82,13 +82,13 @@
             <?php
             $display_amt = $currency_cd.' '.$gross_amt;
             ?>
-            <td><?=$display_amt?></td>
+            <td><?php echo $display_amt?></td>
         </tr>
         <tr>
             <td >
                 Payment Status:
             </td>
-            <td><?=$status?></td>
+            <td><?php echo $status?></td>
         </tr>
       
     </table>
@@ -102,9 +102,9 @@
     ?>
     
     <br> <font size=2>
-    <a id="DoVoidLink" href="<?=$do_void_link?>">Void</a>
-    <a id="DoCaptureLink" href="<?=$do_capture_link?>">Capture</a>
-    <a id="RefundTransactionLink" href="<?=$do_refund_link?>">Refund</a>
+    <a id="DoVoidLink" href="<?php echo $do_void_link?>">Void</a>
+    <a id="DoCaptureLink" href="<?php echo $do_capture_link?>">Capture</a>
+    <a id="RefundTransactionLink" href="<?php echo $do_refund_link?>">Refund</a>
     <a id="BackLink" href="javascript:history.back()">Back</a>
     </font></center>
     </br> 

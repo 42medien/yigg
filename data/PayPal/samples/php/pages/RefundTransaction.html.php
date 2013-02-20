@@ -27,7 +27,7 @@
 <table width=500>
 	<tr>
 		<td align=right>Transaction ID:</td>
-		<td align=left><input type="text" name="transactionID" value=<?=$transaction_id?>></td>
+		<td align=left><input type="text" name="transactionID" value=<?php echo $transaction_id?>></td>
 		<td><b>(Required)</b></td>
 	</tr>
 	<tr>
@@ -44,12 +44,12 @@
 		<td align=left>
 			<p>
 				<!-- <input type="text" name="amount" value=0.00> -->
-				<input type="text" name="amount" value=<?=$amount?>>
+				<input type="text" name="amount" value=<?php echo $amount?>>
 				<?php
 				// Add currency hidden field 
 				if(isset($currency) && strlen($currency > 0)) {
 				?>
-				<input type=hidden name=currency value="<?=$currency?>">
+				<input type=hidden name=currency value="<?php echo $currency?>">
 				<?php } ?>
 				
 				<select name="currency">

@@ -53,12 +53,12 @@ require_once 'lib/constants.inc.php';
 	</tr>
 	<tr>
 		<td align="right"><span id=normalBold><b>Environment:</b></span></td>
-		<td><?=ENVIRONMENT?></td>
+		<td><?php echo ENVIRONMENT?></td>
 	</tr>
 	<tr>
 		<td align="right">&nbsp;</td>
 		<td align=left>
-		   <input type="hidden" name="environment" value="<?=ENVIRONMENT?>">
+		   <input type="hidden" name="environment" value="<?php echo ENVIRONMENT?>">
 			<input type="hidden" name="submitted" value="1">
 			<input type="submit" value="Use default account" name="DefaultButton">
 		</td>
@@ -91,12 +91,12 @@ require_once 'lib/constants.inc.php';
 	</tr>
 	<tr>
 		<td align="right"><span id=normalBold><b>Environment:</span></td>
-		<td><?=ENVIRONMENT?></td>
+		<td><?php echo ENVIRONMENT?></td>
 	</tr>
 	<tr>
 		<td align="right">&nbsp;</td>
 		<td align=left>
-			<input type="hidden" name="environment" value="<?=ENVIRONMENT?>">
+			<input type="hidden" name="environment" value="<?php echo ENVIRONMENT?>">
 			<input type="hidden" name="submitted" value="1">
 			<input type="submit" value="Use my account" name="custom">
 		</td>

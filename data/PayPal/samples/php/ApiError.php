@@ -60,15 +60,15 @@ unset($_SESSION['response']);
 
 	<tr>
 		<td>Ack:</td>
-		<td><?= $ack ?></td>
+		<td><?php echo $ack ?></td>
 	</tr>
 	<tr>
 		<td>Correlation ID:</td>
-		<td><?= $correlationID ?></td>
+		<td><?php echo $correlationID ?></td>
 	</tr>
 	<tr>
 		<td>Version:</td>
-		<td><?= $version ?></td>
+		<td><?php echo $version ?></td>
 	</tr>
 <?php
    if(! is_array($errorList)) {
@@ -78,15 +78,15 @@ unset($_SESSION['response']);
 ?>
 	<tr>
 		<td>Error Number:</td>
-		<td><?= $errorCode ?></td>
+		<td><?php echo $errorCode ?></td>
 	</tr>
 	<tr>
 		<td>Short Message:</td>
-		<td><?= $shortMessage ?></td>
+		<td><?php echo $shortMessage ?></td>
 	</tr>
 	<tr>
 		<td>Long Message:</td>
-		<td><?= $longMessage ?></td>
+		<td><?php echo $longMessage ?></td>
 	</tr>
 
 <?php
@@ -100,15 +100,15 @@ unset($_SESSION['response']);
 
 	<tr>
 		<td>Error Number:</td>
-		<td><?= $errorCode ?></td>
+		<td><?php echo $errorCode ?></td>
 	</tr>
 	<tr>
 		<td>Short Message:</td>
-		<td><?= $shortMessage ?></td>
+		<td><?php echo $shortMessage ?></td>
 	</tr>
 	<tr>
 		<td>Long Message:</td>
-		<td><?= $longMessage ?></td>
+		<td><?php echo $longMessage ?></td>
 	</tr>
 
 <?php

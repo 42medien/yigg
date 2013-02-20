@@ -17,7 +17,7 @@
 <table width=400>
 	<tr>
 		<td>Authorization ID:</td>
-		<td><?=$authorization_id?></td>
+		<td><?php echo $authorization_id?></td>
 	</tr>
 </table>
 

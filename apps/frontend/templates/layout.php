@@ -124,7 +124,7 @@
     
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
-  <body class="<?=( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" )?>">
+  <body class="<?php echo ( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" )?>">
     <div class="bg_top">
     <div class="bg_bt">
     <div class="bg_mid">

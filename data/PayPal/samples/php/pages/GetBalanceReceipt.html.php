@@ -21,8 +21,8 @@
 
 <table>
 	<tr>
-		<td><?= $balance_details->_value;?></td>
-		<td><?= $balance_details->getattr("currencyID"); ?></td>
+		<td><?php echo $balance_details->_value;?></td>
+		<td><?php echo $balance_details->getattr("currencyID"); ?></td>
 	</tr>
 </table>
 </center>

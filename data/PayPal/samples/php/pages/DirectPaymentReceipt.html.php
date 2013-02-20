@@ -45,19 +45,19 @@ $amt_display = $currency_cd.' '.$amt;
 <table width=400>
 	<tr>
 		<td>Transaction ID:</td>
-		<td><?= $tran_ID ?></td>
+		<td><?php echo $tran_ID ?></td>
 	</tr>
 	<tr>
 		<td>Amount:</td>
-		<td><?=$amt_display?></td>
+		<td><?php echo $amt_display?></td>
 	</tr>
 	<tr>
 		<td>AVS:</td>
-		<td><?=$avs_code?></td>
+		<td><?php echo $avs_code?></td>
 	</tr>
 	<tr>
 		<td>CVV2:</td>
-		<td><?=$cvv2?></td>
+		<td><?php echo $cvv2?></td>
 	</tr>
 </table>
 

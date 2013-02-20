@@ -19,7 +19,7 @@ if(!isset($authorization_id))
 <table width=500>
 	<tr>
 		<td align=right>Authorization ID:</td>
-		<td align=left><input type="text" name="authorization_id" value=<?=$authorization_id?>></td>
+		<td align=left><input type="text" name="authorization_id" value=<?php echo $authorization_id?>></td>
 		<td><b>(Required)</b></td>
 	</tr>
 	<tr>

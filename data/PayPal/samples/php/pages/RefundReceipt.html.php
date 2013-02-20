@@ -32,14 +32,14 @@
 <table width=400>
 	<tr>
 		<td>Transaction ID:</td>
-		<td><?=$refund_tran_ID?></td>
+		<td><?php echo $refund_tran_ID?></td>
 	</tr>
 	<tr>
 		<td>Gross Refund Amount:</td>
 		<?php
       $display_amt = $currency_cd .' '.$gross_amt;
       ?>
-      <td><?=$display_amt?></td>
+      <td><?php echo $display_amt?></td>
 
 	</tr>
 </table>
