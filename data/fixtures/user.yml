@@ -1,0 +1,66 @@
+User:
+  User_1:
+    username: marvin
+    salt: 02e11ae5c8c36f976c9fde7d909357b76d100cd2
+    password: ffd8a899da2e38077bd7e3d184d765f51aad3e6b
+    status: false
+    last_login: null
+    email: matthias@ekaabo.com
+    privacy: false
+    last_ip: null
+    failed_logins: null
+    award_comment: null
+    award_story: null
+    mclient_salt: ac0c948b9931c36072aca8da27c4630fce43fdaa
+    created_at: '2011-01-21 09:51:40'
+    updated_at: '2011-01-21 09:51:40'
+    deleted_at: null
+  User_2:
+    username: rocu
+    salt: ab96c20bc238535692e1ad706cac8f4abbdebf6c
+    password: 2216b2e5444701feace96a087d333f6241ab1acd
+    status: true
+    last_login: '2011-01-21 13:01:22'
+    email: matthias@ekaabo.com
+    privacy: false
+    last_ip: 127.0.0.2
+    failed_logins: '2'
+    award_comment: null
+    award_story: null
+    mclient_salt: f9b3c12c44ef2c417eeeb80a672723999595188a
+    created_at: '2011-01-21 09:51:40'
+    updated_at: '2011-02-11 11:32:44'
+    deleted_at: null
+  User_3:
+    username: nachrichten-muenchen.de
+    salt: 02e11ae5c8c36f976c9fde7d909357b76d100cd2
+    password: ffd8a899da2e38077bd7e3d184d765f51aad3e6b
+    status: false
+    last_login: '2011-01-21 09:55:05'
+    email: matthias@ekaabo.com
+    privacy: false
+    last_ip: 127.0.0.2
+    failed_logins: '0'
+    award_comment: null
+    award_story: null
+    mclient_salt: a7e67d4a67106dce945312b0d32264f22769c495
+    created_at: '2011-01-21 09:51:40'
+    updated_at: '2011-01-21 09:55:05'
+    deleted_at: null
+  User_4:
+    username: rocurth
+    salt: d8459d0df9849a53228c468700d92cb64d3154d0
+    password: 574995aca0939475e4c8df9226efcc88b42279a4
+    status: true
+    last_login: '2011-02-11 11:39:27'
+    email: matthias@ekaabo.com
+    privacy: false
+    last_ip: 127.0.0.1
+    failed_logins: '0'
+    award_comment: null
+    award_story: null
+    mclient_salt: c1a118b7c48845984ad92d64bd593520a3f0be64
+    configuration: 'a:2:{i:0;N;i:1;N;}'
+    created_at: '2011-02-11 11:34:45'
+    updated_at: '2011-02-11 11:39:27'
+    deleted_at: null
