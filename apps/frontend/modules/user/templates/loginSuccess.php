@@ -1,17 +1,16 @@
 <?php include_partial("user/loginform", array("form" => $form)); ?>
 
 
-
-<?php slot("sidebar")?>
+<?php slot("sidebar"); ?>
   <h2>Noch keinen Benutzernamen?</h2>
-  <p >Jetzt <?php echo link_to(
+  <p>Jetzt <?php echo link_to(
     "registrieren",
     '@user_register')?>,
     und kostenlos von vielen Funktionen und Einstellungen profitieren.
   <?php echo link_to(
     "Registrieren",
     '@user_register',
-    'title=Jetzt bei YiGG registrieren'); ?></p>
+    array('title' => 'Jetzt bei YiGG registrieren')); ?></p>
 
    <?php echo link_to(
      img_tag(
@@ -26,5 +25,5 @@
       )
     );
   ?>
-  <div class="clr bth"><!--  --></div>
-<?end_slot()?>
+  <div class="clr bth">&nbsp;</div>
+<?php end_slot(); ?>
