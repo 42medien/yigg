@@ -30,6 +30,9 @@ User:
     privacy:
       type: boolean
       default: false
+    block_post:
+      type: boolean
+      default: false
     last_ip:
       type: string(15)
     failed_logins:

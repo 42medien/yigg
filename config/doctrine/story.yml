@@ -43,6 +43,8 @@ Story:
       type: integer(11)
     domain_id:
       type: integer(20)
+    image_id:
+      type: integer(20)
   relations:
     StoryTag:  
       class: StoryTag      

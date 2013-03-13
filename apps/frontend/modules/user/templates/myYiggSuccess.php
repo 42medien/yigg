@@ -45,13 +45,13 @@
     <h3 class="help_icon">Themen, die mich interessieren:
       <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
     </h3>
-    <?foreach($user->Tags as $tag):?>
+    <?php foreach($user->Tags as $tag) { ?>
       <?php echo now_later_button(
         $tag->name,
         url_for("@tag_show") . "?tags={$tag->name}",
         "@tag_subscribe?tag_id={$tag->id}",
         array("class" => "subscribed"));?>
-    <?php endforeach;?>
+    <?php } ?>
     <div class="clr"></div>
   <?php endif;?>
 <?php end_slot()?>

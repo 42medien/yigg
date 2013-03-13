@@ -1,6 +1,21 @@
 Category:
   Category_1:
-    name: OpenID
+    name: Sport
   Category_2:
-    name: Microformats
-
+    name: International
+  Category_3:
+    name: Deutschland
+  Category_4:
+    name: 'Wirtschaft & Finanzen'
+  Category_5:
+    name: 'Tech & Online'
+  Category_6:
+    name: 'Unterhaltung & Medien'
+  Category_7:
+    name: Gesundheit
+  Category_8:
+    name: Politik
+  Category_9:
+    name: Panorama
+  Category_10:
+    name: Gesellschaft
