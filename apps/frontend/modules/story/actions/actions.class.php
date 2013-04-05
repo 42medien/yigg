@@ -229,11 +229,6 @@ class storyActions extends yiggActions
    */
   public function executeCreate( $request )
   {  
-//    if(false === $this->getUser()->getUser()->hasPostingStoryPermissions())
-//    {
-//      return sfView::ERROR;
-//    }
-    
     $userModel = new User; 
     if(true === $userModel->isPostStoryBlocked($this->session->getUserId()))
     {
