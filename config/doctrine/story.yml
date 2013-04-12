@@ -46,25 +46,6 @@ Story:
     image_id:
       type: integer(20)
   relations:
-    StoryTag:  
-      class: StoryTag      
-      local: id
-      foreign: story_id     
-      type: many
-    StoryTagSet:
-      class: StoryTag      
-      refClass: StoryTag
-      local: tag_id
-      foreign: tag_id
-      foreignAlias: Story    
-      type: many
-    Story:
-      class: Story
-      refClass: StoryTag
-      local: id
-      foreign: storys_id
-      foreignAlias: Story    
-      type: many
     Author:
       class: User
       local: user_id
@@ -91,10 +72,7 @@ Story:
     Tags:
       class: Tag
       refClass: StoryTag
-      local: id
-      foreign: story_id
       foreignAlias: Story
-      type: many
     Tweets:
       class: Tweet
       refClass: StoryTweet
