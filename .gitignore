@@ -5,3 +5,4 @@ lib/vendor/symfony/*
 cache/*
 log/*
 data/sql/*
+htdocs/uploads/*
