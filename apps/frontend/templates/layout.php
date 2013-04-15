@@ -1,5 +1,6 @@
-<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
-  <head profile='http://www.w3.org/2006/03/hcard'>
+<!DOCTYPE html>
+<html class="bend">
+  <head>
     <script type='text/javascript'>
       var _sf_startpt=(new Date()).getTime()
 
@@ -70,6 +71,9 @@
       }
     </script>
     <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="profile" href="http://microformats.org/profile/specs" />
+    <link rel="profile" href="http://microformats.org/profile/hatom" />
+
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
 
     <?php include_http_metas(); ?>
@@ -78,11 +82,6 @@
     <?php include_title() ?>
     <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
-    
-    <?php /*
-    <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script> 
-    */ ?>
-
     <?php include_stylesheets(); ?>
     
     <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
