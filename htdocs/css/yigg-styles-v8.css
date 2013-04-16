@@ -164,7 +164,7 @@ h3.entry-title {font-size: 1.4em}
 .entry-title a {float: left; margin: 0 10px 0 0; overflow: hidden; white-space: nowrap; max-width: 625px;}
 #story-list .entry-title a {white-space: normal;}
 .entry-title a.logo {float: left; margin: 0; overflow: hidden; white-space: nowrap; width: auto;}
-.entry-content {margin: 0; float: left; width: 500px;}
+.entry-content {margin: 0; float: left; width: auto;}
 #story-list .entry-content {margin: 0; float: none; width: auto;}
 #story-list .entry-content .story_auth {line-height: 20px; width: 100%; display: inline-block;}
 #story-list .entry-content .story_auth img {display: inline; vertical-align: middle;}
@@ -228,7 +228,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb7e', end
 .consensus-holder a.consensus {position: absolute; bottom: 20%; right: 20%; font-size: 2em}
 .consensus-holder p {position: absolute; top: 0; left: 50%}
 .story-list-cont {overflow: hidden; margin: -24px 0px -1px -12px; width: 682px;}
-.top_action_row + .story-list-cont {margin: -33px 0px -1px -12px;}
+.top_action_row + .story-list-cont {margin: 0px 0px -1px -12px;}
 .profile + .story-list-cont {margin: -13px 0px -1px -12px;}
 .filters + .story-list-cont {margin: -7px 0px -1px -12px;}
 .news-filter + .story-list-cont {margin: -14px 0px -1px -12px;}
@@ -521,7 +521,7 @@ div.top_action_row {clear: both;}
 div.profile + div.top_action_row {padding: 0 0 55px 14px; margin: 0 0 20px; overflow: auto; border: 1px solid #dcdcdc; border-top: 0 none; width: 643px; position: relative; top: -1px; background: #fff;}
 div.top_action_row input {height: 36px; font: 12px 'Arial', sans-serif; color: #3e3e3e; border: 1px solid #d2d2d2;  float: left; margin: 0 14px 0 0;}
 div.top_action_row input:hover {cursor: pointer;}
-div.top_action_row input.unfollow {background: #56aa44 url(../images/silk-icons/star.png) no-repeat 5px 6px; border: 1px solid #16920d;}
+div.top_action_row input.unfollow {background: #56aa44 url(../images/silk-icons/star.png) no-repeat 5px 6px; border: 1px solid #16920d; padding: 0 5px 0 25px;}
 div.top_action_row input.unfollow:hover {background: #99321b url(../images/silk-icons/cancel.png) no-repeat 5px 6px; border: 1px solid #8d0208;}
 div.top_action_row input.follow {color: #000; background: #dedede url(../images/silk-icons/add.png) no-repeat 5px 9px; border: 1px solid #999; width: 121px;}
 div.top_action_row input.follow:hover {background: #cccece url(../images/silk-icons/add.png) no-repeat 5px 9px;}
