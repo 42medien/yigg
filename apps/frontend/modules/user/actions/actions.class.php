@@ -498,51 +498,53 @@ class userActions extends yiggActions
 
             }
         }
-        $this->session->setFlash("error_msg",'Faild to login with facebook');
-        return $this->redirect("@best_stories");
-    }
+      $this->session->setFlash("error_msg",'Faild to login with facebook');
+      return $this->redirect("@best_stories");
+  }
 
-    public function executeFbAddFriends($request)
-    {
+  public function executeFbAddFriends($request)
+  {
 
-        return sfView::SUCCESS;
-    }
+    return sfView::SUCCESS;
+  }
 
-    public function executeLogin($request)
-    {
+  /**
+   * This logs in the current user
+   * @param yiggWebRequest
+   * @return sfView::SUCCESS
+   */
+  public function executeLogin( $request )
+  {
     $this->getResponse()->setStatusCode(401, 'Forbidden');
 
+    // check for post
     $this->form = new FormUserLogin();
     if( true === $this->form->processAndValidate() )
     {
-      $user = Doctrine::getTable("User")->findOneByUsername($this->form->getValue("username"));
-      if(false === $user)
+      // if the request comes by ajax, lets forward them back to the module they were accessing.
+      if( true === $request->isAjaxRequest() )
       {
-        $this->getUser()->setFlash("error_msg", "Benutzername oder Passwort falsch.");
-        return sfView::SUCCESS;
+        // don't grab the login form, get the one before it. (login is GET, post NOT included.).
+        $key = sfRequestHistory::getCurrentRequestKey();
+        $uri = sfRequestHistory::getRequestKeyUri( ($key > 0 ? $key -1 : 0)) ;
+
+        $routing = $this->getContext()->getRouting();
+        $params = $routing->parse($uri);
+
+        // build the request, and forward the reslult
+        $request->getParameterHolder()->add($params);
+        return $this->forward( $params['module'], $params['action'] );
       }
 
-      if($user->status == 0)
-      {
-        $this->getUser()->setFlash("error_msg", "Dein Account wurde noch nicht freigeschaltet.");
-        return sfView::SUCCESS;
-      }
-
-      if(false === $user->checkPassword($this->form->getValue("password")))
-      {
-        $this->getUser()->setFlash("error_msg", "Benutzername oder Passwort falsch.");
-        return sfView::SUCCESS;
-      }
-      
-      $this->getUser()->login($user, $this->form->getValue("remember"));
-
+      $referer = $this->session->getAttribute("referer", false);
+      $this->redirectIf($referer, $referer);
 
       if( false !== $request->getReferer() && false === strpos($request->getReferer(),"login") && '' !== $request->getReferer() )
       {
         return $this->redirect( $request->getReferer() );
       }
 
-      return $this->redirect("@best_stories");
+      return $this->redirect('@user_welcome');
     }
     return sfView::SUCCESS;
   }

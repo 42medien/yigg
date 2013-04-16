@@ -63,7 +63,26 @@ class yiggSession extends sfBasicSecurityUser
       $this->user = $user;
     }
   }
-
+  
+  /**
+   * Makes the user wait for longer and longer each time they fail a request.
+   */
+  public function enforceWait( $maxFailedAttempts , $reason = 'failing login')
+  {
+    if( $maxFailedAttempts > sfConfig::get("sf_allowed_failed_logins") )
+    {
+      $secondsToSleep = $maxFailedAttempts * 2;
+      $logmessage = 'yiggSession->enforceWait enforcing wait for naughty user for '.$reason. ' after ' . $maxFailedAttempts .' failed attempts.';
+      $logmessage .= 'sleeping for ' .$secondsToSleep.' seconds with IP: ' . sfContext::getInstance()->getRequest()->getRemoteAddress();
+      sfContext::getInstance()->getLogger()->log( $logmessage , 3);
+      return sleep ( $secondsToSleep );
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  
   /**
    * Performs the logout for the current user.
    */
