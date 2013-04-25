@@ -16,13 +16,6 @@
         '//www.googletagservices.com/tag/js/gpt.js';
         var node = document.getElementsByTagName('script')[0];
         node.parentNode.insertBefore(gads, node);
-
-        var scriptProto = 'https:' == document.location.protocol ? 'https://' : 'http://';
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.src = scriptProto+'js.cdn.yieldkit.com/v1/js?api_key=5561bd81c7f3309dd647804cde2fe543&site='+document.domain+'';
-        (document.getElementsByTagName('head')[0] || document.body).appendChild(script); 
       })();
 
       googletag.cmd.push(function() {
@@ -48,8 +41,8 @@
           appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>,
           status       : false,
           cookie       : true,
-            xfbml        : true,
-            oauth        : true
+          xfbml        : true,
+          oauth        : true
         });
       };
 
