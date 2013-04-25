@@ -3,35 +3,35 @@
   
   <?php include_partial('story/storyActions', array('story' => $story));?>
 
-   <h3 class="entry-title">
-     <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
-       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
-     <?php else:?>
-       <?php
-            if(strlen($story->title) >= 75)
-                $story_title = preg_replace('/\s+?(\S+)?$/', '', substr($story->title, 0, 75))." ...";
-            else
-                $story_title = $story->title;
-            //echo link_to_story(preg_replace('/\s+?(\S+)?$/', '', substr($story->title, 0, 75))." ...", $story, array("title" => $story->title));
-            echo link_to_story($story_title, $story, array("title" => $story->title));
-       ?>
-     <?php endif; ?>
-       <?php
-       echo link_to(img_tag('external_link.png', array(
-               'alt' => $story->title,
-               'width' => 17,
-               'height' => 9
-           )),
-           $story["external_url"],
-           array(
-               'title' => $story->title,
-               'class' => 'logo',
-               'target' => '_blank'
-           ));
-       ?>
-   </h3>
- 
-<script>
+  <h3 class="entry-title">
+    <?php if($sf_request->getModuleAction() === "story/show")://$story["type"] == Story::TYPE_NORMAL?>
+      <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, 'target' => '_blank'));?>
+    <?php else:?>
+      <?php
+        if(strlen($story->title) >= 75)
+          $story_title = preg_replace('/\s+?(\S+)?$/', '', substr($story->title, 0, 75))." ...";
+        else
+         $story_title = $story->title;
+         //echo link_to_story(preg_replace('/\s+?(\S+)?$/', '', substr($story->title, 0, 75))." ...", $story, array("title" => $story->title));
+         echo link_to_story($story_title, $story, array("title" => $story->title));
+      ?>
+      <?php endif; ?>
+      <?php
+        echo link_to(img_tag('external_link.png', array(
+              'alt' => $story->title,
+              'width' => 17,
+              'height' => 9
+              )),
+              $story["external_url"],
+              array(
+                'title' => $story->title,
+                'class' => 'logo',
+                'target' => '_blank'
+            ));
+      ?>
+  </h3>
+
+<script type="text/javascript">
 var img_resize = function(img, maxh, maxw) {
   var ratio = maxh / maxw;
 
@@ -191,14 +191,9 @@ jQuery("img.js-resize").ready(function(){
 			.hlp_txt_spread {margin: -8px 156px 0 0;}
 			.spreadly-button {margin: -33px 176px 0 0;}
 		</style>		
-           <span class="hlp_txt_spread">Teile die News mit Deinen Freunden!</span>
+   <span class="hlp_txt_spread">Teile die News mit Deinen Freunden!</span>
            <iframe class="spreadly-button" frameBorder="0" scrolling="no" style="border: 0; height: 29px;" src="http://button.spread.ly/?url=<?php echo urlencode($sf_request->getUriPrefix().url_for_story($story, false)) ?>"></iframe>
-           <?php /*<a href="<?php echo $sf_request->getUriPrefix().url_for_story($story, false);?>" 
-            title="<?php echo $story->title;?>"
-            class="spreadly-button" 
-            rel="share like">
-          </a>*/ ?>    
-       <?php endif;?>        
+     <?php endif;?>        
         <?php
             $source = $story->getStoryImageSource();
             if($source){
@@ -212,20 +207,6 @@ jQuery("img.js-resize").ready(function(){
             $js_text = addslashes($story->getDescriptionSummary(100, ESC_RAW));
             $js_img = $img_source;
         ?>
-        <div id="plista_widget_standard_1"></div>
-        <div id="plista_widget_belowArticle"></div>
-        <script type="text/javascript" src="http://static.plista.com/fullplista/54257f4f1c2c966980b63b2c.js"></script> 
-        <script type="text/javascript">
-            PLISTA.items.push({                
-                objectid: "<?php echo $js_id; ?>",
-                title: "<?php echo $js_title; ?>",
-                url: "<?php echo $js_url; ?>",
-                text: "<?php echo $js_text; ?>",
-                img: "<?php echo $js_img; ?>"
-            });
-
-            PLISTA.partner.init();
-        </script>   
         <div id="related_stories">            
             <?php include_partial('relatedStories',  array('stories' => $relatedStories, 'bar' => false)); ?>            
         </div>
