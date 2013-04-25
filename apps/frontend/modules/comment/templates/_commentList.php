@@ -26,15 +26,10 @@
 
         <p>
           <span>
-            <?php if(1 != $comment->user_id):?>
               <?php echo link_to(avatar_tag($comment->Author->Avatar, "noavatar-48-48.png", (true === $inlist ? 14 : 48), (true === $inlist ? 14 : 48)),
                            '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
                            array("title" => "Profil von {$comment['Author']['username']} besuchen", "class" => "comment-avatar"));?>
               von <?php echo link_to($comment['Author']['username'], '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']));?>
-            <?php else:?>
-              <?php echo img_tag("http://www.gravatar.com/avatar/".md5($comment->email)."?s=".(true === $inlist ? 14 : 48), array("class" => "comment-avatar")); ?>
-              von <?php echo $comment->name;?>
-            <?php endif;?>
             -
             <?php if(false === $inlist):?>
               <?php echo content_tag(
