@@ -1,0 +1,45 @@
+Comment:
+  Comment_1:
+    description: "Die deutsche Fußballwelt schaute an diesem Abend erst mal nur auf ihn: Mario Götze. Wie würde der Nationalspieler gegen Real auftreten? Wie würde er von den Dortmunder Fans empfangen werden? Das waren die Fragen, die nach Götzes Sensationstransfer zum FC Bayern München nach Antworten verlangten - und die doch im Verlauf der begeisternden Champions-League-Nacht von einer anderen spektakulären Personalie verdrängt wurden."
+    Author: User_1
+  Comment_2:
+    description: "Nach Informationen von SPIEGEL ONLINE hat der FC Bayern München am vergangenen Samstag, kurz vor dem Spiel des BVB gegen Mainz, eine erste Offerte für Lewandowski abgegeben. Über einen Mittelsmann, so bestätigen es dem Münchner Vorstand nahestehende Personen unisono, wurde Borussia Dortmunds Geschäftsführer Hans-Joachim Watzke sowie dem BVB-Sportdirektor Michael Zorc die Ablösesumme von 25 Millionen Euro für einen Wechsel des Stürmers zum FC Bayern München zur kommenden Saison angeboten."
+    Author: User_1
+  Comment_3:
+    description: "The microformats tagline humans first, machines second forms the basis of many of our principles, and in that regard, wed like to recognize a few people and thank them for their years of volunteer service as community admins."
+    Author: User_2
+  Comment_4:
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    Author: User_2
+  Comment_5:
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    Author: User_3
+  Comment_6:
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    Author: User_1
+  Comment_7:
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    Author: User_2
+
+StoryComment:
+  StoryComment_1:
+    Story: Story_1
+    Comment: Comment_1
+  StoryComment_2:
+    Story: Story_1
+    Comment: Comment_2
+  StoryComment_3:
+    Story: Story_1
+    Comment: Comment_6
+  StoryComment_4:
+    Story: Story_2
+    Comment: Comment_5
+  StoryComment_5:
+    Story: Story_3
+    Comment: Comment_6
+  StoryComment_6:
+    Story: Story_2
+    Comment: Comment_7
+  StoryComment_7:
+    Story: Story_2
+    Comment: Comment_3
