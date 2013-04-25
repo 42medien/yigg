@@ -492,4 +492,19 @@ class User extends BaseUser
     $this->status = 0;
     parent::preDelete($event);
   }
+  
+  /**
+   * Suspends user
+   */
+  public function suspend()
+  {
+    if($this->id === 1)  // Prevents suspending of Marvin
+    {
+      sfContext::getInstance()->getLogger()->log("Something wanted to suspend Marvin", 1);
+      exit();
+    }
+
+    $this->block_post = 1;
+    $this->save();
+  }
 }

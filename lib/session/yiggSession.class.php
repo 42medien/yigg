@@ -18,7 +18,7 @@ class yiggSession extends sfBasicSecurityUser
       'SEO'          => 4,
       'CORPORATE_ACCOUNT'  => 5
   );
-  
+
   private $user = null;
 
   public function getLoginLink()
@@ -45,11 +45,19 @@ class yiggSession extends sfBasicSecurityUser
   {
     if( $user instanceof User )
     {
+      // Authenticate and set login information for the user.
       $this->setAuthenticated( true );
-      $user->last_login = new Doctrine_Expression("NOW()");
-      $user->last_ip =  sfContext::getInstance()->getRequest()->getRemoteAddress();
+      $this->setFlash('dte:last_login', $user->last_login);
 
-	    $this->createRememberKey( $user );
+      // Update the data for reference
+      $user->last_login = yiggTools::getDbDate();
+      $user->last_ip =  sfContext::getInstance()->getRequest()->getRemoteAddress();
+      $user->failed_logins = 0;
+
+      $this->setAttribute('FailedLogins', 0 );
+
+      // Enable persistant logins
+	  $this->createRememberKey( $user );
 
       $user->save();
 
@@ -59,6 +67,10 @@ class yiggSession extends sfBasicSecurityUser
         $this->addCredential($credential_names[$permission['permission_level']]);
       }
 
+      // Set flash for registering the user at ivw
+      $this->setFlash('ivw:mclient:register', $user['mclient_salt']);
+
+      //  Make the user object avaliable accross our application.
       $this->setAttribute( 'user_id', $user['id'], 'session');
       $this->user = $user;
     }

@@ -191,6 +191,12 @@ user_delete:
   requirements:
     username: "[\w_\-\.]+"
 
+user_suspend:
+  url:    /profil/:username/suspend
+  param:  { module: user, action: suspend}
+  requirements:
+    username: "[\w_\-\.]+"
+
 user_verify_changed_email:
   url:  /profil/verify_changed_mail/:hash/:secret
   param:  { module: user, action: verifyChangedEmail}

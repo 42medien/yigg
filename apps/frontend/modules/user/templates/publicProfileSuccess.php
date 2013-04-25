@@ -63,6 +63,7 @@
        <?php endif;?>
        <?php if($sf_user->hasUser() && false === $user->isAdmin() && $sf_user->getUser()->isAdmin()):?>
          <?php echo button_to("Benutzer löschen", '@user_delete?username='.$user->username, array("class" => "delete"));?>
+         <?php echo button_to("Benutzer deaktivieren", '@user_suspend?username='.$user->username, array("class" => "suspend"));?>
        <?php endif;?>
      <?php else:?>
        <?php echo button_to("Profil bearbeiten", "@user_my_profile", array("class" => "profile"));?>
@@ -100,7 +101,7 @@
 
 <?php slot("sidebar")?>
   <?php include_partial("userWidgetStats", array("user" => $user))?>
-
+  
   <?php if(count($followedUsers) > 0):?>
     <h3 class="avtr">Abonnements</h3>
     <?php include_partial("user/avatarList", array("users" => $followedUsers));?>

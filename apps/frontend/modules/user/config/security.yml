@@ -46,3 +46,7 @@ authenticateUser:
 delete:
   is_secure: true
   credentials: [MODERATOR, ADMIN]
+
+suspend:
+  is_secure: true
+  credentials: [MODERATOR, ADMIN]

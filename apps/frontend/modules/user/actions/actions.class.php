@@ -766,6 +766,42 @@ class userActions extends yiggActions
 
       $this->result = 1 === $this->getMailer()->sendEmail(
         $this->user->email,
+        sprintf('[YiGG-System] - Dein Account %s auf YiGG wurde gelöscht.', $this->user->username),
+        $this->form['bbcode']->getValue()
+      );
+    }
+
+    return sfView::SUCCESS;
+  }
+  
+  /**
+   * suspends a user.
+   * @param $request yiggWebRequest
+   * @return sfView
+   */
+  public function executeSuspend($request)
+  {
+    $parameterHolder = $request->getParameterHolder();
+    $username = $parameterHolder->get('username');
+
+    $this->user = Doctrine::getTable("User")->findOneByUsername($username);
+    $this->forward404Unless( $this->user, sprintf( "Sorry we could not find the user %s", $username ));
+
+    $this->form = new FormUserSuspend();
+    $partial = new sfPartialView( sfContext::getInstance(), "user", "_suspendDefaultText", '');
+    $partial->setPartialVars(array("user" => $this->user));
+
+    $defaults = array(
+      "bbcode" => $partial->render(),
+     );
+
+    $this->form->setDefaults($defaults);
+    if( true === $this->form->processAndValidate() )
+    {
+      $this->user->suspend();
+
+      $this->result = 1 === $this->getMailer()->sendEmail(
+        $this->user->email,
         sprintf('[YiGG-System] - Dein Account %s auf YiGG wurde gesperrt.', $this->user->username),
         $this->form['bbcode']->getValue()
       );

@@ -69,3 +69,6 @@ UserPermission:
   Permission_1:
     User: User_2
     permission_level: 1
+  Permission_2:
+    User: User_2
+    permission_level: 2
