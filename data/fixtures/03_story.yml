@@ -1,6 +1,70 @@
 Story:
   Story_1:
-    title: "pääääm"
-    external_url: "http://notizblog.org"
-    description: "Ninja Disch"
+    title: "BVB und Bayern streiten um Lewandowski"
+    external_url: "http://www.spiegel.de/sport/fussball/bayern-muenchen-weiter-bemueht-um-lewandowski-vom-bvb-a-896426.html"
+    description: "Vier Tore! Die Vorstellung von Robert Lewandowski beim Sieg gegen Real Madrid war sensationell. Der Stürmer könnte bald für weitere Schlagzeilen sorgen: Nach Informationen von SPIEGEL ONLINE gibt es von Bayern München erstmals ein mündliches Angebot für den Polen - doch um den Zeitpunkt des Transfers ist ein Streit entbrannt."
     Author:  User_2
+  Story_2:
+    title: "Dortmund heiß auf Draxler und Kagawa"
+    external_url: "http://www.bild.de/sport/fussball/julian-draxler/geruecht-nach-goetze-wechsel-um-draxler-undkagawa-30145682.bild.html"
+    description: "Angeblich hat Dortmund den Schalker Julian Draxler (19) als Ersatz für Mario Götze, der nächste Saison für 37 Millionen Euro zum FC Bayern wechselt, auf der Liste."
+    Author:  User_1
+  Story_3:
+    title: "microformats.org at 7"
+    external_url: "http://microformats.org/2012/06/25/microformats-org-at-7"
+    description: "Last week the microformats.org community celebrated its 7th birthday at a gathering hosted by Mozilla in San Francisco and recognized accomplishments, challenges, and opportunities."
+    Author:  User_3
+
+Tag:
+  Tag_1:
+    name: "Fußball"
+  Tag_2:
+    name: "Bayern"
+  Tag_3:
+    name: "BVB"
+  Tag_4:
+    name: "Microformats"
+  Tag_5:
+    name: "HTML5"
+  Tag_6:
+    name: "HTML"
+
+StoryTag:
+  StoryTag_1:
+    Tag: Tag_1
+    Story: Story_1
+  StoryTag_2:
+    Tag: Tag_2
+    Story: Story_1
+  StoryTag_3:
+    Tag: Tag_3
+    Story: Story_1
+  StoryTag_4:
+    Tag: Tag_1
+    Story: Story_2
+  StoryTag_5:
+    Tag: Tag_2
+    Story: Story_2
+  StoryTag_6:
+    Tag: Tag_3
+    Story: Story_2
+  StoryTag_7:
+    Tag: Tag_4
+    Story: Story_3
+  StoryTag_8:
+    Tag: Tag_5
+    Story: Story_3
+  StoryTag_9:
+    Tag: Tag_6
+    Story: Story_3
+
+StoryCategory:
+  StoryCategory_1:
+    Story: Story_1
+    Category: Category_1
+  StoryCategory_2:
+    Story: Story_2
+    Category: Category_1
+  StoryCategory_3:
+    Story: Story_3
+    Category: Category_5

@@ -3,9 +3,9 @@ User:
     username: marvin
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
-    status: 1
+    status: true
     last_login: null
-    email: matthias@ekaabo.com
+    email: matthias@ekaabo.de
     privacy: false
     last_ip: null
     failed_logins: null
@@ -16,12 +16,12 @@ User:
     updated_at: '2011-01-21 09:51:40'
     deleted_at: null
   User_2:
-    username: rocu
+    username: admin
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
-    status: false
+    status: true
     last_login: '2011-01-21 13:01:22'
-    email: matthias@ekaabo.com
+    email: admin@ekaabo.com
     privacy: false
     last_ip: 127.0.0.2
     failed_logins: '2'
@@ -32,12 +32,12 @@ User:
     updated_at: '2011-02-11 11:32:44'
     deleted_at: null
   User_3:
-    username: nachrichten-muenchen.de
+    username: hugo
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
     status: false
     last_login: '2011-01-21 09:55:05'
-    email: matthias@ekaabo.com
+    email: affe@ekaabo.com
     privacy: false
     last_ip: 127.0.0.2
     failed_logins: '0'
@@ -48,7 +48,7 @@ User:
     updated_at: '2011-01-21 09:55:05'
     deleted_at: null
   User_4:
-    username: rocurth
+    username: karl
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
     status: true
@@ -64,3 +64,8 @@ User:
     created_at: '2011-02-11 11:34:45'
     updated_at: '2011-02-11 11:39:27'
     deleted_at: null
+
+UserPermission:
+  Permission_1:
+    User: User_2
+    permission_level: 1
