@@ -16,10 +16,13 @@ Category:
       notnull: true
       autoincrement: false
   relations:
-    StoryCategory:
-      local: id
-      foreign: category_id
-      type: many
+    Stories:
+      class: Story
+      refClass: StoryCategory
+      foreignAlias: Category
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
 
 StoryCategory:
   connection: yigg
@@ -45,8 +48,6 @@ StoryCategory:
       primary: false
       notnull: true
       autoincrement: false
-  relations:
-    Category:
-      local: category_id
-      foreign: id
-      type: one
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
