@@ -16,9 +16,9 @@ class yiggSession extends sfBasicSecurityUser
       'MODERATOR'    => 2,
       'POWERUSER'    => 3,
       'SEO'          => 4,
-      'CORPORATE_ACCOUNT'  => 5,
+      'CORPORATE_ACCOUNT'  => 5
   );
-
+  
   private $user = null;
 
   public function getLoginLink()
