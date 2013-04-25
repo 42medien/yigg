@@ -60,7 +60,7 @@ class Comment extends BaseComment
      */
     public function processNotifications($associate)
     {
-        if($this->is_online === false)
+        if($this->is_online === false || !sfContext::hasInstance())
         {
             return;
         }
