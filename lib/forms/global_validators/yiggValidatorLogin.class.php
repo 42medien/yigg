@@ -11,6 +11,7 @@ class yiggValidatorLogin extends sfValidatorSchema
 
   const MSG_LOGIN_ERROR    = 'login_error';
   const MSG_USER_DISABLED  = 'user_disabled';
+  const MSG_USER_SUSPENDED  = 'user_suspended';
   const MSG_USER_DELETED   = 'user_deleted';
 
 
@@ -30,6 +31,7 @@ class yiggValidatorLogin extends sfValidatorSchema
   {
     $this->addMessage( self::MSG_LOGIN_ERROR,  'Login failed');
     $this->addMessage( self::MSG_USER_DISABLED,'User disabled');
+    $this->addMessage( self::MSG_USER_SUSPENDED,'User suspended');
     $this->addMessage( self::MSG_USER_DELETED, 'User has been deleted');
   }
 
@@ -113,9 +115,14 @@ class yiggValidatorLogin extends sfValidatorSchema
           throw new sfValidatorError($this,self::MSG_LOGIN_ERROR);
         }
 
-        if( (int) $user->status === 0 )
+        if( intval( $user->status ) === 0 )
         {
           throw new sfValidatorError($this, self::MSG_USER_DISABLED);
+        }
+        
+        if( intval( $user->block_post ) === 1 )
+        {
+          throw new sfValidatorError($this, self::MSG_USER_SUSPENDED);
         }
 
         if ( false === $user->checkPassword( $password ) )
