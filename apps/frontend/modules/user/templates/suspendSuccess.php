@@ -1,4 +1,4 @@
-<?php if( $user['block_post'] !== null):?>
+<?php if( $user['block_post'] === 1):?>
   <h2>Benutzer erfolgreich deaktiviert!</h2>
 
 <?php else: ?>
