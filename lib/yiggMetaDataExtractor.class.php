@@ -4,47 +4,30 @@ class yiggMetaDataExtractor
   const TIMEOUT = 5;
 
   private $url,
-          $response;
+          $response,
+          $yiggMeta;
 
   public function __construct($url)
   {
     $this->url = $url;
     $this->loadData();
+    $this->fetchData();
   }
 
   public function getReadableDescription()
   {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://boilerpipe-web.appspot.com/extract?url={$this->url}&extractor=ArticleExtractor&output=text");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::TIMEOUT);
-
-    $response = curl_exec($ch);
-    curl_close($ch);	
-
-	  return $response;
+	  return $this->yiggMeta->getDescription();
   }
 
   public function getMetaTags()
- {
-   preg_match_all('/<[\s]*meta[\s]*name="?' . '([^>"]*)"?[\s]*' . 'content="?([^>"]*)"?[\s]*[\/]?[\s]*>/si',
-	   $this->response,
-	   $matches,
-	   PREG_PATTERN_ORDER);
-
-	$metas = array();
-	foreach($matches[1] as $key => $name)
-	{
-		$metas[$name] = $this->cleanValue($matches[2][$key]);
-	}
-	return $metas;
- }
+  {
+    return $this->yiggMeta->getTags();
+  }
 
   public function getTitle()
- {
-   preg_match('/<title>([^>]*)<\/title>/si', $this->response, $match );
-   return $this->cleanValue($match[1]);
- }
+  {
+    return $this->yiggMeta->getTitle();
+  }
 
   /**
    * Fetches data from a remote server
@@ -69,7 +52,49 @@ class yiggMetaDataExtractor
 
     return $value;
   }
-}
+  
+  /**
+   * handles the parsing of a new social-object
+   * currently parsed: opengraph and metatags
+   *
+   * @param string $pUrl
+   * @return array $pArray
+   */
+  public function fetchData() {
+    if (!$this->response) {
+      return false;
+    }
+    
+    $html = $this->response;
+    $url = $this->url;
 
-$extractor = new yiggMetaDataExtractor("http://www.howtogeek.com/howto/programming/php-get-the-contents-of-a-web-page-rss-feed-or-xml-file-into-a-string-variable/");
-$extractor->getReadableDescription();
+    // boost performance and use alreade the header
+    $header = substr( $html, 0, stripos( $html, '</head>' ) );
+
+    if (!$this->yiggMeta) {
+      $this->yiggMeta = new YiggMeta();
+    }
+
+    $this->yiggMeta->setUrl($url);
+
+    if ((preg_match('~http://opengraphprotocol.org/schema/~i', $header) || preg_match('~http://ogp.me/ns#~i', $header) || preg_match('~property=[\"\']og:~i', $header)) && !$this->yiggMeta->isComplete()) {
+      //get the opengraph-tags
+      $openGraph = OpenGraph::parse($header);
+      $this->yiggMeta->fromOpenGraph($openGraph);
+    }
+
+    if ((preg_match('~application/(xml|json)\+oembed"~i', $header)) && !$this->yiggMeta->isComplete()) {
+      try {
+        $oEmbed = OEmbedParser::fetchByCode($header);
+        $this->yiggMeta->fromOembed($oEmbed);
+      } catch (Exception $e) {
+        // catch exception and try to go on
+      }
+    }
+
+    if (!$this->yiggMeta->isComplete()) {
+      $meta = MetaTagParser::getKeys($html, $url);
+      $this->yiggMeta->fromMeta($meta);
+    }
+  }
+}

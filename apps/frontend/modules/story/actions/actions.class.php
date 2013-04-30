@@ -471,11 +471,10 @@ class storyActions extends yiggActions
     $url = $this->getRequest()->getParameter( 'external_url' );
 
     $e = new yiggMetaDataExtractor($url);
-    $metaData = $e->getMetaTags();
 
     $title = $e->getTitle();
-    $keywords = array_key_exists("keywords", $metaData) ? $metaData["keywords"] : "";
-    $description = array_key_exists("description", $metaData) ? $metaData["description"] : "";
+    $keywords = $e->getMetaTags();
+    $description = $e->getReadableDescription();
 
     $nouns_in_title = yiggTools::extractNouns($title. " " . $keywords . " " . $description);
     $nouns_in_title = array_unique($nouns_in_title);
