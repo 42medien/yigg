@@ -8,3 +8,5 @@ data/sql/*
 htdocs/uploads/*
 
 .DS_Store
+
+*.scssc

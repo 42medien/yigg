@@ -1,19 +1,3 @@
- <ul id="navi">
-  <li <?php if($sf_request->getAction() == 'bestStories'): ?>class="selected"<?php endif;?>><?php echo link_to('Beste Nachrichten','@best_stories',array('title' => 'Beste Nachrichten von heute'));?></li>
-  <li <?php if($sf_request->getAction() == 'newStories'): ?>class="selected"<?php endif;?>><?php echo link_to('Neueste Nachrichten',"@new_stories","title=Neueste Nachrichten von heute"); ?></li>
-
-  <?php if(true === $sf_user->hasUser()):?>
-    <li <?php if($sf_request->getModule() == 'user'): ?>class="selected"<?php endif;?>><?php echo link_to('Mein YiGG',"@user_welcome",array("title"=>"Dein Profil ansehen")); ?></li>
-  <?php else:?>
-    <li <?php if($sf_request->getAction() == 'register'): ?>class="selected"<?php endif;?>><?php echo link_to('Registrieren',"@user_register",array("title"=>"Benutzeraccount erstellen")); ?></li>
-  <?php endif;?>
-
-  <li class="create"><?php echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen')); ?></li></ul>
-  <ul class="search_box">
-   <li id="search">
-      <?php include_component("search", "form"); ?>
-   </li>
-  </ul>
 <ul id="sub-navi">
   <li <?php if($sf_request->getModule() == "spy"): ?>class="selected"<?php endif; ?>><?php echo link_to("YiGGspion","@spy",array("title" =>"betrachte den YiGGspion")); ?></li>
   <li <?php if($sf_request->getModule() == "worldspy"): ?>class="selected"<?php endif; ?>><?php echo link_to("Weltspion","@worldspy_top",array("title" =>"Betrachte den WeltSpion")); ?></li>
