@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F6F7F7;
+  font-family: "helvetica neue", arial, sans-serif; }
+
+.screen-reader-text {
+  display: none; }
+
+#branding {
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  width: 100%;
+  font-size: 13px;
+  padding-bottom: 20px;
+  margin-bottom: 50px; }
+
+#access {
+  width: 900px;
+  margin: 0 auto; }
+
+#main-navigation {
+  display: inline; }
+  #main-navigation li {
+    display: inline; }
+
+#search {
+  float: right; }
