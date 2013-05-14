@@ -9,6 +9,8 @@ all:
     language:     de
     charset:      utf-8
   
+  stylesheets:    ["v9/styles.css"]
+  
   auto_discovery_link_tag:
     profile:      bla
   
