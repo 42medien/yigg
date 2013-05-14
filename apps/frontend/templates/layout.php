@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bend">
+<html lang="de-DE" prefix="og: http://ogp.me/ns#">
   <head>
     <script type='text/javascript'>
       var _sf_startpt=(new Date()).getTime()
@@ -19,20 +19,9 @@
       })();
 
       googletag.cmd.push(function() {
-        /*googletag.defineSlot('/1043423/Yigg-Button-1L', [170, 125], 'div-gpt-ad-1342004948184-0').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-1R', [170, 125], 'div-gpt-ad-1342004948184-1').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-2L', [170, 125], 'div-gpt-ad-1342004948184-2').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-2R', [170, 125], 'div-gpt-ad-1342004948184-3').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-3L', [170, 125], 'div-gpt-ad-1342004948184-4').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-3R', [170, 125], 'div-gpt-ad-1342004948184-5').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-4L', [170, 125], 'div-gpt-ad-1342004948184-6').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-4R', [170, 125], 'div-gpt-ad-1342004948184-7').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-5L', [170, 125], 'div-gpt-ad-1342004948184-8').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/Yigg-Button-5R', [170, 125], 'div-gpt-ad-1342004948184-9').addService(googletag.pubads());*/
         googletag.defineSlot('/1043423/rectangle', [300, 250], 'div-gpt-ad-1346766539123-0').addService(googletag.pubads());
         googletag.defineSlot('/1043423/rectangle2', [300, 250], 'div-gpt-ad-1347010073546-1').addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
-        //googletag.pubads().collapseEmptyDivs();
         googletag.enableServices();
       });
         
@@ -63,6 +52,7 @@
         }, {perms:'email,user_interests,user_likes'});
       }
     </script>
+
     <link rel="shortcut icon" href="/favicon.png" />
     <link rel="profile" href="http://microformats.org/profile/specs" />
     <link rel="profile" href="http://microformats.org/profile/hatom" />
@@ -76,91 +66,59 @@
     <?php use_javascript('jquery-1.7.1.js') ?>
     <?php include_javascripts() ?>
     <?php include_stylesheets(); ?>
-    
-    <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="<?php echo ( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" )?>">
-    <div class="bg_top">
-      <div class="bg_bt">
-        <div class="bg_mid">
-          <div id="container">          
-            <div class="header">
-              <div class="header_data">                
-                <div class="login_box">
-                  <div class="logo_box">
-                    <a tabindex="1" href="#content" class="hidden">Direkt zum Inhalt </a>
-                    <?php
-                      echo link_to(img_tag('yigg_logo.png', array(
-                                    'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                                    'width' => 90,
-                                    'height' => 53
-                                )), '@best_stories', array(
-                            'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                            'rel' => 'home',
-                            'class' => 'logo'
-                      ));
-                    ?>
-                  </div>
-                  <div class="login_box_cont">
-                    <?php include_partial("system/navigation"); ?>
-                    <?php if(true === $sf_user->hasUser()):?>
-                      <?php //echo link_to("Abmelden","@user_logout");?>
-                    <div class="login_link">
-                      <a href="<?php echo url_for('@user_logout');?>">Logout</a>                                
-                    </div>
-                    <?php else: ?>
-                    <div class="login_link">
-                      <a href="<?php echo url_for('@user_login');?>">Login</a>
-                      <div class="login_fb" onclick="onClickloginfb(); return false;"></div>
-                      <div class="login_box">
-                        <a class="fb_cnct" href="#" onclick="onClickloginfb(); return false;"></a>
-                        <a class="yigg_cnct" href="<?php echo url_for('@user_login');?>"></a>
-                      </div>
-                    </div>
-                    <?php endif; ?>                                                                           
-                  </div>
-                  <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </div>        
-            <div id="content">
-              <div class="content_data">
-                <?php if(true === has_slot("sponsoring")): ?>
-                  <?php include_slot("sponsoring"); ?>
-                <?php endif; ?>
-                <div class="twoThree clr">
-                  <div class="twoThree-left">
-                  <!-- <script type="text/javascript" src="http://a.ligatus.com/?ids=33680&t=js"></script>  -->
-                  <!--  google_ad_section_start -->
-                    <?php echo $sf_data->getRaw('sf_content'); ?>
-                  <!--  google_ad_section_end -->          
-                </div>
-                <div class="twoThree-right">
-                  <?php include_partial("user/userinfo"); ?>
-                  <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
-                  <?php if(has_slot("sidebar")) { ?>
-                    <?php include_slot("sidebar"); ?>
-                  <?php } ?> 
-                  <div class="fb-like-box"
-                   data-href="http://www.facebook.com/yiggde"
-                   data-width="300"
-                   data-height="300"
-                   data-show-faces="true"
-                   data-stream="false"
-                   data-header="false">
-                 </div>
-                 <?php include_partial("user/anzeigeBottom"); ?>
-                 <?php include_component("story", "bestVideosBottom", array( "height"=> 285, "width" => 370)); ?>
-               </div>
-             </div>
-           </div>
+    <div id="page">
+      <header id="branding">
+        <nav id="access" role="navigation">
+          <a tabindex="1" href="#content" class="skip-link screen-reader-text">Direkt zum Inhalt </a>
+          <?php
+            echo link_to(img_tag('yigg_logo.png', array(
+                      'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+                      'width' => 90,
+                      'height' => 53
+                  )), '@best_stories', array(
+              'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+              'rel' => 'home',
+              'class' => 'logo'
+            ));
+          ?>
+
+          <?php include_partial("system/main_navigation"); ?>                         
+        </nav>
+      </header>
+    
+      <div id="main">
+        <main id="content">
+          <?php echo $sf_data->getRaw('sf_content'); ?>
+        </main>
+        
+        <aside id="sidebar">
+          <?php if(true === has_slot("sponsoring")): ?>
+            <?php include_slot("sponsoring"); ?>
+          <?php endif; ?>
+          <?php include_partial("user/userinfo"); ?>
+          <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
+          <?php if(has_slot("sidebar")) { ?>
+            <?php include_slot("sidebar"); ?>
+          <?php } ?> 
+          <div class="fb-like-box"
+           data-href="http://www.facebook.com/yiggde"
+           data-width="300"
+           data-height="300"
+           data-show-faces="true"
+           data-stream="false"
+           data-header="false">
          </div>
-         <div class="hr_bt"></div>
-         <div class="hr_bt"></div>
-         <?php include_partial("system/footer");?>
-       </div>
-     </div>
+         <?php include_partial("user/anzeigeBottom"); ?>
+         <?php include_component("story", "bestVideosBottom", array( "height"=> 285, "width" => 370)); ?>
+        </aside>
+                
+      </div>
+      
+      <footer>
+        <?php include_partial("system/footer");?>
+      </footer>
     </div>
 
     <script type="text/javascript">
@@ -188,6 +146,6 @@
     </script>
         
     <!-- START FACEBOOK JAVASCRIPT SDK -->
-    <div id="fb-root"></div>             
+    <div id="fb-root"></div>
   </body>
 </html>
