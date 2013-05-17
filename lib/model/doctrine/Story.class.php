@@ -23,13 +23,27 @@ class Story extends BaseStory
      */
     public function getStoryImageSource()
     {
+      if($image = $this->getStoryImage()){
+        return $image['file_directory'].$image['file_name'].$image['file_type'];
+      }
+      
+      return null;
+    }
+    
+    /**
+     * Retrive story image source
+     *
+     * @return string/null;
+     */
+    public function getStoryImage()
+    {
         $query = Doctrine_Query::create()
             ->select('f.*')
             ->from('File f')
             ->where('f.id = ?', $this->getImageId());
         $result = $query->fetchOne(array(), Doctrine_Core::HYDRATE_ARRAY);
         if(count($result)){
-            return $result['file_directory'].$result['file_name'].$result['file_type'];
+            return $result;
         }
         return null;
     }

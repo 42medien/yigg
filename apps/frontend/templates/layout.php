@@ -95,18 +95,18 @@
         
         <aside id="sidebar">
           <?php if(true === has_slot("sponsoring")): ?>
-            <?php include_slot("sponsoring"); ?>
+            <?php //include_slot("sponsoring"); ?>
           <?php endif; ?>
           <?php include_partial("user/userinfo"); ?>
-          <?php include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
+          <?php //include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
           <?php if(has_slot("sidebar")) { ?>
             <?php include_slot("sidebar"); ?>
           <?php } ?> 
           <div class="fb-like-box"
            data-href="http://www.facebook.com/yiggde"
-           data-width="300"
-           data-height="300"
+           data-width="200"
            data-show-faces="true"
+           data-show-border="false"
            data-stream="false"
            data-header="false">
          </div>
