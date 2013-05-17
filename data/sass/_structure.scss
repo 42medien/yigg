@@ -1,0 +1,32 @@
+#main {
+  width: $page-width;
+  margin: 0 auto;
+}
+
+main {
+  display: block;
+}
+
+#content {
+  width: $contet-width;
+  float: left;
+}
+
+#sidebar {
+  display: block;
+  width: $sidebar-width;
+  float: right;
+  color: #aaa;
+  a {
+    color: #aaa;
+  }
+}
+
+footer {
+  clear: both;
+}
+
+#footer {
+  width: $page-width;
+  margin: 0 auto;
+}

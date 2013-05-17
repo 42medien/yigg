@@ -1,7 +1,7 @@
 <?php if($storyCount > 0): ?>
-<div class="story-list-cont">
-  <ol id="story-list" class="story-list hfeed ">
+<ol id="stories" class="story-list hfeed ">
     <?php foreach($stories as $k => $story ): ?>
+      <li>
       <?php
         include_partial('story',
           array(
@@ -14,9 +14,9 @@
           )
         );
       ?>
+    </li>
     <?php endforeach; ?>
-  </ol>
-</div>
+</ol>
   <?php echo $pager->display(); ?>
 <?php else: ?>
   <p class="error">Es wurden keine Nachrichten gefunden</p>

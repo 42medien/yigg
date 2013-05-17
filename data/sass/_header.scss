@@ -1,6 +1,6 @@
 #branding {
   box-shadow: 1px 0 4px rgba(0, 0, 0, 0.4);
-  background-color: #fff;
+  background-color: $foreground;
   width: 100%;
   font-size: 13px;
   padding-bottom: 20px;
@@ -8,7 +8,7 @@
 }
 
 #access {
-  width: $content-width;
+  width: $page-width;
   margin: 0 auto;
 }
 

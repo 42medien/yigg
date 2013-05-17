@@ -9,7 +9,7 @@ all:
     language:     de
     charset:      utf-8
   
-  stylesheets:    ["v9/styles.css"]
+  stylesheets:    ["v9/styles.css", "font-awesome.min.css"]
   
   auto_discovery_link_tag:
     profile:      bla

@@ -27,24 +27,24 @@
     </div>
 <?php endif;?>
 <?php if($storyCount > 0): ?>
-<div class="story-list-cont">
-  <ol id="story-list" class="story-list hfeed ">
-    <?php foreach($stories as $k => $story ): ?>
-      <?php
-        include_partial('story',
-          array(
-            'story' => $story,
-            'summary' => true,
-            'compacted' => true,
-            'count' => $k,
-            'total' => $storyCount,
-            'inlist' => true
-          )
-        );
-      ?>
-    <?php endforeach; ?>
-  </ol>
-</div>
+<ol id="stories" class="story-list hfeed ">
+<?php foreach($stories as $k => $story ): ?>
+  <li>
+  <?php
+    include_partial('story',
+      array(
+        'story' => $story,
+        'summary' => true,
+        'compacted' => true,
+        'count' => $k,
+        'total' => $storyCount,
+        'inlist' => true
+      )
+    );
+    ?>
+  </li>
+  <?php endforeach; ?>
+</ol>
 <?php echo $pager->display(); ?>
 <?php else: ?>
   <p class="note">Es wurden keine Nachrichten gefunden</p>
