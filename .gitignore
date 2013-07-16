@@ -10,3 +10,5 @@ htdocs/uploads/*
 .DS_Store
 
 *.scssc
+
+data/frontend_prod-cli.lck

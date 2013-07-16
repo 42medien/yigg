@@ -1,5 +1,4 @@
 <?php
-
 /**
  * create a simple search form
  *

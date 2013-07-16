@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: $background;
-  font-family: "helvetica neue", arial, sans-serif;
+  font-family: $font-family;
   background: $background url("../../images/v9/noise.png") repeat;
 }
 
