@@ -12,15 +12,12 @@
     )
   );
 ?>
-<?php //if(false === $sf_request->isAjaxRequest()): ?>
-   <?php //echo adsense_ad_tag(7012733842, 468, 60);?>
-<?php //endif; ?>
-
 
 <?php slot('sidebar') ?>
+<section id="widget-last-yiggs" class="widget">
   <?php if(false == cache("story-detail-{$story['id']}-votes{$story->currentRating()}")): ?>
     <?php $usernames = array();?>
-    <h3 class="heading-right">Letzte YiGGs und TwiGGs</h3>
+    <h2 class="heading-right">Letzte YiGGs und TwiGGs</h2>
     <?php $ratings = Doctrine::getTable("StoryRating")->findByDql("story_id = ? AND user_id <> 1 LIMIT 20 ORDER BY id DESC",array($story->id)) ?>
      <ul class="avatarList">
      <?php foreach($ratings as $k => $rating):?>
@@ -71,10 +68,12 @@
 
      </ul>
    <?php cache_save(); ?>
- <?php endif; ?>
- 
- <h3 class="heading-right">Passende Tweets</h3>
- <ul class="avatarList">
+</section>
+<?php endif; ?>
+
+<section id="widget-tweets" class="widget">
+  <h2 class="heading-right">Passende Tweets</h2>
+  <ul class="avatarList">
     <li>             
         <?php 
         //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
@@ -135,13 +134,13 @@
         <?php } ?>
     <?php } ?>             
     </li>
-
-</ul>
+  </ul>
+</section>
     
-
-  <h3 class="help_icon">Jetzt und später mehr von dieser Quelle:
+<section id="widget-more-sources" class="widget">
+  <h2 class="help_icon">Jetzt und später mehr von dieser Quelle:
     <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-  </h3>
+  </h2>
   <?php if($sf_user->hasUser() && $story->Domain->isSubscriber($sf_user->getUser())):?>
     <?php echo now_later_button($story->Domain->hostname,
                                 "@domain_show?id=".$story->Domain->id,
@@ -167,8 +166,5 @@
     <?php include_partial("comment/latestComments");?>
   <?php endif;?>
 <div class="clr"><!--  --></div>
+</section>
 <?php end_slot() ?>
-
-<?php slot("sidebar_sponsoring")?>
-  <?php include_component("story","sponsorings", array("story"=> $story)); ?>
-<?php end_slot();?>

@@ -1,5 +1,5 @@
 <?php include_partial("system/systemMessages")?>
-<h1>Einstellungen</h1>
+<h1 class="page-title">Einstellungen</h1>
 
 <h2 class="log_title">Allgemeine Einstellungen</h2>
 <form method="post" action="<?php echo url_for("@user_settings?view=general")?>" class="settings">

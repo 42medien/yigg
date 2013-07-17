@@ -1,0 +1,47 @@
+#sidebar {
+  display: block;
+  width: $sidebar-width;
+  float: right;
+  color: #888;
+  text-shadow: #fff 0px 1px 0px;
+  font-size: 16px;
+  
+  a {
+    color: #999;
+  }
+  
+  h1, h2, h3, h4 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  h2 {
+    font-size: 17px;
+    clear: both;
+  }
+  
+  h3 {
+    font-size: 15px;
+  }
+  
+  section {
+    margin: 0 0 35px 0;
+    padding: 0;
+  }
+  
+  a.avatar {
+    float: left;
+    margin-right: 20px;
+  }
+  
+  #widget-last-yiggs {
+    ul {
+      margin: 0;
+      padding: 0;
+      
+      li {
+        display: inline;
+      }
+    }
+  }
+}

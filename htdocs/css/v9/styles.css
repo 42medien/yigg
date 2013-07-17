@@ -11,6 +11,27 @@ body {
 a.external {
   text-decoration: none; }
 
+img.avatar {
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -o-border-radius: 500px;
+  -ms-border-radius: 500px;
+  -khtml-border-radius: 500px;
+  border-radius: 500px; }
+
+#content {
+  color: #888;
+  text-shadow: #fff 0px 1px 0px;
+  font-size: 16px; }
+
+.page-title {
+  padding-top: 0;
+  margin-top: 0;
+  clear: both; }
+
 #branding {
   box-shadow: 1px 0 4px rgba(0, 0, 0, 0.4);
   background-color: white;
@@ -21,7 +42,7 @@ a.external {
   margin-bottom: 50px; }
   #branding .logo {
     float: left;
-    margin-right: 100px; }
+    margin-right: 80px; }
   #branding a {
     font-family: "helvetica neue", arial, sans-serif;
     color: #393939; }
@@ -31,8 +52,9 @@ a.external {
   margin: 0 auto; }
 
 #main-navigation {
-  margin: 0px;
-  padding: 0px; }
+  float: left; }
+  #main-navigation ol {
+    margin-top: 30px; }
   #main-navigation li {
     font-family: Georgia, skolar, times, serif;
     float: left;
@@ -70,15 +92,6 @@ main {
   width: 800px;
   float: left; }
 
-#sidebar {
-  display: block;
-  width: 200px;
-  float: right;
-  color: #aaa;
-  text-shadow: #FFF 0px 1px 0px; }
-  #sidebar a {
-    color: #aaa; }
-
 footer {
   clear: both; }
 
@@ -95,7 +108,7 @@ ol#stories {
     padding: 0px;
     float: left; }
   ol#stories li:first-child {
-    width: auto; }
+    width: 100%; }
 
 article {
   position: relative;
@@ -121,5 +134,45 @@ article {
     font-size: 12px;
     color: #aaaaaa; }
   article .entry-content, article .entry-summary {
-    font-size: 13px;
+    font-size: 14px;
     color: #666666; }
+
+#content .profile-card {
+  margin: 0 50px 50px 0; }
+  #content .profile-card img.avatar {
+    float: left;
+    margin-right: 50px;
+    background-color: #fff; }
+  #content .profile-card .note {
+    font-size: 15px; }
+  #content .profile-card ul {
+    list-style-type: none; }
+
+#sidebar {
+  display: block;
+  width: 200px;
+  float: right;
+  color: #888;
+  text-shadow: #fff 0px 1px 0px;
+  font-size: 16px; }
+  #sidebar a {
+    color: #999; }
+  #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
+    margin-top: 0;
+    padding-top: 0; }
+  #sidebar h2 {
+    font-size: 17px;
+    clear: both; }
+  #sidebar h3 {
+    font-size: 15px; }
+  #sidebar section {
+    margin: 0 0 35px 0;
+    padding: 0; }
+  #sidebar a.avatar {
+    float: left;
+    margin-right: 20px; }
+  #sidebar #widget-last-yiggs ul {
+    margin: 0;
+    padding: 0; }
+    #sidebar #widget-last-yiggs ul li {
+      display: inline; }

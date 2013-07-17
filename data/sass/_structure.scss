@@ -12,17 +12,6 @@ main {
   float: left;
 }
 
-#sidebar {
-  display: block;
-  width: $sidebar-width;
-  float: right;
-  color: #aaa;
-  text-shadow: #FFF 0px 1px 0px;
-  a {
-    color: #aaa;
-  }
-}
-
 footer {
   clear: both;
 }

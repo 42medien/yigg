@@ -9,7 +9,7 @@
   
   .logo {
     float: left;
-    margin-right: 100px;
+    margin-right: 80px;
   }
   
   a {
@@ -24,8 +24,11 @@
 }
 
 #main-navigation {
-  margin: 0px;
-  padding: 0px;
+  float: left;
+  
+  ol {
+    margin-top: 30px;
+  }
   
   li {
     font-family: Georgia, skolar, times, serif;
