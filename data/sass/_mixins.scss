@@ -1,0 +1,14 @@
+@mixin rounded($rad) {
+  -moz-border-radius: $rad;
+  -webkit-border-radius: $rad;
+  -o-border-radius: $rad;
+  -ms-border-radius: $rad;
+  -khtml-border-radius: $rad;
+  border-radius: $rad;
+}
+
+@mixin box-shadow($hor-len, $ver-len, $blur, $spread, $color) {
+  -webkit-box-shadow: $hor-len $ver-len $blur $spread $color;
+  -moz-box-shadow: $hor-len $ver-len $blur $spread $color;
+  box-shadow: $hor-len $ver-len $blur $spread $color;
+}

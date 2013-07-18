@@ -116,7 +116,7 @@
                 
       </div>
       
-      <footer>
+      <footer class="site-footer">
         <?php include_partial("system/footer");?>
       </footer>
     </div>
