@@ -1,5 +1,8 @@
-<h2>YiGG Sponsorings</h2>
-<p>FAQ Frequently Asked Questions</p>
+<h1 class="page-title">YiGG Sponsorings</h1>
+
+<article class="hentry post h-entry page">
+  <div class="body e-summary entry-summary">
+    <p>FAQ Frequently Asked Questions</p>
 
 <h4>Was ist YiGG Sponsorings?</h4>
 <p>
@@ -110,6 +113,9 @@ Buchbar sind die Zeiträume: 1, 3 und 6 Monate. Für Buchungen von 3 und 6 Monat
 <p>
    YiGG Sponsorings k&ouml;nnen online &uuml;ber Paypal und seinen angeschlossenen Kreditkarten bezahlt werden.
 </p>
+  </div>
+</article>
+
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>
 <?php end_slot()?>

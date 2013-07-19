@@ -1,4 +1,9 @@
-<h2>Impressum </h2>
+<h1 class="page-title">Impressum</h1>
+
+<article class="hentry post h-entry page">
+  <div class="body e-summary entry-summary">
+
+<p>
 <strong>Adresse:</strong> yigg GmbH<br />
 <address>Schulstrasse 8 <br />
 69469 Weinheim<br /></address>
@@ -9,6 +14,7 @@
 <strong>Handelsregister:</strong> HRB 715271<br />
 <strong>USt-IdNr.:</strong> beantragt<br />
 <strong>Gerichtsstand:</strong> Mannheim<br />
+</p>
 <p>
   <h3>Inhaltlich verantwortlicher Ansprechpartner:</h3>
   <p>
@@ -23,6 +29,8 @@
 <ul>
   <li>Danke an <?php echo link_to("FamFamFam", "http://www.famfamfam.com/"); ?> für das großartige Iconset Silk unter CC-Lizenz</li>
 </ul>
+  </div>
+</article>
 
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>

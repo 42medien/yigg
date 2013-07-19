@@ -1,5 +1,5 @@
 <?php use_helper("Date", "Text"); ?>
-<article class="hentry post h-entry" id="story_{$story['id']}">  
+<article class="hentry post h-entry" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
       if ($story->type == Story::TYPE_NORMAL):
@@ -32,7 +32,7 @@
     </div>
   </header>
 
-  <div class="body e-summary entry-summary<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
+  <div class="body p-summary entry-summary<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p>       
       <?php echo $story->getDescriptionSummary(600, ESC_RAW);?>
       <?php

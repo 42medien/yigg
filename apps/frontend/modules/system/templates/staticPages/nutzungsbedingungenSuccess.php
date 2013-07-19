@@ -1,4 +1,7 @@
-<h2>Nutzungsbedingungen</h2>
+<h1 class="page-title">Nutzungsbedingungen</h1>
+
+<article class="hentry post h-entry page">
+  <div class="body e-summary entry-summary">
 <ul>
   <li>
      <h3>1. Geltungsbereich</h3>
@@ -246,6 +249,8 @@
     </ul>
   </li>
 </ul>
+  </div>
+</article>
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>
 <?php end_slot()?>

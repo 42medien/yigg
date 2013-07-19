@@ -135,7 +135,7 @@ article {
       max-width: 100%;
       min-width: 100%;
       height: auto; }
-  article header, article .entry-content, article .entry-summary {
+  article header, article .entry-content, article .entry-summary, article .entry-description {
     padding: 0 20px;
     line-height: 1.4; }
   article .entry-meta {
@@ -144,6 +144,9 @@ article {
   article .entry-content, article .entry-summary {
     font-size: 14px;
     color: #666666; }
+
+article.page {
+  padding: 10px 0; }
 
 #content .profile-card {
   margin: 0 50px 50px 0; }
@@ -184,6 +187,9 @@ article {
     padding: 0; }
     #sidebar #widget-last-yiggs ul li {
       display: inline; }
+
+.field {
+  margin: 20px 0; }
 
 /* =Forms
 -------------------------------------------------------------- */

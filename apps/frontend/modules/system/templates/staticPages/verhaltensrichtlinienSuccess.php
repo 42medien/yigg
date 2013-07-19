@@ -1,6 +1,7 @@
-<h2>
-  Verhaltensrichtlinien
-</h2>
+<h1 class="page-title">Verhaltensrichtlinien</h1>
+
+<article class="hentry post h-entry page">
+  <div class="body e-summary entry-summary">
 <p>
   (Stand: Juni 2007)
 </p>
@@ -117,6 +118,9 @@
 <p>
   YiGG duldet keinerlei Betrugsversuche (im folgenden auch Gaming genannt). Dazu gehören u.a das anlegen von falschen Benutzern um die Bewertungen eigener Nachrichten oder Nachrichten im Auftrag dritter zu manipulieren. Betroffene Benutzer werde ohne Angaben von Gründen entfernt.
 </p>
+  </div>
+</article>
+
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>
 <?php end_slot()?>
