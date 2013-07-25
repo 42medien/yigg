@@ -6,6 +6,7 @@
     <?php
       if ($story->type == Story::TYPE_NORMAL):
         $source = $story->getStoryImageSource();
+      
         if($source){
           echo img_tag($story->getStoryImageSource(), array(
 		        'data-w' => 300,
@@ -135,10 +136,6 @@
             else {
                 echo ''; // Invalid Response
             }
-            //echo '<pre>';
-            //print_r(htmlSpecialChars(urldecode($tweets['query'])));
-            //echo '</pre>';
-            //$tweer_url = htmlSpecialChars(urldecode($tweets['query']));
         ?>                
         <?php foreach($tweets['results'] as $tweet_res) { ?>
 
@@ -146,7 +143,6 @@
                                    
             $twitter_username = htmlSpecialChars($tweet_res['from_user']);
             $twitter_username_status = htmlSpecialChars($tweet_res['id']);
-            //$twitter_user_url = 'https://twitter.com/' . $twitter_username;
             $tweer_url = 'https://twitter.com/' . $twitter_username . '/status/' . $twitter_username_status;
             
             echo

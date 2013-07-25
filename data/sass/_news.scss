@@ -14,7 +14,7 @@ ol#stories {
   }
 }
 
-article {
+.post {
   position: relative;
   background-color: $foreground;
   box-shadow: 0 1px 3px rgba(34,25,25,0.4);
@@ -51,4 +51,17 @@ article {
     font-size: 14px;
     color: $text-color;
   }
+}
+
+form.comment {
+  textarea {
+    width: 99%;
+  }
+  label {
+    display: block;
+  }
+}
+
+.comment-section {
+  margin-right: 50px;
 }
