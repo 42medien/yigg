@@ -1,4 +1,8 @@
 #content {
+  a {
+    color: $dark-gray;
+  }
+  
   ul.comments-list {
     padding: 0;
     margin: 0;
@@ -14,8 +18,9 @@
       
       .entry-meta {
         margin-bottom: 15px;
-        
+
         time {
+          color: $light-gray;          
           display: block;
           font-size: 13px;
           margin-top: 5px;

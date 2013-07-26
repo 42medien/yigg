@@ -153,6 +153,8 @@ form.comment label {
 .comment-section {
   margin-right: 50px; }
 
+#content a {
+  color: #393939; }
 #content ul.comments-list {
   padding: 0;
   margin: 0; }
@@ -167,6 +169,7 @@ form.comment label {
     #content ul.comments-list li.li-comment .entry-meta {
       margin-bottom: 15px; }
       #content ul.comments-list li.li-comment .entry-meta time {
+        color: #aaaaaa;
         display: block;
         font-size: 13px;
         margin-top: 5px; }
