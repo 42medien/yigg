@@ -1,5 +1,6 @@
-<?php include_partial("system/systemMessages")?>
 <h1 class="page-title">Einstellungen</h1>
+
+<?php include_partial("system/systemMessages")?>
 
 <article class="hentry post h-entry page">
   <div class="body e-summary entry-summary">

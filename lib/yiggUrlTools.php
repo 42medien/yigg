@@ -1,6 +1,16 @@
 <?php
 class yiggUrlTools
 {
+  /**
+   * Default options for curl.
+   */
+  public static $CURL_OPTS = array(
+    CURLOPT_CONNECTTIMEOUT => 10,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT => 60,
+    CURLOPT_USERAGENT => 'yigg-http-client',
+  );
+
 	/**
 	 * Encode umlauts from url-path
 	 */
@@ -60,4 +70,40 @@ class yiggUrlTools
 	  return trim(strip_tags($match[1])); 
 	}
 	
+  public static function do_get($url, $header = null) {
+    $ch = curl_init();
+    $opts = self::$CURL_OPTS;
+    $opts[CURLOPT_URL] = $url;
+    curl_setopt_array($ch, $opts);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+
+    if ($header) {
+      curl_setopt($ch, CURLOPT_HTTPHEADER,   $header);
+    }
+
+    $response = curl_exec($ch);
+
+    return $response;
+  }
+  
+  public static function do_post($url, $body, $header = null) {
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST,           1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS,     $body);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_HEADER,         0);  // DO NOT RETURN HTTP HEADERS
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  // RETURN THE CONTENTS OF THE CALL
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+    curl_setopt($ch, CURLOPT_VERBOSE,        0);
+
+    if ($header) {
+      curl_setopt($ch, CURLOPT_HTTPHEADER,   $header);
+    }
+
+    $response = curl_exec($ch);
+
+    return $response;
+  }
 }

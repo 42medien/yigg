@@ -1,7 +1,7 @@
-<?php use_helper("Date", "Text"); ?>
+<?php use_helper("Date", "Text", "SocialShare"); ?>
 <?php if($sf_request->getModule() == "story" && $sf_request->getAction() =="show"){ include_partial("system/systemMessages");} ?>
 
-<article class="hentry post h-entry" id="<?php echo "story_{$story['id']}"; ?>">
+<article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
       if ($story->type == Story::TYPE_NORMAL):
@@ -45,6 +45,8 @@
     </p>
   </div>
 </article>
+
+<?php social_counter($story->external_url); ?>
 
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 

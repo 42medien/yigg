@@ -135,7 +135,7 @@ ol#stories {
       max-width: 100%;
       min-width: 100%;
       height: auto; }
-  .post header, .post .entry-content, .post .entry-summary, .post .entry-description {
+  .post header, .post .entry-content, .post .entry-summary, .post .entry-description, .post .body {
     padding: 0 20px;
     line-height: 1.4; }
   .post .entry-meta {
@@ -206,7 +206,8 @@ article.page {
   float: right;
   color: #888;
   text-shadow: #fff 0px 1px 0px;
-  font-size: 16px; }
+  font-size: 16px;
+  margin-bottom: 50px; }
   #sidebar a {
     color: #999; }
   #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
@@ -231,6 +232,9 @@ article.page {
 
 .field {
   margin: 20px 0; }
+
+.profile_form label {
+  display: block; }
 
 /* =Forms
 -------------------------------------------------------------- */

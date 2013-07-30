@@ -1,4 +1,4 @@
-<article class="hentry post h-entry" id="<?php echo "story_{$story['id']}"; ?>">
+<article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
       if ($story->type == Story::TYPE_NORMAL):
