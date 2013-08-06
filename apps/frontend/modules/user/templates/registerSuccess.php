@@ -1,3 +1,5 @@
+<?php slot("page-title")?>Registrierung<?php end_slot()?>
+
 <?php if( isset($result) && true === $result): ?>
   <p class="success">In Kürze erhältst Du von uns eine email mit einem Bestätigungslink. Mit Klick auf diesen
   Link aktivierst Du Dein Konto und Du kannst in unserer Community loslegen.</p>
@@ -7,7 +9,7 @@
 <?php else: ?>
   <form id="RegisterForm" class="ninjaForm" action="<?php echo url_for("@user_register"); ?>" method="post">
     <fieldset>
-        <h1>Registrierung</h1>
+      <h2>Neuen Account anlegen:</h2>
       <?php echo $form->render();?>
    </fieldset>
     <div class="actions">

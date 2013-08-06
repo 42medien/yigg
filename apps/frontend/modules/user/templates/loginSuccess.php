@@ -1,3 +1,5 @@
+<?php slot("page-title")?>Login<?php end_slot()?>
+
 <?php include_partial("user/loginform", array("form" => $form)); ?>
 
 

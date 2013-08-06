@@ -1,4 +1,5 @@
-<h2>Passwort zurücksetzen</h2>
+<?php slot("page-title")?>Passwort zurücksetzen<?php end_slot()?>
+
 <?php if(isset($form) && $form): ?>
   <form action="<?php echo url_for('@user_change_password_with_key?ResetKey='.$key->reset_key);?>" id="ChangePasswordWithKey" class="ninjaForm" method="post">
     <fieldset>

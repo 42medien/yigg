@@ -1,7 +1,5 @@
-<h1 class="page-title">FAQ</h1>
+<?php slot("page-title")?>FAQ<?php end_slot()?>
 
-<article class="hentry post h-entry page">
-  <div class="body e-summary entry-summary">
     <h3>Allgemein</h3>
     <h2>YiGG FAQ</h2>
     <p>
@@ -149,8 +147,7 @@
     <p>Wir tolerieren ebenfalls keinen Blogspam, bei dem die Nachricht zwar auf einem Blog angerissen aber dann sofort weiterverlinkt wird. In solchen Fällen, insbesondere wenn der Blogbeitrag durch ein ungewöhnliches Verhältnis von Werbung zu Content auffällt, werden wir ebenfalls Beiträge und Nutzerkonten löschen.</p>
 
     <p>Alle Nutzer sind eingeladen, uns Missbrauch, und somit auch SPAM / Werbung zu melden. Unter jeder Nachricht gibt es für eingeloggte User einen Link „Missbrauch melden“. Nachdem man dort geklickt hat, muss man nur noch wählen, um welche Art Missbrauch es sich handelt und dann auf den „Melden“ button klicken. Die Nachricht wird dann an das YiGG-Team zur Entscheidung weitergereicht.</p>
-  </div>
-</article>
+
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>
 <?php end_slot()?>

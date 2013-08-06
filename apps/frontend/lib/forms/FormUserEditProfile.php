@@ -125,6 +125,7 @@ class FormUserEditProfile extends yiggForm
         'sex'            => 'Geschlecht:',
         'city'          => 'Ort:',
         'birthday'  => 'Geburtstag:',
+        'website'  => 'Webseite:',
         'about_me'  => 'Über mich:',
         'why_yigg' => 'Warum YiGG:',
         'email' => "E-Mail:"

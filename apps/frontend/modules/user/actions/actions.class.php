@@ -221,6 +221,7 @@ class userActions extends yiggActions
    */
   public function executePublicProfile( $request )
   {
+    $this->setLayout("layout.stream");
     $username = yiggTools::stringToUsername( $request->getParameter('username') );
     $this->user = Doctrine::getTable("User")->findOneByUsername($username);
     $this->forward404Unless( $this->user, sprintf( "user::publicprofile could not find the user %s", $username ));

@@ -2,21 +2,17 @@
     <div class="news-filter">
         <?php foreach($filter_options as $filter_option):?>               
             <?php 
-                if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug'))
-                {
-                    $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
-                    $get_parameter = str_replace("-"," ",$get_parameter);            
+                if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug')) {
+                  $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
+                  $get_parameter = str_replace("-"," ",$get_parameter);
+                } else {
+                  $get_parameter = '12 Std'; // By Default Search Criteria
                 }
-                else
-                    $get_parameter = '12 Std'; // By Default Search Criteria
 
-                if(trim(strtolower($filter_option->getName())) == trim(strtolower($get_parameter)))
-                {
-                    $class_name = 'active';
-                }
-                else
-                {
-                    $class_name = 'normal';
+                if(trim(strtolower($filter_option->getName())) == trim(strtolower($get_parameter))) {
+                  $class_name = 'active';
+                } else {
+                  $class_name = 'normal';
                 }
             ?>
 

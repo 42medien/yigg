@@ -106,6 +106,7 @@ class storyActions extends yiggActions
    */
   public function executeNewStories( $request )
   {
+    $this->setLayout("layout.stream");
     $sf = new yiggStoryFinder();
     $sf->confineWithDate24();
     $sf->sortByDate();

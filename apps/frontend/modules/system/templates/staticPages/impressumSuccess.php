@@ -1,7 +1,6 @@
-<h1 class="page-title">Impressum</h1>
-
-<article class="hentry post h-entry page">
-  <div class="body e-summary entry-summary">
+<?php slot("page-title")?>
+Impressum
+<?php end_slot()?>
 
 <p>
 <strong>Adresse:</strong> yigg GmbH<br />
@@ -27,10 +26,8 @@
 </p>
 <h3>Credits:</h3>
 <ul>
-  <li>Danke an <?php echo link_to("FamFamFam", "http://www.famfamfam.com/"); ?> für das großartige Iconset Silk unter CC-Lizenz</li>
+  <li>Danke an <?php echo link_to("Font Awesome", "http://fontawesome.io"); ?> für den großartigen Icon-Font.</li>
 </ul>
-  </div>
-</article>
 
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>

@@ -1,25 +1,21 @@
 <?php use_stylesheet('carousel.css') ?>
 
-<h1 class="page-title">Nachricht erstellen</h1>
+<?php slot("page-title")?>Nachricht erstellen<?php end_slot()?>
 
-<article class="post page">
-  <div class="body">
-    <form action="<?php echo url_for($story->getStoryType() === "Normal" ? "@story_create" : "@story_create_article");?>" id="new_form" class="ninjaForm <?php echo ("Normal" === $view ? "": "article" ); ?>" <?php if(true === $form->isMultipart()):?>enctype="multipart/form-data"<?php endif; ?> method="post">
-      <fieldset>
-        <?php
-        $errorStack = $story->getErrorStack();
-        if(count($errorStack) > 0): ?>
-        <p class="error">Hallo, leider hat es einen Fehler beim hinzufügen deiner Nachricht gegeben.
-          Wir wurden bereits darüber informiert und treten mit dir in Kontakt, wenn der Fehler behoben ist.</p>
-        <?php endif; ?>
-        <?php echo $form->render(); ?>
-      </fieldset>
-      <div class="actions">
-        <input type="submit" name="formAction[save]" value="Erstellen" id="Save" class="button" style="font-size:1.4em;" />
-      </div>
-    </form>
+<form action="<?php echo url_for($story->getStoryType() === "Normal" ? "@story_create" : "@story_create_article");?>" id="new_form" class="ninjaForm <?php echo ("Normal" === $view ? "": "article" ); ?>" <?php if(true === $form->isMultipart()):?>enctype="multipart/form-data"<?php endif; ?> method="post">
+  <fieldset>
+    <?php
+    $errorStack = $story->getErrorStack();
+    if(count($errorStack) > 0): ?>
+    <p class="error">Hallo, leider hat es einen Fehler beim hinzufügen deiner Nachricht gegeben.
+      Wir wurden bereits darüber informiert und treten mit dir in Kontakt, wenn der Fehler behoben ist.</p>
+    <?php endif; ?>
+    <?php echo $form->render(); ?>
+  </fieldset>
+  <div class="actions">
+    <input type="submit" name="formAction[save]" value="Erstellen" id="Save" class="button" style="font-size:1.4em;" />
   </div>
-</article>
+</form>
 
 <script type="text/javascript">
   var $j = jQuery.noConflict();

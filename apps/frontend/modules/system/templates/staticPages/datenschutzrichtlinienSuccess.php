@@ -1,13 +1,11 @@
-<h1 class="page-title">Datenschutzbestimmungen</h1>
+<?php slot("page-title")?>Datenschutzbestimmungen<?php end_slot()?>
 
-<article class="hentry post h-entry page">
-  <div class="body e-summary entry-summary">
-    <p>(Stand: Juni 2007)</p>
-    <p>
-      &bdquo;<a href="http://yigg.de/">http://yigg.de</a>&rdquo; ist eine Online-Plattform (nachfolgend
-      &bdquo;Website&rdquo;) von:
-    </p>
- <address>YiGG GmbH<br /> 
+<p>(Stand: Juni 2007)</p>
+<p>
+  &bdquo;<a href="http://yigg.de/">http://yigg.de</a>&rdquo; ist eine Online-Plattform (nachfolgend
+  &bdquo;Website&rdquo;) von:
+</p>
+<address>YiGG GmbH<br /> 
  Schulstrasse 8<br />
  69469 Weinheim</address>
 <p>
@@ -209,8 +207,7 @@
     </p>
   </li>
 </ol>
-</div>
-</article>
+
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>
 <?php end_slot()?>

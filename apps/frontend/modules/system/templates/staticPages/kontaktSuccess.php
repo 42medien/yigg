@@ -1,7 +1,5 @@
-<h1 class="page-title">Kontakt</h1>
+<?php slot("page-title")?>Kontakt<?php end_slot()?>
 
-<article class="hentry post h-entry page">
-  <div class="body e-summary entry-summary">
 <p class="note">Bei inhaltlichen Fragen zu Nachrichteninhalten, bitte beim Author oder auf der Orginalseite melden.</p>
 <h2>Kontakt</h2>
 <h3>Adresse:</h3>
@@ -25,8 +23,7 @@
 eMail: info@ekaabo.com<br />
 Phone: 06201 . 845 200<br />
 </p>
-  </div>
-</article>
+
 <?php slot("sidebar")?>
   <?php include_partial("faqLinks"); ?>
 <?php end_slot()?>

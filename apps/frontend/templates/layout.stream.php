@@ -89,14 +89,8 @@
       </header>
     
       <div id="main">
-        <main id="content" class="h-entry page">
-          <?php if (has_slot("page-title")) { ?>
-            <h1 class="page-title"><?php include_slot("page-title"); ?></h1>
-          <?php } ?>
-          
-          <article class="e-description entry-description">
-            <?php echo $sf_data->getRaw('sf_content'); ?>
-          </article>
+        <main id="content">
+          <?php echo $sf_data->getRaw('sf_content'); ?>
         </main>
         
         <aside id="sidebar">
@@ -107,7 +101,7 @@
           <?php //include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
           <?php if(has_slot("sidebar")) { ?>
             <?php include_slot("sidebar"); ?>
-          <?php } ?>
+          <?php } ?> 
           <div class="fb-like-box"
            data-href="http://www.facebook.com/yiggde"
            data-width="200"
