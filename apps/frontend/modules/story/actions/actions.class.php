@@ -1,57 +1,50 @@
 <?php
-class storyActions extends yiggActions
-{
-  public function preExecute()
-  {
+class storyActions extends yiggActions {
+  public function preExecute() {
     parent::preExecute();
-    if($this->getRequest()->getParameter("sf_format") === "atom")
-    {
+    if($this->getRequest()->getParameter("sf_format") === "atom") {
       return;
     }
     $this->getResponse()->setSlot('sponsoring', $this->getComponent("sponsoring","sponsoring", array( 'place_id' => 39 ,'limit' => 1)));
   }
 
-    /*
-    * Shows story in iframe with yigg bar
-    */
-    public function executeStoryBar($request)
-    {
-        $this->findOrRedirect($request);
+  /**
+   * Shows story in iframe with yigg bar
+   */
+  public function executeStoryBar($request) {
+    $this->findOrRedirect($request);
 
-        $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
+    $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
 
-        $this->getResponse()->addMeta('title', $this->story->getTitle());
-        $this->getResponse()->addMeta('description', $this->story->getDescription());
+    $this->getResponse()->addMeta('title', $this->story->getTitle());
+    $this->getResponse()->addMeta('description', $this->story->getDescription());
 
+    //$this->getResponse()->setTitle($this->story->getTitle());
+    $this->setLayout('layout.bar');
+  }
 
-        //$this->getResponse()->setTitle($this->story->getTitle());
-        $this->setLayout('layout.bar');
+  /**
+   * Executes the category-stories (queue)
+   * @return
+   */
+  public function executeCategoryStories( $request )
+  {
+    $this->category = $this->getRoute()->getObject();
+
+    $sf = new yiggStoryFinder();
+    $sf->confineWithCategory($this->category->getId());
+    $sf->sortByDate();
+
+    // just return query for pager creation
+    $this->limit = 10;
+    $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
+
+    $this->storyCount = count($this->stories);
+    if( $this->storyCount > 0 ) {
+      $this->populateStoryAttributeCache();
     }
-
-
-    /**
-     * Executes the category-stories (queue)
-     * @return
-     */
-    public function executeCategoryStories( $request )
-    {
-        $this->category = $this->getRoute()->getObject();
-
-        $sf = new yiggStoryFinder();
-        $sf->confineWithCategory($this->category->getId());
-        $sf->sortByDate();
-
-        // just return query for pager creation
-        $this->limit = 10;
-        $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
-
-        $this->storyCount = count($this->stories);
-        if( $this->storyCount > 0 )
-        {
-            $this->populateStoryAttributeCache();
-        }
-        return sfView::SUCCESS;
-    }
+    return sfView::SUCCESS;
+  }
 
   /**
    * Shows the best stories (normal view)
@@ -59,6 +52,7 @@ class storyActions extends yiggActions
    */
   public function executeBestStories( $request )
   {
+    $this->setLayout("layout.stream");
     if($this->getRequest()->getParameter("value"))
         $value = $this->getRequest()->getParameter("value");
     else
@@ -133,20 +127,17 @@ class storyActions extends yiggActions
    * @param $request
    * @return sfView
    */
-  public function executeArchive($request)
-  {
+  public function executeArchive($request) {
     // not really needed as routing enforces them to be integers.
     $this->year = intval($request->getParameter("year", false));
     $this->month = intval($request->getParameter("month", false));
     $this->day = intval($request->getParameter("day", false));
 
-    if( false != $this->year && false != $this->month &&  false != $this->day)
-    {
+    if( false != $this->year && false != $this->month &&  false != $this->day) {
       // ensure a correct timestring, and show error accordingly
       $this->timestring = $this->year . "-" . $this->month ."-". $this->day;
 
-      if(false !== strtotime($this->timestring))
-      {
+      if(false !== strtotime($this->timestring)) {
          // get stories, sort by rating algorithm and date as array
          $sf = new yiggStoryFinder();
          $sf->confineWithDateFrom($this->timestring);
@@ -166,21 +157,18 @@ class storyActions extends yiggActions
   /**
    * Shows the story from the URL parameters
    */
-  public function executeShow(sfWebRequest $request)
-  {
+  public function executeShow(sfWebRequest $request) {
+    $this->setLayout("layout.stream");
     $this->findOrRedirect($request);
 
-      $this->relatedStories = Doctrine_Core::getTable('Story')->retrieveRelatedStories($this->story);
+    $this->relatedStories = Doctrine_Core::getTable('Story')->retrieveRelatedStories($this->story);
 
-    switch($request->getParameter("view"))
-    {
+    switch($request->getParameter("view")) {
       case "show":
-        if($this->session->hasUser())
-        {
+        if($this->session->hasUser()) {
           StoryRenderTable::trackStoryRender($this->story, $this->session->getUser());
         }
-        if($this->story->type == 1)
-        {
+        if($this->story->type == 1) {
           $this->setTemplate("showArticle");
         }
         break;
@@ -192,8 +180,7 @@ class storyActions extends yiggActions
         return $this->redirect(yiggTools::createFacebook($this->story->title, $this->story->getExternalShortUrl()));
 
       case "blacklist":
-        if( false === (true === $this->session->hasUser() && true === $this->session->isModerator()) )
-        {
+        if( false === (true === $this->session->hasUser() && true === $this->session->isModerator()) ) {
           return $this->forward("system","secure");
         }
         $domain = DomainTable::getInstance()->findOneByHostname($this->story->getSourceHost());
@@ -204,8 +191,7 @@ class storyActions extends yiggActions
         break;
     }
 
-    if( $this->isAjaxRequest() && $this->partial )
-    {
+    if( $this->isAjaxRequest() && $this->partial ) {
       return $this->renderPartial( $this->partial, array( "story" => $this->story, "comments" => $this->comments, "form"=> $this->form, "stories" => $this->stories ));
     }
 
@@ -228,11 +214,9 @@ class storyActions extends yiggActions
    * @param yiggWebRequest
    * @return sfView
    */
-  public function executeCreate( $request )
-  {  
+  public function executeCreate( $request ) {  
     $userModel = new User; 
-    if(true === $userModel->isPostStoryBlocked($this->session->getUserId()))
-    {
+    if(true === $userModel->isPostStoryBlocked($this->session->getUserId())) {
       return sfView::ERROR;
     }
 
@@ -240,12 +224,9 @@ class storyActions extends yiggActions
     $exturl = $request->getParameter("exturl", false);
     $exturl = (false !== $exturl) ? yiggStringTools::utf8_urldecode($exturl) : $exturl;
 
-
-    if(false === $request->isMethod("post") && $exturl !== false && true === yiggTools::isProperURL($exturl))
-    {
+    if(false === $request->isMethod("post") && $exturl !== false && true === yiggTools::isProperURL($exturl)) {
       $existing_story = StoryTable::getTable()->findOneByExternalUrl($exturl);
-      if(false !== $existing_story)
-      {
+      if(false !== $existing_story) {
         return $this->redirect($existing_story->getLinkWithDomain(), 301);
       }
     }
@@ -255,8 +236,7 @@ class storyActions extends yiggActions
     $this->story->setStoryType($this->view);
 
     $this->form = new FormStoryEdit(array(),array( "story" => $this->story ));
-    if(true === $this->form->processAndValidate())
-    {
+    if(true === $this->form->processAndValidate()) {
       $conn = Doctrine::getConnectionByTableName("Story");
       $conn->beginTransaction();
 
@@ -277,8 +257,7 @@ class storyActions extends yiggActions
 
       $story_image = $this->form->getValue("image_slider");
 
-      if ($story_image)
-      {
+      if ($story_image) {
         $tmpfname = tempnam(sfConfig::get('sf_upload_dir'), "SL");
         $ext = pathinfo($story_image, PATHINFO_EXTENSION);
         $image = getimagesize($story_image);
@@ -288,20 +267,15 @@ class storyActions extends yiggActions
 
         $validatedFile = new sfValidatedFile('image'.$ext, $mime, $tmpfname, filesize($tmpfname));
 
-        if( !empty($validatedFile) && $validatedFile->getSize() > 0 )
-        {
-          try
-          {
+        if( !empty($validatedFile) && $validatedFile->getSize() > 0 ) {
+          try {
             $file = File::createFromValidatedFile( $validatedFile, "stories","story-". $this->story->getId() );
           }
-          catch(Exception $e )
-          {
+          catch(Exception $e ) {
             $this->logMessage(sprintf("Adding image story failed for %s. Error: %s", $this->story->getId(), $e->getMessage()));
           }
 
-
-          if( isset($file) && $file->id )
-          {
+          if( isset($file) && $file->id ) {
             $this->story->image_id = $file->id;
           }
         }
@@ -314,14 +288,12 @@ class storyActions extends yiggActions
     }
 
     $title = $request->getParameter("exttitle", false);
-    if(false !== $request->hasParameter("exturl", false) )
-    {
+    if(false !== $request->hasParameter("exturl", false) ) {
       $yiggWebClient = new StoryTools();
       $title = $yiggWebClient->fetchTitleFromUrl( $request->getParameter("exturl") );
     }
 
-    if(false !== $title )
-    {
+    if(false !== $title ) {
       $autotags = yiggTools::extractNouns($title);
     }
 
@@ -341,8 +313,7 @@ class storyActions extends yiggActions
    * Edits the story in question.
    *
    */
-  public function executeEdit( $request )
-  {
+  public function executeEdit( $request ) {
     $this->findOrRedirect($request);
 
     $this->forward404Unless((true === $this->story->isAuthor($this->session)) || (true === $this->session->isAdmin()));
@@ -357,20 +328,17 @@ class storyActions extends yiggActions
     $this->form->setDefaults($defaults);
 
     $schema = $this->form->getValidatorSchema();
-    if($schema->offsetExists('external_url'))
-    {
+    if($schema->offsetExists('external_url')) {
       $schema->offsetGet('external_url')->setOption( 'story', $this->story );
     }
 
     $formAction = $request->getParameter("formAction");
 
-    if(is_array($formAction) && is_array(array_pop($formAction)) && array_pop(array_flip( $formAction )) === "cancel")
-    {
+    if(is_array($formAction) && is_array(array_pop($formAction)) && array_pop(array_flip( $formAction )) === "cancel") {
       return $this->redirect($this->story->getLink());
     }
 
-    if(true === $this->form->processAndValidate())
-    {
+    if(true === $this->form->processAndValidate()) {
       $conn = Doctrine::getConnectionByTableName("Story");
       $conn->beginTransaction();
         $result = $this->story->update( $this->form->getValues(), $conn);
@@ -385,12 +353,10 @@ class storyActions extends yiggActions
    * author
    * admin/moderator
    */
-  public function executeDelete($request)
-  {
+  public function executeDelete($request) {
     $this->findOrRedirect($request);
 
-    if( (true == $this->story->isAuthor( $this->session ) ) || $this->session->isModerator() )
-    {
+    if( (true == $this->story->isAuthor( $this->session ) ) || $this->session->isModerator() ) {
       $this->story->delete();
       if( true === $this->isAjaxRequest() )
       {
@@ -405,8 +371,7 @@ class storyActions extends yiggActions
    * Allows a story to be rated / points increased.
    * @return
    */
-  public function executeRate($request)
-  {
+  public function executeRate($request) {
     // find the story for the component.
     $this->findOrRedirect($request);
     $this->renderComponent("story","rateStory", array("story"=> $this->story,"external" => true));
@@ -418,17 +383,15 @@ class storyActions extends yiggActions
    *
    * @return   string
    */
-  public function executeCheckExternal_url( $request )
-  {
-    if(false === $this->isAjaxRequest())
-    {
+  public function executeCheckExternal_url( $request ) {
+    if(false === $this->isAjaxRequest()) {
       return $this->send403();
     }
 
     $node_id = (int) $request->getParameter("node");
     $url = $this->getRequest()->getParameter( 'external_url' );
 
-    if($node_id){
+    if ($node_id) {
         $yiggImageParser = new ImageParser();
         $images = $yiggImageParser->fetch($url, 100);
         $slider_html = get_partial('story/imageSlider', array("images" => $images));
@@ -436,7 +399,7 @@ class storyActions extends yiggActions
         $ninjaUpdater = $request->getNinjaUpdater();
         $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
         $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
-    }else{
+    } else {
         $this->story = new Story();
         $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
         $url_is_valid =
@@ -447,9 +410,9 @@ class storyActions extends yiggActions
         $error = $this->form->processField('external_url', $url)->getError();
 
         if(!$error){
-            $yiggImageParser = new ImageParser();
-            $images = $yiggImageParser->fetch($url, 100);
-            $slider_html = get_partial('story/imageSlider', array("images" => $images));
+          $yiggImageParser = new ImageParser();
+          $images = $yiggImageParser->fetch($url, 100);
+          $slider_html = get_partial('story/imageSlider', array("images" => $images));
         }
 
         $ninjaUpdater = $request->getNinjaUpdater();
@@ -467,8 +430,7 @@ class storyActions extends yiggActions
    * Populates the JSON data with content from the title attribute of the location.
    * @return void
    */
-  public function populateFieldsFromUrl()
-  {
+  public function populateFieldsFromUrl() {
     $url = $this->getRequest()->getParameter( 'external_url' );
 
     $e = new yiggMetaDataExtractor($url);
@@ -488,12 +450,10 @@ class storyActions extends yiggActions
   }
 
 
-  public function executeExternalRate( $request )
-  {
+  public function executeExternalRate( $request ) {
     $this->story = Doctrine::getTable("Story")->findOneByExternalUrl(urldecode($request->getParameter("url")));
 
-    if(false !== $this->story )
-    {
+    if(false !== $this->story ) {
       $this->renderComponent("story","rateStory", array( "story" => $this->story, "external"=> true, "flat" => (true === (bool) $request->getParameter("flat",false)) ));
       return sfView::NONE;
     }
@@ -507,8 +467,7 @@ class storyActions extends yiggActions
    * @param sfWebRequest $request
    * @return void
    */
-  public function executeRedirectOld(sfWebRequest $request)
-  {
+  public function executeRedirectOld(sfWebRequest $request) {
     return $this->findOrRedirect($request);
   }
 
@@ -517,14 +476,12 @@ class storyActions extends yiggActions
    * @param sfWebRequest $request
    * @return string
    */
-  public function executeInstantCreate(sfWebRequest $request)
-  {
+  public function executeInstantCreate(sfWebRequest $request) {
     $values = array();
     $values["external_url"] = $request->getParameter("url");
 
     $story = StoryTable::getTable()->findOneByExternalUrl($values["external_url"]);
-    if(false !== $story)
-    {
+    if(false !== $story) {
       $this->redirect($story->getLink());
     }
 
@@ -546,8 +503,7 @@ class storyActions extends yiggActions
     unset($form["_csrf_token"]);
     $form->bind($values);
 
-    if($form->isValid())
-    {
+    if($form->isValid()) {
       $story->user_id = $this->session->getUserId();
       $story->update($form->getValues());
       $story->rate($this->session);
@@ -558,16 +514,14 @@ class storyActions extends yiggActions
     $this->redirect("/neu?exturl=".$values["external_url"]);
   }
 
-  private function findOrRedirect($request)
-  {
+  private function findOrRedirect($request) {
     $this->story = Doctrine::getTable("Story")->findOneByInternalUrl($request->getParameter("slug"));
     $this->forward404Unless( $this->story, "Diese Nachricht konnte nicht gefunden werden.");
 
     $creation_date_string = $this->story->getCreationYear().$this->story->getCreationMonth().$this->story->getCreationDay();
     $date_from_routing = $request->getParameter("year").$request->getParameter("month").$request->getParameter("day");
 
-    if($creation_date_string !== $date_from_routing)
-    {
+    if($creation_date_string !== $date_from_routing) {
       $this->redirect($this->story->getLink(), 301);
     }
   }
