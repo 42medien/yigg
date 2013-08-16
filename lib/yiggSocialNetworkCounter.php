@@ -50,7 +50,13 @@ class yiggSocialNetworkCounter {
     return 0;
   }
   
-  public function get_spreadly() {    
+  public function get_spreadly() {
+    $raw_data = yiggUrlTools::do_get('http://api.spreadly.com/shares/counter?url=' . urlencode($this->url));
+    
+    if ($data = json_decode($raw_data, true)) {
+      return $data['counter'];
+    }
+    
     return 0;
   }
 }

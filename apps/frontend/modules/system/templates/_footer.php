@@ -15,5 +15,17 @@
       <li><?php echo link_to('Datenschutzrichtlinien' ,'@legal_pages?template=datenschutzrichtlinien', array('title' => 'Datenschutzrichtlinien')); ?></li>
     </ul>
   </div>
+  <div class="facebook widget">
+    <h4>Facebook</h4>
+    <div class="fb-like-box"
+      data-href="http://www.facebook.com/yiggde"
+      data-width="200"
+      data-show-faces="true"
+      data-colorscheme="dark"
+      data-show-border="false"
+      data-stream="false"
+      data-header="false">
+    </div>
+  </div>
 </div>
 <?php include_partial("system/javascript");?>

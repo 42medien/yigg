@@ -34,7 +34,7 @@
                    array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span>
     </div>
   </header>
-
+  
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p>       
       <?php echo $story->getDescription();?>
@@ -44,9 +44,13 @@
       <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
     </p>
   </div>
+  
+  <footer>
+    <div class="entry-meta">
+      <?php social_counter($story->external_url); ?>
+    </div>
+  </footer>
 </article>
-
-<?php social_counter($story->external_url); ?>
 
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 

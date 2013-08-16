@@ -50,23 +50,19 @@ class storyActions extends yiggActions {
    * Shows the best stories (normal view)
    * @return
    */
-  public function executeBestStories( $request )
-  {
+  public function executeBestStories( $request ) {
     $this->setLayout("layout.stream");
-    if($this->getRequest()->getParameter("value"))
-        $value = $this->getRequest()->getParameter("value");
+    if ($this->getRequest()->getParameter("value"))
+      $value = $this->getRequest()->getParameter("value");
     else
-        $value = 43200; // 12 Hours By Default
+      $value = 43200; // 12 Hours By Default
     
     $sf = new yiggStoryFinder();
     $user = $this->session->getUser();
 
-    if(false !== $user)
-    {
+    if (false !== $user) {
       $sf->confineWithMarkedForFrontpage($user->id);
-    }
-    else
-    {
+    } else {
       $sf->confineWithMarkedForFrontpage();
     }
     if($value)
@@ -81,12 +77,10 @@ class storyActions extends yiggActions {
     $this->stories = $this->setPagerQuery($query)->execute();
                     
     $this->storyCount = count($this->stories->getKeys());
-    if( $this->storyCount > 0 )
-    {
+    if ( $this->storyCount > 0 ) {
       $this->populateStoryAttributeCache();
     }
-    if($this->getRequest()->getParameter("sf_format") !== "atom")
-    {
+    if ($this->getRequest()->getParameter("sf_format") !== "atom") {
       $this->getResponse()->setSlot('sponsoring', $this->getComponent("sponsoring","sponsoring", array( 'place_id' => 1 ,'limit' => 1)));
     }
 
@@ -110,13 +104,11 @@ class storyActions extends yiggActions {
     $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
 
     $this->storyCount = count($this->stories);
-    if( $this->storyCount > 0 )
-    {
+    if ( $this->storyCount > 0 ) {
       $this->populateStoryAttributeCache();
     }
 
-    if($this->getRequest()->getParameter("sf_format") !== "atom")
-    {
+    if ($this->getRequest()->getParameter("sf_format") !== "atom") {
       $this->getResponse()->setSlot('sponsoring', $this->getComponent("sponsoring","sponsoring", array( 'place_id' => 2 ,'limit' => 1)));
     }
     return sfView::SUCCESS;
@@ -137,18 +129,18 @@ class storyActions extends yiggActions {
       // ensure a correct timestring, and show error accordingly
       $this->timestring = $this->year . "-" . $this->month ."-". $this->day;
 
-      if(false !== strtotime($this->timestring)) {
-         // get stories, sort by rating algorithm and date as array
-         $sf = new yiggStoryFinder();
-         $sf->confineWithDateFrom($this->timestring);
-         $sf->confineWithDateUntil($this->timestring);
-         $sf->sortByRating();
+      if (false !== strtotime($this->timestring)) {
+        // get stories, sort by rating algorithm and date as array
+        $sf = new yiggStoryFinder();
+        $sf->confineWithDateFrom($this->timestring);
+        $sf->confineWithDateUntil($this->timestring);
+        $sf->sortByRating();
 
-         $this->limit = 10;
-         $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
-         return sfView::SUCCESS;
-       }
-       return sfView::ERROR;
+        $this->limit = 10;
+        $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
+        return sfView::SUCCESS;
+      }
+      return sfView::ERROR;
     }
 
     return sfView::SUCCESS;
@@ -180,7 +172,7 @@ class storyActions extends yiggActions {
         return $this->redirect(yiggTools::createFacebook($this->story->title, $this->story->getExternalShortUrl()));
 
       case "blacklist":
-        if( false === (true === $this->session->hasUser() && true === $this->session->isModerator()) ) {
+        if ( false === (true === $this->session->hasUser() && true === $this->session->isModerator()) ) {
           return $this->forward("system","secure");
         }
         $domain = DomainTable::getInstance()->findOneByHostname($this->story->getSourceHost());
@@ -234,9 +226,9 @@ class storyActions extends yiggActions {
 
     $this->story = new Story();
     $this->story->setStoryType($this->view);
-
     $this->form = new FormStoryEdit(array(),array( "story" => $this->story ));
-    if(true === $this->form->processAndValidate()) {
+
+    if (true === $this->form->processAndValidate()) {
       $conn = Doctrine::getConnectionByTableName("Story");
       $conn->beginTransaction();
 
@@ -288,7 +280,7 @@ class storyActions extends yiggActions {
     }
 
     $title = $request->getParameter("exttitle", false);
-    if(false !== $request->hasParameter("exturl", false) ) {
+    if ( false !== $request->hasParameter("exturl", false) ) {
       $yiggWebClient = new StoryTools();
       $title = $yiggWebClient->fetchTitleFromUrl( $request->getParameter("exturl") );
     }
@@ -317,28 +309,32 @@ class storyActions extends yiggActions {
     $this->findOrRedirect($request);
 
     $this->forward404Unless((true === $this->story->isAuthor($this->session)) || (true === $this->session->isAdmin()));
-    $this->form = new FormStoryEdit(array(),array( "story" => $this->story ));
+    $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
 
     $defaults = $this->story->toArray();
-    $defaults = array_merge($defaults,
-         array(
-            'Tags'=> $this->story->getTagsAsString(),
-            'description' => !empty( $this->story['description'] ) ? $this->story['description'] : $this->story->getPlainTextDescription()));
+    $defaults = array_merge(
+                  $defaults,
+                  array(
+                    'Tags'=> $this->story->getTagsAsString(),
+                    'description' => !empty( $this->story['description'] ) ? $this->story['description'] : $this->story->getPlainTextDescription()
+                  )
+                );
 
     $this->form->setDefaults($defaults);
 
     $schema = $this->form->getValidatorSchema();
-    if($schema->offsetExists('external_url')) {
+
+    if ($schema->offsetExists('external_url')) {
       $schema->offsetGet('external_url')->setOption( 'story', $this->story );
     }
 
     $formAction = $request->getParameter("formAction");
 
-    if(is_array($formAction) && is_array(array_pop($formAction)) && array_pop(array_flip( $formAction )) === "cancel") {
+    if (is_array($formAction) && is_array(array_pop($formAction)) && array_pop(array_flip( $formAction )) === "cancel") {
       return $this->redirect($this->story->getLink());
     }
 
-    if(true === $this->form->processAndValidate()) {
+    if (true === $this->form->processAndValidate()) {
       $conn = Doctrine::getConnectionByTableName("Story");
       $conn->beginTransaction();
         $result = $this->story->update( $this->form->getValues(), $conn);
@@ -356,10 +352,9 @@ class storyActions extends yiggActions {
   public function executeDelete($request) {
     $this->findOrRedirect($request);
 
-    if( (true == $this->story->isAuthor( $this->session ) ) || $this->session->isModerator() ) {
+    if ( (true == $this->story->isAuthor( $this->session ) ) || $this->session->isModerator() ) {
       $this->story->delete();
-      if( true === $this->isAjaxRequest() )
-      {
+      if ( true === $this->isAjaxRequest() ) {
         return sfView::NONE;
       }
       return sfView::SUCCESS;
@@ -392,36 +387,32 @@ class storyActions extends yiggActions {
     $url = $this->getRequest()->getParameter( 'external_url' );
 
     if ($node_id) {
+      $yiggImageParser = new ImageParser();
+      $images = $yiggImageParser->fetch($url, 100);
+      $slider_html = get_partial('story/imageSlider', array("images" => $images));
+
+      $ninjaUpdater = $request->getNinjaUpdater();
+      $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
+      $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+    } else {
+      $this->story = new Story();
+      $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
+      $url_is_valid = sfView::HEADER_ONLY === $this->checkFieldValidation($this->form, 'external_url') && true === $this->form['external_url']->hasError();
+
+      $error = $this->form->processField('external_url', $url)->getError();
+
+      if(!$error){
         $yiggImageParser = new ImageParser();
         $images = $yiggImageParser->fetch($url, 100);
         $slider_html = get_partial('story/imageSlider', array("images" => $images));
+      }
 
-        $ninjaUpdater = $request->getNinjaUpdater();
-        $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
-        $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
-    } else {
-        $this->story = new Story();
-        $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
-        $url_is_valid =
-            sfView::HEADER_ONLY === $this->checkFieldValidation($this->form, 'external_url')
-                && true === $this->form['external_url']->hasError();
-
-
-        $error = $this->form->processField('external_url', $url)->getError();
-
-        if(!$error){
-          $yiggImageParser = new ImageParser();
-          $images = $yiggImageParser->fetch($url, 100);
-          $slider_html = get_partial('story/imageSlider', array("images" => $images));
-        }
-
-        $ninjaUpdater = $request->getNinjaUpdater();
-        $ninjaUpdater->updateForm('external_url', $url, $error );
-        $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
-        $this->populateFieldsFromUrl();
-        $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
+      $ninjaUpdater = $request->getNinjaUpdater();
+      $ninjaUpdater->updateForm('external_url', $url, $error );
+      $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
+      $this->populateFieldsFromUrl();
+      $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
     }
-
 
     return sfView::HEADER_ONLY;
   }  
@@ -503,7 +494,7 @@ class storyActions extends yiggActions {
     unset($form["_csrf_token"]);
     $form->bind($values);
 
-    if($form->isValid()) {
+    if ($form->isValid()) {
       $story->user_id = $this->session->getUserId();
       $story->update($form->getValues());
       $story->rate($this->session);

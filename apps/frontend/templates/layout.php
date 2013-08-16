@@ -59,33 +59,20 @@
 
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
 
-    <?php include_http_metas(); ?>
-    <?php include_metas() ?>
-    <?php include_component('system','Feeds') ?>
-    <?php include_title() ?>
-    <?php use_javascript('jquery-1.7.1.js') ?>
-    <?php include_javascripts() ?>
-    <?php include_stylesheets(); ?>
+    <?php
+      include_http_metas();
+      include_metas();
+      include_component('system','Feeds');
+      include_title();
+      use_javascript('jquery-1.7.1.js');
+      include_javascripts();
+      include_stylesheets();
+    ?>
   </head>
   <body class="<?php echo ( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" )?>">
     <div id="page">
       <header id="branding">
-        <nav id="access" role="navigation">
-          <a tabindex="1" href="#content" class="skip-link screen-reader-text">Direkt zum Inhalt </a>
-          <?php
-            echo link_to(img_tag('yigg_logo.png', array(
-                      'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-                      'width' => 90,
-                      'height' => 53
-                  )), '@best_stories', array(
-              'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-              'rel' => 'home',
-              'class' => 'logo'
-            ));
-          ?>
-
-          <?php include_partial("system/main_navigation"); ?>                         
-        </nav>
+        <?php include_partial("system/header"); ?>
       </header>
     
       <div id="main">
@@ -100,24 +87,7 @@
         </main>
         
         <aside id="sidebar">
-          <?php if(true === has_slot("sponsoring")): ?>
-            <?php //include_slot("sponsoring"); ?>
-          <?php endif; ?>
-          <?php include_partial("user/userinfo"); ?>
-          <?php //include_component("story", "bestVideos", array( "height"=> 285, "width" => 370)); ?>
-          <?php if(has_slot("sidebar")) { ?>
-            <?php include_slot("sidebar"); ?>
-          <?php } ?>
-          <div class="fb-like-box"
-           data-href="http://www.facebook.com/yiggde"
-           data-width="200"
-           data-show-faces="true"
-           data-show-border="false"
-           data-stream="false"
-           data-header="false">
-         </div>
-         <?php include_partial("user/anzeigeBottom"); ?>
-         <?php include_component("story", "bestVideosBottom", array( "height"=> 285, "width" => 370)); ?>
+          <?php include_partial("system/sidebar"); ?>
         </aside>
                 
       </div>
@@ -126,32 +96,5 @@
         <?php include_partial("system/footer");?>
       </footer>
     </div>
-
-    <script type="text/javascript">
-      var _sf_async_config={uid:23222,domain:"yigg.de"};
-      (function(){
-        function loadChartbeat() {
-          window._sf_endpt=(new Date()).getTime();
-          var e = document.createElement('script');
-          e.setAttribute('language', 'javascript');
-          e.setAttribute('type', 'text/javascript');
-          e.setAttribute('src',
-            (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
-          document.body.appendChild(e);
-        }
-        var oldonload = window.onload;
-        window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
-      })();
-    
-      var uvOptions = {};
-      (function() {
-        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://' ) + 'widget.uservoice.com/ivhHCap8jZkAWPJveHWCaw.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-      })();
-    </script>
-        
-    <!-- START FACEBOOK JAVASCRIPT SDK -->
-    <div id="fb-root"></div>
   </body>
 </html>

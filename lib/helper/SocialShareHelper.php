@@ -10,11 +10,11 @@ function social_counter($url, $options = array()) {
   $spreadly_count = $smc->get_spreadly();
 ?>
 <ul class="social-share-counter">
-  <li class="spreadly count">shares <?php echo $spreadly_count; ?></li>
-  <li class="twitter count">tweets <?php echo $twitter_count; ?></li>
-  <li class="facebook count">likes <?php echo $facebook_count; ?></li>
-  <li class="google count">+1 <?php echo $google_count; ?></li>
-  <li class="yigg count">yiggs <?php echo $yigg_count; ?></li>
+  <li class="yigg"><span class="counter"><?php echo $yigg_count; ?></span> yiggs</li>
+  <li class="spreadly"><span class="counter"><?php echo $spreadly_count; ?></span> shares</li>
+  <li class="twitter"><span class="counter"><?php echo $twitter_count; ?></span> tweets</li>
+  <li class="facebook"><span class="counter"><?php echo $facebook_count; ?></span> likes</li>
+  <li class="google"><span class="counter"><?php echo $google_count; ?></span> +1s</li>
 </ul>
 <?php
 }

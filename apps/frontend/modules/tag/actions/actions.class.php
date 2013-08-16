@@ -29,8 +29,8 @@ class tagActions extends yiggActions
     return $this->redirectBack();
   }
 
-  public function executeShow($request)
-  {
+  public function executeShow($request) {
+    $this->setLayout("layout.stream");
     $tag = $request->getParameter("tags");
     if(empty($tag))
     {
