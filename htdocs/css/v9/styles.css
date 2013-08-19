@@ -183,15 +183,25 @@ footer {
 ol#stories {
   list-style-type: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  position: relative;
+  -webkit-column-count: 2;
+  -webkit-column-fill: auto;
+  -moz-column-count: 2;
+  -moz-column-fill: auto;
+  column-count: 2;
+  column-fill: auto; }
   ol#stories li {
-    width: 400px;
+    float: left;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
     padding: 0px;
-    float: left; }
-  ol#stories li:first-child {
-    width: 100%; }
+    display: inline-block;
+    vertical-align: top; }
 
 .post {
+  width: 350px;
   position: relative;
   background-color: white;
   box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
@@ -586,7 +596,7 @@ input[type="submit"], input[type="button"], button {
     color: #222; }
   .site-footer-widgets .widget {
     float: left;
-    width: 33%; }
+    width: 250px; }
     .site-footer-widgets .widget h4 {
       font-size: 16px;
       color: #222;
