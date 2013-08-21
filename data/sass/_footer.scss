@@ -12,6 +12,7 @@
   padding: 20px 0 40px 0;
   color: #222;
   text-shadow: #666 0px 1px 0px;
+  @include clearfix();
 
   a {
     color: #222;

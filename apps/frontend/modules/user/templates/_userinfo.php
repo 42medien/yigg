@@ -1,21 +1,3 @@
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-    FB.init({
-        appId  : <?php echo sfConfig::get('app_facebook_app_id') ?>,
-        frictionlessRequests: true
-    });
-
-    function sendFbFriendRequest() {
-        FB.ui({
-            method: 'apprequests',
-            display: 'iframe',
-            message: 'Möchtest Du Yigg auch beitreten? Na dann los, denn bei Yigg findest Du die wichtigsten News auf einen Blick!'
-        });
-    }
-</script>
-
-<?php if(true === $sf_user->hasUser()):?>
 <section id="widget-userinfo" class="h-card vcard hcard">
 <?php echo link_to(
   avatar_tag($sf_user->getUser()->Avatar, "noavatar-48-48.png", 48, 48, array('class' => 'photo u-photo avatar')),
@@ -24,8 +6,7 @@
       'class' => 'avatar'
     )
   );
-?>
-<?php
+
   $messages = array(
     "Hi %s. Schön, dass Du da bist.",
     "%s - Marvin liebt dich!",
@@ -50,6 +31,9 @@
     );
   ?></h4>
      <ul class="list-style">
+       <li <?php if($sf_request->getModule() == 'user'): ?>class="selected"<?php endif;?>>
+         <?php echo link_to('Mein YiGG',"@user_welcome",array("title"=>"Dein Profil ansehen")); ?>
+       </li>
        <li class="pm"><?php echo link_to(
        "Pinnwand ({$sf_user->getUser()->getNotificationCount()})",
        "@notification_index",
@@ -64,7 +48,6 @@
      </ul>
       <div class="clr"></div>
 </section>
-<?php endif; ?>
 
 <?php if(true === $sf_request->hasParameter("rss")): ?>
 <section id="widget-feed">

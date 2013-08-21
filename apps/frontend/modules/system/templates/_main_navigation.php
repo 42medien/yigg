@@ -14,9 +14,6 @@
 <div id="user-navigation">
   <ul>
     <?php if(true === $sf_user->hasUser()):?>
-    <li <?php if($sf_request->getModule() == 'user'): ?>class="selected"<?php endif;?>>
-      <?php echo link_to('Mein YiGG',"@user_welcome",array("title"=>"Dein Profil ansehen")); ?>
-    </li>
     <li class="login-link">
       <a href="<?php echo url_for('@user_logout');?>">Logout</a>                                
     </li>

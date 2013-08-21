@@ -35,6 +35,13 @@
     uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://' ) + 'widget.uservoice.com/ivhHCap8jZkAWPJveHWCaw.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
   })();
+  
+  var container = document.querySelector('#stories');
+  var msnry;
+  // initialize Masonry after all images have loaded
+  imagesLoaded( container, function() {
+    msnry = new Masonry( container );
+  });
 </script>
     
 <!-- START FACEBOOK JAVASCRIPT SDK -->

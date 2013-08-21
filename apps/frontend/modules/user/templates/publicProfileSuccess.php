@@ -92,7 +92,7 @@
         )
       );
     ?>
-    <li>
+    </li>
     <?php endforeach; ?>
   </ol>
 </div>

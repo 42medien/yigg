@@ -1,4 +1,4 @@
-<div class="site-footer-widgets clearfix">
+<div class="site-footer-widgets">
   <div class="about widget">
     <h4>Über YiGG</h4>
     <ul>

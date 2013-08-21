@@ -1,24 +1,24 @@
-<div id="archive">
+<nav class="pagination">
   <?php if(false == $day):?>
     <p class="note">Wähle ein Datum für die besten Nachrichten dieses Tages.</p>
   <?php endif;?>
 
-  <ol class="year">
+  <ul class="year">
     <?php for($i= 2006; $i <= date("Y",time()); $i++): ?>
       <li><?php echo link_to($i,"@story_archive?year=".$i, ($i == $year ? array('class'=>'selected'):array())); ?></li>
     <?php endfor;?>
-  </ol>
+  </ul>
 
   <?php if(false != $year ): ?>
-    <ol>
+    <ul class="month">
       <?php for($i= 1; $i <= date("m",($year < date("Y",time()) ? strtotime("dec" . $year) : time() )) ; $i++): ?>
         <li><?php echo link_to($i,"@story_archive?month=". $i . "&year=". $year, ($i == $month ? array('class'=>'selected'):array())); ?></li>
       <?php endfor;?>
-    </ol>
+    </ul>
   <?php endif; ?>
 
   <?php if(false != $year && false != $month ): ?>
-    <ol class="days">
+    <ul class="days">
       <?php for($i= 1; $i <= (
         strtotime($i . "." .$month. ".".$year) <= time() ?
           false !== strtotime($i . "." .$month. ".".$year) &&
@@ -29,14 +29,15 @@
         ($i == $day ? array('class'=>'selected'):array()));
         ?></li>
       <?php endfor;?>
-    </ol>
+    </ul>
   <?php endif; ?>
-  <div class="clr"><!--  --></div>
-</div>
+</nav>
+
 <?php if(isset($stories)&& count($stories) > 0): ?>
 <div class="story-list-cont">
-  <ol id="story-list" class="story-list hfeed">
+  <ol id="stories" class="story-list hfeed">
     <?php foreach($stories as $k => $story ): ?>
+      <li>
       <?php
         include_partial('story/story',
           array(
@@ -49,6 +50,7 @@
           )
         );
       ?>
+    </li>
     <?php endforeach; ?>
   </ol>
 </div>

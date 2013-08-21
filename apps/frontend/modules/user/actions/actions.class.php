@@ -108,13 +108,12 @@ class userActions extends yiggActions
   /**
    * Action for the user-centered-view
    */
-  public function executeMyYigg($request)
-  {
+  public function executeMyYigg($request) {
     $this->user = $this->session->getUser();
 
     $this->following = UserFollowingTable::getOnlineFollowedUsers($this->user->id);
 
-   $query = Doctrine_Query::create()
+    $query = Doctrine_Query::create()
       ->from("Story s")
       ->leftJoin("s.StoryTag st")
       ->where("st.tag_id IN (SELECT ut.tag_id FROM UserTag ut WHERE ut.user_id = ?)
@@ -123,8 +122,9 @@ class userActions extends yiggActions
       ",
         array($this->user->id, $this->user->id, $this->user->id))
       ->addWhere("s.created_at > DATE_SUB(NOW(), INTERVAL 1 WEEK)")
-      ->orderBy("s.created_at DESC");    $this->stories = $this->setPagerQuery($query)->execute();
-
+      ->orderBy("s.created_at DESC");
+    
+    $this->stories = $this->setPagerQuery($query)->execute();
 
     $this->storyCount = count($this->stories);
     return sfView::SUCCESS; 

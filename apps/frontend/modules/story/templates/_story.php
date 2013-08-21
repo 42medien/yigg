@@ -2,18 +2,11 @@
 <article class="hentry post h-entry" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
-      if ($story->type == Story::TYPE_NORMAL):
-        $source = $story->getStoryImageSource();
-        if($source){
-          echo img_tag($story->getStoryImageSource(), array(
-		        'data-w' => 300,
-		        'data-h' => 169,
-		        'class' => 'js-resize'	
-	            ));
-        } else {
-          echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
+      if ($story->type == Story::TYPE_NORMAL) {
+        if($source = $story->getStoryImageSource()){
+          echo img_tag($source);
         }
-      endif;
+      }
     ?>
   </div>
   

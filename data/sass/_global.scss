@@ -38,26 +38,17 @@ img.avatar {
   clear: both;
 }
 
-.clearfix {
-  *zoom: 1;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  line-height: 0;
-  content: "";
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 .pagination {
   clear: both;
   width: 100%;
   margin: 0 auto;
   text-align: center;
+}
+nav.pagination {
+  clear: both;
+  width: auto;
+  margin: 0;
+  text-align: left;
 }
 .pagination ul {
   display: inline-block;

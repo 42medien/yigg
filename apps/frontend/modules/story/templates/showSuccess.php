@@ -8,11 +8,7 @@
         $source = $story->getStoryImageSource();
       
         if($source){
-          echo img_tag($story->getStoryImageSource(), array(
-		        'data-w' => 300,
-		        'data-h' => 169,
-		        'class' => 'js-resize'	
-	            ));
+          echo img_tag($story->getStoryImageSource());
         } else {
           echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
         }

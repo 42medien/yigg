@@ -32,23 +32,17 @@ img.avatar {
   margin-top: 0;
   clear: both; }
 
-.clearfix {
-  *zoom: 1; }
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  line-height: 0;
-  content: ""; }
-
-.clearfix:after {
-  clear: both; }
-
 .pagination {
   clear: both;
   width: 100%;
   margin: 0 auto;
   text-align: center; }
+
+nav.pagination {
+  clear: both;
+  width: auto;
+  margin: 0;
+  text-align: left; }
 
 .pagination ul {
   display: inline-block;
@@ -184,28 +178,23 @@ ol#stories {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  position: relative;
-  -webkit-column-count: 2;
-  -webkit-column-fill: auto;
-  -moz-column-count: 2;
-  -moz-column-fill: auto;
-  column-count: 2;
-  column-fill: auto; }
+  position: relative; }
   ol#stories li {
-    float: left;
-    -webkit-column-break-inside: avoid;
-    -moz-column-break-inside: avoid;
-    column-break-inside: avoid;
+    position: relative;
     padding: 0px;
-    display: inline-block;
-    vertical-align: top; }
+    width: 400px;
+    float: left; }
 
 .post {
-  width: 350px;
-  position: relative;
   background-color: white;
   box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-  margin: 0 50px 50px 0; }
+  margin: 0 50px 50px 0;
+  display: block; }
+  .post:before, .post:after {
+    content: " ";
+    display: table; }
+  .post:after {
+    clear: both; }
   .post h3, .post h3 a {
     color: #393939;
     font-size: 18px;
@@ -215,9 +204,8 @@ ol#stories {
     .post .attachement img {
       padding: 0;
       margin: 0;
-      max-width: 100%;
-      min-width: 100%;
-      height: auto; }
+      width: 100%;
+      display: block; }
   .post .entry-meta, .post .entry-title, .post .entry-content, .post .entry-summary, .post .entry-description, .post .body {
     padding: 0 20px;
     line-height: 1.4; }
@@ -592,6 +580,11 @@ input[type="submit"], input[type="button"], button {
   padding: 20px 0 40px 0;
   color: #222;
   text-shadow: #666 0px 1px 0px; }
+  .site-footer-widgets:before, .site-footer-widgets:after {
+    content: " ";
+    display: table; }
+  .site-footer-widgets:after {
+    clear: both; }
   .site-footer-widgets a {
     color: #222; }
   .site-footer-widgets .widget {

@@ -120,6 +120,7 @@ class storyActions extends yiggActions {
    * @return sfView
    */
   public function executeArchive($request) {
+    $this->setLayout("layout.stream");
     // not really needed as routing enforces them to be integers.
     $this->year = intval($request->getParameter("year", false));
     $this->month = intval($request->getParameter("month", false));
