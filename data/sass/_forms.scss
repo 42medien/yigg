@@ -156,7 +156,7 @@ textarea {
   height: auto;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-input[type="submit"], input[type="button"], button {
+input[type="submit"], input[type="button"], button, a.button {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */

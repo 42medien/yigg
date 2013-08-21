@@ -154,11 +154,6 @@ nav.pagination {
       #user-navigation ul li:last-child:after {
         content: ""; }
 
-#search .search {
-  margin-top: 10px; }
-#search .button, #search label {
-  display: none; }
-
 #main {
   width: 1000px;
   margin: 0 auto; }
@@ -321,6 +316,10 @@ footer .entry-meta {
     padding: 0; }
     #sidebar #widget-last-yiggs ul li {
       display: inline; }
+  #sidebar #widget-search .search {
+    margin-top: 10px; }
+  #sidebar #widget-search .button, #sidebar #widget-search label {
+    display: none; }
 
 .field {
   margin: 20px 0; }
@@ -480,7 +479,7 @@ textarea {
   height: auto;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-input[type="submit"], input[type="button"], button {
+input[type="submit"], input[type="button"], button, a.button {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -522,14 +521,14 @@ input[type="submit"], input[type="button"], button {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
-  input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"].active, input[type="submit"].disabled, input[type="submit"][disabled], input[type="button"]:hover, input[type="button"]:active, input[type="button"].active, input[type="button"].disabled, input[type="button"][disabled], button:hover, button:active, button.active, button.disabled, button[disabled] {
+  input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"].active, input[type="submit"].disabled, input[type="submit"][disabled], input[type="button"]:hover, input[type="button"]:active, input[type="button"].active, input[type="button"].disabled, input[type="button"][disabled], button:hover, button:active, button.active, button.disabled, button[disabled], a.button:hover, a.button:active, a.button.active, a.button.disabled, a.button[disabled] {
     background-color: #e6e6e6;
     *background-color: #d9d9d9; }
-  input[type="submit"]:active, input[type="submit"].active, input[type="button"]:active, input[type="button"].active, button:active, button.active {
+  input[type="submit"]:active, input[type="submit"].active, input[type="button"]:active, input[type="button"].active, button:active, button.active, a.button:active, a.button.active {
     background-color: #cccccc \9; }
-  input[type="submit"]:first-child, input[type="button"]:first-child, button:first-child {
+  input[type="submit"]:first-child, input[type="button"]:first-child, button:first-child, a.button:first-child {
     *margin-left: 0; }
-  input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+  input[type="submit"]:hover, input[type="button"]:hover, button:hover, a.button:hover {
     color: #333;
     text-decoration: none;
     background-color: #e6e6e6;
@@ -541,11 +540,11 @@ input[type="submit"], input[type="button"], button {
     -ms-transition: background-position 0.1s linear;
     -o-transition: background-position 0.1s linear;
     transition: background-position 0.1s linear; }
-  input[type="submit"]:focus, input[type="button"]:focus, button:focus {
+  input[type="submit"]:focus, input[type="button"]:focus, button:focus, a.button:focus {
     outline: thin dotted #333;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  input[type="submit"].active, input[type="submit"]:active, input[type="button"].active, input[type="button"]:active, button.active, button:active {
+  input[type="submit"].active, input[type="submit"]:active, input[type="button"].active, input[type="button"]:active, button.active, button:active, a.button.active, a.button:active {
     background-color: #e6e6e6;
     background-color: #d9d9d9 \9;
     background-image: none;
@@ -553,7 +552,7 @@ input[type="submit"], input[type="button"], button {
     -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); }
-  input[type="submit"].disabled, input[type="submit"][disabled], input[type="button"].disabled, input[type="button"][disabled], button.disabled, button[disabled] {
+  input[type="submit"].disabled, input[type="submit"][disabled], input[type="button"].disabled, input[type="button"][disabled], button.disabled, button[disabled], a.button.disabled, a.button[disabled] {
     cursor: default;
     background-color: #e6e6e6;
     background-image: none;
