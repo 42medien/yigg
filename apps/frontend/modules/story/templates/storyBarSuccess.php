@@ -3,11 +3,9 @@ slot(
     'canonical',
     '<link href="'.$sf_request->getUriPrefix().url_for_story($story).'" rel="canonical">');
 
-$source = $story->getStoryImageSource();
+  $source = $story->getStoryImageSource();
 if($source){
-    $image_source = $sf_request->getUriPrefix().$sf_request->getRelativeUrlRoot()."/".$source;
-}else{
-    $image_source = "http://stromboli.yigg.de/?url=" . $story->external_url;
+  $image_source = $sf_request->getUriPrefix().$sf_request->getRelativeUrlRoot()."/".$source;
 }
 slot(
     'ogp',

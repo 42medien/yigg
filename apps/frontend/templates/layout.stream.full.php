@@ -75,15 +75,10 @@
         <?php include_partial("system/header"); ?>
       </header>
     
-      <div id="main">
+      <div id="main" class="full-width">
         <main id="content">
           <?php echo $sf_data->getRaw('sf_content'); ?>
         </main>
-        
-        <aside id="sidebar">
-          <?php include_partial("system/sidebar"); ?>
-        </aside>
-                
       </div>
       
       <footer class="site-footer">

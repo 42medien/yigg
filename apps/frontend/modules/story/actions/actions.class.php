@@ -121,11 +121,21 @@ class storyActions extends yiggActions {
    */
   public function executeArchive($request) {
     $this->setLayout("layout.stream");
-    // not really needed as routing enforces them to be integers.
-    $this->year = intval($request->getParameter("year", false));
-    $this->month = intval($request->getParameter("month", false));
-    $this->day = intval($request->getParameter("day", false));
+    $this->year = intval(date("Y", time()));
+    $this->month = intval(date("n", time()));
+    $this->day = intval(date("d", time()));
 
+    // not really needed as routing enforces them to be integers.
+    if ($year = $request->getParameter("year")) {
+      $this->year = intval($year);
+    }    
+    if ($month = $request->getParameter("month")) {
+      $this->month = intval($month);
+    }
+    if ($day = $request->getParameter("day")) {
+      $this->day = intval($day);
+    }
+    
     if( false != $this->year && false != $this->month &&  false != $this->day) {
       // ensure a correct timestring, and show error accordingly
       $this->timestring = $this->year . "-" . $this->month ."-". $this->day;

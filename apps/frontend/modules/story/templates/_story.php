@@ -33,6 +33,7 @@
       ?>
       <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
     </p>
-    <br style="clear: both;" />
   </div>
+  
+  <?php //include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => false)); ?>
 </article>

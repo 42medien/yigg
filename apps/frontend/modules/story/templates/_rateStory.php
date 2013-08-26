@@ -102,7 +102,6 @@
               action="<?php echo url_for_story($story, "rate"); ?>" 
               method="post">
               <fieldset>
-<!--                <p>YiGGs</p>*/-->
                 <input type="hidden" 
                        name="StoryRate[_csrf_token]" 
                        value="<?php echo $form[$form->getCSRFFieldName()]->getValue() ?>" 
@@ -118,8 +117,7 @@
                 <h4><label></label><?php echo $story->currentRating(); ?></h4>
               </fieldset></form>
       <?php else: ?>
-       <div class="<?php if(false === $sf_request->isAjaxRequest() || true === isset($completeStory)):?>rating-form <?php endif;?>voted">   
-<!--      <p>YiGGs</p>-->
+        <div class="<?php if(false === $sf_request->isAjaxRequest() || true === isset($completeStory)):?>rating-form <?php endif;?>voted">   
           <span class="voted">YiGGed</span>
           <h4><label></label><?php echo $story->currentRating() ?></h4>
         </div>

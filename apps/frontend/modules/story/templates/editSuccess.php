@@ -1,4 +1,5 @@
-<h2>Nachricht Bearbeiten</h2>
+<?php slot("page-title")?>Nachricht bearbeiten<?php end_slot()?>
+
 <form action="<?php url_for_story($story, "edit"); ?>" id="new_form" class="form-large <?php echo ($story->getStoryType() !== "Payed") ? "ninjaForm " : "";?><?php echo ("Article" === $story->getStoryType() ? "article": "" ); ?>" enctype="multipart/form-data" method="post">
   <fieldset>
      <p><strong>Bitte alle Felder ausfüllen!</strong> </p>

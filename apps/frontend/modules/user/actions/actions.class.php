@@ -109,6 +109,7 @@ class userActions extends yiggActions
    * Action for the user-centered-view
    */
   public function executeMyYigg($request) {
+    $this->setLayout("layout.stream");
     $this->user = $this->session->getUser();
 
     $this->following = UserFollowingTable::getOnlineFollowedUsers($this->user->id);

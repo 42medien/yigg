@@ -15,6 +15,6 @@
     <li <?php if($sf_request->getAction() == 'archive'): ?>class="selected"<?php endif;?>>
       <?php echo link_to('Archiv',"@story_archive","title=Neueste Nachrichten von heute"); ?>
     </li>
-    <li class="create"><?php echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen', 'class' => 'button')); ?></li>
+    <li class="create"><?php echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen', 'class' => '')); ?></li>
   </ol>
 </div>

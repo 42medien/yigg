@@ -2,8 +2,9 @@
 
 <?php if(count($stories) > 0): ?>
 <div class="story-list-cont">
-  <ol id="story-list" class="story-list hfeed">
+  <ol id="stories" class="story-list hfeed">
     <?php foreach($stories as $k => $story ): ?>
+    <li>
       <?php
         include_partial('story/story',
           array(
@@ -15,6 +16,7 @@
           )
         );
       ?>
+    </li>
     <?php endforeach; ?>
   </ol>
 </div>

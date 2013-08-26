@@ -4,15 +4,13 @@
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
-      if ($story->type == Story::TYPE_NORMAL):
+      if ($story->type == Story::TYPE_NORMAL) {
         $source = $story->getStoryImageSource();
       
         if($source){
           echo img_tag($story->getStoryImageSource());
-        } else {
-          echo img_tag("http://stromboli.yigg.de/?url=" . $story->external_url, array());
         }
-      endif;
+      }
     ?>
   </div>
   
@@ -44,6 +42,7 @@
   <footer>
     <div class="entry-meta">
       <?php social_counter($story->external_url); ?>
+      <?php //include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
     </div>
   </footer>
 </article>

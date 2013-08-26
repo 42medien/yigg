@@ -1,8 +1,4 @@
 <nav class="pagination">
-  <?php if(false == $day):?>
-    <p class="note">Wähle ein Datum für die besten Nachrichten dieses Tages.</p>
-  <?php endif;?>
-
   <ul class="year">
     <?php for($i= 2006; $i <= date("Y",time()); $i++): ?>
       <li><?php echo link_to($i,"@story_archive?year=".$i, ($i == $year ? array('class'=>'selected'):array())); ?></li>
@@ -57,3 +53,6 @@
 <?php elseif(false != $day): ?>
   <p class="error">Es wurden keine Nachrichten gefunden.</p>
 <?php endif; ?>
+<?php if(false == $day):?>
+  <p class="note">Wähle ein Datum für die besten Nachrichten dieses Tages.</p>
+<?php endif;?>

@@ -311,7 +311,7 @@ story_bar:
 
 story_archive:
   url: /nachrichten/:year/:month/:day
-  param:  { module: story, action: archive, year: 2013, month: false, day: false}
+  param:  { module: story, action: archive, year: null, month: null, day: null }
   requirements:
     day: \d{1,2}
     month: \d{1,2}

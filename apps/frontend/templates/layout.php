@@ -65,7 +65,6 @@
       include_component('system','Feeds');
       include_title();
       use_javascript('jquery-1.7.1.js');
-      use_javascript('jquery.wookmark.js');
       include_javascripts();
       include_stylesheets();
     ?>
