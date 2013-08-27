@@ -28,6 +28,11 @@ class yiggMetaDataExtractor
   {
     return $this->yiggMeta->getTitle();
   }
+  
+  public function getImages()
+  {
+    return $this->yiggMeta->getImages();
+  }
 
   /**
    * Fetches data from a remote server
@@ -95,6 +100,14 @@ class yiggMetaDataExtractor
     if (!$this->yiggMeta->isComplete()) {
       $meta = MetaTagParser::getKeys($html, $url);
       $this->yiggMeta->fromMeta($meta);
+    }
+    
+    // add images
+    if (!$this->yiggMeta->hasImages()) {
+      $yiggImageParser = new ImageParser();
+      if ($images = $yiggImageParser->detect($html, $url)) {
+        $this->yiggMeta->setImages($images);
+      }
     }
   }
 }

@@ -6,72 +6,48 @@ class ImageParser {
    * @param string $html
    * @return array
    */
-  public static function detect($html) {
-    if (!preg_match("~^<meta.*http-equiv\s*=\s*(\"|\')\s*Content-Type\s*(\"|\').*\/?>$~", $pHtml)) {
-      $pHtml = preg_replace('/<head[^>]*>/i','<head>
+  public static function detect($html, $url) {
+    if (!preg_match("~^<meta.*http-equiv\s*=\s*(\"|\')\s*Content-Type\s*(\"|\').*\/?>$~", $html)) {
+      $html = preg_replace('/<head[^>]*>/i','<head>
                              <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-                            ',$pHtml);
+                            ',$html);
     }
 
     libxml_use_internal_errors(true);
-    $lDoc = new DOMDocument();
-    $lDoc->loadHTML($html);
+    
+    $doc = new DOMDocument();
+    $doc->loadHTML($html);
 
-    $lValues = array();
-
-    //get all meta-elements
-    $lTags = $lDoc->getElementsByTagName('img');
-    //loop the metas
-    foreach ($lTags as $lTag) {
-      //if attribute name isset make a new entry in an array with key=name and value=content
-      if ($lTag->hasAttribute('src')) {
-        $lValues[] = $lTag->getAttribute('src');
-      }
-    }
-
-    return $lValues;
-  }
-
-  /**
-   * fetches all embeded images
-   *
-   * @param string $url
-   * @return array
-   */
-  public static function fetch($url, $limit = 5, $flat = true) {
-    //get the html as string
-    $html = UrlUtils::getUrlContent(urldecode($url), 'GET');
-
-    $images = self::detect($html);
     $result = array();
 
-
-    foreach ($images as $image) {
-      $image = UrlUtils::abslink($image, $url);
-      $size = @getimagesize($image);
-      $size = $size[0] + $size[1];
-
-      // ignore all (stats)images smaller than 5x5
-      if ($size >= 10) {
-        $result[] = array('size' => $size, 'image' => $image);
+    //get all meta-elements
+    $tags = $doc->getElementsByTagName('img');
+    //loop the metas
+    foreach ($tags as $tag) {
+      //if attribute name isset make a new entry in an array with key=name and value=content
+      if ($tag->hasAttribute('src')) {
+        $image = $tag->getAttribute('src');
+        $image = yiggUrlTools::abslink($image, $url);
+        $size = @getimagesize($image);
+        $size = $size[0] + $size[1];
+        // ignore all (stats)images smaller than 5x5
+        if ($size >= 30) {
+          $result[] = array('size' => $size, 'image' => $image);
+        }
       }
     }
 
     usort($result, array("ImageParser", "sort"));
     //$result = array_unique($result);
-    $result = array_slice($result, 0, $limit-1);
+    $result = array_slice($result, 0, 6);
 
     // return only the images and crop the size
-    if ($flat) {
-      $flat = array();
-      foreach ($result as $image) {
-        $flat[] = $image['image'];
-      }
-
-      $result = $flat;
+    $flat = array();
+    foreach ($result as $image) {
+      $flat[] = $image['image'];
     }
 
-    return $result;
+    return $flat;
   }
 
   /**

@@ -1,18 +1,17 @@
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
-      if ($story->type == Story::TYPE_NORMAL) {
+      //if ($story->type == Story::TYPE_NORMAL) {
         if($source = $story->getStoryImageSource()){
           echo img_tag($source);
         }
-      }
+        //}
     ?>
   </div>
   
   <header>
     <h3 class="entry-title p-title">
       <?php echo link_to_story(truncate_text($story->title, 75), $story, array("title" => $story->title)); ?>
-      <?php echo link_to('<i class="icon-external-link"></i>', $story["external_url"], array('rel' => 'nofollow external', 'title' => 'direkt besuchen', 'class' => 'external', 'target' => '_blank')); ?>
     </h3>
     
     <div class="entry-meta">

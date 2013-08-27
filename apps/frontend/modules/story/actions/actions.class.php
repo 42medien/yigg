@@ -92,8 +92,7 @@ class storyActions extends yiggActions {
    * Executes the new-stories (queue)
    * @return
    */
-  public function executeNewStories( $request )
-  {
+  public function executeNewStories( $request ) {
     $this->setLayout("layout.stream");
     $sf = new yiggStoryFinder();
     $sf->confineWithDate24();
@@ -395,13 +394,7 @@ class storyActions extends yiggActions {
     $url = $this->getRequest()->getParameter( 'external_url' );
 
     if ($node_id) {
-      $yiggImageParser = new ImageParser();
-      $images = $yiggImageParser->fetch($url, 100);
-      $slider_html = get_partial('story/imageSlider', array("images" => $images));
 
-      $ninjaUpdater = $request->getNinjaUpdater();
-      $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
-      $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
     } else {
       $this->story = new Story();
       $this->form = new FormStoryEdit(array(), array( "story" => $this->story ));
@@ -409,19 +402,12 @@ class storyActions extends yiggActions {
 
       $error = $this->form->processField('external_url', $url)->getError();
 
-      if(!$error){
-        $yiggImageParser = new ImageParser();
-        $images = $yiggImageParser->fetch($url, 100);
-        $slider_html = get_partial('story/imageSlider', array("images" => $images));
-      }
-
       $ninjaUpdater = $request->getNinjaUpdater();
       $ninjaUpdater->updateForm('external_url', $url, $error );
-      $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
       $this->populateFieldsFromUrl();
       $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
     }
-
+    
     return sfView::HEADER_ONLY;
   }  
 
@@ -437,15 +423,16 @@ class storyActions extends yiggActions {
     $title = $e->getTitle();
     $keywords = $e->getMetaTags();
     $description = $e->getReadableDescription();
+    $images = $e->getImages();
+    $tags = $e->getMetaTags();
 
-    $nouns_in_title = yiggTools::extractNouns($title. " " . $keywords . " " . $description);
-    $nouns_in_title = array_unique($nouns_in_title);
-    $tags = implode(", ", $nouns_in_title);
-
+    $slider_html = get_partial('story/imageSlider', array("images" => $images));
+    
     $ninjaUpdater = $this->getRequest()->getNinjaUpdater();
     $ninjaUpdater->updateFormField("Title", $title);
     $ninjaUpdater->updateFormField("Description", $description);
     $ninjaUpdater->updateFormField("Tags", $tags);
+    $ninjaUpdater->updateFormFieldContent("carousel", $slider_html);
   }
 
 

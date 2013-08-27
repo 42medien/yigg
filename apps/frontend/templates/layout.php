@@ -69,7 +69,7 @@
       include_stylesheets();
     ?>
   </head>
-  <body class="<?php echo ( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" )?>">
+  <body class="<?php echo ( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" ); ?> module-<?php echo $sf_context->getModuleName(); ?> action-<?php echo $sf_context->getActionName(); ?>">
     <div id="page">
       <header id="branding">
         <?php include_partial("system/header"); ?>

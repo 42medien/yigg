@@ -21,7 +21,6 @@ function createSlider() {
 
     //set the default item to the correct position
     jQuery('#slides ul').css({'left' : left_value});
-
     jQuery('#image_slider').val(jQuery('#slides li:nth-child(2) > img').attr('src'));
 
     //if user clicked on prev button

@@ -68,6 +68,14 @@ class YiggMeta {
       return false;
     }
   }
+  
+  public function hasImages() {
+    if ($this->images) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   public function fromOpenGraph($og) {
     if ($og) {
@@ -104,6 +112,10 @@ class YiggMeta {
         $this->setDescription($m['description']);
       }
 
+      if (array_key_exists('news_keywords', $m)) {
+        $this->setTags($m['news_keywords']);
+      }
+      
       if (array_key_exists('keywords', $m)) {
         $this->setTags($m['keywords']);
       }
