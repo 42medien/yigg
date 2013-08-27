@@ -33,16 +33,14 @@
   a.avatar {
     float: left;
     margin-right: 20px;
-  }
+  }  
   
-  #widget-last-yiggs {
-    ul {
-      margin: 0;
-      padding: 0;
+  ul.avatar-list {
+    margin: 0;
+    padding: 0;
       
-      li {
-        display: inline;
-      }
+    li {
+      display: inline;
     }
   }
   

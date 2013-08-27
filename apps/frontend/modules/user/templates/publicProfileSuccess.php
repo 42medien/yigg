@@ -44,7 +44,7 @@
     ?>
     </li>
     <?php endif; ?>
-    <?php if("" !== $sf_data->getRAW("user")->getConfig()->get('city', null, 'profile')): ?> 
+    <?php if($sf_data->getRAW("user")->getConfig()->get('city', null, 'profile')): ?> 
       <li><i class="icon-globe"></i> <?php echo $sf_data->getRAW("user")->getConfig()->get('city', null, 'profile'); ?></li>
     <?php endif; ?>
     <?php if(true === $sf_data->getRAW("user")->getConfig()->has('website','profile') && true === yiggTools::isProperURL($sf_data->getRAW("user")->getConfig()->get('website', false, 'profile'))):?>

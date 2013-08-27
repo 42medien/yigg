@@ -13,8 +13,9 @@ class worldspyActions extends yiggActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeWorldSpy($request)
-  {
+  public function executeWorldSpy($request) {
+    $this->redirect("@spy");
+    
     $this->getResponse()->addMeta('robots','noindex, nofollow');
     $this->form = new FormWorldspyKeywords();
 

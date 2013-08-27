@@ -9,9 +9,11 @@
     <li <?php if($sf_request->getAction() == 'spy'): ?>class="selected"<?php endif;?>>
       <?php echo link_to('Spion',"@spy","title=Neueste Nachrichten von heute"); ?>
     </li>
+    <?php /* ?>
     <li <?php if($sf_request->getAction() == 'worldSpy'): ?>class="selected"<?php endif;?>>
       <?php echo link_to('Weltspion',"@worldspy","title=Neueste Nachrichten von heute"); ?>
     </li>
+    <?php */ ?>
     <li <?php if($sf_request->getAction() == 'archive'): ?>class="selected"<?php endif;?>>
       <?php echo link_to('Archiv',"@story_archive","title=Neueste Nachrichten von heute"); ?>
     </li>

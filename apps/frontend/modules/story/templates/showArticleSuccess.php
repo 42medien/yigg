@@ -36,10 +36,11 @@
 </article>
 
 <?php slot("sidebar") ?>
+<section id="widget-last-yiggs" class="widget">
   <?php if(false == cache("story-detail-{$story['id']}-votes{$story->currentRating()}")): ?>
     <h3 class="heading-right">Letzte YiGGs von</h3>
     <?php $ratings = Doctrine::getTable("StoryRating")->findByDql("story_id = ? AND user_id <> 1 LIMIT 20 ORDER BY id DESC",array($story->id)) ?>
-    <ul class="avatarList">
+    <ul class="avatar-list">
     <?php foreach($ratings as $k => $rating):?>
         <li><?php echo
         link_to(
@@ -57,6 +58,7 @@
     </ul>
     <?php cache_save(); ?>
   <?php endif;?>
+</section>
 <?php end_slot()?>
 
 <?php slot("sidebar_sponsoring")?>

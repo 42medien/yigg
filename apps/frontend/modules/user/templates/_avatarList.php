@@ -1,4 +1,4 @@
-<ul class="avatarList">
+<ul class="avatar-list">
 <?php foreach($users as $user):?>
     <li>
      <?php echo

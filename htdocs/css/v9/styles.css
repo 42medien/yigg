@@ -345,10 +345,10 @@ footer .entry-meta {
   #sidebar a.avatar {
     float: left;
     margin-right: 20px; }
-  #sidebar #widget-last-yiggs ul {
+  #sidebar ul.avatar-list {
     margin: 0;
     padding: 0; }
-    #sidebar #widget-last-yiggs ul li {
+    #sidebar ul.avatar-list li {
       display: inline; }
   #sidebar #widget-search .search {
     margin-top: 10px; }

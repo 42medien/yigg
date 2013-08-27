@@ -55,7 +55,7 @@
     <?php $usernames = array();?>
     <h2 class="heading-right">Letzte YiGGs und TwiGGs</h2>
     <?php $ratings = Doctrine::getTable("StoryRating")->findByDql("story_id = ? AND user_id <> 1 LIMIT 20 ORDER BY id DESC",array($story->id)) ?>
-     <ul class="avatarList">
+     <ul class="avatar-list">
      <?php foreach($ratings as $k => $rating):?>
          <li><?php echo
          link_to(
@@ -109,7 +109,7 @@
 
 <section id="widget-tweets" class="widget">
   <h2 class="heading-right">Passende Tweets</h2>
-  <ul class="avatarList">
+  <ul class="avatar-list">
     <li>             
         <?php 
         //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
