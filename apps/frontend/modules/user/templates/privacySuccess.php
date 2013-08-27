@@ -6,7 +6,7 @@
   <li><?php printf('Nachrichten und Bewertungen von %s als RSS-Feeds abonnieren.', $user->username); ?></li>
 </ul>
 
-<?php use_slot("sidebar")?>
+<?php slot("sidebar")?>
 	<h3>Wie weiter?</h3>
 	<dl>
 		<dt><?php echo link_to(sprintf('Folge %s', $user->username),'@user_friends_modify?list=add&username='.$user->username);	?></dt>
