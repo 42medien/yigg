@@ -249,6 +249,10 @@ form.comment label {
 .comment-section {
   margin-right: 50px; }
 
+nav.filter-list {
+  text-align: center;
+  margin-bottom: 50px; }
+
 #content a {
   color: #393939; }
 #content ul.comments-list {

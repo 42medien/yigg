@@ -6,25 +6,7 @@
  * @package    yigg
  * @subpackage story
  */
-class spyActions extends yiggActions
-{
-  public function preExecute()
-  {
-    parent::preExecute();
-
-    $this->filters = array(
-      'alles' => 'Alles',
-      'nachrichten' => 'Neu eingestellt',
-      'bewertungen' => 'Stimmen',
-      'kommentare' => 'Kommentare',
-      'gelesen' => 'Gerade gelesen',
-    );
-
-    $parameterHolder = $this->processFilters( sfContext::getInstance()->getRequest() );
-
-    $internalUrl = htmlentities( strip_tags($parameterHolder->get('categoryUrl') ), ENT_NOQUOTES, 'UTF-8');
-  }
-
+class spyActions extends yiggActions {
   /**
    * Shows the Spy version for yigg
    *
@@ -32,7 +14,7 @@ class spyActions extends yiggActions
   public function executeSpy( $request ) {
     $this->setLayout("layout.stream.full");
     // Execute the view with the filters.
-    $stories = $this->getDbView( $this->filter);
+    $stories = $this->getDbView( $request->getParameter("show", "all") );
     if(!$stories) {
       return sfView::ERROR;
     }
@@ -53,27 +35,27 @@ class spyActions extends yiggActions
     {
       // Show everything
       default:
-      case 'alles':
+      case 'all':
         return $this->getLatestEvents();
       break;
 
       // Only show new stories
-      case 'nachrichten':
+      case 'new':
         return $this->getLatestStories();
       break;
 
       // Only show new ratings
-      case 'bewertungen':
+      case 'top-rated':
         return $this->getLatestRatings();
       break;
 
       // Only show comments
-      case 'kommentare':
+      case 'latest-comments':
         return $this->getLatestComments();
       break;
 
       // Only show Story renders.
-      case 'gelesen' :
+      case 'last-read' :
         return $this->getLatestRenders();
       break;
     }

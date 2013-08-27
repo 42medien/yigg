@@ -505,10 +505,14 @@ class yiggStoryFinder
       SELECT
         sc.created_at
       FROM
-        story_comment sc INNER JOIN comment as c_sort on sc.comment_id = c_sort.id
+        story_comment sc
+      INNER JOIN
+        comment as c_sort
+      ON
+        sc.comment_id = c_sort.id
       WHERE
         sc.story_id = s.id
-       AND
+      AND
         c_sort.deleted_at IS NULL
       ORDER BY sc.created_at
       LIMIT 1
@@ -527,21 +531,23 @@ class yiggStoryFinder
    */
   public function sortByRatingDate($direction = self::SORT_DESC)
   {
-    $this->selectors['latestRating'] = '(
+    $this->selectors['latestRating'] = '
+      (
       SELECT
-        (r.created_at)
+        r.created_at
       FROM
-        StoryRating sr
+        story_rating sr
       LEFT JOIN
-        Rating r
+        rating as r
       ON
         sr.rating_id = r.id
       WHERE
         sr.story_id = s.id
-      ORDER BY
-        (r.created at)
-      LIMIT(1)
-      ) as latestRating';
+      ORDER BY r.created_at
+      LIMIT 1
+      )
+      AS latestRating
+    ';
 
     $this->sorters['latestRating']    = 'latestRating '. $direction;
     return $this;

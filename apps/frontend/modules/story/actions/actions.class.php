@@ -128,30 +128,27 @@ class storyActions extends yiggActions {
     // not really needed as routing enforces them to be integers.
     if ($year = $request->getParameter("year")) {
       $this->year = intval($year);
-    }    
+      $this->timestring = $this->year;
+    }
     if ($month = $request->getParameter("month")) {
       $this->month = intval($month);
+      $this->timestring = $this->year."-".$this->month;
     }
     if ($day = $request->getParameter("day")) {
       $this->day = intval($day);
+      $this->timestring = $this->year."-".$this->month."-".$this->day;
     }
     
-    if( false != $this->year && false != $this->month &&  false != $this->day) {
-      // ensure a correct timestring, and show error accordingly
-      $this->timestring = $this->year . "-" . $this->month ."-". $this->day;
+    if (false !== strtotime($this->timestring)) {
+      // get stories, sort by rating algorithm and date as array
+      $sf = new yiggStoryFinder();
+      $sf->confineWithDateFrom($this->timestring);
+      $sf->confineWithDateUntil($this->timestring);
+      $sf->sortByRating();
 
-      if (false !== strtotime($this->timestring)) {
-        // get stories, sort by rating algorithm and date as array
-        $sf = new yiggStoryFinder();
-        $sf->confineWithDateFrom($this->timestring);
-        $sf->confineWithDateUntil($this->timestring);
-        $sf->sortByRating();
-
-        $this->limit = 10;
-        $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
-        return sfView::SUCCESS;
-      }
-      return sfView::ERROR;
+      $this->limit = 10;
+      $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
+      return sfView::SUCCESS;
     }
 
     return sfView::SUCCESS;
