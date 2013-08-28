@@ -1,6 +1,5 @@
 <?php
-class yiggMetaDataExtractor
-{
+class yiggMetaDataExtractor {
   const TIMEOUT = 5;
 
   private $url,
@@ -88,7 +87,7 @@ class yiggMetaDataExtractor
       $this->yiggMeta->fromOpenGraph($openGraph);
     }
 
-    if ((preg_match('~application/(xml|json)\+oembed"~i', $header)) && !$this->yiggMeta->isComplete()) {
+    if ((preg_match('~application/(xml|json)\+oembed"~i', $header)) && !$this->yiggMeta->hasImages()) {
       try {
         $oEmbed = OEmbedParser::fetchByCode($header);
         $this->yiggMeta->fromOembed($oEmbed);
@@ -96,10 +95,23 @@ class yiggMetaDataExtractor
         // catch exception and try to go on
       }
     }
-
+    
+    // parse meta tags
     if (!$this->yiggMeta->isComplete()) {
-      $meta = MetaTagParser::getKeys($html, $url);
-      $this->yiggMeta->fromMeta($meta);
+      $meta = HtmlTagParser::getKeys($html, $url);
+      $this->yiggMeta->fromHtml($meta);
+    }
+    
+    // parse microdata (schema.org)
+    if (!$this->yiggMeta->isComplete()) {
+      $meta = new MicrodataPhp($url, $html);
+      $this->yiggMeta->fromMicrodata($meta->obj());
+    }
+    
+    // parse microformats v2
+    if (!$this->yiggMeta->isComplete()) {
+      $parser = new MicroformatsParser($html);
+      $this->yiggMeta->fromMicroformats($parser->parse());
     }
     
     // add images

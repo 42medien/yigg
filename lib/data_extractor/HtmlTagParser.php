@@ -2,7 +2,7 @@
 /**
  * a parser for metatags
  */
-class MetaTagParser {
+class HtmlTagParser {
 
   /**
    * Parse a given html for meta and title-tags
@@ -56,6 +56,14 @@ class MetaTagParser {
           $lName = $lLink->getAttribute('rel');
           $lValues['links'][$lName] = self::abslink($lLink->getAttribute('href'), $pUrl);
         }
+      }
+      
+	    //get all meta-elements
+      $lArticles = $lDoc->getElementsByTagName('article');
+      //loop the metas
+      foreach ($lArticles as $lArticle) {
+        $lValues['article'] = trim($lArticle->textContent);
+        continue;
       }
 
 	    return $lValues;

@@ -96,8 +96,48 @@ class YiggMeta {
       }
     }
   }
+  
+  public function fromMicrodata($data) {
+    if ($data) {
+      if (!isset($data->items) || !is_array($data->items) || count($data->items) == 0) {
+        return;
+      }
+      
+      var_dump($data->items);
+      
+      $data = $data->items[0];
+      
+      if (isset($data->properties->name)) {
+        $this->setTitle($data->properties->name[0]);
+      }
+      
+      if (isset($data->properties->decription)) {
+        $this->setDescription($data->properties->decription[0]);
+      }
+    }
+  }
+  
+  public function fromMicroformats($data) {
+    if ($data) {
+      if (!isset($data->items) || !is_array($data->items)) {
+        return;
+      }
+      
+      $data = $data->items[0];
+      
+      if (isset($data->properties->name)) {
+        $this->setTitle($data->properties->name[0]);
+      }
+      
+      if (isset($data->properties->summary)) {
+        $this->setDescription($data->properties->summary[0]);
+      } else if (isset($data->properties->content)) {
+        $this->setDescription($data->properties->content[0]);
+      }
+    }
+  }
 
-  public function fromMeta($meta) {
+  public function fromHtml($meta) {
     if (is_array($meta) && array_key_exists('meta', $meta)) {
       $m = $meta['meta'];
 
@@ -120,7 +160,7 @@ class YiggMeta {
         $this->setTags($m['keywords']);
       }
     }
-
+    
     if (is_array($meta) && array_key_exists('links', $meta)) {
       $l = $meta['links'];
       if (array_key_exists('image_src', $l)) {
