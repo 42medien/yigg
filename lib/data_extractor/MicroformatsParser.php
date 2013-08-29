@@ -136,7 +136,7 @@ class MicroformatsParser {
 	 */
 	public static function mfNamesFromElement(\DOMElement $e, $prefix = 'h-') {
 		$class = $e->getAttribute('class');
-		return Parser::mfNamesFromClass($class, $prefix);
+		return MicroformatsParser::mfNamesFromClass($class, $prefix);
 	}
 	
 	/**
