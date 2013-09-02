@@ -24,6 +24,10 @@
         content: "";
       }
     }
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

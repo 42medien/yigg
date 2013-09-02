@@ -1,5 +1,6 @@
 <?php use_helper("Date", "Text", "SocialShare"); ?>
 <?php if($sf_request->getModule() == "story" && $sf_request->getAction() =="show"){ include_partial("system/systemMessages");} ?>
+<?php use_javascript('http://button.spread.ly/js/v1/loader.js'); ?>
 
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
@@ -39,7 +40,7 @@
   </div>
   
   <footer>
-    <div class="entry-meta">
+    <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
       <?php social_counter($story->external_url); ?>
       <?php //include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
     </div>
@@ -49,8 +50,8 @@
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
 <?php slot('sidebar') ?>
+<?php if(false == cache("story-detail-{$story['id']}-votes{$story->currentRating()}")): ?>
 <section id="widget-last-yiggs" class="widget">
-  <?php if(false == cache("story-detail-{$story['id']}-votes{$story->currentRating()}")): ?>
     <?php $usernames = array();?>
     <h2 class="heading-right">Letzte YiGGs und TwiGGs</h2>
     <?php $ratings = Doctrine::getTable("StoryRating")->findByDql("story_id = ? AND user_id <> 1 LIMIT 20 ORDER BY id DESC",array($story->id)) ?>

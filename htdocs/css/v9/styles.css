@@ -318,6 +318,8 @@ nav.filter-list {
       color: #aaaaaa; }
   .entry-meta ul.social-share-counter li:first-child:before {
     content: ""; }
+  .entry-meta ul.social-share-counter:hover {
+    text-decoration: underline; }
 
 footer .entry-meta {
   margin-bottom: 20px; }
