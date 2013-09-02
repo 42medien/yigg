@@ -8,6 +8,8 @@ all:
     keywords:     YiGG, social news, Nachrichten, Diskussionen, Neuigkeiten, Unterhaltung, Technik, Hamster, Web 2.0, Marvin
     'twitter:creator':  '@yigg'
     'og:site_name': 'YiGG'
+    'og:title':   Nachrichten zum Mitmachen - YiGG.de
+    'og:description': YiGG.de - Auf YiGG kannst Du Nachrichten lesen, bewerten, kommentieren und eigene Artikel verfassen. Bei YiGG entscheiden die Benutzer selbst, was interessant ist.
     'og:type':    'website'
     language:     de
     charset:      utf-8
