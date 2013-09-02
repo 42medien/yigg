@@ -205,6 +205,12 @@ class storyActions extends yiggActions {
         )
       )
     );
+    
+    $this->getResponse()->addMeta('og:title', $this->story->getTitle());
+    $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
+    $this->getResponse()->addMeta('og:type', 'article');
+    $this->getResponse()->addMeta('twitter:card', 'summary');
+    
     return sfView::SUCCESS;
   }
 

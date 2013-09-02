@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de-DE" prefix="og: http://ogp.me/ns#">
+<html lang="de-DE" prefix="og: http://ogp.me/ns# article:http://ogp.me/ns/article#">
   <head>
     <script type='text/javascript'>
       var _sf_startpt=(new Date()).getTime()
@@ -61,7 +61,7 @@
 
     <?php
       include_http_metas();
-      include_metas();
+      include_semantic_metas();
       include_component('system','Feeds');
       include_title();
       use_javascript('jquery-1.7.1.js');

@@ -20,7 +20,7 @@ dev:
   .settings:
     no_script_name:         false
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              false
+    web_debug:              true
     cache:                  false
     compressed:             false
     etag:                   false
@@ -61,7 +61,7 @@ all:
     validation_error_id_prefix: 'error_for_'
     charset:                utf-8                 # default encoding charset.
     default_culture:        de_DE                 # culture
-    standard_helpers:       [Partial, Cache, JavaScript, Image, Yigg]
+    standard_helpers:       [Partial, Cache, JavaScript, Image, Yigg, WebSemantics]
     csrf_secret:            0bIg938HyIgG          # form handling secret and csrf-protection
     use_process_cache:      true                   # Enable symfony optimizations based on PHP accelerators. Set to off for tests or when you have enabled a PHP accelerator in your server but don't want symfony to use it internally.
     check_lock:             true                    # Enable the application lock system triggered by the clear-cache and disable tasks. Set to on to have all requests to disabled applications redirected to the $sf_symfony_data_dir/web/arrors/unavailable.php page.

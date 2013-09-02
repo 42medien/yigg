@@ -6,13 +6,13 @@ all:
     robots:       index, follow
     description:  YiGG.de - Auf YiGG kannst Du Nachrichten lesen, bewerten, kommentieren und eigene Artikel verfassen. Bei YiGG entscheiden die Benutzer selbst, was interessant ist.
     keywords:     YiGG, social news, Nachrichten, Diskussionen, Neuigkeiten, Unterhaltung, Technik, Hamster, Web 2.0, Marvin
+    'twitter:creator':  '@yigg'
+    'og:site_name': 'YiGG'
+    'og:type':    'website'
     language:     de
     charset:      utf-8
   
   stylesheets:    ["v9/styles.css", "font-awesome.min.css"]
-  
-  auto_discovery_link_tag:
-    profile:      bla
   
   has_layout:     true
   layout:         layout
