@@ -309,6 +309,10 @@ story_bar:
     month: \d{1,2}
     year: \d{4,4}
 
+story_archive_alternate:
+  url: /nachrichten
+  param:  { module: story, action: archive }
+
 story_archive:
   url: /nachrichten/:year/:month/:day
   param:  { module: story, action: archive, year: null, month: null, day: null }

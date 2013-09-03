@@ -121,31 +121,32 @@ class storyActions extends yiggActions {
   public function executeArchive($request) {
     $this->setLayout("layout.stream.full");
     $this->year = intval(date("Y", time()));
-    $this->month = intval(date("n", time()));
-    $this->day = intval(date("d", time()));
-
-    // not really needed as routing enforces them to be integers.
-    if ($year = $request->getParameter("year")) {
-      $this->year = intval($year);
-      $this->timestring = $this->year;
-    }
-    if ($month = $request->getParameter("month")) {
-      $this->month = intval($month);
-      $this->timestring = $this->year."-".$this->month;
-    }
-    if ($day = $request->getParameter("day")) {
-      $this->day = intval($day);
-      $this->timestring = $this->year."-".$this->month."-".$this->day;
+    
+    $year = $request->getParameter("year");
+    $month = $request->getParameter("month");
+    $day = $request->getParameter("day");
+    
+    if ($day) {
+      $this->end_timestring = $this->start_timestring = $year."-".$month."-".$day;
+    } elseif($month) {
+      $this->start_timestring = $year."-".$month."-01";
+      $this->end_timestring = $year."-".$month."-31";
+    } elseif ($year) {
+      $this->start_timestring = $this->year."-01-01";
+      $this->end_timestring = $this->year."-12-31";
+    } else {
+      $this->start_timestring = date("Y-m-d", strtotime("now"));
+      $this->end_timestring = date("Y-m-d", strtotime("now"));
     }
     
-    if (false !== strtotime($this->timestring)) {
+    if (false !== strtotime($this->start_timestring) && false !== strtotime($this->end_timestring)) {
       // get stories, sort by rating algorithm and date as array
       $sf = new yiggStoryFinder();
-      $sf->confineWithDateFrom($this->timestring);
-      $sf->confineWithDateUntil($this->timestring);
+      $sf->confineWithDateFrom($this->start_timestring);
+      $sf->confineWithDateUntil($this->end_timestring);
       $sf->sortByRating();
 
-      $this->limit = 10;
+      $this->limit = 50;
       $this->stories = $this->setPagerQuery($sf->getQuery())->execute();
       return sfView::SUCCESS;
     }
