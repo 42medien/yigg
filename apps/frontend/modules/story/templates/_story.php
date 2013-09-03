@@ -2,11 +2,9 @@
 <article class="hentry post h-entry" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
-      //if ($story->type == Story::TYPE_NORMAL) {
-        if($source = $story->getStoryImageSource()){
-          echo img_tag($source);
-        }
-      //}
+    if($source = $story->getStoryImageSource()){
+      echo link_to_story(img_tag($source), $story);
+    }
     ?>
   </div>
   
@@ -16,11 +14,12 @@
     </h3>
     
     <div class="entry-meta">
-      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated">14.12.2012 bla</time> | 
+      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated" datetime="<?php echo date(DATE_ATOM, strtotime($story['created_at'])); ?>"><?php echo format_date($story->getCreatedAt(),"g","de",'UTF-8'); ?></time> | 
       <i class="icon-user"></i> <span class="author p-author vcard hcard h-card"><?php echo link_to(
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",
-                   array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span>
+                   array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span> |
+      <i class="icon-comment"></i> <?php echo link_to_story($story->currentCommentCount(), $story); ?>
     </div>
   </header>
 
@@ -30,9 +29,6 @@
       <?php
         $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
       ?>
-      <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
     </p>
   </div>
-  
-  <?php //include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => false)); ?>
 </article>

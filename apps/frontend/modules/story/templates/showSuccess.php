@@ -21,7 +21,7 @@
     </h3>
     
     <div class="entry-meta">
-      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated">14.12.2012 bla</time> | 
+      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated" datetime="<?php echo date(DATE_ATOM, strtotime($story['created_at'])); ?>"><?php echo format_date($story->getCreatedAt(),"g","de",'UTF-8'); ?></time> | 
       <i class="icon-user"></i> <span class="author p-author vcard hcard h-card"><?php echo link_to(
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",

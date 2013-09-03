@@ -119,7 +119,7 @@ class storyActions extends yiggActions {
    * @return sfView
    */
   public function executeArchive($request) {
-    $this->setLayout("layout.stream");
+    $this->setLayout("layout.stream.full");
     $this->year = intval(date("Y", time()));
     $this->month = intval(date("n", time()));
     $this->day = intval(date("d", time()));
