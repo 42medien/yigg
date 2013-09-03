@@ -126,6 +126,10 @@ class storyActions extends yiggActions {
     $month = $request->getParameter("month");
     $day = $request->getParameter("day");
     
+    $this->year = $year;
+    $this->month = $month;
+    $this->day = $day;
+    
     if ($day) {
       $this->end_timestring = $this->start_timestring = $year."-".$month."-".$day;
     } elseif($month) {
@@ -137,6 +141,10 @@ class storyActions extends yiggActions {
     } else {
       $this->start_timestring = date("Y-m-d", strtotime("now"));
       $this->end_timestring = date("Y-m-d", strtotime("now"));
+      
+      $this->year = date("Y", time());
+      $this->month = date("m", time());
+      $this->day = date("d", time());
     }
     
     if (false !== strtotime($this->start_timestring) && false !== strtotime($this->end_timestring)) {
