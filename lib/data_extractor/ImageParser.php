@@ -31,7 +31,7 @@ class ImageParser {
         $size = @getimagesize($image);
         $size = $size[0] + $size[1];
         // ignore all (stats)images smaller than 5x5
-        if ($size >= 30) {
+        if ($size >= 300) {
           $result[] = array('size' => $size, 'image' => $image);
         }
       }
