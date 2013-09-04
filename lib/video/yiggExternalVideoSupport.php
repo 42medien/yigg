@@ -93,7 +93,7 @@ class yiggExternalVideoSupport {
   }
   
   public function fetch($provider, $url) {
-    $url = $provider . "?format=json&maxwidth=".$this->width."&maxheight=".$this->height."&url=" . urlencode($url);
+    $url = $provider . "?format=json&maxwidth=".$this->width."&lang=de&maxheight=".$this->height."&url=" . urlencode($url);
     
     $response_body = yiggUrlTools::do_get($url);
     

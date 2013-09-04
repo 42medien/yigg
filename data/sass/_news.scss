@@ -12,28 +12,7 @@ ol#stories {
   }
 }
 
-#content {
-  .post {
-    .entry-domain a {
-      text-transform: lowercase;
-      font-size: 12px;
-      color: $light-gray;
-      display: block;
-      text-align: right;
-      text-decoration: none;
-      
-      &:before {
-        content: '\2014 \00A0';
-      }
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.post {
+#content .post {
   background-color: $foreground;
   box-shadow: 0 1px 3px rgba(34,25,25,0.4);
   margin: 0 50px 50px 0;
@@ -53,6 +32,37 @@ ol#stories {
       margin: 0;
       width: 100%;
       display: block;
+    }
+    
+    .media-container {
+      text-align: center;
+      margin: 0 auto;
+      width: auto;
+
+      &, a, strong, small, big {
+        color: #fff;
+        text-shadow: none;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .entry-domain a {
+    text-transform: lowercase;
+    font-size: 12px;
+    color: $light-gray;
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    
+    &:before {
+      content: '\2014 \00A0';
+    }
+    
+    &:hover {
+      text-decoration: underline;
     }
   }
   

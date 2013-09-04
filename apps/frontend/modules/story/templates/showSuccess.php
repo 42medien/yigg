@@ -4,10 +4,12 @@
 
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
+    <?php if ($embed_code) { ?>
+    <div class="media-container">
+      <?php echo $sf_data->getRaw("embed_code"); ?>
+    </div>
     <?php
-    if ($embed_code) {
-      echo $sf_data->getRaw("embed_code");
-    } elseif ($source = $story->getStoryImageSource()){
+    } elseif ($source = $story->getStoryImageSource()) {
       echo img_tag($story->getStoryImageSource());
     }
     ?>

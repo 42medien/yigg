@@ -9,11 +9,15 @@
 
     <div id="slides">
         <ul>
-        <?php foreach($images as $image):?>
-          <li>
-            <img class="image-slider" src="<?php echo $image;?>"/>
-          </li>
-        <?php endforeach; ?>
+        <?php
+        if ($images) {
+          foreach($images as $image) {
+        ?>
+          <li><img class="image-slider" src="<?php echo $image;?>"/></li>
+        <?php
+          }
+        }
+        ?>
           <li>
             No Image
           </li>

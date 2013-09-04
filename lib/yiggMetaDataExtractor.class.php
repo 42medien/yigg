@@ -98,21 +98,21 @@ class yiggMetaDataExtractor {
     
     // parse meta tags
     if (!$this->yiggMeta->isComplete()) {
-      $meta = HtmlTagParser::getKeys($html, $url);
+      $meta = @HtmlTagParser::getKeys($html, $url);
       $this->yiggMeta->fromHtml($meta);
     }
     
     // parse microdata (schema.org)
-    if (!$this->yiggMeta->isComplete()) {
-      $meta = new MicrodataPhp($url, $html);
-      $this->yiggMeta->fromMicrodata($meta->obj());
-    }
+    //if (!$this->yiggMeta->isComplete()) {
+    //  $meta = new MicrodataPhp($url, $html);
+    //  $this->yiggMeta->fromMicrodata($meta->obj());
+    //}
     
     // parse microformats v2
-    if (!$this->yiggMeta->isComplete()) {
-      $parser = new MicroformatsParser($html);
-      $this->yiggMeta->fromMicroformats($parser->parse());
-    }
+    //if (!$this->yiggMeta->isComplete()) {
+    //  $parser = new MicroformatsParser($html);
+    //  $this->yiggMeta->fromMicroformats($parser->parse());
+    //}
     
     // add images
     if (!$this->yiggMeta->hasImages()) {

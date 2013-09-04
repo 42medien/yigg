@@ -211,51 +211,60 @@ ol#stories {
     width: 400px;
     float: left; }
 
-#content .post .entry-domain a {
-  text-transform: lowercase;
-  font-size: 12px;
-  color: #aaaaaa;
-  display: block;
-  text-align: right;
-  text-decoration: none; }
-  #content .post .entry-domain a:before {
-    content: '\2014 \00A0'; }
-  #content .post .entry-domain a:hover {
-    text-decoration: underline; }
-
-.post {
+#content .post {
   background-color: white;
   box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
   margin: 0 50px 50px 0;
   display: block; }
-  .post:before, .post:after {
+  #content .post:before, #content .post:after {
     content: " ";
     display: table; }
-  .post:after {
+  #content .post:after {
     clear: both; }
-  .post h3, .post h3 a {
+  #content .post h3, #content .post h3 a {
     color: #393939;
     font-size: 16px;
     text-transform: uppercase; }
-  .post .attachement {
+  #content .post .attachement {
     background-color: #393939; }
-    .post .attachement img {
+    #content .post .attachement img {
       padding: 0;
       margin: 0;
       width: 100%;
       display: block; }
-  .post .entry-meta,
-  .post .entry-title,
-  .post .entry-content,
-  .post .entry-summary,
-  .post .entry-description,
-  .post .body {
+    #content .post .attachement .media-container {
+      text-align: center;
+      margin: 0 auto;
+      width: auto; }
+      #content .post .attachement .media-container, #content .post .attachement .media-container a, #content .post .attachement .media-container strong, #content .post .attachement .media-container small, #content .post .attachement .media-container big {
+        color: #fff;
+        text-shadow: none;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none; }
+  #content .post .entry-domain a {
+    text-transform: lowercase;
+    font-size: 12px;
+    color: #aaaaaa;
+    display: block;
+    text-align: right;
+    text-decoration: none; }
+    #content .post .entry-domain a:before {
+      content: '\2014 \00A0'; }
+    #content .post .entry-domain a:hover {
+      text-decoration: underline; }
+  #content .post .entry-meta,
+  #content .post .entry-title,
+  #content .post .entry-content,
+  #content .post .entry-summary,
+  #content .post .entry-description,
+  #content .post .body {
     padding: 0 20px;
     line-height: 1.4; }
-  .post .entry-meta {
+  #content .post .entry-meta {
     font-size: 12px;
     color: #aaaaaa; }
-  .post .entry-content, .post .entry-summary {
+  #content .post .entry-content, #content .post .entry-summary {
     font-size: 14px;
     color: #666666; }
 

@@ -87,11 +87,13 @@ class YiggMeta {
 
   public function fromOembed($oe) {
     if ($oe) {
-      $this->setTitle($oe->title);
+      if (isset($oe->title)) {
+        $this->setTitle($oe->title);
+      }
 
-      if ($oe->type == "photo" && $oe->url) {
+      if ($oe->type == "photo" && isset($oe->url)) {
         $this->setImages($oe->url);
-      } else {
+      } elseif (isset($oe->thumbnail_url)) {
         $this->setImages($oe->thumbnail_url);
       }
     }
