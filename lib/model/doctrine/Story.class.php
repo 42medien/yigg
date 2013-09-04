@@ -206,14 +206,13 @@ class Story extends BaseStory
      *
      * @return String Returns the URL for the SWF playing the video or null if no video
      */
-    public function getVideoLink()
-    {
-        if($this->type !== self::TYPE_VIDEO)
-        {
-            return;
-        }
-        $video = yiggExternalVideoFactory::createFromUrl($this->external_url);
-        return $video->getPlayerUrl();
+    public function getEmbedCode() {
+      if (intval($this->type) !== self::TYPE_VIDEO) {
+        return false;
+      }
+        
+      $video = new yiggExternalVideoSupport();
+      return $video->get_html($this->external_url);
     }
 
     /**
@@ -271,10 +270,12 @@ class Story extends BaseStory
             }
             $this->domain_id = $domain->id;
         }
-
-        if(true === $this->isVideo())
-        {
-            $this->type = self::TYPE_VIDEO;
+        
+        $video = new yiggExternalVideoSupport();
+        $oembed_endpoint = $video->match_url($this->external_url);
+        
+        if ($oembed_endpoint) {
+          $this->type = self::TYPE_VIDEO;
         }
     }
 
@@ -284,15 +285,16 @@ class Story extends BaseStory
      *
      * @return Boolean true if video false if no video
      */
-    private function isVideo()
-    {
-        $video = yiggExternalVideoFactory::createFromUrl($this->external_url);
-        return false === is_null($video);
+    private function isVideo() {
+      if ($this->type == self::TYPE_VIDEO) {
+        return true;
+      }
+      
+      return false;
     }
 
-    public function getSourceHost()
-    {
-        return parse_url($this->external_url, PHP_URL_HOST);
+    public function getSourceHost() {
+      return parse_url($this->external_url, PHP_URL_HOST);
     }
 
     /**

@@ -452,3 +452,7 @@ feed:
 weltspion_redirect:
   url:   /weltspion
   param: { module: system, action: redirect, to: '@worldspy' }
+
+test:
+  url: /test
+  param: { module: test, action: index }

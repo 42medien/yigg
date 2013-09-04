@@ -80,7 +80,7 @@ class OEmbedParser {
   /**
    * Enter description here...
    *
-   * @param unknown_type $url
+   * @param string $url
    * @return unknown
    */
   public static function request($url, $format) {

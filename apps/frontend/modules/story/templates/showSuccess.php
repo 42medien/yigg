@@ -5,13 +5,11 @@
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <div class="attachement">
     <?php
-      //if ($story->type == Story::TYPE_NORMAL) {
-        $source = $story->getStoryImageSource();
-      
-        if($source){
-          echo img_tag($story->getStoryImageSource());
-        }
-        //}
+    if ($embed_code) {
+      echo $sf_data->getRaw("embed_code");
+    } elseif ($source = $story->getStoryImageSource()){
+      echo img_tag($story->getStoryImageSource());
+    }
     ?>
   </div>
   

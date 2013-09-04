@@ -202,6 +202,8 @@ class storyActions extends yiggActions {
     if( $this->isAjaxRequest() && $this->partial ) {
       return $this->renderPartial( $this->partial, array( "story" => $this->story, "comments" => $this->comments, "form"=> $this->form, "stories" => $this->stories ));
     }
+    
+    $this->embed_code = $this->story->getEmbedCode();
 
     $this->getResponse()->setTitle( $this->story->title, false);
     $this->getResponse()->addMeta('description', substr($this->story->getPlainTextDescription(), 0, 160));
