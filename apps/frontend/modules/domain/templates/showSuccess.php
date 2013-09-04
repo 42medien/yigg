@@ -1,7 +1,10 @@
+<h1 class="page-title"><?php echo $domain->getHostname(); ?> Nachrichten</h1>
+
 <?php if(count($stories) > 0): ?>
 <div class="story-list-cont">
-  <ol id="story-list" class="story-list hfeed ">
-    <?php foreach($stories as $k => $story ): ?>
+  <ol id="stories" class="story-list hfeed ">
+    <?php foreach($stories as $k => $story ) { ?>
+    <li>
       <?php
         include_partial('story/story',
           array(
@@ -14,7 +17,8 @@
           )
         );
       ?>
-    <?php endforeach; ?>
+    </li>
+    <?php } ?>
   </ol>
 </div>
 <?php else: ?>

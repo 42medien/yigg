@@ -1,8 +1,8 @@
 <?php
 class domainActions extends yiggActions
 {
-  public function executeShow(sfWebRequest $request)
-  {
+  public function executeShow(sfWebRequest $request) {
+    $this->setLayout("layout.stream");
     $this->domain = DomainTable::getInstance()->findOneById($request->getParameter("id"));
     $this->forward404Unless($this->domain);
     
