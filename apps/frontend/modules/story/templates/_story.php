@@ -25,7 +25,7 @@
 
   <div class="body p-summary entry-summary<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p>       
-      <?php echo $story->getDescriptionSummary(600, ESC_RAW);?>
+      <?php echo $story->getDescriptionSummary(300, ESC_RAW);?>
       <?php
         $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
       ?>

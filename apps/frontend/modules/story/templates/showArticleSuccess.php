@@ -1,14 +1,5 @@
+<?php use_helper("Date", "Text", "SocialShare"); ?>
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
-  <div class="attachement">
-    <?php
-      //if ($story->type == Story::TYPE_NORMAL) {
-        if($source = $story->getStoryImageSource()){
-          echo img_tag($source);
-        }
-        //}
-    ?>
-  </div>
-  
   <header>
     <h3 class="entry-title p-title">
       <?php echo link_to_story(truncate_text($story->title, 75), $story, array("title" => $story->title)); ?>
@@ -29,10 +20,19 @@
       <?php
         $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
       ?>
-      <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
     </p>
   </div>
+  
+  <footer>
+    <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo url_for_story($story, null, true); ?>">
+      <?php social_counter(url_for_story($story, null, true)); ?>
+    </div>
+    
+    <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
+  </footer>
 </article>
+
+<?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
 <?php slot("sidebar") ?>
 <section id="widget-last-yiggs" class="widget">
@@ -59,7 +59,3 @@
   <?php endif;?>
 </section>
 <?php end_slot()?>
-
-<?php slot("sidebar_sponsoring")?>
-  <?php include_component("story","sponsorings", array("story"=> $story)); ?>
-<?php end_slot();?>

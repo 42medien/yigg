@@ -15,7 +15,7 @@ function link_to_story($text, $story, $options=array())
   return link_to($text, $route, $options);
 }
 
-function url_for_story($story, $view=false)
+function url_for_story($story, $view=false, $absolute = false)
 {
   $year = substr($story["created_at"], 0, 4);
   $month = substr($story["created_at"], 5, 2);
@@ -26,7 +26,7 @@ function url_for_story($story, $view=false)
   {
     $route .= "&view=$view";
   }
-  return url_for($route);
+  return url_for($route, $absolute);
 }
 
 function adsense_ad_tag($slot, $width, $height)

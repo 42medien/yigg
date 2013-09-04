@@ -42,8 +42,9 @@
   <footer>
     <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
       <?php social_counter($story->external_url); ?>
-      <?php //include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
     </div>
+    
+    <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
   </footer>
 </article>
 

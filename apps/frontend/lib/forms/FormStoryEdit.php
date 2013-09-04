@@ -89,16 +89,14 @@ class FormStoryEdit extends yiggForm {
             array(
               'class'       => 'ninjaRequired',
               'id'          => 'Title',
-              'placeholder' => 'Titel',
-              'readonly'    => 'readonly'
+              'placeholder' => 'Titel'
             )
           ),
           'description'     => new sfWidgetFormTextarea(
             array(),
             array(
               'class'       => $this->story->getStoryType() === "Article" ? "large":"count", "id" => "Description",
-              'placeholder' => 'Beschreibung',
-              'readonly'    => 'readonly'
+              'placeholder' => 'Beschreibung'
             )
           ),
           'Tags'            => new sfWidgetFormInput(
