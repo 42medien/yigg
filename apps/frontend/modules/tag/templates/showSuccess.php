@@ -25,12 +25,3 @@
   <?php endforeach; ?>
 </ol>
 <?php echo $pager->display();?>
-
-<?php slot("sidebar")?>
-  <?php if(count($video_stories) > 0):?>
-     <h3>Die neusten Videos zum Tag</h3>
-     <?php foreach($video_stories as $video):?>
-         <?php include_partial('video/storyVideo', array("story" => $video, "width" => 370, "height"=> 285)) ?>
-     <?php endforeach;?>
-  <?php endif;?>
-<?php end_slot()?>

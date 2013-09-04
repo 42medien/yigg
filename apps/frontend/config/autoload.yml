@@ -1,5 +1,0 @@
-autoload:
-  video:
-    name: video support
-    path: %SF_VIDEO_LIB_DIR%
-    recursive: true
