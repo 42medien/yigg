@@ -1,0 +1,48 @@
+.rating-form {
+  text-align: center;
+  color: #333;
+  width: 60px;
+
+  .counter {
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #B3B3B3;
+    width: 95%;
+    height: 25px;
+    padding: 3px 0;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    border-radius: 2px;
+    line-height: 25px;
+  }
+  
+  .button-small {
+    appearance: none;
+    box-align: center;
+    box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
+    background-color: #F5F5F5;
+    background-image: -webkit-linear-gradient(top, #FFF, #E6E6E6);
+    border: 1px solid #B3B3B3;
+    border-radius: 3px;
+    width: 100%;
+    box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 11px;
+    height: 22px;
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px 6px;
+    text-align: center;
+    text-indent: 0px;
+    text-shadow: rgba(255, 255, 255, 0.746094) 0px 1px 1px;
+    vertical-align: middle;
+  }
+  
+  &.voted .button-small {
+    color: $light-gray;
+    cursor: help;
+  }
+}

@@ -16,8 +16,9 @@
   </div>
   
   <header>
+    <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
     <h3 class="entry-title p-title">
-      <?php echo link_to_story(truncate_text($story->title, 75), $story, array("title" => $story->title)); ?>
+      <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
     </h3>
     
     <div class="entry-meta">
@@ -35,7 +36,7 @@
       <?php
         $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
       ?>
-      <?php echo link_to('mehr bei '.$external_url_title['host'], url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
+      <span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span>
     </p>
   </div>
   
@@ -43,8 +44,6 @@
     <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
       <?php social_counter($story->external_url); ?>
     </div>
-    
-    <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
   </footer>
 </article>
 
@@ -110,8 +109,7 @@
 
 <section id="widget-tweets" class="widget">
   <h2 class="heading-right">Passende Tweets</h2>
-  <ul class="avatar-list">
-    <li>             
+  <ul class="avatar-list">             
         <?php 
         //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
         //echo $story["external_url"]; 
@@ -140,7 +138,7 @@
             }
         ?>                
         <?php foreach($tweets['results'] as $tweet_res) { ?>
-
+        <li>
             <?php 
                                    
             $twitter_username = htmlSpecialChars($tweet_res['from_user']);
@@ -163,16 +161,14 @@
                     "rel" => "nofollow"
                     )
                 );?>
+        </li>
         <?php } ?>
-    <?php } ?>             
-    </li>
+    <?php } ?>
   </ul>
 </section>
     
-<section id="widget-more-sources" class="widget">
-  <h2 class="help_icon">Jetzt und später mehr von dieser Quelle:
-    <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-  </h2>
+<section id="widget-sources" class="widget">
+  <h2>Jetzt und später mehr von dieser Quelle</h2>
   <?php if($sf_user->hasUser() && $story->Domain->isSubscriber($sf_user->getUser())):?>
     <?php echo now_later_button($story->Domain->hostname,
                                 "@domain_show?id=".$story->Domain->id,
@@ -183,20 +179,19 @@
                                 "@domain_show?id=".$story->Domain->id,
                                 "@domain_subscribe?id=".$story->Domain->id);?>
   <?php endif;?>
-  <div class="clr"></div>
-
-  <?php if(count($story->Tags) > 0):?>
-    <h3 class="help_icon">
-      Mehr lesen zu diesen Themen:                                    
-      <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-    </h3>
-      
-    <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
-  <?php endif;?>
-
-  <?php if(count($story->Comments) > 3):?>
-    <?php include_partial("comment/latestComments");?>
-  <?php endif;?>
-<div class="clr"><!--  --></div>
 </section>
+
+
+<?php if(count($story->Tags) > 0):?>
+<section id="widget-tags" class="widget">
+  <h2>Mehr lesen zu diesen Themen</h3>
+      
+  <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
+<?php endif;?>
+</section>
+
+
+<?php if(count($story->Comments) > 3):?>
+  <?php include_partial("comment/latestComments");?>
+<?php endif;?>
 <?php end_slot() ?>

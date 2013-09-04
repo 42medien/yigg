@@ -39,7 +39,7 @@ class storyComponents extends sfComponents {
     {
       $conn = Doctrine::getConnectionByTableName("Story");
       $conn->beginTransaction();
-        $this->story->rate( $this->getUser() , $conn);
+      $this->story->rate( $this->getUser() , $conn);
       $conn->commit();
 
       if( true === $request->isAjaxRequest() )

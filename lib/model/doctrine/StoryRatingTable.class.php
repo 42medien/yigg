@@ -60,7 +60,7 @@ class StoryRatingTable extends Doctrine_Table
 
         $query->where('sr.user_id = ?', $user->id);
 
-      }else{
+      } else {
 
         $query->where('r.ip_address = ?',$_SERVER['REMOTE_ADDR']);
 
@@ -86,7 +86,7 @@ class StoryRatingTable extends Doctrine_Table
     if( true == $user['id'])
     {
       $query->innerJoin('sr.Rating r');
-      $query->addWhere('sr.user_id = :userid OR r.ip_address = :ip', array( ':userid' => $user['id'], ':ip' =>sfContext::getInstance()->getRequest()->getRemoteAddress() ));
+      $query->addWhere('sr.user_id = :userid', array( ':userid' => $user['id'] ));
     }
     else
     {
@@ -119,7 +119,7 @@ class StoryRatingTable extends Doctrine_Table
     $ip_address = sfContext::getInstance()->getRequest()->getRemoteAddress();
     if( true == $user['id'])
     {
-      $query->addWhere('sr.user_id = ? OR r.ip_address = ?', array( $user['id'], $ip_address ));
+      $query->addWhere('sr.user_id = ?', array( $user['id'] ));
     }
     else
     {

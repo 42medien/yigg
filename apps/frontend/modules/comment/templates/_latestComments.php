@@ -1,5 +1,6 @@
-<h2 class="heading-right" style="clear:both;">Debatte</h2>
-<ol class="avatar-list-style">
+<section id="widget-comments" class="widget">
+  <h2>Debatte</h2>
+  <ol class="avatar-list-style">
   <?php foreach ($comments as $comment): ?>
     <li>
       <?php
@@ -9,4 +10,5 @@
       ?>
     </li>
   <?php endforeach; ?>
-</ol>
+  </ol>
+</section>

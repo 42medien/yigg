@@ -324,6 +324,7 @@ class yiggSession extends sfBasicSecurityUser
 
     // get the Ratings. and check cache first.
     $storyRatings = $this->getAttribute("StoryRatings",array(),"StoryRatings");
+
     if( true === array_key_exists( $story_id, $storyRatings) )
     {
       return true;
@@ -332,6 +333,7 @@ class yiggSession extends sfBasicSecurityUser
     {
       // do a manual lookup just to be sure.
       $result =  StoryRatingTable::retrieveHasRated( $story_id, $this->hasUser() ? $this->getUser(): null );
+      
       if( true === $result )
       {
         // update the cache.
