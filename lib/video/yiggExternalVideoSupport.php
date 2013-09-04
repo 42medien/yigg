@@ -121,7 +121,7 @@ class yiggExternalVideoSupport {
 					break;
 
 				$title = ! empty( $data->title ) && is_string( $data->title ) ? $data->title : '';
-				$return = '<a href="' . esc_url( $url ) . '"><img src="' . esc_url( $data->url ) . '" alt="' . esc_attr($title) . '" width="' . esc_attr($data->width) . '" height="' . esc_attr($data->height) . '" /></a>';
+				$return = '<a href="' . $url . '"><img src="' . $data->url . '" alt="' . $title . '" width="' . $data->width . '" height="' . $data->height . '" /></a>';
 				break;
 
 			case 'video':
@@ -132,7 +132,7 @@ class yiggExternalVideoSupport {
 
 			case 'link':
 				if ( ! empty( $data->title ) && is_string( $data->title ) )
-					$return = '<a href="' . esc_url( $url ) . '">' . esc_html( $data->title ) . '</a>';
+					$return = '<a href="' . $url . '">' . $data->title . '</a>';
 				break;
 
 			default:
