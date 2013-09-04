@@ -1,12 +1,13 @@
+<h1 class="page-title">"<?php echo $tag->getRawValue(); ?>" Nachrichten
 <?php if( true === $sf_user->hasUser()): ?>
-   <div class="top_action_row">
-       <?php if( false === $sf_user->getUser()->followsTag($tag->getRawValue()) ): ?>
-         <?php echo button_to("Abonnieren", "@tag_subscribe?tag_id={$tag->id}", array("class" => "follow"));?>
-       <?php else:?>
-         <?php echo button_to("Abonniert!", "@tag_subscribe?tag_id={$tag->id}", array("class" => "unfollow"));?>
-       <?php endif;?>
-   </div>
+   <?php if( false === $sf_user->getUser()->followsTag($tag->getRawValue()) ): ?>
+     <?php echo button_to("Abonnieren", "@tag_subscribe?tag_id={$tag->id}", array("class" => "follow"));?>
+   <?php else:?>
+     <?php echo button_to("Abonniert!", "@tag_subscribe?tag_id={$tag->id}", array("class" => "unfollow"));?>
+   <?php endif;?>
 <?php endif;?>
+</h1>
+
 <ol id="stories" class="story-list hfeed">
   <?php foreach($stories as $k => $story ): ?>
   <li>
