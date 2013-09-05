@@ -375,6 +375,11 @@ footer .entry-meta {
   #sidebar section {
     margin: 0 0 35px 0;
     padding: 0; }
+    #sidebar section:before, #sidebar section:after {
+      content: " ";
+      display: table; }
+    #sidebar section:after {
+      clear: both; }
   #sidebar a.avatar {
     float: left;
     margin-right: 20px; }
@@ -382,7 +387,8 @@ footer .entry-meta {
     margin: 0;
     padding: 0; }
     #sidebar ul.avatar-list li {
-      display: inline; }
+      float: left;
+      margin: 0 10px 10px 0; }
   #sidebar ol, #sidebar ul {
     margin: 0;
     padding: 0;

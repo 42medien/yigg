@@ -107,65 +107,7 @@
 </section>
 <?php endif; ?>
 
-<section id="widget-tweets" class="widget">
-  <h2 class="heading-right">Passende Tweets</h2>
-  <ul class="avatar-list">             
-        <?php 
-        //echo 'Uname: <b>' . $rating["User"]->username . '</b>';
-        //echo $story["external_url"]; 
-        $host_name = $story["external_url"];
-        if($host_name != '')
-        {
-            $endpoint = sprintf(
-                                'http://search.twitter.com/search.json?q=%s',
-                                $host_name
-                                );
-            $ch = curl_init($endpoint);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-            $data = curl_exec($ch);
-            $info = curl_getinfo($ch);
-            curl_close($ch);
-
-            if ($info['http_code'] == 200) {
-                $tweets = json_decode($data, true);
-            }
-            else if ($info['http_code'] == 401) {
-                echo 'Invalid Credentials';
-            }
-            else {
-                echo ''; // Invalid Response
-            }
-        ?>                
-        <?php foreach($tweets['results'] as $tweet_res) { ?>
-        <li>
-            <?php 
-                                   
-            $twitter_username = htmlSpecialChars($tweet_res['from_user']);
-            $twitter_username_status = htmlSpecialChars($tweet_res['id']);
-            $tweer_url = 'https://twitter.com/' . $twitter_username . '/status/' . $twitter_username_status;
-            
-            echo
-                link_to(
-                    img_tag(
-                    htmlSpecialChars($tweet_res['profile_image_url']),
-                    array(
-                        "width" => 48,
-                        "height" => 48,
-                        "class" => "avatar",
-                        "alt"=> "Profil von {$twitter_username} besuchen")
-                    ),
-                    $tweer_url,
-                    array(
-                    "title" => "Tweet von {$twitter_username} besuchen",
-                    "rel" => "nofollow"
-                    )
-                );?>
-        </li>
-        <?php } ?>
-    <?php } ?>
-  </ul>
-</section>
+<?php include_component("story", "twitterShares", array("url" => $story["external_url"])); ?>
     
 <section id="widget-sources" class="widget">
   <h2>Jetzt und später mehr von dieser Quelle</h2>
