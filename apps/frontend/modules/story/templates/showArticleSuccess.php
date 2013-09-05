@@ -1,6 +1,7 @@
 <?php use_helper("Date", "Text", "SocialShare"); ?>
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <header>
+    <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
     <h3 class="entry-title p-title">
       <?php echo link_to_story(truncate_text($story->title, 75), $story, array("title" => $story->title)); ?>
     </h3>
@@ -13,7 +14,7 @@
                    array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span>
     </div>
   </header>
-
+  
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p>       
       <?php echo $story->getDescription();?>
@@ -27,8 +28,6 @@
     <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo url_for_story($story, null, true); ?>">
       <?php social_counter(url_for_story($story, null, true)); ?>
     </div>
-    
-    <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
   </footer>
 </article>
 
