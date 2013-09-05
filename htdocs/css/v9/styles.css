@@ -267,9 +267,9 @@ ol#stories {
   #content .post .entry-content, #content .post .entry-summary {
     font-size: 14px;
     color: #666666; }
-  #content .post .rating-form {
+  #content .post header .rating-form {
     float: right;
-    margin: 0 20px; }
+    margin: 0 20px 20px; }
 
 form.comment textarea {
   width: 99%; }
