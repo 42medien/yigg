@@ -9,7 +9,7 @@ function social_counter($url, $options = array()) {
   $yigg_count = $smc->get_yigg();
   $spreadly_count = $smc->get_spreadly();
 ?>
-<ul class="social-share-counter">
+<ul class="social-share-counter" title="Share diesen Link">
   <li class="yigg"><span class="counter"><?php echo $yigg_count; ?></span> yiggs</li>
   <li class="spreadly"><span class="counter"><?php echo $spreadly_count; ?></span> shares</li>
   <li class="twitter"><span class="counter"><?php echo $twitter_count; ?></span> tweets</li>
