@@ -7,7 +7,7 @@ if (false === $hasRated ) {
       action="<?php echo url_for_story($story, "rate"); ?>" 
       method="post">
   <fieldset class="rating-form unvoted">
-    <span class="counter"><?php echo $story->currentRating(); ?></span>
+    <div class="counter"><?php echo $story->currentRating(); ?></div>
     <input type="hidden" 
            name="StoryRate[_csrf_token]" 
            value="<?php echo $form[$form->getCSRFFieldName()]->getValue() ?>" 

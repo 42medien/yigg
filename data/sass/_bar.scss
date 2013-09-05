@@ -1,0 +1,11 @@
+body#bar {
+  overflow: hidden;
+  
+  html, body, iframe, #iframe-content { margin:0; padding:0; height:100%; }
+
+  iframe { display:block; width:100%; border:none; clear: both; }
+  
+  #branding {
+    margin-bottom: 0;
+  }
+}

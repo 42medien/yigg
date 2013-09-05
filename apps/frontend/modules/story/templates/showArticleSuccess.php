@@ -1,4 +1,6 @@
 <?php use_helper("Date", "Text", "SocialShare"); ?>
+<?php use_javascript('http://button.spread.ly/js/v1/loader.js'); ?>
+
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <header>
     <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
