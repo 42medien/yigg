@@ -32,19 +32,16 @@
   ?></h4>
      <ul class="list-style">
        <li <?php if($sf_request->getModule() == 'user'): ?>class="selected"<?php endif;?>>
-         <?php echo link_to('Mein YiGG',"@user_welcome",array("title"=>"Dein Profil ansehen")); ?>
+         <i class="icon-user"></i> <?php echo link_to('Mein YiGG',"@user_welcome",array("title"=>"Dein Profil ansehen")); ?>
        </li>
-       <li class="pm"><?php echo link_to(
+       <li><i class="icon-pushpin"></i> <?php echo link_to(
        "Pinnwand ({$sf_user->getUser()->getNotificationCount()})",
        "@notification_index",
          array(
            "title" => "Zu meiner Pinwand",
          )
        );?></li>
-       <li class="fb_acc" onclick="sendFbFriendRequest(); return false;">
-           <a href="#">Lade Freunde ein</a>
-       </li>
-       <li class="logout"><?php echo link_to("Abmelden","@user_logout");?></li>
+       <li><i class="logout icon-signout"></i> <?php echo link_to("Abmelden","@user_logout");?></li>
      </ul>
       <div class="clr"></div>
 </section>
