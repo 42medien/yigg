@@ -50,7 +50,3 @@
   <?php include_component("comment","latestComments");?>
   <?php include_component("story","latestStoriesWidget"); ?>
 <?php end_slot();?>
-
-<?php slot("sidebar_sponsoring")?>
-  <?php include_component("story","sponsorings"); ?>
-<?php end_slot();?>

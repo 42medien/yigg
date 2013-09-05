@@ -1,1 +1,0 @@
-<?php //echo include_component("sponsoring","sponsoring", array( 'place_id' => $place_id ) ); ?>

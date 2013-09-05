@@ -6,26 +6,6 @@ class storyComponents extends sfComponents {
     $this->stories = StoryTable::retrieveLatestStories();
     return sfView::SUCCESS;
   }
-
-  public function executeSponsorings(sfWebRequest $request)
-  {
-    switch( $request->getAction() )
-    {
-      case "bestStories":
-        $this->place_id = 8;
-      break;
-
-      case "newStories":
-        $this->place_id = 9;
-      break;
-
-      default: case "show":
-        $this->place_id = 38;
-        break;
-    }
-
-    return sfView::SUCCESS;
-  }
   
   public function executeTwitterShares($request) {
     $consumer = new OAuthConsumer("zjpUwdOQ3Gm3IIo2gPUSHw", "72sEMdRACQZvHQL4JEP1khqHDBVXJuwkIgJY1xK2U");
