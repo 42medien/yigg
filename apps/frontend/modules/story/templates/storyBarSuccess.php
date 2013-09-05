@@ -15,7 +15,7 @@
     ?>
     
     <div class="spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
-      <?php social_counter($story->external_url); ?>
+      <?php social_counter_simple($story->external_url); ?>
     </div>
     
     <div style="float: right;"><?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?></div>

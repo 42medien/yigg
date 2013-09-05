@@ -341,7 +341,7 @@ ul.social-share-counter {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  color: #666666; }
+  color: #aaaaaa; }
   ul.social-share-counter li {
     display: inline; }
     ul.social-share-counter li:before {
@@ -354,6 +354,9 @@ ul.social-share-counter {
 
 footer .entry-meta {
   margin-bottom: 20px; }
+
+.now_later_button .later {
+  content: "aa"; }
 
 #sidebar {
   display: block;
