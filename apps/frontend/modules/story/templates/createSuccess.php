@@ -1,6 +1,12 @@
 <?php use_stylesheet('carousel.css') ?>
 
-<?php slot("page-title")?>Nachricht erstellen<?php end_slot()?>
+<?php slot("page-title")?>
+  <?php if ("Normal" === $view) { ?>
+    Nachricht erstellen <?php echo link_to('Eigenen Artikel erstellen', '@story_create_article', array('id' => 'changetype', 'class' => 'button')); ?>
+  <?php } else { ?>
+    Eigenen Artikel erstellen <?php echo link_to('Nachricht erstellen', '@story_create', array('id' => 'changetype', 'class' => 'button')); ?>
+  <?php } ?>
+<?php end_slot()?>
 
 <form action="<?php echo url_for($story->getStoryType() === "Normal" ? "@story_create" : "@story_create_article");?>" id="new_form" class="ninjaForm <?php echo ("Normal" === $view ? "": "article" ); ?>" <?php if(true === $form->isMultipart()):?>enctype="multipart/form-data"<?php endif; ?> method="post">
   <fieldset>
