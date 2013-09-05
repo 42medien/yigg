@@ -47,6 +47,7 @@ class yiggExternalVideoSupport {
 			'#https?://(www\.)?viddler\.com/.*#i'                => array( 'http://lab.viddler.com/services/oembed/',           true  ),
       '#https?://(.+\.)?deviantart.com/art/.*#i'           => array( 'http://backend.deviantart.com/oembed',              true  ),
       '#https?://(.+\.)?deviantart.com/(.*)/d.*#i'         => array( 'http://backend.deviantart.com/oembed',              true  ),
+      '#https?://(.+\.)?ifttt.com/recipes/.*#i'            => array( 'https://ifttt.com/oembed/',                         true  ),
 			'http://qik(.com|.ly)/*'                             => array( 'http://qik.com/api/oembed.{format}',                false ),
 			'http://revision3.com/*'                             => array( 'http://revision3.com/api/oembed/',                  false ),
 			'http://i*.photobucket.com/albums/*'                 => array( 'http://photobucket.com/oembed',                     false ),
