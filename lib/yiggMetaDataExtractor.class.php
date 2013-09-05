@@ -65,8 +65,18 @@ class yiggMetaDataExtractor {
    * @return array $pArray
    */
   public function fetchData() {
+    $media = new yiggExternalVideoSupport();
+    
     if (!$this->response) {
-      return false;
+      $this->yiggMeta = new YiggMeta();
+      
+      if (($provider = $media->match_url($this->url)) && !$this->yiggMeta->isComplete()) {
+        //get the opengraph-tags
+        $oEmbed = $media->fetch($provider, $this->url);
+        $this->yiggMeta->fromOembed($oEmbed);
+      }
+
+      return;
     }
     
     $html = $this->response;
@@ -80,14 +90,18 @@ class yiggMetaDataExtractor {
     }
 
     $this->yiggMeta->setUrl($url);
-
+    
     if ((preg_match('~http://opengraphprotocol.org/schema/~i', $header) || preg_match('~http://ogp.me/ns#~i', $header) || preg_match('~property=[\"\']og:~i', $header)) && !$this->yiggMeta->isComplete()) {
       //get the opengraph-tags
       $openGraph = OpenGraph::parse($header);
       $this->yiggMeta->fromOpenGraph($openGraph);
     }
 
-    if ((preg_match('~application/(xml|json)\+oembed"~i', $header)) && !$this->yiggMeta->hasImages()) {
+    if (($provider = $media->match_url($url)) && !$this->yiggMeta->isComplete()) {
+      //get the opengraph-tags
+      $oEmbed = $media->fetch($provider, $url);
+      $this->yiggMeta->fromOembed($oEmbed);
+    } elseif ((preg_match('~application/(xml|json)\+oembed"~i', $header)) && !$this->yiggMeta->hasImages()) {
       try {
         $oEmbed = OEmbedParser::fetchByCode($header);
         $this->yiggMeta->fromOembed($oEmbed);
@@ -103,16 +117,16 @@ class yiggMetaDataExtractor {
     }
     
     // parse microdata (schema.org)
-    //if (!$this->yiggMeta->isComplete()) {
-    //  $meta = new MicrodataPhp($url, $html);
-    //  $this->yiggMeta->fromMicrodata($meta->obj());
-    //}
+    /*if (!$this->yiggMeta->isComplete()) {
+      $meta = new MicrodataPhp($url, $html);
+      $this->yiggMeta->fromMicrodata($meta->obj());
+    }
     
     // parse microformats v2
-    //if (!$this->yiggMeta->isComplete()) {
-    //  $parser = new MicroformatsParser($html);
-    //  $this->yiggMeta->fromMicroformats($parser->parse());
-    //}
+    if (!$this->yiggMeta->isComplete()) {
+      $parser = new MicroformatsParser($html);
+      $this->yiggMeta->fromMicroformats($parser->parse());
+    }*/
     
     // add images
     if (!$this->yiggMeta->hasImages()) {
