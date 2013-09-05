@@ -10,7 +10,7 @@
     </div>
     <?php
     } elseif ($source = $story->getStoryImageSource()) {
-      echo img_tag($story->getStoryImageSource());
+      echo link_to(img_tag($source), url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));
     }
     ?>
   </div>
@@ -18,7 +18,7 @@
   <header>
     <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
     <h3 class="entry-title p-title">
-      <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank'));?>
+      <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank')); ?>
     </h3>
     
     <div class="entry-meta">
