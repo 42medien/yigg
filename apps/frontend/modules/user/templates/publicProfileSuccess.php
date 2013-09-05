@@ -106,13 +106,17 @@
   <?php include_partial("userWidgetStats", array("user" => $user))?>
   
   <?php if(count($followedUsers) > 0):?>
-    <h3 class="avtr">Abonnements</h3>
+  <section id="widget-abonnements" class="widget">
+    <h2>Abonnements</h2>
     <?php include_partial("user/avatarList", array("users" => $followedUsers));?>
+  </section>
   <?php endif;?>
 
   <?php if(count($followingUsers) > 0):?>
-    <h3 class="avtr">Abonnenten</h3>
+  <section id="widget-abonnementers" class="widget">
+    <h2>Abonnenten</h2>
     <?php include_partial("user/avatarList", array("users" => $followingUsers));?>
+  </section>
   <?php endif;?>
 
   <?php if( true === $sf_user->hasUser() && $sf_user->getUserId() !== $user->id):?>
@@ -120,9 +124,9 @@
   <?php endif; ?>
 
   <?php if(count($user->Tags) > 0):?>
-    <h3 class="help_icon"><?php echo $user->username;?> interessiert sich für:
-      <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-    </h3>
+  <section id="widget-user-tags" class="widget">
+    <h2><?php echo $user->username;?>s Interessen</h2>
     <?php echo include_partial("tag/subscribe", array("tags" => $user->Tags));?>
+  </section>
   <?php endif;?>
 <?php end_slot()?>

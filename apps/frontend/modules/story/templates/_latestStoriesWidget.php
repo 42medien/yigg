@@ -1,4 +1,5 @@
-  <h2 class="heading-right">Letzte Nachrichten</h2>
+<section id="widget-last-stories" class="widget">
+  <h2>Letzte Nachrichten</h2>
   <ol class="avatar-list-style"><?php foreach ($stories as $story): ?><li><?php
    echo link_to(
     avatar_tag($story->Author->Avatar, "icon.gif", 14,14),
@@ -13,3 +14,4 @@
       )
     );
   ?></li><?php endforeach; ?></ol>
+</section>

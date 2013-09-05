@@ -45,11 +45,14 @@
 <?php endif;?>
 
 <?php slot("sidebar")?>
+<section id="widget-friends-online" class="widget">
   <?php $following =  UserFollowingTable::getOnlineFollowedUsers($sf_user->getUserId()); ?>
-  <h3 class="help_icon">Freunde Online (<?php echo count($following)?>)</h3>
+  <h2>Freunde Online (<?php echo count($following)?>)</h2>
   <?php include_partial("user/avatarList", array("users" => $following));?>
+</section>
 
-  <h3 class="help_icon">Private Mitteilung schreiben</h3>
+<section id="widget-private-message" class="widget">
+  <h2>Private Mitteilung schreiben</h2>
   <form <?php if(isset($reply_pm) AND $reply_pm): ?>id="pm_<?php echo $reply_pm->id; ?>_reply"<?php endif; ?> method="post" action="<?php echo url_for( "@notification_index"); ?>" class="post-box ninjaForm ninjaAjaxSubmit <?php if(isset($reply_pm) AND $reply_pm): ?>pm_<?php echo $reply_pm->id; ?>_reply<?php endif?>">
     <?php if( true === $sf_request->isMethod("post")):?>
        <?php if(isset($pm) && $pm->isValid() ): ?>
@@ -63,6 +66,8 @@
       <input type="submit" name="commit" value="PM versenden">
     </div>
   </form>
+</section>
+
   <?php include_component("comment","latestComments");?>
   <?php include_component("story","latestStoriesWidget",array("sf_cache_key"=> "last_stories")); ?>
 <?php end_slot();?>

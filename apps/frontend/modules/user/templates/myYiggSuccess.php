@@ -27,26 +27,26 @@
 
 <?php slot("sidebar")?>
   <?php if($following->count() > 0):?>
-    <h3 class="help_icon">Freunde Online (<?php echo count($following)?>)</h3>
+  <section id="widget-friends-online" class="widget">
+    <h2>Freunde Online (<?php echo count($following)?>)</h2>
     <?php include_partial("user/avatarList", array("users" => $following));?>
+  </section>
   <?php endif;?>
 
   <?php if(count($user->Domains) > 0):?>
-    <h3 class="help_icon">Lieblings-Nachrichtenquellen:
-      <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-    </h3>
+  <section id="widget-favorite-news" class="widget">
+    <h2>Lieblings-Nachrichtenquellen</h2>
     <?php foreach($user->Domains as $domain):?>
       <?php echo now_later_button($domain->hostname,
                             "@domain_show?id=".$domain->id,
                             "@domain_subscribe?id=".$domain->id, array("class" => "subscribed"));?>
     <?php endforeach;?>
-    <div class="clr"></div>
+  </section>
   <?php endif;?>
 
   <?php if(count($user->Tags) > 0):?>
-    <h3 class="help_icon">Themen, die mich interessieren:
-      <?php echo link_to(image_tag("silk-icons/help.png", array("alt" => "Hilfe")), "http://hilfe.yigg.de/doku.php?id=grundlagen", array("title" => "Zur Hilfe", "rel" => "external"));?>
-    </h3>
+  <section id="widget-interests" class="widget">
+    <h2 class="help_icon">Themen, die mich interessieren</h2>
     <?php foreach($user->Tags as $tag) { ?>
       <?php echo now_later_button(
         $tag->name,
@@ -54,7 +54,7 @@
         "@tag_subscribe?tag_id={$tag->id}",
         array("class" => "subscribed"));?>
     <?php } ?>
-    <div class="clr"></div>
+  </section>
   <?php endif;?>
 <?php end_slot()?>
 
