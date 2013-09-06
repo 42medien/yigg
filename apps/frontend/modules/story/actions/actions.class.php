@@ -21,7 +21,7 @@ class storyActions extends yiggActions {
     $this->getResponse()->addMeta('description', $this->story->getDescription());
     $this->getResponse()->addMeta('og:title', $this->story->getTitle());
     $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
-    $this->getResponse()->addMeta('og:url', url_for_story($this->story, "bar", true));
+    $this->getResponse()->addMeta('og:url', $this->story->getExternalUrl());
     $this->getResponse()->addMeta('og:type', 'website');
     
     if ($source = $this->story->getStoryImageSource()) {
