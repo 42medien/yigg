@@ -25,11 +25,9 @@ class storyComponents extends sfComponents {
    * @return
    * @param $request Object
    */
-  public function executeRateStory($request)
-  {
+  public function executeRateStory($request) {
     $this->form = new FormStoryRate();
-    if( true === $this->form->processAndValidate() )
-    {
+    if( true === $this->form->processAndValidate() ) {
       $conn = Doctrine::getConnectionByTableName("Story");
       $conn->beginTransaction();
       $this->story->rate( $this->getUser() , $conn);
@@ -41,8 +39,7 @@ class storyComponents extends sfComponents {
       }
 
       $referer = $request->getReferer();
-      if($referer)
-      {
+      if($referer) {
         return $this->getContext()->getController()->redirect( $referer );
       }
 
@@ -57,8 +54,7 @@ class storyComponents extends sfComponents {
       $routing = $this->getContext()->getRouting();
       $params = $routing->parse($uri);
 
-      if($params['action'] == "externalRate")
-      {
+      if($params['action'] == "externalRate") {
         return $this->getContext()->getController()->redirect( "@stories_button_id?id=". $this->story->id, 301);
       }
 
