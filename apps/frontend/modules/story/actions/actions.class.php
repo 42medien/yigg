@@ -13,13 +13,21 @@ class storyActions extends yiggActions {
    */
   public function executeStoryBar($request) {
     $this->findOrRedirect($request);
+    $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'Yigg'));
 
     $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
 
-    $this->getResponse()->addMeta('title', $this->story->getTitle());
+    $this->getResponse()->setTitle( $this->story->title, false );
     $this->getResponse()->addMeta('description', $this->story->getDescription());
+    $this->getResponse()->addMeta('og:title', $this->story->getTitle());
+    $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
+    $this->getResponse()->addMeta('og:url', url_for_story($this->story, "bar", true));
+    $this->getResponse()->addMeta('og:type', 'website');
+    
+    if ($source = $this->story->getStoryImageSource()) {
+      $this->getResponse()->addMeta('og:image', public_path($source, true));
+    }
 
-    //$this->getResponse()->setTitle($this->story->getTitle());
     $this->setLayout('layout.bar');
   }
 
@@ -205,7 +213,7 @@ class storyActions extends yiggActions {
     
     $this->embed_code = $this->story->getEmbedCode();
 
-    $this->getResponse()->setTitle( $this->story->title, false);
+    $this->getResponse()->setTitle( $this->story->title, false );
     $this->getResponse()->addMeta('description', substr($this->story->getPlainTextDescription(), 0, 160));
     $this->getResponse()->addMeta(
       'keywords',
