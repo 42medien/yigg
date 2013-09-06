@@ -15,7 +15,7 @@ function link_to_story($text, $story, $options=array())
   return link_to($text, $route, $options);
 }
 
-function url_for_story($story, $view=false, $absolute = false)
+function url_for_story($story, $view = false, $absolute = false)
 {
   $year = substr($story["created_at"], 0, 4);
   $month = substr($story["created_at"], 5, 2);
