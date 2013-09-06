@@ -1,4 +1,8 @@
 <?php
+if (!isset($type)) {
+  $type = 'full';
+}
+
 $hasRated = ( null === $story->hasRated() ? $sf_user->hasRated($story['id']) : $story->hasRated() );
 if (false === $hasRated ) {
 ?>
@@ -6,7 +10,7 @@ if (false === $hasRated ) {
       class="ninjaForm ninjaAjaxSubmit" 
       action="<?php echo url_for_story($story, "rate"); ?>" 
       method="post">
-  <fieldset class="rating-form unvoted">
+  <div class="rating-form unvoted <?php echo $type; ?>">
     <div class="counter"><?php echo $story->currentRating(); ?></div>
     <input type="hidden" 
            name="StoryRate[_csrf_token]" 
@@ -20,14 +24,14 @@ if (false === $hasRated ) {
            value="YiGG it!" 
            class="button button-small"
            id="Rate<?php echo $story->id?>" />
-  </fieldset>
+  </div>
 </form>
 <?php
   
 } else {
   
 ?>
-<div class="rating-form voted">   
+<div class="rating-form voted <?php echo $type; ?>">   
   <div class="counter"><?php echo $story->currentRating() ?></div>
   <div class="button-small" title="Du hast schon geYiGGed">YiGGed</div>
 </div>

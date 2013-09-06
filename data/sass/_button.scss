@@ -1,21 +1,48 @@
 .rating-form {
   text-align: center;
-  color: #333;
-  width: 60px;
-
+  color: #333;  
+  
+  
   .counter {
     display: block;
     text-align: center;
     background-color: #fff;
     border: 1px solid #B3B3B3;
-    width: 95%;
-    height: 25px;
-    padding: 3px 0;
-    margin-bottom: 5px;
     font-size: 15px;
     font-size: 1.5rem;
     border-radius: 2px;
-    line-height: 25px;
+  }
+  
+  &.full {
+    width: 60px;
+
+    .counter {
+      width: 57px;
+      margin-bottom: 5px;
+      line-height: 25px;
+      height: 25px;
+      font-size: 15px;
+      padding: 3px 0;
+    }
+  }
+  
+  &.small {
+    height: 22px;
+    width: 105px;
+    disply: inline;
+
+    .counter {
+      width: 40px;
+      margin-bottom: 5px;
+      line-height: 20px;
+      float: right;
+      height: 20px;
+      font-size: 11px;
+    }
+    
+    .button-small {
+      float: left;
+    }
   }
   
   .button-small {
@@ -26,7 +53,7 @@
     background-image: -webkit-linear-gradient(top, #FFF, #E6E6E6);
     border: 1px solid #B3B3B3;
     border-radius: 3px;
-    width: 100%;
+    width: 60px;
     box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
     box-sizing: border-box;
     display: inline-block;
