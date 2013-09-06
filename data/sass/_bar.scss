@@ -8,4 +8,38 @@ body#bar {
   #branding {
     margin-bottom: 0;
   }
+  
+  #comments {
+    position: relative;
+
+    #comments-content {
+      padding: 15px 0 50px 50px;
+      background-image: url(/images/v9/noise.png);
+      box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+      display: none;
+      position: absolute;
+      left: 5px;
+      top: 40px;
+      background-color: #fff;
+      width: 500px;
+      max-height: 300px;
+      overflow: scroll;
+    }
+  }
+  
+  .bar-items {
+    margin: 0;
+    padding: 0;
+    
+    & > li {
+      margin-top: 20px;
+      float: left;
+      list-style-type: none;
+      padding-right: 50px;
+      
+      .rating-form {
+        padding-top: 7px;
+      }
+    }
+  }
 }

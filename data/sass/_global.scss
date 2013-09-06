@@ -30,6 +30,9 @@ img.avatar {
   color: #888;
   text-shadow: #fff 0px 1px 0px;
   font-size: 16px;
+  a {
+    color: $dark-gray;
+  }
 }
 
 .page-title {
