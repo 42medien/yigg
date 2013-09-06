@@ -47,39 +47,8 @@
 
 <script type="text/javascript">
   <!--
-  $(function() {
-    $("#comments-label").click(function() {
-      $("#comments-content").toggle();
-    });
-
-    $('#comments-content').delegate('form', 'submit',function(event){
-
-      $.post(
-        $('.comment').attr('action'),
-        $('.comment').serialize(),
-        function(data) {
-          $('#comments-content').html(data);
-        }
-      );
-      
-      event.preventDefault();
-      return false;
-    });
-
-    $('#comments-content').delegate('a', 'click',function(event){
-      var href_action =  $(this).attr('href');
-      var chunks = href_action.split('/');
-
-      $.post(
-        $(this).attr('href'),
-        function(data) {
-          $('#li-comment-'+chunks[chunks.length - 1]).remove();
-        }
-      );
-      
-      event.preventDefault();
-      return false;
-    });
+  jQuery("#comments-label").click(function() {
+    jQuery("#comments-content").toggle();
   });
   //-->
 </script>

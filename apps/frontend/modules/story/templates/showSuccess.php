@@ -134,6 +134,6 @@
 
 
 <?php if(count($story->Comments) > 3):?>
-  <?php include_partial("comment/latestComments");?>
+  <?php include_component("comment", "latestComments");?>
 <?php endif;?>
 <?php end_slot() ?>

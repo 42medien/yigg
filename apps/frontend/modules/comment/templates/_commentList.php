@@ -2,7 +2,9 @@
     use_helper("Date");
     $at_beginning = isset($at_beginning)?$at_beginning:false;
 ?>
-<section id="<?php echo strtolower(get_class($sf_data->getRaw("obj"))); ?>-comments-<?php echo $obj['id']; ?>" class="clr comment-section">
+<?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
+  <section id="<?php echo strtolower(get_class($sf_data->getRaw("obj"))); ?>-comments-<?php echo $obj['id']; ?>" class="clr comment-section">
+<?php endif; ?>
 
 <?php if ($at_beginning === true && false === $inlist && $sf_user->hasUser()):?>
   <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
@@ -52,4 +54,6 @@
   <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
 <?php endif;?>
 
-</section>
+<?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
+  </section>
+<?php endif; ?>

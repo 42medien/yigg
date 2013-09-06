@@ -36,6 +36,3 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
   })();
 </script>
-    
-<!-- START FACEBOOK JAVASCRIPT SDK -->
-<div id="fb-root"></div>
