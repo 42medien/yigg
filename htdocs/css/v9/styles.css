@@ -226,7 +226,7 @@ ol#stories {
     font-size: 16px;
     text-transform: uppercase; }
   #content .post .attachement {
-    background-color: #393939; }
+    background-color: #fff; }
     #content .post .attachement img {
       padding: 0;
       margin: 0;
@@ -235,7 +235,8 @@ ol#stories {
     #content .post .attachement .media-container {
       text-align: center;
       margin: 0 auto;
-      width: auto; }
+      width: auto;
+      background-color: #393939; }
       #content .post .attachement .media-container, #content .post .attachement .media-container a, #content .post .attachement .media-container strong, #content .post .attachement .media-container small, #content .post .attachement .media-container big {
         color: #fff;
         text-shadow: none;
@@ -701,21 +702,37 @@ body#bar {
 
 .rating-form {
   text-align: center;
-  color: #333;
-  width: 60px; }
+  color: #333; }
   .rating-form .counter {
     display: block;
     text-align: center;
     background-color: #fff;
     border: 1px solid #B3B3B3;
-    width: 95%;
-    height: 25px;
-    padding: 3px 0;
-    margin-bottom: 5px;
     font-size: 15px;
     font-size: 1.5rem;
-    border-radius: 2px;
-    line-height: 25px; }
+    border-radius: 2px; }
+  .rating-form.full {
+    width: 60px; }
+    .rating-form.full .counter {
+      width: 57px;
+      margin-bottom: 5px;
+      line-height: 25px;
+      height: 25px;
+      font-size: 15px;
+      padding: 3px 0; }
+  .rating-form.small {
+    height: 22px;
+    width: 105px;
+    disply: inline; }
+    .rating-form.small .counter {
+      width: 40px;
+      margin-bottom: 5px;
+      line-height: 20px;
+      float: right;
+      height: 20px;
+      font-size: 11px; }
+    .rating-form.small .button-small {
+      float: left; }
   .rating-form .button-small {
     appearance: none;
     box-align: center;
@@ -724,7 +741,7 @@ body#bar {
     background-image: -webkit-linear-gradient(top, white, #e6e6e6);
     border: 1px solid #B3B3B3;
     border-radius: 3px;
-    width: 100%;
+    width: 60px;
     box-shadow: rgba(255, 255, 255, 0.19922) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.04688) 0px 1px 2px 0px;
     box-sizing: border-box;
     display: inline-block;
