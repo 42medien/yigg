@@ -26,6 +26,8 @@ img.avatar {
   color: #888;
   text-shadow: #fff 0px 1px 0px;
   font-size: 16px; }
+  #content a {
+    color: #393939; }
 
 .page-title {
   padding-top: 0;
@@ -284,38 +286,42 @@ nav.filter-list {
   text-align: center;
   margin-bottom: 50px; }
 
-#content a {
-  color: #393939; }
-#content ul.comments-list {
-  padding: 0;
-  margin: 0; }
-  #content ul.comments-list li.li-comment {
-    list-style: none;
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid #fff;
-    -moz-box-shadow: #ccc 0 -1px 0 0;
-    -webkit-box-shadow: #ccc 0 -1px 0 0;
-    box-shadow: #ccc 0 -1px 0 0; }
-    #content ul.comments-list li.li-comment .entry-meta {
-      margin-bottom: 15px; }
-      #content ul.comments-list li.li-comment .entry-meta time {
-        color: #aaaaaa;
-        display: block;
-        font-size: 13px;
-        margin-top: 5px; }
-    #content ul.comments-list li.li-comment .comment-avatar img {
-      -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-      -moz-border-radius: 500px;
-      -webkit-border-radius: 500px;
-      -o-border-radius: 500px;
-      -ms-border-radius: 500px;
-      -khtml-border-radius: 500px;
-      border-radius: 500px;
-      float: right;
-      margin: 0 0 15px 15px; }
+.comment-section {
+  color: #888;
+  text-shadow: #fff 0px 1px 0px;
+  font-size: 16px; }
+  .comment-section a {
+    color: #393939; }
+  .comment-section ul.comments-list {
+    padding: 0;
+    margin: 0; }
+    .comment-section ul.comments-list li.li-comment {
+      list-style: none;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #fff;
+      -moz-box-shadow: #ccc 0 -1px 0 0;
+      -webkit-box-shadow: #ccc 0 -1px 0 0;
+      box-shadow: #ccc 0 -1px 0 0; }
+      .comment-section ul.comments-list li.li-comment .entry-meta {
+        margin-bottom: 15px; }
+        .comment-section ul.comments-list li.li-comment .entry-meta time {
+          color: #aaaaaa;
+          display: block;
+          font-size: 13px;
+          margin-top: 5px; }
+      .comment-section ul.comments-list li.li-comment .comment-avatar img {
+        -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        -moz-border-radius: 500px;
+        -webkit-border-radius: 500px;
+        -o-border-radius: 500px;
+        -ms-border-radius: 500px;
+        -khtml-border-radius: 500px;
+        border-radius: 500px;
+        float: right;
+        margin: 0 0 15px 15px; }
 
 .page article {
   padding: 10px 30px;
@@ -699,6 +705,30 @@ body#bar {
     clear: both; }
   body#bar #branding {
     margin-bottom: 0; }
+  body#bar #comments {
+    position: relative; }
+    body#bar #comments #comments-content {
+      padding: 15px 0 50px 50px;
+      background-image: url(/images/v9/noise.png);
+      box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+      display: none;
+      position: absolute;
+      left: 5px;
+      top: 40px;
+      background-color: #fff;
+      width: 500px;
+      max-height: 300px;
+      overflow: scroll; }
+  body#bar .bar-items {
+    margin: 0;
+    padding: 0; }
+    body#bar .bar-items > li {
+      margin-top: 20px;
+      float: left;
+      list-style-type: none;
+      padding-right: 50px; }
+      body#bar .bar-items > li .rating-form {
+        padding-top: 7px; }
 
 .rating-form {
   text-align: center;
@@ -714,7 +744,7 @@ body#bar {
   .rating-form.full {
     width: 60px; }
     .rating-form.full .counter {
-      width: 57px;
+      width: 58px;
       margin-bottom: 5px;
       line-height: 25px;
       height: 25px;
