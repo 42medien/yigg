@@ -22,12 +22,8 @@
   </header>
 
   <div class="body p-summary entry-summary<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
-    <p>       
-      <?php echo $story->getDescriptionSummary(300, ESC_RAW);?>
-      <?php
-        $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
-      ?>
-      <span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span>
-    </p>
+    <p><?php echo $story->getDescriptionSummary(300, ESC_RAW);?></p>
+
+    <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>
 </article>
