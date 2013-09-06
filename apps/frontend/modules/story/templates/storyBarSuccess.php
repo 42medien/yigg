@@ -14,11 +14,16 @@
       ));
     ?>
     
-    <div class="spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
-      <?php social_counter_simple($story->external_url); ?>
+    <div id="bar_comments">
+      <button id="bar_comments_label"><i class="icon-comment"></i> Kommentieren</button>
+      <div id="bar_comments_content">
+        <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
+      </div>
     </div>
     
-    <div style="float: right;"><?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?></div>
+    <a class="spreadly-button" style="float: left;" href="<?php echo $story->external_url; ?>"></a>
+    
+    <div style="float: right;"><?php include_component( 'story', 'rateStory',  array('story' => $story, 'type' => 'small')); ?></div>
   </nav>
 </header>
 
@@ -27,3 +32,46 @@
     <p>Your browser does not support iframes.</p>
   </iframe>
 </div>
+
+<script type="text/javascript">
+            <!--
+            $(function() {
+                $("#bar_comments_content").hide();
+
+                $("#bar_comments_label").click(function() {
+                    $("#bar_comments_content").toggle();
+                });
+
+                $('#bar_comments_content').delegate('form', 'submit',function(event){
+
+                    $.post(
+                        $('.comment').attr('action'),
+                        $(".comment").serialize(),
+                        function(data) {
+                            $('#bar_comments_content').html(data);
+                        }
+                    );
+                    event.preventDefault();
+                    return false;
+                });
+
+                $('#bar_comments_content').delegate('a', 'click',function(event){
+                    var href_action =  $(this).attr('href');
+                    var chunks = href_action.split('/');
+
+                    $.post(
+                        $(this).attr('href'),
+                        function(data) {
+                            $('#comment-'+chunks[chunks.length - 1]).remove();
+                        }
+                    );
+                    event.preventDefault();
+                    return false;
+                });
+            });
+
+            function redirect() {
+                location.href = "<?php echo $story->external_url;?>";
+            }
+            //-->
+        </script>
