@@ -1,12 +1,10 @@
 <?php use_helper("Date", "Text"); ?>
 <article class="hentry post h-entry" id="<?php echo "story_{$story['id']}"; ?>">
+  <?php if($source = $story->getStoryImageSource()) { ?>
   <div class="attachement">
-    <?php
-    if($source = $story->getStoryImageSource()){
-      echo link_to_story(img_tag($source), $story);
-    }
-    ?>
+    <?php echo link_to_story(img_tag($source), $story); ?>
   </div>
+  <?php } ?>
   
   <header>
     <h3 class="entry-title p-title">
