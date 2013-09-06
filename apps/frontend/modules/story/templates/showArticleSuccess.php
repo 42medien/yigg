@@ -23,6 +23,7 @@
       <?php
         $external_url_title = parse_url(str_replace('www.','',$story["external_url"]))
       ?>
+      <span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span>
     </p>
   </div>
   
