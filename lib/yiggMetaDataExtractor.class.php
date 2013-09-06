@@ -129,11 +129,9 @@ class yiggMetaDataExtractor {
     }*/
     
     // add images
-    if (!$this->yiggMeta->hasImages()) {
-      $yiggImageParser = new ImageParser();
-      if ($images = $yiggImageParser->detect($html, $url)) {
-        $this->yiggMeta->setImages($images);
-      }
+    $yiggImageParser = new ImageParser();
+    if ($images = $yiggImageParser->detect($html, $url)) {
+      $this->yiggMeta->setImages($images);
     }
   }
 }

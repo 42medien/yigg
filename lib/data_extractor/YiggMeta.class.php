@@ -32,12 +32,14 @@ class YiggMeta {
   }
 
   public function setImages($images) {
-    if (!$this->images && $images) {
+    if ($images) {
       if (is_array($images)) {
-        $this->images = $images;
+        $this->images = array_merge($this->images, $images);
       } else {
         $this->images = array(urldecode($images));
       }
+      
+      $this->images = array_unique($this->images);
     }
   }
 
