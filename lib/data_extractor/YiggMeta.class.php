@@ -36,7 +36,7 @@ class YiggMeta {
       if (is_array($images)) {
         $this->images = array_merge($this->images, $images);
       } else {
-        $this->images = array(urldecode($images));
+        $this->images = array_merge($this->images, array(urldecode($images)));
       }
       
       $this->images = array_unique($this->images);
@@ -144,35 +144,45 @@ class YiggMeta {
   public function fromHtml($meta) {
     if (is_array($meta) && array_key_exists('meta', $meta)) {
       $m = $meta['meta'];
-
-      if (array_key_exists('dc.title', $m)) {
+      
+      // set title
+      if (array_key_exists('twitter:title', $m)) {
+        $this->setTitle($m['twitter:title']);
+      } elseif (array_key_exists('dc.title', $m)) {
         $this->setTitle($m['dc.title']);
-      }
-      if (array_key_exists('dc.description', $m)) {
-        $this->setDescription($m['dc.description']);
-      }
-
-      if (array_key_exists('description', $m)) {
-        $this->setDescription($m['description']);
-      }
-
-      if (array_key_exists('news_keywords', $m)) {
-        $this->setTags($m['news_keywords']);
+      } elseif (array_key_exists('title', $meta)) {
+        $this->setTitle($meta['title']);
       }
       
-      if (array_key_exists('keywords', $m)) {
+      // get description
+      if (array_key_exists('twitter:description', $m)) {
+        $this->setDescription($m['twitter:description']);
+      } elseif (array_key_exists('dc.description', $m)) {
+        $this->setDescription($m['dc.description']);
+      } elseif (array_key_exists('description', $m)) {
+        $this->setDescription($m['description']);
+      }
+      
+      // get keywords      
+      if (array_key_exists('news_keywords', $m)) {
+        $this->setTags($m['news_keywords']);
+      } elseif (array_key_exists('keywords', $m)) {
         $this->setTags($m['keywords']);
+      }
+      
+      // get images
+      if (array_key_exists('twitter:image', $m)) {
+        $this->setImages($m['twitter:image']);
       }
     }
     
+    // get images
     if (is_array($meta) && array_key_exists('links', $meta)) {
       $l = $meta['links'];
       if (array_key_exists('image_src', $l)) {
         $this->setImages($l['image_src']);
       }
     }
-
-    $this->setTitle($meta['title']);
   }
 
   public function fromParams($params) {
