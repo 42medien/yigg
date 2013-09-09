@@ -107,6 +107,8 @@
     
 <section id="widget-sources" class="widget">
   <h2>Jetzt und später mehr von dieser Quelle</h2>
+  
+  <img src="http://www.google.com/s2/favicons?domain=<?php echo $story->Domain->hostname; ?>" class="favicon" />
   <?php if($sf_user->hasUser() && $story->Domain->isSubscriber($sf_user->getUser())):?>
     <?php echo now_later_button($story->Domain->hostname,
                                 "@domain_show?id=".$story->Domain->id,
@@ -125,9 +127,10 @@
   <h2>Mehr lesen zu diesen Themen</h3>
       
   <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
-<?php endif;?>
 </section>
+<?php endif;?>
 
+<?php include_partial('story/categories', array("categories" => $story->Categorys));?>
 
 <?php if(count($story->Comments) > 3):?>
   <?php include_component("comment", "latestComments");?>

@@ -381,6 +381,10 @@ footer .entry-meta {
   margin-bottom: 50px; }
   #sidebar a {
     color: #999; }
+  #sidebar .widget .favicon {
+    width: 16px;
+    height: 16px;
+    float: left; }
   #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
     margin-top: 0;
     padding-top: 0; }
