@@ -1,4 +1,13 @@
-<h1 class="page-title"><?php echo $domain->getHostname(); ?> Nachrichten</h1>
+<h1 class="page-title">
+  <?php echo $domain->getHostname(); ?> Nachrichten
+  <?php if( true === $sf_user->hasUser()): ?>
+     <?php if( false === $sf_user->getUser()->followsDomain($domain->getRawValue()) ): ?>
+       <?php echo button_to("Abonnieren", "@domain_subscribe?id={$domain->id}", array("class" => "follow"));?>
+     <?php else:?>
+       <?php echo button_to("Abonniert!", "@domain_subscribe?id={$domain->id}", array("class" => "unfollow"));?>
+     <?php endif;?>
+  <?php endif;?>
+</h1>
 
 <?php if(count($stories) > 0): ?>
 <div class="story-list-cont">
