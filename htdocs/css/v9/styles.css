@@ -37,7 +37,7 @@ img.avatar {
   margin-top: 0;
   margin-bottom: 40px;
   clear: both; }
-  .page-title a.button {
+  .page-title a.button, .page-title input {
     font-weight: normal;
     margin-top: -7px; }
 
@@ -444,6 +444,15 @@ footer .entry-meta {
 
 .profile_form label {
   display: block; }
+
+#new_form ul#Categories {
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  list-style: none; }
+  #new_form ul#Categories li {
+    float: left;
+    width: 50%; }
 
 /* =Forms
 -------------------------------------------------------------- */
