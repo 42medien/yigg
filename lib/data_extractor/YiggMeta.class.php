@@ -3,7 +3,7 @@
 class YiggMeta {
   private $title = null;
   private $description = null;
-  private $images = null;
+  private $images = array();
   private $url = null;
   private $tags = null;
 
