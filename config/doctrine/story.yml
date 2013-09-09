@@ -73,6 +73,10 @@ Story:
       class: Tag
       refClass: StoryTag
       foreignAlias: Story
+    Categorys:
+      class: Category
+      refClass: StoryCategory
+      foreignAlias: Story
     Tweets:
       class: Tweet
       refClass: StoryTweet
