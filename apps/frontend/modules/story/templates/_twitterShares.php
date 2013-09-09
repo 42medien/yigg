@@ -1,3 +1,4 @@
+<?php if (count($tweets->getRawValue()) > 0) { ?>
 <section id="widget-tweets" class="widget">
   <h2 class="heading-right">Passende Tweets</h2>
   <ul class="avatar-list">                 
@@ -25,3 +26,4 @@
     <?php } ?>
   </ul>
 </section>
+<?php } ?>
