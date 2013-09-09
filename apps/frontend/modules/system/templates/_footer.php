@@ -4,7 +4,7 @@
     <ul>
       <li><?php echo link_to('Kontakt', '@about_pages?template=kontakt', array('title' => 'Kontakt')); ?></li>
       <li><?php echo link_to('Impressum', '@about_pages?template=impressum', array('title' => 'Impressum')); ?></li>
-      <li><?php echo link_to('YiGG-Blog', 'http://yiggblog.wordpress.com/', array('title' => 'Neuigkeiten über YiGG', 'target' => '_blank')); ?></li>
+      <li><?php echo link_to('YiGG-Blog', 'http://blog.yigg.de', array('title' => 'Neuigkeiten über YiGG', 'target' => '_blank')); ?></li>
     </ul>
   </div>
   <div class="legal widget">
