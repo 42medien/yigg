@@ -6,6 +6,10 @@ body {
   background: $background url("../../images/v9/noise.png") repeat;
 }
 
+a.button {
+  text-decoration: none;
+}
+
 .screen-reader-text {
   display: none;
 }
@@ -40,6 +44,11 @@ img.avatar {
   margin-top: 0;
   margin-bottom: 40px;
   clear: both;
+  
+  a.button {
+    font-weight: normal;
+    margin-top: -7px;
+  }
 }
 
 .pagination {

@@ -5,6 +5,9 @@ body {
   font-family: "helvetica neue", arial, sans-serif;
   background: #f0f0f0 url("../../images/v9/noise.png") repeat; }
 
+a.button {
+  text-decoration: none; }
+
 .screen-reader-text {
   display: none; }
 
@@ -34,6 +37,9 @@ img.avatar {
   margin-top: 0;
   margin-bottom: 40px;
   clear: both; }
+  .page-title a.button {
+    font-weight: normal;
+    margin-top: -7px; }
 
 .pagination {
   clear: both;
@@ -400,6 +406,8 @@ footer .entry-meta {
     #sidebar ul.avatar-list li {
       float: left;
       margin: 0 10px 10px 0; }
+  #sidebar .avatar-list-style li {
+    font-size: 14px; }
   #sidebar ol, #sidebar ul {
     margin: 0;
     padding: 0;
