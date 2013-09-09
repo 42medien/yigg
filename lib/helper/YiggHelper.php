@@ -49,23 +49,20 @@ function adsense_ad_tag($slot, $width, $height)
  * @param array $options
  * @return string
  */
-function now_later_button($text, $now_route, $later_route, $options=array())
-{
-  if(array_key_exists("class", $options))
-  {
+function now_later_button($text, $now_route, $later_route, $options=array()) {
+  if(array_key_exists("class", $options)) {
     $options["class"] .= " now_later_button";
   }
-  else
-  {
+  else {
     $options["class"] = "now_later_button";
   }
 
   return
     content_tag(
       "div",
-      link_to($text, $now_route, array("class" => "now", "title" => "Jetzt mehr hierzu lesen."))
+      link_to($text, $now_route, array("class" => "now", "title" => "Jetzt mehr hierzu lesen.")) . " "
 
-      . link_to("Abonnieren", $later_route, array("class" => "later", "title" => "Später mehr hierzu lesen.")),
+      . link_to("<i class='icon-plus-sign'></i>", $later_route, array("class" => "later", "title" => "Später mehr hierzu lesen.")),
       $options
     );
 }

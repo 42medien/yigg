@@ -368,8 +368,16 @@ ul.social-share-counter {
 footer .entry-meta {
   margin-bottom: 20px; }
 
-.now_later_button .later {
-  content: "aa"; }
+.now_later_button a.later {
+  text-decoration: none; }
+  .now_later_button a.later i:hover:before {
+    color: green; }
+
+.now_later_button.subscribed a.later i:before {
+  content: "\f00c"; }
+.now_later_button.subscribed a.later i:hover:before {
+  content: "\f057";
+  color: red; }
 
 #sidebar {
   display: block;

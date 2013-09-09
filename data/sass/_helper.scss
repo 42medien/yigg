@@ -35,7 +35,22 @@ footer .entry-meta {
 }
 
 .now_later_button {
-  .later {
-    content: "aa";
+  a.later {
+    text-decoration: none;
+    
+    i:hover:before {
+      color: green;
+    }
+  }
+}
+
+.now_later_button.subscribed {
+  a.later i:before {
+    content: "\f00c";
+  }
+  
+  a.later i:hover:before {
+    content: "\f057";
+    color: red;
   }
 }
