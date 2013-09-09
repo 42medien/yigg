@@ -11,9 +11,8 @@ class Story extends BaseStory
 
     public $categories = array();
 
-    public function construct()
-    {
-        $this->cache = new sfParameterHolder();
+    public function construct() {
+      $this->cache = new sfParameterHolder();
     }
 
     /**
@@ -35,17 +34,16 @@ class Story extends BaseStory
      *
      * @return string/null;
      */
-    public function getStoryImage()
-    {
-        $query = Doctrine_Query::create()
+    public function getStoryImage() {
+      $query = Doctrine_Query::create()
             ->select('f.*')
             ->from('File f')
             ->where('f.id = ?', $this->getImageId());
-        $result = $query->fetchOne(array(), Doctrine_Core::HYDRATE_ARRAY);
-        if(count($result)){
-            return $result;
-        }
-        return null;
+      $result = $query->fetchOne(array(), Doctrine_Core::HYDRATE_ARRAY);
+      if(count($result)){
+        return $result;
+      }
+      return null;
     }
 
     /**
@@ -54,36 +52,31 @@ class Story extends BaseStory
      * @param User
      * @return string;
      */
-    public static function getUserLastStoryDate($user)
-    {
-        if(is_null($user)){
-            return;
-        }
+    public static function getUserLastStoryDate($user) {
+      if (is_null($user)) {
+        return;
+      }
 
-        $query = Doctrine_Query::create();
-        $query  -> select('s.created_at')
-            ->from('Story s')
-            ->where('s.user_id = ?', (int) $user->getId())
-            ->orderBy('s.created_at DESC');
+      $query = Doctrine_Query::create();
+      $query  -> select('s.created_at')
+              ->from('Story s')
+              ->where('s.user_id = ?', (int) $user->getId())
+              ->orderBy('s.created_at DESC');
 
-        $story = $query->fetchOne();
+      $story = $query->fetchOne();
 
-        if($story){
-            return $story->getCreatedAt();
-        }
+      if ($story) {
+        return $story->getCreatedAt();
+      }
     }
 
-    public function setStoryType( $type = 0 )
-    {
-        $types = array_flip( $this->types );
-        if( array_key_exists( $type, $types) )
-        {
-            $this->type = $types[$type];
-        }
-        else
-        {
-            throw new Exception('story->setType() called, type is wrong!!! tryed to set' . $type , self::TYPE_VIDEO);
-        }
+    public function setStoryType( $type = 0 ) {
+      $types = array_flip( $this->types );
+      if( array_key_exists( $type, $types) ) {
+        $this->type = $types[$type];
+      } else {
+        throw new Exception('story->setType() called, type is wrong!!! tryed to set' . $type , self::TYPE_VIDEO);
+      }
     }
 
     /**
@@ -95,45 +88,41 @@ class Story extends BaseStory
      *  @param yiggSession
      *  @return void;
      */
-    public function rate( $userSession , $conn=null)
-    {
-        // check our cache.
-        if( $this->hasRated() === true )
-        {
-            return $this;
-        }
+    public function rate( $userSession , $conn=null) {
+      // check our cache.
+      if( $this->hasRated() === true ) {
+        return $this;
+      }
 
-        if( true === $userSession->hasRated($this['id']) )
-        {
-            // update cache
-            $this->setHasRated(true);
-            return $this;
-        }
-
-        // Grrrrrrrr nasty, but we have to, cause the
-        //  model can't support large collections :(
-        $r = new Rating();
-        $sr = new StoryRating();
-
-        $sr->Rating = $r;
-        $sr->story_id = $this->id;
-
-        $r->save($conn);
-        $sr->save($conn);
-
-        $this->cache->set("currentRating", StoryRatingTable::getCountById( $this->id ) );
+      if( true === $userSession->hasRated($this['id']) ) {
+        // update cache
         $this->setHasRated(true);
         return $this;
+      }
+
+      // Grrrrrrrr nasty, but we have to, cause the
+      //  model can't support large collections :(
+      $r = new Rating();
+      $sr = new StoryRating();
+
+      $sr->Rating = $r;
+      $sr->story_id = $this->id;
+
+      $r->save($conn);
+      $sr->save($conn);
+
+      $this->cache->set("currentRating", StoryRatingTable::getCountById( $this->id ) );
+      $this->setHasRated(true);
+      return $this;
     }
 
     /**
      * Create an initial vote for user that are not logged in
      */
-    public function initalVote($conn = null)
-    {
-        $rating = new Rating();
-        $this->Ratings->add($rating);
-        $this->save($conn);
+    public function initalVote($conn = null) {
+      $rating = new Rating();
+      $this->Ratings->add($rating);
+      $this->save($conn);
     }
 
     /**
@@ -141,9 +130,8 @@ class Story extends BaseStory
      *
      * @param $var Boolean (rated or not).
      */
-    public function setHasRated($var)
-    {
-        $this->cache->set("sessionHasRated", $var);
+    public function setHasRated($var) {
+      $this->cache->set("sessionHasRated", $var);
     }
 
     /**
@@ -152,39 +140,33 @@ class Story extends BaseStory
      *
      * @return Boolean
      */
-    public function hasRated()
-    {
-        return $this->cache->get("sessionHasRated",null);
+    public function hasRated() {
+      return $this->cache->get("sessionHasRated",null);
     }
 
     /**
      * Returns the current rating for this story.
      * @return int
      */
-    public function currentRating()
-    {
-        if(false === $this->cache->has("currentRating"))
-        {
-            $this->cache->set("currentRating", StoryRatingTable::getCountById( $this->id ));
-        }
-        return $this->cache->get("currentRating");
+    public function currentRating() {
+      if(false === $this->cache->has("currentRating")) {
+        $this->cache->set("currentRating", StoryRatingTable::getCountById( $this->id ));
+      }
+      return $this->cache->get("currentRating");
     }
 
     /**
      * Returns the current comment count for this story.
      */
-    public function currentCommentCount()
-    {
-        if(false === $this->cache->has("currentCommentCount"))
-        {
-            $this->cache->set("currentCommentCount", null === $this->hasRelation('Comments') ? CommentTable::getCount($this) : count($this->Comments) );
-        }
-        return $this->cache->get("currentCommentCount");
+    public function currentCommentCount() {
+      if(false === $this->cache->has("currentCommentCount")) {
+        $this->cache->set("currentCommentCount", null === $this->hasRelation('Comments') ? CommentTable::getCount($this) : count($this->Comments) );
+      }
+      return $this->cache->get("currentCommentCount");
     }
 
-    public function canEdit( $userSession)
-    {
-        return $this->isAuthor($userSession) || $userSession->isAdmin() || $userSession->isModerator();
+    public function canEdit( $userSession) {
+      return $this->isAuthor($userSession) || $userSession->isAdmin() || $userSession->isModerator();
     }
 
     /**
@@ -192,13 +174,11 @@ class Story extends BaseStory
      * @return bool
      * @param $user Object
      */
-    public function isAuthor( $userSession )
-    {
-        if($userSession->hasUser())
-        {
-            return $this->user_id === $userSession->getUser()->id;
-        }
-        return false;
+    public function isAuthor( $userSession ) {
+      if($userSession->hasUser()) {
+        return $this->user_id === $userSession->getUser()->id;
+      }
+      return false;
     }
 
     /**
@@ -220,63 +200,55 @@ class Story extends BaseStory
      * @return void
      * @param $data array of post data
      */
-    public function update(array $data , $conn=null)
-    {
-        if(array_key_exists("Categories", $data ) )
-        {
-            $this->categories = $data['Categories'];
-            unset($data['Categories']);
-        }
+    public function update(array $data , $conn=null) {
+      if (array_key_exists("Categories", $data ) ) {
+        $this->categories = $data['Categories'];
+        unset($data['Categories']);
+      }
 
-        if(array_key_exists("Tags", $data ) )
-        {
-            $this->updateTags( $data['Tags'] );
-            unset($data['Tags']);
-        }
+      if(array_key_exists("Tags", $data ) ) {
+        $this->updateTags( $data['Tags'] );
+        unset($data['Tags']);
+      }
 
-        $this->fromArray($data);
-        $this->save($conn);
+      $this->fromArray($data);
+      $this->save($conn);
     }
 
     public function updateCategories(){
-        foreach($this->categories as $category_id){
-            $category = new StoryCategory();
-            $category->setStoryId($this->getId());
-            $category->setCategoryId($category_id);
-            $category->save();
-        }
+      foreach($this->categories as $category_id){
+        $category = new StoryCategory();
+        $category->setStoryId($this->getId());
+        $category->setCategoryId($category_id);
+        $category->save();
+      }
     }
 
-    public function preValidate($event)
-    {
-        if(array_key_exists("title", $this->getModified()))
-        {
-            $this->title = mb_substr($this->title, 0, 128,"utf-8"); // Prevents that the title gets to long
-        }
+    public function preValidate($event) {
+      if (array_key_exists("title", $this->getModified())) {
+        $this->title = mb_substr($this->title, 0, 128,"utf-8"); // Prevents that the title gets to long
+      }
 
-        if($this->type == self::TYPE_ARTICLE)
-        {
-            $this->external_url = $this->getLinkWithDomain();
-        }
+      if ($this->type == self::TYPE_ARTICLE) {
+        $this->external_url = $this->getLinkWithDomain();
+      }
 
-        if(array_key_exists("external_url", $this->getModified()))
-        {
-            $domain = DomainTable::getInstance()->findOneByHostname($this->getHostname());
-            if(false === $domain)
-            {
-                $domain = new Domain();
-                $domain->hostname = $this->getHostname();
-                $domain->save();
-            }
-            $this->domain_id = $domain->id;
+      if (array_key_exists("external_url", $this->getModified())) {
+        $domain = DomainTable::getInstance()->findOneByHostname($this->getHostname());
+        if (false === $domain) {
+          $domain = new Domain();
+          $domain->hostname = $this->getHostname();
+          $domain->save();
         }
+          $this->domain_id = $domain->id;
+      }
         
-        $video = new yiggExternalVideoSupport();
-        $oembed_endpoint = $video->match_url($this->external_url);
+      $video = new yiggExternalVideoSupport();
+      $oembed_endpoint = $video->match_url($this->external_url);
         
-        if ($oembed_endpoint) {
-          $this->type = self::TYPE_VIDEO;
-        }
+      if ($oembed_endpoint) {
+        $this->type = self::TYPE_VIDEO;
+      }
     }
 
     /**
@@ -302,67 +274,58 @@ class Story extends BaseStory
      *
      * @return unknown
      */
-    public function getStoryType()
-    {
-        $types = $this->types;
-        return $types[ (int) $this->type ];
+    public function getStoryType() {
+      $types = $this->types;
+      return $types[ (int) $this->type ];
     }
 
     /**
      * Get twitter link
      */
-    public function getTwitterLink()
-    {
-        $twitter_args = array(
-            "related" => "yigg",
-            "lang" => "de",
-            "url" => $this->getExternalShortUrl(),
-            "text" => mb_substr($this->title , self::TYPE_NORMAL,  87 ,'utf-8')
-        );
+    public function getTwitterLink() {
+      $twitter_args = array(
+        "related" => "yigg",
+        "lang" => "de",
+        "url" => $this->getExternalShortUrl(),
+        "text" => mb_substr($this->title , self::TYPE_NORMAL,  87 ,'utf-8')
+      );
 
-        $twitter_args["text"] .= " " . $this->getInternalShortUrl() . " Quelle: ";
-        return "http://twitter.com/share?".http_build_query($twitter_args);
+      $twitter_args["text"] .= " " . $this->getInternalShortUrl() . " Quelle: ";
+      return "http://twitter.com/share?".http_build_query($twitter_args);
     }
 
     /**
      * Get a shorturl for the external_url off this story
      * @return String
      */
-    public function getExternalShortUrl()
-    {
-        if($this->getStoryType() === "Normal")
-        {
-            $url = sfContext::getInstance()->getController()->genUrl($this->external_url, true);
-        }
-        else
-        {
-            $url = sfContext::getInstance()->getController()->genUrl($this->getLinkWithDomain(), true);
-        }
+    public function getExternalShortUrl() {
+      if ($this->getStoryType() === "Normal") {
+        $url = sfContext::getInstance()->getController()->genUrl($this->external_url, true);
+      } else {
+        $url = sfContext::getInstance()->getController()->genUrl($this->getLinkWithDomain(), true);
+      }
 
-        return $this->createLinkedRedirect($url);
+      return $this->createLinkedRedirect($url);
     }
 
     /**
      * Creates a shorturl for the stories internal url
      * @return void
      */
-    public function getInternalShortUrl()
-    {
-        return $this->createLinkedRedirect($this->getLinkWithDomain());
+    public function getInternalShortUrl() {
+      return $this->createLinkedRedirect($this->getLinkWithDomain());
     }
 
-    public function createLinkedRedirect($url)
-    {
-        $redirect = RedirectTable::getByUrl($url);
-        if($redirect === false)
-        {
-            $redirect = Redirect::create($url);
-            $StoryRedirect = new StoryRedirect();
-            $StoryRedirect->story_id = $this->id;
-            $StoryRedirect->redirect_id = $redirect->id;
-            $StoryRedirect->save();
-        }
-        return $redirect->getMiniUri();
+    public function createLinkedRedirect($url) {
+      $redirect = RedirectTable::getByUrl($url);
+      if ($redirect === false) {
+        $redirect = Redirect::create($url);
+        $StoryRedirect = new StoryRedirect();
+        $StoryRedirect->story_id = $this->id;
+        $StoryRedirect->redirect_id = $redirect->id;
+        $StoryRedirect->save();
+      }
+      return $redirect->getMiniUri();
     }
 
     /**
@@ -371,13 +334,11 @@ class Story extends BaseStory
      * @param integer $limit
      * @return Ratings
      */
-    public function getRecentUserRatings( $limit = null )
-    {
-        if(empty($limit))
-        {
-            $limit = sfConfig::get('app_storyDetail_ratings', 10);
-        }
-        $query = Doctrine_Query::create()
+    public function getRecentUserRatings( $limit = null ) {
+      if(empty($limit)) {
+        $limit = sfConfig::get('app_storyDetail_ratings', 10);
+      }
+      $query = Doctrine_Query::create()
             ->select('sr.*, u.*, a.*')
             ->from('StoryRating sr')
             ->leftJoin('sr.Rating r')
@@ -386,27 +347,23 @@ class Story extends BaseStory
             ->where('sr.story_id = ? AND sr.user_id <> 1', $this->id)
             ->orderBy('r.created_at DESC')
             ->limit($limit);
-        return $query->execute();
+      return $query->execute();
     }
 
-    public function getCreationYear()
-    {
-        return substr($this["created_at"], 0, 4);
+    public function getCreationYear() {
+      return substr($this["created_at"], 0, 4);
     }
 
-    public function getCreationMonth()
-    {
-        return substr($this["created_at"], 5, 2);
+    public function getCreationMonth() {
+      return substr($this["created_at"], 5, 2);
     }
 
-    public function getCreationDay()
-    {
-        return substr($this["created_at"], 8, 2);
+    public function getCreationDay() {
+      return substr($this["created_at"], 8, 2);
     }
 
-    public function wasOnFrontpage()
-    {
-        return Doctrine_Query::create()
+    public function wasOnFrontpage() {
+      return Doctrine_Query::create()
             ->from("History")
             ->where("story_id = ?", $this->id)
             ->count() > 0;
@@ -416,26 +373,23 @@ class Story extends BaseStory
      * Return the hostname off this story
      * @return mixed
      */
-    public function getHostname()
-    {
-        return parse_url($this->external_url, PHP_URL_HOST);
+    public function getHostname() {
+      return parse_url($this->external_url, PHP_URL_HOST);
     }
 
     /**
      * Returns a link of this story
      * @return void
      */
-    public function getLink()
-    {
-        return sprintf("@story_show?year=%s&month=%s&day=%s&slug=%s",
+    public function getLink() {
+      return sprintf("@story_show?year=%s&month=%s&day=%s&slug=%s",
             $this->getCreationYear(),
             $this->getCreationMonth(),
             $this->getCreationDay(),
             $this->internal_url);
     }
 
-    public function getLinkWithDomain()
-    {
-        return "http://yigg.de/nachrichten/{$this->getCreationYear()}/{$this->getCreationMonth()}/{$this->getCreationDay()}/{$this->internal_url}";
+    public function getLinkWithDomain() {
+      return "http://yigg.de/nachrichten/{$this->getCreationYear()}/{$this->getCreationMonth()}/{$this->getCreationDay()}/{$this->internal_url}";
     }
 }
