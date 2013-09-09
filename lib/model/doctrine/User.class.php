@@ -455,6 +455,15 @@ class User extends BaseUser
            ->addWhere("tag_id = ?", $tag->id)
            ->count() > 0;
   }
+  
+  public function followsDomain(Domain $domain)
+  {
+    return Doctrine_Query::create()
+           ->from("UserDomainSubscription")
+           ->where("user_id = ?", $this->id)
+           ->addWhere("domain_id = ?", $domain->id)
+           ->count() > 0;
+  }
 
   public function getDirectNotificationCount()
   {
