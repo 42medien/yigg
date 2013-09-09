@@ -12,3 +12,5 @@ htdocs/uploads/*
 *.scssc
 
 data/frontend_prod-cli.lck
+
+config/doctrine/schema.yml
