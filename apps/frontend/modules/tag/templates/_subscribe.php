@@ -7,4 +7,3 @@
     array("class" => $follows ? "subscribed" : "")
   );?>
 <?php endforeach; ?>
-<div class="clr"></div>
