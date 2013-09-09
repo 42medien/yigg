@@ -449,7 +449,9 @@ class storyActions extends yiggActions {
     $description = $e->getReadableDescription();
     $images = $e->getImages();
     $tags = $e->getMetaTags();
-
+    
+    $this->getContext()->getConfiguration()->loadHelpers(array('Partial'));
+    
     $slider_html = get_partial('story/imageSlider', array("images" => $images));
     
     $ninjaUpdater = $this->getRequest()->getNinjaUpdater();
