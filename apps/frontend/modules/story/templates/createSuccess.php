@@ -44,8 +44,8 @@
 
 
 <?php slot('sidebar') ?>
-  <p class="note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.
-  <?php echo
+  <p class="note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.</p>
+  <p><?php echo
       link_to(
         "Normal" === $view ? "Eigenen Artikel erstellen": "Nachricht erstellen",
         "Normal" === $view ? '@story_create_article': '@story_create',
