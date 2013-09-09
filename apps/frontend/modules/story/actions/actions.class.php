@@ -5,7 +5,6 @@ class storyActions extends yiggActions {
     if($this->getRequest()->getParameter("sf_format") === "atom") {
       return;
     }
-    $this->getResponse()->setSlot('sponsoring', $this->getComponent("sponsoring","sponsoring", array( 'place_id' => 39 ,'limit' => 1)));
   }
 
   /**
@@ -35,8 +34,8 @@ class storyActions extends yiggActions {
    * Executes the category-stories (queue)
    * @return
    */
-  public function executeCategoryStories( $request )
-  {
+  public function executeCategoryStories( $request ) {
+    $this->setLayout("layout.stream");
     $this->category = $this->getRoute()->getObject();
 
     $sf = new yiggStoryFinder();
