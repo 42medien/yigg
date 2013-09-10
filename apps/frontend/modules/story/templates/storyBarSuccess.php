@@ -12,14 +12,14 @@
                 'alt' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
                 'width' => 90,
                 'height' => 53
-            )), $story,
-                array(
-        'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
-        'rel' => 'home',
-        'class' => 'logo'
-      ));
+            )),
+            $story,
+            array(
+                'title' => 'YiGG Nachrichten zum Mitmachen: Lesen - Bewerten - Schreiben',
+                'rel' => 'home',
+                'class' => 'logo'
+            ));
     ?>
-    
     <ul class="bar-items">
       <li>
         <div id="comments">
