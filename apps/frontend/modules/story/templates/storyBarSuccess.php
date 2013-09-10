@@ -30,7 +30,7 @@
         </div>
       </li>
       <li>
-        <?php include_component( 'story', 'rateStory',  array('story' => $story, 'type' => 'small')); ?>
+        <?php include_component( 'story', 'rateStory',  array('story' => $story, 'flat' => true)); ?>
       </li>
       <li>
         <a class="spreadly-button" href="<?php echo $story->external_url; ?>"></a>

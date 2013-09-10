@@ -400,7 +400,7 @@ class storyActions extends yiggActions {
   public function executeRate($request) {
     // find the story for the component.
     $this->findOrRedirect($request);
-    $this->renderComponent("story","rateStory", array("story"=> $this->story,"external" => true));
+    $this->renderComponent("story", "rateStory", array("story"=> $this->story, "external" => true, "flat" => (boolean) $request->getParameter("flat", false)));
     return sfView::NONE;
   }
 
@@ -465,12 +465,12 @@ class storyActions extends yiggActions {
   public function executeExternalRate( $request ) {
     $this->story = Doctrine::getTable("Story")->findOneByExternalUrl(urldecode($request->getParameter("url")));
 
-    if(false !== $this->story ) {
-      $this->renderComponent("story","rateStory", array( "story" => $this->story, "external"=> true, "flat" => (true === (bool) $request->getParameter("flat",false)) ));
+    if ( false !== $this->story ) {
+      $this->renderComponent("story", "rateStory", array( "story" => $this->story, "external" => true, "flat" => (bool) $request->getParameter("flat",false) ));
       return sfView::NONE;
     }
 
-    $this->renderPartial("createStoryButton", array( "video" => $this->is_video, "flat" => (true === (bool) $request->getParameter("flat",false)) ) );
+    $this->renderPartial("createStoryButton", array( "video" => $this->is_video, "flat" => (bool) $request->getParameter("flat",false)) );
     return sfView::NONE;
   }
 

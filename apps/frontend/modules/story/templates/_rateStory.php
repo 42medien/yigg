@@ -1,6 +1,10 @@
 <?php
-if (!isset($type)) {
-  $type = 'full';
+$type = ' full';
+
+if (isset($flat) && $flat == true) {
+  $type = ' small';
+} else {
+  $flat = false;
 }
 
 $hasRated = ( null === $story->hasRated() ? $sf_user->hasRated($story['id']) : $story->hasRated() );
@@ -20,6 +24,7 @@ if (false === $hasRated ) {
            id="StoryRate_ratingtoken<?php echo $story->id; ?>" 
            type="hidden" 
            value="<?php echo md5(rand(1,10000));?>" />
+    <input type="hidden" name="flat" value="<?php echo $flat; ?>" />
     <input type="submit" 
            value="YiGG it!" 
            class="button button-small"
@@ -31,7 +36,7 @@ if (false === $hasRated ) {
 } else {
   
 ?>
-<div class="rating-form voted <?php echo $type; ?>">   
+<div class="rating-form voted<?php echo $type; ?>">   
   <div class="counter"><?php echo $story->currentRating() ?></div>
   <div class="button-small" title="Du hast schon geYiGGed">YiGGed</div>
 </div>
