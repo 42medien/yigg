@@ -17,6 +17,18 @@
     <li <?php if($sf_request->getAction() == 'archive'): ?>class="selected"<?php endif;?>>
       <?php echo link_to('Archiv',"@story_archive","title=Neueste Nachrichten von heute"); ?>
     </li>
-    <li class="create"><?php echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen', 'class' => '')); ?></li>
   </ol>
+</div>
+
+<div id="main-actions">
+  
+  <?php
+  if ($sf_user->hasUser()) {
+    echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen', 'class' => 'button'))."\n";
+    echo link_to('Artikel erstellen', '@story_create_article', array('title' => 'Neuen Artikel schreiben', 'class' => 'button'));
+  } else {
+    echo link_to('<i class="icon-signin"></i> Einloggen', '@user_login', array('class' => 'button'))."\n";
+    echo link_to('<i class="icon-pencil"></i> Registrieren', '@user_register', array('class' => 'button'));
+  }
+  ?>
 </div>
