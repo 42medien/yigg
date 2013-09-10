@@ -57,19 +57,19 @@ class yiggSession extends sfBasicSecurityUser
       $this->setAttribute('FailedLogins', 0 );
 
       // Enable persistant logins
-	  $this->createRememberKey( $user );
+	    $this->createRememberKey( $user );
 
       $user->save();
 
       $credential_names = array_flip( $this->available_credentials );
-      foreach (  $user->Permissions->toArray() as $permission )
-      {
+      foreach (  $user->Permissions->toArray() as $permission ) {
         $this->addCredential($credential_names[$permission['permission_level']]);
       }
 
       // Set flash for registering the user at ivw
       $this->setFlash('ivw:mclient:register', $user['mclient_salt']);
-
+      
+      $this->getAttributeHolder()->removeNamespace('StoryRatings');
       //  Make the user object avaliable accross our application.
       $this->setAttribute( 'user_id', $user['id'], 'session');
       $this->user = $user;
@@ -79,18 +79,14 @@ class yiggSession extends sfBasicSecurityUser
   /**
    * Makes the user wait for longer and longer each time they fail a request.
    */
-  public function enforceWait( $maxFailedAttempts , $reason = 'failing login')
-  {
-    if( $maxFailedAttempts > sfConfig::get("sf_allowed_failed_logins") )
-    {
+  public function enforceWait( $maxFailedAttempts , $reason = 'failing login') {
+    if( $maxFailedAttempts > sfConfig::get("sf_allowed_failed_logins") ) {
       $secondsToSleep = $maxFailedAttempts * 2;
       $logmessage = 'yiggSession->enforceWait enforcing wait for naughty user for '.$reason. ' after ' . $maxFailedAttempts .' failed attempts.';
       $logmessage .= 'sleeping for ' .$secondsToSleep.' seconds with IP: ' . sfContext::getInstance()->getRequest()->getRemoteAddress();
       sfContext::getInstance()->getLogger()->log( $logmessage , 3);
       return sleep ( $secondsToSleep );
-    }
-    else
-    {
+    } else {
       return 0;
     }
   }
@@ -98,9 +94,9 @@ class yiggSession extends sfBasicSecurityUser
   /**
    * Performs the logout for the current user.
    */
-  public function logout()
-  {
+  public function logout() {
     $this->getAttributeHolder()->removeNamespace('session');
+    $this->getAttributeHolder()->removeNamespace('StoryRatings');
 
     $this->setAuthenticated(false);
     $this->user = false;
@@ -160,13 +156,10 @@ class yiggSession extends sfBasicSecurityUser
    * Will let you know if the user is currently attached to the session (IE
    * logged in.)
    */
-  public function hasUser()
-  {
-    if( (false === $this->isTimedOut()) && (true === $this->isAuthenticated()) )
-    {
+  public function hasUser() {
+    if ( (false === $this->isTimedOut()) && (true === $this->isAuthenticated()) ) {
       // if it's been populated already, return true.
-      if( $this->user instanceof User )
-      {
+      if( $this->user instanceof User ) {
         return true;
       }
 
@@ -189,8 +182,7 @@ class yiggSession extends sfBasicSecurityUser
    * Proxy function for returning the Current User id
    * @return int or false
    */
-  public function getUserId()
-  {
+  public function getUserId() {
     return $this->getAttribute('user_id', false, 'session');
   }
 
@@ -199,13 +191,11 @@ class yiggSession extends sfBasicSecurityUser
    *
    * @return Boolean
    */
-  public function isAdmin()
-  {
+  public function isAdmin() {
     return $this->hasCredential( array( 'ADMIN' ), $useAnd = false);
   }
 
-  public function isModerator()
-  {
+  public function isModerator() {
     return $this->hasCredential( array('ADMIN','MODERATOR'),false);
   }
 
@@ -217,16 +207,13 @@ class yiggSession extends sfBasicSecurityUser
    * @see lib/1.2/user/sfBasicSecurityUser#isAuthenticated()
    * @return boolean
    */
-  public function isAuthenticated()
-  {
+  public function isAuthenticated() {
     // check the standard session stuff.
-    if( true === parent::isAuthenticated())
-    {
+    if( true === parent::isAuthenticated()) {
       // make sure the session has the user_id attribute.
       $user_id = $this->getUserId();
 
-      if(false !== $user_id && $user_id > 0)
-      {
+      if(false !== $user_id && $user_id > 0) {
         return true;
       }
     }
@@ -238,26 +225,20 @@ class yiggSession extends sfBasicSecurityUser
    * use as a fallback if the call syntax doesnt work.
    * @return $User
    */
-  public function getUser()
-  {
-    if( false === $this->isTimedOut() && true === $this->isAuthenticated() )
-    {
-      if( $this->user instanceof User )
-      {
+  public function getUser() {
+    if( false === $this->isTimedOut() && true === $this->isAuthenticated() ) {
+      if( $this->user instanceof User ) {
         return $this->user;
       }
 
       // Make sure we had/have a user_id from session.
-      $user_id = $this->getAttribute('user_id',null,'session');
-      if( false !== $user_id )
-      {
+      $user_id = $this->getAttribute('user_id', null, 'session');
+      if( false !== $user_id ) {
         $this->user = Doctrine::getTable("User")->findOneById( $user_id );
-        if( false === $this->user)
-        {
+        if( false === $this->user) {
           // throws a stop exception.
           $deleted = Doctrine::getTable("User")->isDeleted($user_id);
-          if(false === $deleted)
-          {
+          if(false === $deleted) {
            sfContext::getInstance()->getLogger()->log("yiggSession::getUser() couldn't load user (was not deleted) for id #" .  $this->getAttribute('user_id',null, 'session') , sfLogger::ERR);
           }
 
@@ -273,11 +254,9 @@ class yiggSession extends sfBasicSecurityUser
   /**
    * returns the time since the last login.
    */
-  public function getTimeSinceLogin()
-  {
+  public function getTimeSinceLogin() {
     $user = $this->getUser();
-    if(false !== $user)
-    {
+    if(false !== $user) {
       return yiggTools::timeDiff( $user->getLastLogin("H:i d.m.Y") );
     }
   }
@@ -286,8 +265,7 @@ class yiggSession extends sfBasicSecurityUser
   /**
    * Populates the StoryRating cache for this user.
    */
-  public function preCacheRatings()
-  {
+  public function preCacheRatings() {
     $query = Doctrine_Query::create()
       ->select("sr.story_id")
       ->from('StoryRating sr INDEXBY sr.story_id')
@@ -296,16 +274,14 @@ class yiggSession extends sfBasicSecurityUser
       ->groupBy("sr.story_id");
 
     $ip_address = sfContext::getInstance()->getRequest()->getRemoteAddress();
-    if( true == $this->hasUser())
-    {
-      $query->addWhere('sr.user_id = :userid OR r.ip_address = :ip', array( ':userid' => $this->getUser()->id, ':ip' => $ip_address));
-    }
-    else
-    {
+    
+    if ( true == $this->hasUser()) {
+      $query->addWhere('sr.user_id = :userid', array( ':userid' => $this->getUser()->id ));
+    } else {
       $query->addWhere('r.ip_address = :ip', array(":ip" => $ip_address));
     }
 
-    $this->setAttribute("StoryRatings", $query->execute(array(),Doctrine::HYDRATE_ARRAY) , "StoryRatings");
+    $this->setAttribute("StoryRatings", $query->execute(array(), Doctrine::HYDRATE_ARRAY), "StoryRatings");
   }
 
   /**
@@ -314,31 +290,25 @@ class yiggSession extends sfBasicSecurityUser
    * @param integer $story_id
    * @return Boolean
    */
-  public function hasRated( $story_id )
-  {
+  public function hasRated( $story_id ) {
     // load the Ratings, if not present already.
-    if(false === $this->hasAttribute("StoryRatings","StoryRatings"))
-    {
+    if (false === $this->hasAttribute("StoryRatings", "StoryRatings")) {
       $this->preCacheRatings();
     }
 
     // get the Ratings. and check cache first.
-    $storyRatings = $this->getAttribute("StoryRatings",array(),"StoryRatings");
-
-    if( true === array_key_exists( $story_id, $storyRatings) )
-    {
+    $storyRatings = $this->getAttribute("StoryRatings", array(), "StoryRatings");
+    
+    if ( true === array_key_exists( $story_id, $storyRatings) ) {
       return true;
-    }
-    else
-    {
+    } else {
       // do a manual lookup just to be sure.
       $result =  StoryRatingTable::retrieveHasRated( $story_id, $this->hasUser() ? $this->getUser(): null );
       
-      if( true === $result )
-      {
+      if ( true === $result ) {
         // update the cache.
         $storyRatings[ $story_id ] = $result;
-        $this->setAttribute("StoryRatings",$storyRatings,"StoryRatings");
+        $this->setAttribute("StoryRatings", $storyRatings, "StoryRatings");
         return true;
       }
     }
@@ -353,8 +323,7 @@ class yiggSession extends sfBasicSecurityUser
    *
    * @see lib/1.3/user/sfBasicSecurityUser#shutdown()
    */
-  public function shutdown()
-  {
+  public function shutdown() {
     $this->attributeHolder->removeNamespace("tmp");
     parent::shutdown();
   }
