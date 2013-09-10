@@ -16,7 +16,8 @@ a.external {
 
 .error_message {
   font-size: 14px;
-  color: #ce0000; }
+  color: #ce0000;
+  display: block; }
 
 img.avatar {
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -133,7 +134,7 @@ nav.pagination {
   margin-bottom: 50px; }
   #branding .logo {
     float: left;
-    margin-right: 80px; }
+    margin-right: 50px; }
   #branding a {
     font-family: "helvetica neue", arial, sans-serif;
     color: #393939; }
@@ -152,6 +153,11 @@ nav.pagination {
     display: list-item;
     margin-left: 30px;
     color: #aaa; }
+
+#main-actions {
+  float: right;
+  margin-top: 23px;
+  margin-left: 50px; }
 
 #user-navigation {
   float: right; }
