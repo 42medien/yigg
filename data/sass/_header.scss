@@ -9,7 +9,7 @@
   
   .logo {
     float: left;
-    margin-right: 80px;
+    margin-right: 50px;
   }
   
   a {
@@ -37,6 +37,12 @@
     margin-left: 30px;
     color: #aaa;
   }
+}
+
+#main-actions {
+  float: right;
+  margin-top: 23px;
+  margin-left: 50px;
 }
 
 #user-navigation {
