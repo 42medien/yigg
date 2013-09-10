@@ -39,7 +39,7 @@ footer .entry-meta {
     text-decoration: none;
     
     i:hover:before {
-      color: green;
+      color: $green;
     }
   }
 }
@@ -51,6 +51,6 @@ footer .entry-meta {
   
   a.later i:hover:before {
     content: "\f057";
-    color: red;
+    color: $red;
   }
 }

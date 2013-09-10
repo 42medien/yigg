@@ -14,6 +14,10 @@ a.button {
 a.external {
   text-decoration: none; }
 
+.error_message {
+  font-size: 14px;
+  color: #ce0000; }
+
 img.avatar {
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -378,13 +382,13 @@ footer .entry-meta {
 .now_later_button a.later {
   text-decoration: none; }
   .now_later_button a.later i:hover:before {
-    color: green; }
+    color: #9ccf31; }
 
 .now_later_button.subscribed a.later i:before {
   content: "\f00c"; }
 .now_later_button.subscribed a.later i:hover:before {
   content: "\f057";
-  color: red; }
+  color: #ce0000; }
 
 #sidebar {
   word-wrap: break-word;
@@ -592,6 +596,7 @@ input[type="checkbox"] {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="url"] {
   margin: 0 1em 0 0;
   width: 60%; }

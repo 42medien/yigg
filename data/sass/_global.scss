@@ -18,6 +18,11 @@ a.external {
   text-decoration: none;
 }
 
+.error_message {
+  font-size: 14px;
+  color: $red;
+}
+
 img.avatar {
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
