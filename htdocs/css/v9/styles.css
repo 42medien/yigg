@@ -448,12 +448,12 @@ footer .entry-meta {
 .profile_form label {
   display: block; }
 
-#new_form ul#Categories {
+#new_form ul.checkbox_list {
   margin: 0;
   padding: 0;
   width: 60%;
   list-style: none; }
-  #new_form ul#Categories li {
+  #new_form ul.checkbox_list li {
     float: left;
     width: 50%; }
 
