@@ -353,6 +353,14 @@ nav.filter-list {
   margin: 0 50px 50px 0;
   position: relative; }
 
+ul.notification-filters {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+  display: block; }
+  ul.notification-filters li {
+    display: inline; }
+
 #content .profile-card {
   margin: 0 50px 50px 0; }
   #content .profile-card img.avatar {
@@ -451,6 +459,10 @@ footer .entry-meta {
   #sidebar #widget-search .field {
     margin: 0;
     padding: 0; }
+  #sidebar #widget-private-message label {
+    display: block; }
+  #sidebar #widget-private-message textarea {
+    width: 90%; }
 
 .field {
   margin: 20px 0; }

@@ -85,4 +85,14 @@
       padding: 0;
     }
   }
+  
+  #widget-private-message {
+    label {
+      display: block;
+    }
+    
+    textarea {
+      width: 90%;
+    }
+  }
 }
