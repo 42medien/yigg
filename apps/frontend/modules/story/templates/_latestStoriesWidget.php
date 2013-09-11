@@ -1,3 +1,4 @@
+<?php if (is_array($stories) && count($stories) > 0) { ?>
 <section id="widget-last-stories" class="widget">
   <h2>Letzte Nachrichten</h2>
   <ol class="avatar-list-style"><?php foreach ($stories as $story): ?><li><?php
@@ -15,3 +16,4 @@
     );
   ?></li><?php endforeach; ?></ol>
 </section>
+<?php } ?>
