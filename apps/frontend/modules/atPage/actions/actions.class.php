@@ -49,7 +49,7 @@ class atPageActions extends yiggActions
               $this->notification->sender_id = $this->session->getUserId();
               $this->notification->recipient_id = $recipient->id;
               $this->notification->ref_object_type = "NotificationMessage";
-              $this->notification->description = $this->form->getValue("message");
+              $this->notification->text = $this->form->getValue("message");
               $this->notification->ref_object_id = 0;
               $this->notification->type = "web";
 
