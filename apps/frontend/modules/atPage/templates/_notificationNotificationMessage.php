@@ -10,7 +10,7 @@
             )
         ); ?> hat Dir eine private Mitteilung geschickt.</h3>
    <?php
-      $desc = $obj->getPresentationDescription(ESC_RAW);
+      $desc = $obj->getText(ESC_RAW);
       echo
       "<p>".
       content_tag(
