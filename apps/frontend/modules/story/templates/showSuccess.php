@@ -31,7 +31,7 @@
   </header>
   
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
-    <p><?php echo $story->getDescription();?></p>
+    <p><?php echo $story->getDescription(); ?></p>
 
     <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>
