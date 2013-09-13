@@ -5,6 +5,7 @@
   box-shadow: 0 1px 3px rgba(34,25,25,0.4);
   margin: 0 50px 50px 0;
   position: relative;
+  @include clearfix();
 }
 
 ul.notification-filters {

@@ -22,6 +22,20 @@
   }
 }
 
+.DeleteForm_bbcode label,
+label[for=DeleteForm_bbcode] {
+  display: block;
+}
+
+.action-login, .action-register {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="url"] {
+    width: 90%;
+  }
+}
+
 /* =Forms
 -------------------------------------------------------------- */
 
