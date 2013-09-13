@@ -222,7 +222,6 @@ class userActions extends yiggActions
    */
   public function executePublicProfile( $request )
   {
-    $this->setLayout("layout.stream");
     $username = yiggTools::stringToUsername( $request->getParameter('username') );
     $this->user = Doctrine::getTable("User")->findOneByUsername($username);
     $this->forward404Unless( $this->user, sprintf( "user::publicprofile could not find the user %s", $username ));
@@ -274,7 +273,8 @@ class userActions extends yiggActions
     $request->setParameter("rss",true);
 
     $this->fb_friends = $request->getParameter("fb_friends");
-
+    
+    $this->setLayout("layout.stream");
     return sfView::SUCCESS;
   }
 
