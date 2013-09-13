@@ -44,20 +44,15 @@ class yiggForm extends sfForm
    * @param     $request
    * @return     boolean
    */
-  public function processRequest()
-  {
+  public function processRequest() {
     // Get the fields from the request.
     $request = sfContext::getInstance()->getRequest();
     $fields = $this->getFieldsFromRequest( $request );
-    if( null !== $fields )
-    {
+    if( null !== $fields ) {
       // check form values
-      if( true === $this->isMultipart() )
-      {
+      if( true === $this->isMultipart() ) {
         $this->bind( $fields, $request->getFiles( $this->name ) );
-      }
-      else
-      {
+      } else {
         $this->bind( $fields );
       }
     }
@@ -68,8 +63,7 @@ class yiggForm extends sfForm
    * Check if the request was post, put values into form, validate - if all was fine return true elsewise false
    * @return boolean Valid
    */
-  public function processAndValidate()
-  {
+  public function processAndValidate() {
     $request = sfContext::getInstance()->getRequest();
     return ((true === $request->isMethod('post')) && (true === $this->processRequest()->isValid()));
   }
@@ -81,17 +75,13 @@ class yiggForm extends sfForm
    * @param   array $values
    * @return  yiggForm
    */
-  public function processArray( $values )
-  {
-    if( true === $this->isMultipart() )
-    {
+  public function processArray( $values ) {
+    if( true === $this->isMultipart() ) {
       $this->bind(
         $values,
         sfContext::getInstance()->getRequest()->getFiles( $this->name )
       );
-    }
-    else
-    {
+    } else {
       $this->bind( $values );
     }
     return $this;
@@ -104,8 +94,7 @@ class yiggForm extends sfForm
    * @param String $value
    * @return sfWidgetFormField
    */
-  public function processField( $field, $value )
-  {
+  public function processField( $field, $value ) {
     $values = array($field => $value);
     $form = $this->processArray($values);
     return $form[$field];
@@ -117,8 +106,7 @@ class yiggForm extends sfForm
    * @param   $request
    * @return   array
    */
-  public function getFieldsFromRequest( $request )
-  {
+  public function getFieldsFromRequest( $request ) {
     return $request->getParameter( $this->getWidgetNamePrefix() );
   }
 
@@ -127,8 +115,7 @@ class yiggForm extends sfForm
    *
    * @return unknown
    */
-  public function getWidgetNamePrefix()
-  {
+  public function getWidgetNamePrefix() {
     $format = $this->widgetSchema->getNameFormat();
     return  substr($format, 0, (strpos( $format, '%' ) - 1));
   }
@@ -138,17 +125,13 @@ class yiggForm extends sfForm
    * Allows JSON data to be encoded as this token is passed over
    * @return
    */
-  public function getSecurityToken()
-  {
+  public function getSecurityToken() {
     return $this[$this->getCSRFFieldName()]->getValue();
   }
 
-  public function batchUnsetOffsets($names)
-  {
-  	foreach($names as $name)
-  	{
+  public function batchUnsetOffsets($names) {
+  	foreach($names as $name) {
   		$this->offsetUnset($name);
   	}
   }
-
 }

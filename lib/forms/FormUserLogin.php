@@ -22,14 +22,16 @@ class FormUserLogin extends yiggForm
             array(),
             array(
               'class' => 'ninjaRequired',
-              'id'    => 'Username'
+              'id'    => 'Username',
+              'placeholder' => 'Benutzername'
             )
           ),
           'password' => new sfWidgetFormInputPassword(
             array(),
             array(
               'class' => 'ninjaRequired',
-              'id'	  => 'Password'
+              'id'	  => 'Password',
+              'placeholder' => 'Passwort'
             )
           ),
           'remember' => new sfWidgetFormInputCheckbox(
@@ -81,8 +83,8 @@ class FormUserLogin extends yiggForm
     // set labels
     $this->widgetSchema->setLabels(
       array(
-        'username' => 'Username',
-        'password' => 'Password',
+        'username' => false,
+        'password' => false,
         'remember' => 'Remember me'
       )
     );
