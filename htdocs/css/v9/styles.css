@@ -38,6 +38,12 @@ img.avatar {
 .signup-image {
   float: right; }
 
+a.delete {
+  text-decoration: none;
+  font-size: 12px; }
+  a.delete:hover {
+    text-decoration: underline; }
+
 #content {
   color: #888;
   text-shadow: #fff 0px 1px 0px;
@@ -333,9 +339,9 @@ nav.filter-list {
       -moz-box-shadow: #ccc 0 -1px 0 0;
       -webkit-box-shadow: #ccc 0 -1px 0 0;
       box-shadow: #ccc 0 -1px 0 0; }
-      .comment-section ul.comments-list li.li-comment .entry-meta {
+      .comment-section ul.comments-list li.li-comment .comment-meta {
         margin-bottom: 15px; }
-        .comment-section ul.comments-list li.li-comment .entry-meta time {
+        .comment-section ul.comments-list li.li-comment .comment-meta time {
           color: #aaaaaa;
           display: block;
           font-size: 13px;

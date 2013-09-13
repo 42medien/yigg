@@ -15,12 +15,12 @@
 <?php foreach($comments as $k => $comment):  ?>
   <li class="li-comment" id="li-comment-<?php echo $comment['id']; ?>" <?php if($k == $comments->count()- 1):?>class="last"<?php endif;?>>
     <article class="comment">
-      <footer class="entry-meta">
+      <footer class="comment-meta">
         <span class="vcard hcard h-card">
           <?php echo link_to(avatar_tag($comment->Author->Avatar, "noavatar-48-48.png", (true === $inlist ? 14 : 48), (true === $inlist ? 14 : 48)),
                              '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
                              array("title" => "Profil von {$comment['Author']['username']} besuchen", "class" => "comment-avatar url fn p-name u-url"));?>
-          <?php echo link_to($comment['Author']['username'], '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']), array("class" => " url fn p-name u-url"));?></span> meint
+          <?php echo link_to($comment['Author']['username'], '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']), array("class" => " url fn p-name u-url"));?></span> meint          
           <?php if(false === $inlist):?>
             <?php echo content_tag(
                   "time",
@@ -35,13 +35,9 @@
       
       <?php if ( false === $inlist && false === isset($hideactionitems) ): ?>
         <?php if ($comment['user_id'] == $sf_user->getUserId() || true === $sf_user->isModerator()): ?>
-        <ul class="comment-actions ico">
-          <li class="delete">
-            <?php echo link_to("delete",
+            <p><?php echo link_to("<i class='icon-remove-sign'></i> Löschen?",
                                "@comment_actions?action=delete&object=".strtolower(get_class($sf_data->getRaw("obj")))."&id={$comment['id']}",
-                               array("class" => "delete ninjaUpdater comment-{$comment['id']}", "rel" => "nofollow")); ?>
-          </li>
-        </ul>
+                               array("class" => "delete ninjaUpdater comment-{$comment['id']}", "rel" => "nofollow", "title" => "Kommentar löschen")); ?></p>
         <?php endif;?>
       <?php endif; ?>
     </article>
