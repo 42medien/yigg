@@ -123,20 +123,63 @@ class YiggMeta {
   
   public function fromMicroformats($data) {
     if ($data) {
-      if (!isset($data->items) || !is_array($data->items)) {
+      
+      if (!array_key_exists("items", $data) || !is_array($data["items"])) {
         return;
       }
       
-      $data = $data->items[0];
+      $first_item = $data["items"][0];
       
-      if (isset($data->properties->name)) {
-        $this->setTitle($data->properties->name[0]);
+      // check and use title
+      if ( array_key_exists("name", $first_item["properties"]) && is_array($first_item["properties"]["name"]) ) {
+        $this->setTitle($first_item["properties"]["name"][0]);
       }
       
-      if (isset($data->properties->summary)) {
-        $this->setDescription($data->properties->summary[0]);
-      } else if (isset($data->properties->content)) {
-        $this->setDescription($data->properties->content[0]);
+      /*if ( array_key_exists("summary", $first_item["properties"]) && is_array($first_item["properties"]["summary"]) ) {
+        $this->setDescription($first_item["properties"]["summary"][0]);
+      } else if ( array_key_exists("content", $first_item["properties"]) && is_array($first_item["properties"]["content"]) ) {
+        $this->setDescription($first_item["properties"]["content"][0]);
+      }*/
+      
+      // check and use photos
+      if ( array_key_exists("photo", $first_item["properties"]) && is_array($first_item["properties"]["photo"]) ) {
+        foreach ($first_item["properties"]["photo"] as $photo) {
+          $this->setPhoto($photo);
+        }
+      }
+      
+      // check tags
+      if ( array_key_exists("rels", $data) &&
+           is_array($data["rels"]) &&
+           array_key_exists("tag", $data["rels"]) &&
+           is_array($data["rels"]["tag"])
+         ) {
+
+        $tag_result = array();
+        
+        // iterate tags
+        foreach ($data["rels"]["tag"] as $tag) {
+          $url_parts = parse_url($tag);
+          
+          // check query string
+          if ( array_key_exists("query", $url_parts) && $url_parts["query"] ) {
+            // use last part of the query string
+            if ( preg_match("/=(.[^=]+)$/i", $url_parts["query"], $match) ) {
+              $tag_result[] = $match[1];
+            }
+          // check url path
+          } else if ( array_key_exists("path", $url_parts) && $url_parts["path"] ) {
+            // use last part of the path
+            if ( preg_match("/\/(.[^\/]+)\/?$/i", $url_parts["path"], $match) ) {
+              $tag_result[] = $match[1];
+            }
+          }
+        }
+        
+        // use tags
+        if ($tag_result) {
+          $this->setTags(implode(", ", $tag_result));
+        }
       }
     }
   }

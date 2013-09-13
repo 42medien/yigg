@@ -1,4 +1,7 @@
 <?php
+
+use mf2\Parser;
+
 class yiggMetaDataExtractor {
   const TIMEOUT = 5;
 
@@ -120,13 +123,13 @@ class yiggMetaDataExtractor {
     /*if (!$this->yiggMeta->isComplete()) {
       $meta = new MicrodataPhp($url, $html);
       $this->yiggMeta->fromMicrodata($meta->obj());
-    }
+    }*/
     
     // parse microformats v2
     if (!$this->yiggMeta->isComplete()) {
-      $parser = new MicroformatsParser($html);
-      $this->yiggMeta->fromMicroformats($parser->parse());
-    }*/
+      $parser = new Parser($html);
+      $this->yiggMeta->fromMicroformats($parser->parse(), $url);
+    }
     
     // add images
     $yiggImageParser = new ImageParser();
