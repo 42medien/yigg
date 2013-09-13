@@ -9,7 +9,7 @@
     <?php $comment = $obj->Comment;?>
 
     <?php
-      $desc = $comment->getText(ESC_RAW);
+      $desc = $comment->getPresentationDescription(ESC_RAW);
       $avatar = !is_null($comment['Author']['avatar_id']) ? Doctrine::getTable("File")->findOneById( $comment['Author']['avatar_id'] ): false;
     echo
     "<p>".
