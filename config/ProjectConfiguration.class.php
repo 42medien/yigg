@@ -5,6 +5,11 @@ $sf_symfony_lib_dir  =  realpath( dirname(__FILE__)) .'/../lib/vendor/symfony';
 require_once $sf_symfony_lib_dir . '/lib/autoload/sfCoreAutoload.class.php';
 sfCoreAutoload::register();
 
+// doctrine 2 class loader
+require_once dirname(__FILE__).'/../lib/vendor/Symfony2/Component/ClassLoader/UniversalClassLoader.php';
+
+use Symfony\Component\ClassLoader\UniversalClassLoader;
+
 // Set up the callback
 class ProjectConfiguration extends sfProjectConfiguration
 {
@@ -70,5 +75,11 @@ class ProjectConfiguration extends sfProjectConfiguration
      * Changing web dir from "web" to "htdocs".
      */
     $this->setWebDir(sfConfig::get('sf_root_dir') . DIRECTORY_SEPARATOR . 'htdocs');
+    
+    $loader = new UniversalClassLoader();
+    $loader->registerNamespaces(array('mf2' => __DIR__ . '/../lib'));
+
+    // You can search the include_path as a last resort.
+    $loader->register();
   }
 }
