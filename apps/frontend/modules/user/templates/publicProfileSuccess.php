@@ -1,30 +1,11 @@
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-    FB.init({
-        appId  : <?php echo sfConfig::get('app_facebook_app_id') ?>,
-        frictionlessRequests: true
-    });
-
-    function sendFbFriendRequest() {
-        FB.ui({
-            method: 'apprequests',
-            display: 'iframe',
-            message: 'Möchtest Du Yigg auch beitreten? Na dann los, denn bei Yigg findest Du die wichtigsten News auf einen Blick!'
-        });
-    }
-</script>
-
-<?php if($fb_friends):?>
-<script>
-    setTimeout("sendFbFriendRequest()",3000);
-</script>
-<?php endif; ?>
-
 <div class="profile-card h-card hcard vcard">
   <?php echo avatar_tag($user->Avatar, "noavatar.gif", 150, 150, array("alt" => $user->username, "class" => "u-photo photo avatar"));?>
-  <h1 class="fn n p-name"><?php echo $user['username']; ?><?php echo ( $user->getAge() ) ? " ({$user->getAge()})" : ''; ?></h1>
+
+  <h1 class="fn n p-name">
+    <?php echo $user['username']; ?><?php echo ( $user->getAge() ) ? " ({$user->getAge()})" : ''; ?>
+  </h1>
   
+
   <?php if(true === $sf_data->getRAW("user")->getConfig()->has("about_me", "profile")):?>
    <h2 class="note p-summary"><?php echo mb_substr($sf_data->getRAW('user')->getConfig()->get("about_me", null, "profile"),0,160); ?></h2>
   <?php endif;?>
@@ -50,28 +31,33 @@
     <?php if(true === $sf_data->getRAW("user")->getConfig()->has('website','profile') && true === yiggTools::isProperURL($sf_data->getRAW("user")->getConfig()->get('website', false, 'profile'))):?>
     <?php endif; ?>
   </ul>
-  
-  <?php if( true === $sf_user->hasUser()): ?>
-     <div class="top_action_row">
-       <?php if($sf_user->getUserId() !== $user->id):?>
-         <?php if( false === $sf_user->getUser()->follows($user) ): ?>
-           <?php echo button_to("Abonnieren", '@user_friends_modify?list=add&username='.$user->username, array("class" => "follow"));?>
-         <?php else:?>
-           <?php echo button_to("Abonniert!", '@user_friends_modify?list=remove&username='.$user->username, array("class" => "unfollow"));?>
-         <?php endif;?>
-         <?php if($sf_user->hasUser() && false === $user->isAdmin() && $sf_user->getUser()->isAdmin()):?>
-           <?php echo button_to("Benutzer löschen", '@user_delete?username='.$user->username, array("class" => "delete"));?>
-           <?php echo button_to("Benutzer deaktivieren", '@user_suspend?username='.$user->username, array("class" => "suspend"));?>
-         <?php endif;?>
-       <?php else:?>
-         <?php echo button_to("Profil bearbeiten", "@user_my_profile", array("class" => "profile"));?>
-         <?php echo button_to("Einstellungen", "@user_settings", array("class" => "settings"));?>
-       <?php endif;?>
-       <?php if($user->facebook_id):?>
-         <input type="button" onclick="sendFbFriendRequest();" value="Lade Deine Facebook Freunde ein" class="facebook">
-       <?php endif;?>
-     </div>
-  <?php endif;?> 
+</div>
+
+<div class="action-list">
+  <?php
+  if( true === $sf_user->hasUser()):
+    if($sf_user->getUserId() !== $user->id):
+      if( false === $sf_user->getUser()->follows($user) ):
+        echo button_to("Abonnieren", '@user_friends_modify?list=add&username='.$user->username, array("class" => "follow"));
+      else:
+        echo button_to("Abonniert!", '@user_friends_modify?list=remove&username='.$user->username, array("class" => "unfollow"));
+      endif;
+      
+      if($sf_user->hasUser() && false === $user->isAdmin() && $sf_user->getUser()->isAdmin()):
+        echo button_to("Benutzer löschen", '@user_delete?username='.$user->username, array("class" => "delete"));
+        echo button_to("Benutzer deaktivieren", '@user_suspend?username='.$user->username, array("class" => "suspend"));
+      endif;
+    else:
+      echo button_to("Profil bearbeiten", "@user_my_profile", array("class" => "profile"));
+      echo button_to("Einstellungen", "@user_settings", array("class" => "settings"));
+    endif;
+    
+    if($user->facebook_id): ?>
+      <input type="button" onclick="sendFbFriendRequest();" value="Lade Deine Facebook Freunde ein" class="facebook">
+    <?php
+    endif;
+  endif;
+  ?>
 </div>
 
 <?php if(count($stories) > 0): ?>
