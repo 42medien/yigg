@@ -4,6 +4,7 @@
 
 
 <?php slot("sidebar"); ?>
+<section id="widget-register" class="widget">
   <h2>Noch keinen Benutzernamen?</h2>
   <p>Jetzt <?php echo link_to(
     "registrieren",
@@ -12,20 +13,7 @@
   <?php echo link_to(
     "Registrieren",
     '@user_register',
-    array('title' => 'Jetzt bei YiGG registrieren')); ?></p>
-
-   <?php echo link_to(
-     img_tag(
-       "no-username-".(rand(0,1)).".jpg",
-      array(
-        "alt" => "Noch keinen Benutzernamen?",
-        "width"=> 300
-      )),
-     "@user_register",
-     array(
-       "title" => "Jetzt registrieren und kostenlos von vielen Funktionen und Einstellungen profitieren."
-      )
-    );
-  ?>
-  <div class="clr bth">&nbsp;</div>
+    array('title' => 'Jetzt bei YiGG registrieren')); ?>
+  </p>
+</section>
 <?php end_slot(); ?>

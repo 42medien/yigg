@@ -1,5 +1,18 @@
 <?php slot("page-title")?>Registrierung<?php end_slot()?>
 
+<?php echo link_to(
+   img_tag(
+     "404.gif",
+    array(
+      "alt" => "marvin!",
+    )),
+   "@user_register",
+   array(
+     "title" => "Jetzt registrieren und kostenlos von vielen Funktionen und Einstellungen profitieren.",
+     "class" => "signup-image"
+    )
+  );
+?>
 <?php if( isset($result) && true === $result): ?>
   <p class="success">In Kürze erhältst Du von uns eine email mit einem Bestätigungslink. Mit Klick auf diesen
   Link aktivierst Du Dein Konto und Du kannst in unserer Community loslegen.</p>
@@ -18,24 +31,14 @@
   </form>
 <?php endif; ?>
 
-<?php slot("sidebar")?>
-  <?php echo link_to(
-     img_tag(
-       "404.gif",
-      array(
-        "alt" => "marvin!",
-      )),
-     "@user_register",
-     array(
-       "title" => "Jetzt registrieren und kostenlos von vielen Funktionen und Einstellungen profitieren."
-      )
-    );
-  ?>
-<?php end_slot()?>
-
 
 <script>
     jQuery("#AcceptTerms").closest('div').addClass('accept-terms');
     
     jQuery("#RegisterForm > fieldset > .field:nth-child(5)").addClass("captcha-container");
 </script>
+
+<?php slot('sidebar') ?>
+  <?php include_component("comment","latestComments");?>
+  <?php include_component("story","latestStoriesWidget"); ?>
+<?php end_slot();?>
