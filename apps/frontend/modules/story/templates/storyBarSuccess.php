@@ -36,6 +36,8 @@
         <a class="spreadly-button" href="<?php echo $story->external_url; ?>"></a>
       </li>
     </ul>
+    
+    <?php echo link_to('<i class="icon-remove-sign"></i>', $story->external_url, array("id" => "close", "title" => "YiGG-Bar schließen")); ?>
   </nav>
 </header>
 

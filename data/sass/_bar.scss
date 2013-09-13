@@ -1,5 +1,7 @@
 body#bar {
   overflow: hidden;
+  background: none;
+  background-color: transparent;
   
   html, body, iframe, #iframe-content { margin:0; padding:0; height:100%; }
 
@@ -7,6 +9,7 @@ body#bar {
   
   #branding {
     margin-bottom: 0;
+    margin-bottom: 5px;
   }
   
   #comments {
@@ -41,5 +44,12 @@ body#bar {
         padding-top: 7px;
       }
     }
+  }
+  
+  a#close {
+    float: right;
+    text-decoration: none;
+    font-size: 25px;
+    margin-top: 20px;
   }
 }
