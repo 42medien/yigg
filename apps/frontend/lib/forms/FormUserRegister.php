@@ -53,7 +53,7 @@ class FormUserRegister extends yiggForm
             array(
                'id'  => 'AcceptTerms',
                'class' => 'chkBox',
-               'link' => array('name' => "Nutzungsbedingungen", 'url' => "@legal_pages?template=nutzungsbedingungen")
+               'link' => array('name' => "Nutzungsbedingungen", 'url' => "@legal_pages?template=nutzungsbedingungen", 'target' => '_blank')
             )
           ),
           'acceptedTermsd' => new yiggWidgetFormInputCheckbox(
@@ -61,7 +61,7 @@ class FormUserRegister extends yiggForm
                 array(
                     'id'  => 'AcceptTermsd',
                     'class' => 'chkBox',
-                    'link' => array('name' => "Datenschutzbestimmungen", 'url' => "@legal_pages?template=datenschutzrichtlinien")
+                    'link' => array('name' => "Datenschutzbestimmungen", 'url' => "@legal_pages?template=datenschutzrichtlinien", 'target' => '_blank')
                 )
           )
         )
