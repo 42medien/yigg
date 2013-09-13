@@ -45,31 +45,3 @@
      </ul>
       <div class="clr"></div>
 </section>
-
-<?php if(true === $sf_request->hasParameter("rss")): ?>
-<section id="widget-feed">
-  <h2>Seite abonnieren</h2>
-  <ul>
-    <li>
-<?php
-  echo link_to(
-    " Atom-Feed",
-    $sf_request->forceParams(
-      array(
-        "sf_format" => "atom"
-      )
-    ),
-    array(
-      'title' => 'Diese Seite als Atom-Feed abonnieren',
-      'class' => 'rss atom feed icon-rss-sign',
-      'rel' => 'feed'
-    )
-  );
-?>
-    </li>
-    <li>
-      <input type="button" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" value="Subscribe" />
-    </li>
-  </ul>
-</section>
-<?php endif; ?>
