@@ -17,7 +17,7 @@
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",
                    array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span> |
-      <i class="icon-comment"></i> <?php echo link_to_story($story->currentCommentCount(), $story); ?>
+      <i class="icon-comment"></i> <?php echo link_to_story($story->currentCommentCount() . " Kommentar(e)", $story); ?>
     </div>
   </header>
 
