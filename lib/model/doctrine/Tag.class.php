@@ -80,7 +80,7 @@ class Tag extends BaseTag
    */
   public function getLink()
   {
-    return "@tag_show?tags={$this->name}";
+    return "@tag?tags={$this->name}";
   }
 
   public function getSpeculationLink()

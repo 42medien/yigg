@@ -2,6 +2,10 @@ tag_show:
   url:    /tags
   param:  { module: tag, action: show }
 
+tag:
+  url:    /tag/:tags
+  param:  { module: tag, action: show }
+
 tag_subscribe:
   url:    /tags/subscription/:tag_id
   param:  { module: tag, action: changeSubscription }

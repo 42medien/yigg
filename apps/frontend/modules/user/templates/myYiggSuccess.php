@@ -50,7 +50,7 @@
     <?php foreach($user->Tags as $tag) { ?>
       <?php echo now_later_button(
         $tag->name,
-        url_for("@tag_show") . "?tags={$tag->name}",
+        url_for("@tag?tags={$tag->name}"),
         "@tag_subscribe?tag_id={$tag->id}",
         array("class" => "subscribed"));?>
     <?php } ?>
