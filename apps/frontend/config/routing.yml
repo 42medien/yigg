@@ -19,6 +19,23 @@ comment_actions:
     ref_id: \d+
     object: \w+
 
+# api
+opensearch:
+  url: /api/1/opensearch.xml
+  param: { module: api, action: opensearch }
+
+oexchange:
+  url: /api/1/oexchange.xml
+  param: { module: api, action: oexchange }
+
+hostmeta_xrd:
+  url: /.well-known/host-meta
+  param: { module: api, action: hostmeta, format: xrd }
+
+hostmeta_jrd:
+  url: /.well-known/host-meta.json
+  param: { module: api, action: hostmeta, format: json }
+
 # Search
 search:
   url:    /search
