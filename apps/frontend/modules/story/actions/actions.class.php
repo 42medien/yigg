@@ -236,7 +236,7 @@ class storyActions extends yiggActions {
     }
 
     $this->getResponse()->addMeta('robots',  'noindex, follow' );
-    $exturl = $request->getParameter("exturl", false);
+    $exturl = $request->getParameter("exturl", $request->getParameter("url", null));
     $exturl = (false !== $exturl) ? yiggStringTools::utf8_urldecode($exturl) : $exturl;
 
     if(false === $request->isMethod("post") && $exturl !== false && true === yiggTools::isProperURL($exturl)) {
