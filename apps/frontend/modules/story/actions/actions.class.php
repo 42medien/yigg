@@ -59,10 +59,6 @@ class storyActions extends yiggActions {
    */
   public function executeBestStories( $request ) {
     $this->setLayout("layout.stream");
-    if ($this->getRequest()->getParameter("value"))
-      $value = $this->getRequest()->getParameter("value");
-    else
-      $value = 43200; // 12 Hours By Default
     
     $sf = new yiggStoryFinder();
     $user = $this->session->getUser();
@@ -72,9 +68,6 @@ class storyActions extends yiggActions {
     } else {
       $sf->confineWithMarkedForFrontpage();
     }
-    if($value)
-       $sf->confineWithStoryFilter($value);
-    //$sf->sortByDate();
     $sf->sortByYTTCS();
     
     $query = $sf->getQuery();
@@ -102,7 +95,6 @@ class storyActions extends yiggActions {
   public function executeNewStories( $request ) {
     $this->setLayout("layout.stream");
     $sf = new yiggStoryFinder();
-    $sf->confineWithDate24();
     $sf->sortByDate();
 
     // just return query for pager creation
