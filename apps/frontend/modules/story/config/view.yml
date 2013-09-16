@@ -5,7 +5,7 @@ bestStoriesSuccess:
 
 newStoriesSuccess:
   metas:
-    title:        Alle neu eingestellten Beiträge der letzten 24 Stunden
+    title:        Alle neu eingestellten Beiträge
     description:  Unter Neueste Nachrichten findest du die topaktuellen Nachrichten der letzten 24 Stunden auf YiGG.
 
 archiveSuccess:
