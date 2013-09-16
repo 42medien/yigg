@@ -38,10 +38,10 @@ img.avatar {
 .signup-image {
   float: right; }
 
-a.delete {
+a.delete, a.blacklist, a.edit {
   text-decoration: none;
   font-size: 12px; }
-  a.delete:hover {
+  a.delete:hover, a.blacklist:hover, a.edit:hover {
     text-decoration: underline; }
 
 #content {
