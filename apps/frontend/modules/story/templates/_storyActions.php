@@ -1,7 +1,9 @@
 <?php if(true === $sf_user->hasUser() && true === $sf_user->isModerator()): ?>
-    <ul id="admin-actions-<?php echo $story['id'];?>" style="display:none;" class="admin-actions ico">
+  <section id="widget-admin-actions" class="widget">
+    <h2>Administrator</h2>
+    <ul id="admin-actions-<?php echo $story['id'];?>" class="admin-actions ico">
       <li><?php echo link_to_story(
-           "löschen",
+           "<i class='icon-remove-sign'></i> löschen",
            $story,
            array(
              "view" => "delete",
@@ -12,7 +14,7 @@
            )
           );?></li>
        <li><?php echo link_to_story(
-         "Blacklist domain",
+         "<i class='icon-ban-circle'></i> Blacklist domain",
          $story,
          array(
              "view" => "blacklist",
@@ -23,46 +25,15 @@
            )
           );?></li>
        <li><?php echo link_to(
-           "Benutzer löschen",
+           "<i class='icon-remove-sign'></i> Benutzer löschen",
            '@user_delete?username='.$story->Author->username,
            array(
               "rel" => "external",
              "title" => 'Benutzer löschen',
              "rel" => "nofollow",
-             "class" => "logout"
+             "class" => "delete"
            )
           );?></li>
     </ul>
-  <?php endif;?>
-
-  <ul id="story-actions_<?php echo $story['id']; ?>" class="story-actions ico">
-    <?php if(true === $story->canEdit($sf_user)): ?>
-      <li><?php echo link_to_story(
-       "Nachricht {$story['title']} bearbeiten",
-       $story,
-       array(
-         "view" => "edit",
-         "title" => 'Nachricht Bearbeiten: '  . $story->title,
-         "rel" => "nofollow",
-         "class" => "edit"
-       )
-      );
-      ?></li>
-    <?php endif; ?>
-
-    <?php if(true === $sf_user->hasUser() && true === $sf_user->isModerator()): ?>
-     <li><?php echo content_tag("a",
-       "Administrate {$story['title']}",
-       array(
-         "href"=> "javascript:void(0);",
-         "title" => 'Administrate: '  . $story->title,
-         "rel" => "external",
-         "onclick" => "$('admin-actions-{$story['id']}').toggle();",
-         "class" => "admin",
-         "anchor" => true,
-       )
-      );
-     ?></li>
-    <?php endif; ?>
-
-  </ul>
+  </section>
+<?php endif;?>
