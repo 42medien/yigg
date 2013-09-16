@@ -33,7 +33,7 @@
       echo " " . str_replace("<p>", "", htmlspecialchars_decode($desc));
       ?>
 <?php if(false === isset($email)): ?>
-    <ul class="list-style clr">
+    <ol class="list-style clr">
       <li class="story"><?php echo link_to(
           "Ansehen",
           $sf_data->getRaw('obj')->Story->getLink(),
@@ -46,7 +46,7 @@
             "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
           )
         ); ?></li>
-    </ul>
+    </ol>
     <?php else : ?>
       <?php echo link_to(
           "Ansehen",

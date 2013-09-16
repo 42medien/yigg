@@ -40,7 +40,7 @@
           array("class"=>"vcard Sender")
       ) . "  " . $desc;
       ?>
-  <ul class="list-style clr">
+  <ol class="list-style clr">
     <li class="comment"><?php echo
       link_to(
         "Antworten",
@@ -59,5 +59,5 @@
           "absolute" => true            
         )
       );?></li>
-  </ul>
+  </ol>
   <div id="pm_<?php echo $obj->id; ?>_replyHolder" class="clr"></div>

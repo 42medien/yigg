@@ -33,7 +33,7 @@
       "@user_public_profile?username={$follower['username']}", array('absolute' => true)
     );?> hat ab jetzt Deine Nachrichten abonniert.</p>
   <?php if(false === isset($email)): ?>
-  <ul class="list-style clr">
+  <ol class="list-style clr">
     <?php if( false === $sf_user->getUser()->follows($follower) ): ?>
       <li class="follow"><?php
         echo link_to(
@@ -60,6 +60,5 @@
           "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
         )
       ); ?></li>
-  </ul>
+  </ol>
   <?php endif;?>
-  <div class="clr"></div>

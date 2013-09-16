@@ -15,7 +15,7 @@
 </ul>
 
 <?php if(isset($notifications) AND count($notifications) > 0):?>
-<ol class="notification-list">
+<ul class="notification-list">
 <?php foreach($notifications as $notification): ?>
   <?php $object = $notification->getReferencedObject(); ?>
   <?php if(false !== $object && null !== $object || $notification->ref_object_type == "NotificationMessage"): ?>
@@ -31,7 +31,7 @@
     </li>
   <?php endif; ?>
 <?php endforeach; ?>
-</ol>
+</ul>
 
 <?php echo $pager->display(); ?>
 
