@@ -27,6 +27,19 @@
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",
                    array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span>
+      <?php if(true === $story->canEdit($sf_user)): ?>
+        | <i class="icon-edit"></i> <?php echo link_to_story(
+                    "bearbeiten",
+                      $story,
+                      array(
+                        "view" => "edit",
+                        "title" => 'Nachricht Bearbeiten: '  . $story->title,
+                        "rel" => "nofollow",
+                        "class" => "edit"
+                      )
+                     );
+                     ?>
+      <?php endif; ?>
     </div>
   </header>
   
@@ -46,6 +59,9 @@
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
 <?php slot('sidebar') ?>
+
+<?php include_partial('story/storyActions', array("story" => $story));?>
+
 <?php if(false == cache("story-detail-{$story['id']}-votes{$story->currentRating()}")): ?>
 <section id="widget-last-yiggs" class="widget">
     <?php $usernames = array();?>
