@@ -20,7 +20,7 @@
 <?php echo $pager->display(); ?>
 
 <?php else: ?>
-  <p class="error">Es wurden keine Nachrichten gefunden</p>
+  <p class="note">Es wurden keine Nachrichten gefunden</p>
 <?php endif; ?>
 
 <?php slot('sidebar') ?>
