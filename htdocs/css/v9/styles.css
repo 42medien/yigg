@@ -331,8 +331,17 @@ ul.notification-list {
     padding: 0;
     margin: 0; }
   ul.notification-list li .notification-details {
-    display: none; }
+    display: none;
+    font-size: 20px; }
+    ul.notification-list li .notification-details .vcard {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 10px; }
+    ul.notification-list li .notification-details img.avatar {
+      float: left;
+      margin-right: 10px; }
   ul.notification-list li:hover .notification-details {
+    margin-top: 30px;
     display: block; }
   ul.notification-list ul.list-style {
     margin: 0;

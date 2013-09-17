@@ -17,18 +17,18 @@
       content_tag(
         "span",
           link_to(
-           avatar_tag($obj->Sender->Avatar, "noavatar-48-48.png", 48, 48),
+           avatar_tag($obj->Sender->Avatar, "noavatar-48-48.png", 48, 48, array("class" => "avatar")),
            '@user_public_profile?view=live-stream&username='. urlencode($obj['Sender']['username']),
            array(
              "title" => "Profil von {$obj['Sender']['username']} besuchen",
-             "class" => "comment-avatar",
+             "class" => "alert-link",
              "absolute" => true
             )
           ) . " von " .
           link_to(
             $obj['Sender']['username'],
             '@user_public_profile?view=live-stream&username='. urlencode($obj['Sender']['username']),
-             array('class' => 'fn url', 'absolute' => true)
+             array('class' => 'fn url alert-link', 'absolute' => true)
           ) . " - " .
           content_tag(
             "abbr",

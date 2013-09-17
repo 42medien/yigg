@@ -12,11 +12,11 @@
       content_tag(
         "span",
           link_to(
-            avatar_tag($avatar, "noavatar-48-48.png", 48,48),
+            avatar_tag($avatar, "noavatar-48-48.png", 48, 48, array("class" => "avatar")),
            '@user_public_profile?view=live-stream&username='. urlencode($follower['username']),
            array(
              "title" => "Profil von {$follower['username']} besuchen",
-             "class" => "comment-avatar",
+             "class" => "alert-link"
             )
           ) .
           content_tag(

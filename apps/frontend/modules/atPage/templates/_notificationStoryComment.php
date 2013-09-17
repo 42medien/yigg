@@ -17,11 +17,11 @@
       content_tag(
         "span",
           link_to(
-            avatar_tag($avatar, "noavatar-48-48.png", 48, 48),
+            avatar_tag($avatar, "noavatar-48-48.png", 48, 48, array("class" => "avatar")),
            '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
            array(
              "title" => "Profil von {$comment['Author']['username']} besuchen",
-             "class" => "comment-avatar"
+             "class" => "alert-link"
            )
           ) . " von " .
           link_to(
@@ -33,26 +33,21 @@
       );
       echo " " . str_replace("<p>", "", htmlspecialchars_decode($desc));
       ?>
-<?php if(false === isset($email)): ?>
+
     <ul class="list-style">
-      <li class="story"><?php echo link_to(
+      <li class="story"><i class="icon-external-link"></i> <?php echo link_to(
           "Ansehen",
           $sf_data->getRaw('obj')->Story->getLink(),
-          array("class" => "ico zoom")
+          array("class" => "ico zoom alert-link", "absolute" => true)
         ); ?></li>
-      <li class="delete"><?php echo link_to(
+<?php if(false === isset($email)): ?>
+      <li class="delete"><i class="icon-trash"></i> <?php echo link_to(
           "Löschen",
           $notification->getTaskLink("delete", ESC_RAW),
           array(
-            "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
+            "class" => "ico delete alert-link ninjaUpdater notification_{$notification['id']}"
           )
         ); ?></li>
+<?php endif; ?>
     </ul>
-    <?php else : ?>
-      <?php echo link_to(
-          "Ansehen",
-          $sf_data->getRaw('obj')->Story->getLink(),
-          array("class" => "ico zoom", "absolute" => true)
-        ); ?>
-  <?php endif; ?>
 </div>

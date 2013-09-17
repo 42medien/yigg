@@ -9,12 +9,12 @@
         echo link_to(
           "Startseite besuchen",
           '@best_stories',
-          array("class" => "ico zoom"));?></li>
+          array("class" => "ico zoom alert-link"));?></li>
     <li class="delete"><i class="icon-trash"></i> <?php echo link_to(
         "Löschen",
         $notification->getTaskLink("delete", ESC_RAW),
         array(
-          "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
+          "class" => "ico delete alert-link ninjaUpdater notification_{$notification['id']}"
         )
       ); ?></li>
   </ul>
