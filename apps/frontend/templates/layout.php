@@ -60,6 +60,10 @@
     
     <base href="http<?php echo $sf_request->isSecure() ? "s" :"" ?>://<?php echo $sf_request->getHost() . $sf_request->getRelativeUrlRoot();  ?>/" />
     
+    <!--[if lt IE 9]>
+    <?php use_javascript('html5shiv.js'); ?>
+    <![endif]-->
+    
     <?php
       include_http_metas();
       include_semantic_metas();
