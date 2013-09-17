@@ -3,7 +3,7 @@
 	<p class="alert alert-danger error">Vorsicht! Gelöschte Accounts können nicht wiederhergestellt werden!</p>
 
 	<h2>Hilf uns besser zu werden.</h2>
-	<p class="alert alert-info note">Warum gehst Du?</p>
+	<p class="note">Warum gehst Du?</p>
 
 	<form method="post" action="<?php echo url_for("@user_settings?view=delete");?>">
 	  <?php echo $delete_form->render();?>

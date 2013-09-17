@@ -17,7 +17,7 @@
     <input type="submit" class="button" value="Benachrichtigungen ändern" />
   </div>
 </form>
-<p class="alert alert-danger error"><?php echo link_to("YiGG Account löschen", "@user_settings?view=delete");?></p>
+<p class="error"><?php echo link_to("YiGG Account löschen", "@user_settings?view=delete");?></p>
 
 <?php slot("sidebar")?>
   <div class="clear"></div>
