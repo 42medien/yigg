@@ -37,29 +37,29 @@
   <?php if(false === isset($email)): ?>
   <ul class="list-style">
     <?php if( false === $sf_user->getUser()->follows($follower) ): ?>
-      <li class="follow"><?php
+      <li class="follow"><i class="icon-ok-sign"></i> <?php
         echo link_to(
           "Abonniere  " . $follower['username'],
           '@user_friends_modify?list=add&username='.$follower['username'],
           array(
             "title" => sprintf("Abonniere %s", $follower['username']),
-            "class" => "ico follow")
+            "class" => "ico follow alert-link")
        );?></li>
     <?php elseif( $sf_user->getUserId() !== $follower['id']): ?>
-      <li class="unfollow"><?php
+      <li class="unfollow"><i class="icon-remove-sign"></i> <?php
         echo link_to(
           "Unfollow " . $follower['username'],
           '@user_friends_modify?list=remove&username='.$follower['username'],
           array(
             "title" => sprintf("Unfollow %s", $follower['username']),
-            "class" => "ico unfollow")
+            "class" => "ico unfollow alert-link")
        );?></li>
     <?php endif; ?>
-    <li class="delete"><?php echo link_to(
+    <li class="delete"><i class="icon-trash"></i> <?php echo link_to(
         "Löschen",
         $notification->getTaskLink("delete", ESC_RAW),
         array(
-          "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
+          "class" => "ico delete alert-link ninjaUpdater notification_{$notification['id']}"
         )
       ); ?></li>
   </ul>

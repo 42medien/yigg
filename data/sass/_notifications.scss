@@ -27,6 +27,15 @@ ul.notification-list {
     
     li {
       display: inline;
+      font-size: 12px;
+      
+      a {
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

@@ -42,21 +42,21 @@
       ) . "  " . $desc;
       ?>
   <ul class="list-style">
-    <li class="comment"><?php echo
+    <li class="comment"><i class="icon-reply"></i> <?php echo
       link_to(
         "Antworten",
         '@notification_index?id=' . $notification->id,
         array(
-          "class" => "ninjaUpdater pm_" . $obj->id ."_replyHolder",
+          "class" => "ninjaUpdater pm_" . $obj->id ."_replyHolder alert-link",
           "absolute" => true            
         )
       );?></li>
-    <li class="delete"><?php echo
+    <li class="delete"><i class="icon-trash"></i> <?php echo
       link_to(
         "Löschen",
         "@notification_tasks?task=delete&id=".$notification->id,
         array(
-          "class" => "ninjaUpdater notification_".$obj->id,
+          "class" => "ninjaUpdater alert-link notification_".$obj->id,
           "absolute" => true            
         )
       );?></li>

@@ -339,7 +339,12 @@ ul.notification-list {
     padding: 0;
     list-style: none; }
     ul.notification-list ul.list-style li {
-      display: inline; }
+      display: inline;
+      font-size: 12px; }
+      ul.notification-list ul.list-style li a {
+        text-decoration: none; }
+        ul.notification-list ul.list-style li a:hover {
+          text-decoration: underline; }
 
 .comment-section {
   color: #888;

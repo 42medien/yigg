@@ -5,12 +5,12 @@
   <p>Deine Nachricht <?php echo $obj->Story->title;?>  hat es auf die Startseite geschafft! Herzlichen Glückwunsch!</p>
 
   <ul class="list-style">
-    <li class="story"><?php
+    <li class="story"><i class="icon-external-link"></i> <?php
         echo link_to(
           "Startseite besuchen",
           '@best_stories',
           array("class" => "ico zoom"));?></li>
-    <li class="delete"><?php echo link_to(
+    <li class="delete"><i class="icon-trash"></i> <?php echo link_to(
         "Löschen",
         $notification->getTaskLink("delete", ESC_RAW),
         array(
