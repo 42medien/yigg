@@ -19,7 +19,7 @@
 <?php foreach($notifications as $notification): ?>
   <?php $object = $notification->getReferencedObject(); ?>
   <?php if(false !== $object && null !== $object || $notification->ref_object_type == "NotificationMessage"): ?>
-    <li id="notification_<?php echo $notification->id?>" class="<?php echo $notification->isRead() ? 'read' : 'new'; ?> clr">
+    <li id="notification_<?php echo $notification->id?>" class="<?php echo $notification->isRead() ? 'read' : 'new'; ?> alert alert-info">
       <?php include_partial(
                 "notification" . $notification->ref_object_type ,
                 array(
@@ -36,11 +36,11 @@
 <?php echo $pager->display(); ?>
 
     <?php else: ?>
-        <p class="note">Keine neuen Benachrichtigungen.</p>
+        <p class="alert alert-warning"><i class="icon-info-sign"></i> Keine neuen Benachrichtigungen.</p>
     <?php endif; ?>
 
 <?php if($sf_user->getUser()->getNotificationCount() > 0):?>
-    <p class="note"><?php printf("Noch %s weitere Benachrichtigungen im Ordner Benachrichtigungen.", $sf_user->getUser()->getNotificationCount())?></p>
+    <p class="alert alert-warning"><i class="icon-info-sign"></i> <?php printf("Noch %s weitere Benachrichtigungen im Ordner Benachrichtigungen.", $sf_user->getUser()->getNotificationCount())?></p>
 <?php endif;?>
 
 <?php slot("sidebar")?>

@@ -1,14 +1,15 @@
 <?php use_helper("Date");?>
-    <h3><?php echo
+    <h3><i class="icon-envelope"></i> <?php echo
         link_to(
           $obj['Sender']['username'],
            '@user_public_profile?view=live-stream&username='. urlencode($obj['Sender']['username']),
            array(
              "title" => "Profil von {$obj['Sender']['username']} besuchen",
-             "class" => "comment-avatar",
+             "class" => "comment-avatar alert-link",
              "absolute" => true               
             )
         ); ?> hat Dir eine private Mitteilung geschickt.</h3>
+<div class="notification-details">
    <?php
       $desc = $obj->getText(ESC_RAW);
       echo
@@ -40,7 +41,7 @@
           array("class"=>"vcard Sender")
       ) . "  " . $desc;
       ?>
-  <ol class="list-style clr">
+  <ul class="list-style">
     <li class="comment"><?php echo
       link_to(
         "Antworten",
@@ -59,5 +60,5 @@
           "absolute" => true            
         )
       );?></li>
-  </ol>
-  <div id="pm_<?php echo $obj->id; ?>_replyHolder" class="clr"></div>
+  </ul>
+</div>

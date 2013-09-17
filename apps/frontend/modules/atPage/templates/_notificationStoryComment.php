@@ -1,11 +1,12 @@
 <?php use_helper("Date");?>
-  <h3><?php echo
+  <h3><i class="icon-comment"></i> <?php echo
     link_to(
       mb_substr($obj->Story->getTitle(ESC_RAW),0, (true === isset($email)) ? 160 : 40,'UTF-8'),
       $sf_data->getRaw('obj')->Story->getLink(),
-      array("absolute" => true)
+      array("absolute" => true, 'class' => 'alert-link')
     ); ?></h3>
 
+<div class="notification-details">
     <?php $comment = $obj->Comment;?>
 
     <?php
@@ -26,14 +27,14 @@
           link_to(
             $comment['Author']['username'],
             '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
-             array('class' => 'fn url')
+             array('class' => 'fn url alert-link')
           ) . " - ",
           array("class"=>"vcard author")
       );
       echo " " . str_replace("<p>", "", htmlspecialchars_decode($desc));
       ?>
 <?php if(false === isset($email)): ?>
-    <ol class="list-style clr">
+    <ul class="list-style">
       <li class="story"><?php echo link_to(
           "Ansehen",
           $sf_data->getRaw('obj')->Story->getLink(),
@@ -46,7 +47,7 @@
             "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
           )
         ); ?></li>
-    </ol>
+    </ul>
     <?php else : ?>
       <?php echo link_to(
           "Ansehen",
@@ -54,4 +55,4 @@
           array("class" => "ico zoom", "absolute" => true)
         ); ?>
   <?php endif; ?>
-  <div id="<?php echo "story-comments-{$obj->getParent()->id}"?>" class="clr"></div>
+</div>

@@ -1,8 +1,10 @@
 <?php use_helper("Date"); $follower = Doctrine::getTable("User")->findOneById($obj['user_id']); ?>
-  <h3><?php echo link_to(
+  <h3><i class="icon-group"></i> <?php echo link_to(
     "{$follower['username']} folgt dir ab jetzt.",
-    "@user_public_profile?username={$follower['username']}", array("absolute" => true)
+    "@user_public_profile?username={$follower['username']}", array("absolute" => true, 'class' => 'alert-link')
   ); ?></h3>
+
+<div class="notification-details">
   <p>
    <?php
       $avatar = !is_null($follower['avatar_id']) ? Doctrine::getTable("File")->findOneById( $follower['avatar_id'] ): false;
@@ -30,10 +32,10 @@
      ?>
      Der YiGG Nutzer <?php echo link_to(
       $follower['username'],
-      "@user_public_profile?username={$follower['username']}", array('absolute' => true)
+      "@user_public_profile?username={$follower['username']}", array('absolute' => true, 'class' => 'alert-link')
     );?> hat ab jetzt Deine Nachrichten abonniert.</p>
   <?php if(false === isset($email)): ?>
-  <ol class="list-style clr">
+  <ul class="list-style">
     <?php if( false === $sf_user->getUser()->follows($follower) ): ?>
       <li class="follow"><?php
         echo link_to(
@@ -60,5 +62,6 @@
           "class" => "ico delete ninjaUpdater notification_{$notification['id']}"
         )
       ); ?></li>
-  </ol>
+  </ul>
   <?php endif;?>
+</div>

@@ -1,0 +1,32 @@
+ul.notification-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+  li {
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .notification-details {
+      display: none;
+    }
+  }
+  
+  li:hover {
+    .notification-details {
+      display: block;
+    }
+  }
+  
+  ul.list-style {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    li {
+      display: inline;
+    }
+  }
+}

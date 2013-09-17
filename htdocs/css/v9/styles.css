@@ -323,6 +323,24 @@ nav.filter-list {
   text-align: center;
   margin-bottom: 50px; }
 
+ul.notification-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  ul.notification-list li h3 {
+    padding: 0;
+    margin: 0; }
+  ul.notification-list li .notification-details {
+    display: none; }
+  ul.notification-list li:hover .notification-details {
+    display: block; }
+  ul.notification-list ul.list-style {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    ul.notification-list ul.list-style li {
+      display: inline; }
+
 .comment-section {
   color: #888;
   text-shadow: #fff 0px 1px 0px;
@@ -797,6 +815,61 @@ input[type="submit"], input[type="button"], button, a.button {
       margin: 0; }
       .site-footer-widgets .widget ul li {
         display: block; }
+
+#content .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+#content .alert h4 {
+  margin-top: 0;
+  color: inherit; }
+#content .alert .alert-link {
+  font-weight: bold; }
+#content .alert > p,
+#content .alert > ul {
+  margin-bottom: 0; }
+#content .alert > p + p {
+  margin-top: 5px; }
+#content .alert-dismissable {
+  padding-right: 35px; }
+#content .alert-dismissable .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit; }
+#content .alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847; }
+#content .alert-success hr {
+  border-top-color: #c9e2b3; }
+#content .alert-success .alert-link {
+  color: #356635; }
+#content .alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #3a87ad; }
+#content .alert-info hr {
+  border-top-color: #a6e1ec; }
+#content .alert-info .alert-link {
+  color: #2d6987; }
+#content .alert-warning {
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+  color: #c09853; }
+#content .alert-warning hr {
+  border-top-color: #f8e5be; }
+#content .alert-warning .alert-link {
+  color: #a47e3c; }
+#content .alert-danger {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48; }
+#content .alert-danger hr {
+  border-top-color: #e6c1c7; }
+#content .alert-danger .alert-link {
+  color: #953b39; }
 
 body#bar {
   overflow: hidden;
