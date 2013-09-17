@@ -14,6 +14,6 @@
       <?php echo $form->render(); ?>
   </fieldset>
   <div class="actions">
-     <input type="submit" name="formAction[save]" value="<?php echo $story->id > 0 ? 'Änderungen speichern' : 'Erstellen'; ?>" id="Save" class="button" style="font-size:1.4em;">
+     <input type="submit" name="formAction[save]" value="<?php echo $story->id > 0 ? 'Änderungen speichern' : 'Erstellen'; ?>" id="Save" class="button">
   </div>
 </form>
