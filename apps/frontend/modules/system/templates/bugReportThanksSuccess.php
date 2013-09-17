@@ -1,5 +1,5 @@
 <h1>Danke sehr!</h1>
-<p class="success">Danke! Deine Fehlermeldung wurder erfolgreich übermittelt..</p>
+<p class="alert alert-success">Danke! Deine Fehlermeldung wurder erfolgreich übermittelt..</p>
 
 <h3>Was passiert jetzt?</h3>
 <ul>

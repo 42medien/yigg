@@ -1,8 +1,8 @@
 <?php if( isset($result) && true === $result): ?>
-<p class="success">In Kürze erhältst Du von uns eine email mit einem Bestätigungslink. Mit Klick auf diesen
+<p class="alert alert-success">In Kürze erhältst Du von uns eine email mit einem Bestätigungslink. Mit Klick auf diesen
     Link aktivierst Du Dein Konto und Du kannst in unserer Community loslegen.</p>
 <?php elseif(isset($result) && false === $result): ?>
-<p class="error">Wir konnten Dir keinen Bestätigungslink schicken. Bitte überprüfe und korrigiere Deine email-Adresse <?php echo $user->email; ?>
+<p class="alert alert-danger error">Wir konnten Dir keinen Bestätigungslink schicken. Bitte überprüfe und korrigiere Deine email-Adresse <?php echo $user->email; ?>
     Dein Konto kann nur nach Anmeldung mit einer bestätigten email-Adresse freigeschaltet werden</p>
 <?php else: ?>
 

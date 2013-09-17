@@ -1,5 +1,5 @@
-<p class="success">Das Sponsor-Pakets wurde aktiviert!</p>
-<p class="note">Sie erhalten die Bestätigung der Buchung bzw. die Rechnung per email.</p>
+<p class="alert alert-success">Das Sponsor-Pakets wurde aktiviert!</p>
+<p class="alert alert-info note">Sie erhalten die Bestätigung der Buchung bzw. die Rechnung per email.</p>
 
 <br />
 
@@ -22,4 +22,4 @@
   </tr>
 </table>
 
-<p class="note">Die Liste Ihrer Sponsorings finden Sie <?php echo link_to('hier', '@sponsoring') ?></p>
+<p class="alert alert-info note">Die Liste Ihrer Sponsorings finden Sie <?php echo link_to('hier', '@sponsoring') ?></p>

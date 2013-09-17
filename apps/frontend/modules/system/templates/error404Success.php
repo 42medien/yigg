@@ -1,4 +1,4 @@
-<p class="error">Dieser Link ist veraltet oder die Inhalte wurden entfernt!</p>
+<p class="alert alert-danger error">Dieser Link ist veraltet oder die Inhalte wurden entfernt!</p>
 <h1>Diese Seite existiert nicht!</h1>
 
 <?php echo img_tag("404.gif", array("style" => "float: right;")) ?>

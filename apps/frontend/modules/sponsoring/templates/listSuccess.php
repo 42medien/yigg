@@ -2,10 +2,10 @@
 
 <h2>Übersicht Deiner Sponsorings</h2>
 
-<p class="note">Fragen? Schreibe uns eine <?php echo mail_to("info@yigg.de", "E-Mail!");?></p>
+<p class="alert alert-info note">Fragen? Schreibe uns eine <?php echo mail_to("info@yigg.de", "E-Mail!");?></p>
 
 <?php if($sf_user->hasFlash("Sponsoring:notice")): ?>
-  <p class="success"><?php echo $sf_user->getFlash("Sponsoring:notice");?></p>
+  <p class="alert alert-success"><?php echo $sf_user->getFlash("Sponsoring:notice");?></p>
 <?php endif; ?>
 
 <table id="statisticContent" summary="Deine Aktivität auf YiGGSponsorings - Sponsoraktivitäten" cellspacing="0">
@@ -50,5 +50,5 @@
 </table>
 
 <?php slot("sidebar")?>
-  <p class="note"><?php echo link_to('Buche ein weiteres Sponsoring!', '@sponsoring_order?id=1') ?> </p>
+  <p class="alert alert-info note"><?php echo link_to('Buche ein weiteres Sponsoring!', '@sponsoring_order?id=1') ?> </p>
 <?php end_slot()?>

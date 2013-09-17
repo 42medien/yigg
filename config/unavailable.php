@@ -23,11 +23,11 @@
          <div class="twoThree-left">
          <h1>YiGG ist momentan nicht erreichbar. Wir überarbeiten das System und sind in Kürze wieder da.</h1>
 
-              <p class="error">YiGG ist im Wartungsmodus und wird in Kürze wieder erreichbar sein.</p>
+              <p class="alert alert-danger error">YiGG ist im Wartungsmodus und wird in Kürze wieder erreichbar sein.</p>
 
               <object width="100%" height="485"><param name="movie" value="http://www.youtube.com/v/DWx-NYeNvVA&amp;hl=de_DE&amp;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/DWx-NYeNvVA&amp;hl=de_DE&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="100%" height="485"></embed></object>
 
-              <p class="note">Wenn Du magst komme einfach in einigen Minuten wieder :)</p>
+              <p class="alert alert-info note">Wenn Du magst komme einfach in einigen Minuten wieder :)</p>
 
            </div>
           <div class="twoThree-right">

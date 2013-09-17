@@ -24,10 +24,10 @@
               <h1>Bei deiner letzten Anfrage ist leider ein Fehler aufgetreten.</h1>
 
               <h2>Was kann ich tun?</h2>
-              <p class="success">Hilf uns den Fehler schnell zu finden, indem Du <a href="http://yigg.de/ueber-uns/bugreport">hier</a> klickst!</p>
+              <p class="alert alert-success">Hilf uns den Fehler schnell zu finden, indem Du <a href="http://yigg.de/ueber-uns/bugreport">hier</a> klickst!</p>
 
               <h2>Und dann?</h2>
-              <p class="note">Es besteht eine hohe Wahrscheinlichkeit, dass der Rest der Seite normal funktioniert. Probiere doch in der Zwischenzeit ein paar andere Funktionen aus.</p>
+              <p class="alert alert-info note">Es besteht eine hohe Wahrscheinlichkeit, dass der Rest der Seite normal funktioniert. Probiere doch in der Zwischenzeit ein paar andere Funktionen aus.</p>
           </div>
           <div class="twoThree-right">
               <img src="http://static.yigg.de/v6/images/404.gif"/>

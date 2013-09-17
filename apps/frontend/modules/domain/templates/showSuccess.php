@@ -31,6 +31,6 @@
   </ol>
 </div>
 <?php else: ?>
-  <p class="error">Es wurden keine Nachrichten gefunden</p>
+  <p class="alert alert-danger error">Es wurden keine Nachrichten gefunden</p>
 <?php endif; ?>
 <?php echo $pager->display(); ?>

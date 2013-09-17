@@ -25,7 +25,7 @@
 </div>
   <?php echo $pager->display(); ?>
 <?php else:?>
-  <p class="error">Es wurden keine Top-Nachrichten gefunden!</p>
+  <p class="alert alert-danger error">Es wurden keine Top-Nachrichten gefunden!</p>
 <?php endif;?>
 
 <?php slot("sidebar_sponsoring")?>

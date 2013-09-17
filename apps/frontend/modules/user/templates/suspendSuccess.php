@@ -3,7 +3,7 @@
 
 <?php else: ?>
   <h2>Benutzer deaktivieren.</h2>
-  <p class="note">Achtung! Es werden alle Nachrichten und Kommentare des Benutzers deaktiviert.</p>
+  <p class="alert alert-info note">Achtung! Es werden alle Nachrichten und Kommentare des Benutzers deaktiviert.</p>
 
   <form action="<?php echo url_for("@user_suspend?username=".urlencode($user['username'])); ?>" method="post" class="ninjaValidate">
     <fieldset>

@@ -1,1 +1,1 @@
-<p class="error">Löschen fehlgeschlagen.</p>
+<p class="alert alert-danger error">Löschen fehlgeschlagen.</p>

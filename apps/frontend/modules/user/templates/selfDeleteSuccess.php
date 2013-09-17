@@ -1,9 +1,9 @@
 <?php if($sf_user->hasUser()):?>
 	<h1>Deinen Benutzeraccount bei YiGG löschen.</h1>
-	<p class="error">Vorsicht! Gelöschte Accounts können nicht wiederhergestellt werden!</p>
+	<p class="alert alert-danger error">Vorsicht! Gelöschte Accounts können nicht wiederhergestellt werden!</p>
 
 	<h2>Hilf uns besser zu werden.</h2>
-	<p class="note">Warum gehst Du?</p>
+	<p class="alert alert-info note">Warum gehst Du?</p>
 
 	<form method="post" action="<?php echo url_for("@user_settings?view=delete");?>">
 	  <?php echo $delete_form->render();?>

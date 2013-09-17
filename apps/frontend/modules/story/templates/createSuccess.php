@@ -13,7 +13,7 @@
     <?php
     $errorStack = $story->getErrorStack();
     if(count($errorStack) > 0): ?>
-    <p class="error">Hallo, leider hat es einen Fehler beim hinzufügen deiner Nachricht gegeben.
+    <p class="alert alert-danger error">Hallo, leider hat es einen Fehler beim hinzufügen deiner Nachricht gegeben.
       Wir wurden bereits darüber informiert und treten mit dir in Kontakt, wenn der Fehler behoben ist.</p>
     <?php endif; ?>
     <?php echo $form->render(); ?>
@@ -44,7 +44,7 @@
 
 
 <?php slot('sidebar') ?>
-  <p class="note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.</p>
+  <p class="alert alert-info note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.</p>
   <p><?php echo
       link_to(
         "Normal" === $view ? "Eigenen Artikel erstellen": "Nachricht erstellen",

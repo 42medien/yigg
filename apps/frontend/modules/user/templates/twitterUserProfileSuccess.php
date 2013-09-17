@@ -20,7 +20,7 @@
 </div>
   <?php echo $pager->display(); ?>
 <?php else: ?>
-  <p class="note">Es wurden keine Nachrichten gefunden</p>
+  <p class="alert alert-info note">Es wurden keine Nachrichten gefunden</p>
 <?php endif; ?>
 
 <?php slot("sidebar")?>

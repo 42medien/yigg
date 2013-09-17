@@ -5,18 +5,18 @@
 
     <fieldset>
         <?php if( $sf_user->hasFlash('Sponsoring:error') ):?>
-        <span id="error" class="error_message"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
+        <span id="alert alert-danger error" class="error_message"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
         <?php endif; ?>
 
         <?php if( $sf_user->hasFlash('Sponsoring:notice') ):?>
-        <span id="notice"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
+        <span id="alert alert-info note"><?php echo $sf_user->getFlash('Sponsoring:error'); ?></span>
         <?php endif; ?>
 
         <?php if( isset($invitation) ):?>
-        <span id="notice">Willkommen, <?php echo $invitation->name;?> Deine Einladung von <?php echo $invitation->User->username; ?>  wurde geladen.</span>
+        <span id="alert alert-info note">Willkommen, <?php echo $invitation->name;?> Deine Einladung von <?php echo $invitation->User->username; ?>  wurde geladen.</span>
         <?php endif; ?>
 
-        <span id="notice">Bildformate werden automatisch angepasst</span>
+        <span id="alert alert-info note">Bildformate werden automatisch angepasst</span>
 
         <?php if( isset($image) && $image !== false): ?>
         <div class="field sponsoring image">

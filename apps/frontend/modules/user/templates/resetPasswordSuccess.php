@@ -6,7 +6,7 @@
   <fieldset>
     <h1 class="log_title">Passwort vergessen?</h1>
     <?php if(isset($action_message)):?>
-      <p class="error"><?php echo $action_message; ?></p>
+      <p class="alert alert-danger error"><?php echo $action_message; ?></p>
     <?php endif;?>
     <?php echo $form->render();?>
     <div class="actions">

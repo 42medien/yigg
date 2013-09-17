@@ -1,4 +1,4 @@
-<p class="note">Bevor Du aktiv Nachrichten einstellst, bitten wir Dich YiGG etwas besser kennen zu lernen.</p>
+<p class="alert alert-info note">Bevor Du aktiv Nachrichten einstellst, bitten wir Dich YiGG etwas besser kennen zu lernen.</p>
 
 <h2>Was kannst Du tun?</h2>
 <ul>
@@ -15,4 +15,4 @@
   <li>Bewertungen: <?php echo $sf_user->getUser()->UserStats->yiggs_total;?> / 100</li>
   <li>Freunde: <?php echo $sf_user->getUser()->UserStats->friends_total;?> / 3 </li>
 </ul>
-<p class="note">Die Statistik wird regelmäßig, alle paar Stunden aktualisiert.</p>
+<p class="alert alert-info note">Die Statistik wird regelmäßig, alle paar Stunden aktualisiert.</p>

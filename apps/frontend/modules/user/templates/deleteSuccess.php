@@ -3,7 +3,7 @@
 
 <?php else: ?>
   <h2>Benutzer löschen.</h2>
-  <p class="note">Achtung! Es werden alle Nachrichten und Kommentare des Benutzers gelöscht.</p>
+  <p class="alert alert-info note">Achtung! Es werden alle Nachrichten und Kommentare des Benutzers gelöscht.</p>
 
   <form action="<?php echo url_for("@user_delete?username=".urlencode($user['username'])); ?>" method="post" class="ninjaValidate">
     <fieldset>

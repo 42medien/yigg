@@ -1,6 +1,6 @@
 <?php slot("page-title")?>Kontakt<?php end_slot()?>
 
-<p class="note">Bei inhaltlichen Fragen zu Nachrichteninhalten, bitte beim Author oder auf der Orginalseite melden.</p>
+<p class="alert alert-info note">Bei inhaltlichen Fragen zu Nachrichteninhalten, bitte beim Author oder auf der Orginalseite melden.</p>
 <h2>Kontakt</h2>
 <h3>Adresse:</h3>
 <p>

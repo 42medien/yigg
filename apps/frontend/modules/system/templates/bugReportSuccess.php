@@ -1,6 +1,6 @@
 <h1>Einen Fehler melden</h1>
 
-<p class="note">Bitte gib kurz an, was Du gemacht hast und was passiert ist.</p>
+<p class="alert alert-info note">Bitte gib kurz an, was Du gemacht hast und was passiert ist.</p>
 <form action="<?php echo url_for("@bug_report");?>" method="post">
   <?php echo $form->render();?>
   <div class="actions">
