@@ -12,5 +12,5 @@
     ));
   ?>
 
-  <?php include_partial("system/main_navigation"); ?>                         
+  <?php include_partial("system/main_navigation"); ?>
 </nav>
