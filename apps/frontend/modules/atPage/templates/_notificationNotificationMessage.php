@@ -10,10 +10,10 @@
             )
         ); ?> hat Dir eine private Mitteilung geschickt.</h3>
 <div class="notification-details">
+  <p>
    <?php
       $desc = $obj->getText(ESC_RAW);
       echo
-      "<p>".
       content_tag(
         "span",
           link_to(
@@ -41,6 +41,7 @@
           array("class"=>"vcard Sender")
       ) . "  " . $desc;
       ?>
+    </p>
   <ul class="list-style">
     <li class="comment"><i class="icon-reply"></i> <?php echo
       link_to(

@@ -7,13 +7,12 @@
     ); ?></h3>
 
 <div class="notification-details">
+  <p>
     <?php $comment = $obj->Comment;?>
-
     <?php
       $desc = $comment->getPresentationDescription(ESC_RAW);
       $avatar = !is_null($comment['Author']['avatar_id']) ? Doctrine::getTable("File")->findOneById( $comment['Author']['avatar_id'] ): false;
     echo
-    "<p>".
       content_tag(
         "span",
           link_to(
@@ -28,12 +27,21 @@
             $comment['Author']['username'],
             '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
              array('class' => 'fn url alert-link')
-          ) . " - ",
+          ) . " - " .
+          content_tag(
+             "abbr",
+               format_date(strtotime($obj['created_at']),"g","de",'utf-8'),
+               array(
+                 "title" => date(DATE_ATOM, strtotime($obj['created_at'])),
+                 "class" => "updated published"
+               )
+          ),
           array("class"=>"vcard author")
       );
-      echo " " . str_replace("<p>", "", htmlspecialchars_decode($desc));
+      
+      echo " " . htmlspecialchars_decode($desc);
       ?>
-
+    </p>
     <ul class="list-style">
       <li class="story"><i class="icon-external-link"></i> <?php echo link_to(
           "Ansehen",
