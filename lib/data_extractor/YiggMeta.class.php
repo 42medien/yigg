@@ -124,7 +124,7 @@ class YiggMeta {
   public function fromMicroformats($data) {
     if ($data) {
       
-      if (!array_key_exists("items", $data) || !is_array($data["items"])) {
+      if (!array_key_exists("items", $data) || !is_array($data["items"]) || count($data["items"]) == 0) {
         return;
       }
       
@@ -135,6 +135,7 @@ class YiggMeta {
         $this->setTitle($first_item["properties"]["name"][0]);
       }
       
+      // don't know if we should use the complete text of the article
       /*if ( array_key_exists("summary", $first_item["properties"]) && is_array($first_item["properties"]["summary"]) ) {
         $this->setDescription($first_item["properties"]["summary"][0]);
       } else if ( array_key_exists("content", $first_item["properties"]) && is_array($first_item["properties"]["content"]) ) {
