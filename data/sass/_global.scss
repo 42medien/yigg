@@ -6,16 +6,22 @@ body {
   background: $background url("../../images/v9/noise.png") repeat;
 }
 
-a.button {
-  text-decoration: none;
-}
-
 .screen-reader-text {
   display: none;
 }
 
-a.external {
-  text-decoration: none;
+a {
+  img {
+    border: none;
+  }
+  
+  &.external {
+    text-decoration: none;
+  }
+  
+  &.button {
+    text-decoration: none;
+  }
 }
 
 .error_message {

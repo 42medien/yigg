@@ -6,13 +6,14 @@ body {
   font-family: "helvetica neue", arial, sans-serif;
   background: #f0f0f0 url("../../images/v9/noise.png") repeat; }
 
-a.button {
-  text-decoration: none; }
-
 .screen-reader-text {
   display: none; }
 
+a img {
+  border: none; }
 a.external {
+  text-decoration: none; }
+a.button {
   text-decoration: none; }
 
 .error_message {
