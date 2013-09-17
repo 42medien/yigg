@@ -8,10 +8,10 @@ if (true === $sf_user->hasUser()) {
 <section id="widget-feed">
   <h2>Seite abonnieren</h2>
   <ul>
-    <li>
+    <li><i class="icon-rss-sign"></i>
 <?php
   echo link_to(
-    " Atom-Feed",
+    "Atom-Feed",
     $sf_request->forceParams(
       array(
         "sf_format" => "atom"
@@ -19,7 +19,7 @@ if (true === $sf_user->hasUser()) {
     ),
     array(
       'title' => 'Diese Seite als Atom-Feed abonnieren',
-      'class' => 'rss atom feed icon-rss-sign',
+      'class' => 'rss atom feed',
       'rel' => 'feed'
     )
   );
