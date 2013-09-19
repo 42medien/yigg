@@ -145,7 +145,7 @@ class YiggMeta {
       // check and use photos
       if ( array_key_exists("photo", $first_item["properties"]) && is_array($first_item["properties"]["photo"]) ) {
         foreach ($first_item["properties"]["photo"] as $photo) {
-          $this->setPhoto($photo);
+          $this->setImages($photo);
         }
       }
       
