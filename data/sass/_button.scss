@@ -1,7 +1,6 @@
 .rating-form {
   text-align: center;
-  color: #333;  
-  
+  color: #333;
   
   .counter {
     display: block;
@@ -11,6 +10,11 @@
     font-size: 15px;
     font-size: 1.5rem;
     border-radius: 2px;
+  }
+  
+  a.button-small {
+    text-decoration: none;
+    color: #333;
   }
   
   &.full {
