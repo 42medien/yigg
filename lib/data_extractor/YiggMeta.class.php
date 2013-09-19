@@ -166,13 +166,13 @@ class YiggMeta {
           if ( array_key_exists("query", $url_parts) && $url_parts["query"] ) {
             // use last part of the query string
             if ( preg_match("/=(.[^=]+)$/i", $url_parts["query"], $match) ) {
-              $tag_result[] = $match[1];
+              $tag_result[] = urldecode($match[1]);
             }
           // check url path
           } else if ( array_key_exists("path", $url_parts) && $url_parts["path"] ) {
             // use last part of the path
             if ( preg_match("/\/(.[^\/]+)\/?$/i", $url_parts["path"], $match) ) {
-              $tag_result[] = $match[1];
+              $tag_result[] = urldecode($match[1]);
             }
           }
         }
