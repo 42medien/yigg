@@ -10,5 +10,5 @@ if (isset($flat) && $flat == true) {
 
 <div class="rating-form <?php echo $type; ?>">   
   <div class="counter">0</div>
-  <div class="button-small" title=""><?php echo link_to("YiGG", "@story_create", array("target" => "_blank", "query_string" => "exturl={$_GET['url']}", "absolute" => true)); ?></div>
+  <?php echo link_to("YiGG", "@story_create", array("class" => "button-small", "target" => "_blank", "query_string" => "exturl={$_GET['url']}", "absolute" => true)); ?>
 </div>
