@@ -63,7 +63,7 @@ class yiggValidatorTag extends yiggValidatorPlainText
           throw new sfValidatorError($this, 'too_long', array('value' => strip_tags(trim( substr($tag,0,20). "... ")), ENT_NOQUOTES, 'UTF-8'));
         }
 
-        if(count(explode(" ", $tag)) > 4) # Check if a single tag contains more then 3 tokens
+        if(count(explode(" ", $tag)) > 6) # Check if a single tag contains more then 3 tokens
         {
           throw new sfValidatorError($this, 'to_many_tokens_per_tag');
         }
