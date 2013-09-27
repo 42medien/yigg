@@ -17,40 +17,6 @@
         var node = document.getElementsByTagName('script')[0];
         node.parentNode.insertBefore(gads, node);
       })();
-
-      googletag.cmd.push(function() {
-        googletag.defineSlot('/1043423/rectangle', [300, 250], 'div-gpt-ad-1346766539123-0').addService(googletag.pubads());
-        googletag.defineSlot('/1043423/rectangle2', [300, 250], 'div-gpt-ad-1347010073546-1').addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
-        
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId        : <?php echo sfConfig::get('app_facebook_app_id') ?>,
-          status       : false,
-          cookie       : true,
-          xfbml        : true,
-          oauth        : true
-        });
-      };
-
-      // Load the SDK Asynchronously
-      (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-      }(document));
-
-      function onClickloginfb() {
-        FB.login(function(response) {
-          if (response.authResponse) {
-            window.location = "/fb_login"
-          }
-        }, {perms:'email,user_interests,user_likes'});
-      }
     </script>
 
     <link rel="shortcut icon" href="/favicon.png" />
