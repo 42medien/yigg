@@ -88,7 +88,7 @@ class spyActions extends yiggActions {
 
   private function getLatestRenders() {
     $sf = new yiggStoryFinder();
-    $sf->sortByViews();
+    $sf->sortByLatestView();
     $sf->setLimit(50);
     
     return $sf->getQuery()->execute();

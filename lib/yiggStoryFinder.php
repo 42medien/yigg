@@ -514,7 +514,7 @@ class yiggStoryFinder
         sc.story_id = s.id
       AND
         c_sort.deleted_at IS NULL
-      ORDER BY sc.created_at
+      ORDER BY sc.created_at '.$direction.'
       LIMIT 1
       )
       AS latestComment
@@ -525,7 +525,7 @@ class yiggStoryFinder
   }
 
   /**
-   * sort stories by the date of theyre latest rating
+   * sort stories by the date of they're latest rating
    * @param string direction
    * @return StoryFinder
    */
@@ -543,7 +543,7 @@ class yiggStoryFinder
         sr.rating_id = r.id
       WHERE
         sr.story_id = s.id
-      ORDER BY r.created_at
+      ORDER BY r.created_at '.$direction.'
       LIMIT 1
       )
       AS latestRating
@@ -567,13 +567,35 @@ class yiggStoryFinder
      SELECT count(*)
      FROM story_render as v
      WHERE v.story_id = s.id
-       AND
-       s.created_at > \'' . $this->time_from .'\'
-        AND
-       s.created_at < \''. $this->time_until .'\'
      ) AS views
     ';
     $this->sorters['views']    = 'views '  . $direction;
+    return $this;
+  }
+  
+  /**
+   * sort stories by latest view
+   *
+   * @param     string $direction
+   * @return     StoryFinder
+   */
+  public function sortByLatestView($direction = self::SORT_DESC)
+  {
+    // count non-deleted comments as sorting criteria
+    $this->selectors['latestView'] = '
+        (
+        SELECT
+          render.created_at
+        FROM
+          story_render render
+        WHERE render.story_id = s.id
+        ORDER BY render.created_at '.$direction.'
+        LIMIT 1
+        )
+        AS latestView
+      ';
+    
+    $this->sorters['latestView']    = 'latestView '  . $direction;
     return $this;
   }
 
@@ -819,50 +841,42 @@ class yiggStoryFinder
   {
     $this->use_news_algorithim = true;
     
-    $context = time();
-    $this->time_until = yiggTools::getRoundedTime( $context - 86400 ); // yesterday    
-    $this->time_from = yiggTools::getRoundedTime( $context ); // time at the moment    
-                
-    $this->selectors['yttcs'] = '    
+    $this->selectors['points'] = '    
      (
      SELECT count(c.id)
      FROM comment c
      INNER JOIN story_comment scom on c.id = scom.comment_id
      WHERE scom.story_id = s.id AND c.deleted_at is null
      ) AS comments,
+     (
+      SELECT count(1)
+      FROM story_render v
+      WHERE v.story_id = s.id
+      ) AS views,
     (
       SELECT count(r.id)
       FROM story_rating r
       LEFT JOIN rating ON r.rating_id = rating.id
       WHERE r.story_id = s.id
-        AND
-      rating.created_at > \'' . $this->time_until . '\'
-        AND
-      rating.created_at < \''. $this->time_from .'\'
     ) AS votes,
     (
-      SELECT count(st.id)
-      FROM story_tweet st
-      LEFT JOIN tweet AS t ON t.id = st.tweet_id
-      WHERE st.story_id = s.id 
-        AND
-            t.created_at > \'' . $this->time_until .'\'
-        AND
-            t.created_at < \''. $this->time_from .'\'
-    ) AS story_tweet_l,
+      SELECT count(ur.id)
+      FROM story_rating ur
+      LEFT JOIN rating ON ur.rating_id = rating.id
+      WHERE
+        ur.story_id = s.id
+      AND
+        ur.user_id != 1
+    ) as user_votes,
     (
       SELECT count(st.id)
       FROM story_tweet st
       LEFT JOIN tweet AS t ON t.id = st.tweet_id
-      WHERE st.story_id = s.id 
-        AND t.created_at < \'' . $this->time_until .'\'
-    ) AS story_tweet_a
+      WHERE st.story_id = s.id
+    ) AS story_tweet
     ';
-        
-    $this->time_from = null;
-    $this->time_until = null;
 
-    $this->sorters['yttcs'] = "s.yttcs DESC";
+    $this->sorters['points'] = "s.points DESC";
     $this->sorters['created_at'] = "s.created_at DESC";
     
     return $this;
@@ -923,11 +937,12 @@ class yiggStoryFinder
         (
         SELECT
           ROUND(
-                (1 * sv.votes ) + 
-                (1 * sv.story_tweet_l) + 
-                (2 * sv.story_tweet_a) + 
-                (1 * sv.comments)
-            ) as yttcs,
+                (3 * sv.votes ) + 
+                (0.5 * sv.views ) + 
+                (sv.story_tweet) + 
+                (2 * sv.comments) +
+                (2 * sv.epoch_time / 86400)
+            ) as points,
             sv.*
           FROM
          '. $this->sql . '
