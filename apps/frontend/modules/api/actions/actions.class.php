@@ -64,7 +64,7 @@ class apiActions extends sfActions {
       $response->setContentType('application/xrd+xml');
       $this->setTemplate("hostmeta");
     } else {
-      $response->setContentType('application/json');
+      $response->setContentType('application/jrd+json');
       return $this->renderText(json_encode($this->host_meta));
     }
   }
