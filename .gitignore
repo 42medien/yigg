@@ -2,6 +2,7 @@ lib/form/doctrine/base/*
 lib/model/doctrine/base/*
 lib/filter/doctrine/base/*
 lib/vendor/symfony/*
+node_modules
 cache/*
 log/*
 data/sql/*
@@ -14,3 +15,5 @@ htdocs/uploads/*
 data/frontend_prod-cli.lck
 
 config/doctrine/schema.yml
+
+npm-debug.log
