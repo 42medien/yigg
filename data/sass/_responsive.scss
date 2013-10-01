@@ -1,0 +1,60 @@
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (max-width: 1000px) {
+  #main, #main.full-width {
+    width: 100%;
+    margin: 0 auto;
+    @include clearfix();
+
+    #content {
+      width: 100%;
+    
+      #stories {
+        margin-left: 50px;
+      }
+    }
+  }
+  
+  #main, #main.full-width, #access {
+    width: 850px;
+  }
+  
+  .site-footer-widgets {
+    width: 800px;
+    padding-left: 50px;
+    
+    .widget {
+      width: 350px;
+      float: left;
+      margin-right: 50px;
+    }
+  }
+  
+  #sidebar {
+    float: none;
+    margin-left: 50px;
+    width: 800px;
+    clear: both;
+
+    section {
+      width: 350px;
+      float: left;
+      margin-right: 50px;
+    }
+  }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 850px) {
+  #main, #main.full-width, #access {
+    width: 450px;
+  }
+  
+  #sidebar, .site-footer-widgets {
+    width: 400px;
+  }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+}
