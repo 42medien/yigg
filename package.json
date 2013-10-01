@@ -1,0 +1,25 @@
+{
+  "name": "yigg",
+  "version": "0.0.0",
+  "description": "YiGG",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-watch": "*"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekaabo/yigg.git"
+  },
+  "keywords": [
+    "social",
+    "news"
+  ],
+  "author": "Matthias Pfefferle",
+  "license": "none"
+}
