@@ -1,4 +1,5 @@
-<h2 class="heading-right">Weitere Informationen rund um YiGG</h2>
+<section class="widget" id="widget-faq">
+<h2>Weitere Informationen rund um YiGG</h2>
 <ul>
   <li><?php echo link_to('Kontakt', '@about_pages?template=kontakt', array('title' => 'Impressum')); ?></li>
   <li><?php echo link_to('Impressum', '@about_pages?template=impressum', array('title' => 'Impressum')); ?></li>
@@ -9,3 +10,4 @@
   <li><?php echo link_to('Nutzungsbedingungen' ,'@legal_pages?template=nutzungsbedingungen', array('title' => 'Nutzungsbedingungen')); ?></li>
   <li><?php echo link_to('Datenschutzrichtlinien' ,'@legal_pages?template=datenschutzrichtlinien', array('title' => 'Datenschutzrichtlinien')); ?></li>
 </ul>
+</section>

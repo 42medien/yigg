@@ -26,6 +26,8 @@
 <?php endif; ?>
 
 <?php slot("sidebar")?>
+  <?php include_partial("userWidgetStats", array("user" => $user));?>
+
   <?php if($following->count() > 0):?>
   <section id="widget-friends-online" class="widget">
     <h2>Freunde Online (<?php echo count($following)?>)</h2>
@@ -57,7 +59,3 @@
   </section>
   <?php endif;?>
 <?php end_slot()?>
-
-<?php slot("sidebar_sponsoring")?>
-  <?php echo include_component("sponsoring","sponsoring", array( 'place_id' => 27 ) ); ?>
-<?php end_slot();?>

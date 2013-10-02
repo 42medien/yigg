@@ -14,6 +14,7 @@
 <?php endif; ?>
 
 <?php slot("sidebar")?>
+<section class="widget" id="widget-messages">
   <h2>Letze Nachrichten des Benutzers.</h2>
   <?php $stories = Doctrine_Query::create()
            ->from("Story")
@@ -21,7 +22,10 @@
            ->limit(10)
            ->orderBy("id DESC")
            ->execute();?>
+</section>
 
+<section class="widget" id="widget-statistics">
   <h2>Statistiken</h2>
   <?php include_partial("user/userWidgetStats", array("user" => $user));?>
+</section>
 <?php end_slot()?>

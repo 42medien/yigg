@@ -1,6 +1,7 @@
 <?php if($user->UserStats->yipps != NULL): ?>
 <?php $stats = $user->UserStats;?>
-<dl class="user-about">
+<section class="widget" id="widget-user-stats">
+  <dl class="user-about">
     <dd class="rang"><?php printf('%d/10', $user->UserStats->rank) ?></dd>
     <dt class="rang">Rang</dt>
     <dd class="stories"><?php echo $user->UserStats->storys_total ?></dd>
@@ -17,5 +18,6 @@
            echo ( $read_award > 0)? img_tag('lesehamster_'.$read_award.'.png' , array('width' => '12', 'height'=>'12','alt' => 'Lesehamster Stufe '. $read_award, 'title' => 'Lesehamster Stufe '. $read_award) ): '';?>
     </dd>
     <dt class="awards">Awards</dt>
-</dl>
+  </dl>
+</section>
 <?php endif;?>

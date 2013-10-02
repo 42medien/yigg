@@ -8,5 +8,7 @@
 </form>
 
 <?php slot("sidebar") ?>
+<section class="widget">
   <p class="alert alert-info note"><?php echo link_to('Buche ein weiteres Sponsoring!', '@sponsoring_order?id=1') ?> </p>
+</section>
 <?php end_slot()?>
