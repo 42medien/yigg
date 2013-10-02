@@ -26,11 +26,10 @@
 <?php endif; ?>
 
 <?php slot("sidebar")?>
-  <?php include_partial("userWidgetStats", array("user" => $user));?>
 
   <?php if($following->count() > 0):?>
   <section id="widget-friends-online" class="widget">
-    <h2>Freunde Online (<?php echo count($following)?>)</h2>
+    <h2>Freunde Online  <sup class='badge'><?php echo count($following)?></sup></h2>
     <?php include_partial("user/avatarList", array("users" => $following));?>
   </section>
   <?php endif;?>

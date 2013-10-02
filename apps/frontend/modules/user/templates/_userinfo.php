@@ -35,7 +35,7 @@
          <i class="icon-user"></i> <?php echo link_to('Mein YiGG',"@user_welcome",array("title"=>"Dein Profil ansehen")); ?>
        </li>
        <li><i class="icon-pushpin"></i> <?php echo link_to(
-       "Pinnwand ({$sf_user->getUser()->getNotificationCount()})",
+       "Pinnwand" . ($sf_user->getUser()->getNotificationCount() ? " <sup class='badge'>{$sf_user->getUser()->getNotificationCount()}</sup>" : ""),
        "@notification_index",
          array(
            "title" => "Zu meiner Pinwand",
@@ -43,5 +43,4 @@
        );?></li>
        <li><i class="logout icon-signout"></i> <?php echo link_to("Abmelden","@user_logout");?></li>
      </ul>
-      <div class="clr"></div>
 </section>

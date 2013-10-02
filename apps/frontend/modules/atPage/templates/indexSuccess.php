@@ -46,7 +46,7 @@
 <?php slot("sidebar")?>
 <section id="widget-friends-online" class="widget">
   <?php $following =  UserFollowingTable::getOnlineFollowedUsers($sf_user->getUserId()); ?>
-  <h2>Freunde Online (<?php echo count($following)?>)</h2>
+  <h2>Freunde Online  <sup class='badge'><?php echo count($following)?></sup></h2>
   <?php include_partial("user/avatarList", array("users" => $following));?>
 </section>
 
