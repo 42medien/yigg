@@ -44,13 +44,16 @@
 
 
 <?php slot('sidebar') ?>
-  <p class="alert alert-info note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.</p>
-  <p><?php echo
-      link_to(
-        "Normal" === $view ? "Eigenen Artikel erstellen": "Nachricht erstellen",
-        "Normal" === $view ? '@story_create_article': '@story_create',
-        'id=changetype class=button'
-      );
-    ?>
-  </p>
+  <section id="widget-create-article" class="widget">
+    <p class="alert alert-info note"> Ich möchte <?php echo ("Normal" === $view ? "einen eigenen Artikel ohne Link": "eine eigene Nachricht"); ?> einstellen.</p>
+    <p>
+      <?php echo
+        link_to(
+          "Normal" === $view ? "Eigenen Artikel erstellen": "Nachricht erstellen",
+          "Normal" === $view ? '@story_create_article': '@story_create',
+          'id=changetype class=button'
+        );
+      ?>
+    </p>
+  </section>
 <?php end_slot();?>
