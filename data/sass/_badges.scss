@@ -6,10 +6,13 @@
   font-weight: bold;
   line-height: 14px;
   color: #ffffff;
-  
+  vertical-align: baseline;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #999999;
+}
+sup.label, sup.badge {
+  vertical-align: super;
 }
 .label {
   -webkit-border-radius: 3px;
