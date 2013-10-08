@@ -18,7 +18,16 @@ test:
 
 dev:
   .settings:
-    no_script_name:         false
+    no_script_name:         true
+    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
+    web_debug:              false
+    cache:                  false
+    compressed:             false
+    etag:                   false
+
+staging:
+  .settings:
+    no_script_name:         true
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
     web_debug:              false
     cache:                  false
