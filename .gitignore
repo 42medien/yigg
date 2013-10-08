@@ -17,3 +17,8 @@ data/frontend_prod-cli.lck
 config/doctrine/schema.yml
 
 npm-debug.log
+
+htdocs/backend.php
+htdocs/backend_*.php
+htdocs/frontend_*.php
+htdocs/index.php
