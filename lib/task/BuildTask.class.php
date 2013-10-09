@@ -46,7 +46,7 @@ EOF;
 
     // create controllers
     $this->runTask('yigg:generate-controller', $args, array('application' => $options['application'], 'env' => $options['env']));
-    //$this->executeDbTasks($arguments, $options);
+    $this->executeDbTasks($arguments, $options);
   }
 
   /**
