@@ -1,3 +1,4 @@
+<div id="fb-root"></div>
 <script type="text/javascript" src="/js/protoaculous_min.js"></script>
 <script type="text/javascript" src="/js/ninjitsu_min.js?v=2"></script>
 <?php //include_component('system','vibrantAds'); ?>
@@ -35,4 +36,12 @@
     uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://' ) + 'widget.uservoice.com/ivhHCap8jZkAWPJveHWCaw.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
   })();
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=353988911612";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 </script>
