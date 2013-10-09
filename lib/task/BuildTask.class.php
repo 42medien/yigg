@@ -47,12 +47,6 @@ EOF;
     // create controllers
     $this->runTask('yigg:generate-controller', $args, array('application' => $options['application'], 'env' => $options['env']));
     //$this->executeDbTasks($arguments, $options);
-
-    // new arguments array
-    $args = array();
-    if ($options['no-confirmation']) {
-      $args[] = '--no-confirmation';
-    }
   }
 
   /**
