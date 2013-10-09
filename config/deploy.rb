@@ -16,6 +16,7 @@ set :forward_agent, true
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{htdocs/uploads}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
@@ -29,11 +30,6 @@ namespace :deploy do
 
   desc "Overwrite the stop task because symfony doesn't need it."
   task :stoping do ; end
-
-  desc "We do not need to restart anything, so it was taken out."
-  task :default do
-    update
-  end
 
   desc "This task is the main task of a deployment."
   task :updating do ; end
@@ -50,7 +46,6 @@ namespace :symfony do
     on roles(:all) do
       execute "mkdir -p #{current_path}/cache"
       execute "mkdir -p #{current_path}/log"
-      execute "mkdir -p #{current_path}/htdocs/uploads"
       execute "php #{current_path}/symfony project:permissions"
     end
   end
