@@ -5,6 +5,7 @@ node_modules
 cache/*
 log/*
 htdocs/uploads/*
+data/sql/*
 
 .DS_Store
 
