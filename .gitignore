@@ -4,7 +4,6 @@ lib/filter/doctrine/base/*
 node_modules
 cache/*
 log/*
-data/sql/*
 htdocs/uploads/*
 
 .DS_Store
