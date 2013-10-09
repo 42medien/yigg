@@ -117,6 +117,29 @@ StoryIndex:
       notnull: true
       type: string(1000000)
 
+StoryFilterOption:
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string(20)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    value:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+
 History:
   actAs:
     yiggNotifcation:
