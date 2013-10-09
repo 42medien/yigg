@@ -1,7 +1,7 @@
 set :application, 'yigg'
 set :repo_url, 'git@github.com:ekaabo/yigg.git'
 
-set :branch, 'main'
+set :branch, 'master'
 
 set :deploy_to, '/mnt/data/yigg/www/httpdocs'
 set :scm, :git
@@ -22,16 +22,13 @@ set :keep_releases, 5
 
 namespace :deploy do
   desc "Overwrite the start task because symfony doesn't need it."
-  task :start do ; end
+  task :starting do ; end
 
   desc "Overwrite the restart task because symfony doesn't need it."
   task :restart do ; end
 
   desc "Overwrite the stop task because symfony doesn't need it."
-  task :stop do ; end
-
-  desc "Overwrite the migrate task because symfony doesn't need it."
-  task :migrate do ; end
+  task :stoping do ; end
 
   desc "We do not need to restart anything, so it was taken out."
   task :default do
@@ -39,14 +36,45 @@ namespace :deploy do
   end
 
   desc "This task is the main task of a deployment."
-  task :update do
-    transaction do
-      update_code
-      #symfony.yiid.build
+  task :updating do
+      #update_code
+      #symfony.yigg.build
       #symlink
-    end
   end
 
   after :finishing, 'deploy:cleanup'
 
+end
+
+namespace :symfony do
+
+  desc "Clear the cache."
+  task :cc do
+    run "php #{latest_release}/symfony cc --env=#{sf_env}"
+  end
+
+  desc "Disable the app."
+  task :disable do
+    run "php #{latest_release}/symfony project:disable #{sf_env}"
+  end
+
+  desc "Enable the app."
+  task :enable do
+    run "php #{latest_release}/symfony project:enable #{sf_env}"
+  end
+
+  namespace :yigg do
+    desc "Build it."
+    task :build do
+      command = "php #{latest_release}/symfony yiid:build --all --env=#{sf_env} --no-confirmation"
+
+      do_it = Capistrano::CLI.ui.ask("Do you really want to do this:\n#{command}\nAnswer with (y|n)[n]: ")
+
+      if do_it=='y'
+        run command
+      else
+        puts "Skipping it"
+      end
+    end
+  end
 end
