@@ -67,6 +67,7 @@ EOF;
 
     // generate arguments array
     if ($env == 'dev' || $env == 'staging') {
+      $this->runTask('doctrine:build-schema', array(), array('env' => $opts['env']));
       // add arguments for the "dev" or "staging" environment
       $args[] = '--all';
       // check if "confirmation" is enabled
