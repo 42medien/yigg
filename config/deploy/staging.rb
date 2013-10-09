@@ -5,8 +5,8 @@ set :stage, :staging
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-#role :app, %w{staging.yigg.de}
-#role :web, %w{deploy@example.com}
+role :app, %w{staging.yigg.de}
+role :web, %w{staging.yigg.de}
 #role :db,  %w{deploy@example.com}
 
 # Extended Server Syntax
@@ -15,7 +15,7 @@ set :stage, :staging
 # definition into the server list. The second argument
 # something that quacks like a has can be used to set
 # extended properties on the server.
-server 'staging.yigg.de', user: 'ec2-user', roles: %w{ekaabo}, sf_env: 'staging'
+server 'staging.yigg.de', user: 'ec2-user', roles: %w{app web}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options

@@ -36,44 +36,51 @@ namespace :deploy do
   end
 
   desc "This task is the main task of a deployment."
-  task :updating do
-      #update_code
-      #symfony.yigg.build
-      #symlink
-  end
-
+  task :updating do ; end
+  
+  after :finishing, 'symfony:permissions'
+  after :finishing, 'symfony:yigg:build'
+  
   after :finishing, 'deploy:cleanup'
-
 end
 
 namespace :symfony do
+  desc "Clear the cache."
+  task :permissions do
+    on roles(:all) do
+      execute "mkdir -p #{current_path}/cache"
+      execute "mkdir -p #{current_path}/log"
+      execute "mkdir -p #{current_path}/htdocs/uploads"
+      execute "php #{current_path}/symfony project:permissions"
+    end
+  end
 
   desc "Clear the cache."
   task :cc do
-    run "php #{latest_release}/symfony cc --env=#{sf_env}"
+    on roles(:all) do
+      execute "php #{current_path}/symfony cc --env=#{fetch(:stage)}"
+    end
   end
 
   desc "Disable the app."
   task :disable do
-    run "php #{latest_release}/symfony project:disable #{sf_env}"
+    on roles(:all) do
+      execute "php #{current_path}/symfony project:disable #{fetch(:stage)}"
+    end
   end
 
   desc "Enable the app."
   task :enable do
-    run "php #{latest_release}/symfony project:enable #{sf_env}"
+    on roles(:all) do
+      execute "php #{current_path}/symfony project:enable #{fetch(:stage)}"
+    end
   end
 
   namespace :yigg do
     desc "Build it."
     task :build do
-      command = "php #{latest_release}/symfony yiid:build --all --env=#{sf_env} --no-confirmation"
-
-      do_it = Capistrano::CLI.ui.ask("Do you really want to do this:\n#{command}\nAnswer with (y|n)[n]: ")
-
-      if do_it=='y'
-        run command
-      else
-        puts "Skipping it"
+      on roles(:all) do
+        execute "php #{current_path}/symfony yigg:build --all --env=#{fetch(:stage)} --no-confirmation"
       end
     end
   end
