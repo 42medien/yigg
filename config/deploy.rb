@@ -34,9 +34,9 @@ namespace :deploy do
   desc "This task is the main task of a deployment."
   task :updating do ; end
   
-  after :finishing, 'symfony:permissions'
-  after :finishing, 'symfony:yigg:build'
-  
+  before :finishing, 'symfony:permissions'
+  before :finishing, 'symfony:yigg:build'
+
   after :finishing, 'deploy:cleanup'
 end
 
