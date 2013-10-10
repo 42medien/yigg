@@ -14,7 +14,10 @@ class File extends BaseFile
   public static function create( $file, $path, $directory, $filename, $fileExtension ,$conn = null)
   {
     $file->save($path, 0777, true);
-
+    
+    // remove avatars
+    yiggFileTools::rmdir($file->file_directory . "thumbnails/".$file->file_name."/");
+    
     $new = new File();
     $directory = $new->getPathRelativeToUploadDir( $directory );
     $new->file_directory = substr( $directory,1, strlen($directory) );
