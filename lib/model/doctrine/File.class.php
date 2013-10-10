@@ -16,7 +16,7 @@ class File extends BaseFile
     $file->save($path, 0777, true);
     
     // remove avatars
-    yiggFileTools::rmdir($file->file_directory . "thumbnails/".$file->file_name."/");
+    yiggFileTools::rmdir($directory."thumbnails/".$filename."/");
     
     $new = new File();
     $directory = $new->getPathRelativeToUploadDir( $directory );
