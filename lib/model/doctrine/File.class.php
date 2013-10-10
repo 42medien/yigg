@@ -13,7 +13,7 @@ class File extends BaseFile
    */
   public static function create( $file, $path, $directory, $filename, $fileExtension ,$conn = null)
   {
-    $file->save($path,777,true);
+    $file->save($path, 0777, true);
 
     $new = new File();
     $directory = $new->getPathRelativeToUploadDir( $directory );
