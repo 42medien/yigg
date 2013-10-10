@@ -84,13 +84,12 @@ class File extends BaseFile
     }
 
     $file = new File();
-    $file->file_directory = $this->file_directory . "thumbnails/";
-    $file->file_name = $this->file_name . "_".$width."x".$height;
+    $file->file_directory = $this->file_directory . "thumbnails/".$this->file_name."/";
+    $file->file_name = $width."x".$height;
     $file->file_type  =  ".png";
 
     if($file->hasFile())
     {
-      chmod($file->getPathOnDisk(), 0777);
       return $file;
     }
 
