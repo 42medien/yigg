@@ -76,7 +76,7 @@ class File extends BaseFile
     return $thumbnail;
   }
 
-   private function getThumbnailFile($width, $height)
+  private function getThumbnailFile($width, $height)
   {
     if(false === $this->hasFile())
     {
@@ -90,14 +90,18 @@ class File extends BaseFile
 
     if($file->hasFile())
     {
+      chmod($file->getPathOnDisk(), 0777);
       return $file;
     }
 
     $thumbnail = new sfThumbnail($width, $height, false, true, 100, 'sfImageMagickAdapter', array('method' => 'shave_all'));
     $thumbnail->loadFile($this->getPathOnDisk());
     $filesystem = new sfFilesystem();
-    $filesystem->mkdirs($file->file_directory);
+    $filesystem->mkdirs($file->file_directory, 0777);
     $thumbnail->save($file->getPathOnDisk());
+    
+    chmod($file->getPathOnDisk(), 0777);
+    
     return $file;
   }
 

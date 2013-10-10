@@ -227,7 +227,7 @@ class yiggFileTools extends sfFilesystem
   {
     if(file_exists($path))
     {
-      chmod($path,755);
+      chmod($path, 0755);
       return  unlink($path);
     }
   }
