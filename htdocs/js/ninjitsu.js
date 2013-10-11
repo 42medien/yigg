@@ -282,7 +282,7 @@ NinjaValidator = ({
 
   // Some configuration
   requiredText : ' wird benötigt.',
-  img_dir: (window.parent.document.location.host.match(/yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'static.yigg.de/v6/' : '') + 'images/',
+  img_dir: (window.parent.document.location.host.match(/yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '') + 'images/',
   validating_img: 'ajaxindicator.gif',
   errors: 0,
   target: null,
@@ -575,7 +575,7 @@ NinjaUpdater = Class.create({
   current_event:    '',
 
   // set script file settings
-  script_dir: (window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'static.yigg.de/v6/' : '')  + 'js/',
+  script_dir: (window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '')  + 'js/',
   script_suffix: '.js',
   script_prefix: 'ninjaCallback',
   script_replace:'ninjaCallback',
@@ -823,7 +823,7 @@ NinjaUpdater = Class.create({
   current_event:    '',
 
   // set script file settings
-  script_dir: (window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'static.yigg.de/v6/' : '')  + 'js/',
+  script_dir: (window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '')  + 'js/',
   script_suffix: '.js',
   script_prefix: 'ninjaCallback',
   script_replace:'ninjaCallback',

@@ -16,7 +16,7 @@ NinjaValidator = ({
 
   // Some configuration
   requiredText : ' wird benötigt.',
-  img_dir: (window.parent.document.location.host.match(/yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'static.yigg.de/v6/' : '') + 'images/',
+  img_dir: (window.parent.document.location.host.match(/yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '') + 'images/',
   validating_img: 'ajaxindicator.gif',
   errors: 0,
   target: null,

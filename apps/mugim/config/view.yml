@@ -9,7 +9,7 @@ default:
     language:     en
     robots:       index, follow
 
-  stylesheets:    [http://static.yigg.de/v6/css/mugim/main.css?v=5]
+  stylesheets:    [http://yigg.de/css/mugim/main.css?v=5]
 
   javascripts:    []
 

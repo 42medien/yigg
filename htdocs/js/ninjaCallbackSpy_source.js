@@ -16,7 +16,7 @@ Spy = Class.create({
   storyLimit: 50,            // Total number of stories allowed in the stack.
 
   stories: [],               // The current stories
-  img_dir:(window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'static.yigg.de/v6/' : '') + 'images/',
+  img_dir:(window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '') + 'images/',
   ajax_img: 'ajaxindicator.gif',
   cancel_img: 'cancel.png',
   startText : "Fortsetzen",

@@ -25,7 +25,7 @@ var Lightview = {
     cyclic: false,                                         // Makes galleries cyclic, no end/begin.
     // The directory of the images, relative to this file or an absolute url
     images: (window.parent.document.location.host.match(/yigg\.de$/)
-      ? window.parent.document.location.protocol + '//' + 'static.yigg.de/v6/' : '')
+      ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '')
       + 'images/lightview/',
     imgNumberTemplate: 'Image #{position} of #{total}',    // Want a different language? change it here
     keyboard: { enabled: true },                           // Enabled the keyboard buttons

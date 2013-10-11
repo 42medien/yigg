@@ -7,7 +7,7 @@
     <?php include_stylesheets() ?>
     <?php include_title() ?>
      <style type="text/css">
-        #sitemenu-container { background-image: url(http://static.yigg.de/v6/css/mugim/mug.im.<?php echo rand(1,27);?>.jpg) !important; }
+        #sitemenu-container { background-image: url(http://yigg.de/css/mugim/mug.im.<?php echo rand(1,27);?>.jpg) !important; }
      </style>
 
   </head>
