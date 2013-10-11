@@ -32,9 +32,7 @@ if (true === $sf_user->hasUser()) {
 </section>
 <?php endif; ?>
 
-<section id="widget-search">
-  <?php include_component("search", "form"); ?>
-</section>
+<?php // include_component("search", "form"); ?>
 
 <?php
 if (has_slot("sidebar")) {
