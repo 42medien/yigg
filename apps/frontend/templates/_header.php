@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width" />
 <link rel="shortcut icon" href="/favicon.png" />
 <link rel="profile" href="http://microformats.org/profile/specs" />
 <link rel="profile" href="http://microformats.org/profile/hatom" />
