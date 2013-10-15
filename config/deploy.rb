@@ -16,7 +16,7 @@ set :forward_agent, true
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w{htdocs/uploads}
+set :linked_dirs, %w{htdocs/uploads cache log}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
@@ -44,8 +44,6 @@ namespace :symfony do
   desc "Clear the cache."
   task :permissions do
     on roles(:all) do
-      execute "mkdir -p #{current_path}/cache"
-      execute "mkdir -p #{current_path}/log"
       execute "php #{current_path}/symfony project:permissions"
     end
   end
