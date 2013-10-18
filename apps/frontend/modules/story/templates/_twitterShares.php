@@ -6,7 +6,7 @@
     <li>
       <?php
         $twitter_username = htmlSpecialChars($tweet_res->user->screen_name);
-        $twitter_status = $tweet_res->id;
+        $twitter_status = htmlSpecialChars($tweet_res->id_str);
         $tweer_url = 'https://twitter.com/' . $twitter_username . '/status/' . $twitter_status;
 
         echo link_to(
