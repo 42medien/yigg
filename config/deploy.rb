@@ -1,5 +1,5 @@
 set :application, 'yigg'
-set :repo_url, 'git@github.com:ekaabo/yigg.git'
+set :repo_url, 'https://github.com/ekaabo/yigg.git'
 
 set :branch, 'master'
 
@@ -7,6 +7,8 @@ set :deploy_to, '/mnt/data/yigg/www/httpdocs'
 set :scm, :git
 set :user, "spreadly"
 set :scm_passphrase, "affen2010"
+set :git_https_username, :user
+set :git_https_password, :scm_passphrase
 
 set :format, :pretty
 set :log_level, :debug
@@ -33,8 +35,7 @@ namespace :deploy do
 
   desc "This task is the main task of a deployment."
   task :updating do ; end
-  
-  before :finishing, 'symfony:permissions'
+
   before :finishing, 'symfony:yigg:build'
 
   after :finishing, 'deploy:cleanup'
