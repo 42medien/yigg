@@ -1,5 +1,5 @@
 set :application, 'yigg'
-set :repo_url, 'https://github.com/ekaabo/yigg.git'
+set :repo_url, 'https://spreadly:affen2010@github.com/ekaabo/yigg.git'
 
 set :branch, 'master'
 
