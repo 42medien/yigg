@@ -2,7 +2,7 @@ prod:
   view_cache:
     class: sfMemcacheCache
     param:
-      host: 127.0.0.1
+      host: yigg.pb6ick.0001.euw1.cache.amazonaws.com
   storage:
     class: sfCacheSessionStorage
     param:
