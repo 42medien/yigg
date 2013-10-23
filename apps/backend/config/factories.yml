@@ -13,7 +13,7 @@ prod:
         param:
           servers: # Array of servers
             localserver:
-              host: localhost # hostname or IP of mamcache server
+              host: yigg.pb6ick.0001.euw1.cache.amazonaws.com # hostname or IP of mamcache server
               port: 11211 # default memcache port
 
 
