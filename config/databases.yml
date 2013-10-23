@@ -2,7 +2,7 @@ prod:
   yigg:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=yigg_devel'
+      dsn: 'mysql:host=yigg-db1.cikaf9ikcmcc.eu-west-1.rds.amazonaws.com:3306;dbname=yigg_devel'
       username: yigg_devel
       password: dLdQGRPjhxAdbmWt
       attributes:

@@ -37,6 +37,7 @@ namespace :deploy do
   task :updating do ; end
 
   before :finishing, 'symfony:yigg:build'
+  before :finishing, 'symfony:cc'
 
   after :finishing, 'deploy:cleanup'
 end
