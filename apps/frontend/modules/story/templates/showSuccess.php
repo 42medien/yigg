@@ -14,15 +14,15 @@
     }
     ?>
   </div>
-  
+
   <header>
     <?php include_component( 'story', 'rateStory',  array('story' => $story, 'type' => 'full')); ?>
     <h3 class="entry-title p-title">
       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank')); ?>
     </h3>
-    
+
     <div class="entry-meta">
-      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated" datetime="<?php echo date(DATE_ATOM, strtotime($story['created_at'])); ?>"><?php echo format_date($story->getCreatedAt(),"g","de",'UTF-8'); ?></time> | 
+      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated" datetime="<?php echo date(DATE_ATOM, strtotime($story['created_at'])); ?>"><?php echo format_date($story->getCreatedAt(),"g","de",'UTF-8'); ?></time> |
       <i class="icon-user"></i> <span class="author p-author vcard hcard h-card"><?php echo link_to(
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",
@@ -42,13 +42,13 @@
       <?php endif; ?>
     </div>
   </header>
-  
+
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p><?php echo $story->getDescription(); ?></p>
 
     <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>
-  
+
   <footer>
     <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
       <?php social_counter($story->external_url); ?>
@@ -57,6 +57,9 @@
 </article>
 
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
+
+<div data-src="<?php echo url_for_story($story, null, true); ?>" class="OUTBRAIN"></div>
+<script type="text/javascript">(function(){window.OB_platformType=8;window.OB_langJS="http://widgets.outbrain.com/lang_de.js";window.OBITm="1382527808969";window.OB_recMode="brn_strip";var ob=document.createElement("script");ob.type="text/javascript";ob.async=true;ob.src="http"+("https:"===document.location.protocol?"s":"")+"://widgets.outbrain.com/outbrainLT.js";var h=document.getElementsByTagName("script")[0];h.parentNode.insertBefore(ob,h);})();</script>
 
 <?php slot('sidebar') ?>
 
@@ -71,7 +74,7 @@
      <?php foreach($ratings as $k => $rating):?>
          <li><?php echo
          link_to(
-           avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48, 
+           avatar_tag( $rating["User"]->Avatar, "noavatar-48-48.png", 48,48,
              array(
                "class" => "avatar",
                "alt"=> "Profil von {$rating["User"]->username} besuchen")
@@ -120,7 +123,7 @@
 <?php endif; ?>
 
 <?php include_component("story", "twitterShares", array("url" => $story["external_url"])); ?>
-    
+
 <section id="widget-sources" class="widget">
   <h2>Jetzt und später mehr von dieser Quelle</h2>
 
@@ -140,7 +143,7 @@
 <?php if(count($story->Tags) > 0):?>
 <section id="widget-tags" class="widget">
   <h2>Mehr lesen zu diesen Themen</h3>
-      
+
   <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
 </section>
 <?php endif;?>
