@@ -1,7 +1,7 @@
 <?php $filter_options = Doctrine_Core::getTable('StoryFilterOption')->getStoryFilterOptions(); if(count($filter_options)):?>
     <div class="news-filter">
-        <?php foreach($filter_options as $filter_option):?>               
-            <?php 
+        <?php foreach($filter_options as $filter_option):?>
+            <?php
                 if(sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug')) {
                   $get_parameter = sfContext::getInstance()->getRequest()->getParameter('story_filter_option_slug');
                   $get_parameter = str_replace("-"," ",$get_parameter);
@@ -14,10 +14,12 @@
                 } else {
                   $class_name = 'normal';
                 }
+
+                $filter_option['class'] = 'button';
             ?>
 
             <span class="<?php echo $class_name; ?>">
-                <?php echo link_to(strtoupper($filter_option->getName()), 'filter_stories', $filter_option);?>
+              <?php echo link_to(strtoupper($filter_option->getName()), 'filter_stories', $filter_option); ?>
             </span>
         <?php endforeach;?>
     </div>
