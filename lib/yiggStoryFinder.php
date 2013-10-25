@@ -171,8 +171,8 @@ class yiggStoryFinder {
    * @return StoryFinder
    */
   public function confineWithDateWeek($number = 1) {
-    $this->time_from = $this->prepareDate("-$number week");
-    $this->time_until = $this->prepareDate("now");
+    $this->time_from = $this->prepareDate("-4 weeks");
+    $this->time_until = $this->prepareDate("-3 weeks");
 
     return $this;
   }
