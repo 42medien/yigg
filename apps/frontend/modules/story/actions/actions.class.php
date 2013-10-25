@@ -69,8 +69,7 @@ class storyActions extends yiggActions {
       $sf->confineWithMarkedForFrontpage();
     }
 
-    $sf->confineWithDateFrom("-1 month");
-    $sf->confineWithDateUntil("now");
+    $sf->confineWithDateMonth();
     $sf->sortByYTTCS();
 
     $query = $sf->getQuery();

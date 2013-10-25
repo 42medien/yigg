@@ -66,39 +66,43 @@ class spyActions extends yiggActions {
     $sf->sortByDate();
     $sf->confineWithDate24();
     $sf->setLimit(50);
-    
+
     return $sf->getQuery()->execute();
   }
 
   private function getLatestRatings() {
     $sf = new yiggStoryFinder();
+    $sf->confineWithDateMonth();
     $sf->sortByRatingDate();
     $sf->setLimit(50);
-    
+
     return $sf->getQuery()->execute();
   }
 
   private function getLatestComments() {
     $sf = new yiggStoryFinder();
+    $sf->confineWithDateMonth();
     $sf->sortByLatestComment();
     $sf->setLimit(50);
-    
+
     return $sf->getQuery()->execute();
   }
 
   private function getLatestRenders() {
     $sf = new yiggStoryFinder();
+    $sf->confineWithDateMonth();
     $sf->sortByLatestView();
     $sf->setLimit(50);
-    
+
     return $sf->getQuery()->execute();
   }
 
   private function getLatestEvents() {
     $sf = new yiggStoryFinder();
+    $sf->confineWithDateMonth();
     $sf->sortByDate();
     $sf->setLimit(50);
-    
+
     return $sf->getQuery()->execute();
   }
 }

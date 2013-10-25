@@ -18,10 +18,10 @@ class yiggStoryFinder {
 
   // use our rating algorithim.
   private $use_algorithim = false;
-  
+
   // use new news algo
   private $use_news_algorithim = false;
-  
+
   /**
    * sql statement to find a story
    *
@@ -70,7 +70,7 @@ class yiggStoryFinder {
    */
   private $time_until = null;
   private $time_from = null;
-    
+
   /**
    * @var precompiled sql
    */
@@ -84,7 +84,7 @@ class yiggStoryFinder {
   public function __construct() {
     $this->query = new Doctrine_RawSql();
     $this->hydrateArray();
-    
+
     return $this;
   }
 
@@ -154,6 +154,18 @@ class yiggStoryFinder {
   }
 
   /**
+   * only the stories from the latest month
+   *
+   * @return StoryFinder
+   */
+  public function confineWithDateMonth($number = 1) {
+    $this->time_from = "-$number month";
+    $this->time_until = "now";
+
+    return $this;
+  }
+
+  /**
    * Only stories that are videos
    * @return StoryFinder
    */
@@ -199,7 +211,7 @@ class yiggStoryFinder {
 
     return $this;
   }
-    
+
   /**
    * confines search story filter options
    *
@@ -208,10 +220,10 @@ class yiggStoryFinder {
    */
   public function confineWithStoryFilter($filter_value) {
     $context = time();
-    $time_until = yiggTools::getRoundedTime( $context - $filter_value ); // yesterday    
-    $time_from = yiggTools::getRoundedTime( $context ); // time at the moment  
-        
-    $this->wheres['s.created_at'] = sprintf("%s > '%s' AND %s < '%s'", "s.created_at", $time_until, "s.created_at", $time_from);                        	        
+    $time_until = yiggTools::getRoundedTime( $context - $filter_value ); // yesterday
+    $time_from = yiggTools::getRoundedTime( $context ); // time at the moment
+
+    $this->wheres['s.created_at'] = sprintf("%s > '%s' AND %s < '%s'", "s.created_at", $time_until, "s.created_at", $time_from);
 
     return $this;
   }
@@ -328,7 +340,7 @@ class yiggStoryFinder {
 
     return $this;
   }
-              
+
   /**
    * confine resultset by average votes
    * the voting average is calculated, stories with less than the average votes will
@@ -406,7 +418,7 @@ class yiggStoryFinder {
         WHERE
           sr.story_id = s.id
       ) as rating';
-    
+
     $this->sorters['rating']    = 'rating ' . $direction;
 
     return $this;
@@ -548,7 +560,7 @@ class yiggStoryFinder {
     $this->sorters['views']    = 'views '  . $direction;
     return $this;
   }
-  
+
   /**
    * sort stories by latest view
    *
@@ -569,7 +581,7 @@ class yiggStoryFinder {
         )
         AS latestView
       ';
-    
+
     $this->sorters['latestView']    = 'latestView '  . $direction;
     return $this;
   }
@@ -777,23 +789,23 @@ class yiggStoryFinder {
       u.deleted_at IS NULL
     ';
   }
-  
+
   /*
-   * new Algorythm for calculation the news on the main page of yigg 
+   * new Algorythm for calculation the news on the main page of yigg
    * FORMULA:
-   * 1 * counts of yiggs + 
-   * 1 * counts of Tweets (last 24 hours) + 
-   * 2 * counts of Tweets (after the first 24 hours) + 
-   * 1 * counts comments 
+   * 1 * counts of yiggs +
+   * 1 * counts of Tweets (last 24 hours) +
+   * 2 * counts of Tweets (after the first 24 hours) +
+   * 1 * counts comments
    * /--  1,5 * shares via spreadly --/ - excluded from the formula calculation
-   * 
+   *
    * @return
    * @param $direction Object[optional]
    */
   public function sortByYTTCS($direction = self::SORT_DESC) {
     $this->use_news_algorithim = true;
-    
-    $this->selectors['points'] = '    
+
+    $this->selectors['points'] = '
       (
         SELECT count(c.id)
         FROM comment c
@@ -829,7 +841,7 @@ class yiggStoryFinder {
 
     $this->sorters['points'] = "s.points DESC";
     $this->sorters['created_at'] = "s.created_at DESC";
-    
+
     return $this;
   }
 
@@ -881,15 +893,15 @@ class yiggStoryFinder {
       ';
       $this->query->addWhere('s.user_votes > 2');
     }
-    
+
     if ($this->use_news_algorithim == true) {
       $this->sql = '
         (
         SELECT
           ROUND(
-                (3 * sv.votes ) + 
-                (0.5 * sv.views ) + 
-                (sv.story_tweet) + 
+                (3 * sv.votes ) +
+                (0.5 * sv.views ) +
+                (sv.story_tweet) +
                 (2 * sv.comments) +
                 (2 * sv.epoch_time / 86400)
             ) as points,
@@ -901,7 +913,7 @@ class yiggStoryFinder {
       ) as s
       ';
     }
-    
+
     $this->query->from($this->sql);
 
     $this->query->addComponent("s","Story");
