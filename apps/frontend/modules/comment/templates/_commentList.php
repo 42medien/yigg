@@ -8,7 +8,9 @@
 
 <?php if ($at_beginning === true && false === $inlist && $sf_user->hasUser()):?>
   <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
-<?php endif;?>
+<?php else : ?>
+  Willst du mitdiskutieren? Dann <?php echo link_to("erstelle dir einfach ein Profil", "@user_register"); ?> oder <?php echo link_to("logge dich ein", "@user_login"); ?>.
+<?php endif; ?>
 
 <?php if(count($comments) > 0): ?>
 <ul class="comments-list <?php if(false === $inlist): ?>expanded<?php endif;?>">
@@ -20,7 +22,7 @@
           <?php echo link_to(avatar_tag($comment->Author->Avatar, "noavatar-48-48.png", (true === $inlist ? 14 : 48), (true === $inlist ? 14 : 48)),
                              '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']),
                              array("title" => "Profil von {$comment['Author']['username']} besuchen", "class" => "comment-avatar url fn p-name u-url"));?>
-          <?php echo link_to($comment['Author']['username'], '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']), array("class" => " url fn p-name u-url"));?></span> meint          
+          <?php echo link_to($comment['Author']['username'], '@user_public_profile?view=live-stream&username='. urlencode($comment['Author']['username']), array("class" => " url fn p-name u-url"));?></span> meint
           <?php if(false === $inlist):?>
             <?php echo content_tag(
                   "time",
@@ -32,7 +34,7 @@
         <?php echo $comment->getPresentationDescription(ESC_RAW);?>
         <span id="actions-<?php echo $comment['id']; ?>"></span>
       </div>
-      
+
       <?php if ( false === $inlist && false === isset($hideactionitems) ): ?>
         <?php if ($comment['user_id'] == $sf_user->getUserId() || true === $sf_user->isModerator()): ?>
             <p><?php echo link_to("<i class='icon-remove-sign'></i> Löschen?",
@@ -48,7 +50,9 @@
 
 <?php if($at_beginning !== true && false === $inlist && $sf_user->hasUser()):?>
   <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
-<?php endif;?>
+<?php else : ?>
+  Willst du mitdiskutieren? Dann <?php echo link_to("erstelle dir einfach ein Profil", "@user_register"); ?> oder <?php echo link_to("logge dich ein", "@user_login"); ?>.
+<?php endif; ?>
 
 <?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
   </section>
