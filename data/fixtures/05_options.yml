@@ -1,0 +1,16 @@
+StoryFilterOption:
+  StoryFilterOption_1:
+    name: "7 Tage"
+    value: 604800
+  StoryFilterOption_2:
+    name: "2 Tage"
+    value: 172800
+  StoryFilterOption_3:
+    name: "24 Stunden"
+    value: 86400
+  StoryFilterOption_4:
+    name: "12 Stunden"
+    value: 43200
+  StoryFilterOption_4:
+    name: "3 Stunden"
+    value: 10800
