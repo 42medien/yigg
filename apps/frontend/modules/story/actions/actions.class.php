@@ -99,7 +99,7 @@ class storyActions extends yiggActions {
   public function executeNewStories( $request ) {
     $this->setLayout("layout.stream");
     $sf = new yiggStoryFinder();
-    $sf->confineWithDate24();
+    $sf->confineWithDateWeek();
     $sf->sortByDate();
 
     // just return query for pager creation
