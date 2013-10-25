@@ -14,12 +14,10 @@
                 } else {
                   $class_name = 'normal';
                 }
-
-                $filter_option['class'] = 'button';
             ?>
 
             <span class="<?php echo $class_name; ?>">
-              <?php echo link_to(strtoupper($filter_option->getName()), 'filter_stories', $filter_option); ?>
+              <?php echo link_to($filter_option->getName(), 'filter_stories', $filter_option, array("class" => "button")); ?>
             </span>
         <?php endforeach;?>
     </div>
