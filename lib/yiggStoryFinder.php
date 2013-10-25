@@ -159,8 +159,8 @@ class yiggStoryFinder {
    * @return StoryFinder
    */
   public function confineWithDateMonth($number = 1) {
-    $this->time_from = "-$number month";
-    $this->time_until = "now";
+    $this->time_from = $this->prepareDate("-$number month");
+    $this->time_until = $this->prepareDate("now");
 
     return $this;
   }
