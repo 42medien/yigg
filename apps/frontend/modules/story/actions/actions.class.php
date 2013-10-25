@@ -22,7 +22,7 @@ class storyActions extends yiggActions {
     $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
     $this->getResponse()->addMeta('og:url', $this->story->getExternalUrl());
     $this->getResponse()->addMeta('og:type', 'website');
-    
+
     if ($source = $this->story->getStoryImageSource()) {
       $this->getResponse()->addMeta('og:image', public_path($source, true));
     }
@@ -59,7 +59,7 @@ class storyActions extends yiggActions {
    */
   public function executeBestStories( $request ) {
     $this->setLayout("layout.stream");
-    
+
     $sf = new yiggStoryFinder();
     $user = $this->session->getUser();
 
@@ -68,14 +68,16 @@ class storyActions extends yiggActions {
     } else {
       $sf->confineWithMarkedForFrontpage();
     }
+
+    $sf->confineWithDateFrom(strtotime("-3 month"));
     $sf->sortByYTTCS();
-    
+
     $query = $sf->getQuery();
     $query->groupBy("s.id");
 
     $this->limit = 10;
     $this->stories = $this->setPagerQuery($query)->execute();
-                    
+
     $this->storyCount = count($this->stories->getKeys());
     if ( $this->storyCount > 0 ) {
       $this->populateStoryAttributeCache();
@@ -120,15 +122,15 @@ class storyActions extends yiggActions {
   public function executeArchive($request) {
     $this->setLayout("layout.stream.full");
     $this->year = intval(date("Y", time()));
-    
+
     $year = $request->getParameter("year");
     $month = $request->getParameter("month");
     $day = $request->getParameter("day");
-    
+
     $this->year = $year;
     $this->month = $month;
     $this->day = $day;
-    
+
     if ($day) {
       $this->end_timestring = $this->start_timestring = $year."-".$month."-".$day;
     } elseif($month) {
@@ -140,12 +142,12 @@ class storyActions extends yiggActions {
     } else {
       $this->start_timestring = date("Y-m-d", strtotime("now"));
       $this->end_timestring = date("Y-m-d", strtotime("now"));
-      
+
       $this->year = date("Y", time());
       $this->month = date("m", time());
       $this->day = date("d", time());
     }
-    
+
     if (false !== strtotime($this->start_timestring) && false !== strtotime($this->end_timestring)) {
       // get stories, sort by rating algorithm and date as array
       $sf = new yiggStoryFinder();
@@ -193,7 +195,7 @@ class storyActions extends yiggActions {
         $domain = DomainTable::getInstance()->findOneByHostname($this->story->getSourceHost());
         $domain->domain_status = "blacklisted";
         $domain->save();
-          
+
         $this->session->setFlash("success_msg",$this->story->getSourceHost() . " ist jetzt auf der Blacklist.");
         break;
     }
@@ -201,7 +203,7 @@ class storyActions extends yiggActions {
     if( $this->isAjaxRequest() && $this->partial ) {
       return $this->renderPartial( $this->partial, array( "story" => $this->story, "comments" => $this->comments, "form"=> $this->form, "stories" => $this->stories ));
     }
-    
+
     $this->embed_code = $this->story->getEmbedCode();
 
     $this->getResponse()->setTitle( $this->story->title, false );
@@ -215,12 +217,12 @@ class storyActions extends yiggActions {
         )
       )
     );
-    
+
     $this->getResponse()->addMeta('og:title', $this->story->getTitle());
     $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
     $this->getResponse()->addMeta('og:type', 'article');
     $this->getResponse()->addMeta('twitter:card', 'summary');
-    
+
     return sfView::SUCCESS;
   }
 
@@ -229,8 +231,8 @@ class storyActions extends yiggActions {
    * @param yiggWebRequest
    * @return sfView
    */
-  public function executeCreate( $request ) {  
-    $userModel = new User; 
+  public function executeCreate( $request ) {
+    $userModel = new User;
     if(true === $userModel->isPostStoryBlocked($this->session->getUserId())) {
       return sfView::ERROR;
     }
@@ -320,7 +322,7 @@ class storyActions extends yiggActions {
         'Tags'      => isset($autotags) && count($autotags) > 0 ? implode($autotags, ", ") : null,
       )
     );
-    
+
     return sfView::SUCCESS;
   }
 
@@ -423,9 +425,9 @@ class storyActions extends yiggActions {
       $this->populateFieldsFromUrl();
       $ninjaUpdater->attachJSONNinjaHeader( $this->getResponse() );
     }
-    
+
     return sfView::HEADER_ONLY;
-  }  
+  }
 
   /**
    * Populates the JSON data with content from the title attribute of the location.
@@ -441,11 +443,11 @@ class storyActions extends yiggActions {
     $description = $e->getReadableDescription();
     $images = $e->getImages();
     $tags = $e->getMetaTags();
-    
+
     $this->getContext()->getConfiguration()->loadHelpers(array('Partial'));
-    
+
     $slider_html = get_partial('story/imageSlider', array("images" => $images));
-    
+
     $ninjaUpdater = $this->getRequest()->getNinjaUpdater();
     $ninjaUpdater->updateFormField("Title", $title);
     $ninjaUpdater->updateFormField("Description", $description);
@@ -497,7 +499,7 @@ class storyActions extends yiggActions {
 
     $story = new Story();
     $story->type = Story::TYPE_NORMAL;
-    
+
     $form = new FormStoryEdit(array(),array("story" => $story));
     unset($form["_csrf_token"]);
     $form->bind($values);
