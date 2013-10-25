@@ -154,12 +154,24 @@ class yiggStoryFinder {
   }
 
   /**
-   * only the stories from the latest month
+   * only the stories from the latest x month
    *
    * @return StoryFinder
    */
   public function confineWithDateMonth($number = 1) {
     $this->time_from = $this->prepareDate("-$number month");
+    $this->time_until = $this->prepareDate("now");
+
+    return $this;
+  }
+
+  /**
+   * only the stories from the latest x weeks
+   *
+   * @return StoryFinder
+   */
+  public function confineWithDateWeek($number = 1) {
+    $this->time_from = $this->prepareDate("-$number week");
     $this->time_until = $this->prepareDate("now");
 
     return $this;

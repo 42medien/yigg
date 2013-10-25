@@ -72,7 +72,7 @@ class spyActions extends yiggActions {
 
   private function getLatestRatings() {
     $sf = new yiggStoryFinder();
-    $sf->confineWithDateMonth();
+    $sf->confineWithDateWeek();
     $sf->sortByRatingDate();
     $sf->setLimit(50);
 
@@ -81,7 +81,7 @@ class spyActions extends yiggActions {
 
   private function getLatestComments() {
     $sf = new yiggStoryFinder();
-    $sf->confineWithDateMonth();
+    $sf->confineWithDateWeek();
     $sf->sortByLatestComment();
     $sf->setLimit(50);
 
@@ -90,7 +90,7 @@ class spyActions extends yiggActions {
 
   private function getLatestRenders() {
     $sf = new yiggStoryFinder();
-    $sf->confineWithDateMonth();
+    $sf->confineWithDateWeek();
     $sf->sortByLatestView();
     $sf->setLimit(50);
 
@@ -99,7 +99,7 @@ class spyActions extends yiggActions {
 
   private function getLatestEvents() {
     $sf = new yiggStoryFinder();
-    $sf->confineWithDateMonth();
+    $sf->confineWithDate24();
     $sf->sortByDate();
     $sf->setLimit(50);
 
