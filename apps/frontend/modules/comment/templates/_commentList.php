@@ -6,11 +6,17 @@
   <section id="<?php echo strtolower(get_class($sf_data->getRaw("obj"))); ?>-comments-<?php echo $obj['id']; ?>" class="clr comment-section">
 <?php endif; ?>
 
-<?php if ($at_beginning === true && false === $inlist && $sf_user->hasUser()):?>
-  <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
-<?php else : ?>
-  Willst du mitdiskutieren? Dann <?php echo link_to("erstelle dir einfach ein Profil", "@user_register"); ?> oder <?php echo link_to("logge dich ein", "@user_login"); ?>.
-<?php endif; ?>
+<?php
+  if ($at_beginning === true && false === $inlist):
+    if($sf_user->hasUser()) {
+      include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj));
+    } else {
+?>
+      Willst du mitdiskutieren? Dann <?php echo link_to("erstelle dir einfach ein Profil", "@user_register"); ?> oder <?php echo link_to("logge dich ein", "@user_login"); ?>.
+<?php
+    }
+  endif;
+?>
 
 <?php if(count($comments) > 0): ?>
 <ul class="comments-list <?php if(false === $inlist): ?>expanded<?php endif;?>">
@@ -48,11 +54,17 @@
 </ul>
 <?php endif; ?>
 
-<?php if($at_beginning !== true && false === $inlist && $sf_user->hasUser()):?>
-  <?php include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj)); ?>
-<?php else : ?>
-  Willst du mitdiskutieren? Dann <?php echo link_to("erstelle dir einfach ein Profil", "@user_register"); ?> oder <?php echo link_to("logge dich ein", "@user_login"); ?>.
-<?php endif; ?>
+<?php
+  if($at_beginning !== true && false === $inlist):
+    if ($sf_user->hasUser()) {
+      include_partial("comment/formComments",array( "form"=> $form, "obj"=> $obj));
+    } else {
+?>
+      Willst du mitdiskutieren? Dann <?php echo link_to("erstelle dir einfach ein Profil", "@user_register"); ?> oder <?php echo link_to("logge dich ein", "@user_login"); ?>.
+<?php
+    }
+  endif;
+?>
 
 <?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
   </section>
