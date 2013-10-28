@@ -51,7 +51,7 @@
 
   <footer>
     <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>">
-      <?php social_counter($story->external_url); ?>
+      <?php //social_counter($story->external_url); ?>
     </div>
   </footer>
 </article>
