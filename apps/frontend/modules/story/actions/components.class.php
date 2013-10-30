@@ -6,7 +6,7 @@ class storyComponents extends sfComponents {
     $this->stories = StoryTable::retrieveLatestStories();
     return sfView::SUCCESS;
   }
-  
+
   public function executeTwitterShares($request) {
     $consumer = new OAuthConsumer("zjpUwdOQ3Gm3IIo2gPUSHw", "72sEMdRACQZvHQL4JEP1khqHDBVXJuwkIgJY1xK2U");
     $url = "https://api.twitter.com/1.1/search/tweets.json?q=".$this->url;
@@ -18,7 +18,7 @@ class storyComponents extends sfComponents {
     } else {
       return sfView::NONE;
     }
-  }    
+  }
 
   /**
    * Story Rate component form.
@@ -33,8 +33,7 @@ class storyComponents extends sfComponents {
       $this->story->rate( $this->getUser() , $conn);
       $conn->commit();
 
-      if( true === $request->isAjaxRequest() )
-      {
+      if( true === $request->isAjaxRequest() ) {
         return sfView::SUCCESS;
       }
 
@@ -46,8 +45,7 @@ class storyComponents extends sfComponents {
       $key = sfRequestHistory::getCurrentRequestKey();
       $uri = sfRequestHistory::getRequestKeyUri( ($key > 0 ? $key : 0)) ;
       $current = sfRequestHistory::getCurrentUri();
-      while( ($uri == $current) && ($key >= 0) )
-      {
+      while( ($uri == $current) && ($key >= 0) ) {
         $uri = sfRequestHistory::getRequestKeyUri( --$key ) ;
       }
 
