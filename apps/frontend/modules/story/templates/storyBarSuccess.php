@@ -1,6 +1,6 @@
 <?php
   use_helper("Date", "Text", "SocialShare");
-  
+
   slot('links', auto_discovery_link_tag("html", $story->getExternalUrl(), array("rel" => "canonical", "type" => "text/html", "title" => "canonical url")));
 ?>
 
@@ -33,10 +33,10 @@
         <?php include_component( 'story', 'rateStory',  array('story' => $story, 'flat' => true)); ?>
       </li>
       <li>
-        <a class="spreadly-button" href="<?php echo $story->external_url; ?>"></a>
+        <a class="spreadly-button" data-adlayer-position="bottom" href="<?php echo $story->external_url; ?>"></a>
       </li>
     </ul>
-    
+
     <?php echo link_to('<i class="icon-remove-sign"></i>', $story->external_url, array("id" => "close", "title" => "YiGG-Bar schließen")); ?>
   </nav>
 </header>
