@@ -17,7 +17,7 @@
 
   <header>
     <?php include_component( 'story', 'rateStory',  array('story' => $story, 'type' => 'full')); ?>
-    <h3 class="entry-title p-title">
+    <h3 class="entry-title p-name">
       <?php echo link_to($story->title, url_for_story($story, "bar"), array("title" => $story->title, "rel" => "nofollow", 'target' => '_blank')); ?>
     </h3>
 

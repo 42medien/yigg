@@ -4,25 +4,25 @@
 <article class="hentry post h-entry clearfix" id="<?php echo "story_{$story['id']}"; ?>">
   <header>
     <?php include_component( 'story', 'rateStory',  array('story' => $story, 'completeStory' => true)); ?>
-    <h3 class="entry-title p-title">
+    <h3 class="entry-title p-name">
       <?php echo link_to_story(truncate_text($story->title, 75), $story, array("title" => $story->title)); ?>
     </h3>
-    
+
     <div class="entry-meta">
-      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated">14.12.2012 bla</time> | 
+      <i class="icon-calendar"></i> <time class="dt-published dt-updated published updated">14.12.2012 bla</time> |
       <i class="icon-user"></i> <span class="author p-author vcard hcard h-card"><?php echo link_to(
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",
                    array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span>
     </div>
   </header>
-  
+
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p><?php echo $story->getDescription();?></p>
 
     <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>
-  
+
   <footer>
     <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo url_for_story($story, null, true); ?>">
       <?php social_counter(url_for_story($story, null, true)); ?>
