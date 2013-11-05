@@ -46,7 +46,7 @@
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
     <p><?php echo $story->getDescription(); ?></p>
 
-    <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
+    <p><span class="entry-domain"><?php echo link_to($story->getDomain()->getHostname(), "@domain_show?id=".$story->getDomain()->getId()); ?></span></p>
   </div>
 
   <footer>
@@ -139,24 +139,24 @@
 <section id="widget-sources" class="widget">
   <h2>Jetzt und später mehr von dieser Quelle</h2>
 
-  <?php if($sf_user->hasUser() && $story->Domain->isSubscriber($sf_user->getUser())):?>
-    <?php echo now_later_button($story->Domain->hostname,
-                                "@domain_show?id=".$story->Domain->id,
-                                "@domain_subscribe?id=".$story->Domain->id,
+  <?php if($sf_user->hasUser() && $story->getDomain()->isSubscriber($sf_user->getUser())):?>
+    <?php echo now_later_button($story->getDomain()->getHostname(),
+                                "@domain_show?id=".$story->getDomain()->getId(),
+                                "@domain_subscribe?id=".$story->getDomain()->getId(),
                                 array("class" => "subscribed"));?>
   <?php else:?>
-    <?php echo now_later_button($story->Domain->hostname,
-                                "@domain_show?id=".$story->Domain->id,
-                                "@domain_subscribe?id=".$story->Domain->id);?>
+    <?php echo now_later_button($story->getDomain()->getHostname(),
+                                "@domain_show?id=".$story->getDomain()->getId(),
+                                "@domain_subscribe?id=".$story->getDomain()->getId());?>
   <?php endif;?>
 </section>
 
 
-<?php if(count($story->Tags) > 0):?>
+<?php if(count($story->getTags()) > 0):?>
 <section id="widget-tags" class="widget">
   <h2>Mehr lesen zu diesen Themen</h3>
 
-  <?php include_partial('tag/subscribe', array("tags" => $story->Tags));?>
+  <?php include_partial('tag/subscribe', array("tags" => $story->getTags()));?>
 </section>
 <?php endif;?>
 
