@@ -22,6 +22,7 @@ class storyActions extends yiggActions {
     $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
     $this->getResponse()->addMeta('og:url', $this->story->getExternalUrl());
     $this->getResponse()->addMeta('og:type', 'website');
+    $this->getResponse()->addMeta('og:site_name', 'YiGG');
 
     if ($source = $this->story->getStoryImageSource()) {
       $this->getResponse()->addMeta('og:image', public_path($source, true));
@@ -225,6 +226,13 @@ class storyActions extends yiggActions {
     $this->getResponse()->addMeta('og:description', substr($this->story->getPlainTextDescription(), 0, 160));
     $this->getResponse()->addMeta('og:type', 'article');
     $this->getResponse()->addMeta('twitter:card', 'summary');
+    $this->getResponse()->addMeta('og:site_name', 'YiGG');
+
+    $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'Yigg'));
+
+    if ($source = $this->story->getStoryImageSource()) {
+      $this->getResponse()->addMeta('og:image', public_path($source, true));
+    }
 
     return sfView::SUCCESS;
   }

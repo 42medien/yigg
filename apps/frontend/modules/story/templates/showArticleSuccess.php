@@ -24,8 +24,16 @@
   </div>
 
   <footer>
-    <div class="entry-meta spreadly-link" data-spreadly-url="<?php echo url_for_story($story, null, true); ?>">
-      <?php social_counter(url_for_story($story, null, true)); ?>
+    <div class="entry-meta">
+      <span class="spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>"><?php social_counter($story->external_url); ?></span>
+
+      <!-- Place this tag in your head or just before your close body tag. -->
+      <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+        {lang: 'de'}
+      </script>
+
+      <!-- Place this tag where you want the +1 button to render. -->
+      <div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-href="<?php echo $story->external_url; ?>"></div>
     </div>
   </footer>
 </article>
