@@ -134,7 +134,7 @@
 </section>
 <?php endif; ?>
 
-<?php include_component("story", "twitterShares", array("url" => $story["external_url"])); ?>
+<?php include_component("story", "twitterShares", array("url" => $story["external_url"], "sf_cache_key"=> "story-detail-{$story['id']}-twitter-shares")); ?>
 
 <section id="widget-sources" class="widget">
   <h2>Jetzt und später mehr von dieser Quelle</h2>
