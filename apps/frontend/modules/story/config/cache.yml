@@ -4,11 +4,11 @@ default:
   lifetime:    86400
 
 showCategoryList:
-  enabled:    true
-  lifetime:   3600
+  enabled:     true
+  lifetime:    3600
 
 _storyRelated:
-  enabled:    true
+  enabled:     true
 
 _storyTweets:
   enabled:     true
@@ -25,3 +25,7 @@ _trendingStories:
 _lastStories:
   enabled:     true
   lifetime:    120
+
+_twitterShares:
+  enabled:     true
+  lifetime:    3600
