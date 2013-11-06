@@ -3,6 +3,10 @@ default:
   with_layout: false
   lifetime:    86400
 
+bestStories:
+  enabled:     true
+  lifetime:    60
+
 showCategoryList:
   enabled:     true
   lifetime:    3600
