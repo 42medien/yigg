@@ -51,7 +51,7 @@
 
   <footer>
     <div class="entry-meta">
-      <span class="spreadly-link" data-spreadly-url="<?php echo $story->external_url; ?>"><?php social_counter($story->external_url); ?></span>
+      <?php include_partial("story/spreadlyButton", array("url" => $story->external_url)); ?>
 
       <!-- Place this tag in your head or just before your close body tag. -->
       <script type="text/javascript" src="https://apis.google.com/js/plusone.js">

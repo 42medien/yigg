@@ -29,3 +29,7 @@ _lastStories:
 _twitterShares:
   enabled:     true
   lifetime:    3600
+
+_spreadlyButton:
+  enabled:     true
+  lifetime:    600

@@ -1,0 +1,1 @@
+<span class="spreadly-link" data-spreadly-url="<?php echo $url; ?>"><?php social_counter($url); ?></span>
