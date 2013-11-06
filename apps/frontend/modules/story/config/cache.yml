@@ -5,7 +5,6 @@ default:
 
 bestStories:
   enabled:     true
-  with_layout: true
   lifetime:    60
 
 showCategoryList:
@@ -37,5 +36,4 @@ _twitterShares:
 
 _spreadlyButton:
   enabled:     true
-  with_layout: true
   lifetime:    600
