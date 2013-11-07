@@ -20,7 +20,9 @@ npm-debug.log
 htdocs/backend.php
 htdocs/backend_*.php
 htdocs/frontend_*.php
+htdocs/api_*.php
 htdocs/index.php
 htdocs/mugim.php
+htdocs/api.php
 
 *.lck
