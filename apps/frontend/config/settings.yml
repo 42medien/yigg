@@ -20,7 +20,7 @@ test:
 dev:
   .settings:
     no_script_name:         true
-    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
+    error_reporting:        <?php echo (E_ALL ^ E_NOTICE)."\n" ?>
     web_debug:              false
     cache:                  false
     compressed:             false
