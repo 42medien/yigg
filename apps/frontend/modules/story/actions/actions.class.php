@@ -61,7 +61,7 @@ class storyActions extends yiggActions {
   public function executeBestStories( $request ) {
     $this->setLayout("layout.stream");
 
-    $value = $this->getRequest()->getParameter("value", 43200);
+    $value = $this->getRequest()->getParameter("value", 604800);
 
     $sf = new yiggStoryFinder();
     $user = $this->session->getUser();
@@ -78,6 +78,7 @@ class storyActions extends yiggActions {
     $query = $sf->getQuery();
     $query->groupBy("s.id");
 
+    $this->value = $value;
     $this->limit = 10;
     $this->stories = $this->setPagerQuery($query)->execute();
 
