@@ -27,13 +27,3 @@
     <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>
 </article>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- zwischen den posts auf startseite -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:350px;height:50px"
-     data-ad-client="ca-pub-1406192967534280"
-     data-ad-slot="5662349025"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
