@@ -82,4 +82,4 @@ ExpiresByType text/css "access plus 12 months"
 </IfModule>
 
 # big crash from our front web controller
-ErrorDocument 500 "<h2>Application error</h2>symfony applicationfailed to start properly"
+ErrorDocument 500 "<h2>Application error</h2> application failed to start properly"
