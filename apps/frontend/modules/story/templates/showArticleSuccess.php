@@ -41,6 +41,9 @@
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
 <?php slot("sidebar") ?>
+
+<?php include_partial('story/storyActions', array("story" => $story));?>
+
 <section id="widget-last-yiggs" class="widget">
   <?php if(false == cache("story-detail-{$story['id']}-votes{$story->currentRating()}")): ?>
     <h2>Letzte YiGGs von</h2>
