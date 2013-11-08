@@ -10,17 +10,14 @@ class updateUserStatsTask extends yiggTaskToolsTask
     $this->addOption('env', null, sfCommandOption::PARAMETER_REQUIRED, 'The environment', 'cli');
   }
 
-  public function preExecute()
-  {
+  public function preExecute() {
   }
 
-  public function preExit()
-  {
+  public function preExit() {
     $this->log("Stopping UserStatsTask. This is the last line.");
   }
 
-  public function executeWork($arguments = array(), $options = array())
-  {
+  public function executeWork($arguments = array(), $options = array()) {
     $no_rows = Doctrine_Query::create()
                ->from("User u")
                ->where("u.id NOT IN (SELECT us.user_id FROM UserStats us)")
@@ -35,8 +32,7 @@ class updateUserStatsTask extends yiggTaskToolsTask
 
     $users = UserStatsTable::getUsersToCalculate(500);
 
-    foreach($users as $user)
-    {
+    foreach($users as $user) {
       $user->updateStats();
       $this->log(sprintf("Updated User #%s \n", $user->user_id));
     }

@@ -1,25 +1,21 @@
 <?php
-abstract class yiggTaskToolsTask extends sfBaseTask
-{
+abstract class yiggTaskToolsTask extends sfBaseTask {
   public $status;
   public $debug = false;
 
   /**
    * Common actions that have to be executed in every task
    */
-  private function setup()
-  {
-    $configuration = ProjectConfiguration::getApplicationConfiguration('frontend', 'dev', true);
-    sfContext::createInstance($configuration);
-    $databaseManager = new sfDatabaseManager($this->configuration);
+  private function setup() {
+    sfContext::createInstance($this->configuration);
+
     $this->status = TaskStatus::getTaskStatus($this);
 
     $this->logger = new sfFileLogger(
       sfContext::getInstance()->getEventDispatcher(),
       array('file' => './log/tasks/'.get_class($this).'.log'));
 
-    if(false === $this->status)
-    {
+    if(false === $this->status) {
       $this->log("Status row in Database does not exist");
       $this->status = new TaskStatus();
       $this->status->task_name = get_class($this);
@@ -31,26 +27,21 @@ abstract class yiggTaskToolsTask extends sfBaseTask
     $this->log("Task was executed via cronjob.");
   }
 
-  function execute($arguments = array(), $options = array())
-  {
+  function execute($arguments = array(), $options = array()) {
     $this->setup();
 
-    if($this->isLocked() && $this->debug !== true)
-    {
+    if($this->isLocked() && $this->debug !== true) {
       $this->log("Skipping because of lock");
       exit();
     }
-    
+
     $this->setLock(true);
 
-    try
-    {
+    try {
       $this->preExecute();
-    $this->executeWork($arguments, $options);
+      $this->executeWork($arguments, $options);
       $this->preExit();
-    }
-    catch(Exception $e)
-    {
+    } catch(Exception $e) {
       $this->log($e->getMessage());
     }
 
@@ -61,8 +52,7 @@ abstract class yiggTaskToolsTask extends sfBaseTask
   /**
    * Sets the lock to true or false
    */
-  private function setLock($status)
-  {
+  private function setLock($status) {
     $this->status->is_locked = $status;
     $this->status->save();
   }
@@ -71,22 +61,19 @@ abstract class yiggTaskToolsTask extends sfBaseTask
    * Checks if this task is locked
    * @return boolean
    */
-  private function isLocked()
-  {
+  private function isLocked() {
     return true === $this->status->is_locked;
   }
 
   /**
    * Exists the task on high load average
    */
-  function exitOnHighLoadAverage()
-  {
+  function exitOnHighLoadAverage() {
     $load_avg = yiggSystemTools::getLoadAvergage();
-    if($load_avg[1] > sfConfig::get("app_highloadMeasures_highLoad", 8))
-    {
-        $this->preExit();
-        $this->setLock(false);
-        exit();
+    if($load_avg[1] > sfConfig::get("app_highloadMeasures_highLoad", 8)) {
+      $this->preExit();
+      $this->setLock(false);
+      exit();
     }
   }
 
@@ -94,7 +81,7 @@ abstract class yiggTaskToolsTask extends sfBaseTask
    * Actions required to take down the Task
    * You can not use the desturctor because it will interfear with ./symfony commandline command
    */
-   abstract function preExit();
+  abstract function preExit();
 
    /**
     * Functions that does the work in the inherited task
@@ -105,8 +92,7 @@ abstract class yiggTaskToolsTask extends sfBaseTask
    * Logs a string and appends classname, and writes it into the propper directory
    * @param String $msg
    */
-  public function log($msg)
-  {
+  public function log($msg) {
     $msg = sprintf("{%s} - %s", get_class($this), $msg);
     $this->logger->log($msg);
   }
