@@ -21,13 +21,6 @@ ExpiresByType application/javascript "access plus 12 months"
 ExpiresByType text/plain "access plus 12 months"
 ExpiresByType text/css "access plus 12 months"
 
-<Files backend.php>
-  AuthType Basic
-  AuthName "Backend"
-  AuthUserFile /etc/apache2/.httpasswd
-  Require user shostakovich kmr
-</Files>
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
