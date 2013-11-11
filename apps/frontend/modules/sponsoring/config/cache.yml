@@ -1,0 +1,9 @@
+default:
+  enabled:     false
+  with_layout: false
+  lifetime:    86400
+
+_sidebar:
+  enabled:     false
+  with_layout: false
+  lifetime:    86400

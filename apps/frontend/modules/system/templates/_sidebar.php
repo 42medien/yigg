@@ -32,6 +32,8 @@ if (true === $sf_user->hasUser()) {
 </section>
 <?php endif; ?>
 
+<?php include_partial("sponsoring/sidebar"); ?>
+
 <?php // include_component("search", "form"); ?>
 
 <?php
