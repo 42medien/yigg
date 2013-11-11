@@ -3,7 +3,12 @@ default:
   with_layout: false
   lifetime:    86400
 
-_sidebar:
+_sidebar_first:
+  enabled:     false
+  with_layout: false
+  lifetime:    86400
+
+_sidebar_second:
   enabled:     false
   with_layout: false
   lifetime:    86400

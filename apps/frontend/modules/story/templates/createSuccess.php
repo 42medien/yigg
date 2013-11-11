@@ -42,6 +42,12 @@
   }
 </script>
 
+<!-- yigg_erstellen -->
+<div id='div-gpt-ad-1384170977827-0' style='width:728px; height:90px;'>
+  <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1384170977827-0'); });
+  </script>
+</div>
 
 <?php slot('sidebar') ?>
   <section id="widget-create-article" class="widget">

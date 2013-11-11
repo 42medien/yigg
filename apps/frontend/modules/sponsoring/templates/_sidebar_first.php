@@ -1,4 +1,4 @@
-<section id="widget-sponsoring" class="widget">
+<section id="widget-first-sponsoring" class="widget">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Sidebar_yigg -->
   <ins class="adsbygoogle"

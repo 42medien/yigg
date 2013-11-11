@@ -32,7 +32,7 @@ if (true === $sf_user->hasUser()) {
 </section>
 <?php endif; ?>
 
-<?php include_partial("sponsoring/sidebar"); ?>
+<?php include_partial("sponsoring/sidebar_first"); ?>
 
 <?php // include_component("search", "form"); ?>
 
@@ -41,3 +41,5 @@ if (has_slot("sidebar")) {
   include_slot("sidebar");
 }
 ?>
+
+<?php include_partial("sponsoring/sidebar_second"); ?>
