@@ -42,4 +42,4 @@ if (has_slot("sidebar")) {
 }
 ?>
 
-<?php // include_partial("sponsoring/sidebar_second"); ?>
+<?php include_partial("sponsoring/sidebar_second"); ?>

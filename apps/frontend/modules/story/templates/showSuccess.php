@@ -64,6 +64,8 @@
   </footer>
 </article>
 
+<?php include_partial("sponsoring/story_single"); ?>
+
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
 <section id="related-articles">
