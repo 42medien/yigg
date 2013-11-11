@@ -1,8 +1,8 @@
 prod:
   .settings:
     error_reporting:        <?php echo (E_PARSE | E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR | E_USER_ERROR)."\n" ?>
-    no_script_name:         true
-    web_debug:				false
+    no_script_name:         false
+    web_debug:				      false
 
 cache:
   .settings:
