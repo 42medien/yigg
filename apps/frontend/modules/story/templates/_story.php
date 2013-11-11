@@ -27,10 +27,3 @@
     <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>
 </article>
-
-<!-- yigg_startseite_zwischen -->
-<div id='div-gpt-ad-1384169965681-0' style='width:350px; height:50px; margin-bottom: 50px; text-align: center;' class="story-ads">
-  <script type='text/javascript'>
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1384169965681-0'); });
-  </script>
-</div>
