@@ -34,9 +34,9 @@
 </script>
 
 <script type='text/javascript'>
-googletag.cmd.push(function() {
-googletag.defineSlot('/1007584/yigg_startseite_zwischen', [320, 50], 'div-gpt-ad-1384169965681-0').addService(googletag.pubads());
-googletag.pubads().enableSingleRequest();
-googletag.enableServices();
-});
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1007584/yigg_startseite_zwischen', [320, 50], 'div-gpt-ad-1384169965681-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
 </script>
