@@ -5,11 +5,11 @@
   a {
     color: $dark-gray;
   }
- 
+
   ul.comments-list {
     padding: 0;
     margin: 0;
-    
+
     li.li-comment {
       list-style: none;
       margin-top: 30px;
@@ -18,18 +18,18 @@
       -moz-box-shadow: #ccc 0 -1px 0 0;
       -webkit-box-shadow: #ccc 0 -1px 0 0;
       box-shadow: #ccc 0 -1px 0 0;
-      
+
       .comment-meta {
         margin-bottom: 15px;
 
         time {
-          color: $light-gray;          
+          color: $light-gray;
           display: block;
           font-size: 13px;
           margin-top: 5px;
         }
       }
-      
+
       .comment-avatar img {
         -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);

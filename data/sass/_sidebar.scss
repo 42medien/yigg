@@ -7,11 +7,11 @@
   text-shadow: #fff 0px 1px 0px;
   font-size: 16px;
   margin-bottom: 50px;
-  
+
   a {
     color: #999;
   }
-  
+
   .widget {
     .favicon {
       width: 16px;
@@ -19,78 +19,78 @@
       float: left;
     }
   }
-  
+
   h1, h2, h3, h4 {
     margin-top: 0;
     padding-top: 0;
   }
-  
+
   h2 {
     font-size: 17px;
     clear: both;
   }
-  
+
   h3 {
     font-size: 15px;
   }
-  
+
   section {
     margin: 0 0 35px 0;
     padding: 0;
     @include clearfix();
   }
-  
+
   a.avatar {
     float: right;
     margin-right: 20px;
-  }  
-  
+  }
+
   ul.avatar-list {
     margin: 0;
     padding: 0;
-      
+
     li {
       float: left;
       margin: 0 10px 10px 0;
     }
   }
-  
+
   .avatar-list-style {
     li {
       font-size: 14px;
     }
   }
-  
+
   ol, ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    
+
     li {
       margin-bottom: 10px;
     }
   }
-  
+
   #widget-search {
     .search {
       margin-top: 10px;
     }
-  
+
     .button, label {
       display: none;
     }
-    
+
     .field {
       margin: 0;
       padding: 0;
     }
   }
-  
+
   #widget-private-message {
     label {
       display: block;
     }
-    
+
     textarea {
       width: 90%;
     }
