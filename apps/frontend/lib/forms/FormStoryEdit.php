@@ -95,7 +95,8 @@ class FormStoryEdit extends yiggForm {
           'description'     => new sfWidgetFormTextarea(
             array(),
             array(
-              'class'       => $this->story->getStoryType() === "Article" ? "large":"count", "id" => "Description",
+              'class'       => $this->story->getStoryType() === "Article" ? "large":"count",
+              'id'          => 'Description',
               'placeholder' => 'Beschreibung'
             )
           ),
@@ -170,7 +171,7 @@ class FormStoryEdit extends yiggForm {
             array(
               'choices'         => array_keys($this->categories),
               'multiple'        => true,
-              'required'        => false
+              'required'        => 'Du musst diese Nachricht einer Kategorie zuordnen'
             )
           )
         )

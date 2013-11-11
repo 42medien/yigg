@@ -14,11 +14,11 @@ a {
   img {
     border: none;
   }
-  
+
   &.external {
     text-decoration: none;
   }
-  
+
   &.button {
     text-decoration: none;
   }
@@ -28,6 +28,7 @@ a {
   font-size: 14px;
   color: $red;
   display: block;
+  clear: both;
 }
 
 .error, .error a, #content .error, #content .error a {
@@ -54,7 +55,7 @@ img.avatar {
 a.delete, a.blacklist, a.edit,  {
   text-decoration: none;
   font-size: 12px;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -74,7 +75,7 @@ a.delete, a.blacklist, a.edit,  {
   margin-top: 0;
   margin-bottom: 40px;
   clear: both;
-  
+
   a.button, input {
     font-weight: normal;
     margin-top: -7px;
