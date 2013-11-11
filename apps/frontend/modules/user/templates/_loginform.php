@@ -13,16 +13,18 @@
      )
    );
  ?>
-  
+
   <form id="LoginForm"
         class="ninjaForm<?php if(true === $sf_request->isAjaxRequest() || isset($forceAjax)): ?> ninjaAjaxSubmit LoginContainer<?php endif;?>"
         action="<?php echo url_for("user_login") ?>" method="post" >
     <fieldset>
       <h2>Einloggen:</h2>
       <?php echo $form->render();?>
-      <div class="actions">          
-        <input type="submit" name="commit" value="Anmelden" class="button" />          
+      <div class="actions">
+        <input type="submit" name="commit" value="Anmelden" class="button" />
       </div>
     </fieldset>
   </form>
+
+  <p><?php echo link_to("Passwort vergessen?", '@user_reset_password'); ?></p>
 </div>
