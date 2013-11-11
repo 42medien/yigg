@@ -64,6 +64,8 @@
   </footer>
 </article>
 
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" data-pin-hover="true"></script>
+
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
 <section id="related-articles">
