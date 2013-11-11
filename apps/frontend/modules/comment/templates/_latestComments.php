@@ -1,3 +1,4 @@
+<?php if (count($comments) > 0) { ?>
 <section id="widget-comments" class="widget">
   <h2>Debatte</h2>
   <ol class="avatar-list-style">
@@ -12,3 +13,4 @@
   <?php endforeach; ?>
   </ol>
 </section>
+<?php } ?>
