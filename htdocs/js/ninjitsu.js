@@ -1,11 +1,4 @@
 /**
- * Ninjitsu Form library.
- * @author Simon Gow. http://simongow.com
- * @copyright YiGG.de
- * packed by http://dean.edwards.name/packer/
- * Ninjitsu 1.8
- */
-/**
  * NinjaCommander:
  * Handles and sets up all the coms' whilst out in the field.
  * Delegates communications to NinjaComs'
@@ -20,38 +13,107 @@ NinjaCommander = Class.create({
      */
     initialize: function(){
         this.startForms();
+        this.startEditors();
         this.startUpdaters();
         this.startActions();
     },
+
+    startEditors: function(){
+        var editors = $$('.tinymce');
+        if(editors.size() > 0)
+        {
+            if(typeof tinyMCE != 'object')
+            {
+                window.findAndLoadMce = function(){
+                    tinyMCE.settings = {
+                      theme: 'advanced',
+                      theme_advanced_buttons1: 'bold,underline,strikethrough,blockquote,|,link,unlink',
+                      theme_advanced_buttons2 : "",
+                      theme_advanced_buttons3 : "",
+                      theme_advanced_toolbar_location: 'top',
+                      theme_advanced_toolbar_align: 'left',
+                      valid_elements: 'a[href],strong/b,strong,ol,ul,li,blockquote,p,br',
+                      paste_auto_cleanup_on_paste: true,
+                      paste_remove_spans: true,
+                      paste_remove_styles: true,
+                      verify_html: true,
+                      debug: true,
+                      plugins: 'paste',
+                      setup : function(ed){
+                        if(false === $(ed.editorId).hasClassName("large"))
+                        {
+                          ed.onKeyUp.add(function(ed, e) {
+                            var length = (tinyMCE.activeEditor.getContent()).replace(/(<([^>]+)>)/ig,"").length;
+                            var text =  length + " Zeichen";
+                            var wordCount = $('wordCount_' + ed.id );
+                            if(!wordCount)
+                            {
+                                var toolbar = $(tinyMCE.activeEditor.id + '_parent').down('.mceToolbar');
+                                wordCount = $(new Element('span', {'id': 'wordCount_' + ed.id , 'style' : 'font-size:12px;float:right; padding:5px 15px;'}));
+                                toolbar.insert({top: wordCount});
+                            }
+                            wordCount.update(text);
+                            wordCount.setStyle(length >= 550 ? ' color:red;' :'color:green;');
+                          });
+                        }
+                        ed.onInit.add(function(ed,e){
+                          tinyMCE.editors[ed.id].load();
+                        });
+                     }
+                   };
+
+                   $$('.tinymce').each(function(el){
+                       el.identify();
+                       if( undefined === tinyMCE.get(el.id)){
+                         tinyMCE.execCommand('mceAddControl', true,  el.id );
+                         if(el.hasClassName("large"))
+                         {
+                          tinyMCE.get(el.id).remove("KeyUp");
+                         }
+                       }
+                       if(-1 !== $A(tinyMCE.editors).indexOf(el.id))
+                       {
+                         tinyMCE.editors[el.id].load();
+                       }
+                   });
+                };
+
+                $$('head')[0].insert(new Element('script',{'src':"js/tiny_mce/tiny_mce.js?ver=1"}));
+                return;
+            }
+
+          window.findAndLoadMce();
+          return;
+
+       }
+       document.observe('lightview:loaded', function() { NinjaCommander.initalize(); });
+    },
+
 
     /**
      * Creates behaviours for the actions like storyclick.
      */
     startActions: function(){
         // Setup the ninjaActions
-        $$('a.ninjaAction').each(function(el)
-        {
-          if (!el.id)
-          {
-            el.identify();
-          }
+        $$('a.ninjaAction').each(function(el){
+            if (el.id) {
+              if (!el.id) {
+                el.identify();
+              }
 
-          // do not reassign
-          if (el.ninjaAction)
-          {
-              return;
-          }
+              // do not reassign
+              if (el.ninjaAction) {
+                return;
+              }
 
-          el.ninjaAction = NinjaAction;
+              el.ninjaAction = NinjaAction;
 
-          // Add event listeners for ninja Actions
-          el.observe("click",
-            function(e)
-            {
-              this.ninjaAction.executeAction(e);
-              Event.stop(e);
-            }.bind(el)
-          );
+              // Add event listeners for ninja Actions
+              el.observe("click", function(e){
+                this.ninjaAction.executeAction(e);
+                Event.stop(e);
+              }.bind(el));
+            }
         });
     },
     /**
@@ -90,10 +152,8 @@ NinjaCommander = Class.create({
                 }
 
                 // Setup the event listeners for form submit element.
-                el.observe("submit", function(e)
-                {
-                  if(typeof tinyMCE === "object")
-                  {
+                el.observe("submit", function(e) {
+                  if(typeof tinyMCE === "object") {
                     tinyMCE.triggerSave();
                   }
                   this.ninjaValidator.preSubmitCheck(e);
@@ -236,6 +296,7 @@ NinjaComs = Class.create({
                 var call = eval( className + "." + action );
                 if( true === Object.isFunction( call )  )
                 {
+                  // ?????
                   call( el );
                 }
               }
@@ -261,9 +322,23 @@ NinjaComs = Class.create({
    * @param {Object} fatalError - force display of errors.
    */
   throwComsError: function ( message, fatalError){
+
+    // Make sure were in debug mode or only display FATAL errors
+    if ( 1 == this.debug || fatalError === true) {
+
+      // Create a DOM element
+      var errorMessage = new Element('h3', {
+        'class': 'error_message',
+        'style': 'position:absolute; top:0px; margin:auto;'
+      });
+
+      // add the error message, and append to document
+      errorMessage.update(message);
+      $('Layout').appendChild(errorMessage);
+      Effect.Shake(errorMessage);
+    }
   }
 });
-
 /**
  * Initalized on the page load, this class applies itself to each form,
  * and searches for any required or elements which require validation.
@@ -368,7 +443,6 @@ NinjaValidator = ({
     this.isSubmitting = true;
     this.errors = 0;
     var el = Event.element(e);
-    this.target = false;
 
     // process form validation
     if( false === this.doFormValidationCheck(el))
@@ -557,7 +631,6 @@ NinjaValidator = ({
      );
    }
 });
-
 /**
  * @author titus, caffeine
  * Automated callback class handling fired from ninjaforms on steroids.
@@ -738,14 +811,15 @@ NinjaUpdater = Class.create({
     }
 
     this.target.hide();
-
     // process ajax update
     this.coms.updater( this.element.id, this.action, this.target, content, method,
       function()
       {
         this.target.show();
         this.postUpdate();
-        this.target.appear({duration:3.0});
+        this.target.appear({
+          duration: 3.0
+        });
       }.bind(this)
     );
   },
@@ -805,252 +879,6 @@ NinjaUpdater = Class.create({
     NinjaCommander.initialize();
   }
 });
-
-
-/**
- * @author titus, caffeine
- * Automated callback class handling fired from ninjaforms on steroids.
- */
-NinjaUpdater = Class.create({
-
-  type:         '',
-  action:       '',
-  callback:     '',
-  element:      '',
-  target:       '',
-
-  in_process:   false,
-  current_event:    '',
-
-  // set script file settings
-  script_dir: (window.parent.document.location.host.match(/www\.yigg\.de$/)  ? window.parent.document.location.protocol + '//' + 'yigg.de/' : '')  + 'js/',
-  script_suffix: '.js',
-  script_prefix: 'ninjaCallback',
-  script_replace:'ninjaCallback',
-
-   // Sets up the actions for this class.
-  initialize: function(el)
-  {
-    // set id if not set so far
-    el.identify();
-
-    // transfer element
-    this.element = el;
-
-    // set target
-    this.initializeTarget();
-
-    // setup actions
-    this.initializeAction();
-
-    this.coms = new NinjaComs();
-  },
-
-  // figures out what to update, and adds callbacks
-  initializeTarget: function()
-  {
-    $w( this.element.className ).each(
-      function( className )
-      {
-        // find and apend all callbacks.
-        if ( className.startsWith('ninjaCallback') )
-        {
-          var script = new Element('script',
-            {
-              'id': 'script_' + className,
-              'type': 'text/javascript',
-              'src': this.script_dir + className.replace('ninjaCallback', this.script_prefix) + this.script_suffix
-            }
-          );
-
-          className = className.replace( this.script_replace, '');
-
-          document.observe( className + ":loaded",
-            function(e){
-              this.callback = e.memo.updater;
-            }.bind(this)
-          );
-
-          // insert script after last script in the source
-          Element.insert( $A( document.getElementsByTagName('script')).last(), { 'after': script });
-        }
-
-
-        // ignore all ninja... classes as target
-        if(className.startsWith('ninja'))
-        {
-          return;
-        }
-
-        // if classname is found as element id, set as target
-        if( $(className) )
-        {
-          this.target = $(className);
-        }
-      }.bind(this)
-    );
-
-    // set default target because none was provided (so current obj will be replaced itself)
-    if( ! this.target )
-    {
-      this.target = this.element;
-    }
-  },
-
-  // figures out what the updater should do to get the response
-  initializeAction: function()
-  {
-    // link updater
-    if( this.element.hasAttribute('href') )
-    {
-      // set type
-      this.type   = 'LINK';
-
-      // set action observer
-      this.action = this.element.href;
-      this.element.href = 'javascript:void(0);';
-      this.initializeObserver('click', 'GET');
-      return;
-    }
-
-    // terminate if not a form (only forms and links might be an updater)
-    if( ! this.element.hasAttribute('action') )
-    {
-      return;
-    }
-
-    if ( this.element.hasClassName('ninjaFilter') )
-    {
-      // set type
-      this.type       = 'FILTER';
-      observer     = 'change';
-      // form updater
-    }
-    else
-    {
-      // set type
-      this.type       = 'FORM';
-      observer      = 'submit';
-    }
-
-    // set action as formaction.
-    this.action = this.element.action;
-
-    // set action observer
-    this.initializeObserver(observer, 'POST');
-  },
-
-  // applies the observers for firing the action
-  initializeObserver: function( type, method )
-  {
-    // set action observer
-    Event.observe( this.element, type,
-      function(e)
-      {
-        this.current_event = e;
-        Event.stop(e);
-
-        // if confirm is requested check for
-        if( this.element.hasClassName('ninjaConfirm'))
-        {
-          if( false === confirm('Sicher?'))
-          {
-            return;
-          }
-        }
-        var content = ( method == 'POST') ?  this.element.serialize(true) : '';
-        return this.executeEvent( method, content );
-      }.bind(this)
-    );
-  },
-
-  // Executes the updaters.
-  executeEvent: function(method, content, event)
-  {
-    // update is currently in progress, so ignore event until current update is finished
-    if(true === this.in_process )
-    {
-      return;
-    }
-
-    // if callback has own update handler, use this (overrides local handler)
-    if( this.callback && Object.isFunction(this.callback.executeUpdate) )
-    {
-      this.callback.executeUpdate(this);
-      return;
-    }
-
-    if( false === this.preUpdate() )
-    {
-      return;
-    }
-
-    // process ajax update
-    this.coms.updater( this.element.id, this.action, this.target, content, method,
-      function()
-      {
-        this.target.show();
-        this.postUpdate();
-      }.bind(this)
-    );
-  },
-
-  // executes callbacks or does the default callback before the update.
-  preUpdate: function()
-  {
-    // check if form validation is available
-    if( this.element.ninjaValidator )
-    {
-      if( false === this.element.ninjaValidator.doFormValidationCheck(this.element) )
-      {
-        return false;
-      }
-    }
-
-    // prepare update or skip if preUpdate returns "false"
-    if( this.callback && Object.isFunction(this.callback.preUpdate) && false ===  this.callback.preUpdate(this) )
-    {
-      return false;
-    }
-
-    // create lock
-    this.in_process = true;
-
-    // show loading instead of content
-    if (this.element.hasClassName('ninjaPreloader'))
-    {
-      this.target.update('loading');
-    }
-
-    // disable filter elements
-    if( this.type == 'FILTER' )
-    {
-      this.element.disable();
-    }
-  },
-
-  // executes the callbacks or does the defautl after the update.
-  postUpdate: function()
-  {
-    // process callback
-    if( this.callback && Object.isFunction(this.callback.postUpdate) )
-    {
-      this.callback.postUpdate(this);
-    }
-
-    // release lock
-    this.in_process = false;
-
-    // disable filter elements
-    if( this.type == 'FILTER' )
-    {
-      this.element.enable();
-    }
-    // reinit ninjaCommander
-    NinjaCommander.initialize();
-  }
-});
-
 /**
  * @author caffeine
  * A quick hash for making and sending requests from small ninjaAction classes. (not forms)
@@ -1117,9 +945,10 @@ NinjaAction = ({
    */
   replaceContent: function (json)
   {
+
     var el = $( json.elementId );
     if( true === Object.isElement(el) ){
-      el.enable();
+      //el.enable();
       el.update(json.content);
 
     }else if( json ){
@@ -1146,3 +975,9 @@ NinjaAction = ({
 });
 
 Event.observe(window,'load',function(){ NinjaCommander=new NinjaCommander(); });
+
+$$('a[rel="external"]').each(function (link) {
+    if (link.readAttribute('href') != '' && link.readAttribute('href') != '#') {
+        link.writeAttribute('target', '_blank');
+    }
+});

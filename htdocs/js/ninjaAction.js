@@ -67,7 +67,7 @@ NinjaAction = ({
 
     var el = $( json.elementId );
     if( true === Object.isElement(el) ){
-      el.enable();
+      //el.enable();
       el.update(json.content);
 
     }else if( json ){

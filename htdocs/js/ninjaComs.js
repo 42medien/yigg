@@ -108,6 +108,7 @@ NinjaComs = Class.create({
                 var call = eval( className + "." + action );
                 if( true === Object.isFunction( call )  )
                 {
+                  // ?????
                   call( el );
                 }
               }

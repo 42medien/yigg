@@ -177,12 +177,16 @@ NinjaUpdater = Class.create({
       return;
     }
 
+    this.target.hide();
     // process ajax update
     this.coms.updater( this.element.id, this.action, this.target, content, method,
       function()
       {
         this.target.show();
         this.postUpdate();
+        this.target.appear({
+          duration: 3.0
+        });
       }.bind(this)
     );
   },

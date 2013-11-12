@@ -97,19 +97,22 @@ NinjaCommander = Class.create({
         // Setup the ninjaActions
         $$('a.ninjaAction').each(function(el){
             if (el.id) {
+              if (!el.id) {
+                el.identify();
+              }
 
-                // do not reassign
-                if (el.ninjaAction) {
-                    return;
-                }
+              // do not reassign
+              if (el.ninjaAction) {
+                return;
+              }
 
-                el.ninjaAction = NinjaAction;
+              el.ninjaAction = NinjaAction;
 
-                // Add event listeners for ninja Actions
-                el.observe("click", function(e){
-                    this.ninjaAction.executeAction(e);
-                    Event.stop(e);
-                }.bind(el));
+              // Add event listeners for ninja Actions
+              el.observe("click", function(e){
+                this.ninjaAction.executeAction(e);
+                Event.stop(e);
+              }.bind(el));
             }
         });
     },
@@ -149,10 +152,8 @@ NinjaCommander = Class.create({
                 }
 
                 // Setup the event listeners for form submit element.
-                el.observe("submit", function(e)
-                {
-                  if(typeof tinyMCE === "object")
-                  {
+                el.observe("submit", function(e) {
+                  if(typeof tinyMCE === "object") {
                     tinyMCE.triggerSave();
                   }
                   this.ninjaValidator.preSubmitCheck(e);
