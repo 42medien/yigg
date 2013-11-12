@@ -9,9 +9,15 @@
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-concat": "*"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-concat": "~0.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ekaabo/yigg.git"
