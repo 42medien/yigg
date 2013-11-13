@@ -2,9 +2,9 @@
 
 <?php slot("page-title")?>
   <?php if ("Normal" === $view) { ?>
-    Nachricht erstellen <?php echo link_to('Eigenen Artikel erstellen', '@story_create_article', array('id' => 'changetype', 'class' => 'button')); ?>
+    Nachricht erstellen
   <?php } else { ?>
-    Eigenen Artikel erstellen <?php echo link_to('Nachricht erstellen', '@story_create', array('id' => 'changetype', 'class' => 'button')); ?>
+    Eigenen Artikel erstellen
   <?php } ?>
 <?php end_slot()?>
 
