@@ -14,11 +14,22 @@
                   $story['Author']['username'],
                   "@user_public_profile?username={$story['Author']['username']}",
                    array('class' => 'url u-url fn n p-name', 'title' => "Profil von {$story['Author']['username']} besuchen"));?></span>
+      <?php if(true === $story->canEdit($sf_user)): ?>
+      | <i class="icon-edit"></i> <?php echo link_to_story(
+                   "bearbeiten",
+                   $story,
+                   array(
+                     "view" => "edit",
+                     "title" => 'Nachricht Bearbeiten: '  . $story->title,
+                     "rel" => "nofollow",
+                     "class" => "edit"
+                   )); ?>
+      <?php endif; ?>
     </div>
   </header>
 
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
-    <p><?php echo $story->getDescription();?></p>
+    <p><?php echo $story->getPresentationDescription(ESC_RAW); ?></p>
 
     <p><span class="entry-domain"><?php echo link_to($story->Domain->hostname, "@domain_show?id=".$story->Domain->id); ?></span></p>
   </div>

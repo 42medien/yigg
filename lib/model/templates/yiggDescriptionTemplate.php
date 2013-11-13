@@ -40,9 +40,7 @@ class yiggDescription extends Doctrine_Template
   /**
    * Prepares Xhtml (Adds smilies / profile links / unescapes)
    */
-  private function prepareXhtml($xhtml)
-  {
-    $xhtml = yiggTools::linkUrlsWithShortUrls($xhtml);
+  private function prepareXhtml($xhtml) {
     $xhtml = yiggTools::replaceSmilies($xhtml);
     $xhtml = yiggTools::addProfileLinks($xhtml);
     $xhtml = nl2br($xhtml);
@@ -74,7 +72,7 @@ class yiggDescription extends Doctrine_Template
         $string = mb_substr($string, 0, (false !== $endOfLastWord ? $endOfLastWord : 500 ), "UTF-8")  .  "... ";
       }
     }
-    $string = nl2br($string);
+    //$string = nl2br($string);
     return $string;
   }
 }

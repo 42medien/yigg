@@ -44,7 +44,7 @@
   </header>
 
   <div class="body e-description entry-description<?php echo ($story["type"] === Story::TYPE_VIDEO) ? " video":"";?>">
-    <p><?php echo $story->getDescription(); ?></p>
+    <p><?php echo $story->getPresentationDescription(ESC_RAW); ?></p>
 
     <p><span class="entry-domain"><?php echo link_to($story->getDomain()->getHostname(), "@domain_show?id=".$story->getDomain()->getId()); ?></span></p>
   </div>
