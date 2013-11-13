@@ -33,10 +33,12 @@ NinjaAction = ({
     var el = $( json.elementId );
     if( true === Object.isElement(el) ){
       el.enable();
-      el.value = json.value;
 
-    }else if( json ){
+      if (!el.value) {
+        el.value = json.value;
+      }
 
+    } else if( json ) {
       NinjaValidator.throwError("An Error was returned: " +  json.error + ", but there was no element found");
     }
   },
@@ -51,8 +53,7 @@ NinjaAction = ({
     var el = $( json.elementId );
     if( true === Object.isElement(el) ){
       el.disable();
-    }else if( json ){
-
+    } else if( json ) {
       NinjaValidator.throwError("An Error was returned: " +  json.error + ", but there was no element found");
     }
   },
@@ -67,11 +68,8 @@ NinjaAction = ({
 
     var el = $( json.elementId );
     if( true === Object.isElement(el) ){
-      //el.enable();
       el.update(json.content);
-
-    }else if( json ){
-
+    } else if ( json ) {
       NinjaValidator.throwError("An Error was returned: " +  json.error + ", but there was no element found");
     }
   },
@@ -86,7 +84,7 @@ NinjaAction = ({
     var el = $( json.elementId );
     if( true === Object.isElement(el) ){
       Element.remove(el);
-    }else if( json ){
+    } else if( json ) {
 
       NinjaValidator.throwError("An Error was returned: " +  json.error + ", but there was no element found");
     }
