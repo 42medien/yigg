@@ -1,19 +1,23 @@
 default:
   enabled:     false
   with_layout: false
+  contextual:  true
   lifetime:    86400
 
 _sidebar_first:
   enabled:     false
+  contextual:  true
   with_layout: false
   lifetime:    86400
 
 _sidebar_second:
   enabled:     false
+  contextual:  true
   with_layout: false
   lifetime:    86400
 
 _story:
   enabled:     false
+  contextual:  true
   with_layout: false
   lifetime:    86400
