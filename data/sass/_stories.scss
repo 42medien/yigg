@@ -14,7 +14,17 @@ ol#stories {
 
 #content .story-advertising {
   .ad-container {
-    padding: 7px;
+    margin: 7px;
+  }
+
+  .ad-label {
+    text-align: right;
+    background-color: $dark-gray;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: $light-gray;
+    padding: 6px 8px;
+    font-size: 11px;
   }
 }
 
