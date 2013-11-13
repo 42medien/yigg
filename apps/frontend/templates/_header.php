@@ -38,6 +38,7 @@
     googletag.defineSlot('/1007584/yigg_news_details', [728, 90], 'div-gpt-ad-1384179156582-0').addService(googletag.pubads());
     googletag.defineSlot('/1007584/yigg_erstellen', [728, 90], 'div-gpt-ad-1384179239715-0').addService(googletag.pubads());
     googletag.defineSlot('/1007584/yigg_sidebar_unten', [200, 200], 'div-gpt-ad-1384179258343-0').addService(googletag.pubads());
+    googletag.defineSlot('/1007584/yigg_big_kachel_336x280', [336, 280], 'div-gpt-ad-1384260153932-0').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });

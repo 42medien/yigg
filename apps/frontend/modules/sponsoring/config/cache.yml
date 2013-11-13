@@ -12,3 +12,8 @@ _sidebar_second:
   enabled:     false
   with_layout: false
   lifetime:    86400
+
+_story:
+  enabled:     false
+  with_layout: false
+  lifetime:    86400

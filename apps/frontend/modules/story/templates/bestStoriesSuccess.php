@@ -13,9 +13,20 @@
         <?php endforeach;?>
     </div>
 <?php endif;?>
-<?php if($storyCount > 0): ?>
+<?php if ($storyCount > 0): ?>
+  <?php
+    $ad_place = mt_rand(1, 4);
+    $lap = 0;
+  ?>
 <ol id="stories" class="story-list hfeed ">
+
 <?php foreach($stories as $k => $story ): ?>
+  <?php if ($lap == $ad_place) { ?>
+  <li>
+    <?php include_partial('sponsoring/story'); ?>
+  </li>
+  <?php } ?>
+
   <li>
   <?php
     include_partial('story',
@@ -28,6 +39,8 @@
         'inlist' => true
       )
     );
+
+    $lap++;
     ?>
   </li>
   <?php endforeach; ?>

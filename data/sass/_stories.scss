@@ -12,6 +12,12 @@ ol#stories {
   }
 }
 
+#content .story-advertising {
+  .ad-container {
+    padding: 7px;
+  }
+}
+
 #content .post {
   background-color: $foreground;
   box-shadow: 0 1px 3px rgba(34,25,25,0.4);
