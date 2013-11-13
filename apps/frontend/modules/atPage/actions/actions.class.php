@@ -11,7 +11,7 @@ class atPageActions extends yiggActions
   {
     $this->form = new FormPostboxSimpleCreate();
     $this->ajax_pm = "";
-    
+
     if(false !== $request->getParameter("id",false))
     {
       $this->reply_pm = Doctrine::getTable("NotificationMessage")->findOneById(intval($request->getParameter("id")));
@@ -34,7 +34,7 @@ class atPageActions extends yiggActions
       {
         return sfView::SUCCESS;
       }
-    }    
+    }
 
     // Support for Pms.
     if(true === $this->form->processAndValidate())
@@ -49,7 +49,7 @@ class atPageActions extends yiggActions
               $this->notification->sender_id = $this->session->getUserId();
               $this->notification->recipient_id = $recipient->id;
               $this->notification->ref_object_type = "NotificationMessage";
-              $this->notification->text = $this->form->getValue("message");
+              $this->notification->description = $this->form->getValue("message");
               $this->notification->ref_object_id = 0;
               $this->notification->type = "web";
 
@@ -66,9 +66,9 @@ class atPageActions extends yiggActions
     {
       return sfView::SUCCESS;
     }
-    
+
     $this->limit = 8;
-    
+
     $query = Doctrine::getTable("NotificationMessage")->createQuery()
             ->addWhere("recipient_id = ?", $this->session->getUserId())
             ->addWhere("status != ?", "send")
@@ -77,7 +77,7 @@ class atPageActions extends yiggActions
     $this->notifications = $this->setPagerQuery($query)->execute();
 
     Doctrine::getTable("NotificationMessage")->markAsRead($this->notifications);
-    
+
     return sfView::SUCCESS;
   }
 
@@ -100,7 +100,7 @@ class atPageActions extends yiggActions
           ->addwhere("recipient_id = ?", $this->session->getUserId() )
           ->addWhere("ref_object_type <> 'NotificationMessage'");
         break;
-        
+
       case "replies":
           $query
             ->addwhere("recipient_id = ?", $this->session->getUserId() )
