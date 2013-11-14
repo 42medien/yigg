@@ -1,10 +1,12 @@
+<h1 class="page-title">"<?php echo $category->getRawValue(); ?>" Nachrichten</h1>
+
 <?php if($storyCount > 0): ?>
 <div class="story-list-cont">
   <ol id="stories" class="story-list hfeed ">
     <?php foreach($stories as $k => $story ): ?>
     <li>
       <?php
-        include_partial('story',
+        include_partial('story/story',
           array(
             'story' => $story,
             'summary' => true,

@@ -111,7 +111,7 @@ spy_latestNodes:
 worldspy:
   url:    /weltspion
   param:  { module: worldspy, action: worldSpy}
-  
+
 worldspy_top:
   url:    /weltspion/top-stories
   param:  { module: worldspy, action: topStories}
@@ -222,7 +222,6 @@ user_verify_changed_email:
   url:  /profil/verify_changed_mail/:hash/:secret
   param:  { module: user, action: verifyChangedEmail}
 
-
 user_atom:
   url:    /:sf_format/profil/:username/:filter
   param:  { module: user, action: publicProfile, filter: neueste}
@@ -235,7 +234,7 @@ user_public_profile:
   param:  { module: user, action: publicProfile, filter: neueste}
   requirements:
     username: "[\w_\-\.]+"
-    
+
 twitter_user_profile:
   url:    /tweeple/:username
   param: { module: user, action: twitterUserProfile}
@@ -347,14 +346,20 @@ story_create:
   param:  { module: story, action: create, view: Normal}
 
 category_stories:
-  url:    /nachrichten/:id/:category_slug
+  url:    /kategorie/:id/:category_slug
   class:   sfDoctrineRoute
   options: { model: Category, type: object }
-  param:  { module: story, action: categoryStories }
+  param:  { module: category, action: show }
+
+category_stories_old:
+  url:   /nachrichten/:id/:category_slug
+  class:   sfDoctrineRoute
+  options: { model: Category, type: object }
+  param:  { module: category, action: show }
   requirements:
-      id: \d+
-      sf_method: [get]
-      
+    id: \d+
+    sf_method: [get]
+
 filter_stories:
   url:    /:value/:story_filter_option_slug
   class:   sfDoctrineRoute
@@ -402,7 +407,6 @@ story_edit_validation:
     month: \d{1,2}
     year: \d{4,4}
 
-
 story_rate:
   url:  /nachrichten/:year/:month/:day/:slug/rate
   param:  { module: story, action: rate }
@@ -410,7 +414,6 @@ story_rate:
     day: \d{1,2}
     month: \d{1,2}
     year: \d{4,4}
-
 
 story_feed:
   url:  /:sf_format/nachrichten/:year/:month/:day/:slug/:view

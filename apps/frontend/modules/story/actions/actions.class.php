@@ -36,6 +36,8 @@ class storyActions extends yiggActions {
    * @return
    */
   public function executeCategoryStories( $request ) {
+    $this->redirect("@category_stories?category_slug=".$request->getParameter("category_slug", ""), 301);
+
     $this->setLayout("layout.stream");
     $this->category = $this->getRoute()->getObject();
 

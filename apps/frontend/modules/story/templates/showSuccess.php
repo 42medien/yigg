@@ -162,7 +162,7 @@
 </section>
 <?php endif;?>
 
-<?php include_partial('story/categories', array("categories" => $story->Categorys));?>
+<?php include_partial('category/categories', array("categories" => $story->Categorys));?>
 
 <?php if(count($story->Comments) > 3):?>
   <?php include_component("comment", "latestComments");?>
