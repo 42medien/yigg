@@ -30,7 +30,7 @@ staging:
   .settings:
     no_script_name:         true
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              true
+    web_debug:              false
     cache:                  true
     compressed:             false
     etag:                   false
