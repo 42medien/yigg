@@ -1,4 +1,4 @@
-<h1 class="page-title">"<?php echo $tag->getRawValue(); ?>" Nachrichten
+<h1 class="page-title">Tag: <?php echo $tag->getRawValue(); ?>
 <?php if( true === $sf_user->hasUser()): ?>
    <?php if( false === $sf_user->getUser()->followsTag($tag->getRawValue()) ): ?>
      <?php echo button_to("Abonnieren", "@tag_subscribe?tag_id={$tag->id}", array("class" => "follow"));?>

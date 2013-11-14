@@ -1,4 +1,4 @@
-<h1 class="page-title">"<?php echo $category->getRawValue(); ?>" Nachrichten</h1>
+<h1 class="page-title">Kategorie: <?php echo $category->getRawValue(); ?></h1>
 
 <?php if($storyCount > 0): ?>
 <div class="story-list-cont">

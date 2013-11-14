@@ -1,5 +1,5 @@
 <h1 class="page-title">
-  <?php echo $domain->getHostname(); ?> Nachrichten
+  Domain: <?php echo $domain->getHostname(); ?>
   <?php if( true === $sf_user->hasUser()): ?>
      <?php if( false === $sf_user->getUser()->followsDomain($domain->getRawValue()) ): ?>
        <?php echo button_to("Abonnieren", "@domain_subscribe?id={$domain->id}", array("class" => "follow"));?>
