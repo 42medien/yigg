@@ -1,2 +1,3 @@
-<?php slot("page-title")?>Kategorien<?php end_slot()?>
+<?php slot("page-title")?>Tags<?php end_slot()?>
 
+Tag Cloud

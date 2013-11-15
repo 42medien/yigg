@@ -1,8 +1,10 @@
 <?php
-class tagActions extends yiggActions
-{
-  public function executeChangeSubscription($request)
-  {
+class tagActions extends yiggActions {
+  public function executeIndex() {
+
+  }
+
+  public function executeChangeSubscription($request) {
     $tag = Doctrine::getTable("Tag")->findOneById($request->getParameter("tag_id"));
     $this->forward404Unless($tag, "Keine passenden Tags gefunden");
 
