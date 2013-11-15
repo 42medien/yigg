@@ -32,10 +32,6 @@ class tagActions extends yiggActions
   public function executeShow($request) {
     $this->setLayout("layout.stream");
     $tag = $request->getParameter("tags");
-    if(empty($tag))
-    {
-      $this->forward404();
-    }
 
     $this->tag = Doctrine::getTable("Tag")->findOneByName($tag);
     $this->forward404Unless($this->tag, "Keine passenden Tags gefunden");
@@ -70,12 +66,9 @@ class tagActions extends yiggActions
       return $this->forward404();
     }
 
-    $video_finder->confineWithVideo()->setLimit(5);
-    $this->video_stories = $video_finder->getQuery()->execute();
-
     $this->getResponse()->setTitle( sprintf('Alles zum Tag %s', $this->tag->name ));
     $this->getResponse()->addMeta('keywords', $this->tag->name );
-    $this->getResponse()->addMeta('description', sprintf('Auf dieser Seite findest du alls auf YiGG zum Schlagwort %s.',$this->tag_params));
+    $this->getResponse()->addMeta('description', sprintf('Auf dieser Seite findest du alles auf YiGG zum Schlagwort %s.',$this->tag_params));
 
     return sfView::SUCCESS;
   }

@@ -14,9 +14,8 @@ class categoryActions extends yiggActions {
    *
    * @param sfRequest $request A request object
    */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->forward('default', 'module');
+  public function executeIndex(sfWebRequest $request) {
+    $this->categories = Doctrine::getTable("Category")->findAll();
   }
 
   /**
@@ -40,6 +39,11 @@ class categoryActions extends yiggActions {
     if( $this->storyCount > 0 ) {
       $this->populateStoryAttributeCache();
     }
+
+    $this->getResponse()->setTitle( sprintf('Alles zur Kategorie %s', $this->category->name ));
+    $this->getResponse()->addMeta('keywords', $this->category->name );
+    $this->getResponse()->addMeta('description', sprintf('Auf dieser Seite findest du alles auf YiGG zur Kategorie %s.',$this->category->name));
+
     return sfView::SUCCESS;
   }
 }

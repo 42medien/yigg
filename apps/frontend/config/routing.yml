@@ -1,6 +1,10 @@
 tag_show:
   url:    /tags
-  param:  { module: tag, action: show }
+  param:  { module: tag, action: index }
+
+tag_redirect:
+  url:    /tag
+  param: { module: system, action: redirect, to: '@tag_show' }
 
 tag:
   url:    /tag/:tags
@@ -344,6 +348,14 @@ story_archive:
 story_create:
   url:    /nachrichten/erstellen
   param:  { module: story, action: create, view: Normal}
+
+categories:
+  url:    /kategorien
+  param:  { module: category, action: index }
+
+category:
+  url:   /kategorie
+  param: { module: system, action: redirect, to: '@categories' }
 
 category_stories:
   url:    /kategorie/:id/:category_slug

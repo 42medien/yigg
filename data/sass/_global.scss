@@ -68,6 +68,10 @@ a.delete, a.blacklist, a.edit,  {
   a {
     color: $dark-gray;
   }
+
+  h2, h2 a {
+    color: #888;
+  }
 }
 
 .page-title {
