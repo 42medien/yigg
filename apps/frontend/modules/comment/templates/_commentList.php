@@ -69,3 +69,5 @@
 <?php if(false === $sf_request->isAjaxRequest() || "show" === $sf_request->getAction()):?>
   </section>
 <?php endif; ?>
+
+<div class="fb-comments" data-href="<?php echo url_for_story($story, false, true); ?>" data-colorscheme="light" data-numposts="50" data-width="750px"></div>

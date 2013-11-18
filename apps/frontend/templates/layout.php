@@ -4,6 +4,15 @@
     <?php include_partial("global/header"); ?>
   </head>
   <body class="<?php echo ( $sf_user->isAuthenticated() ? "user-auth" : "user-anon" ); ?> module-<?php echo $sf_context->getModuleName(); ?> action-<?php echo $sf_context->getActionName(); ?>">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=177728332363113";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div id="page">
       <header id="branding">
         <?php include_partial("system/header"); ?>
