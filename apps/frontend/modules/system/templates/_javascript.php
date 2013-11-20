@@ -63,3 +63,4 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
+<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=307666&screenLayer=1&mode=NONE&home=http://www.yigg.de"></script>
