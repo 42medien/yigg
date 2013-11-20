@@ -26,3 +26,5 @@ htdocs/mugim.php
 htdocs/api.php
 
 *.lck
+
+htdocs/sitemap*.xml

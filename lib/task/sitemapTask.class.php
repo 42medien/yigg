@@ -10,6 +10,8 @@ class sitemapTask extends yiggTaskToolsTask
     $this->namespace        = 'generate';
     $this->name             = 'sitemap';
     $this->briefDescription = 'Creates the sitemaps for YiGG';
+    $this->addArgument('application', sfCommandArgument::OPTIONAL, 'The application name', 'frontend');
+    $this->addOption('env', null, sfCommandOption::PARAMETER_REQUIRED, 'The environment', 'cli');
   }
 
   public function preExit(){}
