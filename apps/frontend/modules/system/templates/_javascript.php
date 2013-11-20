@@ -62,4 +62,7 @@
     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=353988911612";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+  adscale_slot_id = "NTlhMjQw";
 </script>
+<script type="text/javascript" src="http://js.adscale.de/getads.js"></script>

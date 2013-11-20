@@ -5,9 +5,4 @@
     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1384179258343-0'); });
   </script>
   </div>
-
-  <script type="text/javascript">
-      adscale_slot_id="NTlhMjQw";
-  </script>
-  <script type="text/javascript" src="http://js.adscale.de/getads.js"></script>
 </section>
