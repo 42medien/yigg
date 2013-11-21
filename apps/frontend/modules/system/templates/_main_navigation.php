@@ -7,21 +7,22 @@
       <?php echo link_to('Neueste Nachrichten',"@new_stories","title=Neueste Nachrichten von heute"); ?>
     </li>
     <li <?php if($sf_request->getAction() == 'spy'): ?>class="selected"<?php endif;?>>
-      <?php echo link_to('Spion',"@spy","title=Neueste Nachrichten von heute"); ?>
+      <?php echo link_to('Spion',"@spy","title=Entdecke Nachrichten die dich interessieren"); ?>
     </li>
-    <?php /* ?>
-    <li <?php if($sf_request->getAction() == 'worldSpy'): ?>class="selected"<?php endif;?>>
-      <?php echo link_to('Weltspion',"@worldspy","title=Neueste Nachrichten von heute"); ?>
-    </li>
-    <?php */ ?>
-    <li <?php if($sf_request->getAction() == 'archive'): ?>class="selected"<?php endif;?>>
-      <?php echo link_to('Archiv',"@story_archive","title=Neueste Nachrichten von heute"); ?>
+    <li class="sub-nav<?php if($sf_request->getAction() == 'archive'): ?> selected<?php endif;?>">
+      <?php echo link_to('Archiv',"@story_archive","title=Alle Nachrichten nach Tagen sortiert"); ?>
+
+      <ol>
+        <li><?php echo link_to('Archiv',"@story_archive","title=Neueste Nachrichten von heute"); ?></li>
+        <li><?php echo link_to('Tags',"@tag_show","title=Neueste Nachrichten von heute"); ?></li>
+        <li><?php echo link_to('Kategorien',"@categories","title=Neueste Nachrichten von heute"); ?></li>
+      </ol>
     </li>
   </ol>
 </div>
 
 <div id="main-actions">
-  
+
   <?php
   if ($sf_user->hasUser()) {
     echo link_to('Nachricht erstellen', '@story_create', array('title' => 'Neue Nachricht erstellen', 'class' => 'button'))."\n";

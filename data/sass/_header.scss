@@ -6,12 +6,12 @@
   font-size: 13px;
   padding-bottom: 20px;
   margin-bottom: 50px;
-  
+
   .logo {
     float: left;
     margin-right: 50px;
   }
-  
+
   a {
     font-family: $font-family;
     color: $dark-gray;
@@ -25,17 +25,45 @@
 
 #main-navigation {
   float: left;
-  
+
   ol {
     margin-top: 30px;
   }
-  
+
   li {
     font-family: Georgia, skolar, times, serif;
     float: left;
     display: list-item;
     margin-left: 30px;
     color: #aaa;
+    position: relative;
+  }
+
+  li.sub-nav {
+    ol {
+      display: none;
+
+      background-color: #fff;
+      padding: 5px;
+      position: absolute;
+      top: -20px;
+      left: -35px;
+      box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+      margin: 0px;
+      padding-left: 20px;
+
+      li {
+        display: list-item list-item;
+        float: inherit;
+        margin: 15px;
+      }
+    }
+
+    &:hover {
+      ol {
+        display: block;
+      }
+    }
   }
 }
 
@@ -47,20 +75,20 @@
 
 #user-navigation {
   float: right;
-  
+
   ul {
     margin: 0;
     padding: 0;
-    
+
     li {
       float: left;
       list-style-type: none;
       padding-right: 4px;
-      
+
       &:after {
         content: " | ";
       }
-      
+
       &:last-child:after {
         content: "";
       }
