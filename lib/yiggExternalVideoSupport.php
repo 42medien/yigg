@@ -59,7 +59,7 @@ class yiggExternalVideoSupport {
       '#https?://(www\.)?collegehumor\.com/(video|embed)/.*#i'     => array( 'http://www.collegehumor.com/oembed.{format}',       true  ),
 			'#https?://(www\.)?twitter\.com/.+?/status(es)?/.*#i'=> array( 'http://api.twitter.com/1/statuses/oembed.{format}', true  ),
  			'#https?://(www\.)?soundcloud\.com/.*#i'             => array( 'http://soundcloud.com/oembed',                      true  ),
-			'#https?://(www\.)?slideshare\.net/*#'               => array( 'http://www.slideshare.net/api/oembed/2',            true  ),
+			'#https?://(.+\.)?slideshare\.net/*#'                => array( 'http://www.slideshare.net/api/oembed/2',            true  ),
 			//'#http://instagr(\.am|am\.com)/p/.*#i'               => array( 'http://api.instagram.com/oembed',                   true  ),
 			'#https?://(www\.)?rdio\.com/.*#i'                   => array( 'http://www.rdio.com/api/oembed/',                   true  ),
 			'#https?://rd\.io/x/.*#i'                            => array( 'http://www.rdio.com/api/oembed/',                   true  ),
@@ -83,7 +83,7 @@ class yiggExternalVideoSupport {
 				$matchmask = '#' . str_replace( '___wildcard___', '(.+)', preg_quote( str_replace( '*', '___wildcard___', $matchmask ), '#' ) ) . '#i';
 				$matchmask = preg_replace( '|^#http\\\://|', '#https?\://', $matchmask );
 			}
-      
+
 			if ( preg_match( $matchmask, $url ) ) {
 				$provider = str_replace( '{format}', 'json', $providerurl ); // JSON is easier to deal with than XML
 				return $provider;
@@ -93,28 +93,28 @@ class yiggExternalVideoSupport {
 
   public function get_html($url) {
     $profider = $this->match_url($url);
-    
+
     if (!$profider) {
       return false;
     }
-    
+
     $data = $this->fetch($profider, $url);
-    
+
     if (!$data) {
       return false;
     }
-    
+
     return $this->data2html($data, $url);
   }
-  
+
   public function fetch($provider, $url) {
     $url = $provider . "?format=json&maxwidth=".$this->width."&lang=de&maxheight=".$this->height."&url=" . urlencode($url);
-    
+
     $response_body = yiggUrlTools::do_get($url);
-    
+
     return ( ( $data = json_decode( trim( $response_body ) ) ) && is_object( $data ) ) ? $data : false;
   }
-  
+
 	/**
 	 * Converts a data object from {@link WP_oEmbed::fetch()} and returns the HTML.
 	 *
