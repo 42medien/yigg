@@ -30,7 +30,7 @@ class yiggMetaDataExtractor {
   {
     return $this->yiggMeta->getTitle();
   }
-  
+
   public function getImages()
   {
     return $this->yiggMeta->getImages();
@@ -41,12 +41,14 @@ class yiggMetaDataExtractor {
    */
   private function loadData()
   {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $this->url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $ch = curl_init($this->url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::TIMEOUT);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1664.3 Safari/537.36');
 
     $this->response = curl_exec($ch);
+
     $content = iconv(mb_detect_encoding($this->response.'a', 'UTF-8, ISO-8859-1'),"UTF-8",$this->response);
     curl_close($ch);
   }
@@ -59,7 +61,7 @@ class yiggMetaDataExtractor {
 
     return $value;
   }
-  
+
   /**
    * handles the parsing of a new social-object
    * currently parsed: opengraph and metatags
@@ -69,10 +71,10 @@ class yiggMetaDataExtractor {
    */
   public function fetchData() {
     $media = new yiggExternalVideoSupport();
-    
+
     if (!$this->response) {
       $this->yiggMeta = new YiggMeta();
-      
+
       if (($provider = $media->match_url($this->url)) && !$this->yiggMeta->isComplete()) {
         //get the opengraph-tags
         $oEmbed = $media->fetch($provider, $this->url);
@@ -81,7 +83,7 @@ class yiggMetaDataExtractor {
 
       return;
     }
-    
+
     $html = $this->response;
     $url = $this->url;
 
@@ -93,7 +95,7 @@ class yiggMetaDataExtractor {
     }
 
     $this->yiggMeta->setUrl($url);
-    
+
     if ((preg_match('~http://opengraphprotocol.org/schema/~i', $header) || preg_match('~http://ogp.me/ns#~i', $header) || preg_match('~property=[\"\']og:~i', $header)) && !$this->yiggMeta->isComplete()) {
       //get the opengraph-tags
       $openGraph = OpenGraph::parse($header);
@@ -112,29 +114,26 @@ class yiggMetaDataExtractor {
         // catch exception and try to go on
       }
     }
-    
+
     // parse meta tags
     if (!$this->yiggMeta->isComplete()) {
       $meta = @HtmlTagParser::getKeys($html, $url);
       $this->yiggMeta->fromHtml($meta);
     }
-    
-    // parse microdata (schema.org)
-    /*if (!$this->yiggMeta->isComplete()) {
-      $meta = new MicrodataPhp($url, $html);
-      $this->yiggMeta->fromMicrodata($meta->obj());
-    }*/
-    
+
     // parse microformats v2
     if (!$this->yiggMeta->isComplete()) {
       $parser = new Parser($html);
       $this->yiggMeta->fromMicroformats($parser->parse(), $url);
     }
-    
-    // add images
-    $yiggImageParser = new ImageParser();
-    if ($images = $yiggImageParser->detect($html, $url)) {
-      $this->yiggMeta->setImages($images);
-    }
+
+    //if (!$this->yiggMeta->isComplete()) {
+      // add images
+      $yiggImageParser = new ImageParser();
+
+      if ($images = $yiggImageParser->detect($html, $url)) {
+        $this->yiggMeta->setImages($images);
+      }
+      //}
   }
 }
