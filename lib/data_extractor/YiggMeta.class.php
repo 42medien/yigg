@@ -38,7 +38,7 @@ class YiggMeta {
       } else {
         $this->images = array_merge($this->images, array(urldecode($images)));
       }
-      
+
       $this->images = array_unique($this->images);
     }
   }
@@ -70,7 +70,7 @@ class YiggMeta {
       return false;
     }
   }
-  
+
   public function hasImages() {
     if ($this->images) {
       return true;
@@ -100,55 +100,55 @@ class YiggMeta {
       }
     }
   }
-  
+
   public function fromMicrodata($data) {
     if ($data) {
       if (!isset($data->items) || !is_array($data->items) || count($data->items) == 0) {
         return;
       }
-      
+
       var_dump($data->items);
-      
+
       $data = $data->items[0];
-      
+
       if (isset($data->properties->name)) {
         $this->setTitle($data->properties->name[0]);
       }
-      
+
       if (isset($data->properties->decription)) {
         $this->setDescription($data->properties->decription[0]);
       }
     }
   }
-  
+
   public function fromMicroformats($data) {
     if ($data) {
-      
+
       if (!array_key_exists("items", $data) || !is_array($data["items"]) || count($data["items"]) == 0) {
         return;
       }
-      
+
       $first_item = $data["items"][0];
-      
+
       // check and use title
       if ( array_key_exists("name", $first_item["properties"]) && is_array($first_item["properties"]["name"]) ) {
         $this->setTitle($first_item["properties"]["name"][0]);
       }
-      
+
       // don't know if we should use the complete text of the article
       /*if ( array_key_exists("summary", $first_item["properties"]) && is_array($first_item["properties"]["summary"]) ) {
         $this->setDescription($first_item["properties"]["summary"][0]);
       } else if ( array_key_exists("content", $first_item["properties"]) && is_array($first_item["properties"]["content"]) ) {
         $this->setDescription($first_item["properties"]["content"][0]);
       }*/
-      
+
       // check and use photos
       if ( array_key_exists("photo", $first_item["properties"]) && is_array($first_item["properties"]["photo"]) ) {
         foreach ($first_item["properties"]["photo"] as $photo) {
           $this->setImages($photo);
         }
       }
-      
+
       // check tags
       if ( array_key_exists("rels", $data) &&
            is_array($data["rels"]) &&
@@ -157,11 +157,11 @@ class YiggMeta {
          ) {
 
         $tag_result = array();
-        
+
         // iterate tags
         foreach ($data["rels"]["tag"] as $tag) {
           $url_parts = parse_url($tag);
-          
+
           // check query string
           if ( array_key_exists("query", $url_parts) && $url_parts["query"] ) {
             // use last part of the query string
@@ -176,7 +176,7 @@ class YiggMeta {
             }
           }
         }
-        
+
         // use tags
         if ($tag_result) {
           $this->setTags(implode(", ", $tag_result));
@@ -188,7 +188,7 @@ class YiggMeta {
   public function fromHtml($meta) {
     if (is_array($meta) && array_key_exists('meta', $meta)) {
       $m = $meta['meta'];
-      
+
       // set title
       if (array_key_exists('twitter:title', $m)) {
         $this->setTitle($m['twitter:title']);
@@ -197,7 +197,7 @@ class YiggMeta {
       } elseif (array_key_exists('title', $meta)) {
         $this->setTitle($meta['title']);
       }
-      
+
       // get description
       if (array_key_exists('twitter:description', $m)) {
         $this->setDescription($m['twitter:description']);
@@ -206,20 +206,24 @@ class YiggMeta {
       } elseif (array_key_exists('description', $m)) {
         $this->setDescription($m['description']);
       }
-      
-      // get keywords      
+
+      // get keywords
       if (array_key_exists('news_keywords', $m)) {
         $this->setTags($m['news_keywords']);
       } elseif (array_key_exists('keywords', $m)) {
         $this->setTags($m['keywords']);
       }
-      
+
       // get images
       if (array_key_exists('twitter:image', $m)) {
         $this->setImages($m['twitter:image']);
       }
+
+      if (array_key_exists('thumbnail', $m)) {
+        $this->setImages($m['thumbnail']);
+      }
     }
-    
+
     // get images
     if (is_array($meta) && array_key_exists('links', $meta)) {
       $l = $meta['links'];
