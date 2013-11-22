@@ -118,10 +118,6 @@ class yiggMetaDataExtractor {
     // parse meta tags
     if (!$this->yiggMeta->isComplete()) {
       $meta = @HtmlTagParser::getKeys($html, $url);
-
-
-      sfContext::getInstance()->getLogger()->debug(print_r($meta, true));
-
       $this->yiggMeta->fromHtml($meta);
     }
 
