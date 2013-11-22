@@ -57,7 +57,7 @@ class HtmlTagParser {
           $lValues['links'][$lName] = self::abslink($lLink->getAttribute('href'), $pUrl);
         }
       }
-      
+
 	    //get all meta-elements
       $lArticles = $lDoc->getElementsByTagName('article');
       //loop the metas
@@ -67,7 +67,7 @@ class HtmlTagParser {
       }
 
 	    return $lValues;
-  	}catch (Exception $e) {
+  	} catch (Exception $e) {
       continue;
   	}
   }
@@ -79,7 +79,7 @@ class HtmlTagParser {
   public static function getKeys($pHtml, $pUrl) {
     return self::parse($pHtml, $pUrl);
   }
-  
+
   public static function abslink($imgSrc, $pageUrl)
   {
     $imgInfo = parse_url($imgSrc);
