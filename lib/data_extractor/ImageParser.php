@@ -7,38 +7,31 @@ class ImageParser {
    * @return array
    */
   public static function detect($html, $url) {
-    if (!preg_match("~^<meta.*http-equiv\s*=\s*(\"|\')\s*Content-Type\s*(\"|\').*\/?>$~", $html)) {
-      $html = preg_replace('/<head[^>]*>/i','<head>
-                             <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-                            ',$html);
-    }
-
-    libxml_use_internal_errors(true);
-    
-    $doc = new DOMDocument();
-    $doc->loadHTML($html);
+    preg_match_all('/<img.*src[\s]*=[\s]*[\"\']?([^\'\"\s]*)[\"\']?[\s]*[^>]+>/i', $html, $images);
 
     $result = array();
 
-    //get all meta-elements
-    $tags = $doc->getElementsByTagName('img');
-    //loop the metas
-    foreach ($tags as $tag) {
-      //if attribute name isset make a new entry in an array with key=name and value=content
-      if ($tag->hasAttribute('src')) {
-        $image = $tag->getAttribute('src');
-        $image = yiggUrlTools::abslink($image, $url);
-        $size = @getimagesize($image);
-        $size = $size[0] + $size[1];
-        // ignore all (stats)images smaller than 5x5
-        if ($size >= 300) {
-          $result[] = array('size' => $size, 'image' => $image);
-        }
+    if (!isset($images[1])) {
+      return $result;
+    }
+
+    foreach( $images[1] as $image ) {
+      if (!$image) {
+        continue;
       }
+
+      if (!preg_match("~^(?:f|ht)tps?://~i", $image)) {
+        $image = "http:" . $image;
+      }
+
+      $size = @getimagesize($image);
+      $size = $size[0] + $size[1];
+
+      $result[] = array('size' => $size, 'image' => $image);
     }
 
     usort($result, array("ImageParser", "sort"));
-    //$result = array_unique($result);
+    $result = array_unique($result);
     $result = array_slice($result, 0, 6);
 
     // return only the images and crop the size
