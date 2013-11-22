@@ -75,9 +75,9 @@ class ProjectConfiguration extends sfProjectConfiguration
      * Changing web dir from "web" to "htdocs".
      */
     $this->setWebDir(sfConfig::get('sf_root_dir') . DIRECTORY_SEPARATOR . 'htdocs');
-    
+
     $loader = new UniversalClassLoader();
-    $loader->registerNamespaces(array('mf2' => __DIR__ . '/../lib'));
+    $loader->registerNamespaces(array('Mf2' => __DIR__ . '/../lib'));
 
     // You can search the include_path as a last resort.
     $loader->register();
