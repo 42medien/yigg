@@ -1,6 +1,6 @@
 <?php
 
-use mf2\Parser;
+use Mf2\Parser;
 
 class yiggMetaDataExtractor {
   const TIMEOUT = 5;
@@ -98,7 +98,7 @@ class yiggMetaDataExtractor {
 
     if ((preg_match('~http://opengraphprotocol.org/schema/~i', $header) || preg_match('~http://ogp.me/ns#~i', $header) || preg_match('~property=[\"\']og:~i', $header)) && !$this->yiggMeta->isComplete()) {
       //get the opengraph-tags
-      $openGraph = OpenGraph::parse($header);
+      $openGraph = OpenGraph::parse($html);
       $this->yiggMeta->fromOpenGraph($openGraph);
     }
 
@@ -118,6 +118,10 @@ class yiggMetaDataExtractor {
     // parse meta tags
     if (!$this->yiggMeta->isComplete()) {
       $meta = @HtmlTagParser::getKeys($html, $url);
+
+
+      sfContext::getInstance()->getLogger()->debug(print_r($meta, true));
+
       $this->yiggMeta->fromHtml($meta);
     }
 
@@ -127,13 +131,10 @@ class yiggMetaDataExtractor {
       $this->yiggMeta->fromMicroformats($parser->parse(), $url);
     }
 
-    //if (!$this->yiggMeta->isComplete()) {
-      // add images
-      $yiggImageParser = new ImageParser();
-
-      if ($images = $yiggImageParser->detect($html, $url)) {
-        $this->yiggMeta->setImages($images);
-      }
-      //}
+    // add images
+    $yiggImageParser = new ImageParser();
+    if ($images = $yiggImageParser->detect($html, $url)) {
+      $this->yiggMeta->setImages($images);
+    }
   }
 }
