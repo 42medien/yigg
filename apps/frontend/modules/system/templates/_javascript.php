@@ -41,3 +41,4 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 <script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=307666&screenLayer=1&mode=NONE&home=http://www.yigg.de"></script>
+<script type="text/javascript" src="//s.skimresources.com/js/61250X1383979.skimlinks.js"></script>

@@ -3,7 +3,7 @@ User:
     username: marvin
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
-    status: true
+    status: 1
     last_login: null
     email: matthias@ekaabo.de
     privacy: false
@@ -19,7 +19,7 @@ User:
     username: admin
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
-    status: true
+    status: 1
     last_login: '2011-01-21 13:01:22'
     email: admin@ekaabo.com
     privacy: false
@@ -35,7 +35,7 @@ User:
     username: hugo
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
-    status: false
+    status: 0
     last_login: '2011-01-21 09:55:05'
     email: affe@ekaabo.com
     privacy: false
@@ -51,7 +51,7 @@ User:
     username: karl
     salt: ee98c918c23b98beada763c06778b7aba0cc14ac
     password: ef8b8d56ff8a2f93da24b7806214786e60795308
-    status: true
+    status: 1
     last_login: '2011-02-11 11:39:27'
     email: matthias@ekaabo.com
     privacy: false
