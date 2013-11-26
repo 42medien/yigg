@@ -12,6 +12,10 @@ class storyActions extends yiggActions {
    */
   public function executeStoryBar($request) {
     $this->findOrRedirect($request);
+
+    return $this->redirect($this->story->getExternalUrl());
+
+    /*
     $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'Yigg'));
 
     $this->relatedStories = StoryTable::retrieveRelatedStories($this->story);
@@ -29,6 +33,7 @@ class storyActions extends yiggActions {
     }
 
     $this->setLayout('layout.bar');
+    */
   }
 
   /**
