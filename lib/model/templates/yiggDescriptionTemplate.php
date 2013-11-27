@@ -72,6 +72,6 @@ class yiggDescription extends Doctrine_Template
         $string = mb_substr($string, 0, (false !== $endOfLastWord ? $endOfLastWord : 500 ), "UTF-8")  .  "... ";
       }
     }
-    return $string;
+    return trim($string);
   }
 }
