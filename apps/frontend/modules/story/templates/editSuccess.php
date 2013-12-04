@@ -1,3 +1,5 @@
+<?php use_stylesheet('carousel.css') ?>
+
 <?php slot("page-title")?>Nachricht bearbeiten<?php end_slot()?>
 
 <form action="<?php url_for_story($story, "edit"); ?>" id="new_form" class="form-large <?php echo ($story->getStoryType() !== "Payed") ? "ninjaForm " : "";?><?php echo ("Article" === $story->getStoryType() ? "article": "" ); ?>" enctype="multipart/form-data" method="post">

@@ -111,7 +111,8 @@ class FormStoryEdit extends yiggForm {
           'Categories'      => new sfWidgetFormChoice(
             array('choices' => $this->categories, 'expanded' => true, 'multiple' => true),
             array(
-              'class'       => 'catchk'
+              'class'       => 'catchk',
+              'id'          => 'Categories'
             )
           )
         ),

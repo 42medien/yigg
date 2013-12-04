@@ -360,7 +360,8 @@ class storyActions extends yiggActions {
                   $defaults,
                   array(
                     'Tags'=> $this->story->getTagsAsString(),
-                    'description' => !empty( $this->story['description'] ) ? $this->story['description'] : $this->story->getPlainTextDescription()
+                    'description' => !empty( $this->story['description'] ) ? $this->story['description'] : $this->story->getPlainTextDescription(),
+                    'Categories' => $this->story->getCategorys()
                   )
                 );
 
