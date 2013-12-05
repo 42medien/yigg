@@ -1,4 +1,4 @@
-ul.tag-cloud {
+#content ul.tag-cloud {
   margin: 0;
   padding: 0;
   text-align: justify;
@@ -6,5 +6,9 @@ ul.tag-cloud {
   li {
     display: inline-block;
     vertical-align: middle;
+
+    a {
+      color: #666;
+    }
   }
 }
