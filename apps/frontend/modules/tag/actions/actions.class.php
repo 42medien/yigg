@@ -1,7 +1,17 @@
 <?php
 class tagActions extends yiggActions {
   public function executeIndex() {
+    $tags = Doctrine::getTable("Tag")->getTagsByCount();
 
+    $first = reset($tags);
+    $last = end($tags);
+
+  	$this->min = $last["tag_count"];
+    $this->max = $first["tag_count"];
+
+    shuffle($tags);
+
+    $this->tags = $tags;
   }
 
   public function executeChangeSubscription($request) {

@@ -67,6 +67,22 @@ class TagTable extends Doctrine_Table
     return $query->execute(array(), $hydration_mode);
   }
 
+  /**
+   * Returns the counts from the tokens provided. using output escaper as wrapper
+   * as this allows caching in template.
+   *
+   * @param sfOutputEscaper tokens
+   * @return array
+   */
+  public function getTagsByCount( $limit = 200, $hydration_mode = Doctrine::HYDRATE_ARRAY ) {
+    $query = $this->getQueryObject()
+      ->select("t.name, (SELECT COUNT(st.tag_id) FROM StoryTag st WHERE st.tag_id = t.id) as tag_count")
+      ->from("Tag t")
+      ->orderBy("tag_count DESC")
+      ->limit($limit);
+    return $query->execute(array(), $hydration_mode);
+  }
+
 
   /**
    * Returns the results of for the tag cloud via a topN function with
