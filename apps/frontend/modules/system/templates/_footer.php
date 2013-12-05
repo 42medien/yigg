@@ -21,13 +21,13 @@
       data-href="http://www.facebook.com/yiggde"
       data-width="200"
       data-show-faces="true"
-      data-colorscheme="dark"
+      data-colorscheme="light"
       data-show-border="false"
       data-stream="false"
       data-header="false">
     </div>
   </div>
-  
+
   <div class="twitter widget">
     <h4>Twitter</h4>
     <a class="twitter-timeline" href="https://twitter.com/YiGG" data-widget-id="369374603291807744">Tweets von @YiGG</a>

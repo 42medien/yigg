@@ -1,7 +1,7 @@
 <?php
 class tagActions extends yiggActions {
   public function executeIndex() {
-    $tags = Doctrine::getTable("Tag")->getTagsByCount();
+    /*$tags = Doctrine::getTable("Tag")->getTagsByCount();
 
     $first = reset($tags);
     $last = end($tags);
@@ -11,7 +11,7 @@ class tagActions extends yiggActions {
 
     shuffle($tags);
 
-    $this->tags = $tags;
+    $this->tags = $tags;*/
   }
 
   public function executeChangeSubscription($request) {
