@@ -76,10 +76,9 @@ class TagTable extends Doctrine_Table
    */
   public function getTagsByCount( $limit = 200, $hydration_mode = Doctrine::HYDRATE_ARRAY ) {
     $query = $this->getQueryObject()
-      ->select("id, COUNT(st.tag_id) as tag_count")
-      ->from("StoryTag st")
+      ->select("t.name, (SELECT COUNT(st.tag_id) FROM StoryTag st WHERE st.tag_id = t.id) as tag_count")
+      ->from("Tag t")
       ->orderBy("tag_count DESC")
-      ->groupBy("st.tag_id")
       ->limit($limit);
     return $query->execute(array(), $hydration_mode);
   }
