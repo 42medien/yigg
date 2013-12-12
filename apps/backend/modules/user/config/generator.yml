@@ -25,6 +25,8 @@ generator:
         display:           [=username, email, status]
       form:    ~
       edit:
-        display:           [username, email, status, block_post]
+        display:
+          Profile:         [username, email]
+          Admin:           [status, block_post]
       new:     ~
       show:    ~

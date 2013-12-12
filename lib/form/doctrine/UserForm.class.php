@@ -10,8 +10,7 @@
  */
 class UserForm extends BaseUserForm
 {
-    public function configure()
-    {
-        $this->useFields(array('username', 'email', 'block_post'));
+    public function configure() {
+        $this->useFields(array('username', 'email', 'block_post', 'status'));
     }
 }
