@@ -43,3 +43,14 @@
     googletag.enableServices();
   });
 </script>
+
+<script type='text/javascript'>
+  (function () {
+    var scriptProto = 'https:' == document.location.protocol ? 'https://' : 'http://';
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = scriptProto+'js.cdn.yieldkit.com/v1/js?api_key=5561bd81c7f3309dd647804cde2fe543&site_id=50bc81dee4b0a6bbf3f39876';
+    (document.getElementsByTagName('head')[0] || document.body).appendChild(script);
+  })();
+</script>
