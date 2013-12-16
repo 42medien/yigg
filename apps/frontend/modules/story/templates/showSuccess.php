@@ -68,13 +68,6 @@
 
 <?php include_component("comment", "commentList", array("obj" => $story, "inlist" => isset($inlist)  ? $inlist : false, 'at_beginning' => true)); ?>
 
-<section id="related-articles">
-  <h3>Passende Artikel</h3>
-
-  <div data-src="<?php echo url_for_story($story, null, true); ?>" class="OUTBRAIN"></div>
-  <script type="text/javascript">(function(){window.OB_platformType=8;window.OB_langJS="http://widgets.outbrain.com/lang_de.js";window.OBITm="1382527808969";window.OB_recMode="brn_strip";var ob=document.createElement("script");ob.type="text/javascript";ob.async=true;ob.src="http"+("https:"===document.location.protocol?"s":"")+"://widgets.outbrain.com/outbrainLT.js";var h=document.getElementsByTagName("script")[0];h.parentNode.insertBefore(ob,h);})();</script>
-</section>
-
 <?php slot('sidebar') ?>
 
 <?php include_partial('story/storyActions', array("story" => $story));?>
