@@ -62,6 +62,11 @@ User:
       refClass: UserFollowing
       local: user_id
       foreign: following_id
+    AuthToken:
+      class: User
+      refClass: AuthToken
+      local: id
+      foreign: user_id
     Followers:
       class: User
       refClass: UserFollowing

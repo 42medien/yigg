@@ -56,6 +56,11 @@ ExpiresByType text/css "access plus 12 months"
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ mugim.php [QSA,L]
 
+  RewriteCond %{HTTP_HOST} ^(api.yigg.local)$ [OR]
+  RewriteCond %{HTTP_HOST} ^(api.yigg.de)$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ api.php [QSA,L]
+
   RewriteCond %{HTTP_HOST} ^(backend.yigg.de)$
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ backend.php [QSA,L]

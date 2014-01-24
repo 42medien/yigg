@@ -6,12 +6,7 @@ prod:
   storage:
     class: sfCacheSessionStorage
     param:
-      session_name: YGSS #[required] name of session to use
-      session_cookie_path: / #[required] cookie path
-      session_cookie_domain: yigg.de #[required] cookie domain
-      session_cookie_lifetime: +10 days #[required] liftime of cookie
-      session_cookie_secure: false #[required] send only if secure connection
-      session_cookie_http_only: true #[required] accessible only via http protocol
+      session_cookie_domain: .yigg.de #[required] cookie domain
       cache:
         class: sfMemcacheCache #[required] define the cache strategy
         param:
@@ -34,7 +29,12 @@ all:
     param:
       timeout: 86400     # session timeout in seconds
   storage:
-    class: sfSessionStorage
+    param:
+      session_name: YGSS #[required] name of session to use
+      session_cookie_path: / #[required] cookie path
+      session_cookie_lifetime: +10 days #[required] liftime of cookie
+      session_cookie_secure: false #[required] send only if secure connection
+      session_cookie_http_only: true #[required] accessible only via http protocol
   logger:
     param:
       level: err
@@ -87,6 +87,8 @@ dev:
     class: sfNoCache
   storage:
     class: sfSessionStorage
+    param:
+      session_cookie_domain: .yigg.local #[required] cookie domain
   logger:
     class: sfAggregateLogger
     param:

@@ -1,0 +1,32 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+oauth_1_request:
+  url:   /oauth/1/request
+  param: { module: oauth1, action: request }
+
+oauth_1_authorize:
+  url:   /oauth/1/authorize
+  param: { module: oauth1, action: authorize }
+
+oauth_1_approve_authorization:
+  url:   /oauth/1/approve_authorization
+  param: { module: oauth1, action: approve_authorization }
+
+oauth_1_access:
+  url:   /oauth/1/access
+  param: { module: oauth1, action: access }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

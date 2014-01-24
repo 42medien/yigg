@@ -68,14 +68,14 @@ class yiggSession extends sfBasicSecurityUser
 
       // Set flash for registering the user at ivw
       $this->setFlash('ivw:mclient:register', $user['mclient_salt']);
-      
+
       $this->getAttributeHolder()->removeNamespace('StoryRatings');
       //  Make the user object avaliable accross our application.
       $this->setAttribute( 'user_id', $user['id'], 'session');
       $this->user = $user;
     }
   }
-  
+
   /**
    * Makes the user wait for longer and longer each time they fail a request.
    */
@@ -90,7 +90,7 @@ class yiggSession extends sfBasicSecurityUser
       return 0;
     }
   }
-  
+
   /**
    * Performs the logout for the current user.
    */
@@ -274,7 +274,7 @@ class yiggSession extends sfBasicSecurityUser
       ->groupBy("sr.story_id");
 
     $ip_address = sfContext::getInstance()->getRequest()->getRemoteAddress();
-    
+
     if ( true == $this->hasUser()) {
       $query->addWhere('sr.user_id = :userid', array( ':userid' => $this->getUser()->id ));
     } else {
@@ -298,13 +298,13 @@ class yiggSession extends sfBasicSecurityUser
 
     // get the Ratings. and check cache first.
     $storyRatings = $this->getAttribute("StoryRatings", array(), "StoryRatings");
-    
+
     if ( true === array_key_exists( $story_id, $storyRatings) ) {
       return true;
     } else {
       // do a manual lookup just to be sure.
       $result =  StoryRatingTable::retrieveHasRated( $story_id, $this->hasUser() ? $this->getUser(): null );
-      
+
       if ( true === $result ) {
         // update the cache.
         $storyRatings[ $story_id ] = $result;
@@ -326,5 +326,14 @@ class yiggSession extends sfBasicSecurityUser
   public function shutdown() {
     $this->attributeHolder->removeNamespace("tmp");
     parent::shutdown();
+  }
+
+  /**
+   * remember a target ot redirect the user after the next
+   * successful login
+   * @param  sfWebRequest $pRequest
+   */
+  public function setRedirectAfterNextLogin( $redirect ){
+  	$this->setAttribute( 'target_after_login', $redirect );
   }
 }
