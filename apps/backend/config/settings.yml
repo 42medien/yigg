@@ -65,7 +65,7 @@ all:
     charset:                utf-8                 # default encoding charset.
     default_culture:        de_DE                 # culture
     standard_helpers:       [Partial, Cache, JavaScript, Image]
-    csrf_secret:            0bIg938HyIgG          # form handling secret and csrf-protection
+    #csrf_secret:            0bIg938HyIgG          # form handling secret and csrf-protection
     use_process_cache:      true                   # Enable symfony optimizations based on PHP accelerators. Set to off for tests or when you have enabled a PHP accelerator in your server but don't want symfony to use it internally.
     check_lock:             true                    # Enable the application lock system triggered by the clear-cache and disable tasks. Set to on to have all requests to disabled applications redirected to the $sf_symfony_data_dir/web/arrors/unavailable.php page.
     strip_comments:         true                    # Remove comments in core framework classes as defined in the core_compile.yml

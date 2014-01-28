@@ -13,7 +13,7 @@ class DomainForm extends BaseDomainForm
   public function configure()
   {
     unset(
-      $this["hostname"],
+      //$this["hostname"],
       $this["created_at"],
       $this["updated_at"]
     );

@@ -4,7 +4,7 @@ generator:
     model_class:           domain
     theme:                 admin
     non_verbose_templates: true
-    with_show:             false
+    with_show:             true
     singular:              ~
     plural:                ~
     route_prefix:          domain
@@ -23,5 +23,6 @@ generator:
         display: [hostname, domain_status]
       form:    ~
       edit:
-        display: [domain_status]
-      new:     ~
+        display: [hostname, domain_status]
+      new:
+        display: [hostname, domain_status]
