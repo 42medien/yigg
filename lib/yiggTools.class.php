@@ -621,7 +621,7 @@ class yiggTools
        $replacement = sprintf('<a href="%s">%s</a>',
           $redirect->getMiniUri(),
           parse_url($url, PHP_URL_HOST));
-       
+
        $text = str_replace($url, $replacement, $text);
      }
      return $text;

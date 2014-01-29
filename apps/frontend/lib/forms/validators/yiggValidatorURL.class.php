@@ -45,20 +45,21 @@ class yiggValidatorURL extends sfValidatorUrl
   {
 
     $value = parent::doClean($value);
-    
+
     //remove all new lines and spaces.
     $value = preg_replace("{\n|\s}is","",$value);
 
     // clean value
     $value = (string) $value;
     $value = yiggUrlTools::encodeUmlauts($value);
-    
+
     $value = parent::doClean($value); //We have to clean here - url its expanded and encoded (maybe longer)
 
     // check if hostname is blocked
     if( true === $this->getOption('globalBlacklist'))
     {
       $this->checkBlocked( $value );
+      $this->checkBlacklisted( $value );
     }
 
     // check if url is unique (with option unique => default)
@@ -85,6 +86,15 @@ class yiggValidatorURL extends sfValidatorUrl
    * @param $value Object
    */
   public function checkBlocked($value)
+  {
+  }
+
+  /**
+   * Checks if the content has blacklisted words
+   *
+   * @param $value Object
+   */
+  public function checkBlacklisted($value)
   {
   }
 

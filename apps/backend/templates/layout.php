@@ -16,13 +16,13 @@
      <link href="http://yigg.it/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
      <link href="http://yigg.it/css/yigg-styles-backend.css" rel="stylesheet" type="text/css" />
      <link href="/css/yigg-styles-v8.css" rel="stylesheet" type="text/css" />
-     
+
    <!-- js -->
      <script type="text/javascript" src="<?php echo sfConfig::get('static_host')?>js/jquery-1.7.1.js"></script>
   </head>
   <body>
    <div id="container" class="b_end">
-    
+
       <div class="header">
         <a tabindex="1" href="#Content" class="hidden">Direkt zum Inhalt </a>
         <?php
@@ -84,6 +84,12 @@
               ($sf_request->getModule() == 'domain') ? array('class' => 'selected') : array(),
               true
             );
+            echo
+              content_tag('li',
+                link_to('Blacklist', 'blacklist', array('title' => 'Blacklist')),
+                ($sf_request->getModule() == 'blacklist') ? array('class' => 'selected') : array(),
+                true
+              );
           echo
             content_tag('li',
               link_to('WSpy', 'wspy', array('title' => 'WorldSpy-Feeds verwalten')),

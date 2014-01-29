@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           blacklist
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          blacklist
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:             Blacklist
+        display:           [=id, =word, created_at]
+        sort:              ~
+        max_per_page:      50
+      filter:
+        display: [word]
+      form:    ~
+      edit:
+        fields:
+          word:
+            help:   'Bitte keiner dieser Zeichen benutzen: <code>. \ + * ? [ ^ ] $ ( ) { } = ! < > | : -</code>'
+      new:
+        fields:
+          word:
+            help:   'Bitte keiner dieser Zeichen benutzen: <code>. \ + * ? [ ^ ] $ ( ) { } = ! < > | : -</code>'

@@ -14,3 +14,13 @@ StoryFilterOption:
   StoryFilterOption_4:
     name: "3 Stunden"
     value: 10800
+
+Blacklist:
+  Word_1:
+    word: "online casino"
+  Word_2:
+    word: "ficken"
+  Word_3:
+    word: "penis verlängerung"
+  Word_4:
+    word: "viagra"

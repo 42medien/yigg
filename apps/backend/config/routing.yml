@@ -7,6 +7,15 @@ domain:
     column:               id
     with_wildcard_routes: true
 
+blacklist:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Blacklist
+    module:               blacklist
+    prefix_path:          /blacklist
+    column:               id
+    with_wildcard_routes: true
+
 task_status:
   class: sfDoctrineRouteCollection
   options:
@@ -100,7 +109,7 @@ user_logout:
 user_login:
   url:   /login
   param: { module: security, action: index }
-    
+
 export_data:
   url:   /user/ExportToCsv/
   param: { module: user, action: ExportToCsv }

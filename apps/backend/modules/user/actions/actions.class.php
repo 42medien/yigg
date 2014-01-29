@@ -61,12 +61,12 @@ class userActions extends autoUserActions
 
         $this->redirect('user');
     }
-    
-    public function executeExportToCsv(sfWebRequest $request) 
+
+    public function executeExportToCsv(sfWebRequest $request)
     {
-                   
-        if ($request->hasParameter('selectExport')) {            
-        
+
+        if ($request->hasParameter('selectExport')) {
+
             $limit = 100000;
             $offset = $request->getParameter('selectExport');
 
@@ -77,7 +77,7 @@ class userActions extends autoUserActions
                 $partNumber = 1;
             } else {
                 $partNumber = ($offset / 100000) + 1;
-            }   
+            }
 
             //formate header
             $data = 'Username,Nr of Articles,Nr of Comments,Email,Website'."\n";
@@ -127,12 +127,12 @@ class userActions extends autoUserActions
             $this->getResponse()->setHttpHeader('Content-Type', 'application/vnd.ms-excel');
             $this->getResponse()->setHttpHeader('Content-Disposition', "attachment; filename=users_".$nrOfUsers[0]['count']."_part_".$partNumber."_".date("Ymd").".csv");
             $this->data1 = $data;
-            
+
         } else {
             exit;
-        }            
+        }
     }
-    
+
     public function executeSendNotification(sfWebRequest $request) {
         $user_id = $request->getParameter('id');
     }
