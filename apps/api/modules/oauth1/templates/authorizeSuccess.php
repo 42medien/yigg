@@ -2,7 +2,7 @@
 
       <p><?php echo __('TEXT_OAUTH_AUTHORISATION', array('%1' => $pCommunity->getName())); ?></p>
 
-      <div class="errors">This website is registered with <strong>YIID</strong> to make authorization requests,
+      <div class="errors">This website is registered with <strong>yigg</strong> to make authorization requests,
       but has not been configured to send requests securely. If you grant access but you did not initiate
       this request at <strong><?php echo $pCommunity->getName(); ?></strong>, it may be possible for other users of <strong><?php echo $pCommunity->getName(); ?></strong> to access
       your data. We recommend you deny access unless you are certain that you initiated this request
