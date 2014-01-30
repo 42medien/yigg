@@ -16,6 +16,14 @@ class AuthTokenTable extends Doctrine_Table
     return Doctrine_Core::getTable('AuthToken');
   }
 
+  public function deleteExpired() {
+    $this->getQueryObject()
+         ->delete()
+         ->where("created_at <= ? ", "DATE_SUB(NOW(), INTERVAL 10 MINUTE)")
+         ->andWhere("token_type = ?", "request")
+         ->execute();
+  }
+
   public function lookup($consumer, $token_type, $token) {
     $object = $this->getQueryObject()
          ->select('*')

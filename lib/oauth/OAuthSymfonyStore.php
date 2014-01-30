@@ -32,9 +32,8 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @return string | null
    */
   public function lookup_nonce($consumer, $token, $nonce, $timestamp) {
-    //Doctrine::getTable("AuthNonce")->deleteExpired();
-
-    sfContext::getInstance()->getLogger()->debug("token" . print_r($token, true));
+    // delete expired nonces
+    Doctrine::getTable("AuthNonce")->deleteExpired();
 
     if (!Doctrine::getTable("AuthNonce")->hasBeenUsed($consumer, $token, $nonce)) {
       $auth_nonce = new AuthNonce();
@@ -64,6 +63,9 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @return OAuthToken | null
    */
   public function lookup_token($consumer, $token_type, $token) {
+    // delete expired tokens
+    //Doctrine::getTable("AuthToken")->deleteExpired();
+
     $auth_token = Doctrine::getTable("AuthToken")->lookup($consumer, $token_type, $token);
 
     if (!empty($auth_token)) {

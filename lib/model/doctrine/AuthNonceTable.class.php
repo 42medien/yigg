@@ -16,6 +16,10 @@ class AuthNonceTable extends Doctrine_Table
     return Doctrine_Core::getTable('AuthNonce');
   }
 
+  public function deleteExpired() {
+    $this->getQueryObject()->delete()->where("created_at <= ? ", "DATE_SUB(NOW(), INTERVAL 60 MINUTE)")->execute();
+  }
+
   public function hasBeenUsed($consumer, $token, $nonce) {
     $nonce = $this->getQueryObject()
          ->select('*')
