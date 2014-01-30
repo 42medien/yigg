@@ -8,7 +8,6 @@ AuthToken:
       notnull: true
       type: integer
     user_id:
-      notnull: true
       type: integer
     consumer_key:       varchar(255)
     token_key:          varchar(255)
@@ -16,12 +15,6 @@ AuthToken:
     token_type:         varchar(40)
     oauth_callback:     varchar(255)
     oauth_verifier:     varchar(40)
-  relations:
-    User:
-      class: User
-      local: user_id
-      foreign: id
-      type: one
 
 AuthNonce:
   actAs: [Timestampable]
@@ -33,4 +26,18 @@ AuthNonce:
       type: integer
     consumer_key:       varchar(255)
     token_key:          varchar(255)
-    nonce:              text
+    nonce:              varchar
+
+AuthConsumer:
+  actAs: [Timestampable]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      notnull: true
+      type: integer
+    name:               varchar(255)
+    description:        varchar(255)
+    consumer_key:       varchar(255)
+    consumer_secret:    varchar(255)
+    consumer_callback:  varchar(255)

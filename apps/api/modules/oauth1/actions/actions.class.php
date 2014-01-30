@@ -21,7 +21,7 @@ class oauth1Actions extends sfActions {
       $token = $server->fetch_request_token($req);
       return $this->renderText($token);
     } catch (OAuthException $e) {
-      $this->logMessage($e->getMessage(), 'err');
+      $this->logMessage($e->getMessage(), 'debug');
       $this->getResponse()->setContentType('text/plain');
       $this->getResponse()->setStatusCode(400);
 
@@ -43,8 +43,6 @@ class oauth1Actions extends sfActions {
       $server->storeRequestToSession( $oauth_request );
     }
 
-    var_dump($this->getUser()->isAuthenticated());exit;
-
     // check user session
     if (!$this->getUser()->getUser()) {
       $this->getUser()->setRedirectAfterNextLogin('api/authorize');
@@ -54,7 +52,7 @@ class oauth1Actions extends sfActions {
         // check if it is a valid OAuth authorisation request
     if ($server->loadRequestFromSession()) {
       $oauth_request = $server->loadRequestFromSession();
-      $request_token = OAuthConsumerTokenPeer::find(null, 'request', $oauth_request->get_parameter('oauth_token'));
+      $request_token = Doctrine::getTable("AuthToken")->lookup(null, 'request', $oauth_request->get_parameter('oauth_token'));
       $consumer_key = $store->lookup_token(null, 'request', $oauth_request->get_parameter('oauth_token'));
 
       // if there is no valid consumer key...
@@ -68,13 +66,8 @@ class oauth1Actions extends sfActions {
       // check if callback-url has the right domain
       }
 
-      // get hosts and schemes
-      $callback_host = UrlUtils::getHost($oauth_request->get_parameter('oauth_callback'));
-      $callback_scheme = parse_url($oauth_request->get_parameter('oauth_callback'), PHP_URL_SCHEME);
-      $community_host = UrlUtils::getHost($request_token->getCommunity()->getUrl());
-
       $this->oauth = $oauth_request->get_parameter('oauth_token');
-      $this->community = $request_token->getCommunity();
+      $this->consumer = $request_token->getConsumer();
     } else { // if 'oauth_token' is empty
       // delete session ...
       $server->storeRequestToSession();
@@ -107,14 +100,16 @@ class oauth1Actions extends sfActions {
     // delete session ...
     $server->storeRequestToSession();
 
+    $consumer = Doctrine::getTable("AuthConsumer")->findOneByConsumerKey($oauth_request->get_parameter('oauth_consumer_key'));
+
     // check if there are already some get-params
-    if (preg_match("/\?/i", $oauth_request->get_parameter('oauth_callback'))) {
+    if (preg_match("/\?/i", $consumer->getConsumerCallback())) {
       $binder = "&";
     } else {
       $binder = "?";
     }
 
-    $this->redirect($oauth_request->get_parameter('oauth_callback').$binder."oauth_token=".$oauth_request->get_parameter('oauth_token'));
+    $this->redirect($consumer->getConsumerCallback().$binder."oauth_token=".$oauth_request->get_parameter('oauth_token'));
   }
 
   /**

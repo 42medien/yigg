@@ -16,7 +16,7 @@ class OAuthSymfonyStore extends OAuthDataStore {
     $data = $this->get_consumer_data($consumer_key);
 
     if (!empty($data)) {
-      return new OAuthConsumer($data->getCommunity(), $data->getApiKey());
+      return new OAuthConsumer($data->getConsumerKey(), $data->getConsumerSecret());
     }
 
     return null;
@@ -32,14 +32,14 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @return string | null
    */
   public function lookup_nonce($consumer, $token, $nonce, $timestamp) {
-    Doctrine::getTable("AuthNonce")->deleteExpired();
+    //Doctrine::getTable("AuthNonce")->deleteExpired();
 
     if (!Doctrine::getTable("AuthNonce")->hasBeenUsed($consumer, $token, $nonce)) {
-      $auth_none = new AuthNonce();
-      $auth_none->setConsumerKey( $consumer->key );
-      $auth_none->setTokenKey( $token->key );
-      $auth_none->setNonce( $nonce );
-      $auth_none->save();
+      $auth_nonce = new AuthNonce();
+      $auth_nonce->setConsumerKey( $consumer->key );
+      $auth_nonce->setTokenKey( $token );
+      $auth_nonce->setNonce( $nonce );
+      $auth_nonce->save();
 
       return null;
     }
@@ -57,7 +57,7 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @return OAuthToken | null
    */
   public function lookup_token($consumer, $token_type, $token) {
-    $auth_token = Doctrine::getTable("AuthToken")->find($consumer, $token_type, $token);
+    $auth_token = Doctrine::getTable("AuthToken")->lookup($consumer, $token_type, $token);
 
     if (!empty($auth_token)) {
       return new OAuthToken($auth_token->getTokenKey(), $auth_token->getTokenSecret());
@@ -76,7 +76,7 @@ class OAuthSymfonyStore extends OAuthDataStore {
    */
   public function new_access_token($token, $consumer, $callback = null) {
     $oauth_consumer = $this->get_consumer_data($consumer->key);
-    $auth_token = Doctrine::getTable("AuthToken")->find($consumer, 'request', $token->key);
+    $auth_token = Doctrine::getTable("AuthToken")->lookup($consumer, 'request', $token->key);
 
     if (!empty($oauth_consumer) && $auth_token->isAuthorized()) {
       $access_token = $this->new_token($consumer->key, 'access', $auth_token->getUserId());
@@ -111,7 +111,7 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @param int $pUserId
    */
   public function approve_token(OAuthRequest $oauth_request, $pUserId) {
-    $auth_token = Doctrine::getTable("AuthToken")->find(null, 'request', $oauth_request->get_parameter('oauth_token'));
+    $auth_token = Doctrine::getTable("AuthToken")->lookup(null, 'request', $oauth_request->get_parameter('oauth_token'));
 
     $auth_token->setUserId($pUserId);
     $auth_token->save();
@@ -123,7 +123,7 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @param OAuthRequest $pOAuthRequest
    */
   public function decline_token(OAuthRequest $oauth_request) {
-    $auth_token = Doctrine::getTable("AuthToken")->find(null, 'request', $oauth_request->get_parameter('oauth_token'));
+    $auth_token = Doctrine::getTable("AuthToken")->lookup(null, 'request', $oauth_request->get_parameter('oauth_token'));
 
     if ($auth_token) {
       $auth_token->delete();
@@ -137,8 +137,7 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @return OAuthConsumerRegistry | null
    */
   private function get_consumer_data($consumer_key) {
-    //return CommunityPeer::getCommunityById($consumer_key, false);
-    //return OAuthConsumerRegistryPeer::retrieveByConsumerKey($consumer_key);
+    return Doctrine::getTable("AuthConsumer")->findOneByConsumerKey($consumer_key);
   }
 
   /**
@@ -149,14 +148,13 @@ class OAuthSymfonyStore extends OAuthDataStore {
    * @param int $user_id default is 'null'
    * @return OAuthToken
    */
-  private function new_token($consumer_id, $token_type, $user_id = null) {
-
+  private function new_token($consumer_key, $token_type, $user_id = null) {
     $key = sha1($_SERVER['REMOTE_ADDR'] . microtime() . (string)rand());
     $secret = sha1(md5($_SERVER['REMOTE_ADDR']) . microtime() . (string)time());
 
     $token = new AuthToken();
 
-    $token->setConsumerKey($consumer_id);
+    $token->setConsumerKey($consumer_key);
     $token->setTokenKey($key);
     $token->setTokenSecret($secret);
     $token->setTokenType($token_type);

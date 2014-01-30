@@ -9,9 +9,13 @@ oauth_1_authorize:
   url:   /oauth/1/authorize
   param: { module: oauth1, action: authorize }
 
-oauth_1_approve_authorization:
-  url:   /oauth/1/approve_authorization
+oauth_1_approve:
+  url:   /oauth/1/approve
   param: { module: oauth1, action: approve_authorization }
+
+oauth_1_decline:
+  url:   /oauth/1/decline
+  param: { module: oauth1, action: decline_authorization }
 
 oauth_1_access:
   url:   /oauth/1/access

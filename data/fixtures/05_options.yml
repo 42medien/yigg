@@ -24,3 +24,10 @@ Blacklist:
     word: "penis verlängerung"
   Word_4:
     word: "viagra"
+
+AuthConsumer:
+  Consumer_1:
+    name: "spreadly"
+    consumer_key: "kua324b1b3kj4hb123kjh4b12k3jh"
+    consumer_secret: "sjdhlASDUhasiduhoISD7UHa7sdhpASUHDluqwheewje"
+    consumer_callback: "http://spread.local/auth/complete_signin/service/yigg"
