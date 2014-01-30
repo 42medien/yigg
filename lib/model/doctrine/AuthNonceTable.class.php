@@ -12,18 +12,22 @@ class AuthNonceTable extends Doctrine_Table
    *
    * @return object AuthNonceTable
    */
-  public static function getInstance()
-  {
+  public static function getInstance() {
     return Doctrine_Core::getTable('AuthNonce');
   }
 
   public function hasBeenUsed($consumer, $token, $nonce) {
-    return $this->getQueryObject()
+    $nonce = $this->getQueryObject()
          ->select('*')
          ->from("AuthNonce")
          ->where('consumer_key = ?', $consumer->key)
-         ->addWhere("token_key = ?", $token)
-         ->addWhere("nonce = ?", $nonce)
-         ->fetchOne();
+         ->andWhere("nonce = ?", $nonce);
+
+    // check token
+    if ($token) {
+      $nonce->andWhere("token_key = ?", $token->key);
+    }
+
+    return $nonce->fetchOne();
   }
 }

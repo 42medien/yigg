@@ -34,10 +34,17 @@ class OAuthSymfonyStore extends OAuthDataStore {
   public function lookup_nonce($consumer, $token, $nonce, $timestamp) {
     //Doctrine::getTable("AuthNonce")->deleteExpired();
 
+    sfContext::getInstance()->getLogger()->debug("token" . print_r($token, true));
+
     if (!Doctrine::getTable("AuthNonce")->hasBeenUsed($consumer, $token, $nonce)) {
       $auth_nonce = new AuthNonce();
       $auth_nonce->setConsumerKey( $consumer->key );
-      $auth_nonce->setTokenKey( $token );
+
+      // check token
+      if ($token) {
+        $auth_nonce->setTokenKey( $token->key );
+      }
+
       $auth_nonce->setNonce( $nonce );
       $auth_nonce->save();
 
