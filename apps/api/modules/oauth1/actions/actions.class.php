@@ -33,6 +33,8 @@ class oauth1Actions extends sfActions {
    * authorize to approve an oauth request token
    */
   public function executeAuthorize($request) {
+    $this->setLayout("auth_layout");
+
     $server = new OAuthSymfonyServer();
     $store = new OAuthSymfonyStore();
 
@@ -122,6 +124,8 @@ class oauth1Actions extends sfActions {
     if ($oauth_request = $server->loadRequestFromSession()) {
       $store->decline_token($oauth_request);
     }
+
+    $this->setLayout("auth_layout");
 
     // delete session ...
     $server->storeRequestToSession();

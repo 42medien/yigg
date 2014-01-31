@@ -19,7 +19,7 @@ class AuthTokenTable extends Doctrine_Table
   public function deleteExpired() {
     $this->getQueryObject()
          ->delete()
-         ->where("created_at <= ? ", "DATE_SUB(NOW(), INTERVAL 10 MINUTE)")
+         ->where("created_at <= ?", "DATEADD(HOUR, -1, GETDATE())")
          ->andWhere("token_type = ?", "request")
          ->execute();
   }
