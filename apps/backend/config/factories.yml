@@ -1,0 +1,106 @@
+prod:
+  storage:
+    class: sfCacheSessionStorage
+    param:
+      session_name: YGSS #[required] name of session to use
+      session_cookie_path: / #[required] cookie path
+      session_cookie_domain: yigg.de #[required] cookie domain
+      session_cookie_lifetime: +10 days #[required] liftime of cookie
+      session_cookie_secure: false #[required] send only if secure connection
+      session_cookie_http_only: true #[required] accessible only via http protocol
+      cache:
+        class: sfMemcacheCache #[required] define the cache strategy
+        param:
+          servers: # Array of servers
+            localserver:
+              host: yigg.pb6ick.0001.euw1.cache.amazonaws.com # hostname or IP of mamcache server
+              port: 11211 # default memcache port
+
+
+all:
+  controller:
+    class: yiggFrontWebController
+  request:
+    class: yiggWebRequest
+  response:
+    class: yiggWebResponse
+    param:
+      logging:  %SF_LOGGING_ENABLED%
+      charset:  utf-8
+  user:
+    class: yiggSession
+    param:
+      timeout: 86400     # session timeout in seconds
+  logger:
+    param:
+      level: err
+      rotate: true
+      purge: true
+      loggers:
+        sf_file_debug:
+          param:
+            format:      %time% %type% [%priority%] %message%%EOL%
+            time_format: %b %d %H:%M:%S
+
+  routing:
+    class: sfPatternRouting
+    param:
+      load_configuration:               true
+      generate_shortest_url:            true
+
+  mailer:
+      class: yiggMailer
+      param:
+        logging:           %SF_LOGGING_ENABLED%
+        charset:           %SF_CHARSET%
+        delivery_strategy: realtime
+        transport:
+          class: Swift_MailTransport
+
+cli:
+  controller:
+    class: sfConsoleController
+  request:
+    class: sfConsoleRequest
+  response:
+    class: sfConsoleResponse
+  storage:
+    class: sfNoStorage
+
+test:
+  storage:
+    class: sfSessionTestStorage
+    param:
+      session_path: %SF_TEST_CACHE_DIR%/sessions
+
+dev:
+  logger:
+    class: sfAggregateLogger
+    param:
+      level: debug
+      rotate: true
+      purge: true
+      loggers:
+        sf_web_debug:
+          class: sfWebDebugLogger
+          param:
+            condition: %SF_WEB_DEBUG%
+        sf_file_debug:
+          param:
+            format:      %time% %type% [%priority%] %message%%EOL%
+            time_format: %b %d %H:%M:%S
+
+i18n:
+  class: sfI18N
+  param:
+    source:              XLIFF
+    debug:               false
+    untranslated_prefix: "[T]"
+    untranslated_suffix: "[/T]"
+    cache:
+      class:    sfFileCache
+      param:
+        automatic_cleaning_factor: 0
+        cache_dir:                 %SF_I18N_CACHE_DIR%
+        lifetime:                  86400
+        prefix:                    %SF_APP_DIR%

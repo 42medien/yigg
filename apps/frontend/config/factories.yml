@@ -1,3 +1,24 @@
+prod:
+  view_cache:
+    class: sfMemcacheCache
+    param:
+      host: yigg.pb6ick.0001.euw1.cache.amazonaws.com
+  storage:
+    class: sfCacheSessionStorage
+    param:
+      session_name: YGSS #[required] name of session to use
+      session_cookie_path: / #[required] cookie path
+      session_cookie_domain: yigg.de #[required] cookie domain
+      session_cookie_lifetime: +10 days #[required] liftime of cookie
+      session_cookie_secure: false #[required] send only if secure connection
+      session_cookie_http_only: true #[required] accessible only via http protocol
+      cache:
+        class: sfMemcacheCache #[required] define the cache strategy
+        param:
+          servers: # Array of servers
+            localserver:
+              host: yigg.pb6ick.0001.euw1.cache.amazonaws.com # hostname or IP of mamcache server
+              port: 11211 # default memcache port
 all:
   controller:
     class: yiggFrontWebController
@@ -12,6 +33,8 @@ all:
     class: yiggSession
     param:
       timeout: 86400     # session timeout in seconds
+  storage:
+    class: sfSessionStorage
   logger:
     param:
       level: err
@@ -39,34 +62,31 @@ all:
       transport:
         class: Swift_MailTransport
 
-prod:
-  view_cache:
-    class: sfMemcacheCache
-    param:
-      host: yigg.pb6ick.0001.euw1.cache.amazonaws.com
+cli:
+  controller:
+    class: sfConsoleController
+  request:
+    class: sfConsoleRequest
+  response:
+    class: sfConsoleResponse
   storage:
-    class: sfCacheSessionStorage
+    class: sfNoStorage
+
+test:
+  storage:
+    class: sfSessionTestStorage
     param:
-      session_name: YGSS #[required] name of session to use
-      session_cookie_domain: yigg.de #[required] cookie domain
-      session_cookie_lifetime: 17776000 #[required] liftime of cookie
-      cache:
-        class: sfMemcacheCache #[required] define the cache strategy
-        param:
-          servers: # Array of servers
-            localserver:
-              host: yigg.pb6ick.0001.euw1.cache.amazonaws.com # hostname or IP of mamcache server
-              port: 11211 # default memcache port
+      session_path: %SF_TEST_CACHE_DIR%/sessions
+
+cache:
+  view_cache:
+    class: sfFileCache
 
 dev:
   view_cache:
     class: sfNoCache
   storage:
     class: sfSessionStorage
-    param:
-      session_name: YGSS_local #[required] name of session to use
-      session_cookie_domain: .yigg.local #[required] cookie domain
-      session_cookie_lifetime: 17776000 #[required] liftime of cookie
   logger:
     class: sfAggregateLogger
     param:
