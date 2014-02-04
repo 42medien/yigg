@@ -78,3 +78,15 @@ all:
     strip_comments:         true                    # Remove comments in core framework classes as defined in the core_compile.yml
     escaping_strategy: 		true
     escaping_method:   		ESC_ENTITIES
+
+prod:
+  .settings:
+    csrf_secret:            0bIg938HyIgG          # form handling secret and csrf-protection
+
+dev:
+  .settings:
+    csrf_secret:            jasdhjasdah          # form handling secret and csrf-protection
+
+staging:
+  .settings:
+    csrf_secret:            23uihiuh12          # form handling secret and csrf-protection
