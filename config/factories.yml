@@ -48,7 +48,7 @@ prod:
     class: sfCacheSessionStorage
     param:
       session_name: YGSS #[required] name of session to use
-      session_cookie_domain: .yigg.de #[required] cookie domain
+      session_cookie_domain: yigg.de #[required] cookie domain
       session_cookie_lifetime: 17776000 #[required] liftime of cookie
       cache:
         class: sfMemcacheCache #[required] define the cache strategy
