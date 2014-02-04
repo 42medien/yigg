@@ -4,6 +4,7 @@ prod:
     no_script_name:         true
     cache:                  true
     web_debug:				false
+    csrf_secret:            0bIg938HyIgG          # form handling secret and csrf-protection
 
 cache:
   .settings:
@@ -25,6 +26,7 @@ dev:
     cache:                  false
     compressed:             false
     etag:                   false
+    csrf_secret:            23uihiuh12          # form handling secret and csrf-protection
 
 staging:
   .settings:
@@ -34,6 +36,7 @@ staging:
     cache:                  true
     compressed:             false
     etag:                   false
+    csrf_secret:            jasdhjasdah          # form handling secret and csrf-protection
 
 soap:
   .settings:
@@ -78,15 +81,3 @@ all:
     strip_comments:         true                    # Remove comments in core framework classes as defined in the core_compile.yml
     escaping_strategy: 		true
     escaping_method:   		ESC_ENTITIES
-
-prod:
-  .settings:
-    csrf_secret:            0bIg938HyIgG          # form handling secret and csrf-protection
-
-dev:
-  .settings:
-    csrf_secret:            jasdhjasdah          # form handling secret and csrf-protection
-
-staging:
-  .settings:
-    csrf_secret:            23uihiuh12          # form handling secret and csrf-protection
