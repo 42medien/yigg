@@ -7,7 +7,7 @@ class updateUserStatsTask extends yiggTaskToolsTask
     $this->name             = 'updateUserStats';
     $this->briefDescription = 'Update Statistics for Users';
     $this->addArgument('application', sfCommandArgument::OPTIONAL, 'The application name', 'frontend');
-    $this->addOption('env', null, sfCommandOption::PARAMETER_REQUIRED, 'The environment', 'cli');
+    $this->addOption('env', null, sfCommandOption::PARAMETER_REQUIRED, 'The environment', 'prod');
   }
 
   public function preExecute() {
