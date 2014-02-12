@@ -60,6 +60,8 @@
 
       <!-- Place this tag where you want the +1 button to render. -->
       <div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-href="<?php echo $story->external_url; ?>"></div>
+
+      <a href="<?php echo $story->external_url; ?>" class="spreadly-button" data-style="flat" data-services="twitter,facebook,tumblr,linkedin,flattr,xing"></a>
     </div>
   </footer>
 </article>
