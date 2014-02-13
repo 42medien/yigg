@@ -1,19 +1,32 @@
-<?php if($storyCount > 0): ?>
+<?php
+if($storyCount > 0):
+  $ad_place = mt_rand(1, 4);
+  $lap = 0;
+?>
 <ol id="stories" class="story-list hfeed ">
-  <?php foreach($stories as $k => $story ): ?>
+<?php
+  foreach($stories as $k => $story ): ?>
+    if ($lap == $ad_place) {
+?>
   <li>
-    <?php
-      include_partial('story',
-        array(
-          'story' => $story,
-          'summary' => true,
-          'compacted' => false === (false === ($k != 0 && $k % round(($storyCount/4)) == 0)),
-          'count' => $k,
-          'total' => $storyCount,
-          'inlist' => true
-        )
-      );
-    ?>
+    <?php include_partial('sponsoring/story'); ?>
+  </li>
+<?php } ?>
+  <li>
+<?php
+  include_partial('story',
+    array(
+      'story' => $story,
+      'summary' => true,
+      'compacted' => false === (false === ($k != 0 && $k % round(($storyCount/4)) == 0)),
+      'count' => $k,
+      'total' => $storyCount,
+      'inlist' => true
+    )
+  );
+
+  $lap++;
+?>
   </li>
   <?php endforeach; ?>
 </ol>
