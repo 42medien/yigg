@@ -5,7 +5,7 @@ if($storyCount > 0):
 ?>
 <ol id="stories" class="story-list hfeed ">
 <?php
-  foreach($stories as $k => $story ): ?>
+  foreach($stories as $k => $story ):
     if ($lap == $ad_place) {
 ?>
   <li>
