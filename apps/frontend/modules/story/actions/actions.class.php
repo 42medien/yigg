@@ -208,6 +208,10 @@ class storyActions extends yiggActions {
         $domain->domain_status = "blacklisted";
         $domain->save();
 
+        if ($view_cache = sfContext::getInstance()->getViewCacheManager()) {
+          $view_cache->getCache()->clean(sfCache::ALL);
+        }
+
         $this->session->setFlash("success_msg",$this->story->getSourceHost() . " ist jetzt auf der Blacklist.");
         break;
     }
@@ -399,6 +403,11 @@ class storyActions extends yiggActions {
 
     if ( (true == $this->story->isAuthor( $this->session ) ) || $this->session->isModerator() ) {
       $this->story->delete();
+
+      if ($view_cache = sfContext::getInstance()->getViewCacheManager()) {
+        $view_cache->getCache()->clean(sfCache::ALL);
+      }
+
       if ( true === $this->isAjaxRequest() ) {
         return sfView::NONE;
       }
