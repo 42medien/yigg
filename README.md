@@ -46,7 +46,7 @@ When a 1.4 update comes along, go to the lib/vendor/symfony-1.4 directory and ex
 
      $ git svn rebase
 
-Now take care of the svn externals by first retrieving a script that extends git�s power (based on a work by Andre Pang) and running git-svn-update-externals inside the framework directory (lib/vendor/symfony-1.4).
+Now take care of the svn externals by first retrieving a script that extends gits power (based on a work by Andre Pang) and running git-svn-update-externals inside the framework directory (lib/vendor/symfony-1.4).
 
     $ git clone git://git-sue.git.sourceforge.net/gitroot/git-sue/git-sue lib/vendor/git-sue
     $ cd lib/vendor/1.3
