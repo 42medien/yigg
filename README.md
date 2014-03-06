@@ -6,6 +6,17 @@ HowTo setup YiGG.
 
 the release process follows two steps. You have to release a staging version first and if you are sure this version is working you can release this version to the live server.
 
+to run the deployments, you have to install [capistrano](http://capistranorb.com) (it requires Ruby 1.9 or newer). To install v3, run:
+
+    $ gem install capistrano
+
+to install the "bleeding edge" version, run:
+
+    $ git clone https://github.com/capistrano/capistrano.git
+    $ cd capistrano
+    $ gem build *.gemspec
+    $ gem install *.gem
+
 ### Staging server
 
 add your ssh-key so the ssh-agent is able to use it
